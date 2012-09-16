@@ -21,7 +21,7 @@ git clone http://github.com/thcipriani/dotfiles.git ~/dotfiles
 3. Make sure that <code>bootstrap.rb</code> in the <code>dotfiles</code> directory has the proper permissions and run that file:
 <pre>
 cd ~/dotfiles
-chmod +x setup.rb
+chmod +x bootstrap.rb
 ./bootstrap.rb
 </pre>
 4. Grab all of my [pathogen](https://github.com/tpope/vim-pathogen "Pathogen: Really Awesome!") plugins by updating all of the submodules of this repo:
