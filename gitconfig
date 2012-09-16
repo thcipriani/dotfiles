@@ -1,0 +1,6 @@
+[user]
+	name = Tyler Cipriani
+	email = tyler@tylercipriani.com
+[alias]
+	hist = log --oneline
+  hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
