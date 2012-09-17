@@ -10,6 +10,7 @@ A Tyler Cipriani Joint.
 + ssh
 + git-core
 + rvm
++ tmux
 
 Install Instructions
 -------------
