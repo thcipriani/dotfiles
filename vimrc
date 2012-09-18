@@ -51,7 +51,7 @@ set noswapfile
 
 filetype plugin indent on
 set ofu=syntaxcomplete#Complete
-set guifont=DejaVu\ Sans\ mono\ 12
+set guifont=inconsolata\ 16
 
 " Included for PowerLine
 set nocompatible " Disable vi-compatibility
