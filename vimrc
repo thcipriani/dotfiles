@@ -109,7 +109,6 @@ nmap <unique> <F5> <Plug>ToggleBackground
 imap <unique> <F5> <Plug>ToggleBackground
 vmap <unique> <F5> <Plug>ToggleBackground
 
-
 "Opens a vertical split and switches over (,v)  
 nnoremap <leader>v <C-w>v<C-w>l  
 
@@ -124,7 +123,4 @@ nnoremap <leader>D :g/^/put_<CR>
 
 "Real Returns
 nnoremap <leader>R :%s/\r/\r/g<CR>
-
-
-
 " }}}
