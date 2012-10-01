@@ -44,3 +44,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 # Map JJ enter to vi-mode command mode
 bindkey "JJ" vi-cmd-mode
+
+# Arrows for reverse search
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
