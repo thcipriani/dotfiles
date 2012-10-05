@@ -29,7 +29,12 @@ colorscheme Tomorrow-Night-Eighties
 set ignorecase
 set smartcase
 set modelines=0
-set undofile
+if version >= 730
+  set undodir=~/.vimundodir
+  set undofile
+  set undolevels=1000 "maximum number of changes that can be undone
+  set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+endif
 
 "make regex sane
 nnoremap / /\v
