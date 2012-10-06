@@ -23,6 +23,7 @@ set visualbell
 set cursorline
 set ruler
 set laststatus=2
+set scrolloff=3
 set history=1000
 set cpoptions+=J
 set title
