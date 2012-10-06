@@ -1,4 +1,4 @@
-" Basic options ----------------------------------------------------------- {{{
+" Basic options ------------------------------------------------------- {{{
 let mapleader=","
 set encoding=utf-8
 set modelines=0
@@ -16,9 +16,6 @@ set title
 set guioptions=m
 set number
 set nowrap
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 syntax on
 set tabstop=2
 set shiftwidth=2
@@ -29,13 +26,6 @@ colorscheme Tomorrow-Night-Eighties
 set ignorecase
 set smartcase
 set modelines=0
-if version >= 730
-  set undodir=~/.vimundodir
-  set undofile
-  set undolevels=1000 "maximum number of changes that can be undone
-  set undoreload=10000 "maximum number lines to save for undo on a buffer reload
-endif
-
 "make regex sane
 nnoremap / /\v
 vnoremap / /\v
@@ -57,37 +47,57 @@ set noswapfile
 filetype plugin indent on
 set ofu=syntaxcomplete#Complete
 set guifont=inconsolata\ 16
+" }}}
 
-" Included for PowerLine
+" Pathogen ------------------------------------------------------------ {{{
+call pathogen#infect()
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+" }}}
+
+" Version 7.3 (703) --------------------------------------------------- {{{
+if v:version >= 703
+  set colorcolumn=75
+  set undodir=~/.vimundodir
+  set undofile
+  set undolevels=1000 "max number of changes that can be undone
+  set undoreload=10000 "max number lines to save for undo on buffer reload
+  " Toggle Line numbers in normal mode, set by default
+  set relativenumber
+  function! NumberToggle()
+    if(&relativenumber == 1)
+      set number
+    else
+      set relativenumber
+    endif
+  endfunc
+  nnoremap <F3> :call NumberToggle()<cr>
+endif
+" }}}
+
+" Included for PowerLine ---------------------------------------------- {{{
 set nocompatible " Disable vi-compatibility
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 let g:Powerline_symbols = 'fancy'
+" }}}
 
-" Status line ------------------------------------------------------------- {{{
-
+" Status line --------------------------------------------------------- {{{
 augroup ft_statuslinecolor
     au!
-
     au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
     au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
 augroup END
-
 set statusline=%f    " Path.
 set statusline+=%m   " Modified flag.
 set statusline+=%r   " Readonly flag.
 set statusline+=%w   " Preview window flag.
-
 set statusline+=\    " Space.
-
 set statusline+=%=   " Right align.
-
 " Line and column position and counts.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
-
 " }}}
-
-" Convenient Mappings ------------------------------------------------------------- {{{
-"
+ 
+" Convenient Mappings ------------------------------------------------- {{{
 " Dumb escape
 imap JJ <ESC>
 vmap JJ <ESC>
@@ -105,9 +115,6 @@ set listchars=tab:▸\ ,eol:¬
 "tab for bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
-"
-" Toggle Linenumbers in normal mode
-map <F3> :NumbersToggle<CR>
 
 "solarized dark
 nmap <unique> <F5> <Plug>ToggleBackground
