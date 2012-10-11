@@ -60,7 +60,7 @@ set noswapfile
 
 filetype plugin indent on
 set ofu=syntaxcomplete#Complete
-set guifont=inconsolata\ 16
+set guifont=Source\ Code\ Pro\ 14
 " }}}
 
 " Pathogen ------------------------------------------------------------ {{{
@@ -113,8 +113,8 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
  
 " Convenient Mappings ------------------------------------------------- {{{
 " Dumb escape
-imap JJ <ESC>
-vmap JJ <ESC>
+imap ;; <ESC>
+vmap ;; <ESC>
 
 " NERDTree Settings
 map <F2> :NERDTreeToggle<CR>
