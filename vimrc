@@ -114,8 +114,8 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
  
 " Convenient Mappings ------------------------------------------------- {{{
 " Dumb escape
-imap ;; <ESC>
-vmap ;; <ESC>
+imap JJ <ESC>
+vmap JJ <ESC>
 
 " NERDTree Settings
 map <F2> :NERDTreeToggle<CR>
