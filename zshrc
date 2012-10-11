@@ -43,7 +43,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Map JJ enter to vi-mode command mode
-bindkey "JJ" vi-cmd-mode
+bindkey ";;" vi-cmd-mode
 
 # Arrows for reverse search
 bindkey '^[[A' up-line-or-search
