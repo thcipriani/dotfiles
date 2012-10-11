@@ -30,6 +30,7 @@ set title
 set guioptions=m
 set number
 set nowrap
+set list
 syntax on
 set tabstop=2
 set shiftwidth=2
