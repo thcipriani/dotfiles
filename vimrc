@@ -30,6 +30,7 @@ set title
 set guioptions=m
 set number
 set nowrap
+set list
 syntax on
 set tabstop=2
 set shiftwidth=2
@@ -113,8 +114,8 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
  
 " Convenient Mappings ------------------------------------------------- {{{
 " Dumb escape
-imap ;; <ESC>
-vmap ;; <ESC>
+imap JJ <ESC>
+vmap JJ <ESC>
 
 " NERDTree Settings
 map <F2> :NERDTreeToggle<CR>

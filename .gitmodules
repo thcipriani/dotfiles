@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/CSScomb-for-Vim"]
 	path = vim/bundle/CSScomb-for-Vim
 	url = https://github.com/miripiruni/CSScomb-for-Vim.git
@@ -22,3 +19,6 @@
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/thcipriani/oh-my-zsh.git
