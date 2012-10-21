@@ -36,7 +36,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set background=light
+set background=dark
 colorscheme Tomorrow-Night-Eighties
 set ignorecase
 set smartcase
@@ -73,7 +73,7 @@ call pathogen#runtime_append_all_bundles()
 " Version 7.3 (703) --------------------------------------------------- {{{
 if v:version >= 703
   set colorcolumn=75
-  set undodir=~/.vimundodir
+  set undodir=~/.vim-undo
   set undofile
   set undolevels=1000 "max number of changes that can be undone
   set undoreload=10000 "max number lines to save for undo on buffer reload
@@ -114,15 +114,15 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
  
 " Convenient Mappings ------------------------------------------------- {{{
 " Dumb escape
-imap JJ <ESC>
-vmap JJ <ESC>
+inoremap JJ <ESC>
+vnoremap JJ <ESC>
 
 " NERDTree Settings
 map <F2> :NERDTreeToggle<CR>
 nnoremap <leader><space> :noh<cr>
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
@@ -132,9 +132,9 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 "solarized dark
-nmap <unique> <F5> <Plug>ToggleBackground
-imap <unique> <F5> <Plug>ToggleBackground
-vmap <unique> <F5> <Plug>ToggleBackground
+nnoremap <unique> <F5> <Plug>ToggleBackground
+inoremap <unique> <F5> <Plug>ToggleBackground
+vnoremap <unique> <F5> <Plug>ToggleBackground
 
 "Opens a vertical split and switches over (,v)  
 nnoremap <leader>v <C-w>v<C-w>l  
