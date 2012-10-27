@@ -33,6 +33,7 @@ plugins=(git svn vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
@@ -41,6 +42,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # tmux colors:
 alias tmux="TERM=screen-256color-bce tmux"
+alias ll="ls -alF"
 
 # Map JJ enter to vi-mode command mode
 bindkey "JJ" vi-cmd-mode
