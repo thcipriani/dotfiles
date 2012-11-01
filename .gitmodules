@@ -16,3 +16,9 @@
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/CSScomb-for-Vim"]
+	path = vim/bundle/CSScomb-for-Vim
+	url = git://github.com/miripiruni/CSScomb-for-Vim.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git://github.com/thcipriani/oh-my-zsh.git
