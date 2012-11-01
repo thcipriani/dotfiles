@@ -111,6 +111,13 @@ set statusline+=%=   " Right align.
 " Line and column position and counts.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 " }}}
+
+" PHP Local Dev ------------------------------------------------------- {{{
+let phptags = "/srv/www/project_tags"
+if filereadable(phptags)
+    exe ":set tags+=".phptags
+endif
+" }}}
  
 " Convenient Mappings ------------------------------------------------- {{{
 " Dumb escape
