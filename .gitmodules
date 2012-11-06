@@ -19,6 +19,3 @@
 [submodule "vim/bundle/CSScomb-for-Vim"]
 	path = vim/bundle/CSScomb-for-Vim
 	url = git://github.com/miripiruni/CSScomb-for-Vim.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = git://github.com/thcipriani/oh-my-zsh.git
