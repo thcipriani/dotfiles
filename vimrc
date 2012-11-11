@@ -128,6 +128,9 @@ vnoremap JJ <ESC>
 map <F2> :NERDTreeToggle<CR>
 nnoremap <leader><space> :noh<cr>
 
+" Toggle auto-indent before clipboard paste
+set pastetoggle=<F4>
+
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
 
