@@ -53,3 +53,6 @@ bindkey "JJ" vi-cmd-mode
 # Arrows for reverse search
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+
+# Gotsta have C-r, baby!
+bindkey '^R' history-incremental-search-backward

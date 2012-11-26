@@ -37,7 +37,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme solarized
 set ignorecase
 set smartcase
 set modelines=0
@@ -86,7 +86,7 @@ if v:version >= 703
       set relativenumber
     endif
   endfunc
-  nnoremap <F3> :call NumberToggle()<cr>
+  nnoremap <leader>n :call NumberToggle()<cr>
 endif
 " }}}
 
@@ -117,6 +117,9 @@ let phptags = "/srv/www/project_tags"
 if filereadable(phptags)
     exe ":set tags+=".phptags
 endif
+
+" Xdebug local debugger
+let g:debuggerPort = 9999
 " }}}
  
 " Convenient Mappings ------------------------------------------------- {{{
@@ -125,11 +128,11 @@ inoremap JJ <ESC>
 vnoremap JJ <ESC>
 
 " NERDTree Settings
-map <F2> :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
 nnoremap <leader><space> :noh<cr>
 
 " Toggle auto-indent before clipboard paste
-set pastetoggle=<F4>
+set pastetoggle=<leader>p
 
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
@@ -141,10 +144,10 @@ set listchars=tab:▸\ ,eol:¬
 nnoremap <tab> %
 vnoremap <tab> %
 
-"solarized dark
-nnoremap <unique> <F5> <Plug>ToggleBackground
-inoremap <unique> <F5> <Plug>ToggleBackground
-vnoremap <unique> <F5> <Plug>ToggleBackground
+"solarized toggle
+nnoremap <leader>b <Plug>ToggleBackground
+inoremap <leader>b <Plug>ToggleBackground
+vnoremap <leader>b <Plug>ToggleBackground
 
 "Opens a vertical split and switches over (,v)  
 nnoremap <leader>v <C-w>v<C-w>l  
