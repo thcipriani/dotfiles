@@ -19,3 +19,6 @@
 [submodule "vim/bundle/PIV"]
 	path = vim/bundle/PIV
 	url = git://github.com/spf13/PIV.git
+[submodule "vim/bundle/vim-nerdtree-tabs"]
+	path = vim/bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git

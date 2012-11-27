@@ -128,7 +128,8 @@ inoremap JJ <ESC>
 vnoremap JJ <ESC>
 
 " NERDTree Settings
-map <leader>t :NERDTreeToggle<CR>
+"map <leader>t :NERDTreeToggle<CR>
+map <leader>t :NERDTreeTabsToggle<CR>
 nnoremap <leader><space> :noh<cr>
 
 " Toggle auto-indent before clipboard paste
@@ -143,11 +144,6 @@ set listchars=tab:▸\ ,eol:¬
 "tab for bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
-
-"solarized toggle
-nnoremap <leader>b <Plug>ToggleBackground
-inoremap <leader>b <Plug>ToggleBackground
-vnoremap <leader>b <Plug>ToggleBackground
 
 "Opens a vertical split and switches over (,v)  
 nnoremap <leader>v <C-w>v<C-w>l  
