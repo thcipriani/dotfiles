@@ -34,8 +34,10 @@ plugins=(git svn vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+    source /etc/bashrc
 fi
+
+export EDITOR=vim
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
