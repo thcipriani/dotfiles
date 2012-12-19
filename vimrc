@@ -32,6 +32,7 @@ set number
 set nowrap
 set list
 syntax on
+syntax sync minlines=256
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
