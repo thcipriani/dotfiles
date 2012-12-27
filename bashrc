@@ -104,6 +104,17 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+function parse_git_dirty {
+  if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" && $(git status 2> /dev/null | tail -n1 != '') ]]; then
+    echo "$GREEN*"
+  else
+    echo "$RED✗✗✗"
+  fi
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$WHITEBOLD. $NORMALgit at $WHITEBOLD\1$(parse_git_dirty)/"
+}
+
 # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
 function prompt {
   # 30m - Black
@@ -132,6 +143,7 @@ function prompt {
   local CYANBOLD="\[\033[1;36m\]"
   local WHITE="\[\033[0;37m\]"
   local WHITEBOLD="\[\033[1;37m\]"
-  export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w\n  $WHITE"
+  local NORMAL="\[\033[0\]"
+  export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$(parse_git_branch)\n  $NORMAL"
 }
 prompt
