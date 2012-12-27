@@ -105,14 +105,27 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 function parse_git_dirty {
-  if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" && $(git status 2> /dev/null | tail -n1 != '') ]]; then
-    echo "$GREEN*"
+  if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
+    echo -e '\033[0;32m✔'
   else
-    echo "$RED✗✗✗"
-  fi
+    echo -e '\033[0;31m✗✗✗'
+  fi  
 }
+
+function parse_svn_dirty {
+  if [[ $(svn st 2> /dev/null) == "" ]]; then
+    echo -e '\033[0;32m✔'
+  else
+    echo -e '\033[0;31m✗✗✗'
+  fi  
+}
+
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$WHITEBOLD. $NORMALgit at $WHITEBOLD\1$(parse_git_dirty)/"
+git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(echo -e '\033[1;37m'). $(echo -e '\033[00m')git at $(echo -e '\033[1;37m')\1$(parse_git_dirty)/"
+}
+
+function parse_svn_branch {
+svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\(.*\)#$(echo -e '\033[1;37m'). $(echo -e '\033[00m')svn at $(echo -e '\033[1;37m')\1$(parse_svn_dirty)#i"
 }
 
 # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
@@ -143,7 +156,7 @@ function prompt {
   local CYANBOLD="\[\033[1;36m\]"
   local WHITE="\[\033[0;37m\]"
   local WHITEBOLD="\[\033[1;37m\]"
-  local NORMAL="\[\033[0\]"
-  export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$(parse_git_branch)\n  $NORMAL"
+  local NORMAL="\[\033[00m\]"
+  export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL$(parse_git_branch)$NORMAL$(parse_svn_branch)\n  $NORMAL"
 }
 prompt
