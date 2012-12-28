@@ -40,12 +40,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -66,14 +66,14 @@ fi
 #netinfo - shows network information for your system
 netinfo ()
 {
-echo "--------------- Network Information ---------------"
-/sbin/ifconfig | awk /'inet addr/ {print $2}'
-/sbin/ifconfig | awk /'Bcast/ {print $3}'
-/sbin/ifconfig | awk /'inet addr/ {print $4}'
-/sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
-myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
-echo "${myip}"
-echo "---------------------------------------------------"
+    echo "--------------- Network Information ---------------"
+    /sbin/ifconfig | awk /'inet addr/ {print $2}'
+    /sbin/ifconfig | awk /'Bcast/ {print $3}'
+    /sbin/ifconfig | awk /'inet addr/ {print $4}'
+    /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
+    myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
+    echo "${myip}"
+    echo "---------------------------------------------------"
 }
 
 # some more ls aliases
@@ -105,58 +105,58 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 function parse_git_dirty {
-  if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
-    echo -e '\033[0;32m✔'
-  else
-    echo -e '\033[0;31m✗✗✗'
-  fi  
+    if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit (working directory clean)" ]]; then
+        echo -e '\033[0;32m✔'
+    else
+        echo -e '\033[0;31m✗✗✗'
+    fi
 }
 
 function parse_svn_dirty {
-  if [[ $(svn st 2> /dev/null) == "" ]]; then
-    echo -e '\033[0;32m✔'
-  else
-    echo -e '\033[0;31m✗✗✗'
-  fi  
+    if [[ $(svn st 2> /dev/null) == "" ]]; then
+        echo -e '\033[0;32m✔'
+    else
+        echo -e '\033[0;31m✗✗✗'
+    fi
 }
 
 function parse_git_branch {
-git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(echo -e '\033[1;37m'). $(echo -e '\033[00m')git at $(echo -e '\033[1;37m')\1$(parse_git_dirty)/"
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(echo -e '\033[1;37m'). $(echo -e '\033[00m')git at $(echo -e '\033[1;37m')\1$(parse_git_dirty)/"
 }
 
 function parse_svn_branch {
-svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\(.*\)#$(echo -e '\033[1;37m'). $(echo -e '\033[00m')svn at $(echo -e '\033[1;37m')\1$(parse_svn_dirty)#i"
+    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\(.*\)#$(echo -e '\033[1;37m'). $(echo -e '\033[00m')svn at $(echo -e '\033[1;37m')\1$(parse_svn_dirty)#i"
 }
 
-# An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
 function prompt {
-  # 30m - Black
-  # 31m - Red
-  # 32m - Green
-  # 33m - Yellow
-  # 34m - Blue
-  # 35m - Purple
-  # 36m - Cyan
-  # 37m - White
-  # 0 - Normal
-  # 1 - Bold
-  local BLACK="\[\033[0;30m\]"
-  local BLACKBOLD="\[\033[1;30m\]"
-  local RED="\[\033[0;31m\]"
-  local REDBOLD="\[\033[1;31m\]"
-  local GREEN="\[\033[0;32m\]"
-  local GREENBOLD="\[\033[1;32m\]"
-  local YELLOW="\[\033[0;33m\]"
-  local YELLOWBOLD="\[\033[1;33m\]"
-  local BLUE="\[\033[0;34m\]"
-  local BLUEBOLD="\[\033[1;34m\]"
-  local PURPLE="\[\033[0;35m\]"
-  local PURPLEBOLD="\[\033[1;35m\]"
-  local CYAN="\[\033[0;36m\]"
-  local CYANBOLD="\[\033[1;36m\]"
-  local WHITE="\[\033[0;37m\]"
-  local WHITEBOLD="\[\033[1;37m\]"
-  local NORMAL="\[\033[00m\]"
-  export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL$(parse_git_branch)$NORMAL$(parse_svn_branch)\n  $NORMAL"
+    # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
+    # 30m - Black
+    # 31m - Red
+    # 32m - Green
+    # 33m - Yellow
+    # 34m - Blue
+    # 35m - Purple
+    # 36m - Cyan
+    # 37m - White
+    # 0 - Normal
+    # 1 - Bold
+    local BLACK="\[\033[0;30m\]"
+    local BLACKBOLD="\[\033[1;30m\]"
+    local RED="\[\033[0;31m\]"
+    local REDBOLD="\[\033[1;31m\]"
+    local GREEN="\[\033[0;32m\]"
+    local GREENBOLD="\[\033[1;32m\]"
+    local YELLOW="\[\033[0;33m\]"
+    local YELLOWBOLD="\[\033[1;33m\]"
+    local BLUE="\[\033[0;34m\]"
+    local BLUEBOLD="\[\033[1;34m\]"
+    local PURPLE="\[\033[0;35m\]"
+    local PURPLEBOLD="\[\033[1;35m\]"
+    local CYAN="\[\033[0;36m\]"
+    local CYANBOLD="\[\033[1;36m\]"
+    local WHITE="\[\033[0;37m\]"
+    local WHITEBOLD="\[\033[1;37m\]"
+    local NORMAL="\[\033[00m\]"
+    PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_git_branch)$NORMAL\$(parse_svn_branch)\n  $NORMAL"
 }
 prompt
