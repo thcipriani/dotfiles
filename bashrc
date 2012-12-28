@@ -113,7 +113,7 @@ function parse_git_dirty {
 }
 
 function parse_svn_dirty {
-    if [[ $(svn st 2> /dev/null) == "" ]]; then
+if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && $(svn st 2> /dev/null | sed -e 's/\s*\(.\)\s*.*/\1/') == 'S') ]]; then
         echo -e '\033[0;32m✔'
     else
         echo -e '\033[0;31m✗✗✗'
@@ -157,6 +157,6 @@ function prompt {
     local WHITE="\[\033[0;37m\]"
     local WHITEBOLD="\[\033[1;37m\]"
     local NORMAL="\[\033[00m\]"
-    PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_git_branch)$NORMAL\$(parse_svn_branch)\n  $NORMAL"
+    PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
 }
 prompt
