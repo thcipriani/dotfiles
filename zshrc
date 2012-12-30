@@ -58,3 +58,6 @@ bindkey '^[[B' down-line-or-search
 
 # Gotsta have C-r, baby!
 bindkey '^R' history-incremental-search-backward
+
+# Mutt
+alias mutt 'cd ~/Desktop && mutt'
