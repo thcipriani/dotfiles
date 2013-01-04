@@ -161,7 +161,7 @@ function prompt {
     local WHITEBOLD="\[\033[1;37m\]"
     local NORMAL="\[\033[00m\]"
     # Minimal prompt
-    PS1="$WHITEBOLD# $PURPLE\u$NORMAL on $GREEN\h$NORMAL in $BLUE\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
+    PS1="$WHITEBOLD# $PURPLE\u$NORMAL on $BLUE\h$NORMAL in $GREEN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
     # Verbose prompt
     # PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
 }
