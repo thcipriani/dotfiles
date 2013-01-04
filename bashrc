@@ -124,11 +124,11 @@ if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && 
 }
 
 function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(echo -e '\033[1;37m'). $(echo -e '\033[00m')git at $(echo -e '\033[1;37m')\1$(parse_git_dirty)/"
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(echo -e '\033[00m') using $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[git]$(parse_git_dirty)/"
 }
 
 function parse_svn_branch {
-    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[1;37m'). $(echo -e '\033[00m')svn at $(echo -e '\033[1;37m')\1$(parse_svn_dirty)#i"
+    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[00m') using $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[svn]$(parse_svn_dirty)#i"
 }
 
 function prompt {
