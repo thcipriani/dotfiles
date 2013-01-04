@@ -90,7 +90,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -100,6 +99,10 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi
+
+if [ -f etc/bashrc ]; then
+    . etc/bashrc
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
@@ -125,7 +128,7 @@ function parse_git_branch {
 }
 
 function parse_svn_branch {
-    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\(.*\)#$(echo -e '\033[1;37m'). $(echo -e '\033[00m')svn at $(echo -e '\033[1;37m')\1$(parse_svn_dirty)#i"
+    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[1;37m'). $(echo -e '\033[00m')svn at $(echo -e '\033[1;37m')\1$(parse_svn_dirty)#i"
 }
 
 function prompt {
