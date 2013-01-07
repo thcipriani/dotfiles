@@ -61,3 +61,5 @@ bindkey '^R' history-incremental-search-backward
 
 # Mutt
 alias mutt 'cd ~/Desktop && mutt'
+
+fortune | ponysay
