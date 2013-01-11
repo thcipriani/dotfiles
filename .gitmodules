@@ -18,7 +18,7 @@
 	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/vim-nerdtree-tabs"]
 	path = vim/bundle/vim-nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
+	url = git://github.com/jistr/vim-nerdtree-tabs.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
