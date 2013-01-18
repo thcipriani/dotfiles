@@ -11,6 +11,7 @@ A Tyler Cipriani Joint.
 + git-core
 + rvm
 + tmux
++ <a href="https://github.com/erkin/ponysay" target="_blank">ponysay</a>
 
 Vim Features (just need to remind myself&#8230;)
 -------------
