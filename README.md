@@ -11,6 +11,7 @@ A Tyler Cipriani Joint.
 + git-core
 + rvm
 + tmux
++ Exuberant Ctags (>=5.5)
 + <a href="https://github.com/erkin/ponysay" target="_blank">ponysay</a>
 
 Vim Features (just need to remind myself&#8230;)
@@ -23,6 +24,7 @@ Vim Features (just need to remind myself&#8230;)
 + EasyMotion
 + Surround
 + Powerline
++ Tagbar
 + CtrlP
 
 Install Instructions
