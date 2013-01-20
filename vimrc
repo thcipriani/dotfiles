@@ -1,74 +1,81 @@
 " Vim. Live it. ------------------------------------------------------- {{{
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 " }}}
 
-" Basic options ------------------------------------------------------- {{{
-let mapleader=","
-set encoding=utf-8
-set modelines=0
-set autoindent
-set showmode
-set showcmd
-set hidden
-set visualbell
-set cursorline
-set ruler
-set laststatus=2
-set scrolloff=3
-set history=1000
-set cpoptions+=J
-set title
-set guioptions=m
-set number
-set nowrap
-set list
-syntax on
-syntax sync minlines=256
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set background=dark
-colorscheme solarized
-set ignorecase
-set smartcase
-set modelines=0
-"make regex sane
-nnoremap / /\v
-vnoremap / /\v
-
-"search highlights
-set incsearch
-set showmatch
-set hlsearch
-
-"no backup files
-set nobackup
-
-"only in case you don't want a backup file while editing
-set nowritebackup
-
-"no swap files
-set noswapfile
-
-filetype plugin indent on
-set ofu=syntaxcomplete#Complete
-set guifont=Source\ Code\ Pro\ 14
+" What is this 'Vee-Eye' of which you speak? -------------------------- {{{
+set nocompatible
 " }}}
 
 " Pathogen ------------------------------------------------------------ {{{
 call pathogen#infect()
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+" }}}
+
+" Basic options ------------------------------------------------------- {{{
+let mapleader=","
+set t_Co=256             " My terminal's got all those colors, yo
+
+set title                " Change the terminal title
+set encoding=utf-8       " Show utf-8 chars
+set showcmd              " count highlighted
+set ruler                " Show where I am in the command area
+set showmode             " -- INSERT (appreciation)-- :)
+set laststatus=2         " always show the status line 
+                         " ↪ (0 = never, 1 = default [multi-window only])
+
+set modelines=0          " Don't read first/last lines of file for settings
+set hidden               " Stash unwritten files in buffer
+set vb                   " Don't beep at me
+set cursorline           " Highlight current line
+set scrolloff=3          " Start scrolling when I'm 3 lines from top/bottom
+set history=1000         " Remember commands and search history
+set backspace=2          " Backspace over indent, eol, and insert
+set mousehide            " Hide the mouse pointer while typing
+
+set number               " Show linenumbers
+set nowrap               " Turn off linewrap
+set list                 " Show invisible chars
+set tabstop=4            " 4 spaces
+set shiftwidth=4         " 4 spaces
+set softtabstop=4        " 4 spaces
+set expandtab            " Expand tabs to spaces
+
+set hlsearch             " highlight my search
+set incsearch            " incremental search
+set wrapscan             " Set the search scan to wrap around the file
+
+set ignorecase           " when searching
+set smartcase            " …unless I use an uppercase character
+
+syntax on                " Syntax highlighting
+syntax sync minlines=256 " Makes big files slow
+set synmaxcol=2048       " Also long lines are slow
+set autoindent           " try your darndest to keep my indentation
+
+"no backup or swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Colorscheme
+" https://github.com/altercation/vim-colors-solarized
+colorscheme solarized
+set background=dark
+
+" GUI Font (same as my gnome-terminal font)
+" https://github.com/adobe/source-code-pro
+set guifont=Source\ Code\ Pro\ 14
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" Omnicomplete
+filetype plugin on
+set ofu=syntaxcomplete#Complete
 " }}}
 
 " Version 7.3 (703) --------------------------------------------------- {{{
@@ -78,7 +85,8 @@ if v:version >= 703
   set undofile
   set undolevels=1000 "max number of changes that can be undone
   set undoreload=10000 "max number lines to save for undo on buffer reload
-  " Toggle Line numbers in normal mode, set by default
+
+  " Toggle line numbers in normal mode, set by default
   set relativenumber
   function! NumberToggle()
     if(&relativenumber == 1)
@@ -87,14 +95,50 @@ if v:version >= 703
       set relativenumber
     endif
   endfunc
+
   nnoremap <leader>n :call NumberToggle()<cr>
 endif
 " }}}
 
-" Included for PowerLine ---------------------------------------------- {{{
-set nocompatible " Disable vi-compatibility
-set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-let g:Powerline_symbols = 'fancy'
+" Convenient Mappings ------------------------------------------------- {{{
+" Make regex sane
+noremap / /\v
+
+" Dumb escape
+inoremap JJ <ESC>
+vnoremap JJ <ESC>
+
+" un-highlight search results
+noremap <leader><space> :noh<cr>
+
+" Toggle auto-indent before clipboard paste
+set pastetoggle=<leader>p
+
+" Shortcut to rapidly toggle `set list`
+nnoremap <leader>l :set list!<CR>
+
+" Normal/Visual tab for bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Insermode tab for code completion
+inoremap <tab> <C-n>
+inoremap <S-tab> <C-p>
+
+"Opens a vertical split and switches over (,v)  
+nnoremap <leader>v <C-w>v<C-w>l  
+
+"Moves around split windows
+nnoremap <leader>w <C-w><C-w>  
+
+"Delete Blanklines
+nnoremap <leader>S :v/\S/d<CR>
+
+"Double Space
+nnoremap <leader>D :g/^/put_<CR>      
+
+"Real Returns
+nnoremap <leader>R :%s/\r/\r/g<CR>
 " }}}
 
 " Status line --------------------------------------------------------- {{{
@@ -113,51 +157,19 @@ set statusline+=%=   " Right align.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 " }}}
 
-" PHP Local Dev ------------------------------------------------------- {{{
-let phptags = "/srv/www/project_tags"
-if filereadable(phptags)
-    exe ":set tags+=".phptags
-endif
+" Development Tools --------------------------------------------------- {{{
+" Tagbar (requires Exuberant ctags 5.5+)
+noremap <leader><leader>t :TagbarToggle<CR>
 
 " Xdebug local debugger
 let g:debuggerPort = 9999
 " }}}
- 
-" Convenient Mappings ------------------------------------------------- {{{
-" Dumb escape
-inoremap JJ <ESC>
-vnoremap JJ <ESC>
 
-" NERDTree Settings
+" NERDTree Settings---------------------------------------------------- {{{
 "map <leader>t :NERDTreeToggle<CR>
-map <leader>t :NERDTreeTabsToggle<CR>
-nnoremap <leader><space> :noh<cr>
+noremap <leader>t :NERDTreeTabsToggle<CR>
+" }}}
 
-" Toggle auto-indent before clipboard paste
-set pastetoggle=<leader>p
-
-" Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<CR>
-
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-
-"tab for bracket pairs
-nnoremap <tab> %
-vnoremap <tab> %
-
-"Opens a vertical split and switches over (,v)  
-nnoremap <leader>v <C-w>v<C-w>l  
-
-"Moves around split windows
-nnoremap <leader>w <C-w><C-w>  
-
-"Delete Blanklines
-nnoremap <leader>S :v/\S/d<CR>
-
-"Double Space
-nnoremap <leader>D :g/^/put_<CR>      
-
-"Real Returns
-nnoremap <leader>R :%s/\r/\r/g<CR>
+" Included for PowerLine ---------------------------------------------- {{{
+let g:Powerline_symbols = 'fancy'
 " }}}
