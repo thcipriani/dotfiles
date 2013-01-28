@@ -55,6 +55,7 @@ syntax on                " Syntax highlighting
 syntax sync minlines=256 " Makes big files slow
 set synmaxcol=2048       " Also long lines are slow
 set autoindent           " try your darndest to keep my indentation
+set smartindent          " Be smarter about indenting dummy
 
 "no backup or swap files
 set nobackup
@@ -159,7 +160,7 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 " Development Tools --------------------------------------------------- {{{
 " Tagbar (requires Exuberant ctags 5.5+)
-noremap <leader><leader>t :TagbarToggle<CR>
+noremap <leader>c :TagbarToggle<CR>
 
 " Xdebug local debugger
 let g:debuggerPort = 9999
