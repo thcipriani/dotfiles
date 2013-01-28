@@ -26,6 +26,7 @@ Vim Features (just need to remind myself&#8230;)
 + Powerline
 + Tagbar
 + CtrlP
++ Vim-Seek
 
 Install Instructions
 -------------
