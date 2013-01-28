@@ -28,3 +28,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "vim/bundle/vim-seek"]
+	path = vim/bundle/vim-seek
+	url = git://github.com/goldfeld/vim-seek.git
