@@ -50,6 +50,11 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 alias tmux="TERM=screen-256color-bce tmux"
 alias ll="ls -AlFh"
 
+# I'm dumb
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
 # Map JJ enter to vi-mode command mode
 bindkey "JJ" vi-cmd-mode
 
