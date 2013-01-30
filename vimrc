@@ -21,45 +21,46 @@ call pathogen#runtime_append_all_bundles()
 
 " Basic options ------------------------------------------------------- {{{
 let mapleader=","
-set t_Co=256             " My terminal's got all those colors, yo
+set t_Co=256              " My terminal's got all those colors, yo
 
-set title                " Change the terminal title
-set encoding=utf-8       " Show utf-8 chars
-set showcmd              " count highlighted
-set ruler                " Show where I am in the command area
-set showmode             " -- INSERT (appreciation)-- :)
-set laststatus=2         " always show the status line 
-                         " ↪ (0 = never, 1 = default [multi-window only])
+set title                 " Change the terminal title
+set encoding=utf-8        " Show utf-8 chars
+set showcmd               " count highlighted
+set ruler                 " Show where I am in the command area
+set showmode              " -- INSERT (appreciation)-- :)
+set laststatus=2          " always show the status line 
+                          " ↪ (0 = never, 1 = default [multi-window only])
 
-set modelines=0          " Don't read first/last lines of file for settings
-set hidden               " Stash unwritten files in buffer
-set vb                   " Don't beep at me
-set cursorline           " Highlight current line
-set scrolloff=3          " Start scrolling when I'm 3 lines from top/bottom
-set history=1000         " Remember commands and search history
-set backspace=2          " Backspace over indent, eol, and insert
-set mousehide            " Hide the mouse pointer while typing
+set modelines=0           " Don't read first/last lines of file for settings
+set hidden                " Stash unwritten files in buffer
+set vb                    " Don't beep at me
+set cursorline            " Highlight current line
+set scrolloff=3           " Start scrolling when I'm 3 lines from top/bottom
+set history=1000          " Remember commands and search history
+set backspace=2           " Backspace over indent, eol, and insert
+set mousehide             " Hide the mouse pointer while typing
 
-set number               " Show linenumbers
-set nowrap               " Turn off linewrap
-set list                 " Show invisible chars
-set tabstop=4            " 4 spaces
-set shiftwidth=4         " 4 spaces
-set softtabstop=4        " 4 spaces
-set expandtab            " Expand tabs to spaces
+set number                " Show linenumbers
+set nowrap                " Turn off linewrap
+set list                  " Show invisible chars
+set tabstop=4             " 4 spaces
+set shiftwidth=4          " 4 spaces
+set softtabstop=4         " 4 spaces
+set expandtab             " Expand tabs to spaces
 
-set hlsearch             " highlight my search
-set incsearch            " incremental search
-set wrapscan             " Set the search scan to wrap around the file
+set hlsearch              " highlight my search
+set incsearch             " incremental search
+set wrapscan              " Set the search scan to wrap around the file
 
-set ignorecase           " when searching
-set smartcase            " …unless I use an uppercase character
+set ignorecase            " when searching
+set smartcase             " …unless I use an uppercase character
 
-syntax on                " Syntax highlighting
-syntax sync minlines=256 " Makes big files slow
-set synmaxcol=2048       " Also long lines are slow
-set autoindent           " try your darndest to keep my indentation
-set smartindent          " Be smarter about indenting dummy
+syntax on                 " Syntax highlighting
+syntax sync minlines=256  " Makes big files slow
+set synmaxcol=2048        " Also long lines are slow
+set autoindent            " try your darndest to keep my indentation
+set smartindent           " Be smarter about indenting dummy
+filetype plugin indent on " I actually like smart commenting
 
 "no backup or swap files
 set nobackup
