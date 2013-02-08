@@ -60,7 +60,6 @@ syntax sync minlines=256  " Makes big files slow
 set synmaxcol=2048        " Also long lines are slow
 set autoindent            " try your darndest to keep my indentation
 set smartindent           " Be smarter about indenting dummy
-filetype plugin indent on " I actually like smart commenting
 
 "no backup or swap files
 set nobackup
@@ -79,9 +78,30 @@ set guifont=Source\ Code\ Pro\ 14
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-" Omnicomplete
-filetype plugin on
-set ofu=syntaxcomplete#Complete
+" Vundle ------------------------------------------------------------- {{{
+filetype off " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+filetype plugin indent on     " required!
 " }}}
 
 " Version 7.3 (703) --------------------------------------------------- {{{
