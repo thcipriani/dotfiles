@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-seek"]
 	path = vim/bundle/vim-seek
 	url = git://github.com/goldfeld/vim-seek.git
+[submodule "vim/bundle/vundle"]
+	path = vim/bundle/vundle
+	url = git://github.com/gmarik/vundle.git
