@@ -126,6 +126,15 @@ if v:version >= 703
 endif
 " }}}
 
+" Dumb osx -------- --------------------------------------------------- {{{
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        set clipboard=unnamed
+    endif
+endif
+" }}}
+
 " Convenient Mappings ------------------------------------------------- {{{
 " Make regex sane
 noremap / /\v
