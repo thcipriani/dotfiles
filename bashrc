@@ -133,7 +133,7 @@ function parse_git_branch {
 }
 
 function parse_svn_branch {
-    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[00m') on $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[svn]$(parse_svn_dirty)#i"
+    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[00m') on $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[svn]$(parse_svn_dirty)#"
 }
 
 function prompt {
@@ -166,9 +166,11 @@ function prompt {
     local WHITEBOLD="\[\033[1;37m\]"
     local NORMAL="\[\033[00m\]"
     # Minimal prompt
-    PS1="$WHITEBOLD# $PURPLE\u$NORMAL at $BLUE\h$NORMAL in $GREEN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
+    PS1="$WHITEBOLD# $PURPLE\u$NORMAL at $BLUE\h$NORMAL in $GREEN\w$NORMAL\$(parse_git_branch)\$(parse_svn_branch)\n  $NORMAL"
     # Verbose prompt
     # PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
 }
 prompt
 export TERM=xterm-256color
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
