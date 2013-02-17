@@ -65,7 +65,22 @@ bindkey '^[[B' down-line-or-search
 # Gotsta have C-r, baby!
 bindkey '^R' history-incremental-search-backward
 
-# Mutt
-alias mutt 'cd ~/Desktop && mutt'
+# Dumb osx
+if [[  $(uname) == Darwin ]]; then
+    # French Toasting BSD sed
+    alias sed='gsed'
 
-/usr/games/fortune | ponysay
+    # Show and hide files in Finder
+    alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"
+    alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
+fi
+
+# Frech Toasting iTerm
+export TERM=xterm-256color
+
+# Mutt
+# alias mutt 'cd ~/Desktop && mutt'
+
+fortune | ponysay
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
