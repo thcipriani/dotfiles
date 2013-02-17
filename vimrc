@@ -90,8 +90,8 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Valloric/YouCompleteMe'
 " Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
