@@ -78,32 +78,6 @@ set guifont=Source\ Code\ Pro\ 14
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-" Vundle ------------------------------------------------------------- {{{
-filetype off " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-" original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'Valloric/YouCompleteMe'
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" ...
-
-filetype plugin indent on     " required!
-" }}}
-
 " Version 7.3 (703) --------------------------------------------------- {{{
 if v:version >= 703
   set colorcolumn=75
