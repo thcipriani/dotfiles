@@ -81,6 +81,4 @@ export TERM=xterm-256color
 # Mutt
 # alias mutt 'cd ~/Desktop && mutt'
 
-fortune | ponysay
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

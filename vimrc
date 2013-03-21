@@ -60,6 +60,7 @@ syntax sync minlines=256  " Makes big files slow
 set synmaxcol=2048        " Also long lines are slow
 set autoindent            " try your darndest to keep my indentation
 set smartindent           " Be smarter about indenting dummy
+set formatoptions=tcqr    " I like smart comments
 
 "no backup or swap files
 set nobackup
