@@ -18,15 +18,17 @@ Vim Features (just need to remind myself&#8230;)
 -------------
 + Pathogen
 + <a href="https://github.com/scrooloose/syntastic" target="_blank">Syntastic</a>&#8212;syntax checking
-+ <a href="http://www.vim.org/scripts/script.php?script_id=1929" target="_blank">DBGp client</a>&#8212;xDebug w/php
++ Vdebug
 + NerdTree w/NerdTree Tabs
 + Snipmate
 + EasyMotion
 + Surround
 + Powerline
 + Tagbar
-+ CtrlP
++ CtrlP (There's got to be something smarter though, right?)
 + Vim-Seek
++ Medium Mode
++ Zencoding
 
 Install Instructions
 -------------

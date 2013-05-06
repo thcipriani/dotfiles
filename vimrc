@@ -172,7 +172,10 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 noremap <leader>c :TagbarToggle<CR>
 
 " Xdebug local debugger
-let g:debuggerPort = 9999
+let g:vdebug_options = {
+\    'server': '33.33.33.1',
+\    'port': '9000'
+\}
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{
