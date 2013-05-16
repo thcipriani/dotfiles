@@ -38,22 +38,10 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
-export EDITOR=vim
-
-# Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# tmux colors:
-alias tmux="TERM=screen-256color-bce tmux"
-alias ll="ls -AlFh"
-
-# I'm dumb
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
 
 # Map JJ enter to vi-mode command mode
 bindkey "JJ" vi-cmd-mode
@@ -65,20 +53,6 @@ bindkey '^[[B' down-line-or-search
 # Gotsta have C-r, baby!
 bindkey '^R' history-incremental-search-backward
 
-# Dumb osx
-if [[  $(uname) == Darwin ]]; then
-    # French Toasting BSD sed
-    alias sed='gsed'
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-    # Show and hide files in Finder
-    alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"
-    alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
-fi
-
-# Frech Toasting iTerm
-export TERM=xterm-256color
-
-# Mutt
-# alias mutt 'cd ~/Desktop && mutt'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

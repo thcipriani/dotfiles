@@ -19,6 +19,15 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 " }}}
 
+" Lifesaver ----------------------------------------------------------- {{{
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes
+  " work properly when Vim is used inside tmux and GNU screen.
+  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+" }}}
+
 " Basic options ------------------------------------------------------- {{{
 let mapleader=","
 set t_Co=256              " My terminal's got all those colors, yo
@@ -39,6 +48,9 @@ set scrolloff=3           " Start scrolling when I'm 3 lines from top/bottom
 set history=1000          " Remember commands and search history
 set backspace=2           " Backspace over indent, eol, and insert
 set mousehide             " Hide the mouse pointer while typing
+
+set binary                " Don’t add empty newlines at the end of files
+set noeol
 
 set number                " Show linenumbers
 set nowrap                " Turn off linewrap
@@ -69,8 +81,10 @@ set noswapfile
 
 " Colorscheme
 " https://github.com/altercation/vim-colors-solarized
-colorscheme solarized
-set background=dark
+" colorscheme solarized
+" set background=dark
+
+colorscheme molokai
 
 " GUI Font (same as my gnome-terminal font)
 " https://github.com/adobe/source-code-pro
@@ -82,6 +96,7 @@ set listchars=tab:▸\ ,eol:¬
 " Version 7.3 (703) --------------------------------------------------- {{{
 if v:version >= 703
   set colorcolumn=75
+  hi ColorColumn ctermbg=234
   set undodir=~/.vim-undo
   set undofile
   set undolevels=1000 "max number of changes that can be undone

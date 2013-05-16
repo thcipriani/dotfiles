@@ -1,0 +1,71 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# I'm dumb
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# be nice
+alias please='sudo'
+
+alias ll="ls -AlFh"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# Shortcuts
+alias g="git"
+alias v="vim"
+
+# File size
+alias fs="stat -f \"%z bytes\""
+
+alias chrome="open -a google\ chrome"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
+
+alias ny='telnet miku.acm.uiuc.edu'
+
+# tmux colors:
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Mutt
+alias mutt 'cd ~/Desktop && mutt'
+
+# Dumb osx
+if [[  $(uname) == Darwin ]]; then
+    # French Toasting BSD sed
+    alias sed='gsed'
+
+    # Show and hide files in Finder
+    alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"
+    alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
+fi
+

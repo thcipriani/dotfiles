@@ -1,0 +1,9 @@
+export EDITOR=vim
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/boris/bin # Add Boris PHP REPL to path https://github.com/d11wtq/boris
+
+# Frech Toasting iTerm
+export TERM=xterm-256color
