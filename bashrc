@@ -128,3 +128,6 @@ function prompt {
     # PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
 }
 prompt
+
+# shell sourcefile
+export SHELL_SOURCE_FILE=~/.bashrc

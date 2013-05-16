@@ -56,3 +56,5 @@ bindkey '^R' history-incremental-search-backward
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# shell sourcefile
+export SHELL_SOURCE_FILE=~/.zshrc

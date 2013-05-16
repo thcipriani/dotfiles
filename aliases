@@ -69,3 +69,4 @@ if [[  $(uname) == Darwin ]]; then
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
 fi
 
+alias sosh="source $SHELL_SOURCE_FILE"
