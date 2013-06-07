@@ -16,8 +16,8 @@ let s:did_snips_mappings = 1
 "snor <silent> <s-tab> <esc>i<right><c-r>=BackwardsSnippet()<cr>
 "ino <silent> <c-r><tab> <c-r>=ShowAvailableSnips()<cr>
 
-ino <silent> <c-s> <c-r>=TriggerSnippet()<cr>
-snor <silent> <c-s> <esc>i<right><c-r>=TriggerSnippet()<cr>
+ino <c-c> <c-r>=TriggerSnippet()<cr>
+snor <c-c> <esc>i<right><c-r>=TriggerSnippet()<cr>
 "ino <silent> <s-tab> <c-r>=BackwardsSnippet()<cr>
 "snor <silent> <s-tab> <esc>i<right><c-r>=BackwardsSnippet()<cr>
 "ino <silent> <c-r><tab> <c-r>=ShowAvailableSnips()<cr>
