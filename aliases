@@ -38,7 +38,7 @@ alias v="vim"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-alias chrome="open -a google\ chrome"
+alias sosh="source $SHELL_SOURCE_FILE"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -51,7 +51,9 @@ alias whois="whois -h whois-servers.net"
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
 
-alias ny='telnet miku.acm.uiuc.edu'
+alias chrome="open -a google\ chrome"
+alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
+alias f='open -a Finder'
 
 # tmux colors:
 alias tmux="TERM=screen-256color-bce tmux"
@@ -69,4 +71,5 @@ if [[  $(uname) == Darwin ]]; then
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
 fi
 
-alias sosh="source $SHELL_SOURCE_FILE"
+alias ny='telnet miku.acm.uiuc.edu'
+alias rr='curl -L http://bit.ly/10hA8iC | bash'

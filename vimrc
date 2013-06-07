@@ -164,6 +164,19 @@ nnoremap <leader>D :g/^/put_<CR>
 
 "Real Returns
 nnoremap <leader>R :%s/\r/\r/g<CR>
+
+"Autocomplete on tab https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-n>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-p>
+
 " }}}
 
 " Status line --------------------------------------------------------- {{{
@@ -187,10 +200,7 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 noremap <leader>c :TagbarToggle<CR>
 
 " Xdebug local debugger
-let g:vdebug_options = {
-\    'server': '33.33.33.1',
-\    'port': '9000'
-\}
+let g:vdebug_options = {'server': '33.33.33.1', 'port': '9000', 'path_maps' : {'/srv/www/local.people.dev': '/Users/tyler/Projects/Ruby/Chef/upsync-vagrant/shared/people'} }
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{
@@ -200,4 +210,13 @@ noremap <leader>t :NERDTreeTabsToggle<CR>
 
 " Included for PowerLine ---------------------------------------------- {{{
 let g:Powerline_symbols = 'fancy'
+" }}}
+
+" CtrlP --------------------------------------------------------------- {{{
+let g:ctrlp_max_files = 0 " Set no max file limit
+let g:ctrlp_working_path_mode = 0 " Search current directory not project root
+"}}}
+
+" Darn Medium Mode ---------------------------------------------------- {{{
+noremap <leader>m :MediumModeToggle<CR>
 " }}}
