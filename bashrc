@@ -63,8 +63,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f etc/bashrc ]; then
-    . etc/bashrc
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
