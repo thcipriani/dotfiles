@@ -29,7 +29,7 @@ endif
 " }}}
 
 " Basic options ------------------------------------------------------- {{{
-let mapleader=","
+let mapleader=','
 set t_Co=256              " My terminal's got all those colors, yo
 
 set title                 " Change the terminal title
@@ -200,7 +200,7 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 noremap <leader>c :TagbarToggle<CR>
 
 " Xdebug local debugger
-let g:vdebug_options = {'server': '33.33.33.1', 'port': '9000', 'path_maps' : {'/srv/www/local.people.dev': '/Users/tyler/Projects/Ruby/Chef/upsync-vagrant/shared/people'} }
+let g:vdebug_options = {'server': '33.33.33.1', 'port': '9000', 'path_maps' : {'/srv/www/local.sa2.dev': '/Users/tyler/Development/upsync-vagrant/shared/sa2'} }
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{
@@ -216,7 +216,3 @@ let g:Powerline_symbols = 'fancy'
 let g:ctrlp_max_files = 0 " Set no max file limit
 let g:ctrlp_working_path_mode = 0 " Search current directory not project root
 "}}}
-
-" Darn Medium Mode ---------------------------------------------------- {{{
-noremap <leader>m :MediumModeToggle<CR>
-" }}}

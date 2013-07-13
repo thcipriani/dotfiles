@@ -49,7 +49,7 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache"
+alias flushdns="dscacheutil -flushcache"
 
 alias chrome="open -a google\ chrome"
 alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
@@ -71,5 +71,9 @@ if [[  $(uname) == Darwin ]]; then
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
 fi
 
+# In honor of John
+alias govag="cd ~/Development/upsync-vagrant/"
+
 alias ny='telnet miku.acm.uiuc.edu'
 alias rr='curl -L http://bit.ly/10hA8iC | bash'
+alias sw='telnet towel.blinkenlights.nl'
