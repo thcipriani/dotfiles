@@ -208,8 +208,9 @@ let g:vdebug_options = {'server': '33.33.33.1', 'port': '9000', 'path_maps' : {'
 noremap <leader>t :NERDTreeTabsToggle<CR>
 " }}}
 
-" Included for PowerLine ---------------------------------------------- {{{
-let g:Powerline_symbols = 'fancy'
+" Included for Airline ------------------------------------------------ {{{
+let g:airline_theme='badwolf'
+let g:airline_powerline_fonts=1
 " }}}
 
 " CtrlP --------------------------------------------------------------- {{{
