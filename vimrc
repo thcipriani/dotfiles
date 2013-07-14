@@ -13,6 +13,10 @@ inoremap <up> <nop>
 set nocompatible
 " }}}
 
+" Vimrc editing 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " Pathogen ------------------------------------------------------------ {{{
 call pathogen#infect()
 call pathogen#helptags()
@@ -127,20 +131,20 @@ endif
 
 " Convenient Mappings ------------------------------------------------- {{{
 " Make regex sane
-noremap / /\v
+nnoremap / /\v
 
 " Dumb escape
 inoremap JJ <ESC>
 vnoremap JJ <ESC>
 
 " un-highlight search results
-noremap <leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>
 
 " Toggle auto-indent before clipboard paste
 set pastetoggle=<leader>p
 
 " Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<cr>
 
 " Normal/Visual tab for bracket pairs
 nnoremap <tab> %
@@ -151,19 +155,19 @@ inoremap <tab> <C-n>
 inoremap <S-tab> <C-p>
 
 "Opens a vertical split and switches over (,v)  
-nnoremap <leader>v <C-w>v<C-w>l  
+nnoremap <leader>v <C-w>v<C-w>l
 
 "Moves around split windows
-nnoremap <leader>w <C-w><C-w>  
+nnoremap <leader>w <C-w><C-w>
 
 "Delete Blanklines
-nnoremap <leader>S :v/\S/d<CR>
+nnoremap <leader>S :v/\S/d<cr>
 
 "Double Space
-nnoremap <leader>D :g/^/put_<CR>      
+nnoremap <leader>D :g/^/put_<cr>
 
 "Real Returns
-nnoremap <leader>R :%s/\r/\r/g<CR>
+nnoremap <leader>R :%s/\r/\r/g<cr>
 
 "Autocomplete on tab https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 function! InsertTabWrapper()
@@ -197,23 +201,39 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 " Development Tools --------------------------------------------------- {{{
 " Tagbar (requires Exuberant ctags 5.5+)
-noremap <leader>c :TagbarToggle<CR>
+nnoremap <leader>c :TagbarToggle<cr>
 
 " Xdebug local debugger
-let g:vdebug_options = {'server': '33.33.33.1', 'port': '9000', 'path_maps' : {'/srv/www/local.sa2.dev': '/Users/tyler/Development/upsync-vagrant/shared/sa2'} }
+let g:vdebug_options = {
+\    'server': '33.33.33.1',
+\    'port': '9000',
+\    'path_maps' : {
+\        '/srv/www/local.sa2.dev': '/Users/tyler/Development/upsync-vagrant/shared/sa2'
+\    }
+\}
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{
-"map <leader>t :NERDTreeToggle<CR>
-noremap <leader>t :NERDTreeTabsToggle<CR>
+"map <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeTabsToggle<cr>
 " }}}
 
 " Included for Airline ------------------------------------------------ {{{
-let g:airline_theme='badwolf'
-let g:airline_powerline_fonts=1
+let g:airline_theme = 'badwolf'
+let g:airline_powerline_fonts = 1
 " }}}
 
 " CtrlP --------------------------------------------------------------- {{{
 let g:ctrlp_max_files = 0 " Set no max file limit
 let g:ctrlp_working_path_mode = 0 " Search current directory not project root
+"}}}
+
+" Unite.vim ----------------------------------------------------------- {{{
+let g:unite_enable_start_insert = 1
+let g:unite_enable_split_vertically = 1
+let g:unite_split_rule = "botright"
+let g:unite_winwidth = 40
+let g:unite_prompt = "▶ "
+nnoremap <leader>f :Unite file_rec/async<cr>
+nnoremap <leader>o :Unite outline<cr>
 "}}}
