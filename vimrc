@@ -13,10 +13,6 @@ inoremap <up> <nop>
 set nocompatible
 " }}}
 
-" Vimrc editing 
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
 " Pathogen ------------------------------------------------------------ {{{
 call pathogen#infect()
 call pathogen#helptags()
@@ -110,9 +106,9 @@ if v:version >= 703
   set relativenumber
   function! NumberToggle()
     if(&relativenumber == 1)
-      set number
+      set number norelativenumber
     else
-      set relativenumber
+      set nonumber relativenumber
     endif
   endfunc
 
@@ -137,22 +133,22 @@ nnoremap / /\v
 inoremap JJ <ESC>
 vnoremap JJ <ESC>
 
+" Vimrc editing 
+nnoremap <silent><leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent><leader>sv :source $MYVIMRC<cr>
+
 " un-highlight search results
-nnoremap <leader><space> :noh<cr>
+nnoremap <silent><leader><space> :noh<cr>
 
 " Toggle auto-indent before clipboard paste
 set pastetoggle=<leader>p
 
 " Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<cr>
+nnoremap <silent><leader>l :set list!<cr>
 
 " Normal/Visual tab for bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
-
-" Insermode tab for code completion
-inoremap <tab> <C-n>
-inoremap <S-tab> <C-p>
 
 "Opens a vertical split and switches over (,v)  
 nnoremap <leader>v <C-w>v<C-w>l
@@ -160,27 +156,8 @@ nnoremap <leader>v <C-w>v<C-w>l
 "Moves around split windows
 nnoremap <leader>w <C-w><C-w>
 
-"Delete Blanklines
-nnoremap <leader>S :v/\S/d<cr>
-
-"Double Space
-nnoremap <leader>D :g/^/put_<cr>
-
-"Real Returns
-nnoremap <leader>R :%s/\r/\r/g<cr>
-
-"Autocomplete on tab https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-n>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-p>
-
+"Close a window
+nnoremap <silent><leader>q :q<cr>
 " }}}
 
 " Status line --------------------------------------------------------- {{{
@@ -201,7 +178,7 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 " Development Tools --------------------------------------------------- {{{
 " Tagbar (requires Exuberant ctags 5.5+)
-nnoremap <leader>c :TagbarToggle<cr>
+" nnoremap <silent><leader>c :TagbarToggle<cr>
 
 " Xdebug local debugger
 let g:vdebug_options = {
@@ -212,6 +189,7 @@ let g:vdebug_options = {
 \    }
 \}
 " }}}
+
 
 " NERDTree Settings---------------------------------------------------- {{{
 "map <leader>t :NERDTreeToggle<cr>
@@ -228,12 +206,29 @@ let g:ctrlp_max_files = 0 " Set no max file limit
 let g:ctrlp_working_path_mode = 0 " Search current directory not project root
 "}}}
 
+" Smooth scroll ------------------------------------------------------- {{{
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<cr>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<cr>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<cr>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<cr>
+"}}}
+
 " Unite.vim ----------------------------------------------------------- {{{
+nnoremap <leader>f :Unite file_rec/async<cr>
+nnoremap <leader>c :Unite outline<cr>
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:unite_enable_start_insert = 1
 let g:unite_enable_split_vertically = 1
 let g:unite_split_rule = "botright"
 let g:unite_winwidth = 40
 let g:unite_prompt = "▶ "
-nnoremap <leader>f :Unite file_rec/async<cr>
-nnoremap <leader>o :Unite outline<cr>
+autocmd FileType unite call s:unite_my_settings()
+
+function! s:unite_my_settings()
+    nmap <buffer> <ESC>      <Plug>(unite_exit)
+    imap <buffer> <ESC>      <Plug>(unite_exit)
+    imap <buffer> <TAB>   <Plug>(unite_select_next_line)
+    imap <buffer> <S-TAB>   <Plug>(unite_select_previous_line)
+endfunction
 "}}}

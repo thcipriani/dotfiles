@@ -46,3 +46,6 @@
 [submodule "vim/bundle/unite-outline"]
 	path = vim/bundle/unite-outline
 	url = git://github.com/h1mesuke/unite-outline.git
+[submodule "vim/bundle/vim-smooth-scroll"]
+	path = vim/bundle/vim-smooth-scroll
+	url = git://github.com/terryma/vim-smooth-scroll.git
