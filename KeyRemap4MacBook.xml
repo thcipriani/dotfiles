@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>ITERM</appname>
+    <equal>com.googlecode.iterm2</equal>
+  </appdef>
+
+  <!--
+    KeyRemap4MacBook defines a list of apps to ignore when using any of the
+    "Emacs Mode" key mappings. That list includes "TERMINAL" (as well as other
+    apps).
+    See: https://github.com/tekezo/KeyRemap4MacBook/blob/953717f78c/src/core/server/Resources/replacementdef.xml#L46
+
+    By default "TERMINAL" includes Terminal.app *and* iTerm2. When we define
+    "ITERM" above, it seems to remove iTerm2 from the definition of "TERMINAL".
+
+    So, we need to redefine the list of "EMACS_MODE_IGNORE_APPS" to include
+    all of the original apps *and* "ITERM".
+  -->
+  <!-- ============================================================ -->
+  <replacementdef>
+    <replacementname>EMACS_MODE_IGNORE_APPS</replacementname>
+    <replacementvalue>
+      EMACS,
+      ITERM,
+      TERMINAL,
+      VI,
+      VIRTUALMACHINE,
+      X11
+    </replacementvalue>
+  </replacementdef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Chrome</name>
+    <url>file:///Applications/Google%20Chrome.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
+    <url>file:///Applications/iTerm.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Rdio</name>
+    <url>file:///Applications/Rdio.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Xcode</name>
+    <url>file:///Applications/Xcode.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Charles</name>
+    <url>file:///Applications/Charles.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Double-tap Left Shift for CapsLock</name>
+    <identifier>com.jasonrudolph.double_lshift_to_caps</identifier>
+    <autogen>__DoublePressModifier__ KeyCode::SHIFT_L, KeyCode::SHIFT_L, KeyCode::CAPSLOCK</autogen>
+  </item>
+
+  <item>
+    <!--
+      Inspired by and adapted from Steve Losh's "Modern Space Cadet" post:
+      http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#hyper
+    -->
+    <name>Right Option to "Hyper"</name>
+    <appendix>OS X doesn't have a native Hyper key. Let's define Hyper as Control+Shift+Option+Command.</appendix>
+    <appendix>(This maps Right Option to our definition of Hyper.)</appendix>
+    <identifier>com.jasonrudolph.right_option_hyper</identifier>
+
+    <!--
+      "ModifierFlag::OPTION_R | ModifierFlag::NONE" causes this remapping to
+      fire *only* when the the right option key is used *without* any other
+      modifiers.
+      See http://pqrs.org/macosx/keyremap4macbook/xml-basic.html.en#modifierflag-none
+    -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+    </autogen>
+
+    <item>
+      <name>Hyper+B to open Chrome ("B" for "Browser")</name>
+      <identifier>com.jasonrudolph.hyper_b</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::B, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_APP_Chrome,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Hyper+C to open Charles ("C" for "Charles")</name>
+      <identifier>com.jasonrudolph.hyper_c</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::C, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_APP_Charles,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Hyper+X to open Xcode ("X" for "XCode")</name>
+      <identifier>com.jasonrudolph.hyper_x</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::X, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_APP_Xcode,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Hyper+R to open Rdio ("R" for "Rdio")</name>
+      <identifier>com.jasonrudolph.hyper_r</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::R, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_APP_Rdio,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Hyper+T to open iTerm ("T" for "Terminal")</name>
+      <identifier>com.jasonrudolph.hyper_t</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::T, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_APP_iTerm,
+      </autogen>
+    </item>
+  </item>
+
+  <item>
+    <name>Option+H/L to delete previous/next word in iTerm 2 (and Terminal)</name>
+    <identifier>com.jasonrudolph.terminal.option_with_h_or_l_to_delete_previous_word_or_next_word</identifier>
+    <only>ITERM, TERMINAL</only>
+
+    <!--
+      "ModifierFlag::OPTION_L | ModifierFlag::NONE" causes this remapping to
+      fire *only* when the the left option key is used *without* any other
+      modifiers.
+      See http://pqrs.org/macosx/keyremap4macbook/xml-basic.html.en#modifierflag-none
+    -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::H, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::W, ModifierFlag::CONTROL_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::ESCAPE,
+      KeyCode::D
+    </autogen>
+  </item>
+
+  <item>
+    <name>Option+H/L to delete previous/next word</name>
+    <identifier>com.jasonrudolph.option_with_h_or_l_to_delete_previous_word_or_next_word</identifier>
+
+    <!--
+      "ModifierFlag::OPTION_L | ModifierFlag::NONE" causes this remapping to
+      fire *only* when the the left option key is used *without* any other
+      modifiers.
+      See http://pqrs.org/macosx/keyremap4macbook/xml-basic.html.en#modifierflag-none
+    -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::H, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::DELETE, ModifierFlag::OPTION_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::FORWARD_DELETE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+
+  <item>
+    <name>Control+dash/pipe to split iTerm2 panes horizontally/vertically</name>
+    <identifier>com.jasonrudolph.iterm.control_with_dash_or_pipe_to_split_pane</identifier>
+    <only>ITERM</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::MINUS, ModifierFlag::CONTROL_L,
+      KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+      KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::NONE
+    </autogen>
+  </item>
+
+  <!--
+    Adapted from the built-in "Simultaneous Vi Mode" option:
+    https://github.com/tekezo/KeyRemap4MacBook/blob/6aa99ba/src/core/server/Resources/include/checkbox/simultaneouskeypresses_vi_mode.xml#L4
+  -->
+  <item>
+    <name>(S)uper (D)uper Mode</name>
+    <item>
+      <name>What's (S)uper (D)uper Mode?</name>
+      <identifier vk_config="true">notsave.com.jasonrudolph.simultaneouskeypresses_vimode</identifier>
+      <autogen>__ShowStatusMessage__ (S)uper (D)uper Mode</autogen>
+
+      <appendix>To activate, push S and D keys simultaneously and hold them down.</appendix>
+      <appendix>Now you're in (S)uper (D)uper mode. It's like a secret keyboard _inside_ your keyboard. (Whoa.)</appendix>
+      <appendix>It's optimized for keeping you on the home row, or very close to it.</appendix>
+      <appendix>---</appendix>
+      <appendix>Now you can:</appendix>
+      <appendix>- Use H/J/K/L for Left/Down/Up/Right</appendix>
+      <appendix>- Use F for Command</appendix>
+      <appendix>- Use A for Option (AKA Alt)</appendix>
+      <appendix>- Use Space for Shift</appendix>
+      <appendix>- Use M to copy</appendix>
+      <appendix>- Use , to paste</appendix>
+      <appendix>- Use MM to copy current line</appendix>
+      <appendix>- Use A+J/K for Page Down/Up</appendix>
+      <appendix>- Use I/O to move left/right between tabs</appendix>
+      <appendix>- Use U/P to go to the first/last tab (in most apps)</appendix>
+      <appendix>- Use A+H/L to move to previous/next word in all apps (including iTerm 2)</appendix>
+
+      <autogen>__KeyToKey__ KeyCode::A, KeyCode::OPTION_L</autogen>
+
+      <block>
+        <only>ITERM, TERMINAL</only>
+        <autogen>
+          --KeyToKey--
+          {{VI_H}}, VK_OPTION,
+          KeyCode::ESCAPE,
+          KeyCode::B
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          {{VI_L}}, VK_OPTION,
+          KeyCode::ESCAPE,
+          KeyCode::F
+        </autogen>
+      </block>
+
+      <autogen>
+        __KeyToKey__
+        {{VI_J}}, VK_OPTION,
+        KeyCode::PAGEDOWN
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        {{VI_K}}, VK_OPTION,
+        KeyCode::PAGEUP
+      </autogen>
+
+      <autogen>__KeyToKey__ {{VI_H}}, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ {{VI_J}}, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ {{VI_K}}, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ {{VI_L}}, KeyCode::CURSOR_RIGHT</autogen>
+
+      <autogen>__KeyToKey__ KeyCode::F, KeyCode::COMMAND_L</autogen>
+
+      <autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::SHIFT_L</autogen>
+
+      <block>
+        <lastpressedphysicalkey_only>KeyCode::M</lastpressedphysicalkey_only>
+        <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::200</elapsedtimesincelastpressed_lessthan>
+        <autogen>
+          __KeyToKey__
+          KeyCode::M,
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+          KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L,
+          KeyCode::C, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+      <autogen>
+        __KeyToKey__
+        KeyCode::M,
+        KeyCode::C, ModifierFlag::COMMAND_L
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMA,
+        KeyCode::V, ModifierFlag::COMMAND_L
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::I,
+        KeyCode::BRACKET_LEFT,  ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::O,
+        KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::U,
+        KeyCode::KEY_1, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::P,
+        KeyCode::KEY_9, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Simultaneous Key Presses [S+D] turns on "(S)uper (D)uper mode"</name>
+      <identifier>remap.com_jasonrudolph_simultaneouskeypresses_vimode_sd</identifier>
+      <autogen>
+        __SimultaneousKeyPresses__
+        KeyCode::D, KeyCode::S,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_com_jasonrudolph_simultaneouskeypresses_vimode
+      </autogen>
+    </item>
+  </item>
+</root>

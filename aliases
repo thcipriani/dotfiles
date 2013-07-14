@@ -59,7 +59,10 @@ alias f='open -a Finder'
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Mutt
-alias mutt 'cd ~/Desktop && mutt'
+alias mutt='cd ~/Desktop && mutt'
+
+alias dotfiles="cd ~/.dotfiles"
+alias myvimrc="vim ~/.vimrc"
 
 # Dumb osx
 if [[  $(uname) == Darwin ]]; then
