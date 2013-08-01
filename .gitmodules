@@ -49,3 +49,6 @@
 [submodule "vim/bundle/vim-smooth-scroll"]
 	path = vim/bundle/vim-smooth-scroll
 	url = git://github.com/terryma/vim-smooth-scroll.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
