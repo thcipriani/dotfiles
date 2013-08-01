@@ -67,8 +67,6 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 function parse_git_dirty {
     if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit (working directory clean)" ]]; then
         echo -e '\033[0;32m✔'

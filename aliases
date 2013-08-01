@@ -34,11 +34,13 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Shortcuts
 alias g="git"
 alias v="vim"
+alias s="svn"
 
 # File size
 alias fs="stat -f \"%z bytes\""
 
-alias sosh="source $SHELL_SOURCE_FILE"
+MYSHELL=$(basename $SHELL)
+alias sosh="source ~/.${MYSHELL}rc"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -64,6 +66,16 @@ alias mutt='cd ~/Desktop && mutt'
 alias dotfiles="cd ~/.dotfiles"
 alias myvimrc="vim ~/.vimrc"
 
+# SVN
+alias sst="svn status"
+alias sin="svn info"
+alias spl="svn pl"
+alias spg="svn pg"
+alias scom="svn commit"
+alias scat="svn cat"
+alias sdif="svn diff"
+alias srev="svn revert"
+
 # Dumb osx
 if [[  $(uname) == Darwin ]]; then
     # French Toasting BSD sed
@@ -80,3 +92,4 @@ alias govag="cd ~/Development/upsync-vagrant/"
 alias ny='telnet miku.acm.uiuc.edu'
 alias rr='curl -L http://bit.ly/10hA8iC | bash'
 alias sw='telnet towel.blinkenlights.nl'
+alias whatisit='curl "http://itsthisforthat.com/api.php?text"'

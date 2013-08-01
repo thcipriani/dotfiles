@@ -194,6 +194,8 @@ let g:vdebug_options = {
 " NERDTree Settings---------------------------------------------------- {{{
 "map <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>t :NERDTreeTabsToggle<cr>
+" Close vim if NERDTree is the last thing standing
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " }}}
 
 " Included for Airline ------------------------------------------------ {{{
@@ -222,7 +224,7 @@ let g:unite_enable_start_insert = 1
 let g:unite_enable_split_vertically = 1
 let g:unite_split_rule = "botright"
 let g:unite_winwidth = 40
-let g:unite_prompt = "▶ "
+let g:unite_prompt = "⮀ "
 autocmd FileType unite call s:unite_my_settings()
 
 function! s:unite_my_settings()
