@@ -24,6 +24,7 @@ Vim Features (just need to remind myself&#8230;)
 + EasyMotion
 + Surround
 + Vim-Airline
++ Neocomplete + Neosnippets
 + Unite.vim
 + CtrlP (There's got to be something smarter though, right?)
 + Vim-Seek
