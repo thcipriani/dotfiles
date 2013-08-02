@@ -6,10 +6,10 @@ A Tyler Cipriani Joint.
 
 **Prerequisites**
 + zsh
-+ vim 7.3+
++ vim 7.3.885+ &amp; if_lua
 + ssh
 + git-core
-+ rvm
++ rbenv
 + tmux
 + Exuberant Ctags (>=5.5)
 + <a href="https://github.com/erkin/ponysay" target="_blank">ponysay</a>
@@ -23,11 +23,10 @@ Vim Features (just need to remind myself&#8230;)
 + Snipmate
 + EasyMotion
 + Surround
-+ Powerline
-+ Tagbar
++ Vim-Airline
++ Unite.vim
 + CtrlP (There's got to be something smarter though, right?)
 + Vim-Seek
-+ Medium Mode
 + Zencoding
 
 Install Instructions

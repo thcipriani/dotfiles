@@ -86,6 +86,9 @@ if [[  $(uname) == Darwin ]]; then
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
 fi
 
+# Quick scratch pad
+alias vpad="vim +set\ buftype=nofile +startinsert"
+
 # In honor of John
 alias govag="cd ~/Development/upsync-vagrant/"
 
