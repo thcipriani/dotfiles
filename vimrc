@@ -213,13 +213,6 @@ let g:ctrlp_max_files = 0 " Set no max file limit
 let g:ctrlp_working_path_mode = 0 " Search current directory not project root
 "}}}
 
-" Smooth scroll ------------------------------------------------------- {{{
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<cr>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<cr>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<cr>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<cr>
-"}}}
-
 " Unite.vim ----------------------------------------------------------- {{{
 nnoremap <leader>f :Unite file_rec/async<cr>
 nnoremap <leader>c :Unite outline<cr>
