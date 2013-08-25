@@ -245,6 +245,13 @@ if v:version >= 704 && has("lua")
   " Set minimum syntax keyword length.
   let g:neocomplete#sources#syntax#min_keyword_length = 3
   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+  " I will probably never hit <TAB> 10 times
+  let g:neocomplete#max_list = 10
+
+  " Automatically open and close the popup menu / preview window
+  " https://github.com/JessicaKMcIntosh/TagmaBufMgr/issues/8
+  au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+  set completeopt=menuone,menu,longest
 
   " Define dictionary.
   let g:neocomplete#sources#dictionary#dictionaries = {
@@ -329,3 +336,12 @@ if v:version >= 704 && has("lua")
   let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
   " }}}
 endif
+" }}}
+
+" Indent Guides ------------------------------------------------------- {{{
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_space_guides = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
+" }}}

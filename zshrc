@@ -41,10 +41,6 @@ bindkey '^[[B' down-line-or-search
 # Gotsta have C-r, baby!
 bindkey '^R' history-incremental-search-backward
 
-if [ -f /etc/bashrc ]; then
-    source /etc/bashrc
-fi
-
 for file in ~/.{exports,aliases,functions,extra}; do
     [ -r "$file" ] && source "$file"
 done

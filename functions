@@ -26,6 +26,11 @@ function calc() {
     printf "\n"
 }
 
+findalias () {
+    unset file
+    grep -HiERn "alias ${1}=.*" /etc/bashrc ~/.${MYSHELL}rc $HOME/.exports $HOME/.aliases $HOME/.functions $HOME/.extra 
+}
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
@@ -39,3 +44,77 @@ function server() {
 function image() {
     convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d'|awk '{print $1,$2}'|sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/'|bc|sed 's/$/;echo -n "  ";/'|tr '\n' ' '|sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/'|bash
 }
+
+# Pengwynn gxpr https://raw.github.com/pengwynn/dotfiles/ba9efd3d3073314d52d891e9f32b2ca6d26d5d3a/bin/gxpr
+# Usage: gxpr <expression>
+# Like expr(1), but uses Google's calculator to evaluate <expression>.
+#
+# Math examples:
+#   $ gxpr '1 + 1'
+#   2
+#
+#   $ gxpr 2 ^  16
+#   65536
+#
+#   $ gxpr '(2 ^ 1) + (2 ^ 2) + (2 ^ 3) + (2 ^ 5)'
+#   46
+#
+#   $ gxpr '5*9+(sqrt 10)^3='
+#   76.6227766
+#
+# Conversion examples:
+#   $ gxpr 1GB in KB
+#   1048576 kilobytes
+#
+#   $ gxpr 10 megabits in megabytes
+#   1.25 megabytes
+#
+#   $ gxpr 2 miles in inches
+#   126720 inches
+
+function gxpr() {
+    local CURL_PATH=$(which curl)
+    local CURL="$CURL_PATH -s --header 'User-Agent:gxpr/1.0'"
+    local SEARCH="http://www.google.com/search"
+    local EXPR=$(echo "$@" | sed -e 's/+/%2B/g' -e 's/ /+/g')
+    local PAGE=$(curl -s --header 'User-Agent:gxpr/1.0' "http://www.google.com/search?q=$EXPR")
+
+    res=$(
+        echo $PAGE |
+        perl -ne '/<h2 class="r".*?>(.*)<\/h2>/ and print $1' |
+        perl -ne '/= (.*)/ and print $1' |
+            perl -pe 's/[^\x00-\x7F]//g'
+    )
+
+    # if we don't have a result, assume it's an invalid expression
+    test -z "$res" && {
+        echo "invalid expression:" "$@" 1>&2
+    }
+
+    echo "$res"
+}
+
+# http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
+jump() { 
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+mark() { 
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+
+unmark() { 
+    rm -i "$MARKPATH/$1"
+}
+
+marks() {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
+# autocomplete marks
+_completemarks() {
+      reply=($(ls $MARKPATH))
+}
+
+compctl -K _completemarks jump
+compctl -K _completemarks unmark

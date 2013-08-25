@@ -56,3 +56,9 @@
 [submodule "vim/bundle/neosnippet.vim"]
 	path = vim/bundle/neosnippet.vim
 	url = git://github.com/Shougo/neosnippet.vim.git
+[submodule "vim/bundle/mustache"]
+	path = vim/bundle/mustache
+	url = git://github.com/juvenn/mustache.vim.git
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git

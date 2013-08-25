@@ -39,7 +39,6 @@ alias s="svn"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-MYSHELL=$(basename $SHELL)
 alias sosh="source ~/.${MYSHELL}rc"
 
 # IP addresses
@@ -90,7 +89,7 @@ fi
 alias vpad="vim +set\ buftype=nofile +startinsert"
 
 # In honor of John
-alias govag="cd ~/Development/upsync-vagrant/"
+alias govag="cd ~/Development/upsync4/"
 
 alias ny='telnet miku.acm.uiuc.edu'
 alias rr='curl -L http://bit.ly/10hA8iC | bash'
