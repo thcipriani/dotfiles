@@ -95,7 +95,7 @@ function gxpr() {
 }
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
-jump() { 
+jump () { 
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
 
@@ -118,3 +118,5 @@ _completemarks() {
 
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
+
+alias mountainking="osascript -e 'say \"Dum dum dum dum dum dum dum he he he ho ho ho fa lah lah lah lah lah lah fa lah full hoo hoo hoo\" using \"Cellos\"'"

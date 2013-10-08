@@ -21,10 +21,12 @@ call pathogen#runtime_append_all_bundles()
 
 " Lifesaver ----------------------------------------------------------- {{{
 if &term =~ '256color'
-  " Disable Background Color Erase (BCE) so that color schemes
-  " work properly when Vim is used inside tmux and GNU screen.
-  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
+   "Disable Background Color Erase (BCE) so that color schemes
+   "work properly when Vim is used inside tmux and GNU screen.
+   "See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+   " May be unnecessary see: 
+   " http://www.reddit.com/r/vim/comments/1a29vk/fixing_vims_background_color_erase_for_256color/c8thqe7
+   set t_ut=
 endif
 " }}}
 
@@ -85,10 +87,9 @@ set noswapfile
 
 " Colorscheme
 " https://github.com/altercation/vim-colors-solarized
-" colorscheme solarized
-" set background=dark
-
-colorscheme molokai
+colorscheme solarized
+set background=dark
+" colorscheme Tomorrow-Night
 
 " GUI Font (same as my gnome-terminal font)
 " https://github.com/adobe/source-code-pro
@@ -102,7 +103,7 @@ set listchars=tab:▸\ ,eol:¬
 " Version 7.3 (703) --------------------------------------------------- {{{
 if v:version >= 703
   set colorcolumn=75
-  hi ColorColumn ctermbg=234
+  hi ColorColumn ctermbg=black
   set undodir=~/.vim-undo
   set undofile
   set undolevels=1000 "max number of changes that can be undone
@@ -204,13 +205,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " }}}
 
 " Included for Airline ------------------------------------------------ {{{
-let g:airline_theme = 'badwolf'
+let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
 " }}}
 
 " CtrlP --------------------------------------------------------------- {{{
 let g:ctrlp_max_files = 0 " Set no max file limit
 let g:ctrlp_working_path_mode = 0 " Search current directory not project root
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    endif
+
+    let g:ctrlp_show_hidden = 1
 "}}}
 
 " Unite.vim ----------------------------------------------------------- {{{
@@ -342,6 +349,6 @@ endif
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_space_guides = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 " }}}
