@@ -77,6 +77,10 @@ alias scat="svn cat"
 alias sdif="svn diff"
 alias srev="svn revert"
 
+alias file?="ls -AlFh | grep -i"
+alias hist?="history | grep -i"
+alias running?="running"
+
 # Dumb osx
 if [[  $(uname) == Darwin ]]; then
     # French Toasting BSD sed
