@@ -77,9 +77,9 @@ alias scat="svn cat"
 alias sdif="svn diff"
 alias srev="svn revert"
 
-alias file?="ls -AlFh | grep -i"
-alias hist?="history | grep -i"
-alias running?="running"
+alias 'file?'="ls -AlFh | grep -i"
+alias 'hist?'="history | grep -i"
+alias 'running?'="running"
 
 # Dumb osx
 if [[  $(uname) == Darwin ]]; then
@@ -97,7 +97,12 @@ alias vpad="vim +set\ buftype=nofile +startinsert"
 # In honor of John
 alias govag="cd ~/Development/upsync4/"
 
+if command -v dnsyo > /dev/null 2>&1; then
+    alias checkdns=dnsyo
+fi
+
 alias ny='telnet miku.acm.uiuc.edu'
 alias rr='curl -L http://bit.ly/10hA8iC | bash'
 alias sw='telnet towel.blinkenlights.nl'
 alias whatisit='curl "http://itsthisforthat.com/api.php?text"'
+alias cats="echo && curl -s -k -X GET http://placekitten.com/ | head -n 25 | tail -n 15 && echo"
