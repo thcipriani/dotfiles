@@ -46,3 +46,5 @@ for file in ~/.{exports,aliases,functions,extra}; do
 done
 unset file
 export PATH="$HOME/bin:$PATH"
+
+cat "$HOME/Art/$(hostname)"

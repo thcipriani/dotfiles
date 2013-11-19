@@ -41,6 +41,7 @@ set ruler                 " Show where I am in the command area
 set showmode              " -- INSERT (appreciation)-- :)
 set laststatus=2          " always show the status line 
                           " ↪ (0 = never, 1 = default [multi-window only])
+set mouse=a               " Use the mouse
 
 set modelines=0           " Don't read first/last lines of file for settings
 set hidden                " Stash unwritten files in buffer
@@ -57,9 +58,9 @@ set noeol
 set number                " Show linenumbers
 set nowrap                " Turn off linewrap
 set list                  " Show invisible chars
-set tabstop=4             " 4 spaces
-set shiftwidth=4          " 4 spaces
-set softtabstop=4         " 4 spaces
+set tabstop=2             " 2 spaces
+set shiftwidth=2          " 2 spaces
+set softtabstop=2         " 2 spaces
 set expandtab             " Expand tabs to spaces
 
 set hlsearch              " highlight my search

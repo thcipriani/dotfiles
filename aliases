@@ -25,6 +25,7 @@ alias mv='mv -i'
 alias please='sudo'
 
 alias ll="ls -AlFh"
+alias l="ls -lFh"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
@@ -76,6 +77,13 @@ alias scom="svn commit"
 alias scat="svn cat"
 alias sdif="svn diff"
 alias srev="svn revert"
+
+# Git
+alias g='git'
+alias gst='git status'
+
+# Will return the current branch name
+# Usage example: git pull origin $(current_branch)
 
 alias 'file?'="ls -AlFh | grep -i"
 alias 'hist?'="history | grep -i"
