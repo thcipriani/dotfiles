@@ -142,11 +142,22 @@ marks() {
 }
 
 # autocomplete marks
-_completemarks() {
-      reply=($(ls $MARKPATH))
-}
+if [[ "$SHELL" =~ "zsh" ]]; then
+    _completemarks() {
+          reply=($(ls $MARKPATH))
+    }
 
-compctl -K _completemarks jump
-compctl -K _completemarks unmark
+    compctl -K _completemarks jump
+    compctl -K _completemarks unmark
+fi
 
-alias mountainking="osascript -e 'say \"Dum dum dum dum dum dum dum he he he ho ho ho fa lah lah lah lah lah lah fa lah full hoo hoo hoo\" using \"Cellos\"'"
+if [[ "$SHELL" =~ "bash" ]]; then
+    _completemarks() {
+      local curw=${COMP_WORDS[COMP_CWORD]}
+      local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+      COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+      return 0
+    }
+
+    complete -F _completemarks jump unmark
+fi
