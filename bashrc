@@ -91,6 +91,8 @@ function parse_svn_branch {
     svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[00m') on $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[svn]$(parse_svn_dirty)#i"
 }
 
+export PROMPT_COMMAND=''
+
 function prompt {
     # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
     # 30m - Black
