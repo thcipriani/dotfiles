@@ -81,6 +81,9 @@ alias srev="svn revert"
 # Git
 alias g='git'
 alias gst='git status'
+alias gc='git commit -v'
+alias ga='git add'
+alias gp='git push'
 
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
@@ -109,6 +112,10 @@ alias govag="cd ~/Development/upsync4/"
 
 if command -v dnsyo > /dev/null 2>&1; then
     alias checkdns=dnsyo
+fi
+
+if command -v hiptext > /dev/null 2>&1; then
+    alias hiptext="LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib hiptext"
 fi
 
 alias ny='telnet miku.acm.uiuc.edu'
