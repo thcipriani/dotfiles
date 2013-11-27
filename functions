@@ -53,6 +53,14 @@ extract () {
      fi
 }
 
+g() {
+  if [ $# -gt 0 ]; then
+    git "$@"
+  else
+    git hist2
+  fi
+}
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
@@ -121,15 +129,19 @@ running () {
 }
 
 gif () {
+    local search="$1"
+    if [ -z "$search" ]; then
+        search='.'
+    fi
     local db_path=https://dl.dropboxusercontent.com/u/2372716/gifs/
-    local files=$(ls "$HOME/Dropbox/Public/gifs" | grep -i $1)
+    files=$(ls "$HOME/Dropbox/Public/gifs/" | grep -iE "$search")
 
     printf "%s\n" "${files[*]}" | nl
     printf "[ $(tput setaf 2)?$(tput sgr0) ]\tWhat gif you want? "
     read index
     local i=0
 
-    for file in $files; do
+    for file in "$files"; do
         i=$(($i + 1))
         if [ $i -eq $index ]; then
             if [ $(uname -s) = 'Linux' ]; then
@@ -138,13 +150,9 @@ gif () {
         fi
     done
 
-    unset i
     unset files
     unset index
-    unset db_path
 }
-
-
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 jump () { 
