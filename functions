@@ -57,7 +57,7 @@ g() {
   if [ $# -gt 0 ]; then
     git "$@"
   else
-    git hist2
+    git hist3
   fi
 }
 
