@@ -75,8 +75,10 @@ alias chrome="open -a google\ chrome"
 alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
 alias f='open -a Finder'
 
-# tmux colors:
+# tmux
 alias tmux="TERM=screen-256color-bce tmux"
+alias tls="tmux list-sessions"
+alias ta="tmux attach-session -t"
 
 # Mutt
 alias mutt='cd ~/Desktop && mutt'
