@@ -10,4 +10,5 @@ set keymap vi-insert
 # these are for vi-insert mode
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\C-l":'clear\n'
 $endif

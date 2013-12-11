@@ -1,3 +1,5 @@
+encoding UTF-8
+
 startup_message off
 vbell off
 screen -t bash1
