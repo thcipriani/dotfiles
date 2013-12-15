@@ -1,0 +1,11 @@
+#!/bin/bash
+#use "cvt 1280 768 60.00" to get the modeline
+#(Thu Apr 12@08:35 PM)(tyler@Tilers)(~)
+  xrandr --newmode 1280x768_60.00  80.14  1280 1344 1480 1680  768 769 772 795  -HSync +Vsync
+#(Thu Apr 12@08:36 PM)(tyler@Tilers)(~)
+  xrandr --addmode VGA1 1280x768_60.00
+#(Thu Apr 12@08:36 PM)(tyler@Tilers)(~)
+  xrandr --output VGA1 --mode 1280x768_60.00 --primary
+
+# Turn off Laptop display:
+xrandr --output LVDS1 --off
