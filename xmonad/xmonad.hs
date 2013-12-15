@@ -21,7 +21,7 @@ myManageHook = composeAll
 main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
     xmonad $ defaultConfig { 
-        terminal = "uxterm"
+        terminal = "urxvt"
         , manageHook = manageDocks <+> myManageHook 
                         <+> manageHook defaultConfig
         , layoutHook = smartBorders $ avoidStruts  $  layoutHook defaultConfig
