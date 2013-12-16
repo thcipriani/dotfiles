@@ -3,7 +3,7 @@
 background_image="$HOME/Dropbox/AA_Fire.jpg"
 
 # Fix my damn monitor at home. Damnit.
-if [ "$(hostname)" = "ryu" ] && [ -x "$HOME/.bin/monitorfix" ]; then
+if [ "$(hostname)" = "ryu" ] && [ -x "$HOME/.bin/laptop-monitorfix" ]; then
     "$HOME/.bin/laptop-monitorfix"
 fi
 
@@ -12,7 +12,7 @@ xrdb -merge .Xresources
  
 # Set up an icon tray
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 10 --transparent true --tint 0x191970 --height 15 &
+ --expand true --width 10 --tint 0x073642 --transparent true --height 17 &
  
 # Set the background color
 if [ -x "/usr/bin/feh" ] && [ -f "$background_image" ]; then
