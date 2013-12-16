@@ -32,8 +32,13 @@ if [ -x /usr/bin/gnome-power-manager ] ; then
 fi
 
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
-    sleep 10
+    sleep 3
     "$HOME/.dropbox-dist/dropboxd" &
+fi
+
+if [ -x "/usr/bin/gnome-sound-applet" ]; then
+    sleep 3
+    "/usr/bin/gnome-sound-applet" &
 fi
  
 exec xmonad
