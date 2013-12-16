@@ -40,5 +40,10 @@ if [ -x "/usr/bin/gnome-sound-applet" ]; then
     sleep 3
     "/usr/bin/gnome-sound-applet" &
 fi
+
+if [ -x "/usr/bin/xset" ]; then
+    sleep 3
+    xset -b
+fi
  
 exec xmonad

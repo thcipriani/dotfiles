@@ -13,7 +13,9 @@ import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCente
 import XMonad.Util.Run(spawnPipe)
 
 import XMonad.Util.EZConfig(additionalKeys)
+import qualified XMonad.StackSet as W
 import System.IO
+import XMonad.Actions.CycleWS
 
 --
 -- Window Rules
@@ -24,19 +26,21 @@ myManageHook = composeAll
     , isFullscreen --> doFullFloat
     ]
 
+myWorkspaces = ["1:web","2:term"] ++ map show [3..9]
+
 --
 -- Main Layout
 -- =======================================
 main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
     xmonad $ defaultConfig
-      { 
+      {
         terminal = "urxvt"
         , manageHook = manageDocks 
                         <+> myManageHook 
                         <+> manageHook defaultConfig
         , layoutHook = smartBorders $ avoidStruts  $  layoutHook defaultConfig
-        , workspaces = ["1:web","2:term"] ++ map show [3..9]
+        , workspaces = myWorkspaces
 
         -- Gets piped to xmobar
         , logHook = dynamicLogWithPP xmobarPP
@@ -45,3 +49,7 @@ main = do
             , ppTitle = xmobarColor "#859900" "" . shorten 50
           }
      }
+     `additionalKeys`
+     [ ((mod4Mask, xK_k), prevScreen)
+     , ((mod4Mask, xK_j),  nextScreen)
+     ]
