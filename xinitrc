@@ -12,7 +12,8 @@ xrdb -merge .Xresources
  
 # Set up an icon tray
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 10 --tint 0x073642 --transparent true --height 17 &
+ --expand true --width 10 --tint 0x073642 --transparent true --height 18 \
+ --alpha 0 &
  
 # Set the background color
 if [ -x "/usr/bin/feh" ] && [ -f "$background_image" ]; then

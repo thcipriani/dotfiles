@@ -34,8 +34,9 @@ myWorkspaces = ["1:web","2:term"] ++ map show [3..9]
 main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
     xmonad $ defaultConfig
-      {
-        terminal = "urxvt"
+      { normalBorderColor = "#073642"
+        , focusedBorderColor = "#268bd2"
+        , terminal = "urxvt"
         , manageHook = manageDocks 
                         <+> myManageHook 
                         <+> manageHook defaultConfig
