@@ -7,6 +7,10 @@ if [ "$(hostname)" = "ryu" ] && [ -x "$HOME/.bin/laptop-monitorfix" ]; then
     "$HOME/.bin/laptop-monitorfix"
 fi
 
+if [ "$(hostname)" = "zangief" ] && [ -x "$HOME/.bin/work-monitorfix" ]; then
+  "$HOME/.bin/work-monitorfix"
+fi
+
 # Load resources
 xrdb -merge .Xresources
  
@@ -20,6 +24,11 @@ if [ -x "/usr/bin/feh" ] && [ -f "$background_image" ]; then
     feh --bg-scale "$background_image"
 else
     xsetroot -solid midnightblue
+fi
+
+# Remap control key
+if [ -f "$HOME/.xmodmap" ]; then
+  xmodmap "$HOME/.xmodmap"
 fi
  
 # Fire up apps

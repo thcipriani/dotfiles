@@ -51,6 +51,6 @@ main = do
           }
      }
      `additionalKeys`
-     [ ((mod4Mask, xK_k), prevScreen)
-     , ((mod4Mask, xK_j),  nextScreen)
+     [ ((mod4Mask, xK_Tab), prevScreen)
+     , ((mod4Mask .|. shiftMask, xK_Tab),  nextScreen)
      ]
