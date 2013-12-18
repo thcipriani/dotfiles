@@ -128,30 +128,11 @@ running () {
     ps aux | grep -i $1 | grep -v grep
 }
 
-gif () {
-    local search="$1"
-    if [ -z "$search" ]; then
-        search='.'
-    fi
-    local db_path=https://dl.dropboxusercontent.com/u/2372716/gifs/
-    files=$(ls "$HOME/Dropbox/Public/gifs/" | grep -iE "$search")
-
-    printf "%s\n" "${files[*]}" | nl
-    printf "[ $(tput setaf 2)?$(tput sgr0) ]\tWhat gif you want? "
-    read index
-    local i=0
-
-    for file in "$files"; do
-        i=$(($i + 1))
-        if [ $i -eq $index ]; then
-            if [ $(uname -s) = 'Linux' ]; then
-                echo "${db_path}${file}" | xclip -sel clip
-            fi
-        fi
-    done
-
-    unset files
-    unset index
+# http://notary.icsi.berkeley.edu/
+bdns() {
+    sum=`openssl s_client -connect ${1}:443 < /dev/null 2>/dev/null | openssl x509 -outform DER | openssl sha1`
+    response=`dig +short txt ${sum}.notary.icsi.berkeley.edu`
+    echo "$response"
 }
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
