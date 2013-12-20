@@ -79,6 +79,7 @@ alias f='open -a Finder'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tls="tmux list-sessions"
 alias ta="tmux attach-session -t"
+alias tc="tmux new -s"
 
 # Mutt
 alias mutt='cd ~/Desktop && mutt'
