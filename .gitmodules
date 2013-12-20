@@ -62,3 +62,6 @@
 [submodule "vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/vim-iawriter"]
+	path = vim/bundle/vim-iawriter
+	url = https://github.com/jacekd/vim-iawriter.git

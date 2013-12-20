@@ -89,6 +89,7 @@ set noswapfile
 " https://github.com/altercation/vim-colors-solarized
 colorscheme solarized
 set background=dark
+" colorscheme iawriter
 " colorscheme Tomorrow-Night
 
 " GUI Font (same as my gnome-terminal font)
@@ -185,14 +186,14 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 " Development Tools --------------------------------------------------- {{{
 " Tagbar (requires Exuberant ctags 5.5+)
-" nnoremap <silent><leader>c :TagbarToggle<cr>
+nnoremap <silent><leader>c :TagbarToggle<cr>
 
 " Xdebug local debugger
 let g:vdebug_options = {
 \    'server': '33.33.33.1',
 \    'port': '9000',
 \    'path_maps' : {
-\        '/srv/www/local.sa2.dev': '/Users/tyler/Development/upsync-vagrant/shared/sa2'
+\        '/srv/www/local.people.dev': '/Users/tyler/Development/upsync-vagrant/shared/people'
 \    }
 \}
 " }}}
@@ -221,8 +222,8 @@ if executable("ag")
 "}}}
 
 " Unite.vim ----------------------------------------------------------- {{{
-nnoremap <leader>f :Unite file_rec/async<cr>
-nnoremap <leader>c :Unite outline<cr>
+nnoremap <silent><leader>f :Unite file_rec/async<cr>
+" nnoremap <leader>c :Unite outline<cr>
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:unite_enable_start_insert = 1
