@@ -31,6 +31,36 @@ findalias () {
     grep -HiERn "alias ${1}=.*" /etc/bashrc ~/.${MYSHELL}rc $HOME/.exports $HOME/.aliases $HOME/.functions $HOME/.extra 
 }
 
+### User functions ###
+extract () {
+     if [ -f $1 ] ; then
+         case $1 in
+             *.tar.bz2)   tar xjf $1        ;;
+             *.tar.gz)    tar xzf $1     ;;
+             *.bz2)       bunzip2 $1       ;;
+             *.rar)       rar x $1     ;;
+             *.gz)        gunzip $1     ;;
+             *.tar)       tar xf $1        ;;
+             *.tbz2)      tar xjf $1      ;;
+             *.tgz)       tar xzf $1       ;;
+             *.zip)       unzip $1     ;;
+             *.Z)         uncompress $1  ;;
+             *.7z)        7z x $1    ;;
+             *)           echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+g() {
+  if [ $# -gt 0 ]; then
+    git "$@"
+  else
+    git hist3
+  fi
+}
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
@@ -98,31 +128,12 @@ running () {
     ps aux | grep -i $1 | grep -v grep
 }
 
-gif () {
-    local db_path=https://dl.dropboxusercontent.com/u/2372716/gifs/
-    local files=$(ls "$HOME/Dropbox/Public/gifs" | grep -i $1)
-
-    printf "%s\n" "${files[*]}" | nl
-    printf "[ $(tput setaf 2)?$(tput sgr0) ]\tWhat gif you want? "
-    read index
-    local i=0
-
-    for file in $files; do
-        i=$(($i + 1))
-        if [ $i -eq $index ]; then
-            if [ $(uname -s) = 'Linux' ]; then
-                echo "${db_path}${file}" | xclip -sel clip
-            fi
-        fi
-    done
-
-    unset i
-    unset files
-    unset index
-    unset db_path
+# http://notary.icsi.berkeley.edu/
+bdns() {
+    sum=`openssl s_client -connect ${1}:443 < /dev/null 2>/dev/null | openssl x509 -outform DER | openssl sha1`
+    response=`dig +short txt ${sum}.notary.icsi.berkeley.edu`
+    echo "$response"
 }
-
-
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 jump () { 
@@ -142,11 +153,22 @@ marks() {
 }
 
 # autocomplete marks
-_completemarks() {
-      reply=($(ls $MARKPATH))
-}
+if [[ "$SHELL" =~ "zsh" ]]; then
+    _completemarks() {
+          reply=($(ls $MARKPATH))
+    }
 
-compctl -K _completemarks jump
-compctl -K _completemarks unmark
+    compctl -K _completemarks jump
+    compctl -K _completemarks unmark
+fi
 
-alias mountainking="osascript -e 'say \"Dum dum dum dum dum dum dum he he he ho ho ho fa lah lah lah lah lah lah fa lah full hoo hoo hoo\" using \"Cellos\"'"
+if [[ "$SHELL" =~ "bash" ]]; then
+    _completemarks() {
+      local curw=${COMP_WORDS[COMP_CWORD]}
+      local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+      COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+      return 0
+    }
+
+    complete -F _completemarks jump unmark
+fi

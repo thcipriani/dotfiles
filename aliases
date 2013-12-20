@@ -1,3 +1,19 @@
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+LIME_YELLOW=$(tput setaf 190)
+YELLOW=$(tput setaf 3)
+POWDER_BLUE=$(tput setaf 153)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+BRIGHT=$(tput bold)
+NORMAL=$(tput sgr0)
+BLINK=$(tput blink)
+REVERSE=$(tput smso)
+UNDERLINE=$(tput smul)
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -24,7 +40,12 @@ alias mv='mv -i'
 # be nice
 alias please='sudo'
 
+# why didn't I design the bash api?
+alias go="ssh"
+alias get="scp"
+
 alias ll="ls -AlFh"
+alias l="ls -lFh"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
@@ -34,7 +55,6 @@ alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
-alias g="git"
 alias v="vim"
 alias s="svn"
 
@@ -50,13 +70,6 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
-
-# Flush Directory Service cache
-alias flushdns="dscacheutil -flushcache"
-
-alias chrome="open -a google\ chrome"
-alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
-alias f='open -a Finder'
 
 # tmux colors:
 alias tmux="TERM=screen-256color-bce tmux"
@@ -77,18 +90,36 @@ alias scat="svn cat"
 alias sdif="svn diff"
 alias srev="svn revert"
 
+# Git
+alias gst='git status'
+alias gc='git commit -v'
+alias ga='git add'
+alias gp='git push'
+
+# Will return the current branch name
+# Usage example: git pull origin $(current_branch)
+
 alias 'file?'="ls -AlFh | grep -i"
 alias 'hist?'="history | grep -i"
 alias 'running?'="running"
 
 # Dumb osx
-if [[  $(uname) == Darwin ]]; then
+if [  "$(uname -s)" = "Darwin" ]; then
     # French Toasting BSD sed
     # alias sed='gsed'
 
     # Show and hide files in Finder
     alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
+
+    alias chrome="open -a google\ chrome"
+    alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
+    alias f='open -a Finder'
+
+    # Flush Directory Service cache
+    alias flushdns="dscacheutil -flushcache"
+
+    alias mountainking="osascript -e 'say \"Dum dum dum dum dum dum dum he he he ho ho ho fa lah lah lah lah lah lah fa lah full hoo hoo hoo\" using \"Cellos\"'"
 fi
 
 # Quick scratch pad
@@ -99,6 +130,10 @@ alias govag="cd ~/Development/upsync4/"
 
 if command -v dnsyo > /dev/null 2>&1; then
     alias checkdns=dnsyo
+fi
+
+if command -v hiptext > /dev/null 2>&1; then
+    alias hiptext="LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib hiptext"
 fi
 
 alias ny='telnet miku.acm.uiuc.edu'

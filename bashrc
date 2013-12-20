@@ -1,3 +1,7 @@
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -90,6 +94,8 @@ function parse_git_branch {
 function parse_svn_branch {
     svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[00m') on $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[svn]$(parse_svn_dirty)#i"
 }
+
+export PROMPT_COMMAND=''
 
 function prompt {
     # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
