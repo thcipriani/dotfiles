@@ -1,7 +1,7 @@
 Config { font = "xft:Dejavu Sans Mono:pixelsize=12"
        , bgColor = "#073642"
        , fgColor = "#657b83"
-       , position = TopW L 90
+       , position = TopW L 95
        , commands = [ Run Weather "KDEN" ["-t"," <tempF>F","-L","64","-H","77","--normal","#d33682","--high","#dc322f","--low","#2aa198"] 36000
                     , Run Cpu ["-L","3","-H","50","--normal","#d33682","--high","#dc322f"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10

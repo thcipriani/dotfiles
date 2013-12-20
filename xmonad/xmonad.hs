@@ -34,7 +34,8 @@ myWorkspaces = ["1:web","2:term"] ++ map show [3..9]
 main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
     xmonad $ defaultConfig
-      { normalBorderColor = "#073642"
+      { modMask = mod4Mask
+        , normalBorderColor = "#073642"
         , focusedBorderColor = "#268bd2"
         , terminal = "urxvt"
         , manageHook = manageDocks 
@@ -51,6 +52,6 @@ main = do
           }
      }
      `additionalKeys`
-     [ ((mod4Mask, xK_Tab), prevScreen)
-     , ((mod4Mask .|. shiftMask, xK_Tab),  nextScreen)
+     [ ((mod1Mask, xK_Tab), prevScreen)
+     , ((mod1Mask .|. shiftMask, xK_Tab),  nextScreen)
      ]

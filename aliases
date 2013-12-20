@@ -26,6 +26,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+if command -v scrot > /dev/null 2>&1; then
+  alias scrot="scrot $HOME/Dropbox/Screenshots/Screenshot-%Y-%m-%d-%T.png"
+fi
+
 alias ag='ag --pager "less -FRXS"'
 
 # Add an "alert" alias for long running commands.  Use like so:
