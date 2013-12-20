@@ -1,0 +1,31 @@
+# Dropbox + Bash = Lighting Fast .gif retrieval
+# -----------------------
+# Usage: gif <part-of-gif-basename>
+# Prerequisites: 
+#     - keep a butt-load of gifs in your "$HOME/Dropbox/Public/gifs" folder
+#     - Export a DROPBOX_UID variable that has your dropboxusercontent id
+#     - ...like a boss (https://dl.dropboxusercontent.com/u/2372716/gifs/like-a-boss.gif)
+ 
+arg=$1
+
+if [ -z $1 ]; then
+    arg='.'
+fi
+db_path=https://dl.dropboxusercontent.com/u/2372716/gifs/
+files=$(ls "$HOME/Dropbox/Public/gifs" | grep -i $arg)
+
+printf "%s\n" "${files[*]}" | nl
+printf "[ $(tput setaf 2)?$(tput sgr0) ]\tEnter the gif's number: "
+read index
+
+i=0
+for file in $files; do
+    i=$(($i + 1))
+    if [ $i -eq $index ]; then
+        if [ $(uname -s) = 'Linux' ]; then
+            echo "${db_path}${file}" | xclip -sel clip
+        elif [ $(uname -s) = 'Darwin' ]; then
+            echo "${db_path}${file}" | pbcopy
+        fi
+    fi
+done
