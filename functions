@@ -61,6 +61,14 @@ g() {
   fi
 }
 
+gco() {
+  if [ $# -gt 0 ]; then
+    git checkout "$@"
+  else
+    git branch
+  fi
+}
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
