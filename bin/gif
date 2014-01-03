@@ -27,12 +27,14 @@ read index
 
 i=0
 for file in $files; do
-    i=$(($i + 1))
+    (( i++ ))
     if [ $i -eq $index ]; then
         if [ $(uname -s) = 'Linux' ]; then
             echo "${db_path}${file}" | xclip -sel clip
         elif [ $(uname -s) = 'Darwin' ]; then
             echo "${db_path}${file}" | pbcopy
         fi
+
+        break;
     fi
 done
