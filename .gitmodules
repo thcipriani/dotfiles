@@ -68,3 +68,9 @@
 [submodule "bin/src/weather-ma-jig"]
 	path = bin/src/weather-ma-jig
 	url = git@github.com:thcipriani/weather-ma-jig.git
+[submodule "bin/src/fridayrc"]
+	path = bin/src/fridayrc
+	url = git@github.com:thcipriani/fridayrc.git
+[submodule "bin/src/sshit"]
+	path = bin/src/sshit
+	url = git@github.com:thcipriani/sshit.git

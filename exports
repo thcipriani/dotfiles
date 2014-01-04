@@ -1,6 +1,6 @@
 export MYSHELL=$(basename $SHELL)
 export EDITOR=vim
-export PATH=$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 if [ -d "$HOME/Projects/play" ]; then
   export PATH=$HOME/Projects/play:$PATH

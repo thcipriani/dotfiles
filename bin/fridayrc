@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+
+trap "cleanup" INT
+trap "cleanup" EXIT
+
+audpid=0
+host="http://tylercipriani.s3.amazonaws.com/fridayrc"
+video="$host/friday.bz2"
+audio_wav="$host/friday.gsm.wav"
+local_wav="/tmp/friday.gsm.wav"
+audio_raw="$host/friday.raw"
+
+error() {
+    printf "[$(tput setaf 1) ! $(tput sgr0)] ERROR: %s" "$1"
+}
+
+has?() {
+    command -v "$1" > /dev/null 2>&1
+}
+
+pythonian() {
+    if has? python2;
+        then python2 "$@"
+    elif has? python;
+        then python "$@"
+    else
+        error "Cannot haz pythons :(" && exit 1
+    fi
+}
+
+obtainium() {
+    if has? curl; 
+        then curl -s $1
+    elif has? wget; 
+        then wget -q -O - $1
+    else 
+        error "Cannot haz internets. :(" && exit 1
+    fi
+}
+
+cleanup() { 
+    (( audpid > 1 )) && kill $audpid 2> /dev/null;
+
+    if [ -f "$local_wav" ]; then
+        rm "$local_wav"
+    fi
+
+    printf "$(tput clear) $(tput cnorm)\n"
+}
+
+clearscreen() {
+    printf "$(tput civis) $(tput clear)"
+}
+
+clearscreen
+
+printf "$(tput setaf 1)LOADING...$(tput sgr0)\n"
+
+if has? afplay; then
+    # On Mac OS
+    obtainium "$audio_wav" > "$local_wav"
+    afplay /tmp/friday.gsm.wav &
+elif has? aplay; then
+    # On Linux
+    obtainium "$audio_raw" | aplay -q -f S16_LE -r 8000 &
+elif has? play; then
+    # On Cygwin
+    obtainium "$audio_wav" > "$local_wav"
+    play -q "$local_wav" &
+fi
+audpid=$!
+
+# Sync FPS to reality as best as possible. Mac's freebsd version of date cannot
+# has nanoseconds so inject python. :/
+pythonian <(cat <<EOF
+import sys
+import time
+fps = 16.5
+time_per_frame = 1.0 / fps
+buf = '' 
+frame = 0
+next_frame = 0
+begin = time.time()
+try:
+    for i, line in enumerate(sys.stdin):
+        if i % 32 == 0:
+            frame += 1
+            sys.stdout.write(buf); buf = ''
+            elapsed = time.time() - begin
+            repose = (frame * time_per_frame) - elapsed
+            if repose > 0.0:
+                time.sleep(repose)
+            next_frame = elapsed / time_per_frame
+        if frame >= next_frame:
+            buf += line
+except KeyboardInterrupt:
+  pass
+EOF
+) < <(obtainium $video | bunzip2 -q 2> /dev/null)
