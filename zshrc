@@ -50,4 +50,6 @@ for file in ~/.{exports,aliases,functions,extra}; do
 done
 unset file
 
-cat "$HOME/Art/$(hostname)"
+if [ -f "$HOME/srv/art/$(hostname)_motd" ]; then
+  cat "$HOME/srv/art/$(hostname)_motd"
+fi

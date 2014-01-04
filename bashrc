@@ -194,5 +194,6 @@ prompt() {
 }
 prompt
 
-# shell sourcefile
-export SHELL_SOURCE_FILE="$HOME/.bashrc"
+if [ -f "$HOME/srv/art/$(hostname)_motd" ]; then
+  cat "$HOME/srv/art/$(hostname)_motd"
+fi
