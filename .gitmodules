@@ -65,3 +65,6 @@
 [submodule "vim/bundle/vim-iawriter"]
 	path = vim/bundle/vim-iawriter
 	url = https://github.com/jacekd/vim-iawriter.git
+[submodule "bin/src/weather-ma-jig"]
+	path = bin/src/weather-ma-jig
+	url = git@github.com:thcipriani/weather-ma-jig.git
