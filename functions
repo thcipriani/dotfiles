@@ -53,21 +53,23 @@ extract () {
      fi
 }
 
-g() {
-  if [ $# -gt 0 ]; then
-    git "$@"
-  else
-    git hist3
-  fi
-}
+if [ $(basename $SHELL) != 'zsh' ]; then
+  g() {
+    if [ $# -gt 0 ]; then
+      git "$@"
+    else
+      git hist3
+    fi
+  }
 
-gco() {
-  if [ $# -gt 0 ]; then
-    git checkout "$@"
-  else
-    git branch
-  fi
-}
+  gco() {
+    if [ $# -gt 0 ]; then
+      git checkout "$@"
+    else
+      git branch
+    fi
+  }
+fi
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {

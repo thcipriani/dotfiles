@@ -87,10 +87,12 @@ alias sdif="svn diff"
 alias srev="svn revert"
 
 # Git
-alias gst='git status'
-alias gc='git commit -v'
-alias ga='git add'
-alias gp='git push'
+if [ $(basename $SHELL) != 'zsh' ]; then
+  alias gst='git status'
+  alias gc='git commit -v'
+  alias ga='git add'
+  alias gp='git push'
+fi
 
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
