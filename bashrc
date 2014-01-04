@@ -56,7 +56,7 @@ fi
 unset color_prompt force_color_prompt
 
 for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
-    [ -r "$file" ] && source "$file"
+    [ -r "$file" ] && . "$file"
 done
 unset file
 
@@ -79,7 +79,7 @@ function parse_git_dirty {
     fi
 }
 
-function parse_svn_dirty {
+parse_svn_dirty () {
 if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && $(svn st 2> /dev/null | sed -e 's/\s*\(.\)\s*.*/\1/') == 'S') ]]; then
         echo -e '\033[0;32m✔'
     else
@@ -88,54 +88,111 @@ if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && 
 }
 
 function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(echo -e '\033[00m') on $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[git]$(parse_git_dirty)/"
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1[git]$(parse_git_dirty)/"
 }
 
 function parse_svn_branch {
-    svn info 2> /dev/null | grep -i url | sed -e "s#url: $REPO\/\(.*\)#$(echo -e '\033[00m') on $(echo -e '\033[1;37m')\1$(echo -e '\033[00m')[svn]$(parse_svn_dirty)#i"
+    svn info 2> /dev/null | grep -i url | sed -e "s/url: $REPO\/\(.*\)/\1[svn]$(parse_svn_dirty)/i"
 }
-
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 export PROMPT_COMMAND=''
 
-function prompt {
-    # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
-    # 30m - Black
-    # 31m - Red
-    # 32m - Green
-    # 33m - Yellow
-    # 34m - Blue
-    # 35m - Purple
-    # 36m - Cyan
-    # 37m - White
-    # 0 - Normal
-    # 1 - Bold
-    local BLACK="\[\033[0;30m\]"
-    local BLACKBOLD="\[\033[1;30m\]"
-    local RED="\[\033[0;31m\]"
-    local REDBOLD="\[\033[1;31m\]"
-    local GREEN="\[\033[0;32m\]"
-    local GREENBOLD="\[\033[1;32m\]"
-    local YELLOW="\[\033[0;33m\]"
-    local YELLOWBOLD="\[\033[1;33m\]"
-    local BLUE="\[\033[0;34m\]"
-    local BLUEBOLD="\[\033[1;34m\]"
-    local PURPLE="\[\033[0;35m\]"
-    local PURPLEBOLD="\[\033[1;35m\]"
-    local CYAN="\[\033[0;36m\]"
-    local CYANBOLD="\[\033[1;36m\]"
-    local WHITE="\[\033[0;37m\]"
-    local WHITEBOLD="\[\033[1;37m\]"
-    local NORMAL="\[\033[00m\]"
+prompt() {
+    # An extravagent PS1
+    #   - http://blog.bigdinosaur.org/easy-ps1-colors/
+    #   - https://github.com/eprev/dotfiles/blob/master/includes/prompt.bash
+    #   - http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+    #
+    # Color   | Escape | Code       | tput-8    | tput-256
+    # --------+--------+------------+-----------+----------
+    # Black   | 30m    | \033[0;30m | tput 0    | tput 236
+    # Red     | 31m    | \033[0;31m | tput 1    | tput 196
+    # Green   | 32m    | \033[0;32m | tput 2    | tput 118
+    # Yellow  | 33m    | \033[0;33m | tput 3    | tput 226
+    # Blue    | 34m    | \033[0;34m | tput 4    | tput 69
+    # Magenta | 35m    | \033[0;35m | tput 5    | tput 135
+    # Cyan    | 36m    | \033[0;36m | tput 6    | tput 75
+    # White   | 37m    | \033[0;37m | tput 7    | tput 254
+    # Reset   | 0      | \033[00m   | tput sgr0 | tput sgr0
+    # Bold    | 1      | \033[1;xxm | tput bold | tput bold
+    #
+    # Prompt stolen from:
+    #   https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
+    if tput setaf 1 &> /dev/null; then
+      tput sgr0
+
+      BLACK=$(tput setaf 0)
+      RED=$(tput setaf 1)
+      GREEN=$(tput setaf 2)
+      YELLOW=$(tput setaf 3)
+      BLUE=$(tput setaf 4)
+      MAGENTA=$(tput setaf 5)
+      CYAN=$(tput setaf 6)
+      WHITE=$(tput setaf 7)
+
+      BRIGHT=$(tput bold)
+      RESET=$(tput sgr0)
+      BLINK=$(tput blink)
+      REVERSE=$(tput smso)
+      UNDERLINE=$(tput smul)
+
+      PURPLE=$(tput setaf 5)
+      ORANGE=$(tput setaf 1)
+      LIME_YELLOW=$(tput setaf 2)
+      POWDER_BLUE=$(tput setaf 4)
+
+      if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+        GREEN=$(tput setaf 190)
+        MAGENTA=$(tput setaf 9)
+        ORANGE=$(tput setaf 172)
+        PURPLE=$(tput setaf 141)
+        WHITE=$(tput setaf 254)
+        LIME_YELLOW=$(tput setaf 190)
+        POWDER_BLUE=$(tput setaf 153)
+      fi
+    else
+      BLACK="\033[0;30m"
+      RED="\033[0;31m"
+      GREEN="\033[0;32m"
+      YELLOW="\033[0;33m"
+      BLUE="\033[0;34m"
+      MAGENTA="\033[0;35m"
+      CYAN="\033[0;36m"
+      WHITE="\033[0;37m"
+
+      RESET="\033[00m"
+      BOLD=""
+
+      ORANGE="\033[1;31m"
+      PURPLE="\033[1;35m"
+      LIME_YELLOW="\033[1;32m"
+      POWDER_BLUE="\033[1;34m"
+    fi
+
+    colors=(BLACK \
+            RED \
+            GREEN \
+            YELLOW \
+            BLUE \
+            MAGENTA \
+            CYAN \
+            WHITE \
+            RESET \
+            BOLD \
+            ORANGE \
+            PURPLE \
+            LIME_YELLOW \
+            POWDER_BLUE)
+
+    for color in $colors; do
+      export $color
+    done
+
     # Minimal prompt
-    PS1="$WHITEBOLD# $PURPLE\u$NORMAL at $BLUE\h$NORMAL in $GREEN\w$NORMAL\$(parse_git_branch)\$(parse_svn_branch)\n  $NORMAL"
-    # Verbose prompt
-    # PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w$NORMAL\$(parse_svn_branch)\n  $NORMAL"
+    export PS1="\[${BRIGHT}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(svn st 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_svn_branch)\[$WHITE\]\n\$ \[$NORMAL\]"
+    export PS2="\[$ORANGE\]→ \[$RESET\]"
 }
 prompt
 
 # shell sourcefile
-export SHELL_SOURCE_FILE=~/.bashrc
+export SHELL_SOURCE_FILE="$HOME/.bashrc"

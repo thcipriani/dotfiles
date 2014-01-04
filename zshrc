@@ -49,6 +49,5 @@ for file in ~/.{exports,aliases,functions,extra}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
-export PATH="$HOME/bin:$PATH"
 
 cat "$HOME/Art/$(hostname)"
