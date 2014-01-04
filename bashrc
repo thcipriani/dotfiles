@@ -194,6 +194,6 @@ prompt() {
 }
 prompt
 
-if [ -f "$HOME/srv/art/$(hostname)_motd" ]; then
-  cat "$HOME/srv/art/$(hostname)_motd"
+if [ -f "$HOME/srv/art/motd/$(hostname)_motd" ]; then
+  cat "$HOME/srv/art/motd/$(hostname)_motd"
 fi
