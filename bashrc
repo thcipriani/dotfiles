@@ -71,7 +71,7 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-function parse_git_dirty {
+parse_git_dirty() {
     if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit (working directory clean)" ]]; then
         echo -e '\033[0;32m✔'
     else
@@ -87,17 +87,16 @@ if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && 
     fi
 }
 
-function parse_git_branch {
+parse_git_branch() {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1[git]$(parse_git_dirty)/"
 }
 
-function parse_svn_branch {
+parse_svn_branch() {
     svn info 2> /dev/null | grep -i url | sed -e "s/url: $REPO\/\(.*\)/\1[svn]$(parse_svn_dirty)/i"
 }
 
-export PROMPT_COMMAND=''
-
 prompt() {
+    exitcode=$?
     # An extravagent PS1
     #   - http://blog.bigdinosaur.org/easy-ps1-colors/
     #   - https://github.com/eprev/dotfiles/blob/master/includes/prompt.bash
@@ -118,81 +117,96 @@ prompt() {
     #
     # Prompt stolen from:
     #   https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
-    if tput setaf 1 &> /dev/null; then
-      tput sgr0
+    if [ -z "$BLACK" ]; then
+      if tput setaf 1 &> /dev/null; then
+        tput sgr0
 
-      BLACK=$(tput setaf 0)
-      RED=$(tput setaf 1)
-      GREEN=$(tput setaf 2)
-      YELLOW=$(tput setaf 3)
-      BLUE=$(tput setaf 4)
-      MAGENTA=$(tput setaf 5)
-      CYAN=$(tput setaf 6)
-      WHITE=$(tput setaf 7)
+        BLACK=$(tput setaf 0)
+        RED=$(tput setaf 1)
+        GREEN=$(tput setaf 2)
+        YELLOW=$(tput setaf 3)
+        BLUE=$(tput setaf 4)
+        MAGENTA=$(tput setaf 5)
+        CYAN=$(tput setaf 6)
+        WHITE=$(tput setaf 7)
 
-      BRIGHT=$(tput bold)
-      RESET=$(tput sgr0)
-      BLINK=$(tput blink)
-      REVERSE=$(tput smso)
-      UNDERLINE=$(tput smul)
+        BRIGHT=$(tput bold)
+        RESET=$(tput sgr0)
+        BLINK=$(tput blink)
+        REVERSE=$(tput smso)
+        UNDERLINE=$(tput smul)
 
-      PURPLE=$(tput setaf 5)
-      ORANGE=$(tput setaf 1)
-      LIME_YELLOW=$(tput setaf 2)
-      POWDER_BLUE=$(tput setaf 4)
+        PURPLE=$(tput setaf 5)
+        ORANGE=$(tput setaf 1)
+        LIME_YELLOW=$(tput setaf 2)
+        POWDER_BLUE=$(tput setaf 4)
 
-      if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-        GREEN=$(tput setaf 190)
-        MAGENTA=$(tput setaf 9)
-        ORANGE=$(tput setaf 172)
-        PURPLE=$(tput setaf 141)
-        WHITE=$(tput setaf 254)
-        LIME_YELLOW=$(tput setaf 190)
-        POWDER_BLUE=$(tput setaf 153)
+        if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+          GREEN=$(tput setaf 190)
+          MAGENTA=$(tput setaf 9)
+          ORANGE=$(tput setaf 172)
+          PURPLE=$(tput setaf 141)
+          WHITE=$(tput setaf 254)
+          LIME_YELLOW=$(tput setaf 190)
+          POWDER_BLUE=$(tput setaf 153)
+        fi
+      else
+        BLACK="\033[0;30m"
+        RED="\033[0;31m"
+        GREEN="\033[0;32m"
+        YELLOW="\033[0;33m"
+        BLUE="\033[0;34m"
+        MAGENTA="\033[0;35m"
+        CYAN="\033[0;36m"
+        WHITE="\033[0;37m"
+
+        RESET="\033[00m"
+        BOLD=""
+
+        ORANGE="\033[1;31m"
+        PURPLE="\033[1;35m"
+        LIME_YELLOW="\033[1;32m"
+        POWDER_BLUE="\033[1;34m"
       fi
-    else
-      BLACK="\033[0;30m"
-      RED="\033[0;31m"
-      GREEN="\033[0;32m"
-      YELLOW="\033[0;33m"
-      BLUE="\033[0;34m"
-      MAGENTA="\033[0;35m"
-      CYAN="\033[0;36m"
-      WHITE="\033[0;37m"
 
-      RESET="\033[00m"
-      BOLD=""
+      colors=(BLACK \
+              RED \
+              GREEN \
+              YELLOW \
+              BLUE \
+              MAGENTA \
+              CYAN \
+              WHITE \
+              RESET \
+              BOLD \
+              ORANGE \
+              PURPLE \
+              LIME_YELLOW \
+              POWDER_BLUE)
 
-      ORANGE="\033[1;31m"
-      PURPLE="\033[1;35m"
-      LIME_YELLOW="\033[1;32m"
-      POWDER_BLUE="\033[1;34m"
+      for color in $colors; do
+        export $color
+      done
     fi
 
-    colors=(BLACK \
-            RED \
-            GREEN \
-            YELLOW \
-            BLUE \
-            MAGENTA \
-            CYAN \
-            WHITE \
-            RESET \
-            BOLD \
-            ORANGE \
-            PURPLE \
-            LIME_YELLOW \
-            POWDER_BLUE)
+    if [ $exitcode -eq 0 ]; then
+      color=${WHITE}
+    else
+      color=${RED}
+    fi
 
-    for color in $colors; do
-      export $color
-    done
+    if [ $UID -eq 0 ]; then
+      SIGIL="$color#$RESET"
+    else
+      SIGIL="$color\$${RESET}"
+    fi
 
-    # Minimal prompt
-    export PS1="\[${BRIGHT}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(svn st 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_svn_branch)\[$WHITE\]\n\$ \[$NORMAL\]"
-    export PS2="\[$ORANGE\]→ \[$RESET\]"
+    PS1="\[${BRIGHT}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(svn st 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_svn_branch)\[$WHITE\]\n$SIGIL \[$NORMAL\]"
 }
-prompt
+
+PROMPT_COMMAND=prompt
+PS2="\[$ORANGE\]→ \[$RESET\]"
+
 
 if [ -f "$HOME/srv/art/motd/$(hostname)_motd" ]; then
   cat "$HOME/srv/art/motd/$(hostname)_motd"
