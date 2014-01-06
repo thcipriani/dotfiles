@@ -196,12 +196,12 @@ prompt() {
     fi
 
     if [ $UID -eq 0 ]; then
-      SIGIL="$color#$RESET"
+      SIGIL="\[${color}\]# \[${RESET}\]"
     else
-      SIGIL="$color\$${RESET}"
+      SIGIL="\[${color}\]$ \[${RESET}\]"
     fi
 
-    PS1="\[${BRIGHT}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(svn st 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_svn_branch)\[$WHITE\]\n$SIGIL \[$NORMAL\]"
+    PS1="\[${BRIGHT}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(svn st 2> /dev/null) ]] && echo \" on \")\[$NORMAL\]\$(parse_svn_branch)\[$WHITE\]\n${SIGIL}\[$RESET\]"
 }
 
 PROMPT_COMMAND=prompt
