@@ -117,7 +117,7 @@ prompt() {
     #
     # Prompt stolen from:
     #   https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
-    if [ -z "$BLACK" ]; then
+    if [ -z "$COLORS_SET" ]; then
       if tput setaf 1 &> /dev/null; then
         tput sgr0
 
@@ -161,7 +161,7 @@ prompt() {
         WHITE="\033[0;37m"
 
         RESET="\033[00m"
-        BOLD=""
+        BRIGHT=""
 
         ORANGE="\033[1;31m"
         PURPLE="\033[1;35m"
@@ -187,6 +187,8 @@ prompt() {
       for color in $colors; do
         export $color
       done
+
+      export COLORS_SET=1
     fi
 
     if [ $exitcode -eq 0 ]; then
