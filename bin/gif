@@ -6,6 +6,7 @@
 #     - keep a butt-load of gifs in your "$HOME/Dropbox/Public/gifs" folder
 #     - Export a DROPBOX_UID variable that has your dropboxusercontent id
 #     - ...like a boss (https://dl.dropboxusercontent.com/u/2372716/gifs/like-a-boss.gif)
+set -x
 arg=$1
 
 if [[ -z "$1" ]]; then
@@ -31,10 +32,10 @@ printf "[ $(tput setaf 2)?$(tput sgr0) ]\tEnter the gif's number: "
 read index
 
 array_pos=$(( index - 1 ))
-files_count=$(( #files[@] - 1 ))
 
-for i in $(seq 0 $files_count); do
-    if [[ $i -eq $array_pos ]]; then
+i=0
+while (( i <= ${#files[@]} )); do
+    if (( $i == $array_pos )); then
         if [[ "$(uname -s)" == 'Linux' ]]; then
             echo "${db_path}${files[ $i ]}" | xclip
         elif [[ "$(uname -s)" == 'Darwin' ]]; then
@@ -43,4 +44,5 @@ for i in $(seq 0 $files_count); do
 
         break;
     fi
+    (( i++ ))
 done
