@@ -45,10 +45,12 @@ bindkey '^[[B' down-line-or-search
 # Gotsta have C-r, baby!
 bindkey '^R' history-incremental-search-backward
 
-for file in ~/.{exports,aliases,functions,extra}; do
+for file in ~/.{exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
+
+[ -r "$HOME/Dropbox/Code/Bash/dotfile-extras" ] && . "$HOME/Dropbox/Code/Bash/dotfile-extras"
 
 if [ -f "$HOME/srv/art/motd/$(hostname)_motd" ]; then
   cat "$HOME/srv/art/motd/$(hostname)_motd"

@@ -55,10 +55,12 @@ fi
 
 unset color_prompt force_color_prompt
 
-for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
+for file in ~/.{bash_prompt,exports,aliases,functions}; do
     [ -r "$file" ] && . "$file"
 done
 unset file
+
+[ -r "$HOME/Dropbox/Code/Bash/dotfile-extras" ] && . "$HOME/Dropbox/Code/Bash/dotfile-extras"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
