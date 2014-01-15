@@ -3,12 +3,12 @@
 background_image="$HOME/Dropbox/AA_Fire.jpg"
 
 # Fix my damn monitor at home. Damnit.
-if [ "$(hostname)" = "ryu" ] && [ -x "$HOME/.bin/laptop-monitorfix" ]; then
-    "$HOME/.bin/laptop-monitorfix"
+if [ "$(hostname)" = "ryu" ] && [ -x "$HOME/bin/laptop-monitorfix" ]; then
+    "$HOME/bin/laptop-monitorfix"
 fi
 
-if [ "$(hostname)" = "zangief" ] && [ -x "$HOME/.bin/work-monitorfix" ]; then
-  "$HOME/.bin/work-monitorfix"
+if [ "$(hostname)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
+  "$HOME/bin/work-monitorfix"
 fi
 
 # Load resources
