@@ -119,79 +119,75 @@ prompt() {
     #
     # Prompt stolen from:
     #   https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
-    if [ -z "$COLORS_SET" ]; then
-      if tput setaf 1 &> /dev/null; then
-        tput sgr0
+    if tput setaf 1 &> /dev/null; then
+      tput sgr0
 
-        BLACK=$(tput setaf 0)
-        RED=$(tput setaf 1)
-        GREEN=$(tput setaf 2)
-        YELLOW=$(tput setaf 3)
-        BLUE=$(tput setaf 4)
-        MAGENTA=$(tput setaf 5)
-        CYAN=$(tput setaf 6)
-        WHITE=$(tput setaf 7)
+      BLACK=$(tput setaf 0)
+      RED=$(tput setaf 1)
+      GREEN=$(tput setaf 2)
+      YELLOW=$(tput setaf 3)
+      BLUE=$(tput setaf 4)
+      MAGENTA=$(tput setaf 5)
+      CYAN=$(tput setaf 6)
+      WHITE=$(tput setaf 7)
 
-        BRIGHT=$(tput bold)
-        RESET=$(tput sgr0)
-        BLINK=$(tput blink)
-        REVERSE=$(tput smso)
-        UNDERLINE=$(tput smul)
+      BRIGHT=$(tput bold)
+      RESET=$(tput sgr0)
+      BLINK=$(tput blink)
+      REVERSE=$(tput smso)
+      UNDERLINE=$(tput smul)
 
-        PURPLE=$(tput setaf 5)
-        ORANGE=$(tput setaf 1)
-        LIME_YELLOW=$(tput setaf 2)
-        POWDER_BLUE=$(tput setaf 4)
+      PURPLE=$(tput setaf 5)
+      ORANGE=$(tput setaf 1)
+      LIME_YELLOW=$(tput setaf 2)
+      POWDER_BLUE=$(tput setaf 4)
 
-        if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-          GREEN=$(tput setaf 190)
-          MAGENTA=$(tput setaf 9)
-          ORANGE=$(tput setaf 172)
-          PURPLE=$(tput setaf 141)
-          WHITE=$(tput setaf 254)
-          LIME_YELLOW=$(tput setaf 190)
-          POWDER_BLUE=$(tput setaf 153)
-        fi
-      else
-        BLACK="\033[0;30m"
-        RED="\033[0;31m"
-        GREEN="\033[0;32m"
-        YELLOW="\033[0;33m"
-        BLUE="\033[0;34m"
-        MAGENTA="\033[0;35m"
-        CYAN="\033[0;36m"
-        WHITE="\033[0;37m"
-
-        RESET="\033[00m"
-        BRIGHT=""
-
-        ORANGE="\033[1;31m"
-        PURPLE="\033[1;35m"
-        LIME_YELLOW="\033[1;32m"
-        POWDER_BLUE="\033[1;34m"
+      if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+        GREEN=$(tput setaf 190)
+        MAGENTA=$(tput setaf 9)
+        ORANGE=$(tput setaf 172)
+        PURPLE=$(tput setaf 141)
+        WHITE=$(tput setaf 254)
+        LIME_YELLOW=$(tput setaf 190)
+        POWDER_BLUE=$(tput setaf 153)
       fi
+    else
+      BLACK="\033[0;30m"
+      RED="\033[0;31m"
+      GREEN="\033[0;32m"
+      YELLOW="\033[0;33m"
+      BLUE="\033[0;34m"
+      MAGENTA="\033[0;35m"
+      CYAN="\033[0;36m"
+      WHITE="\033[0;37m"
 
-      colors=(BLACK \
-              RED \
-              GREEN \
-              YELLOW \
-              BLUE \
-              MAGENTA \
-              CYAN \
-              WHITE \
-              RESET \
-              BOLD \
-              ORANGE \
-              PURPLE \
-              LIME_YELLOW \
-              POWDER_BLUE)
+      RESET="\033[00m"
+      BRIGHT=""
 
-      for color in $colors; do
-        export $color
-      done
-
-      export COLORS_SET=1
+      ORANGE="\033[1;31m"
+      PURPLE="\033[1;35m"
+      LIME_YELLOW="\033[1;32m"
+      POWDER_BLUE="\033[1;34m"
     fi
+
+    colors=(BLACK \
+            RED \
+            GREEN \
+            YELLOW \
+            BLUE \
+            MAGENTA \
+            CYAN \
+            WHITE \
+            RESET \
+            BOLD \
+            ORANGE \
+            PURPLE \
+            LIME_YELLOW \
+            POWDER_BLUE)
+
+    for color in $colors; do
+      export $color
+    done
 
     if [ $exitcode -eq 0 ]; then
       color=${WHITE}
