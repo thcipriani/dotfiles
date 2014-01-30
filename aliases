@@ -1,3 +1,6 @@
+# Collect my vim usage for _something_…
+# http://www.patrick-wied.at/projects/heatmap-keyboard/
+alias vim="vim -w ~/.vim_keystrokes"
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
