@@ -95,7 +95,11 @@ if [ $(basename $SHELL) != 'zsh' ]; then
   alias gc='git commit -v'
   alias ga='git add'
   alias gp='git push'
+  alias gl='git pull'
 fi
+
+# This one is apparently not in oh-my-zsh
+alias gd='git diff'
 
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
