@@ -208,6 +208,6 @@ PROMPT_COMMAND=prompt
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 
-if [ -f "$HOME/srv/art/motd/$(hostname)_motd" ]; then
-  cat "$HOME/srv/art/motd/$(hostname)_motd"
+if [ -f "$HOME/srv/art/motd/$(hostname -s)_motd" ]; then
+  cat "$HOME/srv/art/motd/$(hostname -s)_motd"
 fi
