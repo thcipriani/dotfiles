@@ -52,6 +52,6 @@ unset file
 
 [ -r "$HOME/Dropbox/Code/Bash/dotfile-extras" ] && . "$HOME/Dropbox/Code/Bash/dotfile-extras"
 
-if [ -f "$HOME/srv/art/motd/$(hostname)_motd" ]; then
-  cat "$HOME/srv/art/motd/$(hostname)_motd"
+if [ -f "$HOME/srv/art/motd/$(hostname -s)_motd" ]; then
+  cat "$HOME/srv/art/motd/$(hostname -s)_motd"
 fi
