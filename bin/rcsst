@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+save_ifs=$IFS
+IFS=$(echo -en "\n\b")
+
+folders=$(find . -type d -not -name 'RCS')
+
+for folder in $folders; do
+  echo "checking $folder..."
+  # Shows any RCS Modificiation ins current directory
+  new=$(find . -maxdepth 1 -type f | xargs rcsdiff -q 2>&1 | egrep ^rcsdiff | grep -i 'no such file' | cut -d':' -f 2 | sed -e 's/\.\/RCS\///' -e 's/\,v//')
+
+  if (( $(echo $new | wc -l) > 1 )); then
+    echo "# The following files are not under version control: "
+    echo "#"
+    echo $new
+  fi
+
+  mods=$(find . -maxdepth 1 -type f | xargs rcsdiff -q 2>&1 | egrep ^rcsdiff | grep -vi 'no such file' | cut -d':' -f 2 | sed -e 's/\,v//')
+  if (( $(echo $mods | wc -l) > 1 )); then
+    echo
+    echo "# The following files have modifications: "
+    echo '#'
+    echo $mods
+  fi
+done
+
+IFS=$save_ifs

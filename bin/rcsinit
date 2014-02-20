@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# easy way to initialize RCS repos
+mkdir RCS && chmod 700 RCS
+ci -u -t-'initial checkin' -m'Initial Checkin' *
