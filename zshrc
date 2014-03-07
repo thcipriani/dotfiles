@@ -13,3 +13,7 @@ for file in ~/.{exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
+
+if [ -f "$HOME/srv/art/motd/$(hostname -s)_motd" ]; then
+  cat "$HOME/srv/art/motd/$(hostname -s)_motd"
+fi
