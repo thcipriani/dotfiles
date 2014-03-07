@@ -136,28 +136,28 @@ unset color_prompt force_color_prompt
 
 _parse_git_dirty() {
   if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit (working directory clean)" ]]; then
-    printf "\[${LIME_YELLOW}\]✔\[${RESET}\]"
+    printf "${LIME_YELLOW}✔${RESET}"
   else
-    printf "\[${RED}\]✗\[${RESET}\]"
+    printf "${RED}✗${RESET}"
   fi
 }
 
 _parse_svn_dirty () {
   if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && $(svn st 2> /dev/null | sed -e 's/\s*\(.\)\s*.*/\1/') == 'S') ]]; then
-    printf "\[${LIME_YELLOW}\]✔\[${RESET}\]"
+    printf "${LIME_YELLOW}✔${RESET}"
   else
-    printf "\[${RED}\]✗\[${RESET}\]"
+    printf "${RED}✗${RESET}"
   fi
 }
 
 _parse_git_branch() {
   git rev-parse --is-inside-work-tree &>/dev/null || return
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ ❯ \1[git]$(parse_git_dirty)/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1[git]$(_parse_git_dirty)/"
 }
 
 _parse_svn_branch() {
   svn info 2> /dev/null || return
-  svn info 2> /dev/null | grep -i url | sed -e "s/url: $REPO\/\(.*\)/ ❯ \1[svn]$(parse_svn_dirty)/i"
+  svn info 2> /dev/null | grep -i url | sed -e "s/url: $REPO\/\(.*\)/ \1[svn]$(_parse_svn_dirty)/i"
 }
 
 _rprompt() {
@@ -189,7 +189,7 @@ prompt() {
     local _color
 
     if [ $_exitcode -eq 0 ]; then
-      color=${POWDER_BLUE}
+      color=${CYAN}
     else
       color=${RED}
     fi
