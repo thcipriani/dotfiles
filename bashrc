@@ -164,7 +164,6 @@ _rprompt() {
   local _time=$1
   (( $_time < 5 )) && return
   local _out
-  local _bottom_length=$2
   local days=$(( $_time / 60 / 60 / 24 ))
   local hours=$(( $_time / 60 / 60 % 24 ))
   local minutes=$(( $_time / 60 % 60 ))
@@ -199,9 +198,9 @@ prompt() {
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
-    _bottom_row=" \[${color}\]❯\[${RESET}\] "
+    _bottom_row="\[${color}\]❯\[${RESET}\] "
 
-    PS1="${_top_row}\$(_rprompt $_total_time)${_bottom_row}"
+    PS1="${_top_row}\$(_rprompt $_total_time)\n${_bottom_row}"
 }
 
 _exec () { :; }
