@@ -194,7 +194,7 @@ prompt() {
       color=${RED}
     fi
 
-    _top_row="\[${LIME_YELLOW}\]\w\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
+    _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
