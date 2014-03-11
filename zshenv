@@ -1,13 +1,16 @@
 _rprompt() {
-  local days=$(( $1 / 60 / 60 / 24 ))
-  local hours=$(( $1 / 60 / 60 % 24 ))
-  local minutes=$(( $1 / 60 % 60 ))
-  local seconds=$(( $1 % 60 ))
-  (( $days > 0 )) && out="${days}d"
-  (( $hours > 0 )) && out="$out ${hours}h"
-  (( $minutes > 0 )) && out="$out ${minutes}m"
-  out="$out ${seconds}s"
-  RPS1="$out"
+  local _time=$1
+  (( $_time < 5 )) && RPS1="" && return
+  local _out
+  local days=$(( $_time / 60 / 60 / 24 ))
+  local hours=$(( $_time / 60 / 60 % 24 ))
+  local minutes=$(( $_time / 60 % 60 ))
+  local seconds=$(( $_time % 60 ))
+  (( $days > 0 )) && _out="${days}d"
+  (( $hours > 0 )) && _out="$_out ${hours}h"
+  (( $minutes > 0 )) && _out="$_out ${minutes}m"
+  _out="$_out ${seconds}s"
+  RPS1="${RED}$_out${RESET}"
 }
 
 _prompt_precmd() {
@@ -17,7 +20,7 @@ _prompt_precmd() {
     _total_time=0
   fi
 
-  ((_total_time > 5)) && _rprompt "$_total_time"
+  _rprompt "$_total_time"
   unset _start_time
 }
 
@@ -39,10 +42,11 @@ _prompt_setup() {
   zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
   # show username@host if logged in through SSH
-  [[ "$SSH_CONNECTION" != '' ]] && prompt_pure_username='%n@%m '
+  [[ "$SSH_CONNECTION" != '' ]] && _top_row='%F{magenta}%n%F{reset}@%F{orange}%m%F{reset} '
 
   # prompt turns red if the previous command didn't exit with 0
-  PROMPT='%(?.%F{cyan}.%F{red})❯%f '
+  PROMPT="${_top_row}%F{green}%1~%F{reset}
+%(?.%F{cyan}.%F{red})❯%f "
 }
 
 _prompt_setup "$@"

@@ -8,3 +8,5 @@ hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 hist3 = log --oneline --abbrev-commit --all --graph --decorate
 [color]
 	ui = true
+[push]
+	default = matching
