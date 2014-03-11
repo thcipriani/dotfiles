@@ -55,5 +55,9 @@ if [ -x "/usr/bin/xset" ]; then
     sleep 3
     xset -b
 fi
- 
+
+if command -v xflux > /dev/null 2>&1; then
+  xflux -z 80501
+fi
+
 exec xmonad
