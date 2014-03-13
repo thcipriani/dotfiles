@@ -185,6 +185,10 @@ set statusline+=%=   " Right align.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 " }}}
 
+" Special file cases -------------------------------------------------- {{{
+autocmd FileType make setlocal noexpandtab
+" }}}
+
 " Development Tools --------------------------------------------------- {{{
 " Tagbar (requires Exuberant ctags 5.5+)
 nnoremap <silent><leader>c :TagbarToggle<cr>
