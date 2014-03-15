@@ -1,1 +1,10 @@
-xrandr --output DVI-I-2 --right-of DVI-I-1
+#!/bin/bash
+
+left="DVI-I-1"
+right="DVI-I-2"
+
+if xrandr | grep -q "$right connected"; then
+  if xrandr | grep -q "$left connected"; then
+    xrandr --output $right --right-of $left
+  fi
+fi
