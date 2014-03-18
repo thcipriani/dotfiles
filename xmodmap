@@ -1,5 +1,10 @@
+! map caps lock to control
 remove Lock = Caps_Lock
 remove Control = Control_L
 keysym Caps_Lock = Control_L
 add Lock = Caps_Lock
 add Control = Control_L
+
+! set right Alt key to be Compose (/usr/share/X11/locale/en_US.UTF-8/Compose
+remove Mod1 = Alt_R
+keysym Alt_R = Multi_key

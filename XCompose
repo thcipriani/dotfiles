@@ -1,0 +1,61 @@
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+# sudo apt-get install ttf-kannada-fonts
+<Multi_key> <S> <N> <O> <W>     : "❄"   U2603
+<Multi_key> <p> <l> <a> <n> <e> : "✈"   U2708
+<Multi_key> <z> <a> <p>         : "⚡"   U26A1
+
+# prefix 'm' = mathematical symbols
+<Multi_key> <m> <d> : "Δ"
+<Multi_key> <m> <e> : "ϵ"
+<Multi_key> <m> <i> : "∞"
+<Multi_key> <m> <l> : "λ"
+<Multi_key> <m> <p> : "π"
+<Multi_key> <m> <t> : "𝛩"
+
+<Multi_key> <m> <a> : "𝑎"
+<Multi_key> <m> <b> : "𝑏"
+<Multi_key> <m> <c> : "𝑐"
+<Multi_key> <m> <f> : "𝑓"
+<Multi_key> <m> <g> : "𝑔"
+<Multi_key> <m> <n> : "𝑛"
+<Multi_key> <m> <q> : "𝑞"
+<Multi_key> <m> <s> : "𝑠"
+<Multi_key> <m> <x> : "𝑥"
+<Multi_key> <m> <y> : "𝑦"
+
+<Multi_key> <m> <less> : "↜"
+<Multi_key> <m> <minus> : "↭"
+<Multi_key> <m> <greater> : "↝"
+
+# quotes
+<Multi_key> <bracketleft> <apostrophe> : "｢"
+<Multi_key> <bracketright> <apostrophe> : "｣"
+
+# easier grammar
+<Multi_key> <semicolon> <apostrophe> : "’"
+<Multi_key> <colon> <apostrophe> : "‘"
+
+# misc
+<Multi_key> <colon> <bar> <bar> : "ಠ_ಠ"
+<Multi_key> <less> <3> : "❤"
+<Multi_key> <bar> <asciicircum> : "↑"
+<Multi_key> <bar> <v> : "↓"
+
+# irc shortcuts
+<Multi_key> <v> <i> : "$EDITOR"
+
+# fun with paleotypography
+<Multi_key> <T> <H> : "Ð" # 'Th'e
+<Multi_key> <t> <h> : "ð"
+
+<Multi_key> <W> <W> : "Ƿ" # 'W'hen
+<Multi_key> <w> <w> : "ƿ"
+
+<Multi_key> <s> <s> : "ſ" # 'S'ee
+
+<Multi_key> <Y> <Y> : "Ȝ" # 'Y'ell
+<Multi_key> <y> <y> : "ȝ"
+
+<Multi_key> <N> <G> : "Ŋ" # Ni'gh't
+<Multi_key> <n> <g> : "ŋ"
