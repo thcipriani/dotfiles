@@ -6,6 +6,7 @@ email = tyler@tylercipriani.com
 hist = log --oneline
 hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 hist3 = log --oneline --abbrev-commit --all --graph --decorate
+	up = "!git remote update -p; git merge --ff-only @{u}"
 [color]
 	ui = true
 [push]

@@ -94,7 +94,7 @@ alias gst='git status'
 alias gc='git commit -v'
 alias ga='git add'
 alias gp='git push'
-alias gl='git pull'
+alias gl='git up'
 alias gd='git diff'
 
 # Will return the current branch name
