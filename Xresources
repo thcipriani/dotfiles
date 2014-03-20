@@ -1,10 +1,9 @@
 URxvt*buffered: true
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
-URxvt*font: xft:DejaVu Sans Mono:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight
-URxvt*boldFont: xft:DejaVu Sans Mono:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight
-! URxvt*font: xft:Source Code Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:Source Code Pro for Powerline:style=RegularForPowerline:pixelsize=16:antialias=true:hinting=slight
-! URxvt*boldFont: xft:Source Code Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:Source Code Pro for Powerline:style=RegularForPowerline:pixelsize=16:antialias=true:hinting=slight
+! These are the things I must do to see ಠ_ಠ
+URxvt*font: xft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+URxvt*boldFont: ft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
 URxvt*letterSpace: -1
 URxvt*depth: 32
 URxvt*borderless: 1
