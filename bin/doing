@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# SYNOPSIS
+#   poor-man's daemon: nohup doing & &> /dev/null
+#   log entry: doing [what you're doing]
+# ------------------------------------------
+
+if ! command -v notify-send > /dev/null 2>&1; then
+  printf "[$(tput setaf 1)ERROR$(tput sgr0)] notify-send not found try: sudo apt-get install libnotify-bin"
+  exit 1;
+fi
+
+# Notification daemon
+if (( $# == 0 )); then
+  while ((1)); do
+    sleep 1800;
+    notify-send "What are you doing?"
+  done;
+  exit 0;
+fi
+
+# date/time | weather | wat
+echo "$(date +'%Y-%m-%d %H:%M:%S') | $(weathermajig boulder --short) | $@" >> "$HOME/doing.log"

@@ -42,20 +42,26 @@ if [ -x /usr/bin/gnome-power-manager ] ; then
 fi
 
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
-    sleep 3
     "$HOME/.dropbox-dist/dropboxd" &
 fi
 
 if [ -x "/usr/bin/gnome-sound-applet" ]; then
-    sleep 3
     "/usr/bin/gnome-sound-applet" &
 fi
 
+if [ -x "/usr/bin/dunst" ]; then
+  "/usr/bin/dunst" &
+fi
+
 if [ -x "/usr/bin/xset" ]; then
-    sleep 3
     xset -b
 fi
 
+if command -v doing > /dev/null 2>&1; then
+  nohup doing & > /dev/null 2>&1
+fi
+
+# I'm going to say that this doesn't work at all. It's running...but...?
 if command -v xflux > /dev/null 2>&1; then
   xflux -z 80501
 fi
