@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
 background_image="$HOME/Dropbox/AA_Fire.jpg"
+
+has?() {
+    command -v "$1" > /dev/null 2>&1
+}
 
 # Fix my damn monitor at home. Damnit.
 if [ "$(hostname -s)" = "ryu" ] && [ -x "$HOME/bin/laptop-monitorfix" ]; then
@@ -8,7 +11,7 @@ if [ "$(hostname -s)" = "ryu" ] && [ -x "$HOME/bin/laptop-monitorfix" ]; then
 fi
 
 if [ "$(hostname -s)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
-  "$HOME/bin/work-monitorfix"
+    "$HOME/bin/work-monitorfix"
 fi
 
 # Load resources
@@ -20,7 +23,7 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true \
  --alpha 0 &
  
 # Set the background color
-if [ -x "/usr/bin/feh" ] && [ -f "$background_image" ]; then
+if has? feh && [ -f "$background_image" ]; then
     feh --bg-scale "$background_image"
 else
     xsetroot -solid midnightblue
@@ -32,11 +35,11 @@ if [ -f "$HOME/.xmodmap" ]; then
 fi
  
 # Fire up apps
-if [ -x /usr/bin/nm-applet ] ; then
+if has? nm-applet; then
     nm-applet --sm-disable &
 fi
  
-if [ -x /usr/bin/gnome-power-manager ] ; then
+if has? gnome-power-manager; then
     sleep 3
     gnome-power-manager &
 fi
@@ -50,20 +53,25 @@ if [ -x "/usr/bin/gnome-sound-applet" ]; then
 fi
 
 if [ -x "/usr/bin/dunst" ]; then
-  "/usr/bin/dunst" &
+    "/usr/bin/dunst" &
 fi
 
-if [ -x "/usr/bin/xset" ]; then
+if has? xset; then
     xset -b
 fi
 
-if command -v doing > /dev/null 2>&1; then
-  nohup doing & > /dev/null 2>&1
+if has? doing; then
+    nohup doing & > /dev/null 2>&1
 fi
 
 # I'm going to say that this doesn't work at all. It's running...but...?
-if command -v xflux > /dev/null 2>&1; then
-  xflux -z 80501
+if has? xflux; then
+    xflux -z 80501
+fi
+
+# https://github.com/alols/xcape
+if has? xcape; then
+    xcape -e 'Control_L=Escape'
 fi
 
 exec xmonad
