@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+words=''
+for i in $(seq 1 $1); do
+  n=$(wc -l < /usr/share/dict/words)
+  word=$(( RANDOM % n ))
+  words="$(head -$word /usr/share/dict/words | tail -1) $words"
+done
+
+printf "$words\n"

@@ -30,9 +30,10 @@ else
 fi
 
 # Remap control key
-if [ -f "$HOME/.xmodmap" ]; then
-  xmodmap "$HOME/.xmodmap"
-fi
+#if [ -f "$HOME/.xmodmap" ]; then
+#  xmodmap "$HOME/.xmodmap"
+#fi
+setxbmap -model pc105 -layout us -option compose:ralt -option terminate:ctrl_alt_bksp -option ctrl:nocaps
  
 # Fire up apps
 if has? nm-applet; then
@@ -57,7 +58,8 @@ if [ -x "/usr/bin/dunst" ]; then
 fi
 
 if has? xset; then
-    xset -b
+    xset -b            # Stop beeping at me
+    xset r rate 330 60 # Set keyboard repeat rate
 fi
 
 if has? doing; then
