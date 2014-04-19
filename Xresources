@@ -18,6 +18,10 @@ urxvt.perl-ext-common: default,matcher
 urxvt.urlLauncher: google-chrome
 urxvt.matcher.button: 1
 
+! Cursor settings
+xcursor.theme: DMZ-Black
+xcursor.size: 16
+
 !! Solarized color scheme for the X Window System
 !!
 !! http://ethanschoonover.com/solarized

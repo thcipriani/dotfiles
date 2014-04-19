@@ -14,8 +14,8 @@ if [ "$(hostname -s)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
     "$HOME/bin/work-monitorfix"
 fi
 
-# Load resources
-xrdb -merge .Xresources
+# Load X Configuration
+test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
  
 # Set up an icon tray
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
@@ -29,51 +29,24 @@ else
     xsetroot -solid midnightblue
 fi
 
-# Remap control key
-#if [ -f "$HOME/.xmodmap" ]; then
-#  xmodmap "$HOME/.xmodmap"
-#fi
+# Keyboard stuffs
 setxkbmap -model pc105 -layout us -option compose:ralt -option terminate:ctrl_alt_bksp -option ctrl:nocaps
- 
-# Fire up apps
-if has? nm-applet; then
-    nm-applet --sm-disable &
-fi
- 
-if has? gnome-power-manager; then
-    sleep 3
-    gnome-power-manager &
-fi
-
-if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
-    "$HOME/.dropbox-dist/dropboxd" &
-fi
-
-if [ -x "/usr/bin/gnome-sound-applet" ]; then
-    "/usr/bin/gnome-sound-applet" &
-fi
-
-if [ -x "/usr/bin/dunst" ]; then
-    "/usr/bin/dunst" &
-fi
-
 if has? xset; then
     xset -b            # Stop beeping at me
     xset r rate 330 60 # Set keyboard repeat rate
 fi
+has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
 
-if has? doing; then
-    nohup doing & > /dev/null 2>&1
-fi
+# Cursor stuff
+has? xsetroot && xsetroot -cursor_name  left_ptr
 
-# I'm going to say that this doesn't work at all. It's running...but...?
-if has? xflux; then
-    xflux -z 80501
-fi
-
-# https://github.com/alols/xcape
-if has? xcape; then
-    xcape -e 'Control_L=Escape'
-fi
+# Fire up apps
+has? nm-applet && nm-applet --sm-disable &
+has? gnome-power-manager && gnome-power-manager &
+test -x "$HOME/.dropbox-dist/dropboxd" && "$HOME/.dropbox-dist/dropboxd" &
+test -x "/usr/bin/gnome-sound-applet" && "/usr/bin/gnome-sound-applet" &
+test -x "/usr/bin/dunst" && "/usr/bin/dunst" &
+has? doing && nohup doing & > /dev/null 2>&1
+has? xflux && xflux -z 80501
 
 exec xmonad
