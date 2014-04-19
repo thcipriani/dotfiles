@@ -19,7 +19,7 @@ xrdb -merge .Xresources
  
 # Set up an icon tray
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 5 --tint 0x073642 --transparent true --height 18 \
+ --expand true --width 5 --tint 0x1d1f21 --transparent true --height 18 \
  --alpha 0 &
  
 # Set the background color
@@ -33,7 +33,7 @@ fi
 #if [ -f "$HOME/.xmodmap" ]; then
 #  xmodmap "$HOME/.xmodmap"
 #fi
-setxbmap -model pc105 -layout us -option compose:ralt -option terminate:ctrl_alt_bksp -option ctrl:nocaps
+setxkbmap -model pc105 -layout us -option compose:ralt -option terminate:ctrl_alt_bksp -option ctrl:nocaps
  
 # Fire up apps
 if has? nm-applet; then

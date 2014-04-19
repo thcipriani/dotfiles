@@ -88,10 +88,10 @@ set noswapfile
 
 " Colorscheme
 " https://github.com/altercation/vim-colors-solarized
-colorscheme solarized
+" colorscheme solarized
 set background=dark
 " colorscheme iawriter
-" colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night
 
 " GUI Font (same as my gnome-terminal font)
 " https://github.com/adobe/source-code-pro
@@ -105,7 +105,7 @@ set listchars=tab:▸\ ,eol:¬
 " Version 7.3 (703) --------------------------------------------------- {{{
 if v:version >= 703
   set colorcolumn=75
-  hi ColorColumn ctermbg=black
+  hi ColorColumn ctermbg=234
   set undodir=~/.vim-undo
   set undofile
   set undolevels=1000 "max number of changes that can be undone
@@ -355,6 +355,6 @@ endif
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_space_guides = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 " }}}
