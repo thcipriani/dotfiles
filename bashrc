@@ -139,7 +139,7 @@ fi
 unset color_prompt force_color_prompt
 
 _parse_git_dirty() {
-  if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit (working directory clean)" ]]; then
+  if [[ -z "$(git status -s 2> /dev/null)" ]]; then
     printf "${LIME_YELLOW}✔${RESET}"
   else
     printf "${RED}✗${RESET}"
