@@ -182,6 +182,7 @@ if [[ "$SHELL" =~ "zsh" ]]; then
 
     compctl -K _completemarks jump
     compctl -K _completemarks unmark
+
 fi
 
 if [[ "$SHELL" =~ "bash" ]]; then
@@ -193,4 +194,30 @@ if [[ "$SHELL" =~ "bash" ]]; then
     }
 
     complete -F _completemarks jump unmark
+
+fi
+
+n () {
+  mkdir -p "${_N_PATH:=$HOME/.notes}"; $EDITOR "$_N_PATH/$@";
+}
+
+_haz() {
+    command -v "$1" > /dev/null 2>&1
+}
+
+if _haz compctl; then
+    _completenotes() {
+      reply=($(ls "${_N_PATH:=$HOME/.notes}"))
+    }
+
+    compctl -K _completenotes n
+elif _haz complete; then
+  _completenotes() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local wordlist=$(find ${_N_PATH:=$HOME/.notes} -type f -printf "%f\n")
+    COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$cur"))
+    return 0
+  }
+
+  complete -F _completenotes n
 fi
