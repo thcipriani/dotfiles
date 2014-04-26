@@ -13,10 +13,38 @@ inoremap <up> <nop>
 set nocompatible
 " }}}
 
-" Pathogen ------------------------------------------------------------ {{{
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+" Vundle -------------------------------------------------------------- {{{
+filetype off " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Other plugins
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'tpope/vim-surround'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'goldfeld/vim-seek'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'joonty/vdebug'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'juvenn/mustache'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-fugitive'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 " }}}
 
 " Lifesaver ----------------------------------------------------------- {{{
