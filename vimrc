@@ -254,26 +254,6 @@ if executable("ag")
     let g:ctrlp_show_hidden = 1
 "}}}
 
-" Unite.vim ----------------------------------------------------------- {{{
-nnoremap <silent><leader>f :Unite file_rec/async<cr>
-" nnoremap <leader>c :Unite outline<cr>
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-let g:unite_enable_start_insert = 1
-let g:unite_enable_split_vertically = 1
-let g:unite_split_rule = "botright"
-let g:unite_winwidth = 40
-let g:unite_prompt = "⮀ "
-autocmd FileType unite call s:unite_my_settings()
-
-function! s:unite_my_settings()
-    nmap <buffer> <ESC>      <Plug>(unite_exit)
-    imap <buffer> <ESC>      <Plug>(unite_exit)
-    imap <buffer> <TAB>   <Plug>(unite_select_next_line)
-    imap <buffer> <S-TAB>   <Plug>(unite_select_previous_line)
-endfunction
-"}}}
-
 " Version 7.4 && Lua — unleash the completion! ------------------------ {{{
 if v:version >= 704 && has("lua")
   " Neocomplete.vim --------------------------------------------------- {{{

@@ -8,3 +8,4 @@ xmonad/xmonad.hi
 xmonad/xmonad.o
 vim/bundle/**
 ~vim/bundle/Vundle.vim
+bin/src/**
