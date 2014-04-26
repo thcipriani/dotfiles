@@ -205,7 +205,7 @@ prompt() {
     # echo 》| hexdump -b
     # 0000000 343 200 213 012                                                
     # 0000004
-    _bottom_row="\[${color}\]\343\200\213\[${RESET}\] "
+    _bottom_row="\[${color}\]\343\200\213\[${RESET}\]"
 
     PS1="${_top_row}\$(_rprompt $_total_time)\n${_bottom_row}"
 }
