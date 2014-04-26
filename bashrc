@@ -229,3 +229,8 @@ for file in ~/.{bash_prompt,exports,aliases,functions}; do
     [ -r "$file" ] && . "$file"
 done
 unset file
+
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+  set -o vi
+  bind -m vi-insert "\C-l":clear-screen
+fi
