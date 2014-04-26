@@ -187,7 +187,7 @@ nnoremap <silent><leader>l :set list!<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-"Opens a vertical split and switches over (,v)  
+"Opens a vertical split and switches over (,v)
 nnoremap <leader>v <C-w>v<C-w>l
 
 "Moves around split windows
@@ -239,7 +239,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " }}}
 
 " Included for Airline ------------------------------------------------ {{{
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'tomorrow'
 let g:airline_powerline_fonts = 1
 " }}}
 
