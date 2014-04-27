@@ -7,5 +7,5 @@ xmonad/xmonad.errors
 xmonad/xmonad.hi
 xmonad/xmonad.o
 vim/bundle/**
-~vim/bundle/Vundle.vim
+!vim/bundle/Vundle.vim
 bin/src/**
