@@ -1,3 +1,7 @@
+_haz() {
+  command -v "$1" > /dev/null 2>&1
+}
+
 # Copy w/ progress
 cp_p () {
   rsync -WavP --human-readable --progress $1 $2
@@ -201,16 +205,18 @@ n () {
   mkdir -p "${_N_PATH:=$HOME/.notes}"; $EDITOR "$_N_PATH/$@";
 }
 
-_haz() {
-    command -v "$1" > /dev/null 2>&1
+tc () {
+  mux start "$1" > /dev/null 2>&1 || printf "[\033[38;5;1;5mERROR\033[00m] gem install tmux\n"
 }
 
+# ZShell Completions
 if _haz compctl; then
     _completenotes() {
       reply=($(ls "${_N_PATH:=$HOME/.notes}"))
     }
 
     compctl -K _completenotes n
+# Bash Completions
 elif _haz complete; then
   _completenotes() {
     local cur=${COMP_WORDS[COMP_CWORD]}
