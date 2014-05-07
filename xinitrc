@@ -16,12 +16,12 @@ fi
 
 # Load X Configuration
 test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
- 
+
 # Set up an icon tray
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
  --expand true --width 5 --tint 0x1d1f21 --transparent true --height 18 \
  --alpha 0 &
- 
+
 # Set the background color
 if has? feh && [ -f "$background_image" ]; then
     feh --bg-scale "$background_image"
@@ -36,6 +36,7 @@ if has? xset; then
     xset r rate 330 60 # Set keyboard repeat rate
 fi
 has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
+has? xbindkeys && xbindkeys
 
 # Cursor stuff
 has? xsetroot && xsetroot -cursor_name  left_ptr
