@@ -52,7 +52,7 @@ if &term =~ '256color'
    "Disable Background Color Erase (BCE) so that color schemes
    "work properly when Vim is used inside tmux and GNU screen.
    "See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-   " May be unnecessary see: 
+   " May be unnecessary see:
    " http://www.reddit.com/r/vim/comments/1a29vk/fixing_vims_background_color_erase_for_256color/c8thqe7
    set t_ut=
 endif
@@ -67,7 +67,7 @@ set encoding=utf-8        " Show utf-8 chars
 set showcmd               " count highlighted
 set ruler                 " Show where I am in the command area
 set showmode              " -- INSERT (appreciation)-- :)
-set laststatus=2          " always show the status line 
+set laststatus=2          " always show the status line
                           " ↪ (0 = never, 1 = default [multi-window only])
 set mouse=a               " Use the mouse
 
@@ -170,7 +170,7 @@ nnoremap / /\v
 inoremap JJ <ESC>
 vnoremap JJ <ESC>
 
-" Vimrc editing 
+" Vimrc editing
 nnoremap <silent><leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent><leader>sv :source $MYVIMRC<cr>
 
@@ -213,8 +213,15 @@ set statusline+=%=   " Right align.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 " }}}
 
-" Special file cases -------------------------------------------------- {{{
+" Autocmds -------------------------------------------------- {{{
 autocmd FileType make setlocal noexpandtab
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 " }}}
 
 " Development Tools --------------------------------------------------- {{{
