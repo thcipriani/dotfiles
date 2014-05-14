@@ -7,6 +7,10 @@ if [ -d "$HOME/Projects/play" ]; then
   export PATH=$HOME/Projects/play:$PATH
 fi
 
+if [ -d "$HOME/.cabal/bin" ]; then
+  export PATH=$HOME/.cabal/bin:$PATH
+fi
+
 # Frech Toasting iTerm
 export TERM=xterm-256color
 
