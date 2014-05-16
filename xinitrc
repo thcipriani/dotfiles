@@ -36,7 +36,14 @@ if has? xset; then
     xset r rate 330 60 # Set keyboard repeat rate
 fi
 has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
+
+# Clipboard stuffs
 has? xbindkeys && xbindkeys
+# http://mutelight.org/subtleties-of-the-x-clipboard
+if has? autocutsel; then
+  autocutsel -fork &
+  autocutsel -selection PRIMARY -fork &
+fi
 
 # Cursor stuff
 has? xsetroot && xsetroot -cursor_name  left_ptr

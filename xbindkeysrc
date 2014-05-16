@@ -66,7 +66,7 @@
 #
 # Middle click paste
 "xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
-  Alt + v
+  control+shift + v
 
 ##################################
 # End of xbindkeys configuration #
