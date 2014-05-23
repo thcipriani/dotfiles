@@ -206,7 +206,7 @@ n () {
 }
 
 tc () {
-  mux start "$1" > /dev/null 2>&1 || printf "[\033[38;5;1;5mERROR\033[00m] gem install tmux\n"
+  mux start "$1" > /dev/null 2>&1 || printf "[\033[38;5;1;5mERROR\033[00m] gem install tmuxinator\n"
 }
 
 # ZShell Completions

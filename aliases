@@ -25,7 +25,7 @@ alias ag='ag --pager "\less -FirSX"'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Colored up cat!
-# Easy Insall & Pygments: sudo apt-get python-setuptools && sudo easy_install Pygments
+# Easy Insall & Pygments: sudo apt-get install python-pip && sudo pip install Pygments
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # I'm dumb
@@ -47,8 +47,9 @@ alias ll="ls -l"
 alias tlog="tail -f /var/log/syslog"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias httpdump="sudo tcpdump -i eth0 -nns 0 -w - | grep -a -E \"Host:|GET\""
+alias sniff="sudo ngrep -d 'eth0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias localip="/sbin/ifconfig eth0 | awk '/inet addr:.*/ { split(\$2,a,\":\"); print a[2]; }'"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
@@ -64,7 +65,6 @@ alias sosh="source ~/.${MYSHELL}rc"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Enhanced WHOIS lookups
@@ -121,6 +121,9 @@ if [  "$(uname -s)" = "Darwin" ]; then
     alias flushdns="dscacheutil -flushcache"
 
     alias mountainking="osascript -e 'say \"Dum dum dum dum dum dum dum he he he ho ho ho fa lah lah lah lah lah lah fa lah full hoo hoo hoo\" using \"Cellos\"'"
+    alias localip="ipconfig getifaddr en0"
+    alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+    alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 fi
 
 # Quick scratch pad
