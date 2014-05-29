@@ -11,9 +11,6 @@ if [ -d "$HOME/.cabal/bin" ]; then
   export PATH=$HOME/.cabal/bin:$PATH
 fi
 
-# Frech Toasting iTerm
-export TERM=xterm-256color
-
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
 

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+text="Example"
+
+cat /dev/null > "$outfile"
+
+if (( $# > 0 )); then
+  text="$@"
+fi
+
+for font in /usr/share/figlet/*.flf; do
+  printf "$font\n"
+  figlet -f "$font" "$text"
+done

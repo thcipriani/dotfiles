@@ -35,7 +35,6 @@ main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
     xmonad $ defaultConfig
       { modMask = mod4Mask
-        , startupHook = setWMName "LG3D"
         , normalBorderColor = "#073642"
         , focusedBorderColor = "#268bd2"
         , terminal = "urxvt"

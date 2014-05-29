@@ -28,24 +28,9 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    *color*) color_prompt=yes;;
+    rxvt-unicode) color_prompt=yes;;
 esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
-    else
-        color_prompt=
-    fi
-fi
 
 if [[ "$color_prompt" == "yes" ]]; then
     # * http://blog.bigdinosaur.org/easy-ps1-colors/
@@ -117,34 +102,9 @@ if [[ "$color_prompt" == "yes" ]]; then
       LIME_YELLOW="\033[1;32m"
       POWDER_BLUE="\033[1;34m"
     fi
-else
-  BLACK=""
-  RED=""
-  GREEN=""
-  YELLOW=""
-  BLUE=""
-  MAGENTA=""
-  CYAN=""
-  WHITE=""
-
-  RESET=""
-  BRIGHT=""
-
-  ORANGE=""
-  PURPLE=""
-  LIME_YELLOW=""
-  POWDER_BLUE=""
 fi
 
 unset color_prompt force_color_prompt
-
-_parse_git_dirty() {
-  if [[ -z "$(git status -s 2> /dev/null)" ]]; then
-    printf "${LIME_YELLOW}✔${RESET}"
-  else
-    printf "${RED}✗${RESET}"
-  fi
-}
 
 _parse_svn_dirty () {
   if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && $(svn st 2> /dev/null | sed -e 's/\s*\(.\)\s*.*/\1/') == 'S') ]]; then
@@ -154,14 +114,22 @@ _parse_svn_dirty () {
   fi
 }
 
-_parse_git_branch() {
-  git rev-parse --is-inside-work-tree &>/dev/null || return
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1[git]$(_parse_git_dirty)/"
-}
-
 _parse_svn_branch() {
   svn info 2> /dev/null || return
   svn info 2> /dev/null | grep -i url | sed -e "s/url: $REPO\/\(.*\)/ \1[svn]$(_parse_svn_dirty)/i"
+}
+
+_parse_git_dirty() {
+  if [[ -z "$(git status -s 2> /dev/null)" ]]; then
+    printf "${LIME_YELLOW}✔${RESET}"
+  else
+    printf "${RED}✗${RESET}"
+  fi
+}
+
+_parse_git_branch() {
+  git rev-parse --is-inside-work-tree &>/dev/null || return
+  printf " $(git rev-parse --abbrev-ref HEAD)[git]$(_parse_git_dirty)"
 }
 
 _rprompt() {
@@ -190,34 +158,28 @@ prompt() {
 
     unset _start_time
 
-    local _color
-
     if [ $_exitcode -eq 0 ]; then
       color=${CYAN}
     else
       color=${RED}
     fi
 
-    _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
+    _top_row="\n\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
-    # echo 》| hexdump -b
-    # 0000000 343 200 213 012                                                
-    # 0000004
-    _bottom_row="\[${color}\]\343\200\213\[${RESET}\]"
+    #echo ⎼ | hexdump -b
+    #0000000 342 216 274 012
+    #0000004
+    _bottom_row="\[${color}\]\342\216\274\\342\216\274\\342\216\274\[${RESET}\] "
 
     PS1="${_top_row}\$(_rprompt $_total_time)\n${_bottom_row}"
 }
-
-_exec () { :; }
 
 _log_start() {
   [ -n "$COMP_LINE" ] && return  # do nothing if completing
   [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" || "$BASH_COMMAND" =~ "_rprompt" ]] && return # don't cause a preexec for $PROMPT_COMMAND
   _start_time=$(date +%s)
-  local this_command=`history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g"`;
-  _exec $this_command;
 }
 
 trap '_log_start' DEBUG
