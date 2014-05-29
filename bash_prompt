@@ -139,14 +139,11 @@ prompt() {
       color=${RED}
     fi
 
-    _top_row="\n\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
+    _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
-    #echo ⎼ | hexdump -b
-    #0000000 342 216 274 012
-    #0000004
-    _bottom_row="\[${color}\]\342\216\274\\342\216\274\\342\216\274\[${RESET}\] "
+    _bottom_row="\[${color}\]❯\[${RESET}\] "
 
     PS1="${_top_row}\$(_rprompt $_total_time)\n${_bottom_row}"
 }
