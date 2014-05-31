@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-background_image="$HOME/Dropbox/AA_Fire.jpg"
 
 has?() {
     command -v "$1" > /dev/null 2>&1
 }
 
-# Fix my damn monitor at home. Damnit.
+# Desktop setup {{{
+background_image="$HOME/Dropbox/AA_Fire.jpg"
+
+# XRandR—{{{ Fix my damn monitor at home. Damnit.
 if [ "$(hostname -s)" = "ryu" ] && [ -x "$HOME/bin/laptop-monitorfix" ]; then
     "$HOME/bin/laptop-monitorfix"
 fi
@@ -13,39 +15,69 @@ fi
 if [ "$(hostname -s)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
     "$HOME/bin/work-monitorfix"
 fi
+# }}}
 
 # Load X Configuration
 test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
 
-# Set up an icon tray
-trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 5 --tint 0x1d1f21 --transparent true --height 18 \
- --alpha 0 &
+# trayer {{{
+trayer \
+  --edge top \
+  --align right \
+  --SetDockType true \
+  --SetPartialStrut true \
+  --expand false \
+  --widthtype percent \
+  --width 5 \
+  --tint 0x1d1f21 \
+  --transparent true \
+  --heighttype pixel \
+  --height 18 \
+  --margin 0 \
+  --padding 0 \
+  --alpha 0 &
+# }}}
 
-# Set the background color
+# background color {{{
 if has? feh && [ -f "$background_image" ]; then
     feh --bg-scale "$background_image"
 else
     xsetroot -solid midnightblue
 fi
+# }}}
+# }}}
 
-# Keyboard stuffs
-setxkbmap -model pc105 -layout us -option compose:ralt -option terminate:ctrl_alt_bksp -option ctrl:nocaps
+# Keyboard stuffs {{{
+# ---
+# * use right-alt as Alt-Gr key ($ → £)
+# * use right ctrl key as compose (ctrl 1 2 → ½)
+# * use ctrl+alt+bksp to restart X
+# * Capslock → Ctrl
+# * Alt-Gr + Space = nbsp/Alt-Gr + Shift + Space = shy nbsp
+setxkbmap \
+  -layout us \
+  -variant altgr-intl \
+  -option compose:rctrl \
+  -option terminate:ctrl_alt_bksp \
+  -option ctrl:nocaps \
+  -option nbsp:level3n
+
 if has? xset; then
-    xset -b            # Stop beeping at me
-    xset r rate 330 60 # Set keyboard repeat rate
+  xset -b            # Stop beeping at me (A.K.A turn of PC speaker)
+  xset r rate 330 60 # Set keyboard repeat rate
 fi
 has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
 
-# Clipboard stuffs
+# Clipboard stuffs (requires xvkbd)
 has? xbindkeys && xbindkeys
 # http://mutelight.org/subtleties-of-the-x-clipboard
 if has? autocutsel; then
   autocutsel -fork &
   autocutsel -selection PRIMARY -fork &
 fi
+# }}}
 
-# Cursor stuff
+# Cursor stuff {{{
 has? xsetroot && xsetroot -cursor_name  left_ptr
 
 # Fire up apps
@@ -56,5 +88,6 @@ test -x "/usr/bin/gnome-sound-applet" && "/usr/bin/gnome-sound-applet" &
 test -x "/usr/bin/dunst" && "/usr/bin/dunst" &
 has? doing && nohup doing & > /dev/null 2>&1
 has? xflux && xflux -z 80501
+# }}}
 
 exec xmonad

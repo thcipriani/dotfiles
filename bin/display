@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+
+# UTILITY FUNCTIONS {{{
+# ===
+_hr="------------"
+
+# Dump to the screen in a formatted way
+# ---
+#
+# _headline string - First argument, printed above horizontal rule
+# $@        string - Remaining arguments, printed below horizontal rule
+puts() {
+  local _headline="$1"
+  shift
+  printf "\n  %s:\n  %s\n" "$_headline" "$_hr"
+  printf "%b\n\n" "$@" | nl
+  unset _headline
+}
+# --------------------------------------------------------------------- }}}
+
+
+# XRANDR FUNCTIONS {{{
+# =====
+
+_local_displays="LVDS"
+_external_displays="HDMI VGA DVI"
+
+# Cache output of xrandr -q
+# ---
+#
+# refresh mixed - whether or not to refresh.
+#                 Any arugment is true here
+get_xrandr() {
+  (( "$#" > 0 )) && xrandr=
+  [[ -z "$xrandr" ]] && xrandr=$(xrandr -q)
+}
+
+get_all() {
+  get_xrandr
+  xrandr_all=$(echo "$xrandr" | awk '/connected/ {print $1}' | sort)
+}
+
+# Find connected ouputs
+get_connected() {
+  get_xrandr
+  [[ -z "$xrandr_connected" ]] && \
+  xrandr_connected=$(echo "$xrandr" | awk '/ connected/ {print $1}' | sort)
+}
+
+get_disconnected() {
+  get_xrandr
+  xrandr_disconnected=$(echo "$xrandr" | awk '/disconnected/ {print $1}' | sort)
+}
+
+# Find local, connected output
+get_local() {
+  get_connected
+  for _local_display in "$_local_displays"; do
+    for _conn_display in "$xrandr_connected"; do
+      if [[ "$_conn_display" == $_local_display* ]]; then
+        xrandr_local="$_conn_display"
+        break
+      fi
+    done
+  done
+}
+
+# Find primary external, connected output
+get_external() {
+  get_connected
+  for _ext_display in "$_external_displays"; do
+    for _conn_display in "$xrandr_connected"; do
+      if [[ "$_conn_display" == $_ext_display* ]]; then
+        xrandr_external="$_conn_display"
+        break
+      fi
+    done
+  done
+}
+
+# --------------------------------------------------------------------- }}}
+
+
+# OUTPUT FUNCTIONS {{{
+# ===
+
+# help function, obvs
+show_help() {
+  cat <<HELP
+    Usage:
+        $0 [COMMAND]...
+
+    COMMANDS:
+                 all   show all connected and disconnected displays
+           connected   show connected displays
+        disconnected   show disconnected displays
+               local   show local connected displays
+            external   show external connected displays
+
+    Example:
+        $0 disconnected
+
+HELP
+}
+
+show_all() {
+  get_all
+  puts "All Available Displays" "$xrandr_all"
+}
+
+show_connected() {
+  get_connected
+  puts "Connected Displays" "$xrandr_connected"
+}
+
+show_disconnected() {
+  get_disconnected
+  puts "Connected Displays" "$xrandr_disconnected"
+}
+
+show_local() {
+  get_local
+  puts "Local Connected Display" "$xrandr_local"
+}
+
+show_external() {
+  get_external
+  puts "External Connected Displays" "$xrandr_external"
+}
+# --------------------------------------------------------------------- }}}
+
+# MAIN EVENT LOOP {{{
+# ===
+main() {
+  case $1 in
+    all) show_all ;;
+    connected) show_connected ;;
+    disconnected) show_disconnected ;;
+    local) show_local ;;
+    external) show_external ;;
+    *) show_help ;;
+  esac
+}
+# --------------------------------------------------------------------- }}}
+
+main "$@"

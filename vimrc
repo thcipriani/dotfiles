@@ -195,6 +195,9 @@ nnoremap <leader>w <C-w><C-w>
 
 "Close a window
 nnoremap <silent><leader>q :q<cr>
+
+" Better use of folding
+nnoremap <leader>z za
 " }}}
 
 " Status line --------------------------------------------------------- {{{
