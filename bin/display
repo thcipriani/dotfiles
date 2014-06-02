@@ -12,18 +12,23 @@ _hr="------------"
 puts() {
   local _headline="$1"
   shift
+  local _arr="$@"
+  local _i=1
+  shift
   printf "\n  %s:\n  %s\n" "$_headline" "$_hr"
-  printf "%b\n\n" "$@" | nl
-  unset _headline
+  for _x in ${_arr[@]}; do
+    printf "    %s. %s\n" "$_i" "$_x"
+    (( i++ ))
+  done
+  unset _headline _i _x _arr
 }
 # --------------------------------------------------------------------- }}}
-
 
 # XRANDR FUNCTIONS {{{
 # =====
 
-_local_displays="LVDS"
-_external_displays="HDMI VGA DVI"
+_local_displays=("LVDS")
+_external_displays=("HDMI" "VGA" "DVI")
 
 # Cache output of xrandr -q
 # ---
@@ -37,26 +42,26 @@ get_xrandr() {
 
 get_all() {
   get_xrandr
-  xrandr_all=$(echo "$xrandr" | awk '/connected/ {print $1}' | sort)
+  xrandr_all=( $(echo "$xrandr" | awk '/connected/ {print $1}' | sort) )
 }
 
 # Find connected ouputs
 get_connected() {
   get_xrandr
   [[ -z "$xrandr_connected" ]] && \
-  xrandr_connected=$(echo "$xrandr" | awk '/ connected/ {print $1}' | sort)
+  xrandr_connected=( $(echo "$xrandr" | awk '/ connected/ {print $1}' | sort) )
 }
 
 get_disconnected() {
   get_xrandr
-  xrandr_disconnected=$(echo "$xrandr" | awk '/disconnected/ {print $1}' | sort)
+  xrandr_disconnected=( $(echo "$xrandr" | awk '/disconnected/ {print $1}' | sort) )
 }
 
 # Find local, connected output
 get_local() {
   get_connected
-  for _local_display in "$_local_displays"; do
-    for _conn_display in "$xrandr_connected"; do
+  for _local_display in "${_local_displays[@]}"; do
+    for _conn_display in "${xrandr_connected[@]}"; do
       if [[ "$_conn_display" == $_local_display* ]]; then
         xrandr_local="$_conn_display"
         break
@@ -68,9 +73,9 @@ get_local() {
 # Find primary external, connected output
 get_external() {
   get_connected
-  for _ext_display in "$_external_displays"; do
-    for _conn_display in "$xrandr_connected"; do
-      if [[ "$_conn_display" == $_ext_display* ]]; then
+  for _ext_display in "${_external_displays[@]}"; do
+    for _conn_display in "${xrandr_connected[@]}"; do
+      if [[ "$_conn_display" =~ $_ext_display* ]]; then
         xrandr_external="$_conn_display"
         break
       fi
@@ -78,8 +83,51 @@ get_external() {
   done
 }
 
-# --------------------------------------------------------------------- }}}
+mirror() {
+  get_local
+  get_external
 
+  local _primary="${xrandr_local[0]}"
+  local _secondary="${xrandr_external[0]}"
+  local -A _native_resolution
+
+  # require external display
+  [[ -z "$xrandr_external" ]] && exit 1
+
+  while read _line; do
+    if [[ "$_line" == Screen* ]]; then
+      continue
+    fi
+
+    if [[ "$_line" == [A-Z]* ]]; then
+      set -- $_line
+      local _source="$1"
+    else
+      if [[ -z "${_native_resolution[$_source]}" ]]; then
+        set -- $_line
+        _native_resolution[$_source]="$(echo "$1" \
+          | sed "s/\([[:digit:]]*x[[:digit:]]*\)\?.*/\1/")"
+      fi
+    fi
+  done < <(xrandr -q)
+
+  set -- $(echo ${_native_resolution[$_primary]} | tr "x" " ")
+  local _primary_x="$1"
+  local _primary_y="$2"
+
+  set -- $(echo ${_native_resolution[$_secondary]} | tr "x" " ")
+  local _secondary_x="$1"
+  local _secondary_y="$2"
+
+  local _x_scaling=$(echo "scale=4;$_primary_x/$_secondary_x" | bc)
+  local _y_scaling=$(echo "scale=4;$_primary_y/$_secondary_y" | bc)
+
+  local _sec="--output $_secondary --scale ${_x_scaling}x${_y_scaling} --auto"
+  local _pri="--output $_primary --same-as ${_secondary} --scale 1x1 --primary --auto"
+  xrandr $_sec $_pri
+}
+
+# --------------------------------------------------------------------- }}}
 
 # OUTPUT FUNCTIONS {{{
 # ===
@@ -105,27 +153,27 @@ HELP
 
 show_all() {
   get_all
-  puts "All Available Displays" "$xrandr_all"
+  puts "All Available Displays" "${xrandr_all[@]}"
 }
 
 show_connected() {
   get_connected
-  puts "Connected Displays" "$xrandr_connected"
+  puts "Connected Displays" "${xrandr_connected[@]}"
 }
 
 show_disconnected() {
   get_disconnected
-  puts "Connected Displays" "$xrandr_disconnected"
+  puts "Connected Displays" "${xrandr_disconnected[@]}"
 }
 
 show_local() {
   get_local
-  puts "Local Connected Display" "$xrandr_local"
+  puts "Local Connected Display" "${xrandr_local[@]}"
 }
 
 show_external() {
   get_external
-  puts "External Connected Displays" "$xrandr_external"
+  puts "External Connected Displays" "${xrandr_external[@]}"
 }
 # --------------------------------------------------------------------- }}}
 
@@ -138,6 +186,7 @@ main() {
     disconnected) show_disconnected ;;
     local) show_local ;;
     external) show_external ;;
+    mirror) mirror ;;
     *) show_help ;;
   esac
 }
