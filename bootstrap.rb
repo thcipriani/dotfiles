@@ -4,7 +4,7 @@
 home = File.expand_path '~'
 dotfiles = File.expand_path '~/.dotfiles'
 
-dontlink = %w[bin srv bootstrap project plan]
+dontlink = %w[bin srv etc bootstrap project plan]
 otherbin = %w[sshit weather-ma-jig]
 
 Dir['*'].each do |file|
@@ -14,7 +14,7 @@ Dir['*'].each do |file|
 end
 
 # link bin and srv
-%w[bin srv].each do |dir|
+%w[bin srv etc].each do |dir|
   `ln -sf "#{File.join dotfiles, dir}" "#{File.join(home, dir)}"`
 end
 
