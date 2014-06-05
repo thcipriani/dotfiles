@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if ! command -v openconnect > /dev/null 2>&1; then
+  echo "OpenConnect not found" 1>&2
+  exit 1
+fi
+
+if [[ ! -d "$HOME/etc"  || ! -x "$HOME/etc/vpnc-script" ]]; then
+  echo "~/etc/vpnc-script not found" 1>&2
+  exit 1
+fi
+
+if [[ ! -r "$HOME/.vpnrc" ]]; then
+  echo "~/.vpnrc not found" 1>&2
+  exit 1
+fi
+
+if [[ -n "$1" && "$1" == "stop" ]]; then
+  sudo pkill openconnect
+  exit 0
+fi
+
+sudo openconnect --background --script "$HOME/etc/vpnc-script" $(cat "$HOME/.vpnrc")

@@ -209,23 +209,6 @@ tc () {
   mux start "$1" > /dev/null 2>&1 || printf "[\033[38;5;1;5mERROR\033[00m] gem install tmuxinator\n"
 }
 
-vpn() {
-  _haz openconnect || (echo "OpenConnect not found" 1>&2 && exit 1)
-  echo "OpenConnect installed!"
-
-  [[ -d "$HOME/etc"  && -x "$HOME/etc/vpnc-script" ]] \
-    || (echo "~/etc/vpnc-script not found" 1>&2 && exit 1)
-
-  [[ -r "$HOME/.vpnrc" ]] || (echo "~/.vpnrc not found" 1>&2 && exit 1)
-
-  if [[ -n "$1" && "$1" == "stop" ]]; then
-    sudo pkill openconnect
-    exit 0
-  fi
-
-  sudo openconnect --background --script "$HOME/etc/vpnc-script" $(cat "$HOME/.vpnrc")
-}
-
 # ZShell Completions
 if _haz compctl; then
     _completenotes() {
