@@ -77,10 +77,20 @@ if has? autocutsel; then
 fi
 # }}}
 
-# Cursor stuff {{{
+# Cursor/Touch stuff {{{
 has? xsetroot && xsetroot -cursor_name  left_ptr
 
-# Fire up apps
+if has? xsetwacom; then
+  _touch_id=$(xsetwacom list devices | awk '/Finger/ {print $7}')
+  xsetwacom set $_touch_id TapTime 25
+  xsetwacom set $_touch_id Mode "Absolute"
+  xsetwacom set $_touch_id Suppress 1
+  xsetwacom set $_touch_id RawSample 20
+  xsetwacom set $_touch_id ScrollDistance 40
+fi
+# }}}
+
+# Fire up apps {{{
 has? nm-applet && nm-applet --sm-disable &
 has? gnome-power-manager && gnome-power-manager &
 test -x "$HOME/.dropbox-dist/dropboxd" && "$HOME/.dropbox-dist/dropboxd" &

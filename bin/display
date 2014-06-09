@@ -127,6 +127,40 @@ mirror() {
   xrandr $_sec $_pri
 }
 
+# Ben Wong,  October 1, 2010
+# Public domain.  No rights reserved.
+# Functionality extended by Chris Lockfort, August 23, 2012 for use in X230 tablets running gnome-shell.
+tablet() {
+  get_local
+
+  case $(xrandr -q | grep "$xrandr_local" | awk '{print $4}' | tr -d '(') in
+    left) # Currently top is rotated left, we should set it normal (0°)
+      xrandr --output "$xrandr_local" --rotate normal
+      for _device in $(xsetwacom --list devices | awk '{ print $7 }'); do
+        xsetwacom set $_device Rotate none;
+      done
+      ;;
+    normal)  # Screen is not rotated, we should rotate it right (90°)
+      xrandr --output "$xrandr_local" --rotate right
+      for _device in $(xsetwacom --list devices | awk '{ print $7 }'); do
+        xsetwacom set $_device Rotate cw;
+      done
+      ;;
+    right)    # Top of screen is rotated right, we should invert it (180°)
+      xrandr --output "$xrandr_local" --rotate inverted
+      for _device in $(xsetwacom --list devices | awk '{ print $7 }'); do
+        xsetwacom set $_device Rotate half;
+      done
+      ;;
+    inverted)  # Screen is inverted, we should rotate it left (270°)
+      xrandr --output "$xrandr_local" --rotate left
+      for _device in $(xsetwacom --list devices | awk '{ print $7 }'); do
+        xsetwacom set $_device Rotate ccw;
+      done
+      ;;
+  esac
+}
+
 # --------------------------------------------------------------------- }}}
 
 # OUTPUT FUNCTIONS {{{
@@ -187,6 +221,7 @@ main() {
     local) show_local ;;
     external) show_external ;;
     mirror) mirror ;;
+    tablet) tablet ;;
     *) show_help ;;
   esac
 }

@@ -68,6 +68,26 @@
 "xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
   control+shift + v
 
+# Mute
+"amixer set Master toggle"
+m:0x0 + c:121
+XF86AudioMute
+
+# Volume down
+"amixer set Master playback 5-"
+m:0x0 + c:122
+XF86AudioLowerVolume
+
+# Volume up
+"amixer set Master playback 5+"
+m:0x0 + c:123
+XF86AudioRaiseVolume
+
+# Rotate screen
+"display tablet"
+m:0x0 + c:161
+XF86RotateWindows
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
