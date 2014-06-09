@@ -11,8 +11,10 @@ if [ -d "$HOME/.cabal/bin" ]; then
   export PATH=$HOME/.cabal/bin:$PATH
 fi
 
-# Necessary for tmuxinator to work inside urxvt
-[ -n "$TMUX" ] && export TERM=screen-256color
+if [ -d "/usr/local/plan9" ]; then
+  export PLAN9="/usr/local/plan9"
+  export PATH=$PATH:$PLAN9/bin
+fi
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
