@@ -9,10 +9,9 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 
--- Used for xmobar and notify-send
 import XMonad.Util.Run
 
-import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig
 import qualified XMonad.StackSet as W
 import System.IO
 import XMonad.Actions.CycleWS
@@ -22,6 +21,7 @@ import XMonad.Util.NamedWindows
 
 import XMonad.Hooks.EwmhDesktops
 
+import XMonad.Hooks.SetWMName
 
 --
 -- Window WM_URGENT
@@ -39,7 +39,8 @@ instance UrgencyHook LibNotifyUrgencyHook where
 -- Window Rules
 -- =======================================
 myManageHook = composeAll
-    [ className =? "Gimp"      --> doFloat
+    [ className =? "dmenu"     --> doFloat
+    , className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
     , isFullscreen --> doFullFloat
     ]
@@ -62,15 +63,23 @@ main = do
         , handleEventHook = fullscreenEventHook
         , layoutHook = smartBorders $ avoidStruts  $  layoutHook defaultConfig
         , workspaces = myWorkspaces
-
+        , startupHook   = setWMName "LG3D"
         -- Gets piped to xmobar
         , logHook = dynamicLogWithPP xmobarPP
-          {
-            ppOutput = hPutStrLn xmproc
-            , ppTitle = xmobarColor "#859900" "" . shorten 50
+          { ppOutput    = hPutStrLn xmproc
+            , ppCurrent = xmobarColor "#FEE799" "#35383C" . pad
+            , ppVisible = pad
+            , ppTitle   = xmobarColor "#859900" "" . shorten 50
+            , ppOrder   = \(ws:_:t:_) -> [ws,t]
           }
      }
      `additionalKeys`
      [ ((mod1Mask, xK_Tab), prevScreen)
      , ((mod1Mask .|. shiftMask, xK_Tab),  nextScreen)
+     ]
+     `additionalMouseBindings`
+     [((mod4Mask , 6), (\_ -> moveTo Next NonEmptyWS))
+     ,((mod4Mask , 7), (\_ -> moveTo Prev NonEmptyWS))
+     ,((mod4Mask , 5), (\_ -> moveTo Prev NonEmptyWS))
+     ,((mod4Mask , 4), (\_ -> moveTo Next NonEmptyWS))
      ]
