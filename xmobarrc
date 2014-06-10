@@ -1,4 +1,4 @@
-Config { font = "xft:Dejavu Sans Mono:pixelsize=12"
+Config { font = "xft:Dejavu Sans Mono:pixelsize=12&antialias=true"
        -- solarized, bgColor = "#073642"
        -- solarized, fgColor = "#657b83"
        , bgColor = "#1d1f21"
