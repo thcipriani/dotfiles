@@ -28,7 +28,7 @@ trayer \
   --SetPartialStrut true \
   --expand false \
   --widthtype percent \
-  --width 6 \
+  --width 5 \
   --tint 0x35383C \
   --transparent true \
   --heighttype pixel \

@@ -28,6 +28,23 @@ import XMonad.Prompt
 import XMonad.Prompt.Window
 
 --
+-- Tomorrow Night Colors
+-- ===
+
+colorBackground = "#1d1f21"
+colorCurrent    = "#282a2e"
+colorSelection  = "#373b41"
+colorForeground = "#c5c8c6"
+colorComment    = "#969896"
+colorRed        = "#cc6666"
+colorOrange     = "#de935f"
+colorYellow     = "#f0c674"
+colorGreen      = "#b5bd68"
+colorAqua       = "#8abeb7"
+colorBlue       = "#81a2be"
+colorPurple     = "#b294bb"
+
+--
 -- Window WM_URGENT
 -- ==================
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
@@ -46,17 +63,18 @@ myManageHook = composeAll
     [ className =? "dmenu"     --> doFloat
     , className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , className =? "Google-chrome" --> doShift "web"
     , isFullscreen --> doFullFloat
     ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
-myLayout = tiled ||| tiledSpace ||| fullTile
+myLayout = fullTiled ||| Full ||| tiled ||| tiledSpace
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = spacing 5 $ ResizableTall nmaster delta ratio []
     tiledSpace = spacing 60 $ ResizableTall nmaster delta ratio []
-    fullTile = ResizableTall nmaster delta ratio [] 
+    fullTiled = ResizableTall nmaster delta ratio []
 
     -- The default number of windows in the master pane
     nmaster = 1
@@ -74,8 +92,8 @@ main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
     xmonad $ withUrgencyHook LibNotifyUrgencyHook $ defaultConfig
       { modMask = mod4Mask
-        , normalBorderColor = "#073642"
-        , focusedBorderColor = "#268bd2"
+        , normalBorderColor = colorBackground
+        , focusedBorderColor = colorSelection
         , terminal = "urxvt"
         , manageHook = manageDocks
                         <+> myManageHook
@@ -87,7 +105,7 @@ main = do
         -- Gets piped to xmobar
         , logHook = dynamicLogWithPP xmobarPP
           { ppOutput    = hPutStrLn xmproc
-            , ppCurrent = xmobarColor "#FEE799" "#1d1f21" . pad
+            , ppCurrent = xmobarColor colorGreen colorBackground . pad
             , ppVisible = pad
             , ppOrder   = \(ws:_:_:_) -> [ws]
           }
@@ -96,6 +114,7 @@ main = do
      [ ((mod1Mask, xK_Tab), prevScreen)
      , ((mod1Mask .|. shiftMask, xK_Tab),  nextScreen)
      , ((mod4Mask, xK_g), windowPromptGoto defaultXPConfig)
+     , ((mod4Mask, xK_q), spawn "if command -v xmonad &> /dev/null; then xmonad --recompile && xmonad --restart ; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
      ]
      `additionalMouseBindings`
      [((mod4Mask , 6), (\_ -> moveTo Next NonEmptyWS))
