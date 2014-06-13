@@ -23,7 +23,9 @@ import XMonad.Util.EZConfig
 import XMonad.Util.NamedWindows
 
 import XMonad.Actions.CycleWS
-import XMonad.Actions.GridSelect
+--import XMonad.Actions.GridSelect
+import XMonad.Prompt
+import XMonad.Prompt.Window
 
 --
 -- Window WM_URGENT
@@ -92,7 +94,7 @@ main = do
      `additionalKeys`
      [ ((mod1Mask, xK_Tab), prevScreen)
      , ((mod1Mask .|. shiftMask, xK_Tab),  nextScreen)
-     , ((mod4Mask, xK_g), goToSelected defaultGSConfig)
+     , ((mod4Mask, xK_g), windowPromptGoto defaultXPConfig)
      ]
      `additionalMouseBindings`
      [((mod4Mask , 6), (\_ -> moveTo Next NonEmptyWS))
