@@ -51,11 +51,12 @@ myManageHook = composeAll
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
-myLayout = tiled ||| Mirror tiledSpace ||| Full
+myLayout = tiled ||| tiledSpace ||| fullTile
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = spacing 5 $ ResizableTall nmaster delta ratio []
     tiledSpace = spacing 60 $ ResizableTall nmaster delta ratio []
+    fullTile = ResizableTall nmaster delta ratio [] 
 
     -- The default number of windows in the master pane
     nmaster = 1
