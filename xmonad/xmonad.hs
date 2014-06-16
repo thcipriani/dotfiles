@@ -17,13 +17,14 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.ScreenCorners
 
 import XMonad.Util.Run
 import XMonad.Util.EZConfig
 import XMonad.Util.NamedWindows
 
 import XMonad.Actions.CycleWS
---import XMonad.Actions.GridSelect
+import XMonad.Actions.GridSelect
 import XMonad.Prompt
 import XMonad.Prompt.Window
 
@@ -63,13 +64,14 @@ myManageHook = composeAll
     [ className =? "dmenu"     --> doFloat
     , className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , className =? "Svkbd" --> doFloat
     , className =? "Google-chrome" --> doShift "web"
     , isFullscreen --> doFullFloat
     ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
-myLayout = fullTiled ||| Full ||| tiled ||| tiledSpace
+myLayout = fullTiled ||| Full ||| Mirror fullTiled ||| tiled ||| tiledSpace
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = spacing 5 $ ResizableTall nmaster delta ratio []
@@ -85,6 +87,14 @@ myLayout = fullTiled ||| Full ||| tiled ||| tiledSpace
     -- Percent of screen to increment by when resizing panes
     delta = 5/100
 
+myStartupHook = do
+  setWMName "LG3D"
+  addScreenCorner SCUpperRight (goToSelected defaultGSConfig { gs_cellwidth = 200})
+
+myEventHook e = do
+  fullscreenEventHook e
+  screenCornerEventHook e
+
 --
 -- Main Layout
 -- =======================================
@@ -98,10 +108,10 @@ main = do
         , manageHook = manageDocks
                         <+> myManageHook
                         <+> manageHook defaultConfig
-        , handleEventHook = fullscreenEventHook
+        , handleEventHook = myEventHook
         , layoutHook = smartBorders $ avoidStruts  $ myLayout
         , workspaces = myWorkspaces
-        , startupHook   = setWMName "LG3D"
+        , startupHook   = myStartupHook
         -- Gets piped to xmobar
         , logHook = dynamicLogWithPP xmobarPP
           { ppOutput    = hPutStrLn xmproc
@@ -110,15 +120,17 @@ main = do
             , ppOrder   = \(ws:_:_:_) -> [ws]
           }
      }
-     `additionalKeys`
-     [ ((mod1Mask, xK_Tab), prevScreen)
-     , ((mod1Mask .|. shiftMask, xK_Tab),  nextScreen)
-     , ((mod4Mask, xK_g), windowPromptGoto defaultXPConfig)
-     , ((mod4Mask, xK_q), spawn "if command -v xmonad &> /dev/null; then xmonad --recompile && xmonad --restart ; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
+     `additionalKeysP`
+     [ ("C-<Tab>", prevScreen)
+     , ("C-S-<Tab>",  nextScreen)
+     , ("M-/", windowPromptGoto defaultXPConfig)
+     , ("M-q", spawn "if command -v xmonad &> /dev/null; then xmonad --recompile && xmonad --restart ; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
+     , ("M-<F11>",  nextWS)
+     , ("M-<F12>",  prevWS)
      ]
      `additionalMouseBindings`
-     [((mod4Mask , 6), (\_ -> moveTo Next NonEmptyWS))
-     ,((mod4Mask , 7), (\_ -> moveTo Prev NonEmptyWS))
-     ,((mod4Mask , 5), (\_ -> moveTo Prev NonEmptyWS))
-     ,((mod4Mask , 4), (\_ -> moveTo Next NonEmptyWS))
+     [((mod4Mask, 6), (\_ -> moveTo Next NonEmptyWS))
+     ,((mod4Mask, 7), (\_ -> moveTo Prev NonEmptyWS))
+     ,((mod4Mask, 5), (\_ -> moveTo Prev NonEmptyWS))
+     ,((mod4Mask, 4), (\_ -> moveTo Next NonEmptyWS))
      ]

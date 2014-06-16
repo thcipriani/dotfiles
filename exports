@@ -16,6 +16,11 @@ if [ -d "/usr/local/plan9" ]; then
   export PATH=$PATH:$PLAN9/bin
 fi
 
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
 
