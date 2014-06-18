@@ -95,7 +95,7 @@ myLayout = avoidStruts
 myStartupHook = do
   setWMName "LG3D"
   addScreenCorner SCUpperRight $ goToSelected defaultGSConfig
-  addScreenCorner SCLowerRight $ sendMessage $ Toggle "tiledSpace"
+  addScreenCorner SCLowerRight $ sendMessage ToggleLayout
 
 myEventHook = fullscreenEventHook
   <+> screenCornerEventHook
