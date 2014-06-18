@@ -73,10 +73,13 @@ myManageHook = composeAll
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
-myLayoutHook = Full ||| fullTiled ||| Mirror fullTiled ||| tiled ||| tiledSpace
+myLayout = avoidStruts
+            $ toggleLayouts tiledSpace
+            $ smartBorders $ basicRotate
   where
-    -- default tiling algorithm partitions the screen into two panes
-    tiled = spacing 5 $ ResizableTall nmaster delta ratio []
+    basicRotate =  Full ||| fullTiled ||| Mirror fullTiled
+
+    -- tiled = spacing 5 $ ResizableTall nmaster delta ratio []
     tiledSpace = spacing 60 $ ResizableTall nmaster delta ratio []
     fullTiled = ResizableTall nmaster delta ratio []
 
@@ -89,11 +92,10 @@ myLayoutHook = Full ||| fullTiled ||| Mirror fullTiled ||| tiled ||| tiledSpace
     -- Percent of screen to increment by when resizing panes
     delta = 5/100
 
-myLayout = smartBorders $ avoidStruts  $ myLayoutHook
-
 myStartupHook = do
   setWMName "LG3D"
   addScreenCorner SCUpperRight $ goToSelected defaultGSConfig
+  addScreenCorner SCLowerRight $ sendMessage $ Toggle "tiledSpace"
 
 myEventHook = fullscreenEventHook
   <+> screenCornerEventHook
