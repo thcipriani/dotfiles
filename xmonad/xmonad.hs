@@ -10,6 +10,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Layout.ResizableTile
+import XMonad.Layout.ToggleLayouts
 
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import XMonad.Hooks.DynamicLog
@@ -25,6 +26,7 @@ import XMonad.Util.NamedWindows
 
 import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
+
 import XMonad.Prompt
 import XMonad.Prompt.Window
 
@@ -71,7 +73,7 @@ myManageHook = composeAll
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
-myLayout = fullTiled ||| Full ||| Mirror fullTiled ||| tiled ||| tiledSpace
+myLayoutHook = Full ||| fullTiled ||| Mirror fullTiled ||| tiled ||| tiledSpace
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = spacing 5 $ ResizableTall nmaster delta ratio []
@@ -87,13 +89,15 @@ myLayout = fullTiled ||| Full ||| Mirror fullTiled ||| tiled ||| tiledSpace
     -- Percent of screen to increment by when resizing panes
     delta = 5/100
 
+myLayout = smartBorders $ avoidStruts  $ myLayoutHook
+
 myStartupHook = do
   setWMName "LG3D"
-  addScreenCorner SCUpperRight (goToSelected defaultGSConfig { gs_cellwidth = 200})
+  addScreenCorner SCUpperRight $ goToSelected defaultGSConfig
 
-myEventHook e = do
-  fullscreenEventHook e
-  screenCornerEventHook e
+myEventHook = fullscreenEventHook
+  <+> screenCornerEventHook
+  <+> docksEventHook
 
 --
 -- Main Layout
@@ -109,7 +113,7 @@ main = do
                         <+> myManageHook
                         <+> manageHook defaultConfig
         , handleEventHook = myEventHook
-        , layoutHook = smartBorders $ avoidStruts  $ myLayout
+        , layoutHook = myLayout
         , workspaces = myWorkspaces
         , startupHook   = myStartupHook
         -- Gets piped to xmobar
@@ -121,16 +125,18 @@ main = do
           }
      }
      `additionalKeysP`
-     [ ("C-<Tab>", prevScreen)
-     , ("C-S-<Tab>",  nextScreen)
+     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn Verdana-12) && exec $x")
+     , ("M-b", sendMessage ToggleStruts)
+     , ("M1-<Tab>", prevScreen)
+     , ("M1-S-<Tab>",  nextScreen)
      , ("M-/", windowPromptGoto defaultXPConfig)
-     , ("M-q", spawn "if command -v xmonad &> /dev/null; then xmonad --recompile && xmonad --restart ; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
+     , ("M-q", spawn "xmonad --recompile && xmonad --restart")
      , ("M-<F11>",  nextWS)
      , ("M-<F12>",  prevWS)
      ]
      `additionalMouseBindings`
-     [((mod4Mask, 6), (\_ -> moveTo Next NonEmptyWS))
-     ,((mod4Mask, 7), (\_ -> moveTo Prev NonEmptyWS))
+     [((0, 6), (\_ -> moveTo Next NonEmptyWS))
+     ,((0, 7), (\_ -> moveTo Prev NonEmptyWS))
      ,((mod4Mask, 5), (\_ -> moveTo Prev NonEmptyWS))
      ,((mod4Mask, 4), (\_ -> moveTo Next NonEmptyWS))
      ]
