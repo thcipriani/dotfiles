@@ -179,7 +179,7 @@ marks() {
 }
 
 # autocomplete marks
-if [[ "$SHELL" =~ "zsh" ]]; then
+if _haz compctl; then
     _completemarks() {
           reply=($(ls $MARKPATH))
     }
@@ -189,7 +189,7 @@ if [[ "$SHELL" =~ "zsh" ]]; then
 
 fi
 
-if [[ "$SHELL" =~ "bash" ]]; then
+if _haz complete; then
     _completemarks() {
       local curw=${COMP_WORDS[COMP_CWORD]}
       local wordlist=$(find $MARKPATH -type l -printf "%f\n")
