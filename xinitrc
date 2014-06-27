@@ -98,7 +98,6 @@ test -x "/usr/bin/gnome-sound-applet" && "/usr/bin/gnome-sound-applet" &
 test -x "/usr/bin/dunst" && "/usr/bin/dunst" &
 has? doing && nohup doing & > /dev/null 2>&1
 has? xflux && xflux -z 80501
-has? easystroke && easystroke & > /dev/null 2>&1
 # }}}
 
 exec xmonad

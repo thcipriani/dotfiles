@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+(( $(cat /sys/class/power_supply/AC/online) == 1 )) \
+  && notify-send 'AC Adapter Connected'
+
+(( $(cat /sys/class/power_supply/AC/online) == 0 )) \
+  && notify-send 'AC Adapter Disconnected'

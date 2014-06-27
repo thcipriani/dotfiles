@@ -22,6 +22,26 @@ puts() {
   done
   unset _headline _i _x _arr
 }
+
+restart_trayer() {
+  pkill trayer &> /dev/null
+
+  trayer \
+    --edge top \
+    --align right \
+    --SetDockType true \
+    --SetPartialStrut true \
+    --expand false \
+    --widthtype percent \
+    --width 5 \
+    --tint 0x35383C \
+    --transparent true \
+    --heighttype pixel \
+    --height 18 \
+    --margin 0 \
+    --padding 0 \
+    --alpha 0 &
+}
 # --------------------------------------------------------------------- }}}
 
 # XRANDR FUNCTIONS {{{
@@ -133,7 +153,13 @@ mirror() {
 tablet() {
   get_local
 
-  case $(xrandr -q | grep "$xrandr_local" | awk '{print $4}' | tr -d '(') in
+  rot="$1"
+
+  if [[ -z "$rot" ]]; then
+    rot=$(xrandr -q | grep "$xrandr_local" | awk '{print $4}' | tr -d '(')
+  fi
+
+  case $rot in
     left) # Currently top is rotated left, we should set it normal (0°)
       xrandr --output "$xrandr_local" --rotate normal
       for _device in $(xsetwacom --list devices | awk '{ print $7 }'); do
@@ -160,22 +186,7 @@ tablet() {
       ;;
   esac
 
-  pkill trayer && \
-  trayer \
-    --edge top \
-    --align right \
-    --SetDockType true \
-    --SetPartialStrut true \
-    --expand false \
-    --widthtype percent \
-    --width 5 \
-    --tint 0x35383C \
-    --transparent true \
-    --heighttype pixel \
-    --height 18 \
-    --margin 0 \
-    --padding 0 \
-    --alpha 0 &
+  restart_trayer
 }
 
 # --------------------------------------------------------------------- }}}
@@ -231,6 +242,8 @@ show_external() {
 # MAIN EVENT LOOP {{{
 # ===
 main() {
+  local _tabletfile="/tmp/tabletmode"
+
   case $1 in
     all) show_all ;;
     connected) show_connected ;;
@@ -239,6 +252,18 @@ main() {
     external) show_external ;;
     mirror) mirror ;;
     tablet) tablet ;;
+    tabletmode)
+      touch $_tabletfile
+      if [[ "$(cat $_tabletfile)" == "on" ]]; then
+        printf "off" > $_tabletfile
+        notify-send "Laptop Mode"
+        tablet "left"
+      else
+        printf "on" > $_tabletfile
+        notify-send "Tablet Mode"
+        tablet "right"
+      fi
+      ;;
     *) show_help ;;
   esac
 }
