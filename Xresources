@@ -16,7 +16,7 @@ urxvt*saveLines: 5000
 urxvt*termName: rxvt-unicode
 urxvt*iso14755: False
 urxvt.perl-ext-common: default,matcher
-urxvt.urlLauncher: google-chrome
+urxvt.urlLauncher: firefox
 urxvt.matcher.button: 1
 urxvt*urgentOnBell: true
 urxvt*visualBell: false

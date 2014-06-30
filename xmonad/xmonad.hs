@@ -11,6 +11,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.ToggleLayouts
+import XMonad.Layout.Tabbed
 
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import XMonad.Hooks.DynamicLog
@@ -68,16 +69,26 @@ myManageHook = composeAll
     , className =? "Vncviewer" --> doFloat
     , className =? "Svkbd" --> doFloat
     , className =? "Google-chrome" --> doShift "web"
+    , className =? "Firefox" --> doShift "web"
     , isFullscreen --> doFullFloat
     ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
+myTabConfig = defaultTheme { inactiveBorderColor = "#708090"
+                           , activeBorderColor = "#5f9ea0"
+                           , activeColor = "#000000"
+                           , inactiveColor = "#333333"
+                           , inactiveTextColor = "#888888"
+                           , activeTextColor = "#87cefa"
+                           , fontName = "-xos4-terminus-*-*-*-*-12-*-*-*-*-*-*-*"
+                           }
+
 myLayout = avoidStruts
             $ toggleLayouts tiledSpace
             $ smartBorders $ basicRotate
   where
-    basicRotate =  Full ||| fullTiled ||| Mirror fullTiled
+    basicRotate =  Full ||| tabbed shrinkText myTabConfig ||| fullTiled ||| Mirror fullTiled
 
     -- tiled = spacing 5 $ ResizableTall nmaster delta ratio []
     tiledSpace = spacing 60 $ ResizableTall nmaster delta ratio []

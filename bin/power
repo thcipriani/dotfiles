@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+test ! -f /sys/class/power_supply/AC/online \
+  && notify-send "This ain't no laptop, fool!" \
+  && exit 1
+
 (( $(cat /sys/class/power_supply/AC/online) == 1 )) \
   && notify-send 'AC Adapter Connected'
 
