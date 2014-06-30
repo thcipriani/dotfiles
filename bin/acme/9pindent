@@ -1,0 +1,8 @@
+#!/bin/bash
+#9indent
+filename=$(9p read acme/$winid/tag | sed 's/ .*//')
+echo "Window ID is: " $winid
+echo "Filename is: " $winid
+
+# Read selection, feed sed, write selection
+9p read acme/$winid/rdsel | sed 's/^/  /' | 9p write acme/$winid/wrsel

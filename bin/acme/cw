@@ -1,0 +1,16 @@
+#!/bin/sh
+
+w() {
+        9p write acme/$winid/$1
+}
+r() {
+        9p read acme/$winid/$1
+}
+ctl() {
+        /usr/local/plan9/bin/echo -n "$@" | w ctl
+}
+
+/usr/local/plan9/bin/echo -n Edit ,d | w body
+/usr/local/plan9/bin/echo -n /Edit ,d/ | w addr
+ctl dot=addr
+r addr | awk '{printf("MX%s %s\n", $1, $2)}' | w event

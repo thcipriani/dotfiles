@@ -13,7 +13,7 @@ fi
 
 if [ -d "/usr/local/plan9" ]; then
   export PLAN9="/usr/local/plan9"
-  export PATH=$PATH:$PLAN9/bin
+  export PATH=$PATH:$PLAN9/bin:$HOME/bin/acme
 fi
 
 if [ -d "$HOME/.rbenv" ]; then

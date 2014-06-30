@@ -1,0 +1,11 @@
+#!/usr/bin/env rc
+
+TERM=dumb
+SHELL=rc
+BROWSER=google-chrome
+
+pkill fontsrv
+fontsrv &
+plumber >[2]/dev/null &
+
+exec acme -a -l $HOME/acme.dump $*
