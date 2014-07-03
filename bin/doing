@@ -19,19 +19,33 @@ fi
 # logging daemon
 if (( $# == 0 )); then
   while ((1)); do
-    sleep 1800;
-    local _prog=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
-    local _wintitle=$(xwininfo -root -children | grep $(printf '%x' $(xdotool getwindowfocus)) | grep -oEi '"[^"]+"' | head -1 | tr -d '"')
-    local _weather=$(weathermajig boulder --short)
-    local _date=$(date +'%Y-%m-%d %H:%M:%S')
-    # date/time | weather | wat
+    _prog=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+    _wintitle=$(xwininfo -root -children | grep $(printf '%x' $(xdotool getwindowfocus)) | grep -oEi '"[^"]+"' | head -1 | tr -d '"')
+    _weather=$(weathermajig boulder --short)
+    _date=$(date +'%Y-%m-%d %H:%M:%S')
+    # date/time | weather | program | window title
     echo "$_date | $_weather | $_prog | $_wintitle" >> "$logfile"
     unset _prog _wintitle _weather _date
+    sleep 1800;
   done;
   exit 0;
 fi
 
 if [[ $1 == "--show" ]]; then
   cat $logfile | column -s '|' -t
+  exit 0
+fi
+
+if [[ $1 == "--debug" ]]; then
+  while ((1)); do
+    _prog=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+    _wintitle=$(xwininfo -root -children | grep $(printf '%x' $(xdotool getwindowfocus)) | grep -oEi '"[^"]+"' | head -1 | tr -d '"')
+    _weather=$(weathermajig boulder --short)
+    _date=$(date +'%Y-%m-%d %H:%M:%S')
+    # date/time | weather | program | window title
+    echo "$_date | $_weather | $_prog | $_wintitle"
+    unset _prog _wintitle _weather _date
+    sleep 5
+  done;
   exit 0
 fi
