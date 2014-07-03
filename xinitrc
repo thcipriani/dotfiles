@@ -96,7 +96,7 @@ has? gnome-power-manager && gnome-power-manager &
 test -x "$HOME/.dropbox-dist/dropboxd" && "$HOME/.dropbox-dist/dropboxd" &
 test -x "/usr/bin/gnome-sound-applet" && "/usr/bin/gnome-sound-applet" &
 test -x "/usr/bin/dunst" && "/usr/bin/dunst" &
-has? doing && nohup doing & > /dev/null 2>&1
+has? doing && nohup doing > /dev/null 2>&1 &
 has? xflux && xflux -z 80501
 # }}}
 

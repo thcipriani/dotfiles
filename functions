@@ -206,8 +206,33 @@ n () {
 }
 
 tc () {
+  local _start_time=$(date +%s)
+
   export TERM="screen-256color"
-  mux start "$1" > /dev/null 2>&1 || printf "[\033[38;5;1;5mERROR\033[00m] gem install tmuxinator\n"
+
+  if command -v mux; then
+    mux start "$1"
+  elif command -v tmux; then
+    tmux new -s "$1"
+  else
+    unset _start_time
+    printf "$(tput setaf 1)[ERR]$(tput sgr0) Tmux not found\n"
+  fi
+
+  local _end_time=$(date +%s)
+  local _total_time=$(( _end_time - _start_time ));
+  if ((_end_time == _start_time || _start_time == 0)); then
+    _total_time=0
+  fi
+
+  (( $_total_time < 5 )) && return
+  local days=$(( $_total_time / 60 / 60 / 24 ))
+  local hours=$(( $_total_time / 60 / 60 % 24 ))
+  local minutes=$(( $_total_time / 60 % 60 ))
+  local seconds=$(( $_total_time % 60 ))
+  echo "$(date -R) - ${days}d ${hours}h ${minutes}m ${seconds}s" >> "$HOME/.work_log"
+
+  unset days hours minutes seconds _total_time _start_time _end_time
 }
 
 # ZShell Completions

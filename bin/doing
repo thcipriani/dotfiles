@@ -5,24 +5,33 @@
 #   log entry: doing [what you're doing]
 # ------------------------------------------
 
-if ! command -v notify-send > /dev/null 2>&1; then
-  printf "[$(tput setaf 1)ERROR$(tput sgr0)] notify-send not found try: sudo apt-get install libnotify-bin"
+haz() {
+  command -v "$1" > /dev/null 2>&1
+}
+
+logfile="$HOME/.doing"
+
+if ! haz notify-send || ! haz xdotool || ! haz xwininfo; then
+  printf "[$(tput setaf 1)ERROR$(tput sgr0)] Unable to find all dependencies"
   exit 1;
 fi
 
-# Notification daemon
+# logging daemon
 if (( $# == 0 )); then
   while ((1)); do
     sleep 1800;
-    notify-send "What are you doing?"
+    local _prog=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+    local _wintitle=$(xwininfo -root -children | grep $(printf '%x' $(xdotool getwindowfocus)) | grep -oEi '"[^"]+"' | head -1 | tr -d '"')
+    local _weather=$(weathermajig boulder --short)
+    local _date=$(date +'%Y-%m-%d %H:%M:%S')
+    # date/time | weather | wat
+    echo "$_date | $_weather | $_prog | $_wintitle" >> "$logfile"
+    unset _prog _wintitle _weather _date
   done;
   exit 0;
 fi
 
 if [[ $1 == "--show" ]]; then
-  cat "$HOME/doing.log" | column -s '|' -t
+  cat $logfile | column -s '|' -t
   exit 0
 fi
-
-# date/time | weather | wat
-echo "$(date +'%Y-%m-%d %H:%M:%S') | $(weathermajig boulder --short) | $@" >> "$HOME/doing.log"
