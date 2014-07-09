@@ -5,7 +5,7 @@ has?() {
 }
 
 # Desktop setup {{{
-background_image="$HOME/Dropbox/AA_Fire.jpg"
+wallpaper="$HOME/.wallpaper"
 
 # XRandR—{{{ Fix my damn monitor at home. Damnit.
 if [ "$(hostname -s)" = "ryu" ] && [ -x "$HOME/bin/laptop-monitorfix" ]; then
@@ -39,8 +39,8 @@ trayer \
 # }}}
 
 # background color {{{
-if has? feh && [ -f "$background_image" ]; then
-    feh --bg-scale "$background_image"
+if has? feh && [ -d "$wallpaper" ]; then
+    feh --recursive --randomize --bg-fill "$wallpaper"
 else
     xsetroot -solid midnightblue
 fi
