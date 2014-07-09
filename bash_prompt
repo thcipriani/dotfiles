@@ -150,7 +150,7 @@ prompt() {
 
 _log_start() {
   [ -n "$COMP_LINE" ] && return  # do nothing if completing
-  [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" || "$BASH_COMMAND" =~ "_rprompt" ]] && return # don't cause a preexec for $PROMPT_COMMAND
+  [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return # don't cause a preexec for $PROMPT_COMMAND
   _start_time=$(date +%s)
 }
 

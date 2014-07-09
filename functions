@@ -136,8 +136,16 @@ function gxpr() {
     echo "$res"
 }
 
-running () {
-    ps aux | grep -i $1 | grep -v grep
+function psgrep() {
+  ps axuf | grep -v grep | grep "$@" -i --color=auto
+}
+
+function fname() {
+  find . -iname "*$@*"
+}
+
+function take() {
+  mkdir $1 && cd $1
 }
 
 speedread () {

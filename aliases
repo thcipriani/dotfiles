@@ -59,9 +59,9 @@ alias v="vim"
 alias s="svn"
 
 # File size
-alias fs="stat -f \"%z bytes\""
+alias fs="stat -c \"%s bytes\""
 
-alias sosh="source ~/.${MYSHELL}rc"
+alias sosh=". \"${HOME}/.$(basename $SHELL)rc\""
 
 # IP addresses
 alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -100,9 +100,7 @@ alias gd='git diff'
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
 
-alias 'file?'="ls -AlFh | grep -i"
 alias 'hist?'="history | grep -i"
-alias 'running?'="running"
 
 # Dumb osx
 if [  "$(uname -s)" = "Darwin" ]; then
