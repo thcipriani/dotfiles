@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-percent=$(printf "scale=1;$(cat /sys/class/power_supply/BAT0/energy_now) \
+percent=$(printf "scale=2;$(cat /sys/class/power_supply/BAT0/energy_now) \
     / $(cat /sys/class/power_supply/BAT0/energy_full) \
     * 100\n" \
     | bc --mathlib)
