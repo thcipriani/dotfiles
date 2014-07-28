@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+(( $# < 1 )) && exit 1
+
+version="$1"
+
+wget -O '/tmp/newnode.tar.gz' -c "http://nodejs.org/dist/v${version}/node-v${version}.tar.gz"
+sha256sum '/tmp/newnode.tar.gz'
+rm -rf /tmp/newnode.tar.gz

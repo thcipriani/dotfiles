@@ -213,6 +213,11 @@ n () {
   mkdir -p "${_N_PATH:=$HOME/.notes}"; $EDITOR "$_N_PATH/$@";
 }
 
+read_mime() {
+  local file="$1"
+  xdg-mime query filetype "$file" 2>/dev/null | cut -d ';' -f 1
+}
+
 tc () {
   local _start_time=$(date +%s)
 
