@@ -36,10 +36,6 @@ alias mv='mv -i'
 # be nice
 alias please='sudo'
 
-# why didn't I design the bash api?
-alias go="ssh"
-alias get="scp"
-
 alias l="ls -AlFh"
 alias la="ls -Al"
 alias lh="ls -Alh"

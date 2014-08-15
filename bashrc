@@ -26,9 +26,15 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-if [ -f "$HOME/srv/art/motd/$(hostname -s)_motd" ]; then
-  cat "$HOME/srv/art/motd/$(hostname -s)_motd"
-fi
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    *color*) color_prompt=yes;;
+    rxvt-unicode) color_prompt=yes;;
+esac
+
+test -r "$HOME/srv/art/motd/$(hostname -s)_motd" \
+  && test "$color_prompt" = "yes" \
+  && cat "$HOME/srv/art/motd/$(hostname -s)_motd"
 
 for file in ~/.{bash_prompt,exports,aliases,functions}; do
     [ -r "$file" ] && . "$file"

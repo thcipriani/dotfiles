@@ -11,6 +11,10 @@ if [ -d "$HOME/.cabal/bin" ]; then
   export PATH=$HOME/.cabal/bin:$PATH
 fi
 
+if [ -d "/usr/local/go/bin" ]; then
+  export PATH=$PATH:/usr/local/go/bin
+fi
+
 if [ -d "/usr/local/plan9" ]; then
   export PLAN9="/usr/local/plan9"
   export PATH=$PATH:$PLAN9/bin:$HOME/bin/acme
@@ -34,6 +38,7 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 export DROPBOX_UID=2372716
+export ECHONEST=KHMDITMTTT4MZPATO
 
 # Keychain to manage gpg-agent and ssh-agent
 if command -v keychain > /dev/null 2>&1; then
