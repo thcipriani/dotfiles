@@ -36,10 +36,8 @@ alias mv='mv -i'
 # be nice
 alias please='sudo'
 
-alias l="ls -AlFh"
-alias la="ls -Al"
-alias lh="ls -Alh"
-alias ll="ls -l"
+alias ll="ls -AlFh"
+alias l="ls -AlFh --group-directories-first"
 alias tlog="tail -f /var/log/syslog"
 
 # View HTTP traffic
