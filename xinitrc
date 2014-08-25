@@ -98,6 +98,11 @@ test -x "/usr/bin/gnome-sound-applet" && "/usr/bin/gnome-sound-applet" &
 test -x "/usr/bin/dunst" && "/usr/bin/dunst" &
 has? doing && nohup doing > /dev/null 2>&1 &
 has? xflux && xflux -z 80501
+
+# Nasa APOD
+has? nasapod && nasapod > /dev/null 2>&1 \
+  && notify-send "NASA APOD Downloaded" \
+  || notify-send "NASA APOD Download Failed" &
 # }}}
 
 exec xmonad

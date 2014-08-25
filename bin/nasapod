@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+_haz() {
+  command -v "$1" > /dev/null 2>&1
+}
+
+! _haz convert && exit 1
+! _haz wget && exit 1
+! _haz curl && exit 1
+! _haz grep && exit 1
+! _haz xrandr && exit 1
+! _haz awk && exit 1
+
+base="http://apod.nasa.gov/apod/"
+base_dir="$HOME/Pictures/nasa/"
+wallpapers="$HOME/.wallpaper/"
+img_name="$(date '+%Y%m%d')_nasa_pod.jpg"
+monitor_size=$(xrandr --query | awk '/ connected/ {print $3}' | head -n 1 | cut -d '+' -f 1)
+
+img=$(curl -s $base | grep jpg | head -n 1 | sed 's/.*="\(.*.jpg\)">/\1/')
+
+mkdir -p "$base_dir"
+mkdir -p "$wallpapers"
+
+wget -O "${base_dir}${img_name}" "${base}${img}" --quiet
+convert "${base_dir}${img_name}" -resize $monitor_size "${wallpapers}${img_name}"
