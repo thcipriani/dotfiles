@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+
+# Easily update my list of links at:
+#   * http://www.tylercipriani.com/links/Wishlist.html
+#   * http://www.tylercipriani.com/links/Watchlist.html
+#   * http://www.tylercipriani.com/links/Readlist.html
+#
+# Use like: to buy -t Title -l http://link
+
+link_path="$HOME/.marks/links"
+
+show_help() {
+  cat<<USE
+  USAGE:
+    to [read|buy|watch] -t|--title <title> -l|--link <link>
+  EXAMPLE:
+    to read -t Here is a title -l http://hereisalink.com
+USE
+}
+
+ask() {
+  # http://djm.me/ask
+  while true; do
+
+    if [ "${2:-}" = "Y" ]; then
+      prompt="Y/n"
+      default=Y
+    elif [ "${2:-}" = "N" ]; then
+      prompt="y/N"
+      default=N
+    else
+      prompt="y/n"
+      default=
+    fi
+
+    # Ask the question
+    read -p "$1 [$prompt] " REPLY
+
+    # Default?
+    if [ -z "$REPLY" ]; then
+      REPLY=$default
+    fi
+
+    # Check if the reply is valid
+    case "$REPLY" in
+      Y*|y*) return 0 ;;
+      N*|n*) return 1 ;;
+    esac
+  done
+}
+
+add_link() {
+  mark=$(pwd)
+  cd -P "$HOME/.marks/links"
+  printf "* $title ([link]($link))\n" >> "$file_path" && make && make commit
+  git add . && git commit -m "Added $title to $file_path" && git push origin master
+  cd "$mark"
+}
+
+init() {
+  echo "---"
+  echo "ADDING..."
+  echo "Title: $title"
+  echo "Link: $link"
+  echo "---"
+  if ask "Good?" Y; then
+    add_link
+  fi
+}
+
+main() {
+  case "$1" in
+    read)
+      file_path="Readlist.md"
+      ;;
+    buy)
+      file_path="Wishlist.md"
+      ;;
+    watch)
+      file_path="Watchlist.md"
+      ;;
+    *)
+      show_help
+      exit 1
+  esac
+
+  shift
+
+
+  while [ -n "$1" ]; do
+    case "$1" in
+      --link|-l)
+        shift
+        while [[ "$1" != -* && -n "$1" ]]; do
+          link="$link $1"
+          shift
+        done
+        ;;
+      --title|-t)
+        shift
+        while [[ "$1" != -* && -n "$1" ]]; do
+          title="$title $1"
+          shift
+        done
+        ;;
+      --help|-h)
+        show_help
+        exit 0
+        ;;
+      *)
+        show_help
+        exit 1
+        ;;
+    esac
+  done
+
+  init
+}
+
+if (($# < 4)); then
+  show_help
+  exit 0
+else
+  main "$@"
+fi
