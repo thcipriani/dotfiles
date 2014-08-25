@@ -10,3 +10,4 @@ xmonad/history
 vim/bundle/**
 !vim/bundle/Vundle.vim
 bin/src/**
+wallpaper/*nasa_pod.jpg
