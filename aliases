@@ -120,6 +120,8 @@ fi
 
 # Quick scratch pad
 alias vpad="vim +set\ buftype=nofile +startinsert"
+alias vundle="vim +PluginInstall +qall"
+alias vundleup="vim +PluginUpdate +qall"
 
 # In honor of John
 alias govag="cd ~/Development/upsync4/"

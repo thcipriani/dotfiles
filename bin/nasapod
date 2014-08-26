@@ -17,10 +17,15 @@ wallpapers="$HOME/.wallpaper/"
 img_name="$(date '+%Y%m%d')_nasa_pod.jpg"
 monitor_size=$(xrandr --query | awk '/ connected/ {print $3}' | head -n 1 | cut -d '+' -f 1)
 
-img=$(curl -s $base | grep jpg | head -n 1 | sed 's/.*="\(.*.jpg\)">/\1/')
+img=$(curl -s $base | grep jpg | head -n 1 | sed 's/.*="\(.*.jpg\)">*/\1/')
 
 mkdir -p "$base_dir"
 mkdir -p "$wallpapers"
 
-wget -O "${base_dir}${img_name}" "${base}${img}" --quiet
+if [[ "$img" == http* ]]; then
+  wget -O "${base_dir}${img_name}" "${img}" --quiet
+else
+  wget -O "${base_dir}${img_name}" "${base}${img}" --quiet
+fi
+
 convert "${base_dir}${img_name}" -resize $monitor_size "${wallpapers}${img_name}"
