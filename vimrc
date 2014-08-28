@@ -196,8 +196,28 @@ nnoremap <leader>w <C-w><C-w>
 "Close a window
 nnoremap <silent><leader>q :q<cr>
 
+" Close buffer
+noremap <silent><leader>d :bd<cr>
+
+" Buffer previous
+noremap <silent><leader>z :bp<CR>
+
+" Buffer next
+noremap <silent><leader>x :bn<CR>
+
+nnoremap <S-Tab> gT
+nnoremap <silent> <S-t> :tabnew %<CR>
+
+" Set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+
+" Vmap for maintain Visual Mode after shifting > and <, prevents the use of
+" '.' to repeat
+" vmap < <gv
+" vmap > >gv
+
 " Better use of folding
-nnoremap <leader>z za
+" nnoremap <leader>z za
 " }}}
 
 " Status line --------------------------------------------------------- {{{

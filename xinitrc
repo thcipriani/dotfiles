@@ -39,8 +39,8 @@ trayer \
 # }}}
 
 # background color {{{
-if has? feh && [ -d "$wallpaper" ]; then
-    feh --recursive --randomize --bg-fill "$wallpaper"
+if has? feh && [ -d "$wallpaper" ] && has? wallpaper; then
+    wallpaper &
 else
     xsetroot -solid midnightblue
 fi

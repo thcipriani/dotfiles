@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+wallpaper="$HOME/.wallpaper/"
+if [ ! -d "$wallpaper" ]; then
+  exit 1
+fi
+
+while true; do
+  feh --bg-fill "$(find "$wallpaper" -type f -name '*.jpg' -o -name '*.png' | shuf -n1)"
+  sleep 15m
+done
