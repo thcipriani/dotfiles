@@ -260,6 +260,8 @@ let g:vdebug_options = {
 \        '/srv/www/local.people.dev': '/Users/tyler/Development/upsync-vagrant/shared/people'
 \    }
 \}
+
+let g:syntastic_javascript_jshint_conf="$HOME/.jshintrc"
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{

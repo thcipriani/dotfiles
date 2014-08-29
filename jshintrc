@@ -1,0 +1,7 @@
+{
+  "sub": true,
+  "multistr": true,
+  "asi": true,
+  "laxcomma": true,
+  "eqnull": true
+}
