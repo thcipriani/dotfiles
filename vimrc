@@ -42,6 +42,7 @@ Plugin 'Shougo/neosnippet'
 Plugin 'juvenn/mustache'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rsi'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
