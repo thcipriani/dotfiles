@@ -147,6 +147,23 @@ mirror() {
   xrandr $_sec $_pri
 }
 
+nightmode() {
+  get_local
+
+  echo "$1"
+  case $1 in
+    on|On|ON|oN)
+      xrandr --output "$xrandr_local" --gamma 1.68215:1:0.62 --brightness 0.75
+      ;;
+    of*|oF*|OF*|Of*)
+      xrandr --output "$xrandr_local" --gamma 0.97:1:0.98 --brightness 0.98
+      ;;
+    *)
+      show_help
+      ;;
+  esac
+}
+
 # Ben Wong,  October 1, 2010
 # Public domain.  No rights reserved.
 # Functionality extended by Chris Lockfort, August 23, 2012 for use in X230 tablets running gnome-shell.
@@ -206,6 +223,8 @@ show_help() {
         disconnected   show disconnected displays
                local   show local connected displays
             external   show external connected displays
+              mirror   mirror local display with first connected display
+  nightmode <on|off>   modifys the gamma and brightness to approximate xflux
 
     Example:
         $0 disconnected
@@ -264,6 +283,10 @@ main() {
         tablet "right"
       fi
       ;;
+    nightmode)
+      shift
+      nightmode "$1"
+    ;;
     *) show_help ;;
   esac
 }

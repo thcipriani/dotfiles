@@ -75,13 +75,13 @@ myManageHook = composeAll
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
-myTabConfig = defaultTheme { inactiveBorderColor = "#708090"
-                           , activeBorderColor = "#5f9ea0"
-                           , activeColor = "#000000"
-                           , inactiveColor = "#333333"
-                           , inactiveTextColor = "#888888"
-                           , activeTextColor = "#87cefa"
-                           , fontName = "-xos4-terminus-*-*-*-*-12-*-*-*-*-*-*-*"
+myTabConfig = defaultTheme { inactiveBorderColor = colorBackground
+                           , activeBorderColor = colorGreen
+                           , activeColor = colorCurrent
+                           , inactiveColor = colorBackground
+                           , inactiveTextColor = colorComment
+                           , activeTextColor = colorForeground
+                           , fontName = "-*-dejavu sans mono-medium-*-*-*-12-*-*-*-*-*-*-*"
                            }
 
 myLayout = avoidStruts
