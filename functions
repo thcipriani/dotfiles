@@ -219,7 +219,7 @@ note () {
 }
 
 gist () {
-  if [[ "$1" =~ ".*\.note" ]]; then
+  if [[ "$1" == *.note ]]; then
     local _prename="$(basename $1)"
     local name="[NOTE] ${_prename%.*}.md"
   else
@@ -227,10 +227,13 @@ gist () {
     local name="${_prename}"
   fi
   local filename="/tmp/gist-$(date +%s)";
+
   echo "{\"description\":\"$(basename ${1})\",\"public\":\"false\",\"files\":{\"${name}\":{\"content\":\"" > "$filename"
   cat "$1" | tr '"' "'" | sed ':a;N;$!ba;s/\n/\\n/g' >> "$filename"
   echo "\"}}" >> "$filename"
+
   curl -H "Authorization: token $GITHUB_TOKEN" -X POST --data @"$filename" https://api.github.com/gists
+
   \rm -- "$filename"
 }
 
