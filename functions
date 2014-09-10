@@ -208,8 +208,30 @@ if _haz complete; then
 
 fi
 
-n () {
-  mkdir -p "${_N_PATH:=$HOME/.notes}"; $EDITOR "$_N_PATH/$@";
+note () {
+  if (( $# == 0 )); then
+    local fn="$_N_PATH/"
+  else
+    local fn="$_N_PATH/${@}.note"
+  fi
+
+  mkdir -p "${_N_PATH:=$HOME/.notes}"; vim --cmd "autocmd VimLeave *.note :! bash -ci \"gist %\" &> /dev/null" -- "$fn";
+}
+
+gist () {
+  if [[ "$1" =~ ".*\.note" ]]; then
+    local _prename="$(basename $1)"
+    local name="[NOTE] ${_prename%.*}.md"
+  else
+    local _prename="$(basename $1)"
+    local name="${_prename}"
+  fi
+  local filename="/tmp/gist-$(date +%s)";
+  echo "{\"description\":\"$(basename ${1})\",\"public\":\"false\",\"files\":{\"${name}\":{\"content\":\"" > "$filename"
+  cat "$1" | tr '"' "'" | sed ':a;N;$!ba;s/\n/\\n/g' >> "$filename"
+  echo "\"}}" >> "$filename"
+  curl -H "Authorization: token $GITHUB_TOKEN" -X POST --data @"$filename" https://api.github.com/gists
+  \rm -- "$filename"
 }
 
 # Conversion
@@ -334,7 +356,7 @@ if _haz compctl; then
 elif _haz complete; then
   _completenotes() {
     local cur=${COMP_WORDS[COMP_CWORD]}
-    local wordlist=$(find ${_N_PATH:=$HOME/.notes} -type f -printf "%f\n")
+    local wordlist=$(find ${_N_PATH:=$HOME/.notes} -type f -name '*.note' -printf "%f\n")
     COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$cur"))
     return 0
   }
