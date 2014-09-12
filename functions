@@ -210,9 +210,9 @@ fi
 
 note () {
   if (( $# == 0 )); then
-    local fn="$_N_PATH/"
+    local fn="${_N_PATH:=$HOME/.notes}"
   else
-    local fn="$_N_PATH/${@}.note"
+    local fn="${_N_PATH:=$HOME/.notes}/${@}.note"
   fi
 
   mkdir -p "${_N_PATH:=$HOME/.notes}"; vim --cmd "autocmd VimLeave *.note :! bash -ci \"gist %\" &> /dev/null" -- "$fn";

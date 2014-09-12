@@ -13,10 +13,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-if command -v scrot > /dev/null 2>&1; then
-  alias scrot="scrot $HOME/Dropbox/Screenshots/Screenshot-%Y-%m-%d-%T.png"
-fi
-
 alias less='less -FirSX'
 alias ag='ag --pager "\less -FirSX"'
 

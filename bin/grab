@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+
+show_help() {
+  cat<<USE
+  USAGE:
+    grab [screenshotname]
+  OPTIONS:
+    --select|-s: use selection rectangle
+    --public|-p: upload it to http://tyler.zone
+  EXAMPLE:
+    grab --select --public whatchamajig
+USE
+}
+
+simple_shot() {
+  \scrot "${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-%Y-%m-%d-%T.png"
+  printf "[\033[38;5;2mGOT IT\033[00m] ${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png\n"
+}
+
+take_shot() {
+  default_path="Screenshot-%Y-%m-%d-%T"
+
+  if (( $(printf "$path" | wc -c) < 1 )); then
+    path="$default_path"
+    grabname=1
+  else
+    filename="/${path}.png"
+  fi
+
+  options=''
+
+  if (( select == 1 )); then
+    options="-s"
+    printf "[\033[38;5;2mSELECT\033[00m] Waiting for your selection\n"
+  fi
+
+  \scrot ${options} "${_SCREEN_PATH:=$HOME/screenshots}/${path}.png"
+
+  if (( grabname == 1 )); then
+    filename="/Screenshot-$(date +%Y-%m-%d-%T).png"
+  fi
+
+  if (( $public == 1 )); then
+    make_public "${_SCREEN_PATH:=$HOME/screenshots}" "$filename"
+  else
+    printf "[\033[38;5;2mGOT IT\033[00m] ${_SCREEN_PATH:=$HOME/screenshots}${filename}\n"
+  fi
+}
+
+make_public() {
+  if ! command -v s3cmd > /dev/null 2>&1; then
+    printf "[\033[5;38;5;1mERR\033[00m] s3cmd command not found in $PATH\n"
+  fi
+
+  if (( $# < 2 )); then
+    printf "[\033[5;38;5;1mERR\033[00m] need a path and a folder\n"
+  fi
+
+  \s3cmd put "${1}${2}" s3://tyler.zone
+  \s3cmd setacl --acl-public "s3://tyler.zone${2}"
+
+  printf "[\033[38;5;2mURL\033[00m] http://tyler.zone${2}\n"
+}
+
+main () {
+  if ! command -v scrot > /dev/null 2>&1; then
+    printf "[\033[5;38;5;1mERR\033[00m] scrot command not found in $PATH\n"
+  fi
+
+  mkdir -p "${_SCREEN_PATH:=$HOME/screenshots}"
+
+  if (( $# == 0 )); then
+    simple_shot
+    exit 0
+  fi
+
+  select=0
+  public=0
+
+  while [ -n "$1" ]; do
+    case "$1" in
+      --select|-s)
+        select=1
+        ;;
+      --public|-p)
+        public=1
+        ;;
+      --help|-h)
+        show_help
+        exit 0
+        ;;
+      *)
+        path="$1"
+    esac
+    shift
+  done
+
+  take_shot
+
+}
+
+main "$@"
