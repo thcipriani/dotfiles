@@ -1,0 +1,10 @@
+#!/usr/bin/env rc
+
+TERM=dumb
+SHELL=$PLAN9/bin/rc acme
+BROWSER=google-chrome
+
+plumber >[2]/dev/null
+
+//exec acme -a -l $HOME/acme.dump $*
+
