@@ -1,16 +1,29 @@
-Config { font = "xft:Dejavu Sans Mono:pixelsize=12&antialias=true"
+Config { font = "xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=12:antialias=true:hinting=slight"
        -- solarized, bgColor = "#073642"
        -- solarized, fgColor = "#657b83"
        , bgColor = "#35383C"
        , fgColor = "#ecebec"
        , position = TopW L 95
-       , commands = [ Run Weather "KDEN" ["-t"," <tempF>°F","-L","32","-H","95","--normal","#d33682","--high","#dc322f","--low","#2aa198"] 36000
-                    , Run Cpu ["-L","3","-H","50","--normal","#d33682","--high","#dc322f"] 10
+       , commands = [ Run Weather "KDEN" [
+                                        "-t" ,"KDEN <tempF>°F DP:<dewPoint> Humidity:<rh>% Pressure:<pressure>hPa"
+                                        ] 36000
+                    , Run Cpu [ "--Low","3"
+                              , "--High", "50"
+                              , "--normal", "#d33682"
+                              , "--high", "#dc322f"
+                              ] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Date "%l:%M %p" "date" 10
+                    , Run Date "%_m/%_d/%Y—%I:%M %p" "date" 10
+                    , Run Battery [ "--template" , "Batt:<acstatus>(<left>%)"
+                                  , "--Low"      , "10"
+                                  , "--High"     , "80"
+                                  , "--low"      , "#dc322f"
+                                  , "--normal"   , "darkgreen"
+                                  , "--high"     , "#dc322f"
+                                  ] 50
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }<fc=#f2777a>%date%</fc>{ %cpu% ❯ %memory% ❯ %KDEN% "
+       , template = "%StdinReader%<fc=#969896,#1d1f21> %KDEN% </fc> %cpu% %memory% }{ %battery% <fc=#f2777a>%date%</fc>"
        }
