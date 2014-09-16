@@ -13,6 +13,7 @@ has? () {
 install_software() {
   has? encfs && echo "encfs installed" || install_encfs
   has? sshfs && echo "sshfs installed" || install_sshfs
+  has? s3cmd && echo "s3cmd installed" || install_s3cmd
 }
 
 install_encfs() {
@@ -37,20 +38,44 @@ install_sshfs() {
   fi
 }
 
+install_s3cmd() {
+  if has? apt-get; then
+    sudo apt-get install s3cmd
+  elif has? pacman; then
+    sudo pacman -S s3cmd
+  else
+    printf "Can't install s3cmd\n"
+    exit 1
+  fi
+}
+
 mount() {
-  if mountpoint -q '.backup/crypt'; then
+  if mountpoint -q "$HOME/.backup/crypt"; then
     echo "crypt is mounted"
   else
     echo "mounting crypt"
     sshfs -o uid=$(id -u) -o gid=$(id -g) -o idmap=user -o allow_other \
       tyler@home.tylercipriani.com:/volume1/homes/tyler/backup "$HOME/.backup/crypt"
+
+    # check if it's mounted yet
+    if ! mountpoint -q "$HOME/.backup/crypt"; then
+      echo "sshfs mount fail"
+      exit 1
+    fi
+
   fi
 
-  if mountpoint -q '.backup/clear'; then
+  if mountpoint -q "$HOME/.backup/clear"; then
     echo "clear is mounted"
   else
     echo "mounting clear"
     cat "$HOME/.encfs.conf" | encfs -S "$HOME/.backup/crypt/" "$HOME/.backup/clear/"
+
+    # check if it's mounted yet
+    if ! mountpoint -q "$HOME/.backup/clear"; then
+      echo "encfs mount fail"
+      exit 1
+    fi
   fi
 
   echo "clear and crypt are mounted"
@@ -67,23 +92,44 @@ setup() {
   mkdir -p "$HOME/.backup/clear"
   mkdir -p "$HOME/backup"
   mount
-  rsync --modify-window=1 -avz "$HOME/.backup/clear/." "$HOME/backup/."
+  rsync --delete --modify-window=1 -avz "$HOME/.backup/clear/." "$HOME/backup/."
 }
 
 sync() {
   mount
-  rsync --modify-window=1 -avz "$HOME/backup/." "$HOME/.backup/clear/."
+  rsync --delete --modify-window=1 -avz "$HOME/backup/." "$HOME/.backup/clear/."
+}
+
+public() {
+  mount
+  has? s3cmd && echo "s3cmd installed" || install_s3cmd
+
+  # exit if there is no s3cfg
+  [[ ! -r "$HOME/.s3cfg" ]] && exit 1
+
+  s3cmd sync --delete-removed "$HOME/backup/Public/" s3://tyler.zone/public/
+  s3cmd setacl --acl-public --recursive s3://tyler.zone/public/
 }
 
 main() {
-  if (( $# != 1 )); then
+  if (( $# < 1 )); then
     help
     exit 1
   fi
 
   case $1 in
     sync)
-      sync
+      shift
+      if (( $# > 0 )); then
+        if [[ $1 == 'public' ]]; then
+          public
+        else
+          help
+          exit 1
+        fi
+      else
+        sync
+      fi
       ;;
     mount)
       mount
@@ -96,6 +142,9 @@ main() {
       ;;
     pull)
       setup
+      ;;
+    public)
+      public
       ;;
     *)
       help
