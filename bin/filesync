@@ -2,8 +2,39 @@
 
 help() {
   cat<<DOC
-  Usage: $(basename $0) (sync|mount|umount)
+  Usage: $(basename $0) (setup|sync|pull|mount|umount)
 DOC
+}
+
+has? () {
+  command -v "$1" &> /dev/null
+}
+
+install_software() {
+  has? encfs && echo "encfs installed" || install_encfs
+  has? sshfs && echo "sshfs installed" || install_sshfs
+}
+
+install_encfs() {
+  if has? apt-get; then
+    sudo apt-get install encfs
+  elif has? pacman; then
+    sudo pacman -S encfs
+  else
+    printf "Can't install encfs\n"
+    exit 1
+  fi
+}
+
+install_sshfs() {
+  if has? apt-get; then
+    sudo apt-get install sshfs
+  elif has? pacman; then
+    sudo pacman -S sshfs
+  else
+    printf "Can't install sshfs\n"
+    exit 1
+  fi
 }
 
 mount() {
@@ -11,14 +42,15 @@ mount() {
     echo "crypt is mounted"
   else
     echo "mounting crypt"
-    sshfs -o uid=$(id -u) -o gid=$(id -g) -o idmap=user -o allow_other tyler@home.tylercipriani.com:/volume1/homes/tyler/backup "$HOME/.backup/crypt"
+    sshfs -o uid=$(id -u) -o gid=$(id -g) -o idmap=user -o allow_other \
+      tyler@home.tylercipriani.com:/volume1/homes/tyler/backup "$HOME/.backup/crypt"
   fi
 
   if mountpoint -q '.backup/clear'; then
     echo "clear is mounted"
   else
     echo "mounting clear"
-    encfs "$HOME/.backup/crypt/" "$HOME/.backup/clear/"
+    cat "$HOME/.encfs.conf" | encfs -S "$HOME/.backup/crypt/" "$HOME/.backup/clear/"
   fi
 
   echo "clear and crypt are mounted"
@@ -30,14 +62,17 @@ umount() {
 }
 
 setup() {
-  sudo apt-get install sshfs encfs unison
-  mkdir -p "$HOME/.backup/{crypt,clear}"
+  install_software
+  mkdir -p "$HOME/.backup/crypt"
+  mkdir -p "$HOME/.backup/clear"
   mkdir -p "$HOME/backup"
+  mount
+  rsync --modify-window=1 -avz "$HOME/.backup/clear/." "$HOME/backup/."
 }
 
 sync() {
-  unison -auto "$HOME/backup/" "$HOME/.backup/clear/"
-  # rsync -avzO "$HOME/backup/." "$HOME/.backup/clear/."
+  mount
+  rsync --modify-window=1 -avz "$HOME/backup/." "$HOME/.backup/clear/."
 }
 
 main() {
@@ -57,6 +92,9 @@ main() {
       umount
       ;;
     setup)
+      setup
+      ;;
+    pull)
       setup
       ;;
     *)
