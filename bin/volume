@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+show_help() {
+  cat<<USE
+  USAGE:
+    $(basename $0) [show|up|down]
+USE
+}
+
+get_state() {
+  amixer sget Master | grep -q '\[off\]'
+}
+
+get_vol() {
+  volume=$(amixer sget Master \
+    | grep '%' \
+    | head -1 \
+    | sed -e 's/.*\[\([0-9]*\)%.*/\1/')
+
+  if get_state; then
+    volume=0
+  fi
+}
+
+set_vol() {
+  amixer set Master playback "$1" &> /dev/null
+}
+
+mute() {
+  amixer set Master toggle &> /dev/null
+}
+
+show() {
+  if command -v volnoti &> /dev/null; then
+    if (( $1 == 0 )); then
+      (( $quiet == 0 )) && volnoti-show -m "$1"|| exit 0
+    else
+      (( $quiet == 0 )) && volnoti-show -m "$1"|| exit 0
+    fi
+  else
+    (( $quiet == 0 )) && echo "$1" || exit 0
+  fi
+}
+
+main() {
+  volume=0
+  quiet=0
+
+  while [ -n "$1" ]; do
+    case "$1" in
+      --help|-h)
+        show_help
+        exit 0
+        ;;
+      --quiet|-q)
+        quiet=1
+        ;;
+      show)
+        get_vol
+        ;;
+      up)
+        set_vol "5%+"
+        get_vol
+        ;;
+      down)
+        set_vol "5%-"
+        get_vol
+        ;;
+      mute)
+        mute
+        get_vol
+        ;;
+      *)
+        show_help
+        exit 0
+        ;;
+    esac
+    shift
+  done
+
+  show $volume
+}
+
+main "$@"

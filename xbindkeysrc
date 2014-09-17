@@ -69,17 +69,17 @@
   control+shift + v
 
 # Mute
-"amixer set Master toggle"
+"volume mute"
 m:0x0 + c:121
 XF86AudioMute
 
 # Volume down
-"amixer set Master playback 5-"
+"volume down"
 m:0x0 + c:122
 XF86AudioLowerVolume
 
 # Volume up
-"amixer set Master playback 5+"
+"volume up"
 m:0x0 + c:123
 XF86AudioRaiseVolume
 
