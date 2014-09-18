@@ -35,7 +35,7 @@ show() {
     if (( $1 == 0 )); then
       (( $quiet == 0 )) && volnoti-show -m "$1"|| exit 0
     else
-      (( $quiet == 0 )) && volnoti-show -m "$1"|| exit 0
+      (( $quiet == 0 )) && volnoti-show "$1"|| exit 0
     fi
   else
     (( $quiet == 0 )) && echo "$1" || exit 0
