@@ -18,7 +18,7 @@ Config { font = "xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=12:
                                   , "--Low"      , "10"
                                   , "--High"     , "80"
                                   , "--low"      , "#dc322f"
-                                  , "--normal"   , "darkgreen"
+                                  , "--normal"   , "#b294bb"
                                   , "--high"     , "#dc322f"
                                   ] 50
                     , Run StdinReader
