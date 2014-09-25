@@ -3,10 +3,12 @@ urxvt*cursorBlink: true
 urxvt*underlineColor: yellow
 
 ! These are the things I must do to see ಠ_ಠ
-urxvt*font: xft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
-urxvt*boldFont: ft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+! urxvt*font: -*-terminesspowerline-medium-r-normal-*-16-*-*-*-*-*-*-*, -gnu-unifont-medium-r-normal-*-16-*-*-*-*-*-*-*
+urxvt*font: xft: Terminess Powerline:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+! urxvt*font: xft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+! urxvt*boldFont: ft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
 
-urxvt*letterSpace: -1
+! urxvt*letterSpace: -1
 urxvt*depth: 32
 urxvt*borderless: 1
 urxvt*scrollBar: false

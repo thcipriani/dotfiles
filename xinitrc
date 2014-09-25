@@ -17,6 +17,14 @@ if [ "$(hostname -s)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
 fi
 # }}}
 
+# Fonts {{{
+# terminess
+test -d "$HOME/.fonts/terminess" && xset +fp "$HOME/.fonts/terminess"
+
+#unifont
+test -d "$HOME/.fonts/unifont" && xset +fp "$HOME/.fonts/unifont"
+# }}}
+
 # Load X Configuration
 test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
 
