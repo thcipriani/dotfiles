@@ -69,19 +69,19 @@
   control+shift + v
 
 # Mute
-"volume mute"
-m:0x0 + c:121
-XF86AudioMute
+# "volume mute"
+# m:0x0 + c:121
+# XF86AudioMute
 
 # Volume down
-"volume down"
-m:0x0 + c:122
-XF86AudioLowerVolume
+# "volume down"
+# m:0x0 + c:122
+# XF86AudioLowerVolume
 
 # Volume up
-"volume up"
-m:0x0 + c:123
-XF86AudioRaiseVolume
+# "volume up"
+# m:0x0 + c:123
+# XF86AudioRaiseVolume
 
 # Rotate screen
 "display tablet"
