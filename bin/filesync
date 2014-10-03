@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+lockdir="/tmp/filesync.lock"
+
 help() {
   cat<<DOC
   Usage: $(basename $0) (setup|sync|pull|mount|umount)
@@ -10,42 +12,37 @@ has? () {
   command -v "$1" &> /dev/null
 }
 
+syncDone() {
+  if [[ -d "$lockdir" ]]; then
+    rm -rf -- "$lockdir"
+  fi
+}
+
+syncing() {
+  # http://mywiki.wooledge.org/BashFAQ/045
+  if mkdir "$lockdir"; then
+    echo "Aquired lock"
+  else
+    echo "Syncing already in progress"
+    exit 1
+  fi
+}
+
 install_software() {
-  has? encfs && echo "encfs installed" || install_encfs
-  has? sshfs && echo "sshfs installed" || install_sshfs
-  has? s3cmd && echo "s3cmd installed" || install_s3cmd
+  has? encfs && echo "encfs installed" || install encfs
+  has? sshfs && echo "sshfs installed" || install sshfs
+  has? s3cmd && echo "s3cmd installed" || install s3cmd
+  has? inotifywatch && echo "inotifywatch installed" || install inotifywatch
 }
 
-install_encfs() {
+install() {
+  printf "Installing $1\n"
   if has? apt-get; then
-    sudo apt-get install encfs
+    sudo apt-get install "$1"
   elif has? pacman; then
-    sudo pacman -S encfs
+    sudo pacman -S "$1"
   else
-    printf "Can't install encfs\n"
-    exit 1
-  fi
-}
-
-install_sshfs() {
-  if has? apt-get; then
-    sudo apt-get install sshfs
-  elif has? pacman; then
-    sudo pacman -S sshfs
-  else
-    printf "Can't install sshfs\n"
-    exit 1
-  fi
-}
-
-install_s3cmd() {
-  if has? apt-get; then
-    sudo apt-get install s3cmd
-  elif has? pacman; then
-    sudo pacman -S s3cmd
-  else
-    printf "Can't install s3cmd\n"
-    exit 1
+    printf "Can't install $1\n"
   fi
 }
 
@@ -91,13 +88,18 @@ setup() {
   mkdir -p "$HOME/.backup/crypt"
   mkdir -p "$HOME/.backup/clear"
   mkdir -p "$HOME/backup"
+  touch "$HOME/.backup/status"
   mount
+  syncing
   rsync --delete --modify-window=1 -avz "$HOME/.backup/clear/." "$HOME/backup/."
+  syncDone
 }
 
 sync() {
   mount
+  syncing
   rsync --delete --modify-window=1 -avz "$HOME/backup/." "$HOME/.backup/clear/."
+  syncDone
 }
 
 public() {
@@ -107,8 +109,46 @@ public() {
   # exit if there is no s3cfg
   [[ ! -r "$HOME/.s3cfg" ]] && exit 1
 
+  syncing
   s3cmd sync --delete-removed "$HOME/backup/Public/" s3://tyler.zone/public/
   s3cmd setacl --acl-public --recursive s3://tyler.zone/public/
+  syncDone
+}
+
+___doSync() {
+  local fd=$(tail -1 "$HOME/.backup/status" | cut -d' ' -f1)
+  local public=$(echo "$fd" | grep -c "$HOME/backup/Public")
+  local push=$(echo "$fd" | grep -c "$HOME/backup")
+
+  if (( public > 0 )); then
+    public
+  fi
+
+  if (( push > 0 )); then
+    sync
+  else
+    setup
+  fi
+}
+
+daemon() {
+  inotifywait -e create,delete,modify --format "%w" -r "$HOME/backup" -do "$HOME/.backup/status"
+  inotifywait -e create,delete,modify --format "%w" -r "$HOME/.backup/clear" -do "$HOME/.backup/status"
+  inotifywait -e create,delete,modify --format "%w" -r "$HOME/backup/Public" -do "$HOME/.backup/status"
+
+  while true; do
+    inotifywait -e modify "$HOME/.backup/status" && ___doSync
+  done
+}
+
+show() {
+  if [[ $1 == 'pids' ]]; then
+    ps aux | grep "inotifywait -e create,delete,modify --format %w -r $HOME" | grep -v grep | awk '{print $2}'
+    ps aux | grep "filesync daemon" | grep -v grep | awk '{print $2}'
+  else
+    ps aux | grep "inotifywait -e create,delete,modify --format %w -r $HOME" | grep -v grep
+    ps aux | grep "filesync daemon" | grep -v grep
+  fi
 }
 
 main() {
@@ -131,21 +171,25 @@ main() {
         sync
       fi
       ;;
-    mount)
-      mount
+    show)
+      shift
+      if (( $# > 0 )); then
+        if [[ $1 == 'pids' ]]; then
+          show pids
+        else
+          help
+          exit 1
+        fi
+      else
+        show
+      fi
       ;;
-    umount)
-      umount
-      ;;
-    setup)
-      setup
-      ;;
-    pull)
-      setup
-      ;;
-    public)
-      public
-      ;;
+    mount) mount ;;
+    umount) umount ;;
+    setup) setup ;;
+    pull) setup ;;
+    public) public ;;
+    daemon) daemon ;;
     *)
       help
       exit 1
