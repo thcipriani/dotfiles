@@ -13,7 +13,7 @@ Config { font = "-xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-*-*"
                               , "--high", "#dc322f"
                               ] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Date "%_m/%_d/%Y—%I:%M %p" "date" 10
+                    , Run Date "%a %D %r KW%V DOY%j" "date" 10
                     , Run Battery [ "--template" , "Batt:<acstatus>(<left>%)"
                                   , "--Low"      , "10"
                                   , "--High"     , "80"
