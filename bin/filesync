@@ -90,6 +90,10 @@ setup() {
   mkdir -p "$HOME/backup"
   touch "$HOME/.backup/status"
   mount
+}
+
+pull() {
+  setup
   syncing
   rsync --delete --modify-window=1 -avz "$HOME/.backup/clear/." "$HOME/backup/."
   syncDone
@@ -132,6 +136,7 @@ ___doSync() {
 }
 
 daemon() {
+  setup
   inotifywait -e create,delete,modify --format "%w" -r "$HOME/backup" -do "$HOME/.backup/status"
   inotifywait -e create,delete,modify --format "%w" -r "$HOME/.backup/clear" -do "$HOME/.backup/status"
   inotifywait -e create,delete,modify --format "%w" -r "$HOME/backup/Public" -do "$HOME/.backup/status"
@@ -186,8 +191,11 @@ main() {
       ;;
     mount) mount ;;
     umount) umount ;;
-    setup) setup ;;
-    pull) setup ;;
+    setup)
+      setup
+      pull
+      ;;
+    pull) pull ;;
     public) public ;;
     daemon) daemon ;;
     *)
