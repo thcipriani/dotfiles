@@ -148,11 +148,13 @@ daemon() {
 
 show() {
   if [[ $1 == 'pids' ]]; then
-    ps aux | grep "inotifywait -e create,delete,modify --format %w -r $HOME" | grep -v grep | awk '{print $2}'
+    ps aux | grep "inotifywait -e create,delete,modify,move --format %w -r $HOME" | grep -v grep | awk '{print $2}'
     ps aux | grep "filesync daemon" | grep -v grep | awk '{print $2}'
+    ps aux | grep "inotifywait -e modify $HOME/.backup/status" | grep -v grep | awk '{print $2}'
   else
-    ps aux | grep "inotifywait -e create,delete,modify --format %w -r $HOME" | grep -v grep
+    ps aux | grep "inotifywait -e create,delete,modify,move --format %w -r $HOME" | grep -v grep
     ps aux | grep "filesync daemon" | grep -v grep
+    ps aux | grep "inotifywait -e modify $HOME/.backup/status" | grep -v grep
   fi
 }
 
