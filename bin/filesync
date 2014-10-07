@@ -137,9 +137,9 @@ ___doSync() {
 
 daemon() {
   setup
-  inotifywait -e create,delete,modify --format "%w" -r "$HOME/backup" -do "$HOME/.backup/status"
-  inotifywait -e create,delete,modify --format "%w" -r "$HOME/.backup/clear" -do "$HOME/.backup/status"
-  inotifywait -e create,delete,modify --format "%w" -r "$HOME/backup/Public" -do "$HOME/.backup/status"
+  inotifywait -e create,delete,modify,move --format "%w" -r "$HOME/backup" -do "$HOME/.backup/status"
+  inotifywait -e create,delete,modify,move --format "%w" -r "$HOME/.backup/clear" -do "$HOME/.backup/status"
+  inotifywait -e create,delete,modify,move --format "%w" -r "$HOME/backup/Public" -do "$HOME/.backup/status"
 
   while true; do
     inotifywait -e modify "$HOME/.backup/status" && ___doSync
