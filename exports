@@ -43,3 +43,9 @@ if command -v keychain > /dev/null 2>&1; then
 fi
 
 [ -r "$HOME/.api_keys" ] && . "$HOME/.api_keys"
+
+if [ -d "$HOME/.virtualenvs" ]; then
+  export WORKON_HOME="$HOME/.virtualenvs"
+  export VIRTUALENVWRAPPER_PYTHON=$(which python)
+  . $(which virtualenvwrapper.sh)
+fi

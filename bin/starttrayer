@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+pkill trayer &> /dev/null
+
+trayer \
+  --edge top \
+  --align right \
+  --SetDockType true \
+  --SetPartialStrut true \
+  --expand false \
+  --widthtype percent \
+  --width 5 \
+  --tint 0x1d1f21 \
+  --transparent true \
+  --heighttype pixel \
+  --height 18 \
+  --margin 0 \
+  --padding 0 \
+  --alpha 0 &
+

@@ -29,21 +29,7 @@ test -d "$HOME/.fonts/unifont" && xset +fp "$HOME/.fonts/unifont"
 test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
 
 # trayer {{{
-trayer \
-  --edge top \
-  --align right \
-  --SetDockType true \
-  --SetPartialStrut true \
-  --expand false \
-  --widthtype percent \
-  --width 5 \
-  --tint 0x35383C \
-  --transparent true \
-  --heighttype pixel \
-  --height 18 \
-  --margin 0 \
-  --padding 0 \
-  --alpha 0 &
+has? starttrayer && starttrayer
 # }}}
 
 # background color {{{
