@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# ------------------------------------------
+# Track battery over time (every 30 mins)
+# Run: nohup batterytrack &> /dev/null &
+# ------------------------------------------
+
+logfile="$HOME/.batterytrack.log"
+pidfile="/tmp/batterytrack.pid"
+batterydir="/sys/class/power_supply/BAT0"
+
+# not a laptop
+[[ ! -d "$batterydir" ]] && exit
+
+echo $$ > "$pidfile"
+trap "rm '$pidfile'" EXIT SIGTERM
+while true; do
+  cat "${batterydir}/uevent" | tr '\n' ',' >> "$logfile"
+  printf "\n" >> "$logfile"
+  sleep 1800
+done
+exit 0
