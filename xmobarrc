@@ -2,13 +2,14 @@ Config { font = "-xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-*-*"
        -- solarized, bgColor = "#073642"
        -- solarized, fgColor = "#657b83"
        , bgColor = "#1d1f21"
-       , fgColor = "#969896"
-       , position = TopW L 95
+       , fgColor = "#c5c8c6"
+       , position = TopW L 100
        , commands = [ Run Weather "KDEN" [
                                         "--template"
-                                        ,"<fc=#373b41>DIA:</fc><tempF>°F"
+                                        ,"<fc=#969896>DIA:</fc><tempF>°F"
                                         ] 36000
                     , Run Cpu [
+                              "--template", "<total>%"
                               -- "--Low","3"
                               -- , "--High", "50"
                               -- , "--normal", "#d33682"
@@ -17,9 +18,9 @@ Config { font = "-xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-*-*"
                     , Run Memory [
                                   "--template", "<usedratio>%"
                                  ] 10
-                    , Run Date "%a %D %r <fc=#373b41>KW%V DOY%j</fc>" "date" 10
+                    , Run Date "%a %D %r <fc=#969896>KW%V DOY%j</fc>" "date" 10
                     , Run Battery [
-                                  "--template"      , "<left>% <fc=#373b41>[<timeleft>]</fc>"
+                                  "--template"      , "<left>% <fc=#969896>[<timeleft>]</fc>"
                                   -- "--template" , "<acstatus>(<left>%)"
                                   -- , "--Low"      , "10"
                                   -- , "--High"     , "80"
@@ -31,5 +32,5 @@ Config { font = "-xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% <fc=#373b41>//</fc> %KDEN%  <fc=#373b41>CPU:</fc>%cpu%  <fc=#373b41>Mem:</fc>%memory%}{ <fc=#373b41>Batt:</fc>%battery%  %date%"
+       , template = "%StdinReader% <fc=#969896>//</fc> %KDEN%  <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{ <fc=#969896>Batt:</fc>%battery%  %date%"
        }

@@ -29,7 +29,8 @@ test -d "$HOME/.fonts/unifont" && xset +fp "$HOME/.fonts/unifont"
 test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
 
 # trayer {{{
-has? starttrayer && starttrayer
+# No more trayer
+# has? starttrayer && starttrayer
 # }}}
 
 # background color {{{
