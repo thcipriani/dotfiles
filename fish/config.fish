@@ -1,6 +1,7 @@
 # Environment {{{
 set -g -x fish_greeting ''
 set -g -x EDITOR vim
+set -g -x MARKPATH "$HOME/.marks"
 # }}}
 
 # Completions {{{
@@ -31,11 +32,16 @@ alias mv  "mv -i"
 alias :q  exit
 alias ll  "ls -AlFh"
 alias l   "ls -AlFh --group-directories-first"
+alias ef  "$EDITOR $HOME/.config/fish/config.fish"
 # }}}
 
 # funcitons {{{
 function sosh -d "Source fish shell"
   . "$HOME/.config/fish/config.fish"
+end
+
+function jump -d "Jump to directory"
+  cd "$MARKPATH/$argv[1]" ^ /dev/null; or echo "No such mark: $argv[1]"
 end
 # }}}
 
