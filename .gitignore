@@ -11,3 +11,5 @@ vim/bundle/**
 !vim/bundle/Vundle.vim
 bin/src/**
 wallpaper/*nasa_pod.jpg
+fish/fishd.*
+fish/fish_history
