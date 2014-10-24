@@ -108,7 +108,7 @@ set formatoptions=tcqr    " I like smart comments
 
 set foldmethod=marker     " Fold on 3x{
 set nofoldenable          " But turn it off initially
-
+set shell=bash            " Needed if using fishshell
 
 "no backup or swap files
 set nobackup
