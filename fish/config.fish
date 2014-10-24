@@ -33,6 +33,8 @@ alias :q  exit
 alias ll  "ls -AlFh"
 alias l   "ls -AlFh --group-directories-first"
 alias ef  "$EDITOR $HOME/.config/fish/config.fish"
+alias tls "tmux list-sessions"
+alias ta  "tmux attach-session -t"
 # }}}
 
 # funcitons {{{
