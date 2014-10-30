@@ -41,7 +41,7 @@ function fish_prompt
   set -l color (set_color blue)
 
   if test $last_status -gt 0
-    set -l color (set_color red)
+    set color (set_color red)
   end
 
   set -l top_row (set_color green)(prompt_pwd)(set_color normal)(parse_git_branch)(set_color normal)
