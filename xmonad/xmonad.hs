@@ -138,7 +138,7 @@ main = do
           }
      }
      `additionalKeysP`
-     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn Verdana-12) && exec $x")
+     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-terminus-medium-r-*-*-14-*') && exec $x")
      , ("M-b", sendMessage ToggleStruts)
      , ("M1-<Tab>", prevScreen)
      , ("M1-S-<Tab>",  nextScreen)
