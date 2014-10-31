@@ -38,13 +38,17 @@ function fish_prompt
   # set -e -l days
   # set -e -l hours
 
-  set -l color (set_color blue)
+  set -l color (set_color cyan)
 
   if test $last_status -gt 0
     set color (set_color red)
   end
 
   set -l top_row (set_color green)(prompt_pwd)(set_color normal)(parse_git_branch)(set_color normal)
+
+  if test -n "$SSH_CONNECTION"
+    set top_row (set_color ff00ff)(whoami)(set_color normal)"@"(set_color ff8300)(hostname -s)":$top_row"
+  end
 
   set -l bottom_row "$color❯ "(set_color normal)
 
