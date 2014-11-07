@@ -22,3 +22,6 @@ prepend_to_path "$HOME/.rbenv/bin"
 prepend_to_path "$HOME/.cabal/bin"
 prepend_to_path "$HOME/bin"
 # }}}
+
+set -g -x OPSCODE_USER thcipriani
+set -g -x PAGER 'less -FirSX'
