@@ -43,6 +43,7 @@ Plugin 'juvenn/mustache'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rsi'
+Plugin 'dag/vim-fish'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -108,7 +109,8 @@ set formatoptions=tcqr    " I like smart comments
 
 set foldmethod=marker     " Fold on 3x{
 set nofoldenable          " But turn it off initially
-set shell=bash            " Needed if using fishshell
+set shell=/bin/bash\ --login
+" set shell=bash            " Needed if using fishshell
 
 "no backup or swap files
 set nobackup

@@ -25,6 +25,10 @@ if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
+if [ -d "$(ruby -e 'print Gem.user_dir')/bin" ]; then
+  export PATH="$(ruby -e 'print Gem.user_dir')/bin":$PATH
+fi
+
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
 
