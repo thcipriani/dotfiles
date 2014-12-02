@@ -2,7 +2,8 @@
 set -g -x fish_greeting ''
 
 set -g -x EDITOR  "vim"
-set -g -x BROWSER "firefox"
+# set -g -x BROWSER "firefox"
+set -g -x BROWSER "google-chrome"
 
 set -g -x MARKPATH "$HOME/.marks"
 set -g -x LANGUAGE "en_US.UTF-8"
