@@ -80,6 +80,9 @@ main() {
     watch)
       file_path="Watchlist.md"
       ;;
+    gift)
+      file_path="Giftlist.md"
+      ;;
     *)
       show_help
       exit 1

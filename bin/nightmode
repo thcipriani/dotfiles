@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1" == 'off' ]]; then
+  xrandr --output "DVI-I-3" --gamma 1.0:1.0:1.0 --brightness 0.99
+  xrandr --output "DVI-I-2" --gamma 1.0:1.0:1.0 --brightness 0.99
+  exit 0
+fi
+
+xrandr --output "DVI-I-3" --gamma 0.8:1:1 --brightness 0.75
+xrandr --output "DVI-I-2" --gamma 0.8:1:1 --brightness 0.75

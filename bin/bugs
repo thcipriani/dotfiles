@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# $ xdg-mime default [browser].desktop x-scheme-handler/http
+# $ xdg-mime default [browser].desktop x-scheme-handler/https
+
+xdg-open "http://bugs.internal.sparkfun.com/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=NEEDINFO&bug_status=UNASSIGNED&bug_status=ASSIGNED&bug_status=ON%20HOLD&bug_status=REOPENED&columnlist=component%2Ctarget_milestone%2Cpriority%2Cassigned_to%2Cbug_status%2Cshort_desc%2Cchangeddate&email2=tyler.cipriani%40sparkfun.com&emailassigned_to2=1&emailtype2=exact&list_id=52213&order=target_milestone%2Cpriority%20ASC&product=IT"
