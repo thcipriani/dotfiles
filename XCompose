@@ -59,3 +59,34 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
 <Multi_key> <N> <G> : "Ŋ" # Ni'gh't
 <Multi_key> <n> <g> : "ŋ"
+
+# box drawing stuffs that I uses.
+<Multi_key> <bar> <q>   : "┌"
+<Multi_key> <bar> <w>   : "─"
+<Multi_key> <bar> <e>   : "┐"
+<Multi_key> <bar> <r>   : "┬"
+
+
+<Multi_key> <bar> <z>   : "└"
+<Multi_key> <bar> <x>   : "─"
+<Multi_key> <bar> <c>   : "┘"
+<Multi_key> <bar> <v>   : "┴"
+
+<Multi_key> <bar> <a>   : "│"
+<Multi_key> <bar> <s>   : "┼"
+<Multi_key> <bar> <d>   : "├"
+<Multi_key> <bar> <f>   : "┤"
+
+<Multi_key> <Multi_key> <bar> <q>   : "╔"
+<Multi_key> <Multi_key> <bar> <w>   : "═"
+<Multi_key> <Multi_key> <bar> <e>   : "╗"
+
+<Multi_key> <Multi_key> <bar> <z>   : "╚"
+<Multi_key> <Multi_key> <bar> <x>   : "═"
+<Multi_key> <Multi_key> <bar> <c>   : "╝"
+<Multi_key> <Multi_key> <bar> <v>   : "╩"
+
+<Multi_key> <Multi_key> <bar> <a>   : "║"
+<Multi_key> <Multi_key> <bar> <s>   : "╦"
+<Multi_key> <Multi_key> <bar> <d>   : "╠"
+<Multi_key> <Multi_key> <bar> <f>   : "╣"

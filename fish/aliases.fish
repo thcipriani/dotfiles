@@ -32,3 +32,6 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 # Collect my vim usage for _something_…
 # http://www.patrick-wied.at/projects/heatmap-keyboard/
 alias vim="vim -w ~/.vim_keystrokes"
+
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print \$1'"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Search through xcompose files for a match, show character and shortcut
+grep -i "$@" -- "$HOME/.XCompose" "/usr/share/X11/locale/en_US.UTF-8/Compose" | cut -d':' -f2,3 | grep -Ev "^#" | cut -d '"' -f1,2 | tr -d '"' | tr -s ' '

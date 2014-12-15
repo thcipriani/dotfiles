@@ -2,13 +2,11 @@
 
 text="Example"
 
-cat /dev/null > "$outfile"
-
 if (( $# > 0 )); then
   text="$@"
 fi
 
-for font in /usr/share/figlet/*.flf; do
+for font in /usr/share/figlet/fonts/*.flf; do
   printf "$font\n"
-  figlet -f "$font" "$text"
+  figlet -w $(tput cols) -f "$font" "$text"
 done
