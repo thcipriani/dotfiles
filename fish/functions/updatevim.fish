@@ -1,5 +1,3 @@
 function updatevim
-    set SHELL (which bash)
-    vim +BundleInstall! +BundleClean +qall
-    set SHELL (which fish)
+    su (whoami) --shell /bin/bash -c 'SHELL=/bin/bash vim +BundleInstall! +BundleClean +qall'
 end
