@@ -1,3 +1,3 @@
 function ll
-  tree --dirsfirst -ChFupDaL 1 $argv
+  tree --dirsfirst -ChFupDaLg 1 $argv
 end
