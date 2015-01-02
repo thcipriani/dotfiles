@@ -1,3 +1,3 @@
 function digga
-    dig +nocmd "$argv[1]" any +multiline +noall +answer
+    dig +noall +multiline +answer "$argv[1]" any
 end

@@ -18,25 +18,6 @@ end
 
 function fish_prompt
   set last_status $status
-  # set -l end_time (date +%s)
-  # set -l total_time (math $end_time - $start_time)
-  # if test $end_time -eq $start_time; or test $start_time -eq 0
-  #   set total_time 0
-  # end
-
-  # set -e start_time
-
-  # set -l days (math "$total_time / 60 / 60 / 24")
-  # set -l hours (math "$total_time / 60 / 60 % 24")
-  # set -l minutes (math "$total_time / 60 % 60")
-  # set -l seconds (math "$total_time % 60")
-  # set_color red
-  # printf "%sd %sh %sm %ss\n" $days $hours $minutes $seconds
-  # set_color normal
-  # set -e -l seconds
-  # set -e -l minutes
-  # set -e -l days
-  # set -e -l hours
 
   set -l color (set_color cyan)
 
@@ -46,11 +27,16 @@ function fish_prompt
 
   set -l top_row (set_color green)(prompt_pwd)(set_color normal)(parse_git_branch)(set_color normal)
 
-  if test -n "$SSH_CONNECTION"
+  if set -q SSH_CONNECTION
     set top_row (set_color ff00ff)(whoami)(set_color normal)"@"(set_color ff8300)(hostname -s)":$top_row"
+  end
+
+  if set -q CMD_DURATION
+    set top_row "$top_row"(set_color red)" $CMD_DURATION"(set_color normal)
   end
 
   set -l bottom_row "$color❯ "(set_color normal)
 
   printf "%s\n%s" $top_row $bottom_row
+
 end
