@@ -5,7 +5,7 @@ alias gp  "git push"
 alias gl  "git up"
 alias gd  "git diff"
 alias rm  "rm -i"
-alias cp  "cp -i"
+# alias cp  "cp -i"
 alias mv  "mv -i"
 alias :q  exit
 
