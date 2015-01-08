@@ -1,5 +1,8 @@
 include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
+# Quick ssh key output
+<Multi_key> <k> <e> <y> : "https://gist.github.com/thcipriani/5e95399457da6544a4cb"
+
 # sudo apt-get install ttf-kannada-fonts
 <Multi_key> <S> <N> <O> <W>     : "❄"   U2603
 <Multi_key> <p> <l> <a> <n> <e> : "✈"   U2708
