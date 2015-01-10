@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+#
+# pbrisbin 2013 - retreive passwords by email address from ~/.netrc.
+# Unlike typical netrc usage, this allows you to store credentials under
+# the domain of the email address, rather than the hostname of the IMAP
+# server (which may be the same for multiple sets of credentials).
+#
+# Example ~/.netrc:
+#
+#   machine gmail.com
+#     login pbrisbin@gmail.com
+#     password supersecret
+#
+#   machine thoughtbot.com
+#     login pat@thoughtbot.com
+#     password othersecret
+#
+# Usage:
+#
+#   $ getnetrc pbrisbin@gmail.com
+#   supersecret
+#
+#   $ getnetrc pat@thoughtbot.com
+#   othersecret
+#
+# thcipriani <tyler@tylercipriani.com> 2014
+# Updated to also retrieve usernames when evaluated as a script.
+# Also, checks for '@' sign for get_password, only checks mail if
+# that exists
+#
+###
+import netrc
+import sys
+
+def get_password(domain_or_email):
+  try:
+    net_rc = netrc.netrc()
+  except IOError:
+    return None
+
+  if "@" in domain_or_email:
+      domain = domain_or_email.split('@', 2)[1]
+      email = domain_or_email
+  else:
+    domain = domain_or_email
+
+  for host in net_rc.hosts.keys():
+    if host == domain:
+      login, _, password = net_rc.authenticators(host)
+
+      try:
+        if email != login:
+          continue;
+      except NameError:
+        pass
+
+      return password
+
+  return None
+
+def get_login(domain):
+  try:
+    net_rc = netrc.netrc()
+  except IOError:
+    return None
+
+  for host in net_rc.hosts.keys():
+    if host == domain:
+      login, _, password = net_rc.authenticators(host)
+      return login
+
+  return None
+
+if __name__ == '__main__':
+  pw = get_password(sys.argv[1])
+
+  if pw:
+    print(pw)

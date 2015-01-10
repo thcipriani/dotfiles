@@ -1,0 +1,20 @@
+[general]
+ui = ttyui
+accounts = Gmail
+pythonfile = ~/bin/getnetrc
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/Mail/Gmail
+
+[Repository Gmail-Remote]
+type = Gmail
+remoteusereval = get_login("offlineimap")
+remotepasseval = get_password("offlineimap")
+realdelete = no
+maxconnections = 3
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

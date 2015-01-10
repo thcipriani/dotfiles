@@ -1,0 +1,84 @@
+set mbox_type   = Maildir
+set sendmail    = /usr/bin/msmtp
+
+set folder      = ~/Mail/Gmail
+set spoolfile   = "+INBOX"
+set mbox        = "+[Gmail].All Mail"
+set postponed   = "+[Gmail].Drafts"
+unset record
+
+mailboxes \
+  "+INBOX" \
+  "+[Gmail].Starred" \
+  "+[Gmail].Drafts" \
+  "+[Gmail].Sent Mail" \
+  "+[Gmail].Spam" \
+  "+[Gmail].Trash "
+
+# main options
+set realname   = "Tyler Cipriani"
+set from       = "tyler@tylercipriani.com"
+set mail_check = 0
+set envelope_from
+
+unset move           # gmail does that
+set delete           # don't ask, just do
+unset confirmappend  # don't ask, just do!
+set quit             # don't ask, just do!!
+unset mark_old       # read/new is good enough for me
+
+# sort/threading
+set sort     = threads
+set sort_aux = reverse-last-date-received
+set sort_re
+
+# look and feel
+set pager_index_lines = 8
+set pager_context     = 5
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
+set date_format="%y-%m-%d %T"
+set status_format = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
+
+# sidebar (requires patched mutt-sidebar)
+set sidebar_visible = yes
+set sidebar_width = 38
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# # Ctrl-o to open selected folder.
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+# composing
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set include
+set forward_quote
+
+ignore *                               # first, ignore all headers
+unignore from: to: cc: date: subject:  # then, show only these
+hdr_order from: to: cc: date: subject: # and in this order
+
+set beep_new   # bell on new mail
+
+# GPG sign
+source /usr/share/doc/mutt/examples/gpg.rc
+
+set pgp_timeout = 3600       # how long to cache the pass-phrase
+set crypt_autosign = yes     # automatically sign all outgoing mail
+set crypt_replyencrypt = yes # automatically encrypt replies to encrypted messages
+set pgp_sign_as = 018FAC02   # my Key ID
+my_hdr X-PGP-Key: https://tylercipriani.com/018FAC02.asc
+
+# color
+source "$HOME/.mutt/colors"
+
+# caching for faster search
+set header_cache     = "~/Mail/Cache"
+set message_cachedir = "~/Mail/Cache"
