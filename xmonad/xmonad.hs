@@ -24,6 +24,7 @@ import XMonad.Hooks.ScreenCorners
 import XMonad.Util.Run
 import XMonad.Util.EZConfig
 import XMonad.Util.NamedWindows
+import XMonad.Util.NamedScratchpad
 
 import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
@@ -64,14 +65,21 @@ instance UrgencyHook LibNotifyUrgencyHook where
 -- Window Rules
 -- =======================================
 myManageHook = composeAll
-    [ className =? "dmenu"     --> doFloat
-    , className =? "Gimp"      --> doFloat
-    , className =? "Vncviewer" --> doFloat
-    , className =? "Svkbd" --> doFloat
+    [ className =? "dmenu"         --> doFloat
+    , className =? "Gimp"          --> doFloat
+    , className =? "Vncviewer"     --> doFloat
+    , className =? "Svkbd"         --> doFloat
     , className =? "Google-chrome" --> doShift "web"
-    , className =? "Firefox" --> doShift "web"
-    , isFullscreen --> doFullFloat
+    , className =? "Firefox"       --> doShift "web"
+    , isFullscreen                 --> doFullFloat
+    , namedScratchpadManageHook scratchpads
     ]
+
+scratchpads =
+  [
+    NS "scratch" "urxvt --title scratch" (title =? "scratch")
+      (customFloating $ W.RationalRect 0.6 0.6 0.35 0.2)
+  ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
@@ -112,6 +120,8 @@ myEventHook = fullscreenEventHook
   <+> screenCornerEventHook
   <+> docksEventHook
 
+myTerminal = "urxvt"
+
 --
 -- Main Layout
 -- =======================================
@@ -121,7 +131,7 @@ main = do
       { modMask = mod4Mask
         , normalBorderColor = colorBackground
         , focusedBorderColor = colorSelection
-        , terminal = "urxvt"
+        , terminal = myTerminal
         , manageHook = manageDocks
                         <+> myManageHook
                         <+> manageHook defaultConfig
@@ -139,6 +149,7 @@ main = do
      }
      `additionalKeysP`
      [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-terminus-medium-r-*-*-14-*') && exec $x")
+     , ("M-S-p", namedScratchpadAction scratchpads "scratch")
      , ("M-b", sendMessage ToggleStruts)
      , ("M1-<Tab>", prevScreen)
      , ("M1-S-<Tab>",  nextScreen)
