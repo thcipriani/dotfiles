@@ -12,9 +12,64 @@ show_help() {
 USE
 }
 
+notify() {
+  local msg="$1"
+  local level="${2:-normal}"
+
+  (( cli == 0 )) && \
+    notify-send --urgency "$level" "$msg"
+
+  (( cli == 1 )) && \
+    [[ "$level" == "normal" ]] && \
+    printf "\033[38;5;2m%s\033[00m\n" "$msg"
+
+  (( cli == 1 )) && \
+    [[ "$level" == "critical" ]] && \
+    printf "\033[38;5;1m%s\033[00m\n" "$msg"
+
+}
+
+prompt() {
+  printf "%s\n" "$@" | dmenu -l 15 -p "Grab:"
+}
+
+# can be run directly from dprompt
+run_interactive() {
+  options=(
+    "0: Exit"
+    "---"
+    "1. Screenshot (All)"
+    "2. Screenshot (Area)"
+    "---"
+    "3. Upload Screenshot (All)"
+    "4. Upload Screenshot (Area)"
+    "---"
+  )
+
+  case "$(prompt "${options[@]}")" in
+    0*) exit 0 ;;
+    1*);;
+    2*)
+      select=1
+      ;;
+    3*)
+      public=1
+      ;;
+    4*)
+      select=1
+      public=1
+      ;;
+    *)
+      show_help
+      exit 1
+      ;;
+  esac
+}
+
 simple_shot() {
   \scrot "${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-%Y-%m-%d-%T.png"
-  printf "[\033[38;5;2mGOT IT\033[00m] ${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png\n"
+  notify "[GOT IT] ${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png"
+  printf "${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png" | \xsel -p
 }
 
 take_shot() {
@@ -31,7 +86,7 @@ take_shot() {
 
   if (( select == 1 )); then
     options="-s"
-    printf "[\033[38;5;2mSELECT\033[00m] Waiting for your selection\n"
+    notify "[SELECT] Waiting for your selection"
   fi
 
   \scrot ${options} "${_SCREEN_PATH:=$HOME/screenshots}/${path}.png"
@@ -43,60 +98,63 @@ take_shot() {
   if (( $public == 1 )); then
     make_public "${_SCREEN_PATH:=$HOME/screenshots}" "$filename"
   else
-    printf "[\033[38;5;2mGOT IT\033[00m] ${_SCREEN_PATH:=$HOME/screenshots}${filename}\n"
+    notify "[GOT IT] ${_SCREEN_PATH:=$HOME/screenshots}${filename}"
+    printf "${_SCREEN_PATH:=$HOME/screenshots}/${filename}" | \xsel -p
   fi
 }
 
 make_public() {
   if ! command -v s3cmd > /dev/null 2>&1; then
-    printf "[\033[5;38;5;1mERR\033[00m] s3cmd command not found in $PATH\n"
+    notify "[ERR] s3cmd command not found in $PATH" "critical"
   fi
 
   if (( $# < 2 )); then
-    printf "[\033[5;38;5;1mERR\033[00m] need a path and a folder\n"
+    notify "[ERR] need a path and a folder" "critical"
   fi
 
   \s3cmd put "${1}${2}" s3://tyler.zone
   \s3cmd setacl --acl-public "s3://tyler.zone${2}"
 
-  printf "[\033[38;5;2mURL\033[00m] http://tyler.zone${2}\n"
+  notify "[URL] http://tyler.zone${2}"
+  printf "http://tyler.zone${2}" | \xsel -p
 }
 
 main () {
   if ! command -v scrot > /dev/null 2>&1; then
-    printf "[\033[5;38;5;1mERR\033[00m] scrot command not found in $PATH\n"
+    notify "[ERR] scrot command not found in $PATH" "critical"
   fi
 
   mkdir -p "${_SCREEN_PATH:=$HOME/screenshots}"
 
-  if (( $# == 0 )); then
-    simple_shot
-    exit 0
-  fi
-
   select=0
   public=0
+  cli=1
 
-  while [ -n "$1" ]; do
-    case "$1" in
-      --select|-s)
-        select=1
-        ;;
-      --public|-p)
-        public=1
-        ;;
-      --help|-h)
-        show_help
-        exit 0
-        ;;
-      *)
-        path="$1"
-    esac
-    shift
-  done
+  if (( $# == 0 )); then
+    cli=0
+    run_interactive
+  else
+    while [ -n "$1" ]; do
+      case "$1" in
+        --select|-s)
+          select=1
+          ;;
+        --public|-p)
+          public=1
+          ;;
+        --help|-h)
+          show_help
+          exit 0
+          ;;
+        *)
+          path="$1"
+      esac
+      shift
+    done
+
+  fi
 
   take_shot
-
 }
 
 main "$@"
