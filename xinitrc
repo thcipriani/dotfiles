@@ -94,7 +94,7 @@ test -x "/usr/bin/dunst" && "/usr/bin/dunst" &
 has? doing && nohup doing > /dev/null 2>&1 &
 has? xflux && xflux -z 80501
 has? volnoti && volnoti
-has? filesync && filesync daemon > /dev/null 2>&1 &
+# has? filesync && filesync daemon > /dev/null 2>&1 &
 has? batterytrack && nohup batterytrack > /dev/null 2>&1 &
 
 # Nasa APOD
