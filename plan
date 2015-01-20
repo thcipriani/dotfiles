@@ -1,19 +1,21 @@
-Currently Reading:
+# -*- mode: org -*-
 
+* Currently Reading:
+  
 NICK BOSTROM
 SUPERINTELLIGENCE
 Paths, Dangers, Strategies
 
 https://archive.org/stream/pdfy-gICrBTUXEYl52bow/2014-bostrom-superintelligence_djvu.txt
 
-* * *
+* Important Wikipedia Articles
 
-Important Wikipedia Articles—an ongoing list
+1) Why artist payment rises without productivity increases:
+   https://en.wikipedia.org/wiki/Baumol%27s_cost_disease
+2) Nick Bostrom's Simulation Hypothesis:
+   https://en.wikipedia.org/wiki/Simulation_hypothesis
 
-* Why artist payment rises without productivity increases: https://en.wikipedia.org/wiki/Baumol%27s_cost_disease
-* Nick Bostrom's Simulation Hypothesis: https://en.wikipedia.org/wiki/Simulation_hypothesis
-
-* * *
+*                                                                     :quote:
 
 "If nature has made any one thing less susceptible than all others of
 exclusive property, it is the action of the thinking power called an idea,
@@ -25,7 +27,7 @@ possession of every one, and the receiver cannot dispossess himself of it."
 
 http://press-pubs.uchicago.edu/founders/documents/a1_8_8s12.html
 
-* * *
+*                                                                     :quote:
 
 "If make his point clear, Yoda could, give a shit about Oxford commas,
 nobody should."
@@ -34,7 +36,7 @@ nobody should."
 
 http://stilldrinking.org/nobody-understands-punctuation
 
-* * *
+*                                                                     :quote:
 
 "The programmer, like the poet, works only slightly removed from pure
 thought-stuff. He builds his castles in the air, from air, creating by
@@ -48,30 +50,37 @@ display screen comes to life, showing things that never were nor could be."
 
 - Fred Brooks
 
-* * *
+* Stuff and Things
 
-THINGS
-===
+** TODO Movies
 
-Movies                      Art
----                         ---
+   | Title            | Year |
+   |------------------+------|
+   | Old Joy          | 2006 |
+   | Sunset Boulevard | 1950 |
 
-Old Joy (2006)              Rhinoceros - Albrecht Dürer (1515)
-Sunset Boulevard (1950)     Carcass of Beef - Chaïm Soutine (c. 1925)
-                            The Knight's Dream - Antonio de Pareda (1655)
-                            The Death of Marat - Jacques-Louis David (1793)
+** Art
 
-TV Shows
----
-Civilisation (1969)
+   | Title              | Artist              |    Year |
+   |--------------------+---------------------+---------|
+   | Rhinoceros         | Albrecht Dürer      |    1515 |
+   | Carcass of Beef    | Chaïm Soutine       | c. 1925 |
+   | The Knight's Dream | Antonio de Pareda   |    1655 |
+   | The Death of Marat | Jacques-Louis David |    1793 |
 
-* * *
+** TV Shows
+
+   | Title        | Date |
+   |--------------+------|
+   | Civilisation | 1969 |
+
+*                                                                     :quote:
 
 "There ain’t no rules around here. We’re trying to accomplish something."
 
 - Thomas Edison
 
-* * *
+*                                                                     :quote:
 
 "Poetry is like a curvy slide in a playground - an odd object, available
 to the public - and, as I keep explaining to my local police force,
@@ -81,7 +90,7 @@ everyone should be able to use it, not just those of a certain age."
 
 http://www.poetryfoundation.org/poetrymagazine/article/246328
 
-* * *
+* Discourse on Inequality, 1754                                       :quote:
 
 "The first man who, having fenced in a piece of land, said 'This is mine,'
 and found people naïve enough to believe him, that man was the true
@@ -92,63 +101,58 @@ Beware of listening to this impostor; you are undone if you once forget
 that the fruits of the earth belong to us all, and the earth
 itself to nobody."
 
-- Jean-Jacques Rousseau, Discourse on Inequality, 1754
+- Jean-Jacques Rousseau
 
 http://www.constitution.org/jjr/ineq.txt
 
-* * *
+*                                                                     :quote:
 
 "Everyone knows the usefulness of what is useful,
 but few know the usefulness of what is useless."
 - Zhuang Zi
 
-* * *
+* The following block of characters is an ASCII "Magic Eye" Random-Dot Stereogram. 
 
-The following block of characters is an ASCII "Magic Eye"
-Random-Dot Stereogram.  Stare at it with your eyes focused at
-infinity and you will eventually see a diamond suspended
-between two rows of columns.
+Stare at it with your eyes focused at infinity and you will eventually see a 
+diamond suspended between two rows of columns.
 
 
-                   O               O               O               O
-    lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C
-    MGB9q+s^{O!do5NEq+s^{OO!do5NNEq+s^^{OO!djo5NNEq+s^{OO!dj5NNEq+^{OO!d5NNEq+^Zq+^
-    fw;zUK`o^`/D*+8fUK`o^``/D*+88fUK`oo^``/DC*+88fUK`o^``/DC+88fUKo^``/D+88fUKo"UKo
-    _i-lSmj$\b0e`mx=Smj$\bb0e`mxx=Smj$$\bb0eA`mxx=Smj$\bb0eAmxx=Sm$\bb0emxx=Sm$?Sm$
-    MtfCG_L{55Zk\6$"G_L{555Zk\6$$"G_L{{555Zk,\6$$"G_L{555Zk,6$$"G_{555Zk6$$"G_{.G_{
-    $I,1j%n09|iYzOkbj%n09||iYzOkkbj%n009||iYazOkkbj%n09||iYaOkkbj%09||iYOkkbj%0vj%0
-    |c-Dh[8|lm{3j:{Ph[8|lmm{3j:{{Ph[8||lmm{3gj:{[8-[8|lmm{3g:{[8-[|lmm{3:{[8-[|h-[|
-    nh>R]:8"WV6M/w##]:8"WVV6M/w###]:8""WVV6Mz/#]:8""c"WVV6Mz#]:8"""WVV6M#]:8"""@"""
-    VF-%l.<7R{RSTZC%l.<7RR{RSTZZC%l.<<7RR{RZZC%l.<<7R7RR{RZC%l.<<R7RR{RC%l.<<RB<<R
-    ZUplWhOgdwW]Cvp#WhOgdwwW]Cvpp#WhOggdwwCvpp#WhOggdwwCwCvp#WhOggwwCwCv#WhOggw]ggw
-    8<%E8"I/tW_=lTnd8"I/tWW_=lTnnd8"I//t_=lTnnd8"I//t_=lTnTnd8"I//_=lTnTd8"I//_#//_
-    s@&X9GW$oP)qW`H%9GW$oPP)qW`HH%9GW$$P)qW`HH%9GW$$P)qW`HHH%9GW$$)qW`HH%9GW$$)%$$)
-    H2Lvpj/=S3R8:;!5pj/=S33R8:;!!5pj/==SR8:;!!5pj/==SR8:;!;!5pj/==R8:;!;5pj/==Ro==R
-    zB9Pa)$$&hZh<-e)a)$$&hhZh<-ee)a)$$$&hh<-ee)a)$$$&hh<h<-e)a)$$$hh<h<-)a)$$$h2$$h
-    &d5Ingl+Ec!7!]e1ngl+Ecc!7!]ee1ngl++Ecc!7ee1ngl++EcEcc!7e1ngl++cEcc!71ngl++cZ++c
-    jB-|-x(;$@j$/)zR-x(;$@@j$/)zzR-x(;;$@@j$Z/R-x(;;7;$@@j$ZR-x(;;;$@@j$R-x(;;;.;;;
-    +Q-=SVg4t;a,`0{!SVg4t;;a,`0{{!SVg44t;;a,,`0{Vg6Vg4t;;a,,0{Vg6V4t;;a,0{Vg6V4x6V4
-    Ck-[XZ#HnP2cN8'gXZ#HnPP2cN8''gXZ#HHnPP2c=N8''gXZ#HnPP2c=8''gXZHnPP2c8''gXZHyXZH
-    \"I7/$k\S(#qD%)z/$k\S((#qD%))z/$k\\S((#qVD%))z/$k\S((#qV%))z/$\S((#q%))z/$\J/$\
-    BgaE^p#]$Wn*O@US^p#]$WWn*O@UUS^p#]]$WWn*OO@UUS^p#]$WWn*O@UUS^p]$WWn*@UUS^p]%^p]
-    eqzjLx8LVCEqqLvOLx8LVCCEqqLvvOLx8LLVCCEqZqLvvOLx8LVCCEqZLvvOLxLVCCEqLvvOLxLHLxL
-    bB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>
+                 O               O               O               O
+  lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C
+  MGB9q+s^{O!do5NEq+s^{OO!do5NNEq+s^^{OO!djo5NNEq+s^{OO!dj5NNEq+^{OO!d5NNEq+^Zq+^
+  fw;zUK`o^`/D*+8fUK`o^``/D*+88fUK`oo^``/DC*+88fUK`o^``/DC+88fUKo^``/D+88fUKo"UKo
+  _i-lSmj$\b0e`mx=Smj$\bb0e`mxx=Smj$$\bb0eA`mxx=Smj$\bb0eAmxx=Sm$\bb0emxx=Sm$?Sm$
+  MtfCG_L{55Zk\6$"G_L{555Zk\6$$"G_L{{555Zk,\6$$"G_L{555Zk,6$$"G_{555Zk6$$"G_{.G_{
+  $I,1j%n09|iYzOkbj%n09||iYzOkkbj%n009||iYazOkkbj%n09||iYaOkkbj%09||iYOkkbj%0vj%0
+  |c-Dh[8|lm{3j:{Ph[8|lmm{3j:{{Ph[8||lmm{3gj:{[8-[8|lmm{3g:{[8-[|lmm{3:{[8-[|h-[|
+  nh>R]:8"WV6M/w##]:8"WVV6M/w###]:8""WVV6Mz/#]:8""c"WVV6Mz#]:8"""WVV6M#]:8"""@"""
+  VF-%l.<7R{RSTZC%l.<7RR{RSTZZC%l.<<7RR{RZZC%l.<<7R7RR{RZC%l.<<R7RR{RC%l.<<RB<<R
+  ZUplWhOgdwW]Cvp#WhOgdwwW]Cvpp#WhOggdwwCvpp#WhOggdwwCwCvp#WhOggwwCwCv#WhOggw]ggw
+  8<%E8"I/tW_=lTnd8"I/tWW_=lTnnd8"I//t_=lTnnd8"I//t_=lTnTnd8"I//_=lTnTd8"I//_#//_
+  s@&X9GW$oP)qW`H%9GW$oPP)qW`HH%9GW$$P)qW`HH%9GW$$P)qW`HHH%9GW$$)qW`HH%9GW$$)%$$)
+  H2Lvpj/=S3R8:;!5pj/=S33R8:;!!5pj/==SR8:;!!5pj/==SR8:;!;!5pj/==R8:;!;5pj/==Ro==R
+  zB9Pa)$$&hZh<-e)a)$$&hhZh<-ee)a)$$$&hh<-ee)a)$$$&hh<h<-e)a)$$$hh<h<-)a)$$$h2$$h
+  &d5Ingl+Ec!7!]e1ngl+Ecc!7!]ee1ngl++Ecc!7ee1ngl++EcEcc!7e1ngl++cEcc!71ngl++cZ++c
+  jB-|-x(;$@j$/)zR-x(;$@@j$/)zzR-x(;;$@@j$Z/R-x(;;7;$@@j$ZR-x(;;;$@@j$R-x(;;;.;;;
+  +Q-=SVg4t;a,`0{!SVg4t;;a,`0{{!SVg44t;;a,,`0{Vg6Vg4t;;a,,0{Vg6V4t;;a,0{Vg6V4x6V4
+  Ck-[XZ#HnP2cN8'gXZ#HnPP2cN8''gXZ#HHnPP2c=N8''gXZ#HnPP2c=8''gXZHnPP2c8''gXZHyXZH
+  \"I7/$k\S(#qD%)z/$k\S((#qD%))z/$k\\S((#qVD%))z/$k\S((#qV%))z/$\S((#q%))z/$\J/$\
+  BgaE^p#]$Wn*O@US^p#]$WWn*O@UUS^p#]]$WWn*OO@UUS^p#]$WWn*O@UUS^p]$WWn*@UUS^p]%^p]
+  eqzjLx8LVCEqqLvOLx8LVCCEqqLvvOLx8LLVCCEqZqLvvOLx8LVCCEqZLvvOLxLVCCEqLvvOLxLHLxL
+  bB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>
 
-                                                   (created by helder@ci.ua.pt)
+                                                 (created by helder@ci.ua.pt)
 
-* * *
+* The Phonetic Alphabet
 
-    The Phonetic Alphabet
-    ---------------------
+A - Alpha    G - Golf    N - November  U - Uniform
+B - Bravo    H - Hotel   O - Oscar     V - Victor
+C - Charlie  I - India   P - Papa      W - Whiskey
+D - Delta    J - Julia   Q - Quebec    X - X-Ray
+E - Echo     K - Kilo    R - Romeo     Y - Yankee
+F - Foxtrot  L - Lima    S - Sierra    Z - Zulu
+             M - Mike    T - Tango
 
-    A - Alpha       G - Golf        N - November  U - Uniform
-    B - Bravo       H - Hotel       O - Oscar V - Victor
-    C - Charlie     I - India       P - Papa  W - Whiskey
-    D - Delta       J - Julia       Q - Quebec  X - X-Ray
-    E - Echo        K - Kilo        R - Romeo Y - Yankee
-    F - Foxtrot     L - Lima        S - Sierra      Z - Zulu
-                    M - Mike        T - Tango
 
-* * *
 
-If you've enjoyed seeing the end of this file try piping it through `less(1)`
+# If you've enjoyed seeing the end of this file try piping it through `less(1)`
