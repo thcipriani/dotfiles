@@ -46,13 +46,18 @@ set status_format = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
 # sidebar (requires patched mutt-sidebar)
 set sidebar_visible = yes
 set sidebar_width = 38
+set sidebar_delim='│'
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
 # Ctrl-n, Ctrl-p to select next, previous folder.
 # # Ctrl-o to open selected folder.
 bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 bind index,pager \Co sidebar-open
+
+# Fix backspce in urxvt
+bind index,pager  previous-line
 
 # composing
 set fcc_attach
