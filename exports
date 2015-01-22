@@ -3,6 +3,11 @@ export EDITOR=vim
 export PAGER='less -FirSX'
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
 
+if [  "$(uname -s)" = "Darwin" ]; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 if [ -d "$HOME/Projects/play" ]; then
   export PATH=$HOME/Projects/play:$PATH
 fi

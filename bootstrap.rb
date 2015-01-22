@@ -26,15 +26,11 @@ end
 
 # link other repo executables so I don't have to deal with submodules
 otherbin.each do |repo|
-  `git clone git@github.com:thcipriani/#{repo}.git #{File.expand_path 'bin'}/src/#{repo}`
+  `git clone https://github.com/thcipriani/#{repo}.git #{File.expand_path 'bin'}/src/#{repo}`
 end
 
-# Vundle setup
-if not File.directory? File.expand_path '~/.vim/bundle/Vundle.vim'
-  `git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"`
-end
-
-`vim +PluginInstall +qall`
+# Just kidding about the submodules!
+`git submodule update --init --recursive && vim +PluginInstall +qall`
 
 # git push on commit
 `echo 'git push' > .git/hooks/post-commit`

@@ -42,7 +42,8 @@ for file in ~/.{bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
-if [[ "$(uname -s)" == 'Darwin' ]]; then
-  set -o vi
-  bind -m vi-insert "\C-l":clear-screen
-fi
+# set iterm2 key profile for option key to +Esc
+# if [[ "$(uname -s)" == 'Darwin' ]]; then
+#  set -o vi
+#  bind -m vi-insert "\C-l":clear-screen
+# fi
