@@ -1,9 +1,13 @@
 # -*- mode: org -*-
+#+TITLE:     Tyler Cipriani's .plan
+#+AUTHOR:    Tyler Cipriani
+#+EMAIL:     tyler@tylercipriani.com
+#+LANGUAGE:  en
 
 * .plan
 ** <2015-01-20 Tue>
 
-*** Surprising things found in the 85 tabs open on my phone:
+Surprising things found in the 85 tabs open on my phone:
 
 1) Solar Claculation Details
    http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html
@@ -72,14 +76,14 @@ display screen comes to life, showing things that never were nor could be."
 
 ** TODO <2014-06-01 Sun>
 
-*** Movies
+Movies
 
     | Title            | Year |
     |------------------+------|
     | Old Joy          | 2006 |
     | Sunset Boulevard | 1950 |
 
-*** Art
+Art
 
     | Title              | Artist              |    Year |
     |--------------------+---------------------+---------|
@@ -88,7 +92,7 @@ display screen comes to life, showing things that never were nor could be."
     | The Knight's Dream | Antonio de Pareda   |    1655 |
     | The Death of Marat | Jacques-Louis David |    1793 |
 
-*** TV Shows
+TV Shows
 
     | Title        | Date |
     |--------------+------|
@@ -178,4 +182,4 @@ F - Foxtrot  L - Lima    S - Sierra    Z - Zulu
 
 
 
-# If you've enjoyed seeing the end of this file try piping it through `less(1)`
+** COMMENT If you've enjoyed seeing the end of this file try piping it through `less(1)`
