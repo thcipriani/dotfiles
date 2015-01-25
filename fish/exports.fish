@@ -21,6 +21,14 @@ prepend_to_path (command ruby -e 'print Gem.user_dir')"/bin"
 prepend_to_path "$HOME/.rbenv/bin"
 prepend_to_path "$HOME/.cabal/bin"
 prepend_to_path "$HOME/bin"
+
+prepend_to_path /usr/bin/site_perl
+prepend_to_path /usr/lib/perl5/site_perl/bin
+prepend_to_path /usr/bin/vendor_perl
+prepend_to_path /usr/lib/perl5/vendor_perl/bin
+prepend_to_path /usr/bin/core_perl
+
+
 # }}}
 
 set -g -x OPSCODE_USER thcipriani
