@@ -1,0 +1,142 @@
+#!/usr/bin/env bash
+
+log_dir="$HOME/var/"
+log_file="${log_dir}duplicity.log"
+gpg_key="018FAC02"
+dir="$HOME"
+backend="s3://s3.amazonaws.com/tylercipriani-backup/$(hostname -s)"
+backend_mail="s3://s3.amazonaws.com/tylercipriani-backup/Mail"
+backend_pictures="s3://s3.amazonaws.com/tylercipriani-backup/Pictures"
+
+show_help() {
+  cat<<DOC
+  Usage: $(basename $0) (--all|--pictures|--other|--mail)
+DOC
+}
+
+get_creds() {
+  export AWS_ACCESS_KEY_ID=$(/home/tyler/bin/getnetrc duplicity login)
+  export AWS_SECRET_ACCESS_KEY=$(/home/tyler/bin/getnetrc duplicity)
+}
+
+backup_pictures() {
+  printf "Pictures\n---\n" >> "$log_file"
+
+  duplicity \
+    --verbosity info \
+    --encrypt-key="$gpg_key" \
+    --sign-key="$gpg_key" \
+    --full-if-older-than 7D \
+    --asynchronous-upload \
+    --volsize=100 \
+    --log-file "$log_file" \
+      --include "$HOME/Pictures" \
+      --exclude "**" \
+    "$dir" "$backend_pictures"
+}
+
+backup_mail() {
+  printf "Mail\n---\n" >> "$log_file"
+
+  duplicity \
+    --verbosity info \
+    --encrypt-key="$gpg_key" \
+    --sign-key="$gpg_key" \
+    --full-if-older-than 7D \
+    --asynchronous-upload \
+    --volsize=100 \
+    --log-file "$log_file" \
+    --include "$HOME/Mail" \
+    --exclude "**" \
+    "$dir" "$backend_mail"
+}
+
+backup_other() {
+  printf "Everything else\n---\n" >> "$log_file"
+
+  duplicity \
+    --verbosity info \
+    --encrypt-key="$gpg_key" \
+    --sign-key="$gpg_key" \
+    --full-if-older-than 7D \
+    --asynchronous-upload \
+    --volsize=100 \
+    --log-file "$log_file" \
+    --include "$HOME/.ssh" \
+    --include "$HOME/.gnupg" \
+    --include "$HOME/.notes" \
+    --include "$HOME/.wallpaper" \
+    --include "$HOME/.weechat" \
+    --include "$HOME/.netrc" \
+    --include "$HOME/.s3cfg" \
+    --include "$HOME/.work_log" \
+    --include "$HOME/.vim_keystrokes" \
+    --include "$HOME/.doing" \
+    --include "$HOME/Projects" \
+    --include "$HOME/screenshots" \
+    --exclude "**" \
+    "$dir" "$backend"
+}
+
+backup_everything() {
+  backup_pictures
+  backup_mail
+  backup_other
+}
+
+cleanup() {
+  duplicity \
+    remove-older-than 1M \
+    "$backend"
+
+  duplicity \
+    remove-older-than 1M \
+    "$backend_pictures"
+
+  duplicity \
+    remove-older-than 1M \
+    "$backend_mail"
+
+  unset AWS_ACCESS_KEY_ID
+  unset AWS_SECRET_ACCESS_KEY
+}
+
+main() {
+
+  if (($# < 1)) || (($# > 1)); then
+    show_help
+    exit 1
+  fi
+
+  get_creds
+
+  mkdir -p "$log_dir"
+
+  if [ -f "$log_file" ]; then
+    cat /dev/null > "$log_file"
+  fi
+
+  case $1 in
+    other|--other|-o)
+      backup_other
+      ;;
+    mail|--mail|-m)
+      backup_mail
+      ;;
+    pic*|--pic*|-p)
+      backup_pictures
+      ;;
+    all|--all|-a)
+      backup_everything
+      ;;
+    *)
+      show_help
+      cleanup
+      exit 1
+      ;;
+  esac
+
+  cleanup
+}
+
+main "$@"

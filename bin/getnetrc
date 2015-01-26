@@ -72,7 +72,10 @@ def get_login(domain):
   return None
 
 if __name__ == '__main__':
-  pw = get_password(sys.argv[1])
+  if len(sys.argv) > 2 and sys.argv[2] == 'login':
+      pw = get_login(sys.argv[1])
+  else:
+      pw = get_password(sys.argv[1])
 
   if pw:
     print(pw)
