@@ -282,9 +282,17 @@ let g:airline_powerline_fonts = 1
 let g:ctrlp_max_files = 0 " Set no max file limit
 let g:ctrlp_working_path_mode = 0 " Search current directory not project root
 if executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor
-        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    endif
+  set grepprg=ag\ --nogroup\ --nocolor
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = {
+    \ 'types': {
+      \ 1: ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
+      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+      \ },
+    \ 'fallback': 'ag %s -l --nocolor -g ""'
+    \ }
+
+endif
 
     let g:ctrlp_show_hidden = 1
 "}}}
