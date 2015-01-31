@@ -1,0 +1,11 @@
+auto-reload yes
+notify-always yes
+notify-format "newsbeuter: %n unread articles within %f unread feeds"
+notify-program notify-send
+notify-xterm yes
+notify-screen yes
+refresh-on-startup yes
+reload-time 20
+reload-threads 2
+#show-read-articles no
+#show-read-feeds no
