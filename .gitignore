@@ -15,3 +15,7 @@ fish/fishd.*
 fish/fish_history
 fish/fish_read_history
 getnetrcc
+newsbeuter/cache.db
+newsbeuter/cache.db.lock
+newsbeuter/history.cmdline
+newsbeuter/history.search
