@@ -22,9 +22,13 @@ function cp -d "show me progress on cp"
     end
   end
 
-  if type pv > /dev/null ^&1
-    pv $src > $dst
+  if test -d $src
+    rsync -Wrlvh "$src"/ "$dst"
   else
-    rsync -WavPh $src $dst
+    if type pv > /dev/null ^&1
+      pv "$src" > "$dst"
+    else
+      rsync -Wrlvh "$src" "$dst"
+    end
   end
 end
