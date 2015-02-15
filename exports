@@ -1,37 +1,36 @@
 export MYSHELL=$(basename $SHELL)
 export EDITOR=vim
 export PAGER='less -FirSX'
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+
+prepend_to_path() {
+  local dir="$1"
+
+  if [[ -d "${dir}" ]]; then
+    if [[ ":$PATH:" != *"${dir}"* ]]; then
+      export PATH="${dir}:${PATH}"
+    fi
+  fi
+}
+
+prepend_to_path "/usr/games"
+prepend_to_path "/usr/local/games"
+prepend_to_path "/bin"
+prepend_to_path "/sbin"
+prepend_to_path "/usr/bin"
+prepend_to_path "/usr/sbin"
+prepend_to_path "/usr/local/bin"
+prepend_to_path "/usr/local/sbin"
+prepend_to_path "/usr/local/plan9"
+prepend_to_path "/usr/local/go/bin"
+prepend_to_path "$HOME/Projects/play"
+prepend_to_path "$(ruby -e 'print Gem.user_dir')/bin"
+prepend_to_path "$HOME/.rbenv/bin"
+prepend_to_path "$HOME/.cabal/bin"
+prepend_to_path "$HOME/bin"
 
 if [  "$(uname -s)" = "Darwin" ]; then
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-fi
-
-if [ -d "$HOME/Projects/play" ]; then
-  export PATH=$HOME/Projects/play:$PATH
-fi
-
-if [ -d "$HOME/.cabal/bin" ]; then
-  export PATH=$HOME/.cabal/bin:$PATH
-fi
-
-if [ -d "/usr/local/go/bin" ]; then
-  export PATH=$PATH:/usr/local/go/bin
-fi
-
-if [ -d "/usr/local/plan9" ]; then
-  export PLAN9="/usr/local/plan9"
-  export PATH=$PATH:$PLAN9/bin:$HOME/bin/acme
-fi
-
-if [ -d "$HOME/.rbenv" ]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-fi
-
-if [ -d "$(ruby -e 'print Gem.user_dir')/bin" ]; then
-  export PATH="$(ruby -e 'print Gem.user_dir')/bin":$PATH
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html

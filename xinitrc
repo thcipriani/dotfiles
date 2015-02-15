@@ -15,6 +15,10 @@ fi
 if [ "$(hostname -s)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
     "$HOME/bin/work-monitorfix"
 fi
+
+if [ -x "$HOME/.monitorfix" ]; then
+    "$HOME/.monitorfix"
+fi
 # }}}
 
 # Fonts {{{

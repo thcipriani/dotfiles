@@ -148,8 +148,9 @@ main = do
           }
      }
      `additionalKeysP`
-     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-terminus-medium-r-*-*-14-*') && exec $x")
+     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-14-*') && exec $x")
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
+     , ("M-S-v", spawn "xdotool click 2")
      , ("M-b", sendMessage ToggleStruts)
      , ("M1-<Tab>", prevScreen)
      , ("M1-S-<Tab>",  nextScreen)

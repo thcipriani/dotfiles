@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if ! command -v nm-applet; then
+  echo 'nm-applet not found!'
+  exit 1
+fi
+
+. "$HOME/bin/starttrayer"
+nm-applet &
