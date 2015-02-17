@@ -1,8 +1,21 @@
 #!/usr/bin/env bash
 
+prepend_to_path() {
+  local dir="$1"
+
+  if [[ -d "${dir}" ]]; then
+    if [[ ":$PATH:" != *"${dir}"* ]]; then
+      export PATH="${dir}:${PATH}"
+    fi
+  fi
+}
+
 has?() {
     command -v "$1" > /dev/null 2>&1
 }
+
+# Make sure "$HOME/bin" is in path
+prepend_to_path "$HOME/bin"
 
 # Desktop setup {{{
 wallpaper="$HOME/.wallpaper"
