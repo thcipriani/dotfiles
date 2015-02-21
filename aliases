@@ -81,7 +81,7 @@ alias sdif="svn diff"
 alias srev="svn revert"
 
 # Git
-alias gst='git status'
+alias gst='git status -sb'
 alias gc='git commit -v'
 alias ga='git add'
 alias gp='git push'
