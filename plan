@@ -5,6 +5,26 @@
 #+LANGUAGE:  en
 
 * .plan
+** TIL
+*** <2015-02-19 Thu>
+
+apt-cache madison [pkg]
+https://github.com/git/git/blob/master/contrib/workdir/git-new-workdir
+
+*** <2015-02-20 Fri>
+
+__name__ == '__main__' : python :: basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME']) : php
+http://mislav.uniqpath.com/2010/07/git-tips/
+
+*** <2015-02-23 Mon>
+
+timeout(1)
+
+*** <2015-02-24 Tue>
+
+https://github.com/mbostock/git-static
+puppet agent --noop
+
 ** <2015-02-01 Sun>
 
 A recent Amazon.com order about which I feel a certain joy:

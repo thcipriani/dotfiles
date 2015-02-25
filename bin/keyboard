@@ -4,6 +4,13 @@
 
   DISPLAY=:0.0 xset -b
   DISPLAY=:0.0 xset r rate 330 60
-  xcape -e 'Control_L=Escape'
+  command -v xcape &>/dev/null && xcape -e 'Control_L=Escape'
+  DISPLAY=:0.0 setxkbmap \
+    -layout us \
+    -variant altgr-intl \
+    -option compose:rctrl \
+    -option terminate:ctrl_alt_bksp \
+    -option ctrl:nocaps \
+    -option nbsp:level3n
   DISPLAY=:0.0 notify-send "External USB Connected"
 ) &
