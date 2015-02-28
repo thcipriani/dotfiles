@@ -44,6 +44,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rsi'
 Plugin 'dag/vim-fish'
+Plugin 'rodjek/vim-puppet'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -129,7 +131,7 @@ colorscheme Tomorrow-Night
 set guifont=Source\ Code\ Pro\ 14
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬\,trail:.
 
 " }}}
 
@@ -248,6 +250,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" detect puppet filetype
+autocmd BufRead,BufNewFile *.pp set filetype=puppet
+autocmd BufRead,BufNewFile *.pp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab textwidth=80 smarttab
 " }}}
 
 " Development Tools --------------------------------------------------- {{{

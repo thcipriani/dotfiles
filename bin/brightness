@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -f /sys/class/backlight/acpi_video0/brightness ]; then
+  echo "No acpi_video0 brightness file"
+  exit 1
+fi
+
+sudo su - -c "echo $1 > /sys/class/backlight/acpi_video0/brightness"

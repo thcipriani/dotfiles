@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ ! -f /sys/class/leds/asus\:\:kbd_backlight/brightness ]; then
+  echo "No key backlight brightness file"
+  exit 1
+fi
+
+
+sudo su - -c "echo $1 > /sys/class/leds/asus\:\:kbd_backlight/brightness"
