@@ -12,3 +12,7 @@ hist3 = log --oneline --abbrev-commit --all --graph --decorate
 	ui = true
 [push]
 	default = matching
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
