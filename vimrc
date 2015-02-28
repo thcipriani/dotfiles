@@ -270,6 +270,8 @@ let g:vdebug_options = {
 \}
 
 let g:syntastic_javascript_jshint_conf="$HOME/.jshintrc"
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{
@@ -282,6 +284,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Included for Airline ------------------------------------------------ {{{
 let g:airline_theme = 'tomorrow'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 " }}}
 
 " CtrlP --------------------------------------------------------------- {{{

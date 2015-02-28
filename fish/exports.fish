@@ -17,6 +17,12 @@ prepend_to_path "/usr/local/bin"
 prepend_to_path "/usr/local/sbin"
 prepend_to_path "/usr/local/plan9"
 prepend_to_path "/usr/local/go/bin"
+
+if test -d "/usr/local/go"
+  set -gx GOPATH "$HOME/go"
+  prepend_to_path "$HOME/go/bin"
+end
+
 prepend_to_path (command ruby -e 'print Gem.user_dir')"/bin"
 prepend_to_path "$HOME/.rbenv/bin"
 prepend_to_path "$HOME/.cabal/bin"
