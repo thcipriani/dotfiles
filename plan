@@ -27,6 +27,16 @@ puppet agent --noop
 https://en.wikipedia.org/wiki/Mojibake
 RUBYLIB=/var/lib/puppet/lib hiera [key] ::hostname=$(hostname -s) --config /etc/puppet/hiera.yaml --debug
 
+*** <2015-03-02 Mon>
+http://ferm.foo-projects.org/
+git config --global alias.ack "grep --break --heading --line-number"
+
+*** <2015-03-03 Tue>
+http://iiif.io/
+
+*** <2015-03-04 Wed>
+http://myrepos.branchable.com/
+
 ** <2015-02-01 Sun>
 
 A recent Amazon.com order about which I feel a certain joy:

@@ -87,6 +87,7 @@ alias ga='git add'
 alias gp='git push'
 alias gl='git up'
 alias gd='git diff'
+alias gg='git ack'
 
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
