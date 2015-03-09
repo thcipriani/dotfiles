@@ -21,14 +21,6 @@ prepend_to_path "$HOME/bin"
 wallpaper="$HOME/.wallpaper"
 
 # XRandR—{{{ Fix my damn monitor at home. Damnit.
-if [ "$(hostname -s)" = "ryu" ] && [ -x "$HOME/bin/laptop-monitorfix" ]; then
-    "$HOME/bin/laptop-monitorfix"
-fi
-
-if [ "$(hostname -s)" = "zangief" ] && [ -x "$HOME/bin/work-monitorfix" ]; then
-    "$HOME/bin/work-monitorfix"
-fi
-
 if [ -x "$HOME/.monitorfix" ]; then
     "$HOME/.monitorfix"
 fi
