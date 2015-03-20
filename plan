@@ -40,6 +40,35 @@ http://myrepos.branchable.com/
 *** <2015-03-09 Mon>
 https://wiki.archlinux.org/index.php/Securely_wipe_disk#dd
 
+*** <2015-03-10 Tue>
+git log HEAD..@{u}
+GIT_REPO="$HOME/hi"
+git --work-tree="$GIT_REPO" --git-dir="$GIT_REPO/.git" status
+
+*** <2015-03-11 Wed>
+Get public key from private key:
+ssh-keygen -y -f [private key]
+
+Get fingerprint from public key:
+ssh-keygen -l -f [public key]
+
+List keys in ssh-agent:
+ssh-add -l
+
+I can never remember this:
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no [server]
+
+*** <2015-03-17 Tue>
+git config --system -l (reads values from /etc/gitconfig)
+
+*** <2015-03-19 Thu>
+
+#!/usr/bin/env python2
+
+thing = {};
+thing.setdefault('name', 'tyler');
+print thing['name'] # tyler
+
 ** <2015-02-01 Sun>
 
 A recent Amazon.com order about which I feel a certain joy:

@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+
+# Gets
+# AWS_ACCESS_KEY_ID
+# AWS_SECRET_ACCESS_KEY
+# from .s3cfg file and exports them to the environment
+
+from __future__ import print_function
+import sys
+import os
+
+home = os.getenv('HOME');
+s3cfg = os.path.join(home, '.s3cfg')
+key = 'AWS_ACCESS_KEY_ID'
+secret = 'AWS_SECRET_ACCESS_KEY'
+
+def err(*args):
+    print("ERROR:", *args, file=sys.stderr)
+
+def get_keys():
+    aws_key = ''
+    aws_secret = ''
+    conf = open(s3cfg, 'r')
+    for line in conf:
+        if line.startswith('access_key'):
+            aws_key = line.split('=')[1].strip()
+        if line.startswith('secret_key'):
+            aws_secret = line.split('=')[1].strip()
+
+    return (aws_key, aws_secret)
+
+def get_shell():
+    return os.path.basename(os.getenv('SHELL', '/bin/sh'))
+
+def export():
+    aws_key, aws_secret = get_keys()
+
+    # fish shell is funny like that
+    if (get_shell() == 'fish'):
+        print('set -e', key, '; set -x -U', key, aws_key)
+        print('set -e', secret, '; set -x -U', secret, aws_secret)
+        return
+
+    # good old fashioned POSIX
+    print('export {}={}'.format(key, aws_key))
+    print('export {}={}'.format(secret, aws_secret))
+
+def check_s3cfg():
+    if not os.path.exists(s3cfg):
+        err(s3cfg, 'not found')
+        # $ cat /usr/include/sysexits.h
+        # ...
+        # define EX_CONFIG       78      /* configuration error */
+        sys.exit(78)
+
+def main():
+    check_s3cfg()
+    export()
+
+if __name__ == '__main__':
+    main()
