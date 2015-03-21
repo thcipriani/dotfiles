@@ -69,6 +69,10 @@ thing = {};
 thing.setdefault('name', 'tyler');
 print thing['name'] # tyler
 
+*** <2015-03-20 Fri>
+Vim put cmd output inline
+:r ![cmd]
+
 ** <2015-02-01 Sun>
 
 A recent Amazon.com order about which I feel a certain joy:
@@ -157,6 +161,8 @@ https://archive.org/stream/pdfy-gICrBTUXEYl52bow/2014-bostrom-superintelligence_
    https://en.wikipedia.org/wiki/Bus_factor
 9) Graham's number
    https://en.wikipedia.org/wiki/Graham%27s_number
+10) Alexander Stepanov
+    https://en.wikipedia.org/wiki/Alexander_Stepanov
 
 ** <2014-10-07 Tue>                                                   :quote:
 

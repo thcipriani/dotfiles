@@ -33,8 +33,10 @@ alias :q='exit'
 # be nice
 alias please='sudo'
 
-alias ll="ls -AlFh"
-alias l="ls -AlFh --group-directories-first"
+# alias ll="ls -AlFh"
+# alias l="ls -AlFh --group-directories-first"
+alias l="tree --dirsfirst -ChFL 1"
+alias ll=" tree --dirsfirst -ChFupDaLg 1"
 alias tlog="tail -f /var/log/syslog"
 
 # View HTTP traffic
