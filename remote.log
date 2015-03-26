@@ -1,0 +1,1 @@
+4c869ec5-785f-4789-99c5-7159c7e4d4b7 bucket=tylercipriani-raw datacenter=US encryption=none host=s3.amazonaws.com name=public-s3 port=80 storageclass=STANDARD type=S3 timestamp=1427333036.098474s
