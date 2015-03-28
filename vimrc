@@ -90,9 +90,9 @@ set noeol
 set number                " Show linenumbers
 set nowrap                " Turn off linewrap
 set list                  " Show invisible chars
-set tabstop=2             " 2 spaces
-set shiftwidth=2          " 2 spaces
-set softtabstop=2         " 2 spaces
+set tabstop=4             " 4 spaces
+set shiftwidth=4          " 4 spaces
+set softtabstop=4         " 4 spaces
 set expandtab             " Expand tabs to spaces
 
 set hlsearch              " highlight my search
@@ -131,7 +131,7 @@ colorscheme Tomorrow-Night
 set guifont=Source\ Code\ Pro\ 14
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬\,trail:.
+set listchars=tab:▸\ ,eol:¬\,trail:·
 
 " }}}
 
@@ -238,7 +238,7 @@ set statusline+=%w   " Preview window flag.
 set statusline+=\    " Space.
 set statusline+=%=   " Right align.
 " Line and column position and counts.
-set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+set statusline+=\ %l\/%L\ \/\/\ %03c)
 " }}}
 
 " Autocmds -------------------------------------------------- {{{
