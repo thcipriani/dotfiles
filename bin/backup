@@ -62,19 +62,9 @@ backup_other() {
     --asynchronous-upload \
     --volsize=100 \
     --log-file "$log_file" \
-    --include "$HOME/.ssh" \
-    --include "$HOME/.gnupg" \
-    --include "$HOME/.notes" \
-    --include "$HOME/.wallpaper" \
-    --include "$HOME/.weechat" \
-    --include "$HOME/.netrc" \
-    --include "$HOME/.s3cfg" \
-    --include "$HOME/.work_log" \
-    --include "$HOME/.vim_keystrokes" \
-    --include "$HOME/.doing" \
-    --include "$HOME/Projects" \
-    --include "$HOME/screenshots" \
-    --exclude "**" \
+    --exclude "$HOME/.gnupg" \
+    --exclude "$HOME/Pictures" \
+    --exclude "$HOME/Mail" \
     "$dir" "$backend"
 }
 
