@@ -54,6 +54,7 @@ backup_mail() {
 backup_other() {
   printf "Everything else\n---\n" >> "$log_file"
 
+  # http://askubuntu.com/a/40997
   duplicity \
     --verbosity info \
     --encrypt-key="$gpg_key" \
@@ -62,6 +63,38 @@ backup_other() {
     --asynchronous-upload \
     --volsize=100 \
     --log-file "$log_file" \
+    --exclude "$HOME/.adobe" \
+    --exclude "$HOME/.macromedia" \
+    --exclude "$HOME/.cache" \
+    --exclude "$HOME/.gvfs" \
+    --exclude "$HOME/.local/share/gvfs-metadata" \
+    --exclude "$HOME/.Private" \
+    --exclude "$HOME/.dbus" \
+    --exclude "$HOME/.cache" \
+    --exclude "$HOME/.Trash" \
+    --exclude "$HOME/.local/share/Trash" \
+    --exclude "$HOME/.cddb" \
+    --exclude "$HOME/.aptitude" \
+    --exclude "$HOME/.xsession-errors" \
+    --exclude "$HOME/.recently-used" \
+    --exclude "$HOME/.recently-used.xbel" \
+    --exclude "$HOME/.thumbnails" \
+    --exclude "$HOME/.Xauthority" \
+    --exclude "$HOME/.ICEauthority" \
+    --exclude "$HOME/.gksu.lock" \
+    --exclude "$HOME/.pulse" \
+    --exclude "$HOME/.pulse-cookie" \
+    --exclude "$HOME/.esd_auth" \
+    --exclude "$HOME/.kde" \
+    --exclude "$HOME/.mozilla" \
+    --exclude "$HOME/.opera" \
+    --exclude "$HOME/.komodoedit" \
+    --exclude "$HOME/.config/google-chrome" \
+    --exclude "$HOME/.pulse/icons" \
+    --exclude "$HOME/.java/deployment/cache" \
+    --exclude "$HOME/.icedteaplugin" \
+    --exclude "$HOME/.icedtea" \
+    --exclude "$HOME/.gnome2/epiphany/favicon_cache" \
     --exclude "$HOME/.gnupg" \
     --exclude "$HOME/Pictures" \
     --exclude "$HOME/Mail" \
