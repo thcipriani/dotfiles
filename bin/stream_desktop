@@ -1,0 +1,77 @@
+#!/usr/bin/env python2
+#
+# Uses VLC to stream desktop to raspberry pi
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import os
+import sys
+import subprocess
+import socket
+import argparse
+import paramiko
+import time
+
+PI_IP = 'pi.tyler.zone'
+
+ssh_creds = {
+        'hostname': PI_IP,
+        'username': 'pi',
+        'pkey': paramiko.RSAKey.from_private_key_file(
+            os.path.join(os.getenv('HOME'), '.ssh/id_rsa')
+        ),
+    }
+
+def get_ip():
+    return [(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
+
+def connect_ssh():
+    client = paramiko.SSHClient()
+    client.load_host_keys(os.path.join(os.getenv('HOME'), '.ssh/known_hosts'))
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(**ssh_creds)
+    return client
+
+def start_stream():
+    ssh = connect_ssh()
+    stdin, stdout, stderr = ssh.exec_command('omxplayer -z http://%s:8080/stream.mp4' % get_ip())
+    print 'Streaming live, sonny-jim...'
+
+def youtube_it(url):
+    url= subprocess.check_output('youtube-dl -g "%s"' % url, shell=True)
+    ssh = connect_ssh()
+    cmd = 'omxplayer -z "%s"' % url.strip()
+    stdin, stdout, stderr = ssh.exec_command(cmd)
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument('-u', '--url', required = False, help = 'url to play')
+    args = vars(p.parse_args())
+
+    if args['url']:
+        youtube_it(args['url'])
+    else:
+        try:
+            cmd1 = 'cvlc screen:// --screen-fps=12 --screen-caching=100 --sout "#transcode{vcodec=h264,venc=x264{keyint=12,scenecut=80,profile=faster,intra-refresh,tune=zerolatency,bframes=0,nocabac},fps=12,scale=0.75,vb=512}:std{access=http,mux=ts,dst=/stream.mp4}"'
+            proc = subprocess.Popen(cmd1, stderr=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+
+            print 'vlc pid [%s]' % proc.pid
+            start_stream()
+            proc.wait()
+
+        except KeyboardInterrupt:
+            proc.terminate()
+
+if __name__ == '__main__':
+    main()
