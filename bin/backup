@@ -96,6 +96,8 @@ backup_other() {
     --exclude "$HOME/.icedtea" \
     --exclude "$HOME/.gnome2/epiphany/favicon_cache" \
     --exclude "$HOME/.gnupg" \
+    --exclude "$HOME/annex" \
+    --exclude "$HOME/Media" \
     --exclude "$HOME/VirtualBox VMs" \
     --exclude "$HOME/Pictures" \
     --exclude "$HOME/Mail" \
