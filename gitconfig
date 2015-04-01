@@ -1,6 +1,6 @@
 [user]
 	name = Tyler Cipriani
-	email = tcipriani@wikimedia.org
+	email = tyler@tylercipriani.com
 [alias]
 	hist = log --oneline
 	hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
