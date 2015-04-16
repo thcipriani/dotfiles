@@ -79,6 +79,11 @@ print thing['name'] # tyler
 Vim put cmd output inline
 :r ![cmd]
 
+*** <2015-04-02 Thu>
+Vim visual-bock paste:
+
+visual-block mode, highlight column, I^r"
+
 ** <2015-02-01 Sun>
 
 A recent Amazon.com order about which I feel a certain joy:

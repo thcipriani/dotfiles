@@ -32,6 +32,10 @@ import XMonad.Actions.GridSelect
 import XMonad.Prompt
 import XMonad.Prompt.Window
 
+-- crude sticky pane
+import XMonad.Layout.LayoutScreens
+import XMonad.Layout.TwoPane
+
 --
 -- Tomorrow Night Colors
 -- ===
@@ -150,6 +154,7 @@ main = do
      `additionalKeysP`
      [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-14-*') && exec $x")
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
+     , ("M-v", spawn "urxvt -e alsamixer -c 1")
      , ("M-S-v", spawn "xdotool click 2")
      , ("M-b", sendMessage ToggleStruts)
      , ("M1-<Tab>", prevScreen)
@@ -158,6 +163,8 @@ main = do
      , ("M-q", spawn "xmonad --recompile && xmonad --restart")
      , ("M-<F11>",  nextWS)
      , ("M-<F12>",  prevWS)
+     , ("M-S-<Space>", layoutScreens 2 (TwoPane 0.33 0.66))
+     , ("M-S-C-<Space>", rescreen)
      ]
      `additionalMouseBindings`
      [((0, 6), (\_ -> moveTo Next NonEmptyWS))

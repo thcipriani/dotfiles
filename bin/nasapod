@@ -4,7 +4,9 @@ _haz() {
   command -v "$1" > /dev/null 2>&1
 }
 
-! _haz convert && exit 1
+_haz gm && convert="gm convert"
+_haz convert && convert=convert
+test -z "$convert" && exit 1
 ! _haz wget && exit 1
 ! _haz curl && exit 1
 ! _haz grep && exit 1
@@ -15,7 +17,7 @@ base="http://apod.nasa.gov/apod/"
 base_dir="$HOME/Pictures/nasa/"
 wallpapers="$HOME/.wallpaper/"
 img_name="$(date '+%Y%m%d')_nasa_pod.jpg"
-monitor_size=$(xrandr --query | awk '/ connected/ {print $3}' | head -n 1 | cut -d '+' -f 1)
+monitor_size=$(xrandr --query | awk -F',' 'NR==1 {gsub("( |current)", ""); print $2}')
 
 img=$(curl -s $base | grep jpg | head -n 1 | sed 's/.*="\(.*.jpg\)">*/\1/')
 
@@ -28,4 +30,4 @@ else
   wget -O "${base_dir}${img_name}" "${base}${img}" --quiet
 fi
 
-convert "${base_dir}${img_name}" -resize $monitor_size "${wallpapers}${img_name}"
+$convert "${base_dir}${img_name}" -resize $monitor_size "${wallpapers}${img_name}"
