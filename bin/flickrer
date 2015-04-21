@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+key=$(getnetrc flickr login)
+secret=$(getnetrc flickr)
+title=$(date +%s)
+
+getfrob() {
+    local sig=$(printf %b ${secret}api_key${key}methodflickr.auth.getFrob | md5sum | awk '{print $1}')
+    local out=$(curl -s "https://api.flickr.com/services/rest/?method=flickr.auth.getFrob&api_key=${key}&api_sig=${sig}")
+    frob=$(echo "$out" | grep frob | sed -e 's/<frob>\(.*\)<\/frob>/\1/')
+    auth
+}
+
+auth() {
+    local sig=$(printf %b ${secret}api_key${key}frob${frob}permswrite | md5sum | awk '{print $1}')
+    xdg-open "https://flickr.com/services/auth/?api_key=${key}&perms=write&frob=${frob}&api_sig=${sig}"
+    echo "Authorize the webapp (should be open in your default browser) then hit enter"
+    read line
+    get_token
+}
+
+get_token() {
+    local sig=$(printf %b ${secret}api_key${key}frob${frob}methodflickr.auth.getToken | md5sum | awk '{print $1}')
+    local out=$(curl -s "https://api.flickr.com/services/rest/?method=flickr.auth.getToken&api_key=${key}&frob=${frob}&api_sig=${sig}")
+    token=$(echo "$out" | grep token |  sed -e 's/<token>\(.*\)<\/token>/\1/' -e 's/^[ \t]*//')
+    upload
+}
+
+upload() {
+    local sig=$(printf %b ${secret}api_key${key}auth_token${token}is_public1title${title} | md5sum | awk '{print $1}')
+    curl -s \
+        -F api_key=${key} \
+        -F auth_token=${token} \
+        -F is_public=1 \
+        -F title=${title} \
+        -F api_sig=${sig} \
+        -F photo=@"${file}" \
+        https://api.flickr.com/services/upload/
+}
+
+main() {
+    if (( $# < 2 )); then
+        echo "USAGE: $(basename $0) </path/to/file>"
+        exit 1
+    fi
+
+    file="$1"
+    getfrob
+}
+
+main
