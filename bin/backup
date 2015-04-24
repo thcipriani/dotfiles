@@ -101,6 +101,7 @@ backup_other() {
     --exclude "$HOME/VirtualBox VMs" \
     --exclude "$HOME/Pictures" \
     --exclude "$HOME/Mail" \
+    --exclude "$HOME/.cabal" \
     "$dir" "$backend"
 }
 
