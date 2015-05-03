@@ -52,8 +52,7 @@ fi
 
 [ -r "$HOME/.api_keys" ] && . "$HOME/.api_keys"
 
-if [ -d "$HOME/.virtualenvs" ]; then
-  export WORKON_HOME="$HOME/.virtualenvs"
-  export VIRTUALENVWRAPPER_PYTHON=$(which python)
-  . $(which virtualenvwrapper.sh)
+if [ -d "$HOME/go" ]; then
+    export GOPATH="$HOME/go"
+    export PATH="$GOPATH/bin:$PATH"
 fi
