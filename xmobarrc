@@ -1,4 +1,4 @@
-Config { font = "-xos4-*-medium-r-normal-*-14-*-*-*-*-*-*-*"
+Config { font = "-xos4-*-medium-r-normal-*-28-*-*-*-*-*-*-*"
        -- solarized, bgColor = "#073642"
        -- solarized, fgColor = "#657b83"
        , bgColor = "#1d1f21"

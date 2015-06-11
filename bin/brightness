@@ -1,8 +1,16 @@
 #!/bin/sh
 
-if [ ! -f /sys/class/backlight/acpi_video0/brightness ]; then
+if [ ! -f /sys/class/backlight/intel_backlight/brightness ]; then
   echo "No acpi_video0 brightness file"
   exit 1
 fi
 
-sudo su - -c "echo $1 > /sys/class/backlight/acpi_video0/brightness"
+if (( $# < 1 )); then
+    printf "Brightness: "
+    cat /sys/class/backlight/intel_backlight/brightness
+    printf "Max Brightness: "
+    cat /sys/class/backlight/intel_backlight/max_brightness
+    exit 0
+fi
+
+sudo su - -c "echo $1 > /sys/class/backlight/intel_backlight/brightness"

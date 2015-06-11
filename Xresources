@@ -3,12 +3,10 @@ urxvt*cursorBlink: true
 urxvt*underlineColor: yellow
 
 ! These are the things I must do to see ಠ_ಠ
-urxvt*font: -*-terminesspowerline-medium-r-normal-*-16-*-*-*-*-*-*-*, xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
-! urxvt*font: xft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
-! urxvt*boldFont: ft:Source\ Code\ Pro:style=Regular:pixelsize=16:antialias=true:hinting=slight,xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight,xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+urxvt*font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*, \
+    xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=28:antialias=true:hinting=slight, \
+    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
 
-! Necessary for man xft fonts...?
-! urxvt*letterSpace: -1
 urxvt*depth: 32
 urxvt*borderless: 1
 urxvt*scrollBar: false
@@ -25,7 +23,7 @@ urxvt*visualBell: false
 
 ! Cursor settings
 xcursor.theme: DMZ-Black
-xcursor.size: 16
+xcursor.size: 28
 
 !! Solarized color scheme for the X Window System
 !!
@@ -119,3 +117,11 @@ xcursor.size: 16
 *color13:      #b294bb
 *color14:      #8abeb7
 *color15:      #ecebec
+
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

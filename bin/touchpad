@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+id=$(xinput list | awk -F '=' '/ouchpad/ {split($2, id, " "); print id[1];}')
+xinput set-prop $id  "Synaptics Tap Action" 0 0 0 0 1 3 2
+xinput set-prop $id "Synaptics Two-Finger Scrolling" 1 0

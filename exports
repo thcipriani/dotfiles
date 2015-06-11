@@ -56,3 +56,7 @@ if [ -d "$HOME/go" ]; then
     export GOPATH="$HOME/go"
     export PATH="$GOPATH/bin:$PATH"
 fi
+
+if [ -f "$HOME/.amazonrc" ]; then
+    eval $(/usr/bin/env python2 "$HOME/.amazonrc")
+fi

@@ -93,7 +93,7 @@ myTabConfig = defaultTheme { inactiveBorderColor = colorBackground
                            , inactiveColor = colorBackground
                            , inactiveTextColor = colorComment
                            , activeTextColor = colorForeground
-                           , fontName = "-*-dejavu sans mono-medium-*-*-*-12-*-*-*-*-*-*-*"
+                           , fontName = "-*-dejavu sans mono-medium-*-*-*-28-*-*-*-*-*-*-*"
                            }
 
 myLayout = avoidStruts
@@ -152,7 +152,7 @@ main = do
           }
      }
      `additionalKeysP`
-     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-14-*') && exec $x")
+     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-28-*') && exec $x")
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
      , ("M-v", spawn "urxvt -e alsamixer -c 1")
      , ("M-S-v", spawn "xdotool click 2")
