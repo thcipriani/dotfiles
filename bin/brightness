@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if [ ! -f /sys/class/backlight/intel_backlight/brightness ]; then
   echo "No acpi_video0 brightness file"
