@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+base='/sys/class/leds/asus::kbd_backlight'
+
+if [ ! -f "${base}/brightness" ]; then
+  echo "No key backlight brightness file"
+  exit 1
+fi
+
+if (( $# < 1 )); then
+    printf "Brightness: "
+    cat "${base}/brightness"
+    printf "Max Brightness: "
+    cat "${base}/max_brightness"
+    exit 0
+fi
+
+brightness_down() {
+    local cur=$(cat "${base}/brightness")
+    local new=0
+
+    if (( cur > 0 )); then
+        new=$(( cur - 1 ))
+    fi
+
+    echo $new
+    echo $new > ${base}/brightness
+}
+
+brightness_up() {
+    local cur=$(cat "${base}/brightness")
+    local max=$(cat "${base}/max_brightness")
+    local new=0
+
+    if (( cur < max )); then
+        new=$(( cur + 1 ))
+    else
+        new=$max
+    fi
+
+    echo $new
+    echo $new > ${base}/brightness
+}
+
+brightness_revolve() {
+    local cur=$(cat "${base}/brightness")
+    local max=$(cat "${base}/max_brightness")
+    local new=0
+
+    if (( cur < max )); then
+        new=$(( cur + 1 ))
+    else
+        new=0
+    fi
+
+    echo $new
+    echo $new > ${base}/brightness
+}
+
+case "$1" in
+    up) brightness_up ;;
+    down) brightness_down ;;
+    revolve) brightness_revolve ;;
+esac
