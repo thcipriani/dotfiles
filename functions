@@ -366,3 +366,8 @@ elif _haz complete; then
 
   complete -F _completenotes n
 fi
+
+# find all files under current dir with no eol on last line
+findnoeol() {
+    pcregrep -LMr '\n$' . | grep -v .git | less -FirSX
+}

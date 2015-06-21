@@ -125,6 +125,8 @@ _rprompt() {
 prompt() {
     local _exitcode=$?
 
+    history 1>> "$HOME/.muh_history"
+
     local _end_time=$(date +%s)
     local _total_time=$(( _end_time - _start_time ));
     if ((_end_time == _start_time || _start_time == 0)); then

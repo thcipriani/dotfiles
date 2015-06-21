@@ -1,0 +1,36 @@
+Config { font = "-xos4-*-medium-r-normal-*-16-*-*-*-*-*-*-*"
+       -- solarized, bgColor = "#073642"
+       -- solarized, fgColor = "#657b83"
+       , bgColor = "#1d1f21"
+       , fgColor = "#c5c8c6"
+       , position = TopW L 100
+       , commands = [ Run Weather "KDEN" [
+                                        "--template"
+                                        ,"<fc=#969896>DIA:</fc><tempF>°F"
+                                        ] 36000
+                    , Run Cpu [
+                              "--template", "<total>%"
+                              -- "--Low","3"
+                              -- , "--High", "50"
+                              -- , "--normal", "#d33682"
+                              -- , "--high", "#dc322f"
+                              ] 10
+                    , Run Memory [
+                                  "--template", "<usedratio>%"
+                                 ] 10
+                    , Run Date "%a %D %r <fc=#969896>KW%V DOY%j</fc>" "date" 10
+                    , Run Battery [
+                                  "--template"      , "<left>% <fc=#969896>[<timeleft>]</fc>"
+                                  -- "--template" , "<acstatus>(<left>%)"
+                                  -- , "--Low"      , "10"
+                                  -- , "--High"     , "80"
+                                  -- , "--low"      , "#dc322f"
+                                  -- , "--normal"   , "#b294bb"
+                                  -- , "--high"     , "#dc322f"
+                                  ] 50
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% <fc=#969896>//</fc> %KDEN%  <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{ <fc=#969896>Batt:</fc>%battery%  %date%"
+       }

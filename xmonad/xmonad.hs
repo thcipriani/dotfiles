@@ -36,6 +36,9 @@ import XMonad.Prompt.Window
 import XMonad.Layout.LayoutScreens
 import XMonad.Layout.TwoPane
 
+import System.Environment (lookupEnv)
+import Data.Maybe (fromMaybe)
+
 --
 -- Tomorrow Night Colors
 -- ===
@@ -93,7 +96,6 @@ myTabConfig = defaultTheme { inactiveBorderColor = colorBackground
                            , inactiveColor = colorBackground
                            , inactiveTextColor = colorComment
                            , activeTextColor = colorForeground
-                           , fontName = "-*-dejavu sans mono-medium-*-*-*-28-*-*-*-*-*-*-*"
                            }
 
 myLayout = avoidStruts
@@ -131,6 +133,8 @@ myTerminal = "urxvt"
 -- =======================================
 main = do
     xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
+    yeganesh_cmd <- lookupEnv "YEGANESH_CMD"
+    let yeganesh = fromMaybe "yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-16-*'" yeganesh_cmd
     xmonad $ withUrgencyHook LibNotifyUrgencyHook $ defaultConfig
       { modMask = mod4Mask
         , normalBorderColor = colorBackground
@@ -152,7 +156,7 @@ main = do
           }
      }
      `additionalKeysP`
-     [ ("M-p", spawn "x=$(yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-28-*') && exec $x")
+     [ ("M-p", spawn $ "x=$(" ++ yeganesh ++ ") && exec $x")
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
      , ("M-v", spawn "urxvt -e alsamixer -c 1")
      , ("M-S-v", spawn "xdotool click 2")

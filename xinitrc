@@ -26,6 +26,10 @@ if [ -x "$HOME/.monitorfix" ]; then
 fi
 # }}}
 
+# Local Hacks {{{
+[ -r "$HOME/.hacksrc" ] && . "$HOME/.hacksrc"
+# }}}
+
 # Fonts {{{
 # terminess
 test -d "$HOME/.fonts/terminess" && xset +fp "$HOME/.fonts/terminess"
@@ -105,6 +109,7 @@ has? xflux && xflux -z 80501
 has? volnoti && volnoti
 # has? filesync && filesync daemon > /dev/null 2>&1 &
 has? batterytrack && nohup batterytrack > /dev/null 2>&1 &
+has? syndaemon && syndaemon -i 1 -t -d
 
 # Nasa APOD
 has? nasapod && nasapod > /dev/null 2>&1 \

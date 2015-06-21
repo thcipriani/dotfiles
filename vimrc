@@ -45,6 +45,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rsi'
 Plugin 'dag/vim-fish'
 Plugin 'rodjek/vim-puppet'
+Plugin 'ClockworkNet/vim-vcl'
 
 
 call vundle#end()            " required

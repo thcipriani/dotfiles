@@ -19,3 +19,6 @@ newsbeuter/cache.db
 newsbeuter/cache.db.lock
 newsbeuter/history.cmdline
 newsbeuter/history.search
+
+# ignored because symlink may change
+xmobarrc

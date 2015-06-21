@@ -1,3 +1,4 @@
+! https://lists.debian.org/debian-user/2005/09/msg01385.html
 urxvt*buffered: true
 urxvt*cursorBlink: true
 urxvt*underlineColor: yellow
