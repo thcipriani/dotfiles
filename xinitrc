@@ -27,6 +27,7 @@ fi
 # }}}
 
 # Local Hacks {{{
+XRDB_OPTIONS=''
 [ -r "$HOME/.hacksrc" ] && . "$HOME/.hacksrc"
 # }}}
 
@@ -39,7 +40,7 @@ test -d "$HOME/.fonts/unifont" && xset +fp "$HOME/.fonts/unifont"
 # }}}
 
 # Load X Configuration
-test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
+test -f "$HOME/.Xresources" && xrdb $XRDB_OPTIONS -merge "$HOME/.Xresources"
 
 # trayer {{{
 # No more trayer

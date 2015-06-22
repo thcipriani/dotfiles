@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+XRDB_OPTIONS=''
+
+show_help() {
+  cat<<DOC
+  Usage: $(basename $0) (--on|--off)
+DOC
+}
+
+main() {
+    if (( $# == 0 )); then
+        show_help
+        exit 0
+    fi
+
+    if [[ ! -f "$HOME/.Xresources" ]]; then
+        printf "[ERROR] $HOME/.Xresources not found\n"
+        exit 1
+    fi
+
+    [ -r "$HOME/.hacksrc" ] && . "$HOME/.hacksrc"
+
+    if [[ "$1" == "--off" ]]; then
+        [ -f "$HOME/.x-light-theme-on" ] && \rm -- "$HOME/.x-light-theme-on"
+        xrdb $XRDB_OPTIONS -merge "$HOME/.Xresources"
+        exit 0
+    fi
+
+    if [[ "$1" == "--on" ]]; then
+        touch "$HOME/.x-light-theme-on"
+        export XRDB_OPTIONS="$XRDB_OPTIONS -DLIGHT_THEME=true"
+        xrdb $XRDB_OPTIONS -merge "$HOME/.Xresources"
+        exit 0
+    fi
+
+    if [[ "$1" == "--toggle" ]]; then
+        if [ -f "$HOME/.x-light-theme-on" ]; then
+            "$0" --off
+        else
+            "$0" --on
+        fi
+        exit 0
+    fi
+
+    show_help
+    exit 1
+}
+
+main "$@"
