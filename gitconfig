@@ -21,3 +21,5 @@
 	submoduleSummary = true
 [diff]
 	submodule = log
+[grep]
+	extendRegexp = true
