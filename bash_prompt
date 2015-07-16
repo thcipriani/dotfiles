@@ -95,7 +95,7 @@ _parse_svn_branch() {
 }
 
 _parse_git_dirty() {
-  if [[ -z "$(git status -s 2> /dev/null)" ]]; then
+  if git diff --no-ext-diff --quiet --exit-code; then
     printf "${LIME_YELLOW}✔${RESET}"
   else
     printf "${RED}✗${RESET}"

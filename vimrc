@@ -123,8 +123,10 @@ set noswapfile
 " Colorscheme
 " https://github.com/altercation/vim-colors-solarized
 " colorscheme solarized
+" let darkcolorbg='#839496'
+
 set background=dark
-" colorscheme iawriter
+let darkcolorbg=234
 colorscheme Tomorrow-Night
 
 " GUI Font (same as my gnome-terminal font)
