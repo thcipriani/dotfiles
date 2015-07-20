@@ -24,7 +24,6 @@ prepend_to_path "/usr/local/plan9"
 prepend_to_path "/usr/local/go/bin"
 prepend_to_path "$HOME/Projects/play"
 prepend_to_path "$(ruby -e 'print Gem.user_dir')/bin"
-prepend_to_path "$HOME/.rbenv/bin"
 prepend_to_path "$HOME/.cabal/bin"
 prepend_to_path "$HOME/bin"
 
@@ -59,4 +58,13 @@ fi
 
 if [ -f "$HOME/.amazonrc" ]; then
     eval $(/usr/bin/env python2 "$HOME/.amazonrc")
+fi
+
+if [ -d "$HOME/.rbenv/bin" ]; then
+    export PATH="$HOME/.rbenv/bin":$PATH
+    if [ -d "$HOME/.rbenv/plugins/ruby-build/bin" ]; then
+        export PATH="$HOME/.rbenv/plugins/ruby-build/bin":$PATH
+    fi
+
+    eval "$(rbenv init -)"
 fi

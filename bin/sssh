@@ -1,0 +1,123 @@
+#!/usr/bin/env python2
+
+import sys
+import os
+import errno
+import hashlib
+import subprocess
+import logging
+
+try:
+    from paramiko import SSHConfig
+except ImportError:
+    print "[ERROR] sudo apt-get install python-paramiko"
+    sys.exit(1)
+
+# logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger("ssh")
+
+
+class SSHSock():
+    def __init__(self, host):
+        self.path = self._get_ssh_config()
+        self.host = host
+        config = SSHConfig()
+        config.parse(open(self.path))
+        self.config = config.lookup(self.host)
+        self.env = os.environ.copy()
+        id_file = self.config.get("identityfile")
+        if id_file is not None:
+            self.id_file = id_file[::-1][0]
+            self.id_fingerprint = self._get_fingerprint()
+
+    def _get_fingerprint(self):
+        cmd = "ssh-keygen -l -f {0}".format(self.id_file)
+        proc = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            shell=True)
+
+        (out, err) = proc.communicate()
+        finger = out.strip().split()[1]
+        logger.debug("Key fingerprint is: {}".format(finger))
+        return finger
+
+    def _get_sock_path(self, checksum):
+        default = os.path.join(
+            os.getenv("XDG_RUNTIME_DIR"), "{}.sock".format(checksum))
+        sock = os.getenv("SSH_CONF_PATH", default)
+        logger.debug("Sock path is: {}".format(sock))
+        return sock
+
+    def _get_ssh_config(self):
+        default = os.path.join(os.getenv("HOME"), ".ssh", "config")
+        path = os.getenv("SSH_CONF_PATH", default)
+        logger.debug("SSH config path is: {}".format(path))
+        if not os.path.exists(path) or not os.path.isfile(path):
+            raise IOError(
+                errno.ENOENT,
+                "File not found", path)
+
+        return path
+
+    def _add(self):
+        cmd = ["ssh-add", "-l"]
+        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT, env=self.env)
+        (stdout, stderr) = proc.communicate()
+
+        if self.id_fingerprint in stdout.split():
+            logger.debug("SSH Key {} already in sock".format(self.id_file))
+            return
+
+        cmd = "SSH_AUTH_SOCK={0} ssh-add {1}".format(
+            self.sock_file, self.id_file)
+        error = subprocess.check_call(cmd, shell=True)
+        if error:
+            raise OSError(
+                1,
+                "Could not add identityfile sock file",
+                self.id_file
+            )
+
+    def create(self):
+        if self.id_file is None:
+            return
+
+        checksum = hashlib.md5()
+        checksum.update(self.id_file)
+        self.sock_file = self._get_sock_path(checksum.hexdigest())
+        self.env['SSH_AUTH_SOCK'] = self.sock_file
+
+        if not os.path.exists(self.sock_file):
+            cmd = [
+                "ssh-agent",
+                "-a{}".format(self.sock_file),
+            ]
+
+            error = subprocess.check_call(cmd)
+            if error:
+                raise OSError(1, "Could not create sock file", self.sock_file)
+
+        self._add()
+        return self.sock_file
+
+
+def run_ssh(args, sock=None):
+    env = {}
+    if sock is not None:
+        env = os.environ.copy()
+        env["SSH_AUTH_SOCK"] = sock
+
+    ssh = ["/usr/bin/ssh"]
+    ssh.extend(args)
+    os.execve("/usr/bin/ssh", ssh, env)
+
+
+def main(args):
+    sock = SSHSock(args[::-1][0])
+    run_ssh(args, sock.create())
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
