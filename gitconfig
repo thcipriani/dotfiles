@@ -13,6 +13,7 @@
 	ci = commit
 	st = status
 	unstage = reset HEAD --
+	edit = !vim $(git ls-files -m) -p
 [color]
 	ui = true
 [push]

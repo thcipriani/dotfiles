@@ -18,30 +18,8 @@ logger = logging.getLogger("ssh")
 
 
 class SSHSock():
-    def __init__(self, host):
-        self.path = self._get_ssh_config()
-        self.host = host
-        config = SSHConfig()
-        config.parse(open(self.path))
-        self.config = config.lookup(self.host)
-        self.env = os.environ.copy()
-        id_file = self.config.get("identityfile")
-        if id_file is not None:
-            self.id_file = id_file[::-1][0]
-            self.id_fingerprint = self._get_fingerprint()
-
-    def _get_fingerprint(self):
-        cmd = "ssh-keygen -l -f {0}".format(self.id_file)
-        proc = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            shell=True)
-
-        (out, err) = proc.communicate()
-        finger = out.strip().split()[1]
-        logger.debug("Key fingerprint is: {}".format(finger))
-        return finger
+    def __init__(self, key):
+        self.key = key
 
     def _get_sock_path(self, checksum):
         default = os.path.join(
@@ -49,6 +27,64 @@ class SSHSock():
         sock = os.getenv("SSH_CONF_PATH", default)
         logger.debug("Sock path is: {}".format(sock))
         return sock
+
+    def _add_key(self, sock_file):
+        env = os.environ.copy()
+        env['SSH_AUTH_SOCK'] = sock_file
+
+        if self.key.check_key_exists(env):
+            logger.debug(
+                "SSH Key {} already in sock".format(self.key.get_file()))
+            return
+
+        logger.debug(self.key.get_file())
+        cmd = ["ssh-add", self.key.get_file()]
+        proc = subprocess.Popen(cmd,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT,
+                                env=env)
+
+        (stdout, stderr) = proc.communicate()
+
+        if proc.returncode:
+            raise OSError(
+                1,
+                "Could not add identityfile sock file",
+                self.key.get_file()
+            )
+
+    def create(self):
+        if self.key.is_empty():
+            return
+
+        checksum = hashlib.md5()
+        checksum.update(self.key.get_file())
+
+        sock_file = self._get_sock_path(checksum.hexdigest())
+        if not os.path.exists(sock_file):
+            cmd = [
+                "ssh-agent",
+                "-a{}".format(sock_file),
+            ]
+
+            error = subprocess.check_call(cmd)
+            if error:
+                raise OSError(1, "Could not create sock file", self.sock_file)
+
+        self._add_key(sock_file)
+        return sock_file
+
+
+class SSHKey():
+    def __init__(self, host):
+        config = SSHConfig()
+        config.parse(open(self._get_ssh_config()))
+        host_config = config.lookup(host)
+        id_file = host_config.get("identityfile")
+        self.id_file = None
+        self.fingerprint = None
+        if id_file is not None:
+            self.id_file = id_file[::-1][0]
 
     def _get_ssh_config(self):
         default = os.path.join(os.getenv("HOME"), ".ssh", "config")
@@ -61,47 +97,39 @@ class SSHSock():
 
         return path
 
-    def _add(self):
-        cmd = ["ssh-add", "-l"]
-        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT, env=self.env)
-        (stdout, stderr) = proc.communicate()
-
-        if self.id_fingerprint in stdout.split():
-            logger.debug("SSH Key {} already in sock".format(self.id_file))
-            return
-
-        cmd = "SSH_AUTH_SOCK={0} ssh-add {1}".format(
-            self.sock_file, self.id_file)
-        error = subprocess.check_call(cmd, shell=True)
-        if error:
-            raise OSError(
-                1,
-                "Could not add identityfile sock file",
-                self.id_file
-            )
-
-    def create(self):
+    def get_fingerprint(self):
         if self.id_file is None:
-            return
+            return None
 
-        checksum = hashlib.md5()
-        checksum.update(self.id_file)
-        self.sock_file = self._get_sock_path(checksum.hexdigest())
-        self.env['SSH_AUTH_SOCK'] = self.sock_file
+        if self.fingerprint is not None:
+            return self.fingerprint
 
-        if not os.path.exists(self.sock_file):
-            cmd = [
-                "ssh-agent",
-                "-a{}".format(self.sock_file),
-            ]
+        cmd = "ssh-keygen -l -f {0}".format(self.id_file)
+        proc = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            shell=True)
 
-            error = subprocess.check_call(cmd)
-            if error:
-                raise OSError(1, "Could not create sock file", self.sock_file)
+        (out, err) = proc.communicate()
+        self.fingerprint = out.strip().split()[1]
+        logger.debug("Key fingerprint is: {}".format(self.fingerprint))
+        return self.fingerprint
 
-        self._add()
-        return self.sock_file
+    def check_key_exists(self, env):
+        cmd = ["ssh-add", "-l"]
+        proc = subprocess.Popen(cmd,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT,
+                                env=env)
+        (stdout, stderr) = proc.communicate()
+        return self.get_fingerprint() in stdout.split()
+
+    def is_empty(self):
+        return self.id_file is None
+
+    def get_file(self):
+        return self.id_file
 
 
 def run_ssh(args, sock=None):
@@ -116,7 +144,7 @@ def run_ssh(args, sock=None):
 
 
 def main(args):
-    sock = SSHSock(args[::-1][0])
+    sock = SSHSock(SSHKey(args[::-1][0]))
     run_ssh(args, sock.create())
 
 if __name__ == "__main__":
