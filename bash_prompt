@@ -141,11 +141,16 @@ prompt() {
       color=${RED}
     fi
 
+    venv=''
+    if [ -n "$VIRTUAL_ENV" ]; then
+        venv="(\[${BRIGHT}${MAGENTA}\]$(basename $VIRTUAL_ENV)\[${RESET}\])"
+    fi
+
     _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
-    _bottom_row="\[${color}\]❯\[${RESET}\] "
+    _bottom_row="${venv}\[${color}\]❯\[${RESET}\] "
 
     PS1="${_top_row}\$(_rprompt $_total_time)\n${_bottom_row}"
 }

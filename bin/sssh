@@ -6,6 +6,7 @@ import errno
 import hashlib
 import subprocess
 import logging
+import shlex
 
 try:
     from paramiko import SSHConfig
@@ -132,6 +133,23 @@ class SSHKey():
         return self.id_file
 
 
+def get_host(cmd):
+    """Extract hostname from command line args"""
+    cmd = cmd.split('--')[0]
+    cmd = shlex.split(cmd)
+
+    if len(cmd) % 2 != 0:
+        cmd.append('<dummy>')
+
+    zcmd = zip(cmd[::2], cmd[1::2])
+    for pair in zcmd:
+        if pair[0][0] != '-':
+            if '@' in pair[0]:
+                return pair[0].split('@')[1]
+            else:
+                return pair[0]
+
+
 def run_ssh(args, sock=None):
     env = {}
     if sock is not None:
@@ -144,7 +162,8 @@ def run_ssh(args, sock=None):
 
 
 def main(args):
-    sock = SSHSock(SSHKey(args[::-1][0]))
+    host = get_host(' '.join(args))
+    sock = SSHSock(SSHKey(host))
     run_ssh(args, sock.create())
 
 if __name__ == "__main__":
