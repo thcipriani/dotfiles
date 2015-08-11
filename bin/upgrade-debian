@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 #https://debian-handbook.info/browse/stable/sect.automatic-upgrades.html
 
-if (( $(id -u) > 0 )); then
-    printf "[ERROR] %s" "Must be run as root!"
-    exit 1
-fi
+# kill all cached creds
+sudo -k
+
+# ask for new creds
+sudo -v
 
 export DEBIAN_FRONTEND=noninteractive
-apt-get update
-yes '' | apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
+sudo apt-get update
+yes '' | sudo apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade

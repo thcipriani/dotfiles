@@ -90,12 +90,14 @@ fi
 has? xsetroot && xsetroot -cursor_name  left_ptr
 
 if has? xsetwacom; then
-  _touch_id=$(xsetwacom list devices | awk '/Finger/ {print $7}')
-  xsetwacom set $_touch_id TapTime 25
-  xsetwacom set $_touch_id Mode "Absolute"
-  xsetwacom set $_touch_id Suppress 1
-  xsetwacom set $_touch_id RawSample 20
-  xsetwacom set $_touch_id ScrollDistance 40
+    _touch_id=$(xsetwacom list devices | awk '/Finger/ {print $7}')
+    if [ -n $_touch_id ]; then
+      xsetwacom set $_touch_id TapTime 25
+      xsetwacom set $_touch_id Mode "Absolute"
+      xsetwacom set $_touch_id Suppress 1
+      xsetwacom set $_touch_id RawSample 20
+      xsetwacom set $_touch_id ScrollDistance 40
+    fi
 fi
 # }}}
 

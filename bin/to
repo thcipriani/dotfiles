@@ -55,6 +55,7 @@ add_link() {
   git up
   printf "* $title ([link]($link))\n" >> "$file_path" && make && make commit
   git add . && git commit -m "Added $title to $file_path" && git push origin master
+  make deploy
   cd "$mark"
 }
 

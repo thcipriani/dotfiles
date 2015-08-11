@@ -3,8 +3,28 @@
 #+AUTHOR:    Tyler Cipriani
 #+EMAIL:     tyler@tylercipriani.com
 #+LANGUAGE:  en
+#+STARTUP:   indent
 
 * .plan
+** <2015-08-05 Wed>
+
+- Good judgment comes from experience, and experience comes from bad judgment.
+  So if things aren't going well, it probably means you're learning a lot
+  and things will go better later. 
+
+  Randy Pausch
+  Time Management
+  https://youtu.be/oTugjssqOT0
+
+- Security at the expense of usability comes at the expense of security.
+
+  AviD
+  http://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase/6116#6116
+
+** <2015-08-03 Mon>
+
+The Magic Words are Squeamish Ossifrage
+ 
 ** <2015-05-02 Sat>
 
 You held your head like a hero
@@ -24,85 +44,6 @@ cannot be patched up to make it work. You have to start over with a working
 simple system.
 
 - John Gall (Systemantics: How Systems Really Work and How They Fail.)
-
-** <2015-03-26 Thu>
-
-Walker, there is no road, the road is made by walking.
-Walking you make the road,  and turning to look behind
-you see the path you never again will step upon.
-- Antonio Machado. Proverbs and Songs #29
-
-** TIL
-
-*** <2015-02-19 Thu>
-apt-cache madison [pkg]
-https://github.com/git/git/blob/master/contrib/workdir/git-new-workdir
-
-*** <2015-02-20 Fri>
-__name__ == '__main__' : python :: basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME']) : php
-http://mislav.uniqpath.com/2010/07/git-tips/
-
-*** <2015-02-23 Mon>
-timeout(1)
-
-*** <2015-02-24 Tue>
-https://github.com/mbostock/git-static
-puppet agent --noop
-
-*** <2015-02-25 Wed>
-https://en.wikipedia.org/wiki/Mojibake
-RUBYLIB=/var/lib/puppet/lib hiera [key] ::hostname=$(hostname -s) --config /etc/puppet/hiera.yaml --debug
-
-*** <2015-03-02 Mon>
-http://ferm.foo-projects.org/
-git config --global alias.ack "grep --break --heading --line-number"
-
-*** <2015-03-03 Tue>
-http://iiif.io/
-
-*** <2015-03-04 Wed>
-http://myrepos.branchable.com/
-
-*** <2015-03-09 Mon>
-https://wiki.archlinux.org/index.php/Securely_wipe_disk#dd
-
-*** <2015-03-10 Tue>
-git log HEAD..@{u}
-GIT_REPO="$HOME/hi"
-git --work-tree="$GIT_REPO" --git-dir="$GIT_REPO/.git" status
-
-*** <2015-03-11 Wed>
-Get public key from private key:
-ssh-keygen -y -f [private key]
-
-Get fingerprint from public key:
-ssh-keygen -l -f [public key]
-
-List keys in ssh-agent:
-ssh-add -l
-
-I can never remember this:
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no [server]
-
-*** <2015-03-17 Tue>
-git config --system -l (reads values from /etc/gitconfig)
-
-*** <2015-03-19 Thu>
-
-#!/usr/bin/env python2
-
-thing = {};
-thing.setdefault('name', 'tyler');
-print thing['name'] # tyler
-
-*** <2015-03-20 Fri>
-Vim put cmd output inline
-:r ![cmd]
-
-*** <2015-04-02 Thu>
-Vim visual-bock paste:
-
-visual-block mode, highlight column, I^r"
 
 ** <2015-02-01 Sun>
 
@@ -194,6 +135,8 @@ https://archive.org/stream/pdfy-gICrBTUXEYl52bow/2014-bostrom-superintelligence_
    https://en.wikipedia.org/wiki/Graham%27s_number
 10) Alexander Stepanov
     https://en.wikipedia.org/wiki/Alexander_Stepanov
+11) Mojibake
+    https://en.wikipedia.org/wiki/Mojibake
 
 ** <2014-10-07 Tue>                                                   :quote:
 

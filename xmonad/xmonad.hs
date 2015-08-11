@@ -170,10 +170,14 @@ main = do
      , ("M-<F12>",  prevWS)
      , ("M-S-<Space>", layoutScreens 2 (TwoPane 0.33 0.66))
      , ("M-S-C-<Space>", rescreen)
+     , ("<XF86KbdBrightnessUp>", spawn "keyboard-bl up")
+     , ("<XF86KbdBrightnessDown>", spawn "keyboard-bl down")
      ]
      `additionalMouseBindings`
      [((0, 6), (\_ -> moveTo Next NonEmptyWS))
      ,((0, 7), (\_ -> moveTo Prev NonEmptyWS))
+     ,((0, 10), (\_ -> moveTo Prev AnyWS))
+     ,((0, 8), (\_ -> moveTo Next AnyWS))
      ,((mod4Mask, 5), (\_ -> moveTo Prev NonEmptyWS))
      ,((mod4Mask, 4), (\_ -> moveTo Next NonEmptyWS))
      ]
