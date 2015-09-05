@@ -1,0 +1,89 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+
+import os
+import sys
+import json
+
+from xmlutils.xml2json import xml2json
+
+
+def get_fermentables(ferms):
+    ret = []
+    row="* {0:10} {1:10}"
+    for ferm in ferms:
+        ret.append(
+            row.format(ferm["DISPLAY_AMOUNT"], ferm["NAME"]))
+    return "\n".join(ret)
+
+
+def get_hops(hops):
+    ret = []
+    row="* {0:10} {1:20} {2:10} {3} min"
+    for hop in hops:
+        ret.append(
+            row.format(hop["DISPLAY_AMOUNT"], hop["NAME"], hop["USE"], hop["TIME"]))
+    return "\n".join(ret)
+
+
+def get_yeast(yeast):
+    ret = []
+    row="* {0:20} {1:20}"
+    ret.append(
+        row.format(yeast["LABORATORY"], yeast["NAME"]))
+    return "\n".join(ret)
+
+
+def format_output(recipe):
+    output = """{name}
+===
+
+Recipe Specifics
+---
+
+Batch Size (G): {batch_size}
+Boil Time (min): {boil}
+Efficiency: {eff}%
+
+
+Grain/Extract/Sugar
+---
+
+{fermentables}
+
+
+Hops
+---
+
+{hops}
+
+
+Yeast
+---
+
+{yeast}
+    """
+
+    print(output.format(**{
+        "name": recipe["NAME"],
+        "batch_size": round(float(recipe["BATCH_SIZE"]) * 0.264172),
+        "boil": recipe["BOIL_TIME"],
+        "eff": 10,
+        "fermentables": get_fermentables(recipe["FERMENTABLES"]["FERMENTABLE"]),
+        "hops": get_hops(recipe["HOPS"]["HOP"]),
+        "yeast": get_yeast(recipe["YEASTS"]["YEAST"]),
+    }))
+
+
+def main(xmlfile):
+    if not os.path.isfile(xmlfile):
+        print("fuck")
+        return 1
+    converter = xml2json(xmlfile, encoding="utf-8")
+    recipes = json.loads(converter.get_json())
+    format_output(recipes["RECIPES"]["RECIPE"])
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1]))
