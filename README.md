@@ -1,8 +1,3 @@
-# Cloning
-
-It's probably best to just do a shallow clone of this repo, there are
-probably a few dozen jpgs in the history :)
-
 # Filename conventions
 
 * rfc-3339 date spec used for file/folder names
@@ -34,6 +29,8 @@ It's human readable and `find` works nicely
 
 ## Grab this repo
 
+    git clone git@github.com:thcipriani/Pictures.git
+
 * Put creds out into the environment
 
         eval $(~/.amazonrc)
@@ -47,6 +44,12 @@ It's human readable and `find` works nicely
 
         git annex enableremote tylercipriani-raw
         git annex get [filename]
+
+* When you don't need a file, drop it. You can always drop files safely.
+  Git-annex checks that some other repository still has the file before
+  removing it.
+
+        git annex drop [filename]
 
 ## Setup new repo
 
