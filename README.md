@@ -1,4 +1,27 @@
-# All my photos on git annex/s3
+# Filename conventions
+
+* rfc-3339 date spec used for file/folder names
+* `{edit,bin,raw}` for each photo project
+
+    Pictures/
+    ├── lib
+    │    └── basic-bash-scripts.sh
+    └── 2015
+        └── 2015-08-14_Project-name
+            ├── bin
+            │   └── convert-and-resize.sh
+            ├── edit
+            │   ├── 2015-08-14_Project-name_00001.jpg
+            │   └── 2015-08-14_Project-name_00002.jpg
+            └── raw
+                └── 2015-08-14_Project-name_00001.NEF
+
+It's human readable and `find` works nicely
+
+    find ~/Pictures -type d -iname 'project-name' -print0 | xargs -0 -I{} touch {}/edit/test
+    find ~/Pictures -type f -iname 'project-name*.jpg' -print0
+
+# Git Annex Info
 
 ## All the info about this repo:
 
