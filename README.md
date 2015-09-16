@@ -1,10 +1,14 @@
 # All my photos on git annex/s3
 
+## All the info about this repo:
+
+    git annex info
+
 ## Grab this repo
 
 * Put creds out into the environment
 
-    eval (~/.amazonrc)
+    eval $(~/.amazonrc)
     gpg-agent
 
 * cd into repo:
@@ -20,13 +24,12 @@
 
 * Put creds out into the environment
 
-    eval (~/.amazonrc)
+    eval $(~/.amazonrc)
     gpg-agent
 
 * cd into repo:
 
     cd /home/tyler/Pictures
-
 
 * init git:
 
@@ -44,9 +47,7 @@
 
     git annex add [big-file]
 
-    git annex [big-file] --copy-to public-s3
-    # -- OR --
-    git annex copy --to public-s3
+    git annex copy --to=public-s3
 
 * Commit repo
 
@@ -55,5 +56,3 @@
 * Make available to the public (after public s3 setup):
 
     git annex addurl --file [filename] "http://tyler.zone/$(git annex lookupkey [filename])"
-
-
