@@ -6,6 +6,10 @@
 #+STARTUP:   indent
 
 * .plan
+** <2015-08-26 Wed>
+
+'';!--"<XSS>=&{()}
+
 ** <2015-08-05 Wed>
 
 - Good judgment comes from experience, and experience comes from bad judgment.
@@ -64,25 +68,27 @@ Hardware I have:
   http://shop.lenovo.com/us/en/laptops/thinkpad/x-series/x230t/
 - Vortex Poker II
   https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=458
+- Evoluent Vertical Mouse
+  http://www.amazon.com/dp/B00427TAIK/ref=wl_it_dp_o_pd_S_ttl?_encoding=UTF8&colid=1UON4PKLUD102&coliid=I1VOGGHV9GZ9MC
 - HRT Music Streamer II
   http://www.head-fi.org/products/hrt-music-streamer-ii-high-resolution-usb-d-a-converter
 - RockIt Sounds R-50
   http://www.head-fi.org/products/rockit-sounds-r-50
 - Nikon D3100
   http://www.kenrockwell.com/nikon/d3100.htm
+- Rancilio Rocky (Doserless)
+  http://amzn.com/B0011Z5ZVM
 
 Hardware I think about:
 
-- Purism Librem 15 Laptop
+- Purism Librem 13 Laptop
   http://puri.sm/
 - Kenisis Advantage
   https://www.kinesis-ergo.com/shop/advantage-for-pc-mac/
-- Evoluent Vertical Mouse
-  http://www.amazon.com/dp/B00427TAIK/ref=wl_it_dp_o_pd_S_ttl?_encoding=UTF8&colid=1UON4PKLUD102&coliid=I1VOGGHV9GZ9MC
-- Seiki 39" 4K Monitor
-  http://www.amazon.com/dp/B00DOPGO2G/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&colid=1UON4PKLUD102&coliid=IKE21927HJLHE&psc=1
 - Nikon D800
   http://www.kenrockwell.com/nikon/d800.htm
+- Mahlkonig EK43
+  https://prima-coffee.com/equipment/mahlkonig/ek43
 
 ** <2015-01-20 Tue>
 
@@ -123,20 +129,22 @@ https://archive.org/stream/pdfy-gICrBTUXEYl52bow/2014-bostrom-superintelligence_
    https://en.wikipedia.org/wiki/Cisgender
 6) 2147483647
    https://en.wikipedia.org/wiki/2147483647
-5) Monkey Selfie
+7) Monkey Selfie
    https://en.wikipedia.org/wiki/Monkey_selfie
-6) Erdős–Bacon number
+8) Erdős–Bacon number
    https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number
-7) Dolgopolsky list
+9) Dolgopolsky list
    https://en.wikipedia.org/wiki/Dolgopolsky_list
-8) Bus Factor
-   https://en.wikipedia.org/wiki/Bus_factor
-9) Graham's number
-   https://en.wikipedia.org/wiki/Graham%27s_number
-10) Alexander Stepanov
+10) Bus Factor
+    https://en.wikipedia.org/wiki/Bus_factor
+11) Graham's number
+    https://en.wikipedia.org/wiki/Graham%27s_number
+12) Alexander Stepanov
     https://en.wikipedia.org/wiki/Alexander_Stepanov
-11) Mojibake
+13) Mojibake
     https://en.wikipedia.org/wiki/Mojibake
+14) Fool's Gold Loaf
+    https://en.wikipedia.org/wiki/Fool%27s_Gold_Loaf
 
 ** <2014-10-07 Tue>                                                   :quote:
 
