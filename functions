@@ -371,3 +371,7 @@ fi
 findnoeol() {
     pcregrep -LMr '\n$' . | grep -v .git | less -FirSX
 }
+
+h() {
+    grep -i $1 ~/.muh_history
+}

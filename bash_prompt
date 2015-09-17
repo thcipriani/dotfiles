@@ -81,19 +81,6 @@ else
   POWDER_BLUE="\033[1;34m"
 fi
 
-_parse_svn_dirty () {
-  if [[ ($(svn st 2> /dev/null) == "") || ($(svn st 2> /dev/null | wc -l) == 1 && $(svn st 2> /dev/null | sed -e 's/\s*\(.\)\s*.*/\1/') == 'S') ]]; then
-    printf "${LIME_YELLOW}✔${RESET}"
-  else
-    printf "${RED}✗${RESET}"
-  fi
-}
-
-_parse_svn_branch() {
-  svn info 2> /dev/null || return
-  svn info 2> /dev/null | grep -i url | sed -e "s/url: $REPO\/\(.*\)/ \1[svn]$(_parse_svn_dirty)/i"
-}
-
 _parse_git_dirty() {
   if git diff --no-ext-diff --quiet --exit-code; then
     printf "${LIME_YELLOW}✔${RESET}"
@@ -125,7 +112,8 @@ _rprompt() {
 prompt() {
     local _exitcode=$?
 
-    history 1>> "$HOME/.muh_history"
+    # https://www.debian-administration.org/article/543/Bash_eternal_history
+    echo "$$ $USER $(history 1)" >> "$HOME/.muh_history"
 
     local _end_time=$(date +%s)
     local _total_time=$(( _end_time - _start_time ));
@@ -146,7 +134,7 @@ prompt() {
         venv="(\[${BRIGHT}${MAGENTA}\]$(basename $VIRTUAL_ENV)\[${RESET}\])"
     fi
 
-    _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)$(_parse_svn_branch)\[${RESET}\]"
+    _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
@@ -158,6 +146,7 @@ prompt() {
 _log_start() {
   [ -n "$COMP_LINE" ] && return  # do nothing if completing
   [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return # don't cause a preexec for $PROMPT_COMMAND
+  [[ "$BASH_COMMAND" == _prompt ]] && return
   _start_time=$(date +%s)
 }
 

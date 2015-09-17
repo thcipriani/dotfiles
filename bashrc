@@ -12,9 +12,10 @@ export BROWSER="google-chrome"
 
 # History
 shopt -s histappend                  # append to history
-# HISTCONTROL=ignoredups:ignorespace # ignore spaces and duplicates
+HISTCONTROL=ignoredups:ignorespace # ignore spaces and duplicates
 HISTSIZE=10000                       # Up the history commands to remember to 10,000
 HISTFILESIZE=20000                   # Up the history to store to 20,000
+HISTTIMEFORMAT='%F %T%z '
 
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
