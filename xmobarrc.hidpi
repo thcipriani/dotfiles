@@ -18,7 +18,7 @@ Config { font = "-xos4-*-medium-r-normal-*-28-*-*-*-*-*-*-*"
                     , Run Memory [
                                   "--template", "<usedratio>%"
                                  ] 10
-                    , Run Date "%a %D %r <fc=#969896>KW%V DOY%j</fc>" "date" 10
+                    , Run Date "%a %F %r <fc=#969896>KW%V DOY%j</fc>" "date" 10
                     , Run Battery [
                                   "--template"      , "<left>% <fc=#969896>[<timeleft>]</fc>"
                                   -- "--template" , "<acstatus>(<left>%)"

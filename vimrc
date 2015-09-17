@@ -46,6 +46,7 @@ Plugin 'tpope/vim-rsi'
 Plugin 'dag/vim-fish'
 Plugin 'rodjek/vim-puppet'
 Plugin 'ClockworkNet/vim-vcl'
+Plugin 'davidhalter/jedi-vim'
 
 
 call vundle#end()            " required
@@ -277,6 +278,7 @@ let g:vdebug_options = {
 let g:syntastic_javascript_jshint_conf="$HOME/.jshintrc"
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
+" let g:syntastic_python_python_exec = '/usr/bin/python3'
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{

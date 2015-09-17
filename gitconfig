@@ -2,9 +2,9 @@
 	name = Tyler Cipriani
 	email = tcipriani@wikimedia.org
 [alias]
-	hist = log --oneline
-	hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	hist3 = log --oneline --abbrev-commit --all --graph --decorate
+	lool = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lol = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate
+	ll = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate -10
 	up = "!git remote update -p; git merge --ff-only @{u}"
 	last = log -1 HEAD
 	ack = grep --break --heading --line-number
@@ -14,6 +14,7 @@
 	st = status
 	unstage = reset HEAD --
 	edit = !vim $(git ls-files -m) -p
+	whatadded = log --diff-filter=A
 [color]
 	ui = true
 [push]

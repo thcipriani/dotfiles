@@ -14,7 +14,7 @@ except ImportError:
     print "[ERROR] sudo apt-get install python-paramiko"
     sys.exit(1)
 
-# logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("ssh")
 
 
@@ -153,6 +153,7 @@ def get_host(cmd):
 def run_ssh(args, sock=None):
     env = {}
     if sock is not None:
+        logger.info('SSH_AUTH_SOCK={}'.format(sock))
         env = os.environ.copy()
         env["SSH_AUTH_SOCK"] = sock
 
