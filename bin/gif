@@ -18,7 +18,7 @@ j=0
 while read file; do
   files[ $j ]="$file"
   (( j++ ))
-done < <(ls "$HOME/backup/Public/gifs" | grep -i "$arg")
+done < <(ls "$HOME/Sync/Public/gifs" | grep -i "$arg")
 
 # Less options:
 #   -F or --quit-if-one-screen
