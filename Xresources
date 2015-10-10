@@ -8,10 +8,12 @@ urxvt*underlineColor: yellow
 urxvt*font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*, \
     xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=28:antialias=true:hinting=slight, \
     xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+Emacs.font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*
 #else
 urxvt*font: -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*, \
     xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight, \
     xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+Emacs.font: -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*
 #endif
 
 urxvt*depth: 32
