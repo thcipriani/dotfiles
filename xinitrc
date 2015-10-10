@@ -86,6 +86,12 @@ if has? autocutsel; then
 fi
 # }}}
 
+# Disable automute {{{
+# https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting
+# └─ Lennart Poettering ಠ_ಠ
+has? amixer && amixer -c 0 sset "Auto-Mute Mode" Disabled
+# }}}
+
 # Cursor/Touch stuff {{{
 has? xsetroot && xsetroot -cursor_name  left_ptr
 
