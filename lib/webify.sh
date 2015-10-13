@@ -25,4 +25,6 @@ filename=$(basename "$infile")
 ext="${filename##*.}"
 file="${filename%.*}"
 
-$convert_cmd "$infile" -resize "1280x" -unsharp 2x0.5+0.7+0 -quality 98 -sigmoidal-contrast 3,50% "${dir}/${file}.thumb.${ext}"
+# $convert_cmd "$infile" -resize "1280x" -unsharp 2x0.5+0.7+0 -quality 98 -sigmoidal-contrast 3,50% "${dir}/${file}.thumb.${ext}"
+# Convert to a jpeg
+$convert_cmd "$infile" -resize "1280x" -unsharp 2x0.5+0.7+0 -quality 98 -sigmoidal-contrast 3,50% "${dir}/${file}.thumb.jpg"
