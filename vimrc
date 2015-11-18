@@ -86,9 +86,6 @@ set history=1000          " Remember commands and search history
 set backspace=2           " Backspace over indent, eol, and insert
 set mousehide             " Hide the mouse pointer while typing
 
-set binary                " Don’t add empty newlines at the end of files
-set noeol
-
 set number                " Show linenumbers
 set nowrap                " Turn off linewrap
 set list                  " Show invisible chars
