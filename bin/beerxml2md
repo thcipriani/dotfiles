@@ -6,37 +6,74 @@ from __future__ import print_function
 import os
 import sys
 import json
+import logging
 
 from xmlutils.xml2json import xml2json
 
 
+logging.basicConfig(level=logging.INFO)
+LOG = logging.getLogger()
+
+
 def get_fermentables(ferms):
     ret = []
-    row="* {0:10} {1:10}"
+    row = "* {0:10} {1:10}"
     for ferm in ferms:
-        ret.append(
-            row.format(ferm["DISPLAY_AMOUNT"], ferm["NAME"]))
+        try:
+            ret.append(
+                row.format(ferm["DISPLAY_AMOUNT"], ferm["NAME"]))
+        except KeyError:
+            ret.append(
+                row.format(ferm["AMOUNT"], ferm["NAME"]))
     return "\n".join(ret)
 
 
 def get_hops(hops):
     ret = []
-    row="* {0:10} {1:20} {2:10} {3} min"
+    row = "* {0:10} {1:20} {2:10} {3} min"
     for hop in hops:
-        ret.append(
-            row.format(hop["DISPLAY_AMOUNT"], hop["NAME"], hop["USE"], hop["TIME"]))
+        try:
+            ret.append(
+                row.format(hop["DISPLAY_AMOUNT"],
+                           hop["NAME"], hop["USE"],
+                           hop["TIME"]))
+        except KeyError:
+            ret.append(
+                row.format(hop["AMOUNT"],
+                           hop["NAME"], hop["USE"],
+                           hop["TIME"]))
     return "\n".join(ret)
 
 
 def get_yeast(yeast):
     ret = []
-    row="* {0:20} {1:20}"
-    ret.append(
-        row.format(yeast["LABORATORY"], yeast["NAME"]))
+    row = "* {0:20} {1:20}"
+    try:
+        ret.append(
+            row.format(yeast["LABORATORY"], yeast["NAME"]))
+    except KeyError:
+        pass
     return "\n".join(ret)
 
 
 def format_output(recipe):
+    fermentable_list = []
+    hop_list = []
+    yeast_list = {}
+
+    fermentables = recipe.get('FERMENTABLES')
+    hops = recipe.get('HOPS')
+    yeasts = recipe.get('YEASTS')
+
+    if fermentables:
+        fermentable_list = fermentables.get('FERMENTABLE', [])
+
+    if hops:
+        hop_list = hops.get('HOP', [])
+
+    if yeasts:
+        yeast_list = yeasts.get('YEAST', {})
+
     output = """{name}
 ===
 
@@ -67,19 +104,19 @@ Yeast
     """
 
     print(output.format(**{
-        "name": recipe["NAME"],
-        "batch_size": round(float(recipe["BATCH_SIZE"]) * 0.264172),
-        "boil": recipe["BOIL_TIME"],
+        "name": recipe.get('NAME', 'Unname Recipe'),
+        "batch_size": round(float(recipe.get('BATCH_SIZE', 0)) * 0.264172),
+        "boil": recipe.get('BOIL_TIME', '0'),
         "eff": 10,
-        "fermentables": get_fermentables(recipe["FERMENTABLES"]["FERMENTABLE"]),
-        "hops": get_hops(recipe["HOPS"]["HOP"]),
-        "yeast": get_yeast(recipe["YEASTS"]["YEAST"]),
+        "fermentables": get_fermentables(fermentable_list),
+        "hops": get_hops(hop_list),
+        "yeast": get_yeast(yeast_list),
     }))
 
 
 def main(xmlfile):
     if not os.path.isfile(xmlfile):
-        print("fuck")
+        logging.warn('%s is not a file', xmlfile)
         return 1
     converter = xml2json(xmlfile, encoding="utf-8")
     recipes = json.loads(converter.get_json())

@@ -24,7 +24,7 @@ brightness_down() {
     fi
 
     echo $new
-    echo $new > ${base}/brightness
+    sudo sh -c "echo $new > ${base}/brightness"
 }
 
 brightness_up() {
@@ -39,7 +39,7 @@ brightness_up() {
     fi
 
     echo $new
-    echo $new > ${base}/brightness
+    sudo sh -c "echo $new > ${base}/brightness"
 }
 
 brightness_revolve() {
@@ -54,7 +54,7 @@ brightness_revolve() {
     fi
 
     echo $new
-    echo $new > ${base}/brightness
+    sudo sh -c "echo $new > ${base}/brightness"
 }
 
 case "$1" in

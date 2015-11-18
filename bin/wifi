@@ -16,9 +16,9 @@ if [ "$1" = "list" ]; then
 fi
 
 # May be the magic ticket
-# nmcli con add ifname wlan0 type wifi con-name "$1" ssid "$1"
+nmcli con add ifname wlan0 type wifi con-name "$1" ssid "$1"
 
-nmcli con add dev wifi type wifi con-name "$1" ssid "$1"
+# nmcli con add dev wifi type wifi con-name "$1" ssid "$1"
 
 if [ ! -z "$2" ]; then
     nmcli con modify "$1" wifi-sec.key-mgmt wpa-psk

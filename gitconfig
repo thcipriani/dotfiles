@@ -15,6 +15,7 @@
 	unstage = reset HEAD --
 	edit = !vim $(git ls-files -m) -p
 	whatadded = log --diff-filter=A
+	fetchdiff = log -p --no-merges HEAD..@{u}
 [color]
 	ui = true
 [push]

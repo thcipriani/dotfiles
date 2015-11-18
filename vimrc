@@ -113,7 +113,7 @@ set formatoptions=tcqr    " I like smart comments
 
 set foldmethod=marker     " Fold on 3x{
 set nofoldenable          " But turn it off initially
-set shell=/bin/bash\ --login
+" set shell=/bin/bash\ --login
 " set shell=bash            " Needed if using fishshell
 
 "no backup or swap files
@@ -424,4 +424,12 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_space_guides = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
+" }}}
+
+" BangOpen ------------------------------------------------------------ {{{
+function! BangOpen(arg)
+    execute 'tabe ' . system(a:arg)
+endfunction
+
+command! -nargs=1 BangOpen :call BangOpen(<f-args>)
 " }}}

@@ -375,3 +375,13 @@ findnoeol() {
 h() {
     grep -i $1 ~/.muh_history
 }
+
+# List files provided by debian packages
+# http://superuser.com/a/904419
+deb-files() {
+    local os=$(lsb_release -si | sed -e 's Ubuntu http://packages.ubuntu.com/ ' -e 's Debian https://packages.debian.org/ ')
+    local release=$(lsb_release -sc)
+    local package=$1
+    local list=$(curl -q -s "${os}/${release}/all/${package}/filelist")
+    echo "$list" | sed -n -e '/<pre>/,/<\/pre>/p' | sed -e 's/<[^>]\+>//g' -e '/^$/d';
+}

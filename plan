@@ -6,6 +6,10 @@
 #+STARTUP:   indent
 
 * .plan
+** <2015-11-17 Tue>
+Never thought about it:
+- x >> 2 == x / 2
+- x << 2 == x * 2
 ** <2015-11-06 Fri>
 
 - "Finding RFCs for a particular topic is an art."
@@ -19,7 +23,7 @@
   - https://tools.ietf.org/html/rfc2151
   - https://tools.ietf.org/html/rfc3339
   - https://tools.ietf.org/html/rfc1288
-  - http://tools.ietf.org/html/rfc863
+  - https://tools.ietf.org/html/rfc863
   - https://tools.ietf.org/html/rfc2324
   - https://tools.ietf.org/html/rfc2549
   - https://tools.ietf.org/html/rfc2795

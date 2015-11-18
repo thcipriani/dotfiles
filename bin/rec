@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+show_help() {
+  cat<<USE
+USAGE:
+    rec [screencastname]
+OPTIONS:
+    --select|-s: use selection rectangle
+    --duration|-d: duration of recording (default: 10secs)
+    --path|-p: path of final file (default: ~/screencasts/<date>)
+EXAMPLE:
+    rec --select --path whatchamajig.gif
+USE
+}
+
+notify() {
+    local msg="$1"
+    local level="${2:-normal}"
+
+    if [[ "$level" == "normal" ]]; then
+        printf "$(tput setaf 6)%s$(tput sgr0)\n" "$msg"
+    fi
+
+    if [[ "$level" == "error" ]]; then
+        >&2 printf "$(tput setaf 1)%s$(tput sgr0)\n" "$msg"
+    fi
+}
+
+record () {
+    notify "Recording starting in 5 seconds"
+    if [[ -n "$duration" ]]; then
+        options="--duration=${duration}"
+    fi
+
+    options="${options} --delay=0 --x=${x_offset} --y=${y_offset} --width=${width} --height=${height}"
+
+    # Countdown timer
+    local i=5
+    while (( i > 0 )); do
+        notify "$i"
+        sleep 1
+        (( i-- ))
+    done
+
+    notify "GO!!!!"
+
+    byzanz-record $options "$path"
+}
+
+get_full_width() {
+    eval $(xrandr -q | awk -F'[,x]' 'NR==1 {gsub("( |current)", ""); print "width="$3"\nheight="$4}')
+}
+
+get_selection() {
+    notify "Waiting for your selection..."
+    eval $(xrectsel | awk -F '[x+]' '{print "width=" $1 "\nheight=" $2 "\nx_offset=" $3 "\ny_offset=" $4}')
+}
+
+take_recording() {
+    if [[ -z "$select" ]]; then
+        select=0
+        x_offset=0
+        y_offset=0
+        get_full_width
+    else
+        get_selection
+    fi
+
+    if [[ -z "$path" ]]; then
+        path="${_SCREENCAST_PATH}/$(date --rfc-3339=seconds).gif"
+    fi
+
+    record
+
+    notify "Recording available at $path"
+}
+
+main() {
+    if ! command -v xrectsel > /dev/null 2>&1; then
+      notify "scrot command not found in \$PATH" "error"
+    fi
+
+    if ! command -v byzanz-record > /dev/null 2>&1; then
+      notify "scrot command not found in \$PATH" "error"
+    fi
+
+    mkdir -p "${_SCREENCAST_PATH:=$HOME/screencasts}"
+
+    while [ -n "$1" ]; do
+        case "$1" in
+            --select|-s)
+                select=1
+                ;;
+            --duration|-d)
+                shift
+                duration="$1"
+                ;;
+            --path|-p)
+                shift
+                path="$1"
+                ;;
+            *)
+                show_help
+                exit 0
+                ;;
+        esac
+        shift
+    done
+
+  take_recording
+}
+
+main "$@"

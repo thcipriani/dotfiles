@@ -73,7 +73,7 @@ hdr_order from: to: cc: date: subject: # and in this order
 set beep_new   # bell on new mail
 
 # GPG sign
-source /usr/share/doc/mutt/examples/gpg.rc
+source ~/.mutt/gpgrc
 
 set pgp_timeout = 3600       # how long to cache the pass-phrase
 set crypt_autosign = yes     # automatically sign all outgoing mail

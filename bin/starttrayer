@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+pkill nm-applet &> /dev/null
 pkill trayer &> /dev/null
+
+nohup nm-applet &> /dev/null &
 
 trayer \
   --edge top \
