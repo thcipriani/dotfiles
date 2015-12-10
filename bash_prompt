@@ -109,6 +109,16 @@ _rprompt() {
   printf "${RED}$_out${RESET}"
 }
 
+exit_code_emote() {
+    case $1 in
+        0)   prompt="=͟͞(°▽°)❥" ;; # success
+        127) prompt="(•ิ_•ิ)?❥" ;; # command not found
+        130) prompt="=͟͟͞͞(☉_☉)❥" ;; # ^C
+        # 148) prompt="blah" ;; # ^z
+        *)   prompt="=͟͟͞͞(•̀д•́)❥" ;; # Other errors
+    esac
+}
+
 prompt() {
     local _exitcode=$?
 
@@ -123,10 +133,12 @@ prompt() {
 
     unset _start_time
 
+    exit_code_emote $_exitcode
+
     if [ $_exitcode -eq 0 ]; then
-      color=${CYAN}
+      color=${LIME_YELLOW}
     else
-      color=${RED}
+      color=${MAGENTA}
     fi
 
     venv=''
@@ -134,11 +146,12 @@ prompt() {
         venv="(\[${BRIGHT}${MAGENTA}\]$(basename $VIRTUAL_ENV)\[${RESET}\])"
     fi
 
-    _top_row="\[${LIME_YELLOW}\]\W\[${RESET}\]$(_parse_git_branch)\[${RESET}\]"
+    _top_row="\[${CYAN}\]\W\[${RESET}\]$(_parse_git_branch)\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
-    _bottom_row="${venv}\[${color}\]❯\[${RESET}\] "
+    # _bottom_row="${venv}\[${color}\]❯\[${RESET}\] "
+    _bottom_row="${venv}\[${color}\]${prompt}\[${RESET}\] "
 
     PS1="${_top_row}\$(_rprompt $_total_time)\n${_bottom_row}"
 }

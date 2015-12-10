@@ -6,10 +6,30 @@
 #+STARTUP:   indent
 
 * .plan
+** <2015-11-26 Thu>
+*** Thanksgiving vocabulary
+
+*Variadic Function* – a function of indefinite airity.
+Considered complimentary to the ~apply~ function which
+is central to languages derived from lambda calculus.
+
+Use in ES2015:
+
+#+BEGIN_SRC JavaScript
+var printAwards = function(...places) {
+    for (var place of places) {
+        console.log(place);
+    }
+}
+#+END_SRC
+
+
 ** <2015-11-17 Tue>
+
 Never thought about it:
 - x >> 2 == x / 2
 - x << 2 == x * 2
+
 ** <2015-11-06 Fri>
 
 - "Finding RFCs for a particular topic is an art."
@@ -27,6 +47,9 @@ Never thought about it:
   - https://tools.ietf.org/html/rfc2324
   - https://tools.ietf.org/html/rfc2549
   - https://tools.ietf.org/html/rfc2795
+
+- Memos That make me happy.
+  - https://tools.ietf.org/html/rfc1178
 
 ** <2015-08-26 Wed>
 

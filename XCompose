@@ -40,7 +40,7 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <colon> <apostrophe> : "‘"
 
 # misc
-<Multi_key> <s> <h> <r> <u> <g> :  "¯\_(ツ)_/¯"
+<Multi_key> <s> <h> <r> <u> <g> :  "¯\\_(ツ)_/¯"
 <Multi_key> <g> <a> <h>: "ಠ_ಠ"
 <Multi_key> <less> <3> : "❤"
 <Multi_key> <bar> <asciicircum> : "↑"

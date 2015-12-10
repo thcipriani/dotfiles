@@ -1,6 +1,11 @@
 # Collect my vim usage for _something_…
 # http://www.patrick-wied.at/projects/heatmap-keyboard/
 alias vim="vim -w ~/.vim_keystrokes"
+
+# God have mercy on my soul
+# alias vim="$HOME/bin/edit"
+alias e="$HOME/bin/edit"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -35,8 +40,8 @@ alias please='sudo'
 
 # alias ll="ls -AlFh"
 # alias l="ls -AlFh --group-directories-first"
-alias l="tree --dirsfirst -ChFL 1"
-alias ll=" tree --dirsfirst -ChFupDaLg 1"
+alias l="tree --dirsfirst -ChF -L 1"
+alias ll=" tree --dirsfirst --timefmt='%F %H:%M:%S' -CDhFupag -L 1"
 alias tlog="tail -f /var/log/syslog"
 
 # View HTTP traffic
@@ -50,6 +55,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Shortcuts
 alias v="vim"
 alias s="svn"
+alias plan="$HOME/bin/edit $HOME/.dotfiles/plan"
 
 # File size
 alias fs="stat -c \"%s bytes\""
