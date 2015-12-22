@@ -111,11 +111,12 @@ _rprompt() {
 
 exit_code_emote() {
     case $1 in
-        0)   prompt="=͟͞(°▽°)❥" ;; # success
-        127) prompt="(•ิ_•ิ)?❥" ;; # command not found
-        130) prompt="=͟͟͞͞(☉_☉)❥" ;; # ^C
-        # 148) prompt="blah" ;; # ^z
-        *)   prompt="=͟͟͞͞(•̀д•́)❥" ;; # Other errors
+        0)   prompt="(•◡•)❥";; # success
+        127) prompt="(•ิ_•ิ)❥" ;; # command not found
+        130) prompt="(☉_☉)❥" ;; # ^C
+        148) prompt="(°▽°)❥" ;; # ^z
+        *)   prompt="(•́‸•̀)❥" ;; # Other errors
+        # *)   prompt="(•̀д•́)❥" ;;
     esac
 }
 
@@ -159,7 +160,6 @@ prompt() {
 _log_start() {
   [ -n "$COMP_LINE" ] && return  # do nothing if completing
   [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return # don't cause a preexec for $PROMPT_COMMAND
-  [[ "$BASH_COMMAND" == _prompt ]] && return
   _start_time=$(date +%s)
 }
 

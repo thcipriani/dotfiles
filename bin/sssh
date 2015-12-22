@@ -18,6 +18,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("ssh")
 
 
+SSH_FLAGS = ['-1', '-2', '-4', '-6', '-A', '-a', '-C', '-f', '-g',
+             '-K', '-k', '-M', '-N', '-n', '-q', '-s', '-T', '-t',
+             '-V', '-v', '-X', '-x', '-Y', '-y']
+
+
 class SSHSock():
     def __init__(self, key):
         self.key = key
@@ -70,7 +75,7 @@ class SSHSock():
 
             error = subprocess.check_call(cmd)
             if error:
-                raise OSError(1, "Could not create sock file", self.sock_file)
+                raise OSError(1, "Could not create sock file", sock_file)
 
         self._add_key(sock_file)
         return sock_file
@@ -137,6 +142,10 @@ def get_host(cmd):
     """Extract hostname from command line args"""
     cmd = cmd.split('--')[0]
     cmd = shlex.split(cmd)
+
+    for flag in SSH_FLAGS:
+        if flag in cmd:
+            cmd.remove(flag)
 
     if len(cmd) % 2 != 0:
         cmd.append('<dummy>')
