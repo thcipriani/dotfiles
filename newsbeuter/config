@@ -1,5 +1,6 @@
 auto-reload yes
-browser "google-chrome-stable %u &"
+# browser "google-chrome-stable %u &"
+browser "firefox %u &"
 
 notify-always yes
 notify-format "newsbeuter: %n unread articles within %f unread feeds"
