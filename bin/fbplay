@@ -1,0 +1,116 @@
+#!/bin/bash
+#
+# Uses omxplayer to stream local videos or youtube videos,
+# also searches youtube if a video or url is not provided.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+show_help() {
+    cat<<USE
+    USAGE:
+      fbplay [-t audio-track] <filename or url>
+    OPTIONS:
+      --track|-t: audio track number
+USE
+}
+
+error() {
+    printf 'ERROR: %s\n' "$@" >&2
+}
+
+clear_screen() {
+    # Clear screen, hide cursor, foreground color black
+    tput clear
+    tput civis
+    tput setaf 0
+}
+
+loading_screen() {
+    clear_screen
+    tput sgr0
+    printf "%s\n%s\n" "$(figlet Loading...)" "$(fortune)" | cowsay -n -f "$(ls /usr/share/cowsay/cows/ | shuf -n1)"
+    tput setaf 0
+}
+
+reset_screen() {
+    # Clear screen, show cursor, foreground color reset
+    tput cnorm
+    tput sgr0
+    tput clear
+}
+
+main() {
+    if (( $# < 1 )); then
+        show_help
+        exit
+    fi
+
+    local audio_track=1
+    local media
+
+    while :; do
+        case $1 in
+            -h|-\?|--help)
+                show_help
+                exit
+                ;;
+            -t|--track)
+                if [[ -n "$2" ]]; then
+                    audio_track=$2
+                    shift 2
+                    continue
+                else
+                    error '"--track" requires a non-empty option argument.'
+                    exit 1
+                fi
+                ;;
+            --track=?*)
+                # Delete everything up to "=" and assign the remainder.
+                audio_track=${1#*=}
+                ;;
+            --track=)
+                error '"--track" requires a non-empty option argument.'
+                exit 1
+                ;;
+            --)
+                # End of all options.
+                shift
+                break
+                ;;
+            -?*)
+                ;;
+            *)
+                break
+        esac
+
+        shift
+    done
+
+    if [[ -z "$1" ]]; then
+        error "A url or a file must be supplied"
+        exit 1
+    fi
+
+    media="$1"
+    loading_screen
+    if [[ ! -f "$media" ]]; then
+       media="$(youtube-dl --default-search "ytsearch" --get-url "$media" 2>/dev/null)"
+    fi
+    clear_screen
+    # Use global dbus control
+    OMXPLAYER_DBUS_ADDR="/tmp/omxplayerdbus.global" omxplayer -n"$audio_track" -z "$media" | echo ""
+    reset_screen
+}
+
+main "$@"

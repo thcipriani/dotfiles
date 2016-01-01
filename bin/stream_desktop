@@ -15,23 +15,27 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import argparse
+import logging
 import os
 import sys
 import subprocess
 import socket
-import argparse
-import paramiko
 import time
 
-PI_IP = 'pi.tyler.zone'
+import paramiko
+
+PI_IP = os.getenv('PI_IP', 'pi.tyler.zone')
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)-8s %(message)s')
 
 ssh_creds = {
-        'hostname': PI_IP,
-        'username': 'pi',
-        'pkey': paramiko.RSAKey.from_private_key_file(
-            os.path.join(os.getenv('HOME'), '.ssh/id_rsa')
-        ),
-    }
+    'hostname': PI_IP,
+    'username': 'pi',
+    'pkey': paramiko.RSAKey.from_private_key_file(
+        os.path.join(os.getenv('HOME'), '.ssh/id_rsa')
+    ),
+}
 
 def get_ip():
     return [(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
@@ -46,7 +50,7 @@ def connect_ssh():
 def start_stream():
     ssh = connect_ssh()
     stdin, stdout, stderr = ssh.exec_command('omxplayer -z http://%s:8080/stream.mp4' % get_ip())
-    print 'Streaming live, sonny-jim...'
+    logging.info('Streaming live, sonny-jim...')
 
 def youtube_it(url):
     url= subprocess.check_output('youtube-dl -g "%s"' % url, shell=True)
@@ -56,17 +60,26 @@ def youtube_it(url):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('-u', '--url', required = False, help = 'url to play')
+    p.add_argument('-u', '--url', required=False, help='url to play')
     args = vars(p.parse_args())
 
     if args['url']:
         youtube_it(args['url'])
     else:
         try:
-            cmd1 = 'cvlc screen:// --screen-fps=12 --screen-caching=100 --sout "#transcode{vcodec=h264,venc=x264{keyint=12,scenecut=80,profile=faster,intra-refresh,tune=zerolatency,bframes=0,nocabac},fps=12,scale=0.75,vb=512}:std{access=http,mux=ts,dst=/stream.mp4}"'
-            proc = subprocess.Popen(cmd1, stderr=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+            vlc_cmd = ['cvlc', 'screen://', '--screen-fps=12', '--screen-caching=100', '--sout']
 
-            print 'vlc pid [%s]' % proc.pid
+            vlc_cmd.append('"#transcode{vcodec=h264,venc=x264{keyint=12,scenecut=80,' \
+                    'profile=faster,intra-refresh,tune=zerolatency,bframes=0,' \
+                    'nocabac},fps=12,scale=0.75,vb=512}:std{access=http,' \
+                    'mux=ts,dst=/stream.mp4}"')
+
+            proc = subprocess.Popen(' '.join(vlc_cmd),
+                                    stderr=subprocess.PIPE,
+                                    stdout=subprocess.PIPE,
+                                    shell=True)
+
+            logging.info('vlc pid [%s]' % proc.pid)
             start_stream()
             proc.wait()
 
