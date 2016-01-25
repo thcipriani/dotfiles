@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Run: nohup compstats &> /dev/null &
+
+STAT=''
+
+battery() {
+    batterydir="/sys/class/power_supply/BAT0"
+    local bat_stat=''
+    if [[ -d "$batterydir" ]]; then
+        . "${batterydir}/uevent"
+        bat_stat=$(printf "$(hostname -s).powersupply.energy.now:%s|g\n$(hostname -s).powersupply.energy.full:%s|g\n$(hostname -s).powersupply.energy.full_design:%s|g\n" "${POWER_SUPPLY_ENERGY_NOW}" "${POWER_SUPPLY_ENERGY_FULL}" "${POWER_SUPPLY_ENERGY_FULL_DESIGN}")
+    fi
+    STAT="${STAT}${bat_stat}"
+}
+
+load_avg() {
+    local load_avg="$(printf $(uptime | awk -F '[, ]' '{print "%s.load_avg.15min:"$17"|g\n"}') "$(hostname -s)")"
+    local load_avg="${load_avg}\n$(printf $(uptime | awk -F '[, ]' '{print "%s.load_avg.5min:"$19"|g\n"}') "$(hostname -s)")"
+    local load_avg="${load_avg}\n$(printf $(uptime | awk -F '[, ]' '{print "%s.load_avg.1min:"$21"|g\n"}') "$(hostname -s)")"
+    STAT="${STAT}\n${load_avg}"
+}
+
+while true; do
+    battery
+    load_avg
+    printf "%s" "$STAT" | nc -u -w0 graphite.tylercipriani.com 8125
+
+    sleep 300
+done
