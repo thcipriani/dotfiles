@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+# http://blog.vrypan.net/2012/12/20/dynamic-dns-with-route53/
+import os
+import subprocess
+import sys
+
+from area53 import route53
+from boto.route53.exception import DNSServerError
+
+
+def get_ip():
+    p = subprocess.Popen(['/usr/bin/dig',
+                          '+short',
+                          '@resolver1.opendns.com',
+                          'myip.opendns.com'], stdout=subprocess.PIPE)
+
+    output, err = p.communicate()
+
+    if not err:
+        return output.strip()
+    else:
+        sys.exit(1)
+
+
+def setup_env():
+    access_key = subprocess.check_output(['/home/tyler/bin/getnetrc',
+                                          'duplicity', 'login'])
+    key_id = subprocess.check_output(['/home/tyler/bin/getnetrc', 'duplicity'])
+    os.environ['AWS_ACCESS_KEY_ID'] = key_id.strip()
+    os.environ['AWS__SECRET_ACCESS_KEY'] = access_key.strip()
+
+
+def main():
+    setup_env()
+    sub_domain = 'home'
+    domain = 'tylercipriani.com'
+    fqdn = '%s.%s' % (sub_domain, domain)
+
+    zone = route53.get_zone(domain)
+    a_rec = zone.get_a(fqdn)
+    new_ip = get_ip()
+
+    if (a_rec):
+        if new_ip == a_rec.resource_records[0]:
+            print '%s is current. (%s)' % (fqdn, new_ip)
+            sys.exit(0)
+
+        try:
+            zone.update_a(fqdn, new_ip, 900)
+        except DNSServerError:
+            zone.add_a(fqdn, new_ip, 900)
+
+    else:
+        zone.add_a(fqdn, new_ip, 900)
+
+if __name__ == '__main__':
+    main()

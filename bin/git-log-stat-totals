@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git log --oneline --shortstat "$1" | awk '/files? changed/ {files+=$1; insertions+=$4; deletions+=$6} END {print files,"files changed,",insertions,"insertions(+),",deletions,"deletions(-)"}'
