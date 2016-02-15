@@ -107,6 +107,11 @@ if has? xsetwacom; then
 fi
 # }}}
 
+# Make temp dir {{{
+mkdir "/tmp/$USER"
+ln -s "/tmp/$USER" "$HOME/tmp"
+# }}}
+
 # Fire up apps {{{
 has? nm-applet && nm-applet --sm-disable &
 has? gnome-power-manager && gnome-power-manager &

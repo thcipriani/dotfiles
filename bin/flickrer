@@ -2,7 +2,6 @@
 
 key=$(getnetrc flickr login)
 secret=$(getnetrc flickr)
-title=$(date +%s)
 
 getfrob() {
     local sig=$(printf %b ${secret}api_key${key}methodflickr.auth.getFrob | md5sum | awk '{print $1}')
@@ -27,25 +26,26 @@ get_token() {
 }
 
 upload() {
-    local sig=$(printf %b ${secret}api_key${key}auth_token${token}is_public1title${title} | md5sum | awk '{print $1}')
+    local sig=$(printf '%b' "${secret}api_key${key}auth_token${token}is_public1title${title}" | md5sum | awk '{print $1}')
     curl -s \
-        -F api_key=${key} \
-        -F auth_token=${token} \
+        -F api_key="${key}" \
+        -F auth_token="${token}" \
         -F is_public=1 \
-        -F title=${title} \
-        -F api_sig=${sig} \
+        -F title="${title}" \
+        -F api_sig="${sig}" \
         -F photo=@"${file}" \
         https://api.flickr.com/services/upload/
 }
 
 main() {
     if (( $# < 2 )); then
-        echo "USAGE: $(basename $0) </path/to/file>"
+        echo "USAGE: $(basename "$0") </path/to/file> <title>"
         exit 1
     fi
 
     file="$1"
+    title="$2"
     getfrob
 }
 
-main
+main "$@"
