@@ -67,9 +67,9 @@ run_interactive() {
 }
 
 simple_shot() {
-  \scrot "${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-%Y-%m-%d-%T.png"
-  notify "[GOT IT] ${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png"
-  printf "${_SCREEN_PATH:=$HOME/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png" | \xsel -p
+  \scrot "${_SCREEN_PATH:=$HOME/Pictures/screenshots}/Screenshot-%Y-%m-%d-%T.png"
+  notify "[GOT IT] ${_SCREEN_PATH:=$HOME/Pictures/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png"
+  printf "${_SCREEN_PATH:=$HOME/Pictures/screenshots}/Screenshot-$(date +%Y-%m-%d-%T).png" | \xsel -p
 }
 
 take_shot() {
@@ -89,17 +89,17 @@ take_shot() {
     notify "[SELECT] Waiting for your selection"
   fi
 
-  \scrot ${options} "${_SCREEN_PATH:=$HOME/screenshots}/${path}.png"
+  \scrot ${options} "${_SCREEN_PATH:=$HOME/Pictures/screenshots}/${path}.png"
 
   if (( grabname == 1 )); then
     filename="/Screenshot-$(date +%Y-%m-%d-%T).png"
   fi
 
   if (( $public == 1 )); then
-    make_public "${_SCREEN_PATH:=$HOME/screenshots}" "$filename"
+    make_public "${_SCREEN_PATH:=$HOME/Pictures/screenshots}" "$filename"
   else
-    notify "[GOT IT] ${_SCREEN_PATH:=$HOME/screenshots}${filename}"
-    printf "${_SCREEN_PATH:=$HOME/screenshots}/${filename}" | \xsel -p
+    notify "[GOT IT] ${_SCREEN_PATH:=$HOME/Pictures/screenshots}${filename}"
+    printf "${_SCREEN_PATH:=$HOME/Pictures/screenshots}/${filename}" | \xsel -p
   fi
 }
 
@@ -124,7 +124,7 @@ main () {
     notify "[ERR] scrot command not found in $PATH" "critical"
   fi
 
-  mkdir -p "${_SCREEN_PATH:=$HOME/screenshots}"
+  mkdir -p "${_SCREEN_PATH:=$HOME/Pictures/screenshots}"
 
   select=0
   public=0
