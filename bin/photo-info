@@ -1,0 +1,34 @@
+#!/usr/bin/env python2
+
+import subprocess
+import sys
+
+CARE = [
+    'Make',
+    'Camera Model Name',
+    'Lens',
+    'Focal Length',
+    'Exposure Time',
+    'F Number',
+    'ISO',
+    'Create Date',
+]
+output = subprocess.check_output(['exiftool', sys.argv[1]])
+out = {}
+
+for line in output.splitlines():
+    vals = line.split(':')
+
+    if not vals[0].strip() in CARE:
+        continue
+
+    if out.get(vals[0]):
+        continue
+
+    out[vals[0].strip()] = ':'.join(vals[1:])
+
+for k in CARE:
+    v = out.get(k)
+    if not v:
+        continue
+    print '{}:{}'.format(k, v)
