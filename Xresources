@@ -7,12 +7,14 @@ urxvt*underlineColor: yellow
 ! These are the things I must do to see ಠ_ಠ
 urxvt*font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*, \
     xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=28:antialias=true:hinting=slight, \
-    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight, \
+    xft:Symbola:style=Regular:pixelsize=28:antialias=true:hinting=slight
 Emacs.font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*
 #else
 urxvt*font: -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*, \
     xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight, \
-    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight
+    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight, \
+    xft:Symbola:style=Regular:pixelsize=16:antialias=true:hinting=slight
 Emacs.font: -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*
 #endif
 
@@ -23,9 +25,10 @@ urxvt*loginShell: true
 urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 urxvt*saveLines: 5000
 urxvt*termName: rxvt-unicode
-urxvt*iso14755: False
-urxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
+urxvt*iso14755: false
+urxvt.iso14755_52: false
+urxvt.perl-ext-common: default,matcher,resize-font
+urxvt.url-launcher: /usr/bin/xdg-open
 urxvt.matcher.button: 1
 urxvt*urgentOnBell: true
 urxvt*visualBell: false

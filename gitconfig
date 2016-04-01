@@ -3,7 +3,7 @@
 	email = tcipriani@wikimedia.org
 [alias]
 	lool = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	lol = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate
+	lol = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate -1
 	ll = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate -10
 	up = "!git remote update -p; git merge --ff-only @{u}"
 	last = log -1 HEAD

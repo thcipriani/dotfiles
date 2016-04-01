@@ -1,6 +1,10 @@
 # Collect my vim usage for _something_…
 # http://www.patrick-wied.at/projects/heatmap-keyboard/
-alias vim="vim -w ~/.vim_keystrokes"
+if command -v nvim &> /dev/null; then
+    alias vim="nvim -w ~/.vim_keystrokes"
+else
+    alias vim="vim -w ~/.vim_keystrokes"
+fi
 
 # God have mercy on my soul
 # alias vim="$HOME/bin/edit"

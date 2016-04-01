@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Fortunate - get a random fortune that matches a regex
+# It's kind of strange that this isn't part of fortune(1)
+
+TMP_FILE=$(tempfile --suffix='.fortunate')
+
+[ -z "$TMP_FILE" ] && exit 1
+[ ! -f "$TMP_FILE" ] && exit 1
+
+fortune -m "$@" >  "$TMP_FILE" 2> /dev/null
+strfile -s "$TMP_FILE" "${TMP_FILE}.dat"
+fortune "$TMP_FILE"
+rm -f "$TMP_FILE" "${TMP_FILE}.dat"

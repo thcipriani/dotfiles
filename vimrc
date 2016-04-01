@@ -35,7 +35,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'goldfeld/vim-seek'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'joonty/vdebug'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+" BOOO!
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
@@ -47,6 +49,7 @@ Plugin 'dag/vim-fish'
 Plugin 'rodjek/vim-puppet'
 Plugin 'ClockworkNet/vim-vcl'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'airblade/vim-gitgutter'
 
 
 call vundle#end()            " required
@@ -276,6 +279,7 @@ let g:syntastic_javascript_jshint_conf="$HOME/.jshintrc"
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 " let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:jedi#force_py_version=2
 " }}}
 
 " NERDTree Settings---------------------------------------------------- {{{
@@ -430,3 +434,7 @@ endfunction
 
 command! -nargs=1 BangOpen :call BangOpen(<f-args>)
 " }}}
+"
+set timeout
+set timeoutlen=2500
+set ttimeoutlen=10

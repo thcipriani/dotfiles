@@ -7,78 +7,35 @@
 # * https://github.com/sindresorhus/pure
 # * http://ebeab.com/2014/04/17/the-bash-prompt/
 #
-# Color   | Escape | Code       | tput-8    | tput-256
-# --------+--------+------------+-----------+----------
-# Black   | 30m    | \033[0;30m | tput 0    | tput 236
-# Red     | 31m    | \033[0;31m | tput 1    | tput 196
-# Green   | 32m    | \033[0;32m | tput 2    | tput 118
-# Yellow  | 33m    | \033[0;33m | tput 3    | tput 226
-# Blue    | 34m    | \033[0;34m | tput 4    | tput 69
-# Magenta | 35m    | \033[0;35m | tput 5    | tput 135
-# Cyan    | 36m    | \033[0;36m | tput 6    | tput 75
-# White   | 37m    | \033[0;37m | tput 7    | tput 254
-# Reset   | 0      | \033[00m   | tput sgr0 | tput sgr0
-# Bold    | 1      | \033[1;xxm | tput bold | tput bold
-#
-
+color_prompt=0
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    *color*) color_prompt=yes;;
-    rxvt-unicode) color_prompt=yes;;
+    *color*) color_prompt=1;;
+    rxvt-unicode) color_prompt=1;;
 esac
 
-if [[ "$color_prompt" == "yes" ]]; then
-  # If we've got tput, use it
-  if tput colors &> /dev/null; then
-    BLACK=$(tput setaf 0)
+RED=''
+CYAN=''
+GREEN=''
+MAGENTA=''
+ORANGE=''
+PURPLE=''
+WHITE=''
+LIME_YELLOW=''
+POWDER_BLUE=''
+RESET=''
+
+if (( color_prompt > 0 )); then
     RED=$(tput setaf 1)
-    GREEN=$(tput setaf 2)
-    YELLOW=$(tput setaf 3)
-    BLUE=$(tput setaf 4)
-    MAGENTA=$(tput setaf 5)
     CYAN=$(tput setaf 6)
-    WHITE=$(tput setaf 7)
-
-    BRIGHT=$(tput bold)
+    GREEN=$(tput setaf 190)
+    MAGENTA=$(tput setaf 9)
+    ORANGE=$(tput setaf 172)
+    PURPLE=$(tput setaf 141)
+    WHITE=$(tput setaf 254)
+    LIME_YELLOW=$(tput setaf 190)
+    POWDER_BLUE=$(tput setaf 153)
     RESET=$(tput sgr0)
-    BLINK=$(tput blink)
-    REVERSE=$(tput smso)
-    UNDERLINE=$(tput smul)
-
-    PURPLE=$(tput setaf 5)
-    ORANGE=$(tput setaf 1)
-    LIME_YELLOW=$(tput setaf 2)
-    POWDER_BLUE=$(tput setaf 4)
-
-    # If we've got >= 256 colors, use em
-    if (( $(tput colors) >= 256 )); then
-      GREEN=$(tput setaf 190)
-      MAGENTA=$(tput setaf 9)
-      ORANGE=$(tput setaf 172)
-      PURPLE=$(tput setaf 141)
-      WHITE=$(tput setaf 254)
-      LIME_YELLOW=$(tput setaf 190)
-      POWDER_BLUE=$(tput setaf 153)
-    fi
-  fi
-# We're probably in a TTY with 8 colors
-else
-  BLACK="\033[0;30m"
-  RED="\033[0;31m"
-  GREEN="\033[0;32m"
-  YELLOW="\033[0;33m"
-  BLUE="\033[0;34m"
-  MAGENTA="\033[0;35m"
-  CYAN="\033[0;36m"
-  WHITE="\033[0;37m"
-
-  RESET="\033[00m"
-  BRIGHT=""
-
-  ORANGE="\033[1;31m"
-  PURPLE="\033[1;35m"
-  LIME_YELLOW="\033[1;32m"
-  POWDER_BLUE="\033[1;34m"
 fi
 
 _parse_git_dirty() {
@@ -111,9 +68,11 @@ _rprompt() {
 
 exit_code_emote() {
     case $1 in
-        0)   prompt="(•◡•)❥";; # success
+        # 0)   prompt="(•◡•)❥";; # success
+        0) prompt="(ﾉ^ヮ^)ﾉ*:・ﾟ✧";; # success
         127) prompt="(•ิ_•ิ)❥" ;; # command not found
         130) prompt="(☉_☉)❥" ;; # ^C
+        # 148) prompt="ᕕ( ᐛ )ᕗ" ;;
         148) prompt="(°▽°)❥" ;; # ^z
         *)   prompt="(•́‸•̀)❥" ;; # Other errors
         # *)   prompt="(•̀д•́)❥" ;;

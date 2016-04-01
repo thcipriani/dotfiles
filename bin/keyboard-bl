@@ -8,6 +8,7 @@ if [ ! -f "${base}/brightness" ]; then
 fi
 
 if (( $# < 1 )); then
+    printf "Usage: $(basename "$0") <up|down>\n"
     printf "Brightness: "
     cat "${base}/brightness"
     printf "Max Brightness: "

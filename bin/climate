@@ -1,0 +1,167 @@
+#!/usr/bin/env python2
+#
+# Displays the current radar from weather underground in your CLI
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+from __future__ import print_function
+
+import ConfigParser
+import glob
+import os
+import subprocess
+import sys
+import tempfile
+import time
+
+from distutils import spawn
+from urllib2 import urlopen
+
+BASE_URL = 'http://api.wunderground.com/api/'
+
+gif_image = ''
+
+
+def get_config():
+    config_file = os.path.join(os.environ['HOME'], '.config', 'climate.conf')
+    if not os.path.isfile(config_file):
+        print('[ERROR] NO CONFIG FILE at: %s' % config_file)
+        sys.exit(1)
+
+    cfg = {}
+    config = ConfigParser.SafeConfigParser()
+    config.read(config_file)
+    for k, v in config.items('general'):
+        cfg[k] = v
+
+    return cfg
+
+
+def rgb_to_tput(rgb):
+    # Math taken from console_colors.md
+    # Copyright: heptal
+    # <https://gist.github.com/heptal/6052573>
+    return sum(p*q for p, q in zip([36, 6, 1], [int(min(int(c), 254)/42.5)
+               for c in rgb.split(',')]))+16
+
+
+def esc(*args):
+    return '\x1b[%sm' % ';'.join(str(arg) for arg in args)
+
+
+def get_convert():
+    convert = spawn.find_executable('gm')
+
+    if convert:
+        convert = [convert, 'convert']
+    else:
+        convert = [spawn.find_executable('convert')]
+
+    if not convert:
+        print('[ERROR] ImageMagick or GraphicsMagick must be installed')
+        cleanup()
+        sys.exit(1)
+
+    return convert
+
+
+def show_image(image):
+    output = subprocess.check_output(get_convert() + [image, 'txt:-'])
+
+    all = []
+    for line in output.splitlines():
+        if line.startswith('#'):
+            continue
+
+        outlines = line.split(':')
+        coordinates = outlines[0]
+        rgb = outlines[1].split(')')[0].strip()[1:]
+        buf = '\x1b[7m'
+
+        if coordinates.startswith('0'):
+            buf += '\n'
+
+        color = rgb_to_tput(rgb)
+        buf += '{} '.format(esc(38, 5, color))
+
+        all.append(buf)
+
+    sys.stdout.write('\x1b[H\x1b[J\x1b[?25l\x1b[30m')
+    sys.stdout.write(''.join(all))
+
+
+def split_gif(gif):
+    fn = os.path.basename(gif)
+    dn = os.path.dirname(gif)
+    subprocess.check_call(get_convert() + ['-coalesce', '+adjoin', gif,
+                           os.path.join(dn, '{}%05d-climate.jpg'.format(fn))])
+
+    while True:
+        for image in glob.glob(os.path.join(dn, '*-climate.jpg')):
+            show_image(image)
+            time.sleep(0.5)
+
+
+def grab_gif(cfg):
+    global gif_image
+    cols = subprocess.check_output(['tput', 'cols']).strip()
+    lines = subprocess.check_output(['tput', 'lines']).strip()
+
+    url = [BASE_URL,
+           cfg['api_key'],
+           '/animatedradar/image.gif?',
+           'centerlat={}&'.format(cfg.get('latitude')),
+           'centerlon={}&'.format(cfg.get('longitude')),
+           'radius={}&'.format(cfg.get('radius', 100)),
+           'width={}&'.format(cols),
+           'height={}&'.format(lines),
+           'newmaps=1&',
+           'rainsnow=1&',
+           'timelabel=1&',
+           'timelabel.x=1&',
+           'timelabel.y=10&',
+           'reproj.automerc=1&',
+           'num=8']
+    img = urlopen(''.join(url))
+    radar_gif = tempfile.NamedTemporaryFile(delete=False)
+    with open(radar_gif.name, 'w') as f:
+        f.write(img.read())
+
+    gif_image = radar_gif.name
+    return radar_gif.name
+
+
+def cleanup():
+    global gif_image
+    if os.path.isfile(gif_image):
+        dn = os.path.dirname(gif_image)
+        for image in glob.glob(os.path.join(dn, '*-climate.jpg')):
+            os.remove(image)
+
+        os.remove(gif_image)
+        gif_image = ''
+
+    sys.stdout.write('\x1b[34h\x1b[?25h\x1b[0m\x1b[H\x1b[J')
+
+
+def main():
+    cfg = get_config()
+    try:
+        split_gif(grab_gif(cfg))
+    except KeyboardInterrupt:
+        cleanup()
+        sys.exit(130)
+
+if __name__ == '__main__':
+    main()

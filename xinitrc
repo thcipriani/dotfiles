@@ -72,7 +72,9 @@ setxkbmap \
   -option nbsp:level3n
 
 if has? xset; then
-  xset -b            # Stop beeping at me (A.K.A turn of PC speaker)
+  # Stop beeping at me (A.K.A turn of PC speaker)
+  # https://www.debian-administration.org/article/110/Removing_annoying_console_beeps
+  xset b off
   xset r rate 330 60 # Set keyboard repeat rate
 fi
 has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
