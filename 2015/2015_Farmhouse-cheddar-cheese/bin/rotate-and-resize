@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# ❯ for file in raw/2015-10-04_Farmhouse-cheddar-cheese_0000*.jpg; do bash ./bin/rotate-and-resize "$file"; done
+haz?() {
+    command -v "$1" > /dev/null 2>&1
+}
+
+haz? gm && convert_cmd="gm convert"
+haz? convert && convert_cmd="convert"
+test -z "$convert_cmd" && exit 1
+
+infile="$1"
+
+dir="$(dirname $(dirname "$infile"))/edit"
+filename=$(basename "$infile")
+
+ext="${filename##*.}"
+file="${filename%.*}"
+
+# $convert_cmd "$infile" -resize "1280x" -unsharp 2x0.5+0.7+0 -quality 98 -sigmoidal-contrast 3,50% "${dir}/${file}.thumb.${ext}"
+# Convert to a jpeg
+$convert_cmd "$infile" -resize "1280x" -unsharp 2x0.5+0.7+0 -quality 98 -sigmoidal-contrast 3,50% "${dir}/${file}.jpg"
