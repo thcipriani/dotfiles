@@ -10,6 +10,9 @@ export BROWSER="firefox"
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# I'm a bad speller.
+shopt -s cdspell dirspell globstar
+
 # History
 shopt -s histappend                  # append to history
 HISTCONTROL=ignoredups:ignorespace # ignore spaces and duplicates

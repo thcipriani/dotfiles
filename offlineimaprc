@@ -6,6 +6,7 @@ pythonfile = ~/bin/getnetrc
 [Account Gmail]
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
+postsynchook = notmuch new
 
 [Repository Gmail-Local]
 type = Maildir
@@ -18,3 +19,5 @@ remotepasseval = get_password("offlineimap")
 realdelete = no
 maxconnections = 3
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# https://bbs.archlinux.org/viewtopic.php?pid=1588425#p1588425
+auth_mechanisms = LOGIN

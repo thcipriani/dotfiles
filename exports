@@ -34,6 +34,7 @@ fi
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
+export CDPATH=$HOME/.marks
 
 # Less Colors for Man Pages http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Check every ten seconds if the process identified as $1 is still
-# running. After 90 checks (~15 minutes), kill it. Return non-zero to
+# running. After 30 checks (~5 minutes), kill it. Return non-zero to
 # indicate something was killed.
 monitor() {
   local pid=$1 i=0
 
   while ps $pid &>/dev/null; do
-    if (( i++ > 90 )); then
+    if (( i++ > 30 )); then
       echo "Max checks reached. Sending SIGKILL to ${pid}..." >&2
       kill -9 $pid; return 1
     fi
