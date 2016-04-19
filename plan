@@ -3,15 +3,69 @@
 #+AUTHOR:    Tyler Cipriani
 #+EMAIL:     tyler@tylercipriani.com
 #+LANGUAGE:  en
-#+STARTUP:   indent
 
-* .plan
-** Typographically Perlious
-*** <2016-03-02 Wed>
+# See: http://orgmode.org/manual/Export-options.html
+
+#+PROPERTIES: <:nil d:nil timestamp:t
+#+PROPERTIES: toc:nil num:nil ^:nil ::t tags:nil
+#+HTML_DOCTYPE: html5
+
+# To export: http://orgmode.org/manual/HTML-export.html
+
+* Org-mode to publish a site
+:PROPERTIES:
+:DATE: <2016-04-18 Mon>
+:END:
+
+** A Manifesto of sorts
+
+This single org-mode files is a blog. The org-mode file in which
+I am writing this text is filled with material that either isn't
+substantive or focused enough to be published on my normal blog.
+
+This material should be less ephemeral than things on a wiki (e.g.
+The movies section, the RFCs section, the Wikipedia pages section
+should be moved the [[http://blazeyandtyler.com/wiki/Blazey_and_Tyler][Wiki]]).
+
+I tend to experiment more with format in this file than in my notes
+directory (which I keep using [[http://jblevins.org/projects/deft/][Deft]] and org-mode) which means I
+learn more org-mode and that is a Good Thing™.
+
+** Some inspiration
+
+Making a real-live multi-page cool-looking blog out of an org-mode file isn't impossible.
+
+- https://pavpanchekha.com/blog/org-mode-publish.html
+- http://endlessparentheses.com/how-i-blog-one-year-of-posts-in-a-single-org-file.html
+- http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
+- https://eschulte.github.io/org-scraps/
+- https://raw.githubusercontent.com/eschulte/org-scraps/master/scraps.org
+
+** Other org-related things
+
+Can I just say: ~org-babel~ looks awesome as fuck.
+
+A literate programming environment that can be used to configure a lisp-machine.
+
+To paraphrase one of the authors below: that'll earn you a lot of nerd merit-
+badges. I should maybe consider moving my [[https://github.com/thcipriani/linuxtips][Linux Tips]]
+repo over to this. Also, I should move my repos off of github and onto
+something self-hosted :( Too. Many. Projects. Le. Sigh.
+
+- http://orgmode.org/worg/org-contrib/babel/intro.html
+- https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org
+
+* Typographically Perlious
+:PROPERTIES:
+:DATE: <2016-03-02 Wed>
+:END:
+
 "rock 'n' roll 7"s from the '80s"
 
-** Thanksgiving vocabulary
-*** <2015-11-26 Thu>
+* Thanksgiving vocabulary
+:PROPERTIES:
+:DATE: <2015-11-26 Thu>
+:END:
 
 *Variadic Function* – a function of indefinite airity.
 Considered complimentary to the ~apply~ function which
@@ -26,133 +80,148 @@ var printAwards = function(...places) {
     }
 }
 #+END_SRC
-** Bitwise shifts are like dividing by 2
-*** <2015-11-17 Tue>
+
+* Bitwise shifts are like dividing by 2
+:PROPERTIES:
+:DATE: <2015-11-17 Tue>
+:END:
 
 Never thought about it:
 - ~x >> 2 == x / 2~
 - ~x << 2 == x * 2~
 
-** RFCs I have known and loved
-*** <2015-11-06 Fri>
+* RFCs I have known and loved
+:PROPERTIES:
+:DATE: <2015-11-06 Fri>
+:END:
 
 - "Finding RFCs for a particular topic is an art."
-  http://www.ietf.org/newcomers.html#whither
+http://www.ietf.org/newcomers.html#whither
 
 - Good 'n's
-  - https://tools.ietf.org/html/rfc3161
-  - https://tools.ietf.org/html/rfc2616
-  - https://tools.ietf.org/html/rfc3986
-  - https://tools.ietf.org/html/rfc3920
-  - https://tools.ietf.org/html/rfc1459
-  - https://tools.ietf.org/html/rfc2151
-  - https://tools.ietf.org/html/rfc3339
-  - https://tools.ietf.org/html/rfc1288
-  - https://tools.ietf.org/html/rfc863
-  - https://tools.ietf.org/html/rfc2324
-  - https://tools.ietf.org/html/rfc2549
-  - https://tools.ietf.org/html/rfc2795
-  - https://tools.ietf.org/html/rfc1918
-  - https://tools.ietf.org/html/rfc7763
+    - https://tools.ietf.org/html/rfc3161
+    - https://tools.ietf.org/html/rfc2616
+    - https://tools.ietf.org/html/rfc3986
+    - https://tools.ietf.org/html/rfc3920
+    - https://tools.ietf.org/html/rfc1459
+    - https://tools.ietf.org/html/rfc2151
+    - https://tools.ietf.org/html/rfc3339
+    - https://tools.ietf.org/html/rfc1288
+    - https://tools.ietf.org/html/rfc863
+    - https://tools.ietf.org/html/rfc2324
+    - https://tools.ietf.org/html/rfc2549
+    - https://tools.ietf.org/html/rfc2795
+    - https://tools.ietf.org/html/rfc1918
+    - https://tools.ietf.org/html/rfc7763
 
-**** Markdown related
+** Markdown related
 - [[https://tools.ietf.org/html/rfc7763][The text/markdown media type]]
 - [[https://tools.ietf.org/html/rfc7328.html][Writing I-Ds and RFCs Using Pandoc and a Bit of XML]]
 
-**** Memos That make me happy.
+** Memos That make me happy.
 - https://tools.ietf.org/html/rfc1178
 
-**** Helpful Informational RFCs
+** Helpful Informational RFCs
 - https://tools.ietf.org/html/rfc1855
 
-** <2015-08-26 Wed>
+* XSS String
+:PROPERTIES:
+:DATE: <2015-08-26 Wed>
+:END:
 
 '';!--"<XSS>=&{()}
 
-** <2015-08-05 Wed>
+* Two quotes I saw and liked
+:PROPERTIES:
+:DATE: <2015-08-05 Wed>
+:END:
 
-- Good judgment comes from experience, and experience comes from bad judgment.
-  So if things aren't going well, it probably means you're learning a lot
-  and things will go better later.
+I Didn't particuarly enjoy this talk, but this quote was good:
+#+BEGIN_QUOTE
+Good judgment comes from experience, and experience comes from bad judgment.
+So if things aren't going well, it probably means you're learning a lot
+and things will go better later.
 
-  Randy Pausch
-  Time Management
-  https://youtu.be/oTugjssqOT0
+Randy Pausch
+Time Management
+https://youtu.be/oTugjssqOT0
+#+END_QUOTE
 
-- Security at the expense of usability comes at the expense of security.
+#+BEGIN_QUOTE
+Security at the expense of usability comes at the expense of security.
 
-  AviD
-  http://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase/6116#6116
+AviD
+http://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase/6116#6116
+#+END_QUOTE
 
-** <2015-08-03 Mon>
+* RSA
+:PROPERTIES:
+:DATE: <2015-08-03 Mon>
+:END:
 
 The Magic Words are Squeamish Ossifrage
 
-** <2015-05-02 Sat>
-
+* Taylor Swift for the Brave and True
+:PROPERTIES:
+:DATE: <2015-05-02 Sat>
+:END:
+#+BEGIN_VERSE
 You held your head like a hero
 On a history book page
 It was the end of a decade
 But the start of an age
-
 - Taylor Swift, Voice of Our Age
+#+END_VERSE
 
-** <2015-04-18 Sat>
-
-Gall's Law
-
+* Gall's Law
+:PROPERTIES:
+:DATE: <2015-04-18 Sat>
+:END:
+#+BEGIN_QUOTE
 A complex system that works is invariably found to have evolved from a simple
 system that worked. A complex system designed from scratch never works and
 cannot be patched up to make it work. You have to start over with a working
 simple system.
 
 - John Gall (Systemantics: How Systems Really Work and How They Fail.)
+#+END_QUOTE
 
-** <2015-02-01 Sun>
+* A recent Amazon.com order about which I feel a certain joy
+:PROPERTIES:
+:DATE: <2015-02-01 Sun>
+:END:
 
-A recent Amazon.com order about which I feel a certain joy:
+- [[http://amzn.com/B00D76RNLS][Manfrotto MTPIXI-B PIXI Mini Tripod, Black]]
+- [[http://amzn.com/B001VCXX8W][Leuchtturm Master Notebook, Squared, 8.75 x 12.5 Inch (LBM12)]]
+- [[http://amzn.com/B0030E4UIQ][Zeiss Pre-Moistened Lens Cleaning Wipes, 200 Count]]
 
-- Manfrotto MTPIXI-B PIXI Mini Tripod, Black
-  http://amzn.com/B00D76RNLS
-- Leuchtturm Master Notebook, Squared, 8.75 x 12.5 Inch (LBM12)
-  http://amzn.com/B001VCXX8W
-- Zeiss Pre-Moistened Lens Cleaning Wipes, 200 Count
-  http://amzn.com/B0030E4UIQ
-
-** <2015-01-23 Fri>
-Updated: <2015-11-06 Fri>
+* Hardware
+:PROPERTIES:
+:DATE: <2015-01-23 Fri>
+:UPDATED: <2015-11-06 Fri>
+:END:
 
 Hardware I have:
 
-- Lenovo ThinkPad x230t
-  http://shop.lenovo.com/us/en/laptops/thinkpad/x-series/x230t/
-- Vortex Poker II
-  https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=458
-- Evoluent Vertical Mouse
-  http://www.amazon.com/dp/B00427TAIK/ref=wl_it_dp_o_pd_S_ttl?_encoding=UTF8&colid=1UON4PKLUD102&coliid=I1VOGGHV9GZ9MC
-- HRT Music Streamer II
-  http://www.head-fi.org/products/hrt-music-streamer-ii-high-resolution-usb-d-a-converter
-- RockIt Sounds R-50
-  http://www.head-fi.org/products/rockit-sounds-r-50
-- Baratza Virtuoso
-  http://amzn.com/B00LW8I45C
-- DJI Phantom II Zenmuse H4-3D Gimbal
-  http://www.dji.com/product/zenmuse-h4-3d
+- [[http://shop.lenovo.com/us/en/laptops/thinkpad/x-series/x230t/][Lenovo ThinkPad x230t]]
+- [[https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=458][Vortex Poker II]]
+- [[http://www.amazon.com/dp/B00427TAIK/ref=wl_it_dp_o_pd_S_ttl?_encoding=UTF8&colid=1UON4PKLUD102&coliid=I1VOGGHV9GZ9MC][Evoluent Vertical Mouse]]
+- [[http://www.head-fi.org/products/hrt-music-streamer-ii-high-resolution-usb-d-a-converter][HRT Music Streamer II]]
+- [[http://www.head-fi.org/products/rockit-sounds-r-50][RockIt Sounds R-50]]
+- [[http://amzn.com/B00LW8I45C][Baratza Virtuoso]]
+- [[http://www.dji.com/product/zenmuse-h4-3d][DJI Phantom II Zenmuse H4-3D Gimbal]]
 
 Hardware I think about:
 
-- Purism Librem 13 Laptop
-  http://puri.sm/
-- Kenisis Advantage
-  https://www.kinesis-ergo.com/shop/advantage-for-pc-mac/
-- Nikon D800
-  http://www.kenrockwell.com/nikon/d800.htm
-- Mahlkonig Guatemala Lab
-  https://prima-coffee.com/equipment/mahlkonig/guatemala-lab
+- [[http://puri.sm/][Purism Librem 13 Laptop]]
+- [[https://www.kinesis-ergo.com/shop/advantage-for-pc-mac/][Kenisis Advantage]]
+- [[http://www.kenrockwell.com/nikon/d800.htm][Nikon D800]]
+- [[https://prima-coffee.com/equipment/mahlkonig/guatemala-lab][Mahlkonig Guatemala Lab]]
 
-** <2015-01-20 Tue>
-
-Surprising things found in the 85 tabs open on my phone:
+* Surprising things found in the 85 tabs open on my phone
+:PROPERTIES:
+:DATE: <2015-01-20 Tue>
+:END:
 
 1) Solar Claculation Details
    http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html
@@ -165,74 +234,73 @@ Surprising things found in the 85 tabs open on my phone:
 5) Catchup
    http://boardgamegeek.com/boardgame/68199/catchup
 
-** <2014-12-09 Tue>
+* Currently Reading
+:PROPERTIES:
+:DATE: <2014-12-09 Tue>
+:END:
 
-Currently Reading:
-
-NICK BOSTROM
+[[https://archive.org/stream/pdfy-gICrBTUXEYl52bow/2014-bostrom-superintelligence_djvu.txt][NICK BOSTROM
 SUPERINTELLIGENCE
-Paths, Dangers, Strategies
+Paths, Dangers, Strategies]]
 
-https://archive.org/stream/pdfy-gICrBTUXEYl52bow/2014-bostrom-superintelligence_djvu.txt
+* Wikipedia Articles I enjoy
+:PROPERTIES:
+:DATE: <2014-12-02 Tue>
+:END:
 
-** <2014-12-02 Tue> Wikipedia Articles I enjoy
-
-1) Why artist payment rises without productivity increases:
-   https://en.wikipedia.org/wiki/Baumol%27s_cost_disease
-2) Nick Bostrom's Simulation Hypothesis:
-   https://en.wikipedia.org/wiki/Simulation_hypothesis
-3) Seven Bridges of Königsberg:
-   https://en.m.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg
-4) Gombe Chimpanzee War
-   https://en.wikipedia.org/wiki/Gombe_Chimpanzee_War
-5) Cisgender
-   https://en.wikipedia.org/wiki/Cisgender
-6) 2147483647
-   https://en.wikipedia.org/wiki/2147483647
-7) Monkey Selfie
-   https://en.wikipedia.org/wiki/Monkey_selfie
-8) Erdős–Bacon number
-   https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number
-9) Dolgopolsky list
-   https://en.wikipedia.org/wiki/Dolgopolsky_list
-10) Bus Factor
-    https://en.wikipedia.org/wiki/Bus_factor
-11) Graham's number
-    https://en.wikipedia.org/wiki/Graham%27s_number
-12) Alexander Stepanov
-    https://en.wikipedia.org/wiki/Alexander_Stepanov
-13) Mojibake
-    https://en.wikipedia.org/wiki/Mojibake
-14) Fool's Gold Loaf
-    https://en.wikipedia.org/wiki/Fool%27s_Gold_Loaf
+1) [[https://en.wikipedia.org/wiki/Baumol%27s_cost_disease][Why artist payment rises without productivity increases:]]
+2) [[https://en.wikipedia.org/wiki/Simulation_hypothesis][Nick Bostrom's Simulation Hypothesis:]]
+3) [[https://en.m.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg][Seven Bridges of Königsberg:]]
+4) [[https://en.wikipedia.org/wiki/Gombe_Chimpanzee_War][Gombe Chimpanzee War]]
+5) [[https://en.wikipedia.org/wiki/Cisgender][Cisgender]]
+6) [[https://en.wikipedia.org/wiki/2147483647][2147483647]]
+7) [[https://en.wikipedia.org/wiki/Monkey_selfie][Monkey Selfie]]
+8) [[https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Bacon_number][Erdős–Bacon number]]
+9) [[https://en.wikipedia.org/wiki/Dolgopolsky_list][Dolgopolsky list]]
+10) [[https://en.wikipedia.org/wiki/Bus_factor][Bus Factor]]
+11) [[https://en.wikipedia.org/wiki/Graham%27s_number][Graham's number]]
+12) [[https://en.wikipedia.org/wiki/Alexander_Stepanov][Alexander Stepanov]]
+13) [[https://en.wikipedia.org/wiki/Mojibake][Mojibake]]
+14) [[https://en.wikipedia.org/wiki/Fool%27s_Gold_Loaf][Fool's Gold Loaf]]
 15) [[https://en.wikipedia.org/wiki/Sturgeon's_law][Sturgeon's Law]]
 16) [[https://en.wikipedia.org/wiki/Project_West_Ford][Project West Forward]]
 17) [[https://en.wikipedia.org/wiki/Mammalian_diving_reflex][Mammalian diving reflex]]
 
-** <2014-10-07 Tue>                                                   :quote:
+* Thomas Jefferson to Isaac McPherson                              :quote:
+:PROPERTIES:
+:DATE: <2014-10-07 Tue>
+:END:
 
-"If nature has made any one thing less susceptible than all others of
+#+BEGIN_QUOTE
+If nature has made any one thing less susceptible than all others of
 exclusive property, it is the action of the thinking power called an idea,
 which an individual may exclusively possess as long as he keeps it to
 himself; but the moment it is divulged, it forces itself into the
-possession of every one, and the receiver cannot dispossess himself of it."
+possession of every one, and the receiver cannot dispossess himself of it.
 
 - Thomas Jefferson
-
+#+END_QUOTE
 http://press-pubs.uchicago.edu/founders/documents/a1_8_8s12.html
 
-** <2014-06-13 Fri>                                                   :quote:
+* Nobody Understands Punctuation                                   :quote:
+:PROPERTIES:
+:DATE: <2014-06-13 Fri>
+:END:
 
-"If make his point clear, Yoda could, give a shit about Oxford commas,
-nobody should."
-
+#+BEGIN_QUOTE
+If make his point clear, Yoda could, give a shit about Oxford commas,
+nobody should.
 - Peter Huntwelch
+#+END_QUOTE
 
-http://stilldrinking.org/nobody-understands-punctuation
+[[http://stilldrinking.org/nobody-understands-punctuation][Nobody Understands Punctuation]]
 
-** <2014-06-09 Mon>                                                   :quote:
-
-"The programmer, like the poet, works only slightly removed from pure
+* The Programmer                                                   :quote:
+:PROPERTIES:
+:DATE: <2014-06-09 Mon>
+:END:
+#+BEGIN_QUOTE
+The programmer, like the poet, works only slightly removed from pure
 thought-stuff. He builds his castles in the air, from air, creating by
 exertion of the imagination. Few media of creation are so flexible, so easy
 to polish and rework, so readily capable of realizing grand conceptual
@@ -240,79 +308,93 @@ structures... Yet the program construct, unlike the poet's words, is real
 in the sense that it moves and works, producing visible outputs separate
 from the construct itself. [...] The magic of myth and legend has come
 true in our time. One types the correct incantation on a keyboard, and a
-display screen comes to life, showing things that never were nor could be."
+display screen comes to life, showing things that never were nor could be.
 
 - Fred Brooks
+#+END_QUOTE
 
-** TODO <2014-06-01 Sun>
+* TODO Things to look at, when I have time
+:PROPERTIES:
+:DATE: <2014-06-01 Sun>
+:END:
 
 Movies
 
-    | Title            | Year |
-    |------------------+------|
-    | Old Joy          | 2006 |
-    | Sunset Boulevard | 1950 |
+| Title            | Year |
+|------------------+------|
+| Old Joy          | 2006 |
+| Sunset Boulevard | 1950 |
 
 Art
 
-    | Title              | Artist              |    Year |
-    |--------------------+---------------------+---------|
-    | Rhinoceros         | Albrecht Dürer      |    1515 |
-    | Carcass of Beef    | Chaïm Soutine       | c. 1925 |
-    | The Knight's Dream | Antonio de Pareda   |    1655 |
-    | The Death of Marat | Jacques-Louis David |    1793 |
-    | Homage to a Square | Josef Albers        |    1962 |
+| Title              | Artist              |    Year |
+|--------------------+---------------------+---------|
+| Rhinoceros         | Albrecht Dürer      |    1515 |
+| Carcass of Beef    | Chaïm Soutine       | c. 1925 |
+| The Knight's Dream | Antonio de Pareda   |    1655 |
+| The Death of Marat | Jacques-Louis David |    1793 |
+| Homage to a Square | Josef Albers        |    1962 |
 
 TV Shows
 
-    | Title        | Date |
-    |--------------+------|
-    | Civilisation | 1969 |
+| Title        | Date |
+|--------------+------|
+| Civilisation | 1969 |
 
-** <2014-05-13 Tue>                                                   :quote:
-
-"There ain't no rules around here. We're trying to accomplish something."
+* Thomas Edison was an awful human being                           :quote:
+:PROPERTIES:
+:DATE: <2014-05-13 Tue>
+:END:
+#+BEGIN_QUOTE
+There ain't no rules around here. We're trying to accomplish something.
 
 - Thomas Edison
+#+END_QUOTE
 
-** <2014-05-13 Tue>                                                   :quote:
-
-"Poetry is like a curvy slide in a playground - an odd object, available
+* All Good Slides Are Slippery                                     :quote:
+:PROPERTIES:
+:DATE: <2014-05-13 Tue>
+:END:
+#+BEGIN_QUOTE
+Poetry is like a curvy slide in a playground - an odd object, available
 to the public - and, as I keep explaining to my local police force,
-everyone should be able to use it, not just those of a certain age."
+everyone should be able to use it, not just those of a certain age.
 
 - Lemony Snicket
+#+END_QUOTE
 
 http://www.poetryfoundation.org/poetrymagazine/article/246328
 
-** <2014-05-08 Thu>                                                   :quote:
+* Discourse on Inequality                                                    :quote:
+:PROPERTIES:
+:DATE: <2014-05-08 Thu>
+:END:
 
-"The first man who, having fenced in a piece of land, said 'This is mine,'
+#+BEGIN_QUOTE
+The first man who, having fenced in a piece of land, said 'This is mine,'
 and found people naïve enough to believe him, that man was the true
 founder of civil society. From how many crimes, wars, and murders, from
 how many horrors and misfortunes might not any one have saved mankind, by
 pulling up the stakes, or filling up the ditch, and crying to his fellows:
 Beware of listening to this impostor; you are undone if you once forget
 that the fruits of the earth belong to us all, and the earth
-itself to nobody."
+itself to nobody.
 
 - Jean-Jacques Rousseau, Discourse on Inequality, 1754
+#+END_QUOTE
 
 http://www.constitution.org/jjr/ineq.txt
 
-** <2014-05-08 Thu>                                                   :quote:
+* ASCII Magic Eye
+:PROPERTIES:
+:DATE: <2014-05-07 Wed>
+:END:
 
-"Everyone knows the usefulness of what is useful,
-but few know the usefulness of what is useless."
-- Zhuang Zi
-
-** <2014-05-07 Wed>
-
-The following block of characters is an ASCII "Magic Eye" Random-Dot Stereogram. 
-Stare at it with your eyes focused at infinity and you will eventually see a 
+The following block of characters is an ASCII "Magic Eye" Random-Dot Stereogram.
+Stare at it with your eyes focused at infinity and you will eventually see a
 diamond suspended between two rows of columns.
 
-
+#+BEGIN_SRC
                  O               O               O               O
   lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C|lP#83U<c="Gyw*C
   MGB9q+s^{O!do5NEq+s^{OO!do5NNEq+s^^{OO!djo5NNEq+s^{OO!dj5NNEq+^{OO!d5NNEq+^Zq+^
@@ -338,11 +420,14 @@ diamond suspended between two rows of columns.
   bB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>ybB:8nfa]BJ6)zQ>
 
                                                  (created by helder@ci.ua.pt)
+#+END_SRC
 
-** <2014-05-07 Wed>
+* The Phonetic Alphabet
+:PROPERTIES:
+:DATE: <2014-05-07 Wed>
+:END:
 
-The Phonetic Alphabet
-
+#+BEGIN_SRC
 A - Alpha    G - Golf    N - November  U - Uniform
 B - Bravo    H - Hotel   O - Oscar     V - Victor
 C - Charlie  I - India   P - Papa      W - Whiskey
@@ -350,7 +435,7 @@ D - Delta    J - Julia   Q - Quebec    X - X-Ray
 E - Echo     K - Kilo    R - Romeo     Y - Yankee
 F - Foxtrot  L - Lima    S - Sierra    Z - Zulu
              M - Mike    T - Tango
+#+END_SRC
 
 
-
-** COMMENT If you've enjoyed seeing the end of this file try piping it through `less(1)`
+# If you've enjoyed seeing the end of this file try piping it through `less(1)`
