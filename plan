@@ -64,7 +64,7 @@ ssh squiggle
 #+END_SRC
 
 I can make sure I'm on the server, by checking the hostname, again, in the same =:session=
-#+BEGIN_SRC sh :session squiggle
+#+BEGIN_SRC sh :session squiggle :exports both
 hostname
 #+END_SRC
 
@@ -72,7 +72,7 @@ hostname
 : squiggle.city
 
 I Have a file that exists as a local hack on the squiggle.city server:
-#+BEGIN_SRC sh :session squiggle
+#+BEGIN_SRC sh :session squiggle :exports both
 file "/home/thcipriani/bin/squigglegen"
 #+END_SRC
 
@@ -80,25 +80,27 @@ file "/home/thcipriani/bin/squigglegen"
 | /home/thcipriani/bin/squigglegen: C source | ASCII text |
 
 Now, locally, without using the =ssh= session. I can save and commit this file to my =.dotfiles=
-#+BEGIN_SRC sh :results output
+#+BEGIN_SRC sh :results output :exports both
 /usr/bin/git -C /home/tyler/.dotfiles add plan
 /usr/bin/git -C /home/tyler/.dotfiles commit -m 'Add plan from org-mode'
 /usr/bin/git -C /home/tyler/.dotfiles push
 #+END_SRC
 
 #+RESULTS:
-#+begin_example
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+: [master f950c5a] Add plan from org-mode
+:  1 file changed, 49 insertions(+), 4 deletions(-)
 
-	modified:   bin/wifi
-	modified:   plan
+Then, back on my remote session, I can pull this code down, and regenerate my
+page using the =squigglegen= command.
+#+BEGIN_SRC sh :session squiggle :results output :exports both
+/home/thcipriani/bin/squigglegen
+#+END_SRC
 
-no changes added to commit (use "git add" and/or "git commit -a")
-#+end_example
+#+RESULTS:
+: First, rewinding head to replay your work on top of it...
+: Applying: [LOCAL HACK] Generate my squiggle city file :)
+: Applying: [LOCAL HACK] Emacs publish squigglegen
+: Updating
 
 * Typographically Perlious
 :PROPERTIES:
