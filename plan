@@ -6,9 +6,10 @@
 
 # See: http://orgmode.org/manual/Export-options.html
 
-#+PROPERTIES: <:nil d:nil timestamp:t
-#+PROPERTIES: toc:nil num:nil ^:nil ::t tags:nil
+#+OPTIONS: <:nil d:t timestamp:t \n:t ':t
+#+OPTIONS: toc:1 num:nil ^:nil ::t tags:nil
 #+HTML_DOCTYPE: html5
+#+HTML_HEAD: <style>body { background: cornsilk; font-size: 1.5em; }</style>
 
 # To export: http://orgmode.org/manual/HTML-export.html
 
@@ -19,7 +20,7 @@
 
 ** A Manifesto of sorts
 
-This single org-mode files is a blog. The org-mode file in which
+This single org-mode file is a blog. The org-mode file in which
 I am writing this text is filled with material that either isn't
 substantive or focused enough to be published on my normal blog.
 
@@ -43,7 +44,7 @@ Making a real-live multi-page cool-looking blog out of an org-mode file isn't im
 
 ** Other org-related things
 
-Can I just say: ~org-babel~ looks awesome as fuck.
+Can I just say: =org-babel= looks awesome as fuck.
 
 A literate programming environment that can be used to configure a lisp-machine.
 
@@ -54,6 +55,50 @@ something self-hosted :( Too. Many. Projects. Le. Sigh.
 
 - http://orgmode.org/worg/org-contrib/babel/intro.html
 - https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org
+
+** How I generated this page
+
+First I ssh into =squiggle= using a src block with a =:session= identifier
+#+BEGIN_SRC sh :results silent :session squiggle
+ssh squiggle
+#+END_SRC
+
+I can make sure I'm on the server, by checking the hostname, again, in the same =:session=
+#+BEGIN_SRC sh :session squiggle
+hostname
+#+END_SRC
+
+#+RESULTS:
+: squiggle.city
+
+I Have a file that exists as a local hack on the squiggle.city server:
+#+BEGIN_SRC sh :session squiggle
+file "/home/thcipriani/bin/squigglegen"
+#+END_SRC
+
+#+RESULTS:
+| /home/thcipriani/bin/squigglegen: C source | ASCII text |
+
+Now, locally, without using the =ssh= session. I can save and commit this file to my =.dotfiles=
+#+BEGIN_SRC sh :results output
+/usr/bin/git -C /home/tyler/.dotfiles add plan
+/usr/bin/git -C /home/tyler/.dotfiles commit -m 'Add plan from org-mode'
+/usr/bin/git -C /home/tyler/.dotfiles push
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   bin/wifi
+	modified:   plan
+
+no changes added to commit (use "git add" and/or "git commit -a")
+#+end_example
 
 * Typographically Perlious
 :PROPERTIES:
