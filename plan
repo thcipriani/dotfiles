@@ -7,7 +7,7 @@
 # See: http://orgmode.org/manual/Export-options.html
 
 #+OPTIONS: <:nil d:t timestamp:t \n:t ':t
-#+OPTIONS: toc:1 num:nil ^:nil ::t tags:nil
+#+OPTIONS: toc:2 num:nil ^:nil ::t tags:nil
 #+HTML_DOCTYPE: html5
 #+HTML_HEAD: <style>body { background: cornsilk; font-size: 1.5em; }</style>
 
@@ -58,12 +58,21 @@ something self-hosted :( Too. Many. Projects. Le. Sigh.
 
 ** How I generated this page
 
-First I ssh into =squiggle= using a src block with a =:session= identifier
-#+BEGIN_SRC sh :results silent :session squiggle
+This is a weird, psuedo literate way of updating this file on the
+squiggle.city site.
+
+First I ssh into =squiggle= using a src block with a =:session= identifier.
+The actual code in the org file can be seen on [[https://github.com/thcipriani/dotfiles/blob/master/plan#L62-L64][github]].
+
+For what it's worth, I am executing *this file* to generate *this HTML*.
+ #+BEGIN_SRC sh :results silent :session squiggle
 ssh squiggle
 #+END_SRC
 
-I can make sure I'm on the server, by checking the hostname, again, in the same =:session=
+I can make sure I'm on the server, by checking the hostname, again, in
+the same =:session=. One important not that it took a while to figure out:
+I have to use the =:exports both= argument for the source block to show
+the results in the HTML output.
 #+BEGIN_SRC sh :session squiggle :exports both
 hostname
 #+END_SRC
@@ -71,15 +80,19 @@ hostname
 #+RESULTS:
 : squiggle.city
 
-I Have a file that exists as a local hack on the squiggle.city server:
-#+BEGIN_SRC sh :session squiggle :exports both
+I Have a file that exists as a local hack in my dotfiles on squiggle.city
+server, but don't take my word for it:
+#+BEGIN_SRC sh :results code :session squiggle :exports both
 file "/home/thcipriani/bin/squigglegen"
 #+END_SRC
 
 #+RESULTS:
-| /home/thcipriani/bin/squigglegen: C source | ASCII text |
+#+BEGIN_SRC sh
+/home/thcipriani/bin/squigglegen: C source, ASCII text
+#+END_SRC
 
-Now, locally, without using the =ssh= session. I can save and commit this file to my =.dotfiles=
+Now, locally, without using the =:session=. I can save and commit this file
+to my =.dotfiles= repo:
 #+BEGIN_SRC sh :results output :exports both
 /usr/bin/git -C /home/tyler/.dotfiles add plan
 /usr/bin/git -C /home/tyler/.dotfiles commit -m 'Add plan from org-mode'
@@ -87,8 +100,8 @@ Now, locally, without using the =ssh= session. I can save and commit this file t
 #+END_SRC
 
 #+RESULTS:
-: [master f950c5a] Add plan from org-mode
-:  1 file changed, 49 insertions(+), 4 deletions(-)
+: [master cfb053f] Add plan from org-mode
+:  1 file changed, 17 insertions(+), 15 deletions(-)
 
 Then, back on my remote session, I can pull this code down, and regenerate my
 page using the =squigglegen= command.
@@ -230,7 +243,7 @@ system that worked. A complex system designed from scratch never works and
 cannot be patched up to make it work. You have to start over with a working
 simple system.
 
-- John Gall (Systemantics: How Systems Really Work and How They Fail.)
+– John Gall (Systemantics: How Systems Really Work and How They Fail.)
 #+END_QUOTE
 
 * A recent Amazon.com order about which I feel a certain joy
@@ -325,9 +338,8 @@ which an individual may exclusively possess as long as he keeps it to
 himself; but the moment it is divulged, it forces itself into the
 possession of every one, and the receiver cannot dispossess himself of it.
 
-- Thomas Jefferson
+– [[http://press-pubs.uchicago.edu/founders/documents/a1_8_8s12.html][Thomas Jefferson]]
 #+END_QUOTE
-http://press-pubs.uchicago.edu/founders/documents/a1_8_8s12.html
 
 * Nobody Understands Punctuation                                   :quote:
 :PROPERTIES:
@@ -337,7 +349,7 @@ http://press-pubs.uchicago.edu/founders/documents/a1_8_8s12.html
 #+BEGIN_QUOTE
 If make his point clear, Yoda could, give a shit about Oxford commas,
 nobody should.
-- Peter Huntwelch
+– Peter Huntwelch
 #+END_QUOTE
 
 [[http://stilldrinking.org/nobody-understands-punctuation][Nobody Understands Punctuation]]
@@ -357,7 +369,7 @@ from the construct itself. [...] The magic of myth and legend has come
 true in our time. One types the correct incantation on a keyboard, and a
 display screen comes to life, showing things that never were nor could be.
 
-- Fred Brooks
+– Fred Brooks
 #+END_QUOTE
 
 * TODO Things to look at, when I have time
@@ -395,7 +407,7 @@ TV Shows
 #+BEGIN_QUOTE
 There ain't no rules around here. We're trying to accomplish something.
 
-- Thomas Edison
+– Thomas Edison
 #+END_QUOTE
 
 * All Good Slides Are Slippery                                     :quote:
@@ -407,7 +419,7 @@ Poetry is like a curvy slide in a playground - an odd object, available
 to the public - and, as I keep explaining to my local police force,
 everyone should be able to use it, not just those of a certain age.
 
-- Lemony Snicket
+– Lemony Snicket
 #+END_QUOTE
 
 http://www.poetryfoundation.org/poetrymagazine/article/246328
@@ -427,7 +439,7 @@ Beware of listening to this impostor; you are undone if you once forget
 that the fruits of the earth belong to us all, and the earth
 itself to nobody.
 
-- Jean-Jacques Rousseau, Discourse on Inequality, 1754
+– Jean-Jacques Rousseau, Discourse on Inequality, 1754
 #+END_QUOTE
 
 http://www.constitution.org/jjr/ineq.txt
