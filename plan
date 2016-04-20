@@ -1,5 +1,5 @@
 # -*- mode: org -*-
-#+TITLE:     Tyler Cipriani's .plan
+#+TITLE:     .plan
 #+AUTHOR:    Tyler Cipriani
 #+EMAIL:     tyler@tylercipriani.com
 #+LANGUAGE:  en
@@ -9,9 +9,15 @@
 #+OPTIONS: <:nil d:t timestamp:t \n:t ':t
 #+OPTIONS: toc:2 num:nil ^:nil ::t tags:nil
 #+HTML_DOCTYPE: html5
-#+HTML_HEAD: <style>body { background: cornsilk; font-size: 1.5em; }</style>
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+HTML_HEAD: <style>.title { font-size: 5em; text-align: left; margin: 0; letter-spacing: -10px; }</style>
+#+HTML_HEAD: <style>.title { border-right: 5px solid tomato; padding: 0 0.5em 0 0; display: inline-block; }</style>
+#+HTML_HEAD: <style>body { background: cornsilk; font-size: 1.5em; color: dimgrey; }</style>
+#+HTML_HEAD: <style>h2 { color: tomato; font-size: 2.5em; letter-spacing: -3px; border-bottom: 1px solid gainsboro; }</style>
+#+HTML_HEAD: <style>a { text-decoration: none; color: cornflowerblue } a:hover { text-decoration: underline; }</style>
+#+HTML_HEAD: <style>pre { box-shadow: none; padding: 1em; }</style>
 
-# To export: http://orgmode.org/manual/HTML-export.html
+# To export: http://orgmode.org/manual/HTML-export.html (C-c C-e h h)
 
 * Org-mode to publish a site
 :PROPERTIES:
@@ -95,13 +101,13 @@ Now, locally, without using the =:session=. I can save and commit this file
 to my =.dotfiles= repo:
 #+BEGIN_SRC sh :results output :exports both
 /usr/bin/git -C /home/tyler/.dotfiles add plan
-/usr/bin/git -C /home/tyler/.dotfiles commit -m 'Add plan from org-mode'
+/usr/bin/git -C /home/tyler/.dotfiles commit -m 'Update org-mode styles'
 /usr/bin/git -C /home/tyler/.dotfiles push
 #+END_SRC
 
 #+RESULTS:
-: [master cfb053f] Add plan from org-mode
-:  1 file changed, 17 insertions(+), 15 deletions(-)
+: [master 2655be0] Add plan from org-mode
+:  1 file changed, 30 insertions(+), 18 deletions(-)
 
 Then, back on my remote session, I can pull this code down, and regenerate my
 page using the =squigglegen= command.
