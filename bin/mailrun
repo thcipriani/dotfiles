@@ -1,28 +1,125 @@
 #!/usr/bin/env bash
+#
+# Program is a rip off of pbrisbin's mailrun
+# <https://github.com/pbrisbin/mutt-config/blob/master/bin/mailrun>
+#
+# This version, however, runs 5 short offlineimap runs of only the inbox
+# between executing full runs.
 
-# Check every ten seconds if the process identified as $1 is still
-# running. After 30 checks (~5 minutes), kill it. Return non-zero to
-# indicate something was killed.
-monitor() {
-  local pid=$1 i=0
+QUICKRUN=1
+OPTIONS='-o'
+LOGFILE=''
 
-  while ps $pid &>/dev/null; do
-    if (( i++ > 30 )); then
-      echo "Max checks reached. Sending SIGKILL to ${pid}..." >&2
-      kill -9 $pid; return 1
-    fi
-
-    sleep 10
-  done
-
-  return 0
+usage() {
+    printf '%s\n' "$(basename $0) [go|log|next|status|help]"
 }
 
-read -r pid < ~/.offlineimap/pid
+# offlineimap has some issue joining threads and will occasionally hang
+# indefinitely. This method checks every 10 seconds if the process
+# identified as $1 is still running.  After a number of checks
+# (~5 minutes for quick, ~15 minutes for normal), it kills it. Return
+# non-zero to indicate something was killed.
+monitor() {
+    local pid=$1 i=0
+    local time=30
 
-if ps $pid &>/dev/null; then
-  echo "Process $pid already running. Exiting..." >&2
-  exit 1
-fi
+    if (( QUICKRUN == 0 )); then
+        time=90
+    fi
 
-offlineimap -o -u quiet & monitor $!
+    while ps $pid &>/dev/null; do
+        if (( i++ > time )); then
+            echo "Max checks reached. Sending SIGKILL to ${pid}..." >&2
+            echo "[MAILRUN] Sending SIGKILL to ${pid}..." >> "$LOGFILE"
+            kill -9 $pid; return 1
+        fi
+
+        sleep 10
+    done
+
+    return 0
+}
+
+check_runtype() {
+    local count
+    mkdir -p /tmp/mailrun
+    LOGFILE="/tmp/mailrun/${RANDOM}"
+    count=$(find /tmp/mailrun -type f | wc -l)
+
+    if (( count < 5 )); then
+        OPTIONS="-q $OPTIONS -f 'INBOX'"
+    else
+        QUICKRUN=0
+        rm -rf /tmp/mailrun
+    fi
+
+    mkdir -p /tmp/mailrun
+    touch "$LOGFILE"
+}
+
+log() {
+    latest="$(ls -rt /tmp/mailrun | tail -n 1)"
+    tail -f "/tmp/mailrun/${latest}"
+}
+
+next_full() {
+    local count=$(find /tmp/mailrun -type f | wc -l)
+    local to_full=$(( 5 - count ))
+    printf 'Next full sync: %s runs\n' "$to_full"
+}
+
+status() {
+    printf '== Next Run ==\n'
+    next_full
+    printf '== Timer ==\n'
+    systemctl status --user offlineimap.timer
+    printf '== Service ==\n'
+    systemctl status --user offlineimap
+}
+
+parse_args() {
+    while [ -n "$1" ]; do
+        case "$1" in
+            'go')
+                printf 'Doing mail run...\n'
+                ;; # noop
+            'log')
+                log
+                exit 0
+                ;;
+            'next')
+                next_full
+                exit 0
+                ;;
+            'help')
+                usage
+                exit 0
+                ;;
+            'status')
+                status
+                exit 0
+                ;;
+            *)
+                usage
+                exit 1
+                ;;
+        esac
+        shift
+    done
+}
+
+main() {
+    parse_args "$@"
+    read -r pid < ~/.offlineimap/pid
+
+    if ps $pid &>/dev/null; then
+      echo "Process $pid already running. Exiting..." >&2
+      exit 1
+    fi
+
+    check_runtype
+    print 'offlineimap %s\n' "$OPTIONS" > "$LOGFILE"
+    offlineimap $OPTIONS &> "$LOGFILE" & monitor $!
+}
+
+main "$@"

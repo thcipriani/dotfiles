@@ -13,7 +13,7 @@ mailboxes \
   "+[Gmail].Drafts" \
   "+[Gmail].Sent Mail" \
   "+[Gmail].Spam" \
-  "+[Gmail].Trash "
+  "+[Gmail].Trash"
 
 # main options
 set realname   = "Tyler Cipriani"
@@ -117,3 +117,10 @@ macro index ,s \
     <change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
     <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
         "notmuch: search mail"
+
+macro index,pager ,v \
+    "<copy-message>/tmp/mutttmpbox\n<enter> \
+    <shell-escape>~/.mutt/viewhtmlmail.py<enter>" \
+    "View HTML in browser"
+
+auto_view text/html
