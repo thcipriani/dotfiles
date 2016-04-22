@@ -123,4 +123,8 @@ macro index,pager ,v \
     <shell-escape>~/.mutt/viewhtmlmail.py<enter>" \
     "View HTML in browser"
 
+# Sanely handle multi-part messages (prefer text part, but yield to
+# mailcap-configured rendering for html-only)
+# http://terminalmage.net/2014/03/16/how-i-read-html-email-with-mutt.html
+alternative_order text/plain text/html
 auto_view text/html

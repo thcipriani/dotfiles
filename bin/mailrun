@@ -3,12 +3,13 @@
 # Program is a rip off of pbrisbin's mailrun
 # <https://github.com/pbrisbin/mutt-config/blob/master/bin/mailrun>
 #
-# This version, however, runs 5 short offlineimap runs of only the inbox
+# This version, however, runs a number of short offlineimap runs of only the inbox
 # between executing full runs.
 
 QUICKRUN=1
 OPTIONS='-o'
 LOGFILE=''
+SHORTRUNS=3
 
 usage() {
     printf '%s\n' "$(basename $0) [go|log|next|status|help]"
@@ -46,7 +47,7 @@ check_runtype() {
     LOGFILE="/tmp/mailrun/${RANDOM}"
     count=$(find /tmp/mailrun -type f | wc -l)
 
-    if (( count < 5 )); then
+    if (( count < SHORTRUNS )); then
         OPTIONS="-q $OPTIONS -f 'INBOX'"
     else
         QUICKRUN=0
@@ -64,7 +65,7 @@ log() {
 
 next_full() {
     local count=$(find /tmp/mailrun -type f | wc -l)
-    local to_full=$(( 5 - count ))
+    local to_full=$(( SHORTRUNS - count ))
     printf 'Next full sync: %s runs\n' "$to_full"
 }
 
