@@ -76,7 +76,7 @@ ssh squiggle
 #+END_SRC
 
 I can make sure I'm on the server, by checking the hostname, again, in
-the same =:session=. One important not that it took a while to figure out:
+the same =:session=. One important note that it took a while to figure out:
 I have to use the =:exports both= argument for the source block to show
 the results in the HTML output.
 #+BEGIN_SRC sh :session squiggle :exports both
@@ -101,7 +101,7 @@ Now, locally, without using the =:session=. I can save and commit this file
 to my =.dotfiles= repo:
 #+BEGIN_SRC sh :results output :exports both
 /usr/bin/git -C /home/tyler/.dotfiles add plan
-/usr/bin/git -C /home/tyler/.dotfiles commit -m 'Update org-mode styles'
+/usr/bin/git -C /home/tyler/.dotfiles commit -m '.plan spelling fixes'
 /usr/bin/git -C /home/tyler/.dotfiles push
 #+END_SRC
 
@@ -121,7 +121,7 @@ page using the =squigglegen= command.
 : Applying: [LOCAL HACK] Emacs publish squigglegen
 : Updating
 
-* Typographically Perlious
+* Typographically Perilous
 :PROPERTIES:
 :DATE: <2016-03-02 Wed>
 :END:
@@ -161,34 +161,30 @@ Never thought about it:
 :DATE: <2015-11-06 Fri>
 :END:
 
-- "Finding RFCs for a particular topic is an art."
-http://www.ietf.org/newcomers.html#whither
+[[http://www.ietf.org/newcomers.html#whither]["Finding RFCs for a particular topic is an art."]]
 
-- Good 'n's
-    - https://tools.ietf.org/html/rfc3161
-    - https://tools.ietf.org/html/rfc2616
-    - https://tools.ietf.org/html/rfc3986
-    - https://tools.ietf.org/html/rfc3920
-    - https://tools.ietf.org/html/rfc1459
-    - https://tools.ietf.org/html/rfc2151
-    - https://tools.ietf.org/html/rfc3339
-    - https://tools.ietf.org/html/rfc1288
-    - https://tools.ietf.org/html/rfc863
-    - https://tools.ietf.org/html/rfc2324
-    - https://tools.ietf.org/html/rfc2549
-    - https://tools.ietf.org/html/rfc2795
-    - https://tools.ietf.org/html/rfc1918
-    - https://tools.ietf.org/html/rfc7763
+** Good 'n's
+- [[https://tools.ietf.org/html/rfc6187][RFC: 6187: X.509 for SSH]]
+- [[https://tools.ietf.org/html/rfc3161][RFC 3161: X.590 Timestamp protocol]]
+- [[https://tools.ietf.org/html/rfc2616][RFC 2616: HTTP/1.1]]
+- [[https://tools.ietf.org/html/rfc3986][RFC 3986: URI: Generic Syntax]]
+- [[https://tools.ietf.org/html/rfc3920][RFC 3920: XMPP]]
+- [[https://tools.ietf.org/html/rfc1459][RFC 1459: IRC Protocol]]
+- [[https://tools.ietf.org/html/rfc2151][RFC 2151: Primer on Internet and TCP/IP Tools and Utilities]]
+- [[https://tools.ietf.org/html/rfc3339][RFC 3339: Date and Time on the Internet: Timestamps (like ISO 8601)]]
+- [[https://tools.ietf.org/html/rfc1288][RFC 1288: Finger User Info Protocol]]
+- [[https://tools.ietf.org/html/rfc863][RFC 863: Discard Protocol]]
+- [[https://tools.ietf.org/html/rfc2324][RFC 2424: Hyper Text Coffee Pot Protocol]]
+- [[https://tools.ietf.org/html/rfc2549][RFC 2549: IP Over Avian Carriers with QOS]]
+- [[https://tools.ietf.org/html/rfc2795][RFC 2795: Infinite Monkey Protocol Suite]]
+- [[https://tools.ietf.org/html/rfc1918][RFC 1918: IP Allocation for Private Networks]]
+- [[https://tools.ietf.org/html/rfc7763][RFC 7763: The =text/markdown= Media Type]]
+- [[https://tools.ietf.org/html/rfc1855][RFC 1855: Netiquette Guidelines]]
+- [[https://tools.ietf.org/html/rfc1178][MEMO: RFC 1178: Choosing a Name for Your Computer]]
 
 ** Markdown related
-- [[https://tools.ietf.org/html/rfc7763][The text/markdown media type]]
+- [[https://tools.ietf.org/html/rfc7763][RFC 7763: The =text/markdown= Media Type]]
 - [[https://tools.ietf.org/html/rfc7328.html][Writing I-Ds and RFCs Using Pandoc and a Bit of XML]]
-
-** Memos That make me happy.
-- https://tools.ietf.org/html/rfc1178
-
-** Helpful Informational RFCs
-- https://tools.ietf.org/html/rfc1855
 
 * XSS String
 :PROPERTIES:
@@ -231,13 +227,13 @@ The Magic Words are Squeamish Ossifrage
 :PROPERTIES:
 :DATE: <2015-05-02 Sat>
 :END:
-#+BEGIN_VERSE
+#+BEGIN_QUOTE
 You held your head like a hero
 On a history book page
 It was the end of a decade
 But the start of an age
 - Taylor Swift, Voice of Our Age
-#+END_VERSE
+#+END_QUOTE
 
 * Gall's Law
 :PROPERTIES:
@@ -289,7 +285,7 @@ Hardware I think about:
 :DATE: <2015-01-20 Tue>
 :END:
 
-1) Solar Claculation Details
+1) Solar Calculation Details
    http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html
 2) Diceware passphrase
    http://world.std.com/~reinhold/diceware.html

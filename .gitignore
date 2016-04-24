@@ -22,3 +22,7 @@ newsbeuter/history.search
 
 # ignored because symlink may change
 xmobarrc
+
+# Emacs things
+\#*\#
+.\#*
