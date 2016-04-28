@@ -1,19 +1,20 @@
 set mbox_type   = Maildir
 set sendmail    = /usr/bin/msmtp
 
-set folder      = ~/Mail/Gmail
+set folder      = ~/Mail/Gmail/
 set spoolfile   = "+INBOX"
-set mbox        = "+[Gmail].All Mail"
-set postponed   = "+[Gmail].Drafts"
+set mbox        = "+archive"
+set postponed   = "+drafts"
 unset record
 
 mailboxes \
   "+INBOX" \
-  "+[Gmail].Starred" \
-  "+[Gmail].Drafts" \
-  "+[Gmail].Sent Mail" \
-  "+[Gmail].Spam" \
-  "+[Gmail].Trash"
+  "+starred" \
+  "+drafts" \
+  "+archive" \
+  "+sent" \
+  "+spam" \
+  "+trash"
 
 # main options
 set realname   = "Tyler Cipriani"

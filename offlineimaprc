@@ -11,6 +11,14 @@ postsynchook = notmuch new
 [Repository Gmail-Local]
 type = Maildir
 localfolders = ~/Mail/Gmail
+nametrans = lamda folder: {'archive': '[Gmail]/All Mail',
+                           'drafts': '[Gmail]/Drafts',
+                           'important': '[Gmail]/Important',
+                           'sent': '[Gmail]/Sent Mail',
+                           'spam': '[Gmail]/Spam',
+                           'starred': '[Gmail]/Starred',
+                           'trash': '[Gmail]/Trash',
+                          }.get(folder, folder)
 
 [Repository Gmail-Remote]
 type = Gmail
@@ -21,3 +29,26 @@ maxconnections = 3
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 # https://bbs.archlinux.org/viewtopic.php?pid=1588425#p1588425
 auth_mechanisms = LOGIN
+
+# Translate to something reasonable on disk
+# Fuck yeah it's python.
+nametrans = lamda folder: {'[Gmail]/All Mail': 'archive',
+                           '[Gmail]/Drafts': 'drafts',
+                           '[Gmail]/Important': 'important',
+                           '[Gmail]/Sent Mail': 'sent',
+                           '[Gmail]/Spam': 'spam',
+                           '[Gmail]/Starred': 'starred',
+                           '[Gmail]/Trash': 'trash',
+                          }.get(folder, folder)
+
+# Only sync folders that return True from lamda
+# Fuck yeah it's python.
+folderfilter = lambda folder: folder in ['[Gmail]/All Mail',
+                                         '[Gmail]/Drafts',
+                                         '[Gmail]/Important',
+                                         '[Gmail]/Sent Mail',
+                                         '[Gmail]/Spam',
+                                         '[Gmail]/Starred',
+                                         '[Gmail]/Trash',
+                                         'INBOX',
+                                        ]
