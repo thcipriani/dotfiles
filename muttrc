@@ -18,7 +18,12 @@ mailboxes \
 
 # main options
 set realname   = "Tyler Cipriani"
-set from       = "tyler@tylercipriani.com"
+# set from       = "tyler@tylercipriani.com"
+#
+send-hook . "set from = tyler@tylercipriani.com"
+send-hook "~t @wikimedia.org" "set from = tcipriani@wikimedia.org"
+send-hook "~t @lists.wikimedia.org" "set from = tcipriani@wikimedia.org"
+
 set mail_check = 0
 set envelope_from
 

@@ -53,7 +53,7 @@ import uuid
 
 
 MAILDIR = '/tmp/mutttmpbox'
-TMPDIR  = '/tmp/muttmail'
+TMPDIR = '/tmp/muttmail'
 TMPFILE = os.path.join(TMPDIR, 'email.html')
 CONTENTS = []
 HTML_FMT = ('<html><head><meta charset="%s" />'
@@ -76,7 +76,6 @@ def add_inline_images(msg, html):
 
 def handle_html(msg, subject, charset=None):
     """Handle html part of alternative message."""
-
     if not charset:
         charset = 'utf-8'
 
@@ -111,7 +110,7 @@ def check_content_id(msg):
         ext = mimetypes.guess_extension(msg.get_content_type())
         fn = os.path.join(TMPDIR, '%s%s' % (str(uuid.uuid4()), ext))
 
-        CONTENTS.append({ 'id': content_id, 'filename': fn })
+        CONTENTS.append({'id': content_id, 'filename': fn})
 
         with open(fn, 'wb') as f:
             f.write(msg.get_payload(decode=True))
@@ -119,7 +118,6 @@ def check_content_id(msg):
 
 def handle_msg(msg):
     """Handle possible multipart message."""
-
     charset = msg.get_charset()
 
     html_part = None
@@ -135,7 +133,7 @@ def handle_msg(msg):
 
 def cleanup():
     """Remove any temp files laying around."""
-    time.sleep(5)
+    time.sleep(2)  # Give it a few for the browser to display the email
     shutil.rmtree(MAILDIR)
     shutil.rmtree(TMPDIR)
 
@@ -149,6 +147,7 @@ def setup():
 
 
 def main():
+    """Handle flow control and open browser."""
     setup()
 
     mbox = mailbox.Maildir(MAILDIR, factory=mailbox.MaildirMessage)
@@ -166,7 +165,10 @@ def main():
     print "Calling xdg-open file://" + TMPFILE
     os.system("xdg-open file://" + TMPFILE)
 
-    cleanup()
-
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    finally:
+        # Want to make sure that everything is cleaned up so that next
+        # run works
+        cleanup()
