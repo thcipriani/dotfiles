@@ -19,6 +19,40 @@
 
 # To export: http://orgmode.org/manual/HTML-export.html (C-c C-e h h)
 
+* What I learned about email addresses today
+:PROPERTIES:
+:DATE: <2016-05-18 Wed>
+:END:
+
+I burrowed into RFC 5322's [[https://tools.ietf.org/html/rfc5322#section-3.4.1][Address Spec]] for a long time today. This
+resulted in a fun side-trip into [[https://tools.ietf.org/html/rfc5234][Augmented BNF for Syntax
+Specifications: ABNF.]]
+
+Email addresses break down to their [[https://tools.ietf.org/html/rfc5234#appendix-B.1][Core Rules]] like this:
+#+BEGIN_SRC txt
+addr-spec       =   local-part "@" domain
+
+addr-spec       =   dot-atom / quoted-string / obs-local-part
+                    @
+                    dot-atom / domain-literal / obs-domain
+
+addr-spec       =   [CFWS] dot-atom-text [CFWS] / [CFWS]  DQUOTE *([FWS] qcontent) [FWS] DQUOTE [CFWS] / word *("." word)
+                    @
+                    [CFWS] dot-atom-text [CFWS] / [CFWS] "[" *([FWS] dtext) [FWS] "]" [CFWS] /  atom *("." atom)
+
+addr-spec       =   [(1*([FWS] comment) [FWS]) / FWS] 1*atext *("." 1*atext) [(1*([FWS] comment) [FWS]) / FWS] /
+                    [(1*([FWS] comment) [FWS]) / FWS] DQUOTE *([([*WSP CRLF] 1*WSP) /  obs-FWS] qtext / quoted-pair) [([*WSP CRLF] 1*WSP) /  obs-FWS] DQUOTE [(1*([FWS] comment) [FWS]) / FWS] /
+                    (atom / quoted-string) *("." (atom / quoted-string))
+                    @
+                    ...
+                    /me dies
+#+END_SRC
+
+The density of =local-part "@" domain= weighs on me.
+
+What was impressed upon me is how fragile communication is: a means to
+deliever a message becomes a dense message of its own.
+
 * Org-mode to publish a site
 :PROPERTIES:
 :DATE: <2016-04-18 Mon>

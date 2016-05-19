@@ -24,7 +24,7 @@ send-hook . "set from = tyler@tylercipriani.com"
 send-hook "~t @wikimedia.org" "set from = tcipriani@wikimedia.org"
 send-hook "~t @lists.wikimedia.org" "set from = tcipriani@wikimedia.org"
 
-set mail_check = 0
+set mail_check = 5
 set envelope_from
 
 unset move           # gmail does that
@@ -32,6 +32,10 @@ set delete           # don't ask, just do
 unset confirmappend  # don't ask, just do!
 set quit             # don't ask, just do!!
 unset mark_old       # read/new is good enough for me
+
+# https://www.ietf.org/rfc/rfc2646.txt
+# http://www.mdlerch.com/emailing-mutt-and-vim-advanced-config.html
+set text_flowed
 
 # sort/threading
 set sort     = threads
