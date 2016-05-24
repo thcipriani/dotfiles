@@ -9,6 +9,10 @@ unset record
 
 mailboxes \
   "+INBOX" \
+  "+CI" \
+  "+CR" \
+  "+ML.wmfall" \
+  "+ML.wikitech-l" \
   "+starred" \
   "+drafts" \
   "+archive" \

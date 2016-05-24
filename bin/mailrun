@@ -119,7 +119,11 @@ main() {
     fi
 
     check_runtype
-    printf 'offlineimap %s\n' "$OPTIONS" > "$LOGFILE"
+    if command -v imapfilter > /dev/null 2>&1; then
+        imapfilter > "$LOGFILE"
+    fi
+
+    printf 'offlineimap %s\n' "$OPTIONS" >> "$LOGFILE"
     offlineimap $OPTIONS &> "$LOGFILE" & monitor $!
 }
 
