@@ -19,6 +19,22 @@
 
 # To export: http://orgmode.org/manual/HTML-export.html (C-c C-e h h)
 
+* Stoner
+:PROPERTIES:
+:DATE: <2016-05-28 Sat>
+:END:
+#+BEGIN_QUOTE
+Deep in him, beneath his memory, was the knowledge of hardship and
+hunger and endurance and pain. Though he seldom thought of his early
+years on the Booneville farm, there was always near his consciousness
+the blood knowledge of his inheriteance, give him by forefathers whose
+lives were obscure and hard and stoical and whose common ethic was to
+present to an oppressive world faces that were expressionless and hard
+and bleak
+
+– John Williams, Stoner
+#+END_QUOTE
+
 * What I learned about email addresses today
 :PROPERTIES:
 :DATE: <2016-05-18 Wed>
@@ -50,8 +66,8 @@ addr-spec       =   [(1*([FWS] comment) [FWS]) / FWS] 1*atext *("." 1*atext) [(1
 
 The density of =local-part "@" domain= weighs on me.
 
-What was impressed upon me is how fragile communication is: a means to
-deliever a message becomes a dense message of its own.
+What was impressed upon me is how viscous all communication is: a
+means to deliever a message becomes a dense message of its own.
 
 * Org-mode to publish a site
 :PROPERTIES:
