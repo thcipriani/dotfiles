@@ -5,7 +5,7 @@
 
 # main colors
   color status      green         default
-  color indicator   brightwhite   default
+  color indicator   black         white
   color tree        blue          default
   color error       brightred     default
   color message     brightyellow  default
@@ -35,6 +35,10 @@ uncolor index "~T"
 # deleted
 uncolor index "~D"
   color index brightred default "~D"
+
+# flagged
+uncolor index "~F"
+  color index black green "~F"
 
 # set up the headers
   color header     brightyellow  default "^from:"

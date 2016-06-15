@@ -119,12 +119,15 @@ main() {
     fi
 
     check_runtype
+
+    printf '[MAILRUN] Starting\n' > "$LOGFILE"
+
     if command -v imapfilter > /dev/null 2>&1; then
-        imapfilter > "$LOGFILE"
+        imapfilter &>> "$LOGFILE" & monitor $!
     fi
 
     printf 'offlineimap %s\n' "$OPTIONS" >> "$LOGFILE"
-    offlineimap $OPTIONS &> "$LOGFILE" & monitor $!
+    offlineimap $OPTIONS &>> "$LOGFILE" & monitor $!
 }
 
 main "$@"

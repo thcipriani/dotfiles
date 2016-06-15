@@ -13,6 +13,9 @@ mailboxes \
   "+CR" \
   "+ML.wmfall" \
   "+ML.wikitech-l" \
+  "+ML.ops" \
+  "+ML.debian-devel" \
+  "+auto" \
   "+starred" \
   "+drafts" \
   "+archive" \
