@@ -69,6 +69,41 @@ The density of =local-part "@" domain= weighs on me.
 What was impressed upon me is how viscous all communication is: a
 means to deliever a message becomes a dense message of its own.
 
+A valid domain is:
+#+BEGIN_SRC txt
+   atext           =   ALPHA / DIGIT /    ; Printable US-ASCII
+                       "!" / "#" /        ;  characters not including
+                       "$" / "%" /        ;  specials.  Used for atoms.
+                       "&" / "'" /
+                       "*" / "+" /
+                       "-" / "/" /
+                       "=" / "?" /
+                       "^" / "_" /
+                       "`" / "{" /
+                       "|" / "}" /
+                       "~"
+
+   dtext           =   %d33-90 /          ; Printable US-ASCII
+                       %d94-126 /         ;  characters not including
+                       obs-dtext          ;  "[", "]", or "\"
+
+   domain          =  dot-atom / domain-literal / obs-domain
+
+   domain          =  ([CFWS] dot-atom-text [CFWS]) /                 ; dot-atom
+                      ([CFWS] "[" *([FWS] dtext) [FWS] "]" [CFWS]) /  ; domain-literal
+                      (atom *("." atom))                              ; obs-domain
+
+   domain          =  ([CFWS] 1*atext *("." 1*atext) [CFWS]) /                   ; dot-atom
+                      ([CFWS] "[" *([FWS] dtext) [FWS] "]" [CFWS]) /             ; domain-literal
+                      (([CFWS] 1*atext [CFWS]) *("." ([CFWS] 1*atext [CFWS])))   ; obs-domain
+#+END_SRC
+
+If we get rid of the Content Folding White Space which has a lot of rules and seems to be everywhere and is a context-free grammar we get something like:
+
+#+BEGIN_SRC
+(?:(?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+[a-z0-9.!#$%&'*+\/=?^_`{|}~-]*)|(?:\[(?:[\x21-\x5A]|[\x5E-\x7E]|\[\\\])\]))
+#+END_SRC
+
 * Org-mode to publish a site
 :PROPERTIES:
 :DATE: <2016-04-18 Mon>

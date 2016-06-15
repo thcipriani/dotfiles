@@ -26,3 +26,5 @@
 	submodule = log
 [grep]
 	extendRegexp = true
+[url "ssh://gerrit.wikimedia.org:29418"]
+	pushInsteadOf = https://gerrit.wikimedia.org/r/p
