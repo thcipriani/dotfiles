@@ -135,10 +135,13 @@ macro index ,s \
     <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
         "notmuch: search mail"
 
-macro index,pager ,v \
+macro pager ,v \
     "<copy-message>/tmp/mutttmpbox\n<enter> \
     <shell-escape>~/.mutt/view_html_email.py<enter>" \
     "View HTML in browser"
+
+macro pager ,l "|~/.mutt/unsub.py<enter>" \
+      "Find unsub header and open in browser"
 
 # Sanely handle multi-part messages (prefer text part, but yield to
 # mailcap-configured rendering for html-only)
