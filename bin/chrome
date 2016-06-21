@@ -4,8 +4,16 @@ has? () {
     command -v "$1" &> /dev/null;
 }
 
-if has? firejail; then
-    firejail google-chrome
-else
-    google-chrome
+if has? google-chrome; then
+    CHROME=google-chrome
 fi
+
+if has? google-chrome-stable; then
+    CHROME=google-chrome-stable
+fi
+
+if has? firejail; then
+    exec firejail "$CHROME"
+fi
+
+exec $CHROME

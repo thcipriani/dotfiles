@@ -269,7 +269,11 @@ main() {
         printf "off" > $_tabletfile
         notify-send "Laptop Mode"
         tablet "left"
+        killall cellwriter
       else
+        if command -v 'cellwriter' &> /dev/null; then
+          cellwriter --window-x=15 --window-y=100 &
+        fi
         printf "on" > $_tabletfile
         notify-send "Tablet Mode"
         tablet "right"
