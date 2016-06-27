@@ -1,6 +1,9 @@
 export MYSHELL=$(basename $SHELL)
 export EDITOR=vim
 export PAGER='less -FirSX'
+export EMAIL='tyler@tylercipriani.com'
+export DEBEMAIL='tcipriani@wikimedia.org'
+export DEBFULLNAME='Tyler Cipriani'
 
 prepend_to_path() {
   local dir="$1"

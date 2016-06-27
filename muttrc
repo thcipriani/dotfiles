@@ -143,6 +143,8 @@ macro pager ,v \
 macro pager ,l "|~/.mutt/unsub.py<enter>" \
       "Find unsub header and open in browser"
 
+macro index A "<save-message>=archive\n<sync-mailbox>"
+
 # Sanely handle multi-part messages (prefer text part, but yield to
 # mailcap-configured rendering for html-only)
 # http://terminalmage.net/2014/03/16/how-i-read-html-email-with-mutt.html

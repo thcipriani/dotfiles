@@ -69,7 +69,7 @@ _rprompt() {
 exit_code_emote() {
     case $1 in
         # 0)   prompt="(•◡•)❥";; # success
-        0) prompt="(ﾉ^ヮ^)ﾉ*:・ﾟ✧";; # success
+        0) prompt="(/^ヮ^)/*:・ﾟ✧";; # success
         127) prompt="(•ิ_•ิ)❥" ;; # command not found
         130) prompt="(☉_☉)❥" ;; # ^C
         # 148) prompt="ᕕ( ᐛ )ᕗ" ;;
