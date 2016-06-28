@@ -19,6 +19,62 @@
 
 # To export: http://orgmode.org/manual/HTML-export.html (C-c C-e h h)
 
+* Dumb git ref tricks
+
+I'm always learning and losing dumb git tricks. Here are a few I might
+lose if I don't keep them someplace:
+
+** Store a random, named blob in a repo
+
+In this case it's a GPG key
+
+#+BEGIN_SRC sh
+wget https://tylercipriani.com/018FAC02.asc
+export obj=$(git hash-object -w --stdin < 018FAC02.asc)
+git tag tyler-cipriani-gpg-key "$obj"
+rm 018FAC02.asc
+git cat-file -p $(git show-ref -s tyler-cipriani-gpg-key)
+git show tyler-cipriani-gpg-key
+#+END_SRC
+
+** Create a local symbolic reference to some reference
+
+Like that gpg key tag, for instance
+
+#+BEGIN_SRC sh
+git symbolic-ref GPG_KEY refs/tags/tyler-cipriani-gpg-key
+git show GPG_KEY
+#+END_SRC
+
+** Create a whole new kind of ref, to track something and share it around
+
+Could even store the gpg keys of lots of folks
+
+#+BEGIN_SRC sh
+wget https://tylercipriani.com/018FAC02.asc
+export obj=$(git hash-object -w --stdin < 018FAC02.asc)
+git update-ref refs/keys/tyler "$obj"
+wget https://uniontownlabs.org/toddtreece.gpg.txt
+export toddgpg=$(git hash-object -w --stdin < toddtreece.gpg.txt)
+git update-ref refs/keys/todd "$toddgpg"
+rm 018FAC02.asc toddtreece.gpg.txt
+git show refs/keys/todd
+git show refs/keys/tyler
+#+END_SRC
+
+You can even push them to a remote (github even) and fetch them back
+down on the other side:
+
+#+BEGIN_SRC sh
+git push origin refs/keys/*:refs/keys/*
+#+END_SRC
+
+#+BEGIN_SRC sh
+git clone [repo]
+git fetch origin refs/keys/*:refs/keys/*
+git show refs/keys/tyler
+#+END_SRC
+
 * Former Plan Files
 :PROPERTIES:
 :DATE: <2016-06-15 Wed>
