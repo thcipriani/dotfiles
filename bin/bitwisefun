@@ -1,0 +1,84 @@
+#!/usr/bin/env python2
+
+from __future__ import print_function
+
+import sys
+
+SYMBOLS = {
+    '>>': 'bin_shift_right',
+    '<<': 'bin_shift_left',
+    '&': 'bin_and',
+    '|': 'bin_or',
+    '^': 'bin_xor',
+    '~': 'bin_not',
+}
+
+def format_binary(num):
+    """Shows instructive binary format, e.g. 1 byte."""
+    return '{:08b}'.format(num)
+
+
+def bin_not(num):
+    """Bitwise OR."""
+    return ~num1
+
+
+def bin_and(num1, num2):
+    """Bitwise AND."""
+    return num1 & num2
+
+
+def bin_or(num1, num2):
+    """Bitwise OR."""
+    return num1 | num2
+
+
+def bin_xor(num1, num2):
+    """Bitwise XOR."""
+    return num1 ^ num2
+
+
+def bin_shift_left(num1, num2):
+    """Bitwise left shift."""
+    return num2 << num2
+
+
+def bin_shift_right(num1, num2):
+    """Bitwise right shift."""
+    return num2 >> num2
+
+if __name__ == '__main__':
+    try:
+        symbol, num1, num2 = sys.argv[1:]
+        num1 = int(num1)
+        num2 = int(num2)
+        try:
+            func = SYMBOLS[symbol.lower()]
+            func = globals()[func]
+        except KeyError:
+            print('Invalid symbol: "{}"'.format(symbol))
+            print('\nValid symbols are:')
+            for sym in SYMBOLS.keys():
+                print('\t' + sym.upper())
+            sys.exit(1)
+
+        raw_out = func(num1, num2)
+    except ValueError:
+        symbol, num1 = sys.argv[1:]
+        num2 = None
+        if symbol != '~':
+            raise
+        num1 = int(num1)
+        raw_out = bin_not(num1)
+
+    ret = '\t'
+    ret += format_binary(num1)
+    ret += ' (decimal {})'.format(num1)
+    ret += '\n{}\t'.format(symbol.upper())
+    if num2:
+        ret += format_binary(num2)
+        ret += ' (decimal {})'.format(num2)
+    ret += '\n----------------\n\t'
+    ret += format_binary(raw_out)
+    ret += ' (decimal {})'.format(raw_out)
+    print(ret)
