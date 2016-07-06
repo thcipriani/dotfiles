@@ -1,0 +1,63 @@
+#!/usr/bin/env python2
+
+from __future__ import print_function
+
+import sys
+import tempfile
+
+
+TAGS = []
+CSV = tempfile.NamedTemporaryFile(prefix='LibraryThing-', delete=False)
+COLS = ['TITLE',
+        '"AUTHOR (last, first)"',
+        'DATE',
+        'ISBN',
+        '"PUBLICATION INFO"',
+        'TAGS',
+        'RATING',
+        'REVIEW',
+        '"DATE READ"',
+        '"PAGE COUNT"']
+
+ROW = '"","","","{isbn}","","{tags}","","","",""\n'
+
+def exit():
+    print('Library file: {}'.format(CSV.name))
+    CSV.close()
+    sys.exit(0)
+
+
+CSV.write('{}\n'.format(','.join(COLS)))
+
+while True:
+    try:
+        user_input = raw_input('ISBN, [t]ag, or [q]uit: ').strip()
+        if not user_input:
+            continue
+
+        if user_input == 'q':
+            exit()
+
+        if user_input == 't':
+            # tag_prompt = "Change tags (current tags '{}') [a]ppend/[c]hange: ".format(','.join(TAGS))
+            # change = raw_input(tag_prompt).strip()
+
+            add_tags = raw_input('Tag (comma separated): ').strip()
+            add_tags = [a.strip() for a in add_tags.split(',')]
+
+            # if change == 'a' or change == 'append':
+            #     for tag in add_tags:
+            #         TAGS.append(tag)
+
+            # if change == 'c' or change == 'change':
+            #     TAGS = add_tags
+
+            TAGS = add_tags
+
+            continue
+
+        new_row = ROW.format(isbn=user_input, tags=','.join(TAGS))
+        print(new_row.strip())
+        CSV.write(new_row)
+    except KeyboardInterrupt:
+        exit()

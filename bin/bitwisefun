@@ -40,12 +40,12 @@ def bin_xor(num1, num2):
 
 def bin_shift_left(num1, num2):
     """Bitwise left shift."""
-    return num2 << num2
+    return num1 << num2
 
 
 def bin_shift_right(num1, num2):
     """Bitwise right shift."""
-    return num2 >> num2
+    return num1 >> num2
 
 if __name__ == '__main__':
     try:
