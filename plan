@@ -19,6 +19,40 @@
 
 # To export: http://orgmode.org/manual/HTML-export.html (C-c C-e h h)
 
+* Bitwise Gotcha
+
+I've been working on porting some bitwise logic from Java to Python
+and it's been as awful as that sentence sounds.
+
+The main gotcha that I've run into has something to do with the fact
+that an =int= in Java is 32-bits so the logical =NOT= of an integer is
+different in Python vs Java.
+
+So in python you get:
+#+BEGIN_SRC python
+>>> bin(~0x000000ff)
+'-0b100000000'
+#+END_SRC
+
+Whereas with java:
+#+BEGIN_SRC java
+public class BitWise {
+    public static void main(String[] args) {
+        System.out.format("%s\n", Integer.toBinaryString(~0x000000ff));  // Prints: 11111111111111111111111100000000
+    }
+}
+#+END_SRC
+
+I ran into a problem because I was trying to =XOR= the output of a
+=NOT= which, obviously, comes out differently if you have different
+expecations what comes from =NOT=, i.e.:
+#+BEGIN_SRC python
+assert(0b11111111111111111111111100000000 != -0b100000000)
+#+END_SRC
+
+The way around this for me, was to =AND= the =NOT= output with
+=0xffffffff=. There are probably some weird edge-cases here =¯\_(ツ)_/¯=.
+
 * Dumb git ref tricks
 
 I'm always learning and losing dumb git tricks. Here are a few I might
