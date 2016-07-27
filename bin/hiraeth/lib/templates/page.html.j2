@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="home" href="..">{{ site_name }}</a></li>
+                <li>{{ title }}</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="images">
+    {% if info %}
+    <p class="gallery-info">
+    {{ info }}
+    </p>
+    {% endif %}
+{{ body }}
+    </main>
+
+    <footer>
+        <p>
+            All pixels lovingly mashed by Tyler Cipriani
+        </p>
+        <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" src="cc-by-sa-4.0.png">
+          </a>
+        </p>
+    </footer>
+</body>
+</html>

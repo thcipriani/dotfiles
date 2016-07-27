@@ -1,0 +1,13 @@
+#!/usr/bin/env python2
+
+import os
+import sys
+
+root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+src = os.path.join(root, 'lib')
+
+sys.path.append(src)
+
+import hiraeth
+
+hiraeth.App.run(root)

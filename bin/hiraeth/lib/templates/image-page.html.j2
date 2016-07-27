@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    {% if prev %}
+    <link rel="prev" href="/2016/01/19/Command-Timing-Bash-Prompt.html" />
+    {% endif %}
+    {% if next %}
+    <link rel="next" href="/2016/01/19/Command-Timing-Bash-Prompt.html" />
+    {% endif %}
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../..">{{ site_name }}</a></li>
+                <li><a href="../..">{{ gallery }}</a></li>
+                <li>{{ title }}</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="image">
+        <img src="{{ image }}">
+        <p>
+            {{ caption }}
+        </p>
+
+        <div class="next-links">
+            {% if prev %}
+            <a href="{{ prev }}">Prev</a>
+            {% endif %}
+            |
+            {% if next %}
+            <a href="{{ next }}">Next</a>
+            {% endif %}
+        </div>
+
+        <table>
+        <th><td colspan=2>Full Exif Info</td></th>
+        {% for key, value in exif.iteritems() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </main>
+
+    <footer>
+        <p>
+        <a href="small.html">Small</a> <a href="index.html">Medium</a> <a href="large.html">Large</a> <a href="{{ original }}">Original</a>
+        </p>
+        <p>
+            All pixels lovingly mashed by Tyler Cipriani
+        </p>
+        <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" src="../../cc-by-sa-4.0.png">
+          </a>
+        </p>
+    </footer>
+</body>
+</html>

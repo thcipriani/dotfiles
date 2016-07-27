@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -eu
+
+if (( $# != 2 )); then
+    printf 'Usage: %s path/to/metadata.yaml path/to/public_html\n' "$(basename "$0")"
+    exit 1
+fi
+
+METADATA="$1"
+DIR="$2"
+
+if [ ! -f "$METADATA" ]; then
+    printf '%s is not a file!' "$METADATA"
+    exit 2
+fi
+
+if [ ! -d "$DIR" ]; then
+    printf '%s is not a directory!' "$DIR"
+    exit 3
+fi
+
+# Standardize format for $DIR
+DIR=$( cd "$DIR" && pwd )
+
+eval "$( "$HOME"/.amazonrc )"
+
+PATH=$(grep path "$METADATA" | cut -d':' -f2 | xargs)
+[[ $PATH == /*/ ]] && PATH=${PATH:1:(-1)}
+
+/usr/sbin/s3cmd put --recursive "${DIR}/" "s3://photos.tylercipriani.com/${PATH}/"
+/usr/sbin/s3cmd setacl --acl-public  --recursive "s3://photos.tylercipriani.com/${PATH}/"
