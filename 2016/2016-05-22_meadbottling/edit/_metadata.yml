@@ -1,0 +1,33 @@
+---
+title: Mead bottling and IPA Kegging
+cover: hops
+info: |
+    This is me racking an <a
+    href="https://blazeyandtyler.com/wiki/American_IPA">IPA</a> I made for the
+    2nd round of the National Homebrewing Competition.<br><br>This also shows
+    images of me bottling an <a
+    href="https://blazeyandtyler.com/wiki/Orange_Blossom_Mead">orange blossom
+    mead</a>.
+path: /2016-05-22_meadbottling/
+images:
+    - IMG_0171.JPG.optim.jpg:
+        title: hops
+        caption: Hops Ready to Add
+    - IMG_0172.JPG.optim.jpg:
+        title: racking-to-fermentor
+        caption: Racking to fermentor from conical
+    - IMG_0178.JPG.optim.jpg:
+        title: bottling-setup
+        caption: Mead Bottling Setup
+    - IMG_0179.JPG.optim.jpg:
+        title: finished-bottling
+        caption: Finished bottles
+    - IMG_0180.JPG.optim.jpg:
+        title: mead-glass
+        caption: Orange Blossom Mead in a glass
+    - IMG_0183.JPG.optim.jpg:
+        title: final-ipa
+        caption: Drinking an IPA
+    - IMG_0185.JPG.optim.jpg:
+        title: final-mead
+        caption: Finished Mead in the bottle
