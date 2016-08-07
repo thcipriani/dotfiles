@@ -7,3 +7,5 @@ for file in ~/public_html/*; do
     fn=$(basename "$file")
     s3cmd setacl --acl-public  --recursive "s3://photos.tylercipriani.com/${fn}"
 done
+
+s3cmd modify --add-header='Content-type:text/css'  --recursive "s3://photos.tylercipriani.com/main.css"
