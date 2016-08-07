@@ -9,12 +9,11 @@ import os
 import shutil
 import sys
 
-import yaml
-
 from . import config
 from . import index
 from . import page
 from . import utils
+
 
 class App(object):
     def __init__(self, config):
@@ -23,7 +22,7 @@ class App(object):
         self.pic_dir = self.config.get('pic_dir')
         self.publish_dir = self.config.get('publish_dir')
         self.metadata_file = self.config.get('metadata_file')
-        self.static_dir  = self.config.get('static_dir')
+        self.static_dir = self.config.get('static_dir')
         self.paths = []
         self.sub_pages = []
 
@@ -61,8 +60,8 @@ class App(object):
             gallery.generate()
             return 0
 
-        for page in self.sub_pages:
-            page.generate()
+        for subpage in self.sub_pages:
+            subpage.generate()
 
         return 0
 
@@ -71,8 +70,10 @@ class App(object):
         ap = argparse.ArgumentParser()
         ap.add_argument('-c', '--config', help='Config file')
         args = ap.parse_args()
+        args = vars(args)
+        args['is_index'] = True
 
-        app = cls(config.Config(root_path, vars(args)))
+        app = cls(config.Config(root_path, args))
         sys.exit(app.main(index_page=True))
 
     @classmethod

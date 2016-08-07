@@ -98,10 +98,21 @@ a {
  * Improve readability of focused elements when they are also in an
  * active/hover state.
  */
+a,
+a:link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #18f;
+}
 
 a:active,
 a:hover {
-  outline: 0;
+    outline: 0;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #6a4c96
 }
 
 /* Text-level semantics
@@ -188,6 +199,7 @@ sub {
 
 img {
   border: 0;
+  max-width: 100%;
 }
 
 /**
@@ -475,15 +487,30 @@ header li:first-child:before {
 }
 
 footer {
-    text-align: center;
+    text-align: right;
+    color: #999;
     font-size: 0.8em;
-    line-height: 4em;
+    padding: 2em 2em 1em 2em;
+    border-top: 1px solid gainsboro;
+    margin: 1em 0;
 }
 
 .img {
     display: inline-block;
     padding: 3em;
-    text-align: center;
+    text-align: left;
+    max-width: 22em;
+    vertical-align: top;
+}
+
+.img-caption {
+    margin: 1em 0 0;
+}
+
+.img-copyright {
+    color: #999;
+    font-size: 0.75em;
+    margin: 0.5em 0;
 }
 
 .images {
@@ -497,7 +524,7 @@ footer {
 }
 
 .next-links {
-    text-align: center;
+    text-align: right;
     padding: 2em;
 }
 

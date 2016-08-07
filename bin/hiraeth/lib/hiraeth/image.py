@@ -7,6 +7,8 @@ import subprocess
 import jinja2
 import shutil
 
+from datetime import date
+
 from PIL import Image
 
 from . import utils
@@ -14,12 +16,15 @@ from . import utils
 
 IMG_PATH = 'images'
 
+
 class PageImage(object):
 
     index = 0
 
     def __init__(self, img_path, page, config):
-        self.image = Image.open(img_path)
+        if not config.get('is_index'):
+            self.image = Image.open(img_path)
+
         self.page = page
         self.src_path = img_path
         self.config = config
@@ -48,9 +53,9 @@ class PageImage(object):
             self.title = info
 
         try:
-            self.caption = info.get('caption', self.title)
-        except AttributeError:
-            self.caption = self.title
+            self.caption = info['caption']
+        except (TypeError, KeyError):
+            self.caption = ''
 
         self.dir = os.path.join(self.config.get('publish_dir'),
                                 IMG_PATH, self.title)
@@ -61,6 +66,16 @@ class PageImage(object):
         self.large_path = os.path.join(self.dir, 'large.html')
         self.original_path = os.path.join(self.dir, self.name)
 
+        copyright_holder = self.config.get('copyright_holder')
+
+        if copyright_holder:
+            year = date.today().year
+            self.copyright = 'Copyright&#169; {} {}'.format(year,
+                                                            copyright_holder)
+
+        self.license = self.config.get('license')
+        self.license_link = self.config.get('license_link')
+
     def make_thumbs(self):
         for size, height in self.config.get('thumbs').iteritems():
             utils.resize_image(self, self.size(size), side=height)
@@ -69,7 +84,8 @@ class PageImage(object):
         if size == 'thumb':
             size = 'small'
 
-        return os.path.join(self.link_dir, '{}.{}'.format(size, self.extension))
+        return os.path.join(self.link_dir, '{}.{}'.format(size,
+                                                          self.extension))
 
     def size(self, size):
         if size == 'thumb':
@@ -79,6 +95,11 @@ class PageImage(object):
 
     @property
     def extension(self):
+        if self.config.get('is_index'):
+            ext = self.src_path.split('.')[-1]
+            if ext.lower() == 'jpg':
+                return 'jpeg'
+            return ext
         return self.image.format.lower()
 
     def get_exif(self):
@@ -94,20 +115,29 @@ class PageImage(object):
             if k in self.exif.keys():
                 self.exif[k] = v
 
-    def get_next(self):
+    def get_next(self, size='medium'):
         try:
             img = self.page.images[self.index + 1]
-            return '../../' + img.link_dir
         except IndexError:
             img = self.page.images[0]
-            return '../../' + img.link_dir
 
-    def get_prev(self):
+        page = '{}.html'.format(size)
+        if size == 'medium':
+            page = 'index.html'
+
+        return '../../{}/{}'.format(img.link_dir, page)
+
+    def get_prev(self, size='medium'):
         try:
             img = self.page.images[self.index - 1]
-            return '../../' + img.link_dir
         except IndexError:
             return None
+
+        page = '{}.html'.format(size)
+        if size == 'medium':
+            page = 'index.html'
+
+        return '../../{}/{}'.format(img.link_dir, page)
 
     def generate(self):
         utils.mkdir_p(self.dir)
@@ -117,6 +147,7 @@ class PageImage(object):
 
         cfg = {}
         cfg['site_name'] = self.config.get('site_name')
+        cfg['size'] = 'medium'
         cfg['title'] = self.title
         cfg['gallery'] = self.page.title
         cfg['original'] = self.name
@@ -125,6 +156,9 @@ class PageImage(object):
         cfg['exif'] = self.exif
         cfg['next'] = self.get_next()
         cfg['prev'] = self.get_prev()
+        cfg['copyright'] = self.copyright
+        cfg['license'] = self.license
+        cfg['license_link'] = self.license_link
 
         with open(self.template, 'r') as t:
             template = jinja2.Template(t.read())
@@ -134,8 +168,12 @@ class PageImage(object):
 
         with open(self.small_path, 'w+') as f:
             cfg['image'] = 'small.{}'.format(self.extension)
+            cfg['next'] = self.get_next('small')
+            cfg['prev'] = self.get_prev('small')
             f.write(template.render(cfg))
 
         with open(self.large_path, 'w+') as f:
             cfg['image'] = 'large.{}'.format(self.extension)
+            cfg['next'] = self.get_next('large')
+            cfg['prev'] = self.get_prev('large')
             f.write(template.render(cfg))

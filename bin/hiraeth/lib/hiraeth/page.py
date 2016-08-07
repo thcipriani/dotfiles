@@ -8,11 +8,14 @@ import yaml
 
 from . import image
 
+
 class PageException(Exception):
     pass
 
+
 class Page(object):
     images = []
+
     def __init__(self, path, config):
         self.root_path = os.path.dirname(path)
         with open(path, 'r') as m:
@@ -52,6 +55,9 @@ class Page(object):
             cfg['caption'] = img.caption
             cfg['img_path'] = img.link_dir
             cfg['thumb_path'] = img.link_size('thumb')
+            cfg['copyright'] = img.copyright
+            cfg['license'] = img.license
+            cfg['license_link'] = img.license_link
 
             with open(self.image_template, 'r') as t:
                 template = jinja2.Template(t.read())
@@ -84,8 +90,12 @@ class Page(object):
         img = self.images[0]
         default = img.title
         img = self._img_by_name(self.metadata.get('cover', default))
-        return os.path.join(self.metadata['path'], image.IMG_PATH, img.title,
-                            'small.{}'.format(img.extension))
+        try:
+            return os.path.join(self.metadata['path'], image.IMG_PATH,
+                                img.title, 'small.{}'.format(img.extension))
+        except AttributeError:
+            import pdb
+            pdb.set_trace()
 
     @property
     def safe_title(self):

@@ -1,4 +1,8 @@
-<a class="img" href="{{ img_path }}">
-    <img src="{{ thumb_path }}">
-    <p class="caption">{{caption}}</p>
-</a>
+<div class="img">
+    <a class="img-thumb" title="{{title}}" href="{{ img_path }}"><img src="{{ thumb_path }}"></a>
+    <h3><a class="img-title" href="{{img_path}}">{{title}}</a></h3>
+    {%- if caption -%}
+    <p class="img-caption">{{caption}}</p>
+    {%- endif -%}
+    <p class="img-copyright">{{copyright}} <a class="img-license"title="license" href={{license_link}}>{{license}}</a></p>
+</div>

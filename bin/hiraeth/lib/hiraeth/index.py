@@ -4,7 +4,6 @@
 import os
 
 import jinja2
-import yaml
 
 
 class Gallery(object):
@@ -13,7 +12,8 @@ class Gallery(object):
         self.config = config
         self.titles = []
 
-        self.index_path = os.path.join(self.config.get('publish_dir'), 'index.html')
+        self.index_path = os.path.join(self.config.get('publish_dir'),
+                                       'index.html')
 
         template_dir = self.config.get('template_dir')
         self.template = os.path.join(template_dir, 'index.html.j2')
@@ -25,7 +25,8 @@ class Gallery(object):
         for page in self.sub_pages:
 
             self.titles.append({
-                'caption': page.title,
+                'title': page.title,
+                'caption': page.info,
                 'img_path': page.metadata['path'],
                 'thumb_path': page.cover})
 
@@ -41,7 +42,7 @@ class Gallery(object):
             template = jinja2.Template(t.read())
 
         cfg = {'site_name': self.config.get('site_name'),
-                'body': '\n'.join(html)}
+               'body': '\n'.join(html)}
 
         with open(self.index_path, 'w+') as i:
             i.write(template.render(cfg))

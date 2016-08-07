@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
     {% if prev %}
-    <link rel="prev" href="/2016/01/19/Command-Timing-Bash-Prompt.html" />
+    <link rel="prev" href="{{ prev }}" />
     {% endif %}
     {% if next %}
-    <link rel="next" href="/2016/01/19/Command-Timing-Bash-Prompt.html" />
+    <link rel="next" href="{{ next }}" />
     {% endif %}
 </head>
 <body>
@@ -23,21 +23,28 @@
             </ul>
         </nav>
     </header>
+    <div class="next-links">
+        {% if prev %}
+        <a href="{{ prev }}">Prev</a>
+        {% endif %}
+        |
+        {% if next %}
+        <a href="{{ next }}">Next</a>
+        {% endif %}
+    </div>
+
+
     <main class="image">
         <img src="{{ image }}">
+
+        <h1>{{title}}</h1>
         <p>
             {{ caption }}
         </p>
 
-        <div class="next-links">
-            {% if prev %}
-            <a href="{{ prev }}">Prev</a>
-            {% endif %}
-            |
-            {% if next %}
-            <a href="{{ next }}">Next</a>
-            {% endif %}
-        </div>
+        <p>
+        <a href="small.html">Small</a> | <a href="index.html">Medium</a> | <a href="large.html">Large</a> | <a href="{{ original }}">Original</a>
+        </p>
 
         <table>
         <th><td colspan=2>Full Exif Info</td></th>
@@ -51,9 +58,6 @@
     </main>
 
     <footer>
-        <p>
-        <a href="small.html">Small</a> <a href="index.html">Medium</a> <a href="large.html">Large</a> <a href="{{ original }}">Original</a>
-        </p>
         <p>
             All pixels lovingly mashed by Tyler Cipriani
         </p>

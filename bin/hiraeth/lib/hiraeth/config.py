@@ -5,17 +5,22 @@ import os
 
 import yaml
 
+
 class Config(object):
     DEFAULTS = {
         'pic_dir': os.path.expanduser('~/Pictures'),
         'publish_dir': os.path.expanduser('~/public_html'),
         'metadata_file': '_metadata.y*ml',
         'site_name': 'Muh Photos',
+        'license': 'CC-BY-SA 4.0',
+        'license_link': 'https://creativecommons.org/licenses/by-sa/4.0/',
+        'is_index': False,
         'thumbs': {
-            'small': 160,
-            'medium': 400,
-            'large': 800,
-        }
+            'small': 240,
+            'medium': 640,
+            'large': 2048,
+        },
+        'copyright_holder': None,
     }
 
     def __init__(self, root, args):
