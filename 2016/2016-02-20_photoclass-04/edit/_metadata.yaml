@@ -1,10 +1,33 @@
 ---
-title: Reddit Photoclass Weekend Assignment
+title: Reddit Photoclass Assignment 04
+info: |
+    This was the focal length assignment from the <a title="Reddit Photoclass assignment 04" href="http://www.r-photoclass.com/04-focal-length/">Reddit Photoclass</a>
 path: /2016-02-20_photoclass-04/
 cover: zooming
 images:
-    - 2016-02-19_photoclass-04_0010.jpg: one
-    - 2016-02-19_photoclass-04_0011.jpg: two
-    - part-1-first-with-last.jpg: three
-    - part-1.gif: wallking
-    - part-2.gif: zooming
+    - 2016-02-19_photoclass-04_0010.jpg:
+        title: Wide
+        caption: A shot that demonstrates a short focal-length
+    - 2016-02-19_photoclass-04_0011.jpg:
+        title: Narrow
+        caption: A shot that demonstrates a long focal-length
+    - part-1-first-with-last.jpg:
+        title: Comparison
+        caption: |
+            Overlay of two photos. One photo is taken at 70mm, and one is taken
+            at 24mm
+    - part-1.gif:
+        title: Zoom
+        caption: |
+            This is a gif that demonstrates the entire focal range of a Nikor
+            24-70mm f/2.8 G. If you open the "large" version of this image, you
+            can probably see the actual focal-length for each frame.
+    - part-2.gif:
+        title: Walk and Zoom
+        caption: |
+            This is a series of photos in which I am trying to keep the framing
+            of the picture the same while backing away from the subject and
+            simultaniously zooming-in. As the focal length gets longer, the
+            background gets closer. The longer the focal length, the less depth
+            an image seems to have. If you view the "large" version of this
+            image you can see the focal-length for each frame.
