@@ -5,21 +5,25 @@
 = About Me =
 
 == An Autohagiography ==
-    Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
-    dotfile tinkerer and unabashed Sriracha addict&mdash; are
-    all true (and potentially derisive) things that could be
-    said about me. I am currently a release engineer at the
-    [Wikimedia Foundation](https://wikimediafoundation.org/wiki/Home)
-    working remotely from sunny Boulder, Colorado.
 
-    When I’m not thinking about how to make the web a better, more
-    dynamic place&mdash;you’ll find me <a href="/brewing/index.html">homebrewing beer</a>, roasting coffee
-    or making the _final_ adjustment to my admittedly already
-    ridiculous collection of <a href="https://github.com/thcipriani/dotfiles/" target="_blank" title="My Awesome dotfiles">dotfiles</a>.
+Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
+dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
+potentially derisive) things that could be said about me. I am currently a
+release engineer at the [[Wikimedia
+Foundation|https://wikimediafoundation.org/wiki/Home]] working remotely from
+sunny Boulder, Colorado.
+
+When I’m not thinking about how to make the web a better, more dynamic
+place&mdash;you’ll find me
+[[homebrewing|http://blazeyandtyler.com/wiki/Category:Beer]] beer [[roasting
+coffee|https://blazeyandtyler.com/wiki/Category:Coffee]], [[snapping
+photos|http://photos.tylercipriani.com/]], or making the //final// adjustment
+to my admittedly already ridiculous collection of
+[[dotfiles|https://github.com/thcipriani/dotfiles/]].
 
 = Contact =
 == Holler at your boy ==
-* &#116;&#x79;&#108;&#x65;&#114;&#32;&#x61;&#116;&#32;&#116;&#x79;&#108;&#x65;&#114;&#x63;&#x69;&#112;&#114;&#x69;&#x61;&#110;&#x69;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;
+* [[tyler@tylercipriani.com|mailto:tyler@tylercipriani.com]]
 * irc: thcipriani (Freenode)
 * [[@thcipriani|https://twitter.com/thcipriani]]
 * [[github|https://github.com/thcipriani]]
@@ -31,12 +35,6 @@
 * [[Keybase|https://keybase.io/thcipriani]]
 * Fingerprint: <code>6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02</code>
 
-
-[[!if test="enabled(sidebar)" then="""
-[[!sidebar]]
-""" else="""
 [[!inline pages=sidebar raw=yes]]
-"""]]
 
-
-This blog is powered by [[ikiwiki|http://ikiwiki.info]].
+{{/static/images/fsf.png|Free Software Foundation Member}}

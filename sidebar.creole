@@ -2,8 +2,8 @@
 [[!calendar pages="page(./blog/*) and !*/Discussion"]]
 """]]
 
-=== The last 5 posts to my weblog were: ===
+=== The last 5 posts to my [[weblog|blog]] were: ===
 
-[[!inline pages="page(./blog/*) and !*/Discussion" archive=yes feedshow=5 quick=yes trail=yes]]
+[[!inline pages="page(./blog/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=yes]]
 
-[[!pagestats style="list" pages="./tags/*" among="./posts/*"]]
+[[!pagestats style="list" pages="./tags/*" among="./blog/*"]]

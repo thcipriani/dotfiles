@@ -1,11 +1,5 @@
-[[!if test="enabled(sidebar)" then="""
-[[!sidebar]]
-""" else="""
-[[!inline pages=sidebar raw=yes]]
-"""]]
-
 [[!inline pages="page(./blog/*) and !*/Discussion" show="10"
-actions=yes rootpage="blog"]]
+actions=yes rootpage="blog" postform=false]]
 
 
 This blog is powered by [ikiwiki](http://ikiwiki.info).
