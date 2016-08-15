@@ -1,0 +1,9 @@
+[[!if test="enabled(calendar)" then="""
+[[!calendar pages="page(./blog/*) and !*/Discussion"]]
+"""]]
+
+=== The last 5 posts to my weblog were: ===
+
+[[!inline pages="page(./blog/*) and !*/Discussion" archive=yes feedshow=5 quick=yes trail=yes]]
+
+[[!pagestats style="list" pages="./tags/*" among="./posts/*"]]

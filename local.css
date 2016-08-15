@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'Old Standard TT';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/static/fonts/oldstandard_tt/oldstandard-tt.eot') format('eot');
+    src: local('Old Standard TT Regular'),
+         local('OldStandardTT-Regular'),
+         url('/static/fonts/oldstandard-tt/oldstandard-tt.eot') format('embedded-opentype'),
+         url('/static/fonts/oldstandard-tt/oldstandard-tt.woff2') format('woff2'),
+         url('/static/fonts/oldstandard-tt/oldstandard-tt.woff') format('woff'),
+         url('/static/fonts/oldstandard-tt/oldstandard-tt.ttf') format('truetype'),
+         url('/static/fonts/oldstandard-tt/oldstandard-tt.svg#OldStandardTT') format('svg');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Old Standard TT Italic'),
+       local('OldStandardTT-Italic'),
+       url('/static/fonts/oldstandard-tt/oldstandard-tt_italic.woff2') format('woff2'),
+       url('/static/fonts/oldstandard-tt/oldstandard-tt_italic.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body {
+    color: #444;
+    background: #FEFEFE;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    /*font-size: 1.5125em;
+    line-height: 1.52381;*/
+    font-size: 1.25em;
+    line-height: 1.52381;
+    font-family: "Old Standard TT", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+
+    font-variant-ligatures: common-ligatures additionalligatures;
+
+    -webkit-font-feature-settings: "liga";
+       -moz-font-feature-settings: "liga=1, dlig=0";
+        -ms-font-feature-settings: "liga";
+         -o-font-feature-settings: "liga";
+            font-feature-settings: "liga";
+
+    -webkit-font-smoothing: antialiased;
+}
+/* Higlighter colors */
+::selection {
+  background: #c0f541;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #c0f541;
+  text-shadow: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    margin: 1em 0 0;
+    font-size: 1.5625em;
+}
+
+h2 {
+    font-size: 1.25em;
+    margin: 0 0 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+    font-weight: 400;
+    -webkit-font-feature-settings: "liga", "dlig";
+       -moz-font-feature-settings: "liga=1, dlig=1";
+        -ms-font-feature-settings: "liga", "dlig";
+         -o-font-feature-settings: "liga", "dlig";
+            font-feature-settings: "liga", "dlig";
+}
+
+a:link,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  text-decoration: underline\9;
+  text-shadow: 2px 0 0 #fefefe, -2px 0 0 #fefefe;
+  background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
+  background-image: -webkit-linear-gradient(left, currentColor 0%, currentColor 100%);
+  background-image:      -o-linear-gradient(left, currentColor 0%, currentColor 100%);
+  background-image:      -o-linear-gradient(left, currentColor 0%, currentColor 100%);
+  background-image:         linear-gradient(to right, currentColor 0%, currentColor 100%);
+  background-repeat: repeat-x;
+  background-position: 0 90%;
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+}
+
+a:link { color: #3498DB; }
+a:visited { color: #6a4c96; }
+a:hover { color: #06c; }
+
+a[href^="https://"]:after,
+a[href^="http://"]:after {
+  content: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Cpath%20fill%3D%22%23fff%22%20stroke%3D%22%233498DB%22%20d%3D%22M1.5%204.518h5.982V10.5H1.5z%22%2F%3E%3Cpath%20d%3D%22M5.765%201H11v5.39L9.427%207.937l-1.31-1.31L5.393%209.35l-2.69-2.688%202.81-2.808L4.2%202.544z%22%20fill%3D%22%2306f%22%2F%3E%3Cpath%20d%3D%22M9.995%202.004l.022%204.885L8.2%205.07%205.32%207.95%204.09%206.723l2.882-2.88-1.85-1.852z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E);
+  margin: 0 0 0 5px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+a.feedbutton {
+    background-image: none;
+    text-shadow: none;
+}
+
+.header {
+    margin: 1em 0;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 1.5125em;
+    line-height: 1.52381;
+    font-weight: 300;
+}
+
+.title {
+    display: block;
+    letter-spacing: normal;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.logo .logo-img {
+    display: block;
+    width: 76px;
+    margin: 1.5em auto 0.5em;
+}
+
+.sidebar {
+     border: none;
+    color: inherit !important;
+}
+
+/*
+.title {
+    background-image: url('https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png');
+    display: block;
+    text-indent: -9999px;
+    width: 75px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+*/
+
+.inlineheader .header {
+    text-transform: none;
+    letter-spacing: normal;
+    text-align: left;
+}
+
+.inlinepage {
+    padding: 0 0 2em;
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    overflow: auto;
+}
+
+.inlinecontent > hr {
+    display: none;
+}
+
+#content > hr {
+    display: none;
+}
+
+#pageinfo {
+    border-top: none;
+}
+
+.trails {
+    margin: 1em 0;
+    background: #eeeeee;
+    padding: 2em 0;
+    display: none;
+}
+
+.trails a {
+    text-shadow: none;
+}
+
+#footer .trails { display: block; }
+
+.picture-large-nav {
+    width: 75%;
+}
+
+.picture-large {
+    width: 85%;
+}
+
+.page {
+    max-width: 48em;
+    margin: 0 auto;
+}
+
+.pageheader .actions ul {
+    padding: 1em 0 2em;
+    border-bottom: 1px solid gainsboro;
+}
