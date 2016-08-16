@@ -1,12 +1,15 @@
----
-title: Visualizing Git&#8217;s Merkle DAG with D3.js
-layout: post
-js:
-    - d3.min.js
-    - merkle-dag-d3.js
-css:
-    - merkel-dag-d3.css
----
+[[!meta date="2016-03-21"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!meta title="Visualizing Git&#8217;s Merkle DAG with D3.js"]]
+[[!meta stylesheet=static/css/merkel-dag-d3 rel="stylesheet" title="merkle-dag-stylesheet"]]
+[[!meta script=static/js/d3.min]]
+[[!meta script=static/js/merkle-dag-d3 defer]]
 
 The [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)
 (DAG) is a concept I run into over-and-over again; which is, perhaps,
@@ -24,13 +27,13 @@ One way to think of a DAG is as a set of dependencies—each node may
 have a dependency on one or more other nodes. That is, in order to get to `Node B`
 you must route through `Node A`, so `Node B` depends on `Node A`:
 
-{% highlight javascript %}
+[[!pygments linenos="yes" content="""
 // Node → [dependent nodes]
 var dag = {
     'Node A': ['Node B'],
     'Node B': []
 };
-{% endhighlight %}
+"""]]
 
 The visualization of dependencies in a JSON object is (SURPRISE!) different
 from the input format needed to visualize a DAG using the
@@ -38,8 +41,7 @@ from the input format needed to visualize a DAG using the
 To change the above object into Force&#8217;s
 expected input, I created a little helper function:
 
-{% highlight javascript %}
-// Helper function for D3.js force layout
+[[!pygments lexer="javascript" linenos="yes" content="""
 var forceFormat = function(dag) {
     var orderedNodes = [],
         nodes = [],
@@ -82,12 +84,12 @@ var forceFormat = function(dag) {
 };
 
 var forceInput = forceFormat(dag);
-{% endhighlight %}
+"""]]
 
 `forceFormat` outputs a JSON object that can be used as input for the
 Force layout.
 
-{% highlight javascript %}
+[[!pygments lexer="javascript" linenos="yes" content="""
 {
     "links": [
         {
@@ -100,7 +102,7 @@ Force layout.
         { "name": "Node B" }
     ]
 }
-{% endhighlight %}
+"""]]
 
 I can pass this resulting JSON object off to a function that I created after
 a long time staring at one of
@@ -108,7 +110,7 @@ a long time staring at one of
  [examples](http://bl.ocks.org/mbostock/1138500)
 to create a D3 Force graph of verticies and edges:
 
-{% highlight javascript %}
+[[!pygments lexer="javascript" linenos="yes" content="""
 // http://bl.ocks.org/mbostock/1138500
 var makeGraph  = function(target, graphData) {
     var target = d3.select(target),
@@ -220,7 +222,7 @@ var makeGraph  = function(target, graphData) {
     }
 };
 makeGraph('.merkle-1', forceInput);
-{% endhighlight %}
+"""]]
 
 <div class=merkle-1></div>
 You&#8217;d be forgiven for thinking that is a line.
@@ -238,7 +240,7 @@ Git Object Anatomy
 
 In order to understand how Git is a DAG, you need to understand Git &#8220;objects&#8221;:
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ mkdir merkle
 $ cd merkle
 $ echo 'This is the beginning' > README
@@ -249,20 +251,20 @@ $ find .git/objects/ -type f
 .git/objects/1b/9f426a8407ffee551ad2993c5d7d3780296353
 .git/objects/09/8e6de29daf4e55f83406b49f5768df9bc7d624
 .git/objects/1a/06ce381ac14f7a5baa1670691c2ff8a73aa6da
-{% endhighlight %}
+""" ]]
 
 What are Git objects? Because they look like nonsense:
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ cat .git/objects/1b/9f426a8407ffee551ad2993c5d7d3780296353
 xKOR02,V¢T¤̼¼̼t.
-{% endhighlight %}
+""" ]]
 
 After a little digging through the [Pro Git](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
 book, Git objects are a little less non-sensicle. Git objects are simply `zlib`
 compressed, formatted messages:
 
-{% highlight bash %}
+[[!pygments content="""
 $ python2 -c 'import sys,zlib; \
   print zlib.decompress(sys.stdin.read());' \
     < .git/objects/1a/06ce381ac14f7a5baa1670691c2ff8a73aa6da
@@ -271,7 +273,7 @@ author Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700
 committer Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700
 
 Initial Commit
-{% endhighlight %}
+""" ]]
 
 Parts of that message are obvious: `author` and `committer` obviously come
 from my `.gitconfig`. There is a Unix epoch timestamp with a timezone offset.
@@ -295,14 +297,14 @@ input will likely cause a big change in the output. Git uses a cryptographic
 hash function called _Secure Hash Algorithm 1_ ([SHA-1](https://en.wikipedia.org/wiki/SHA-1)).
 
 You can play with the SHA-1 function on the command line:
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ echo 'message' | sha1sum
 1133e3acf0a4cbb9d8b3bfd3f227731b8cd2650b  -
 $ echo 'message' | sha1sum
 1133e3acf0a4cbb9d8b3bfd3f227731b8cd2650b  -
 $ echo 'message1' | sha1sum
 c133514a60a4641b83b365d3dc7b715dc954e010  -
-{% endhighlight %}
+"""]]
 
 Note the big change in the output of `sha1sum` from a tiny change in input.
 This is what cryptographic hash functions do.
@@ -313,7 +315,7 @@ Hash that DAG!
 Now that we have some idea of what is inside a commit object, let&#8217;s
 reverse-engineer the commit object from the `HEAD` of our `merkle` repo:
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $  python2 -c 'import sys,zlib; \
 print zlib.decompress(sys.stdin.read());' \
 < .git/objects/1a/06ce381ac14f7a5baa1670691c2ff8a73aa6da | \
@@ -332,8 +334,9 @@ od -c
  0000260   8   6   0   4   1   2   0       -   0   7   0   0  \n  \n   I
  0000300   n   i   t   i   a   l       C   o   m   m   i   t  \n  \n
  0000317
-{% endhighlight %}
-{% highlight bash %}
+"""]]
+
+[[!pygments lexer="bash" content="""
 $ printf 'tree 098e6de29daf4e55f83406b49f5768df9bc7d62k4\n' >> commit-msg
 $ printf 'author Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700\n' >> commit-msg
 $ printf 'committer Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700\n' >> commit-msg
@@ -345,13 +348,14 @@ $ sha1sum <(cat \
     <(wc -c < commit-msg | tr -d '\n') \
     <(printf '%b' '\0') commit-msg)
 1a06ce381ac14f7a5baa1670691c2ff8a73aa6da  /dev/fd/63
-{% endhighlight %}
+"""]]
 Hmm&#8230; that seems familiar
-{% highlight bash %}
+
+[[!pygments lexer="bash" content="""
 $ export COMMIT_HASH=$(sha1sum <(cat <(printf "commit ") <(wc -c < commit-msg | tr -d '\n') <(printf '%b' '\0') commit-msg) | cut -d' ' -f1)
 $ find ".git/objects/${COMMIT_HASH:0:2}" -type f -name "${COMMIT_HASH:(-38)}"
 .git/objects/1a/06ce381ac14f7a5baa1670691c2ff8a73aa6da
-{% endhighlight %}
+"""]]
 
 The commit object is a zlib-compressed, formatted message that is stored in
 a file named after the SHA-1 hash of the file&#8217;s un-`zlib` compressed
@@ -362,28 +366,32 @@ contents.
 Let&#8217;s use `git-cat-file` to see if we can explore the
 `tree 098e6de29daf4e55f83406b49f5768df9bc7d62k4`-part of the commit message object:
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ cat .git/HEAD
 ref: refs/heads/master
-{% endhighlight %}
-{% highlight bash %}
+"""]]
+
+[[!pygments lexer="bash" content="""
 $ cat .git/refs/heads/master
 1a06ce381ac14f7a5baa1670691c2ff8a73aa6da
-{% endhighlight %}
-{% highlight bash %}
+"""]]
+
+[[!pygments lexer="bash" content="""
 $ git cat-file -p 1a06ce381ac14f7a5baa1670691c2ff8a73aa6da
 tree 098e6de29daf4e55f83406b49f5768df9bc7d624
 author Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700
 committer Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700
-{% endhighlight %}
-{% highlight bash %}
+"""]]
+
+[[!pygments lexer="bash" content="""
 $ git cat-file -p 098e6de29daf4e55f83406b49f5768df9bc7d624
 100644 blob 1b9f426a8407ffee551ad2993c5d7d3780296353    README
-{% endhighlight %}
-{% highlight bash %}
+"""]]
+
+[[!pygments lexer="bash" content="""
 $ git cat-file -p 1b9f426a8407ffee551ad2993c5d7d3780296353
 This is the beginning
-{% endhighlight %}
+"""]]
 
 Hey that&#8217;s the text I put into `README`!
 
@@ -412,7 +420,7 @@ we make a new commit:
 
 It seems that there may be a chain of dependencies:
 
-{% highlight javascript %}
+[[!pygments lexer="javascript" linenos="yes" content="""
 var gitDag = {
     // blob (add .b for blob)
     '1b9f426a8407ffee551ad2993c5d7d3780296353.b': [],
@@ -423,7 +431,7 @@ var gitDag = {
 };
 
 makeGraph('.merkle-2', forceFormat(gitDag));
-{% endhighlight %}
+"""]]
 <div class=merkle-2></div>
 You&#8217;d be forgiven for thinking that is a line.
 
@@ -461,7 +469,7 @@ I wrote a simple NodeJS script that creates
 a graph that is suitable for input into the JavaScript that I&#8217;ve already
 written that will create a D3.js force graph with whatever it finds in `.git/objects`.
 
-{% highlight javascript %}
+[[!pygments lexer="javascript" linenos="yes" content="""
 #!/usr/bin/env nodejs
 /* makeDag - creates a JSON dependency graph from .git/objects */
 
@@ -565,7 +573,7 @@ var handleFiles = function(files) {
         handleFiles(f);
     });
 })();
-{% endhighlight %}
+"""]]
 
 Merkle graph transformations are often difficult to describe, but easy to see.
 Using this last piece of code to create and view graphs for several repositories
@@ -577,7 +585,7 @@ my understanding of Git in ways I didn't anticipate.
 When you change your commit message, what happens to the graph? What depends
 on a commit? Where is the context for a commit?
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ git commit --amend -m 'This is the commit message now'
 [master 585448a] This is the commit message now
  Date: Mon Mar 21 16:48:40 2016 -0700
@@ -588,17 +596,17 @@ $ find .git/objects -type f
 .git/objects/09/8e6de29daf4e55f83406b49f5768df9bc7d624
 .git/objects/1a/06ce381ac14f7a5baa1670691c2ff8a73aa6da
 .git/objects/da/94af3a21ac7e0c875bbbe6162aa1d26d699c73
-{% endhighlight %}
+"""]]
 
 Now the DAG is a bit different:
-{% highlight javascript %}
+[[!pygments lexer="javascript" linenos="yes" content="""
 var gitDag = { '098e6de29daf4e55f83406b49f5768df9bc7d624.t': [ '1b9f426a8407ffee551ad2993c5d7d3780296353.b' ],
   '1a06ce381ac14f7a5baa1670691c2ff8a73aa6da.c': [ '098e6de29daf4e55f83406b49f5768df9bc7d624.t' ],
   '1b9f426a8407ffee551ad2993c5d7d3780296353.b': [],
   'da94af3a21ac7e0c875bbbe6162aa1d26d699c73.c': [ '098e6de29daf4e55f83406b49f5768df9bc7d624.t' ] }
 
 makeGraph('.merkle-3', forceFormat(gitDag));
-{% endhighlight %}
+"""]]
 <div class=merkle-3></div>
 
 Here we see that there are now two `commit` objects (`1a06ce38` and `da94af3a`)
@@ -612,18 +620,18 @@ One of these commit objects will never be seen with `git log`.
 
 TIL: Git creates `blob` objects as soon as a file is added to the staging area.
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ echo 'staged' > staged
 $ find .git/objects -type f
 .git/objects/1b/9f426a8407ffee551ad2993c5d7d3780296353
 .git/objects/09/8e6de29daf4e55f83406b49f5768df9bc7d624
 .git/objects/1a/06ce381ac14f7a5baa1670691c2ff8a73aa6da
 .git/objects/da/94af3a21ac7e0c875bbbe6162aa1d26d699c73
-{% endhighlight %}
+"""]]
 
 Notice that nothing depends on this object just yet. It&#8217;s a lonely orphan `blob`.
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ git add staged
 $ find .git/objects -type f
 .git/objects/1b/9f426a8407ffee551ad2993c5d7d3780296353
@@ -637,8 +645,7 @@ $ makeDag
   '1a06ce381ac14f7a5baa1670691c2ff8a73aa6da.c': [ '098e6de29daf4e55f83406b49f5768df9bc7d624.t' ],
   'da94af3a21ac7e0c875bbbe6162aa1d26d699c73.c': [ '098e6de29daf4e55f83406b49f5768df9bc7d624.t' ],
   '1b9f426a8407ffee551ad2993c5d7d3780296353.b': [] }
-
-{% endhighlight %}
+"""]]
 <div class=merkle-4></div>
 
 Even unstaging and deleting the file doesn&#8217;t remove the object. Orphan
@@ -647,7 +654,7 @@ objects in git are only garbage collected as part of `git gc --prune`.
 When this object is committed to the repo, it creates a whole new layer of
 the graph:
 
-{% highlight bash %}
+[[!pygments lexer="bash" content="""
 $ git commit -m 'Add staged file'
 [master 4f407b3] Add staged file
  1 file changed, 1 insertion(+)
@@ -664,7 +671,7 @@ $ makeDag
    [ '1b9f426a8407ffee551ad2993c5d7d3780296353.b',
      '19d9cc8584ac2c7dcf57d2680375e80f099dc481.b' ],
   'da94af3a21ac7e0c875bbbe6162aa1d26d699c73.c': [ '098e6de29daf4e55f83406b49f5768df9bc7d624.t' ] }
-{% endhighlight %}
+"""]]
 <div class=merkle-5></div>
 
 So we've created a new commit (`4f407b39`) that is the parent of a different
@@ -687,8 +694,3 @@ at the end of the `man` output (yes, it&#8217;s dumb).
 This should give you an idea of the complexity that is abstracted by
 the Git merkle graph: this repo contains 5 commits!
 <div class=merkle-container><div class=merkle-6></div></div>
-[[!meta date="2016-03-21"]][[!meta author="Tyler Cipriani"]][[!meta license="""
-[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
-"""]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="Visualizing-Git-Merkle-DAG-with-D3.js.md"]]

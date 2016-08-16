@@ -1,0 +1,18 @@
+= About Me =
+
+== An Autohagiography ==
+
+Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
+dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
+potentially derisive) things that could be said about me. I am currently a
+release engineer at the [[Wikimedia
+Foundation|https://wikimediafoundation.org/wiki/Home]] working remotely from
+sunny Boulder, Colorado.
+
+When I’m not thinking about how to make the web a better, more dynamic
+place&mdash;you’ll find me
+[[homebrewing|http://blazeyandtyler.com/wiki/Category:Beer]] beer [[roasting
+coffee|https://blazeyandtyler.com/wiki/Category:Coffee]], [[snapping
+photos|http://photos.tylercipriani.com/]], or making the //final// adjustment
+to my admittedly already ridiculous collection of
+[[dotfiles|https://github.com/thcipriani/dotfiles/]].

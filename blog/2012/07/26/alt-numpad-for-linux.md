@@ -1,7 +1,8 @@
----
-layout: post
-title: Alt-Numpad for Linux
----
+[[!meta date="2011-07-26"]][[!meta author="Tyler Cipriani"]][[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]][[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]][[!meta title="Alt-Numpad for Linux"]]
 
 In Ubuntu the alt+numpad ACSII codes don’t work—this _was_ a major stumbling block for me since I am annoyingly [picky about typography](http://www.smashingmagazine.com/2011/08/15/mind-your-en-and-em-dashes-typographic-etiquette/ "Smashing Magazine—mind your em and en dashes"). 
 

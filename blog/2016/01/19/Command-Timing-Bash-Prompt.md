@@ -1,8 +1,3 @@
----
-title: Command Timing Bash Prompt
-layout: post
----
-
 A few years ago I was using ZSH with Sindre Sorhus's
 [Pure prompt](https://github.com/sindresorhus/pure) and generally enjoying
 the experience. The big, dumb, obvious caveat of using ZSH is that it's not Bash.
@@ -25,7 +20,7 @@ By default, if a particular command takes longer than 5 seconds to run, Pure
 calculates the running time of that command, and renders a human-readable
 version just above your current prompt.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 ~
 ❯ sleep 5
 
@@ -34,7 +29,7 @@ version just above your current prompt.
 
 ~ 10s
 ❯
-{% endhighlight %}
+"""]]
 
 Bash it until it works
 ===
@@ -51,7 +46,7 @@ command and the `PROMPT_COMMAND` shell variable.
 
 Using these two tools in conjunction, you can approximate `preexec`  and `precmd`:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 debug() {
     # do nothing if completing
     [[ -n "$COMP_LINE" ]] && return
@@ -68,21 +63,21 @@ prompt() {
 
 trap 'debug' DEBUG
 PROMPT_COMMAND=prompt
-{% endhighlight %}
+"""]]
 
 So now debug is executed before each "simple command" and `prompt` is executed
 before each issuing the primary prompt.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 $ echo 'hi'
 debug
 hi
 prompt
-{% endhighlight %}
+"""]]
 
 Timing each command is then pretty trivial:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 debug() {
     # do nothing if completing
     [[ -n "$COMP_LINE" ]] && return
@@ -101,17 +96,17 @@ prompt() {
 
 trap 'debug' DEBUG
 PROMPT_COMMAND=prompt
-{% endhighlight %}
+"""]]
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 $ sleep 2
 2 seconds
 $
-{% endhighlight %}
+"""]]
 
 Integrating that into the prompt and making it look pretty is just a little-bit of code away:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 # Human readable time output
 # e.g., 5d 6h 3m 2s
 format_time() {
@@ -151,16 +146,17 @@ prompt() {
 
 trap 'debug' DEBUG
 PROMPT_COMMAND=prompt
-{% endhighlight %}
+"""]]
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
  (•◡•)❥ sleep 5
 5s (•◡•)❥
 {% endhighlight %}
+"""]]
 
 Motherfucking magic.
 [[!meta date="2016-01-19"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="Command-Timing-Bash-Prompt.md"]]
+"""]][[!meta title="Command-Timing-Bash-Prompt"]]
