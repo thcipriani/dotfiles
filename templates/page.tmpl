@@ -26,7 +26,7 @@
 <TMPL_IF FEEDLINKS><TMPL_VAR FEEDLINKS></TMPL_IF>
 <TMPL_IF RELVCS><TMPL_VAR RELVCS></TMPL_IF>
 <TMPL_IF META><TMPL_VAR META></TMPL_IF>
-<TMPL_LOOP TRAILLOOP>
+<!--<TMPL_LOOP TRAILLOOP>-->
 <TMPL_IF PREVPAGE>
 <link rel="prev" href="<TMPL_VAR PREVURL>" title="<TMPL_VAR PREVTITLE>" />
 </TMPL_IF>
@@ -34,7 +34,7 @@
 <TMPL_IF NEXTPAGE>
 <link rel="next" href="<TMPL_VAR NEXTURL>" title="<TMPL_VAR NEXTTITLE>" />
 </TMPL_IF>
-</TMPL_LOOP>
+<!--</TMPL_LOOP>-->
 </TMPL_UNLESS>
 
 </head>
@@ -44,9 +44,6 @@
 
 <TMPL_IF HTML5><section class="pageheader"><TMPL_ELSE><div class="pageheader"></TMPL_IF>
 <TMPL_IF HTML5><header class="header"><TMPL_ELSE><div class="header"></TMPL_IF>
-<a class="logo" href="/" title="Tyler Cipriani Home">
-<img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="Tyler Cipriani Logo">
-</a>
 <span>
 <span class="parentlinks">
 <TMPL_LOOP PARENTLINKS>
@@ -66,41 +63,6 @@
 </TMPL_IF>
 </TMPL_UNLESS>
 <TMPL_IF HTML5></header><TMPL_ELSE></div></TMPL_IF>
-
-<!--<TMPL_IF HAVE_ACTIONS>
-<TMPL_IF HTML5><nav class="actions"><TMPL_ELSE><div class="actions"></TMPL_IF>
-<ul>
-<TMPL_IF EDITURL>
-<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
-</TMPL_IF>
-<TMPL_IF RECENTCHANGESURL>
-<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
-</TMPL_IF>
-<TMPL_IF HISTORYURL>
-<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
-</TMPL_IF>
-<TMPL_IF GETSOURCEURL>
-<li><a href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
-</TMPL_IF>
-<TMPL_IF PREFSURL>
-<li><a href="<TMPL_VAR PREFSURL>">Preferences</a></li>
-</TMPL_IF>
-<TMPL_IF ACTIONS>
-<TMPL_LOOP ACTIONS>
-<li><TMPL_VAR ACTION></li>
-</TMPL_LOOP>
-</TMPL_IF>-->
-<TMPL_IF COMMENTSLINK>
-<li><TMPL_VAR COMMENTSLINK></li>
-<TMPL_ELSE>
-<TMPL_IF DISCUSSIONLINK>
-<li><TMPL_VAR DISCUSSIONLINK></li>
-</TMPL_IF>
-</TMPL_IF>
-</ul>
-<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
-</TMPL_IF>
-
 <TMPL_IF OTHERLANGUAGES>
 <TMPL_IF HTML5><nav id="otherlanguages"><TMPL_ELSE><div id="otherlanguages"></TMPL_IF>
 <ul>
@@ -162,10 +124,12 @@
 </div>
 
 <TMPL_IF HTML5><footer<TMPL_ELSE><div</TMPL_IF> id="footer" class="pagefooter" role="contentinfo">
+
+<TMPL_VAR TRAILS>
+
 <TMPL_UNLESS DYNAMIC>
 <TMPL_IF HTML5><nav id="pageinfo"><TMPL_ELSE><div id="pageinfo"></TMPL_IF>
 
-<TMPL_VAR TRAILS>
 
 <TMPL_IF TAGS>
 <TMPL_IF HTML5><nav class="tags"><TMPL_ELSE><div class="tags"></TMPL_IF>
@@ -216,6 +180,17 @@ Last edited <TMPL_VAR MTIME>
 <TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
 <TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
 </TMPL_UNLESS>
+
+<div class="epilogue">
+    <a class="logo" href="/" title="Tyler Cipriani Home">
+        <img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="Tyler Cipriani Logo">
+    </a>
+
+    <a class="license-icon" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img src="/static/images/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31">
+    </a>
+</div>
+
 <!-- from <TMPL_VAR WIKINAME> -->
 <TMPL_IF HTML5></footer><TMPL_ELSE></div></TMPL_IF>
 

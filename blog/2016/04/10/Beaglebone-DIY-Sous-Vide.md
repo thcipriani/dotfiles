@@ -1,9 +1,3 @@
----
-title: Beaglebone DIY Sous Vide
-layout: post
-published: false
----
-
 [Sous Vide](https://en.wikipedia.org/wiki/Sous-vide) is a method of
 cooking in which food is vaccum-sealed and then left to cook in a
 temperature-controlled water bath for a long period.
@@ -103,4 +97,4 @@ cylon-type pattern of indicator lights
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="Beaglebone-DIY-Sous-Vide.md"]]
+"""]][[!meta title="Beaglebone-DIY-Sous-Vide"]]

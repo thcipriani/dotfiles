@@ -1,25 +1,18 @@
-<div class="picture-large-nav">
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+
+<figure class="thumb thumb-right thumb-large">
 {{https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_studio_photo.jpg|Tyler Cipriani}}
-</div>
+<figcaption>
+Gentleman. Scholar. Lyrical genius.
+</figcaption>
+</figure>
 
-= About Me =
-
-== An Autohagiography ==
-
-Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
-dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
-potentially derisive) things that could be said about me. I am currently a
-release engineer at the [[Wikimedia
-Foundation|https://wikimediafoundation.org/wiki/Home]] working remotely from
-sunny Boulder, Colorado.
-
-When I’m not thinking about how to make the web a better, more dynamic
-place&mdash;you’ll find me
-[[homebrewing|http://blazeyandtyler.com/wiki/Category:Beer]] beer [[roasting
-coffee|https://blazeyandtyler.com/wiki/Category:Coffee]], [[snapping
-photos|http://photos.tylercipriani.com/]], or making the //final// adjustment
-to my admittedly already ridiculous collection of
-[[dotfiles|https://github.com/thcipriani/dotfiles/]].
 
 = Contact =
 == Holler at your boy ==
@@ -34,6 +27,8 @@ to my admittedly already ridiculous collection of
 * [[MIT keyserver|http://pgp.mit.edu:11371/pks/lookup?op=vindex&search=0xF6DAD285018FAC02]]
 * [[Keybase|https://keybase.io/thcipriani]]
 * Fingerprint: <code>6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02</code>
+
+---
 
 [[!inline pages=sidebar raw=yes]]
 
