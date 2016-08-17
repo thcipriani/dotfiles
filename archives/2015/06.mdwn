@@ -1,0 +1,5 @@
+[[!sidebar content="""
+[[!calendar type=month month=06 year=2015 pages="blog/* and !*/Discussion"]]
+"""]]
+
+[[!inline pages="creation_month(06) and creation_year(2015) and blog/* and !*/Discussion" show=0 feeds=no reverse=yes]]
