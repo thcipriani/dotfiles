@@ -31,29 +31,29 @@ Compiling Vim from source means you don&#8217;t have to get pushed around by cru
 ## Retrieving Vim source
 Vim keeps its source in a Mercurial repo on googlcode so you need to download it. To do that you should have Mercurial installed (which you can, somewhat ironically, install from via yum <code>yum install mercurial</code>). You should switch to the root user for this install and for your sanity so use <code>su</code> or <code>sudo bash</code>:
 
-{% highlight bash linenos %}
+[[!pygments lexer=bash linenos content="""
 $ sudo bash
 $ cd /usr/local/src/
 $ hg clone https://vim.googlecode.com/hg/ vim
 $ cd vim
-{% endhighlight %}
+"""]]
 
 ## Configuration options
 
 There are quite a few configuration options (which you can view by running <code>./configure --help</code> in your newly created <code>vim</code> directory)—with respect to Vim installs I support going nuclear. Even at it&#8217;s most ginormous Vim will still be a small install relative to other IDEs—Vim is my primary editor and IDE, so I&#8217;m down to do it big. I&#8217;m also going to use the <code>/usr</code> prefix so that Vim is installed system-wide.
 
 
-{% highlight bash linenos %}
+[[!pygments lexer=bash linenos content="""
 $ ./configure --prefix=/usr --with-compiledby="Tyler the Compiler" --with-features=huge --enable-rubyinterp --enable-pythoninterp
-{% endhighlight %}
+"""]]
 
 ## make && make install
 
 Srsly, that&#8217;s it&#8212;
 
-{% highlight bash linenos %}
+[[!pygments lexer=bash linenos content="""
 make && make install
-{% endhighlight %}
+"""]]
 
 Congrats! You&#8217;re one bad mother Vim compiler. 
 

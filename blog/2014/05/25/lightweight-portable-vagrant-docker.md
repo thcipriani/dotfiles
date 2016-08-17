@@ -59,7 +59,7 @@ To keep my project directory nice and tidy, I&#8217;ve separated-out most of the
 files needed by the Docker provider into a `Docker` folder. This
 results in the directory structure below.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 ├── Docker
 │   ├── Dockerfile
 │   ├── nginx
@@ -71,7 +71,7 @@ results in the directory structure below.
 ├── Vagrantfile
 └── www
     └── index.php
-{% endhighlight %}
+"""]]
 
 The `Dockerfile` is used to build the main docker machine and the subfolders
 in the `Docker` directory contain configuration used in the `Dockerfile`.
@@ -85,7 +85,7 @@ Since docker handles so much of what was previously handled by Vagrant provision
 the `Vagrantfile` for a Docker-backed Vagrant instance is pretty sparse.
 
 In mine, I&#8217;ve got:
-{% highlight ruby %}
+[[!pygments lexer=ruby content="""
 Vagrant.configure(2) do |config|
   config.vm.synced_folder "./www", "/var/www"   # Sync'd folder
 
@@ -94,7 +94,7 @@ Vagrant.configure(2) do |config|
     d.ports << '8080:80'     # Forwards port 8080 from the host to the Docker Container port 80
   end
 end
-{% endhighlight %}
+"""]]
 
 Dockerfile
 ---
@@ -105,7 +105,7 @@ don&#8217;t think that Vagrant adds any needed functionality to the `docker.io` 
 In terms of portability, however, Vagrant is, at this time, a necessary evil
 to run docker on OSX and Windows.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 FROM ubuntu:latest
 
 MAINTAINER Tyler Cipriani, tyler@tylercipriani.com
@@ -134,7 +134,7 @@ USER root
 
 # Expose port 80 of the container
 EXPOSE 80
-{% endhighlight %}
+"""]]
 
 This `Dockerfile` takes care of building a docker container from the latest
 Ubuntu image (14.04 as of May 26th, 2014). Running this code installs:
@@ -152,7 +152,7 @@ to make sure they both run in non-daemon mode.
 
 `nginx/default`
 
-{% highlight nginx %}
+[[!pygments lexer=nginx content="""
 server {
   listen 80 default_server;
 
@@ -168,22 +168,22 @@ server {
     include fastcgi_params;
   }
 }
-{% endhighlight %}
+"""]]
 
 `php-fpm/php-fpm.conf`
 
-{% highlight ini %}
+[[!pygments lexer=ini content="""
 [global]
 pid = /var/run/php5-fpm.pid
 error_log = /var/log/php5-fpm.log
 daemonize = no
 
 include=/etc/php5/fpm/pool.d/*.conf
-{% endhighlight %}
+"""]]
 
 `supervisor/supervisord.conf`
 
-{% highlight ini %}
+[[!pygments lexer=ini content="""
 [unix_http_server]
 file=/var/run/supervisor.sock   ; (the path to the socket file)
 chmod=0700                       ; sockef file mode (default 0700)
@@ -216,7 +216,7 @@ stderr_events_enabled=true
 command=/usr/sbin/nginx
 stdout_events_enabled=true
 stderr_events_enabled=true
-{% endhighlight %}
+"""]]
 
 Jam Time
 ---
@@ -224,10 +224,10 @@ Jam Time
 With all of our configuration in place there isn&#8217;t much left to do aside
 from running the vagrant instance and allowing docker to create our container.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 $ sudo docker pull ubuntu # to grab the latest Ubuntu image, Vagrant should probably do this but doesn't
 $ sudo vagrant up --provider=docker --debug # use debug if you don't want to sit waiting with no info for a long time on the first run
-{% endhighlight %}
+"""]]
 
 With that, you now have a container running nginx and php-fpm that is sharing
 a folder with you at `/var/www`. Navigating to `http://localhost:8080/index.php`

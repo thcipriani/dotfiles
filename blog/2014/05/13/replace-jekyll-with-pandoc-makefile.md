@@ -1,8 +1,3 @@
----
-layout: post
-title: Replacing Jekyll with Pandoc and a Makefile
----
-
 I used to use del.icio.us to keep track of links, then it went away.
 After del.icio.us shutdown, I used a ton of uniquely awful services to
 keep track of links. Eventually, I came around to the idea that all I
@@ -20,13 +15,13 @@ just [a big `README` file](https://github.com/thcipriani/linuxtips/blob/master/R
 So, for that repo, I created a `gh-pages` branch with a `_config.yml` and
 a `_layout` directory and popped in a [Makefile](https://github.com/thcipriani/linuxtips/blob/gh-pages/Makefile):
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 INDEX = ${CURDIR}/index.md
 
 $(INDEX):
   @ git show origin/master:README.md > $@
   @ perl -i -pe 'print "---\nlayout: default\ntitle: Linux Tips\n---\n\n" if $$. == 1;' $@
-{% endhighlight %}
+"""]]
 
 and then I got [tylercipriani.com/linuxtips](http://www.tylercipriani.com/linuxtips/); neat.
 
@@ -50,24 +45,24 @@ Imma install Pandoc&#8230;
 
 ### Debian?
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 sudo apt-get install haskell-platform
 cabal update
 cabal install pandoc
-{% endhighlight %}
+"""]]
 
 then add it to your path in your `.${SHELL}rc` file:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 [ -d "$HOME/.cabal/bin" ] && export PATH="$HOME/.cabal/bin:$PATH"
-{% endhighlight %}
+"""]]
 
 ### OSX?
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 brew update
 brew install pandoc
-{% endhighlight %}
+"""]]
 
 Imma Use Pandoc&#8230;
 ---
@@ -75,14 +70,14 @@ Imma Use Pandoc&#8230;
 Alright, so I&#8217;ve got tons of markdown files, fairly structured, with bunches of links and I need html5.
 I&#8217;ll create a `Makefile` proof-of-concept for this:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 index.html: README.md
   pandoc -s -f markdown -t html5 -o "$@" "$<"
-{% endhighlight %}
+"""]]
 
 Running `make` takes my `README.md` and makes this:
 
-{% highlight html %}
+[[!pygments lexer=html content="""
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,7 +102,7 @@ Running `make` takes my `README.md` and makes this:
 </ul>
 </body>
 </html>
-{% endhighlight %}
+"""]]
 
 Title/Layout/CSS
 ---
@@ -122,14 +117,14 @@ Pandoc is able to do all of these things&#8212;easy-peasy-lemon-squeezy.
 
 First, to establish a layout, let&#8217;s copy the default html5 layout file for Pandoc:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 pandoc -D html5 > _layout.html5
-{% endhighlight %}
+"""]]
 
 I&#8217;ll make some small tweaks to that file, keep the variables I need, ditch the
 variables I don&#8217;t need. Here is the html5 layout file I came up with:
 
-{% highlight html %}
+[[!pygments lexer=html content="""
 <!doctype html>
 <html lang="en">
 <head>
@@ -153,7 +148,7 @@ $endfor$
 
 </body>
 </html>
-{% endhighlight %}
+"""]]
 
 Next, I need to figure out how to include a css stylesheet.  A quick
 search for `css` in `pandoc(1)` turns up the `--css` flag which
@@ -161,10 +156,10 @@ enables you to link to a css stylesheet.
 
 Updated `Makefile`:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 index.html: README.md
   pandoc -s --template "_layout" --css "css/main.css" -f markdown -t html5 -o "$@" "$<"
-{% endhighlight %}
+"""]]
 
 Finally, I need to be able to include a unique `<title>` tag string for
 each page. Again, a search through `pandoc(1)` for `variable` yields results;
@@ -176,11 +171,11 @@ YAML Metadata blocks&#8212;just like jekyll!
 So, for each markdown file in my repo, I&#8217;ll add a block to the top that looks
 like this:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 ---
 pagetitle: <pagetitle>
 ---
-{% endhighlight %}
+"""]]
 
 `$pagetitle$` is the variable I defined in my `_layout.html5` that I&#8217;m
 now passing as a template to Pandoc.
@@ -196,7 +191,7 @@ the `README.md`. So howzabout I add a wildcard target for all the `html` files?
 Also, the whole point of this is to make a github pages site, so let&#8217;s add
 that to the `Makefile` too
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 REPO := $(shell git config --get remote.origin.url)
 GHPAGES = gh-pages
 
@@ -208,7 +203,7 @@ $(GHPAGES):
 
 $(GHPAGES)/%.html: %.md
   pandoc -s --template "_layout" -c "css/main.css" -f markdown -t html5 -o "$@" "$<"
-{% endhighlight %}
+"""]]
 
 Running `make` at this point should checkout your current git repository to
 a subdirectory called `gh-pages` (which should be added to `.gitignore`
@@ -226,7 +221,7 @@ I&#8217;m a big fan of pre-processors, so the css/main.css file (which
 doesn&#8217;t _actually exist_ as of yet) should be converted from `less`.
 The easiest way to do that: add a `package.json` with `less` as a dependency.
 
-{% highlight javascript %}
+[[!pygments lexer=javascript content="""
 {
   "name": "linkblog",
   "version": "0.0.1",
@@ -234,13 +229,13 @@ The easiest way to do that: add a `package.json` with `less` as a dependency.
     "less": "*"
   }
 }
-{% endhighlight %}
+"""]]
 
 Now running `npm install` should create a new `node_modules` directory (which
 should be added to `.gitignore` on master). Now we need to add a `lessc`
 step to our `Makefile`.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 LESSC    = node_modules/less/bin/lessc
 LESSFILE = less/main.less
 
@@ -252,32 +247,32 @@ $(CSSFILE): $(CSSDIR) $(LESSFILE)
 
 $(CSSDIR):
 	mkdir -p "$(CSSDIR)"
-{% endhighlight %}
+"""]]
 
 Also, it&#8217;s always nice to have a `clean` target in any `Makefile`
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 clean:
 	rm -rf "$(GHPAGES)"
-{% endhighlight %}
+"""]]
 
 I&#8217;d also like to be able to preview before commiting this file by typing `make serve`
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 serve:
 	cd $(GHPAGES) && python -m SimpleHTTPServer
-{% endhighlight %}
+"""]]
 
 Finally, speaking of commiting this file, let&#8217;s make `commit` a target, too.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 commit:
 	cd $(GHPAGES) && \
 		git add . && \
 		git commit --edit --message="Publish @$$(date)"
 	cd $(GHPAGES) && \
 		git push origin $(GHPAGES)
-{% endhighlight %}
+"""]]
 
 Now when I update my `links` repo's markdown files I issue a simple series of commands:
 `make` checks-out my `gh-pages` branch and builds the html and css files,
@@ -286,7 +281,7 @@ and, finally, `make commit` pushes those changes live.
 
 So here&#8217;s the [result](http://www.tylercipriani.com/links) and the final `Makefile`
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 REPO := $(shell git config --get remote.origin.url)
 GHPAGES = gh-pages
 
@@ -331,8 +326,10 @@ commit:
 		git push origin $(GHPAGES)
 
 .PHONY: init clean commit serve
-{% endhighlight %}[[!meta date="2014-05-13"]][[!meta author="Tyler Cipriani"]][[!meta license="""
+"""]]
+
+[[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="replace-jekyll-with-pandoc-makefile.md"]]
+"""]][[!meta title=" Replacing Jekyll with Pandoc and a Makefile"]]

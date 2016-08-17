@@ -342,8 +342,8 @@ $ printf 'tree 098e6de29daf4e55f83406b49f5768df9bc7d62k4\n' >> commit-msg
 $ printf 'author Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700\n' >> commit-msg
 $ printf 'committer Tyler Cipriani <tcipriani@wikimedia.org> 1458604120 -0700\n' >> commit-msg
 $ printf '\nInitial Commit\n' >> commit-msg
-{% endhighlight %}
-{% highlight bash %}
+"""]]
+[[!pygments lexer=bash content="""
 $ sha1sum <(cat \
     <(printf "commit ") \
     <(wc -c < commit-msg | tr -d '\n') \
