@@ -20,7 +20,7 @@ This assumes you've already got a development environment that runs PHP5.
 click, “Security Credentials”
 * Scroll down to “Access Credentials”<br><img src="http://tylercipriani-files.s3.amazonaws.com/blog/access_credentials.png" alt="Access Credentials">
 * Copy your "Access Key ID", click "Show" and copy your "Secret Access Key"
-* Go ahead and clone the [Amazon ECS PHP Library](https://github.com/Exeu/Amazon-ECS-PHP-Library "Amazon ECS PHP Library") to your development environment{% highlight bash %}$ git clone https://github.com/Exeu/Amazon-ECS-PHP-Library.git{% endhighlight %}
+* Go ahead and clone the [Amazon ECS PHP Library](https://github.com/Exeu/Amazon-ECS-PHP-Library "Amazon ECS PHP Library") to your development environment [[!pygments lexer=bash content="""$ git clone https://github.com/Exeu/Amazon-ECS-PHP-Library.git"""]]
 * You'll only be using the file <code>lib/AmazonECS.class.php</code> so copy that wherever you'd like
 * Once you've got that file it's easy-peasy-lemon-squeezy:
 <script src="https://gist.github.com/3364600.js?file=amazon-album-art.php"> </script>

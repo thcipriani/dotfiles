@@ -10,6 +10,7 @@ Copyright &copy; 2016 Tyler Cipriani
 [[!meta stylesheet=static/css/merkel-dag-d3 rel="stylesheet" title="merkle-dag-stylesheet"]]
 [[!meta script=static/js/d3.min]]
 [[!meta script=static/js/merkle-dag-d3 defer]]
+[[!tag computing vcs]]
 
 The [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)
 (DAG) is a concept I run into over-and-over again; which is, perhaps,

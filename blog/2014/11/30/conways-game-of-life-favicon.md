@@ -1,7 +1,4 @@
----
-layout: post
-title: Conway&#8217;s Favicon
----
+[[!meta script=static/js/conways-favicon defer]]
 
 I find favicons pretty useful overall. That weird little
 [Earthworm-Jim-esque bug-head](https://bugs.r-project.org/bugzilla3/images/favicon.ico)
@@ -45,7 +42,7 @@ First, I created the [default favicon](/favicon.ico) for this site by
 rendering out a glider via JavaScript and rendering the canvas as a png
 on the page.
 
-{% highlight javascript %}
+[[!pygments linenos=yes lexer=javascript content="""
 GameOfLife.prototype.glider = [
   {x: 0, y: 1}
  ,{x: 1, y: 2}
@@ -85,7 +82,7 @@ GameOfLife.prototype.drawGrid = function() {
   var img = document.createElement('img')
   img.src = this.canvas.toDataURL('img/png')
 }
-{% endhighlight %}
+"""]]
 
 After rendering as a png in the browser, I saved the `.png` to my computer.
 Then I uploaded the png to [favicon-generator.org](http://favicon-generator.org/)
@@ -96,7 +93,7 @@ to be non-compliant with emerging standards (le sigh).
 The finishing touch is to make the `GameOfLife.prototype.drawGrid` function update
 my favicon&#8217;s `href` attribute on every `tick` function call:
 
-{% highlight javascript %}
+[[!pygments linenos=yes lexer=javascript content="""
 GameOfLife.prototype.createCanvas = function() {
   this.canvas = document.createElement('canvas')
   this.favicon = document.createElement('link')
@@ -109,7 +106,7 @@ GameOfLife.prototype.drawGrid = function() {
   /* ... */
   this.favicon.href = this.canvas.toDataURL('img/png')
 }
-{% endhighlight %}
+"""]]
 
 The entirety of this javascript is available under the
  [GPLv3 License](https://tldrlegal.com/license/gnu-general-public-license-v3-%28gpl-3%29)
@@ -119,4 +116,4 @@ on [my github](https://github.com/thcipriani/conways-favicon).
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="conways-game-of-life-favicon.md"]]
+"""]][[!meta title="Conway&#8217;s Favicon"]]
