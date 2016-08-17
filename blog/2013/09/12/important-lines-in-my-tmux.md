@@ -24,12 +24,12 @@ however, when you use Screen inside Tmux (as I often do with our AWS servers),
 hitting `Ctrl`-`a` `a` can get pretty tiresome. Plus, you can&#8217;t use 
 Readline very effectively without `Ctrl`-`a`
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 unbind-key C-b #no more Ctrl-b
 # Switch me to ^f, thanks
 set-option -g prefix C-f
 bind-key f send-prefix
-{% endhighlight %}
+"""]]
 </li>
 
 <li>
@@ -38,9 +38,9 @@ Faster escape
 When I first started using Tmux I couldn&#8217;t stand the amount of time it
 took to enter copy-mode. Then I realized&#8212;I didn&#8217;t have to.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 set-option -sg escape-time 0
-{% endhighlight %}
+"""]]
 </li>
 
 <li>
@@ -54,9 +54,9 @@ This line will let you hit `Meta` `|` to maximize a single pane and then hit
 
 Warning: this is a tip that will only work with tmux 1.8+ (check your version via `tmux -V`)
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 bind-key | resize-pane -Z \; display-message "Zoom zoom zoom"
-{% endhighlight %}
+"""]]
 </li>
 
 <li>
@@ -69,32 +69,32 @@ and without overwriting any existing keybindings).
 
 First, I set the window mode-keys to use Vi bindings:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 set-window-option -g mode-keys vi
-{% endhighlight %}
+"""]]
 
 Next, I bind `Meta Esc` to enter Tmux copy-mode:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 unbind-key [
 bind-key Escape copy-mode
-{% endhighlight %}
+"""]]
 
 After that, I bind visual-selection and copy keys inside vi-copy mode to 
 their Vim equivalents:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
-{% endhighlight %}
+"""]]
 
 Finally, I bind `Meta y` to execute a shell command. This should work on either
 Linux or OSX, although I&#8217;ve only tested this on OSX:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 if-shell 'test "$(uname -s)" = "Darwin"' 'bind-key y run-shell "tmux show-buffer | pbcopy" \; display-message "Copied tmux buffer to system clipboard"'
 if-shell 'test "$(uname -s)" = "Linux"' 'bind-key y run-shell "tmux show-buffer | xclip -sel clip -i" \; display-message "Copied tmux buffer to system clipboard"'
-{% endhighlight %}
+"""]]
 </li>
 
 <li>
@@ -106,10 +106,10 @@ Vim&#8217;s clipboard to play nicely inside Tmux. This mess makes your
 `tmux.conf` look more cluttered and makes your dotfiles a little less portable.
 To fix this I keep an OSX Specific `tmux.conf`.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 #dumb osx
 if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'
-{% endhighlight %}
+"""]]
 </li>
 
 <li>
@@ -120,7 +120,7 @@ of this he uses a small script to get his unread email count from his local
 offlineimap folder. In the version below I use a little bash script I wrote
 to grab weather info (that I call weathermajig).
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 # Bad Wolf by Steve Losh
 # =====================
 set -g status-fg white
@@ -142,7 +142,7 @@ set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour
 set -g status-right '#[fg=colour245]❬ %R ❬ %d %b #[fg=colour254,bg=colour234,nobold]#(rdio-current-track-tmux)#[fg=colour16,bg=colour254,bold] #h '
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
 set -g window-status-current-format "#[fg=colour234,bg=colour39]#[fg=colour16,bg=colour39,noreverse,bold] #I ❭ #W #[fg=colour39,bg=colour234,nobold]"
-{% endhighlight %}
+"""]]
 </li>
 [[!meta date="2013-09-12"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]

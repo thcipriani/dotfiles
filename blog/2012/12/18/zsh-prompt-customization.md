@@ -27,13 +27,13 @@ to specify how your prompt looks. You can define what theme you&#8217;d like to 
 in your <code>~/.zshrc</code> file. On or around line 8 you&#8217;ll want to
 update the line that starts with <code>ZSH_THEME=&#8230;</code> to look like this:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="junkfood"
-{% endhighlight %}
+"""]]
 
 <h2>Almost, not quite&#8230;</h2>
 Like any good dotfile obsessive, I&#8217;ve continued to make changes to this
@@ -47,7 +47,7 @@ That little code chestnut is available over on
 I also have a version of this prompt for Bash that I&#8217;ve made in preperation
 for the undoubted overwhelming demand that I expect to begin any time now:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
 function prompt {
   # 30m - Black
@@ -79,7 +79,7 @@ function prompt {
   export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w\n  $WHITE"
 }
 prompt
-{% endhighlight %}
+"""]]
 
 <h2>Prompt Inspiration</h2>
 Most of the inspiration for moving to ZSH and for creating this _extravagant_ 

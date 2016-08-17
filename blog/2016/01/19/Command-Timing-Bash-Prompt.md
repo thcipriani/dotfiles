@@ -151,7 +151,7 @@ PROMPT_COMMAND=prompt
 [[!pygments lexer=bash content="""
  (•◡•)❥ sleep 5
 5s (•◡•)❥
-{% endhighlight %}
+"""]]
 """]]
 
 Motherfucking magic.
