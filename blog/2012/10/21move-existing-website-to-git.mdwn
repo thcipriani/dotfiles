@@ -1,7 +1,3 @@
----
-layout: post
-title: Integrating git with your existing website
----
 Better git it in your soul<a href="http://www.youtube.com/watch?v=SPoK1lryfh4">*</a>.
 
 Git has a <a href="https://bitly.com/bundles/matthewmccullough/1">lot</a> 
@@ -74,7 +70,7 @@ the code that you&#8217;ve rsynced in the previous step to that repo.
 
  1. &shy;<code>cd</code> to the directory to which you previously rsynced 
     your site and initialize a git repository by running <code>git init</code>
-    [[!pygments lexer=bash content="""
+[[!pygments lexer=bash content="""
 $ cd /srv/www/tylercipriani.com/public_html/
 $ git init
 """]]
@@ -93,13 +89,13 @@ local development environment.
 
  1. ssh into your webserver and make a new directory, I usually make it above 
     the webroot (i.e. <code>htdocs</code>)
-    [[!pygments lexer=bash content="""
+[[!pygments lexer=bash content="""
 $ mkdir tylercipriani.com.git && cd tylercipriani.com.git
 """]]
 
  2. Once inside the new directory initialize a bare repository by using the 
     <code>--bare</code> flag:
-    [[!pygments lexer=bash content="""
+[[!pygments lexer=bash content="""
 $ git init --bare
 """]]
 
@@ -108,7 +104,8 @@ $ git init --bare
     can be any type of script you want, the script below is written in bash. 
     <code>cd</code> into the <code>.git/hooks</code> directory and create a 
     file called &#8220;post-receive&#8221;. Copy the code below into the file:
-    [[!pygments bash linenos %}
+
+[[!pygments lexer=bash linenos=yes content="""
 #!/bin/bash
 GIT_WORK_TREE=/path/to/your/htdocs/direcotry git checkout -f
 """]]
@@ -133,8 +130,11 @@ $ git push -u origin master
 By using the <code>-u</code> flag you&#8217;re setting the upstream which means 
 you can just run <code>git pull</code> without further arguments to merge 
 origin and master.
-[[!meta date="2012-10-21"]][[!meta author="Tyler Cipriani"]][[!meta license="""
-[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
-"""]][[!meta copyright="""
+
+[[!meta date="2012-10-21"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="move-existing-website-to-git.md"]]
+"""]][[!meta title="Integrating git with your existing website"]]
