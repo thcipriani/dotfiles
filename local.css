@@ -446,3 +446,9 @@ pre { overflow: visible; }
 .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 
+/*
+ * As responsive as I get
+ * ======================= */
+@media (max-width: 600px) {
+    body { font-size: 1em; }
+}

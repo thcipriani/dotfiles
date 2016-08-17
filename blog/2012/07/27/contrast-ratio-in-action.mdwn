@@ -1,12 +1,3 @@
-[[!meta title="Website Contrast Ratio in Practice"]]
-[[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
-"""]]
-
-[[!meta license="""
-[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
-"""]]
-
 While perusing [Hacker News](http://news.ycombinator.com/ "Hacker News") I ran across a single-page site called 
 [Contrast Rebellion](http://contrastrebellion.com/ "Contrast Rebellion")&#8212;
 which I understand has created a bit of controversy. 
@@ -102,4 +93,4 @@ Out of curiousity I decided to see what these recommendations would look like fo
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="contrast-ratio-in-action.md"]]
+"""]][[!meta title="Website Contrast Ratio in Practice"]]
