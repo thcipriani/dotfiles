@@ -1,8 +1,3 @@
----
-layout: post
-title: Knowledge Nuggets From My Tmux.conf
----
-
 When I switched from GNU Screen to Tmux, I was just jazzed that Tmux _had_ a 
 status bar. To achieve that same effect in Screen I had a cryptic 
 115-character `hardstatus` string that I copy&#8211;pasted from someplace 
@@ -148,4 +143,4 @@ set -g window-status-current-format "#[fg=colour234,bg=colour39]#[fg=colour16
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="important-lines-in-my-tmux.md"]]
+"""]][[!meta title="Knowledge Nuggets From My Tmux.conf"]]

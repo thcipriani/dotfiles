@@ -1,8 +1,3 @@
----
-title: On Puppet, apt-get update, Source Lists, and Dumbness
-layout: post
----
-
 Configuration management software is nice because it lets you be a little dumb.
 Puppet, Chef, Ansible, and Salt have all managed to smooth down many of the
 rough edges that were ubiquitous in the terrible bash and perl
@@ -49,7 +44,7 @@ problem in a larger manifest. Puppet will succeed with some packages, fail in ot
 create [unresolvable dependency conflicts](http://en.wikipedia.org/wiki/Dependency_hell)
 on the next run (after `apt-get update` has run).
 
->**Edit**&#8212;2016-03-20
+> **Edit**&#8212;2016-03-20
 >
 > This relationship is easier to see when you take advantage of puppet's
 > `--graph` ability:
@@ -58,10 +53,10 @@ on the next run (after `apt-get update` has run).
  dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationships.png
  """]]
 >
-> ![Puppet relationship graph](/images/2016/2016-03-20_puppet-dot.png)
+> ![Puppet relationship graph](/static/images/2016/2016-03-20_puppet-dot.png)
 
 [[!meta date="2015-05-23"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="Puppet,-Apt-get-update,-Source-lists,-and-Dumbness.md"]]
+"""]][[!meta title="Puppet, apt-get-update, source-lists, and Dumbness"]]
