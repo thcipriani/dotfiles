@@ -1,9 +1,5 @@
----
-layout: post
-title: My ZSH (and bash) prompt
-image: http://tylercipriani-files.s3.amazonaws.com/blog/junkfoodtheme.png
-image_alt: Junkfood theme in git directory
----
+[!http://tylercipriani-files.s3.amazonaws.com/blog/junkfoodtheme.png](Junkfood theme in git directory)
+
 In order to become a card-carrying Linux user, I feel like you _need_ to
 have spent a truly astounding amount of time fiddling with your
 <a href="https://github.com/thcipriani/dotfiles">dotfiles.</a> 
@@ -90,4 +86,4 @@ called, <a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#oh
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="zsh-prompt-customization.md"]]
+"""]][[!meta title="My ZSH (and bash) prompt"]]

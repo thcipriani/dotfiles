@@ -1,8 +1,3 @@
----
-layout: post
-title: Dotfile Boilerplate
----
-
 Earlier today I made a tweak to one of my ever-growing collection of 
 [dotfiles](https://github.com/thcipriani/dotfiles/) and it reminded me 
 that I&#8217;m not too happy with my dotfile&#8217;s `bootstrap` script.
@@ -63,4 +58,4 @@ a wellspring of ideas.
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="dotfiles-how-to-get-started.md"]]
+"""]][[!meta title="Dotfile Boilerplate"]]

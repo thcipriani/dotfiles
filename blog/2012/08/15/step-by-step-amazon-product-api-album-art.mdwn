@@ -1,8 +1,3 @@
----
-layout: post
-title: Using Amazon Product Advertising API to Grab Album Art
----
-
 At Custom Channels we have our own API for Album Art. Our Album Art API was designed
 before I got here, it was designed for the single use-case of the Custom Channels standard flash player 
 (i.e. 125×125 gif) and isn't what you'd call “future proof”. 
@@ -30,4 +25,4 @@ search Amazon's digital music store and output the large-format album art for th
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="step-by-step-amazon-product-api-album-art.md"]]
+"""]][[!meta title="Using Amazon Product Advertising API to Grab Album Art"]]

@@ -77,7 +77,7 @@ index.html: README.md
 
 Running `make` takes my `README.md` and makes this:
 
-[[!pygments lexer=html content="""
+[[!pygments lexer=html content='''
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,7 +102,7 @@ Running `make` takes my `README.md` and makes this:
 </ul>
 </body>
 </html>
-"""]]
+''']]
 
 Title/Layout/CSS
 ---
@@ -328,6 +328,7 @@ commit:
 .PHONY: init clean commit serve
 """]]
 
+[[!meta date="2014-05-13"]][[!meta author="Tyler Cipriani"]]
 [[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
