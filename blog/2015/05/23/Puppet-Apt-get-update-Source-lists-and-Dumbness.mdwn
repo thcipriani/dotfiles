@@ -44,16 +44,19 @@ problem in a larger manifest. Puppet will succeed with some packages, fail in ot
 create [unresolvable dependency conflicts](http://en.wikipedia.org/wiki/Dependency_hell)
 on the next run (after `apt-get update` has run).
 
-> **Edit**&#8212;2016-03-20
->
-> This relationship is easier to see when you take advantage of puppet's
-> `--graph` ability:
-> [[!pygments lexer=bash content="""
- puppet apply --graph test.pp
- dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationships.png
- """]]
->
-> ![Puppet relationship graph](/static/images/2016/2016-03-20_puppet-dot.png)
+<blockquote>
+<strong>Edit</strong>&#8212;2016-03-20
+
+This relationship is easier to see when you take advantage of puppet's
+<code>--graph</code> ability:
+
+[[!pygments lexer=bash content="""
+puppet apply --graph test.pp
+dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationships.png
+"""]]
+
+<img src="/static/images/2016/2016-03-20_puppet-dot.png" alt="Puppet relationship graph">
+</blockquote>
 
 [[!meta date="2015-05-23"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
