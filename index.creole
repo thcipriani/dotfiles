@@ -6,8 +6,8 @@ Copyright &copy; 2016 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 
-<figure class="thumb thumb-right thumb-large">
-{{https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_studio_photo.jpg|Tyler Cipriani}}
+<figure class="thumb thumb-right">
+[[!img static/images/201307_p_tyler_studio_photo.jpg alt="Tyler Cipriani" size="320x350"]]
 <figcaption>
 Gentleman. Scholar. Lyrical genius.
 </figcaption>
@@ -28,7 +28,7 @@ Gentleman. Scholar. Lyrical genius.
 * [[Keybase|https://keybase.io/thcipriani]]
 * Fingerprint: <code>6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02</code>
 
----
+----
 
 [[!inline pages=sidebar raw=yes]]
 

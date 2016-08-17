@@ -63,6 +63,41 @@
 </TMPL_IF>
 </TMPL_UNLESS>
 <TMPL_IF HTML5></header><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF HAVE_ACTIONS>
+<TMPL_IF HTML5><nav class="actions"><TMPL_ELSE><div class="actions"></TMPL_IF>
+<ul>
+<TMPL_IF EDITURL>
+<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
+</TMPL_IF>
+<TMPL_IF RECENTCHANGESURL>
+<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
+</TMPL_IF>
+<TMPL_IF HISTORYURL>
+<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
+</TMPL_IF>
+<TMPL_IF GETSOURCEURL>
+<li><a href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
+</TMPL_IF>
+<TMPL_IF PREFSURL>
+<li><a href="<TMPL_VAR PREFSURL>">Preferences</a></li>
+</TMPL_IF>
+<TMPL_IF ACTIONS>
+<TMPL_LOOP ACTIONS>
+<li><TMPL_VAR ACTION></li>
+</TMPL_LOOP>
+</TMPL_IF>
+<TMPL_IF COMMENTSLINK>
+<li><TMPL_VAR COMMENTSLINK></li>
+<TMPL_ELSE>
+<TMPL_IF DISCUSSIONLINK>
+<li><TMPL_VAR DISCUSSIONLINK></li>
+</TMPL_IF>
+</TMPL_IF>
+</ul>
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
 <TMPL_IF OTHERLANGUAGES>
 <TMPL_IF HTML5><nav id="otherlanguages"><TMPL_ELSE><div id="otherlanguages"></TMPL_IF>
 <ul>

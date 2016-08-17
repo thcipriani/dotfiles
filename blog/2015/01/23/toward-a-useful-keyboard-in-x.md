@@ -1,8 +1,3 @@
----
-title: Toward a More Useful X Keyboard
-layout: post
----
-
 I'm not sure when, exactly, it became clear that I was going to spend as
 much time as necessary perfecting my keyboard configuration. It's one of
 those things that you _know_ you can make absolutely perfect—given enough
@@ -49,11 +44,11 @@ donate more heavily in the upcoming year.
 To view currently applied options use: `setxkbmap -query` which should
 output something like:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 rules:      evdev
 model:      pc105
 layout:     us
-{% endhighlight %}
+"""]]
 
 To achieve this with `setxkbmap` you would type in your xterm:
 `setxkbmap -model pc105 -layout us`
@@ -70,17 +65,17 @@ I like to be able to type international characters that are often used in
 English (like "é") without resorting to using deadkeys or
 esoteric key-compostability sequences.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 "é" == [Right Alt] + [e]
 "ñ" == [Right Alt] + [n]
 "ö" == [Right Alt] + [p]
-{% endhighlight %}
+"""]]
 
 To enable this simply use the `setxkbmap` command:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 setxkbmap -model pc105 -layout us -variant altgr-intl
-{% endhighlight %}
+"""]]
 
 More information about the *AltGr-Intl* layout can be found in the
 [Xorg Mailing List](http://lists.x.org/archives/xorg/2007-July/026534.html)
@@ -98,9 +93,9 @@ The [compose](https://en.wikipedia.org/wiki/Compose_key) (or _MultiKey_) key, ca
 to any number of keys or key combinations (again, see: [xkeyboard-config(7)](https://web.archive.org/web/20150125024107/http://www.dsm.fordham.edu/cgi-bin/man-cgi.pl?topic=xkeyboard-config&ampsect=7))
 I prefer to map my MultiKey to the right Ctrl key:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 setxkbmap -model pc105 -layout us -variant altgr-intl -option compose:rctrl
-{% endhighlight %}
+"""]]
 
 To type special symbols or expansions using the compose key, simply hit the
 compose key (in my case right Ctrl) and then type the additional character for the
@@ -115,7 +110,7 @@ that will generate any text output.
 
 Example expansions for [`~/.XCompose`](https://github.com/thcipriani/dotfiles/blob/master/XCompose):
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 # Quick ssh key output
 <Multi_key> <k> <e> <y> : "https://gist.github.com/thcipriani/5e95399457da6544a4cb"
 
@@ -131,7 +126,7 @@ Example expansions for [`~/.XCompose`](https://github.com/thcipriani/dotfiles/bl
 # misc
 <Multi_key> <colon> <bar> <bar> : "ಠ_ಠ"
 <Multi_key> <less> <3> : "❤"
-{% endhighlight %}
+"""]]
 
 <div id="capslock"></div>
 ## You're out of your element, CapsLock
@@ -146,14 +141,14 @@ _what have you become_?
 
 I like to remap my CapsLock key to a modifier key I use more frequently: Ctrl.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 setxkbmap \
   -model pc105 \
   -layout us \
   -variant altgr-intl \
   -option compose:rctrl \
   -option ctrl:nocaps
-{% endhighlight %}
+"""]]
 
 <div id="xcape"></div>
 ## XCape
@@ -168,21 +163,21 @@ on their own. And, since the CapsLock key is so central on my keyboard, I
 also use it as an escape key. Compiling `xcape` is pretty straight forward
 (provided you have the requisite build tools):
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 git clone https://github.com/alols/xcape.git .
 cd xcape && make
-{% endhighlight %}
+"""]]
 
 The command that allows for that functionality is also pretty straight-forward:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 xcape -e 'Control_L=Escape'
-{% endhighlight %}
+"""]]
 
 Finally, I also use the option that allows `[Ctrl]+[Alt]+[Backspace]` to
 end an `X` session. So my final `setxkbmap` looks like:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 setxkbmap \
   -model pc105 \
   -layout us \
@@ -190,7 +185,7 @@ setxkbmap \
   -option compose:rctrl \
   -option ctrl:nocaps \
   -option terminate:ctrl_alt_bksp
-{% endhighlight %}
+"""]]
 
 <div id="autorepeat"></div>
 # Key Autorepeat
@@ -207,9 +202,9 @@ autorepeat rate: AutoRepeatDelay and AutoRepeatRate
 
 The syntax for `xset` autorepeat is:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 xset [-r keycode] rate [AutoRepeatRate] [AutoRepeatDelay]
-{% endhighlight %}
+"""]]
 
 By omitting the `-r keycode` you apply the `rate` to all keys (e.g.,
 `xset -r 10` will apply the `rate` settings only to the "1" key). The
@@ -217,9 +212,9 @@ default AutoRepeatDelay is 660ms and the default AutoRepeatRate is 25Hz,
 which is fine, but after tweaking this rate and living with it for a few
 days it will seem _unbearably slow_. My settings are:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 xset r rate 330 75
-{% endhighlight %}
+"""]]
 
 These settings half the time I spend waiting for a key to auto-repeat, and
 triple the rate at which that auto-repeat fires.
@@ -229,9 +224,9 @@ It's that beep that happens when you double-tab Tab in Bash, or try to
 backspace beyond the beginning of a line (which happens a lot with a fast
 AutoRepeatRate). You can probably disable it many ways in `X`, but I use:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 xset -b
-{% endhighlight %}
+"""]]
 
 <div id="persist"></div>
 # Persistence
@@ -240,7 +235,7 @@ By placing the `setxkbmap` command, the `xcape` command, and the two `xset`
 commands shown above into `~/.xinitrc`, that configuration will load
 whenever `X` is started.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 #!/usr/bin/env bash
 #
 # ~/.xinitrc
@@ -267,7 +262,7 @@ xset -b            # Stop beeping at me (A.K.A turn off PC speaker)
 xset r rate 330 60 # Set keyboard repeat rate
 
 has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
-{% endhighlight %}
+"""]]
 
 `~/.xinitrc` will NOT, however, keep those configurations when an external
 USB keyboard is added to the mix.
@@ -276,7 +271,7 @@ The configuration loaded by `setxkbmap` can easily become persistent
 since it is part of the `X` keyboard driver. I have the following in a
 file at `/etc/X11/xorg.conf.d/10-keyboard.conf`:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 Section "InputDevice"
   Identifier "Muh Keyboard"
   MatchIsKeyboard "true"
@@ -286,7 +281,7 @@ Section "InputDevice"
   Option "Xkboptions" "terminate:ctrl_alt_bksp"
   Option "Xkboptions" "ctrl:nocaps"
 EndSection
-{% endhighlight %}
+"""]]
 
 The `xset` commands and `xcape` daemon are a bit more difficult to persist
 when attaching external keyboards.
@@ -295,7 +290,7 @@ In the lazy past, I created a file in my `~/bin/` directory
 (which, in my case, is on my `$PATH`) that I ran manually whenever a new
 keyboard was attached.
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 #!/usr/bin/env bash
 #
 # ~/bin/keyboard—In case of new keyboard, break gla...er...I mean...run this.
@@ -309,7 +304,7 @@ keyboard was attached.
   xcape -e 'Control_L=Escape'
   DISPLAY=:0.0 notify-send "External USB Connected"
 ) &
-{% endhighlight %}
+"""]]
 
 Getting over to my terminal and typing: `keyboard` everytime I attached a
 new keyboard is pretty far from _perfect_.
@@ -325,9 +320,9 @@ tell that my `~/bin/keyboard` script has evolved to accommodate what he outlined
 in his article. In any event (pun intended), I created a file at `/etc/udev/rules.d/99-usb-keyboards.rules`
 with the following contents:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 SUBSYSTEM=="input", ACTION=="add", RUN+="/bin/su tyler --shell=/bin/bash -c /home/tyler/bin/keyboard"
-{% endhighlight %}
+"""]]
 
 Which seems to do the trick!
 
@@ -338,4 +333,4 @@ work *without* `X` Server..._le sigh_
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="toward-a-useful-keyboard-in-x.md"]]
+"""]][[!meta title="Toward a More Useful X Keyboard"]]

@@ -1,11 +1,15 @@
-[[About Me|about]]
+=== The Good Stuff ===
 
+* [[About Me|about]]
+* [[Posts|posts]]
 [[!if test="enabled(calendar)" then="""
-[[Archives|archives]]
+* [[Posts by date|archives]]
 """]]
 
 === The last 5 posts to my [[weblog|blog]] were: ===
 
 [[!inline pages="page(./blog/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=no]]
 
-[[!pagestats style="list" pages="./tags/*" among="./blog/*"]]
+=== Blog Tags ===
+
+[[!pagestats style="list" pages="./tags/*" among="./blog/*" limit=10]]

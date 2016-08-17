@@ -1,5 +1,10 @@
-[[!inline pages="page(./blog/*) and !*/Discussion" show="10"
+[[!inline pages="page(./blog/*) and !*/Discussion" show="5"
 actions=yes rootpage="blog" postform=false]]
 
+* [[About Me|about]]
+* [[Posts|posts]]
+[[!if test="enabled(calendar)" then="""
+* [[Posts by date|archives]]
+"""]]
 
 This blog is powered by [ikiwiki](http://ikiwiki.info).

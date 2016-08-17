@@ -49,9 +49,9 @@ copy of your site.
  2. Rsync the <code>htdocs</code> or <code>public_html</code> from your webserver
     into this local directory:
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 $ rsync -av -e "ssh -p <port>" <rsync-username>@<webserver>:/path/to/public_html/ .
-{% endhighlight %}
+"""]]
 
 The command breaks down like this:
 <ul>
@@ -74,10 +74,10 @@ the code that you&#8217;ve rsynced in the previous step to that repo.
 
  1. &shy;<code>cd</code> to the directory to which you previously rsynced 
     your site and initialize a git repository by running <code>git init</code>
-    {% highlight bash %}
+    [[!pygments lexer=bash content="""
 $ cd /srv/www/tylercipriani.com/public_html/
 $ git init
-{% endhighlight %}
+"""]]
  2. Add the contents of the current directory to the git repository by running 
     <code>git add .</code>
  3. Commit all your newly added files to the repo by running your first 
@@ -93,25 +93,25 @@ local development environment.
 
  1. ssh into your webserver and make a new directory, I usually make it above 
     the webroot (i.e. <code>htdocs</code>)
-    {% highlight bash %}
+    [[!pygments lexer=bash content="""
 $ mkdir tylercipriani.com.git && cd tylercipriani.com.git
-{% endhighlight %}
+"""]]
 
  2. Once inside the new directory initialize a bare repository by using the 
     <code>--bare</code> flag:
-    {% highlight bash %}
+    [[!pygments lexer=bash content="""
 $ git init --bare
-{% endhighlight %}
+"""]]
 
  3. Now we can define a new post-receive hook that will be triggered whenever 
     an update is pushed to this new bare repository. The post-receive hook 
     can be any type of script you want, the script below is written in bash. 
     <code>cd</code> into the <code>.git/hooks</code> directory and create a 
     file called &#8220;post-receive&#8221;. Copy the code below into the file:
-    {% highlight bash linenos %}
+    [[!pygments bash linenos %}
 #!/bin/bash
 GIT_WORK_TREE=/path/to/your/htdocs/direcotry git checkout -f
-{% endhighlight %}
+"""]]
 
     make sure that this code is executable by running 
     <code>chmod +x .git/hooks/post-receive</code>
@@ -125,10 +125,10 @@ Back on your local machine, in the webroot of your local development environment
 add your bare webserver repo as your <code>remote</code> and push your git 
 repo up to your server. The post-receive hook will take care of the rest!
 
-{% highlight bash %}
+[[!pygments lexer=bash content="""
 $ git remote add web ssh://user@tylercipriani.com/home/user/tylercipriani.com.git
 $ git push -u origin master
-{% endhighlight %}
+"""]]
 
 By using the <code>-u</code> flag you&#8217;re setting the upstream which means 
 you can just run <code>git pull</code> without further arguments to merge 

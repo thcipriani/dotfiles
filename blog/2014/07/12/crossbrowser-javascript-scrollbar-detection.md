@@ -1,8 +1,3 @@
----
-layout: post
-title: Cross-Browser JavaScript Scrollbar Detection
----
-
 I recently contributed a fix to the
 [bootstrap framework](https://github.com/twbs/bootstrap/issues/9855)
 that detects on-screen scrollbars to determine whether or not the body
@@ -12,9 +7,9 @@ more involved than I initially anticipated.
 
 The tl;dr, semi-näive version:
 
-{% highlight javascript %}
+[[!pygments lexer=javascript linenos=yes content="""
 var hasScrollbar = window.innerWidth > document.documentElement.clientWidth
-{% endhighlight %}
+"""]]
 
 This works for most browsers. Basically it checks to see if the width of
 the `window` element (read: including scrollbars) is greater than the width
@@ -41,7 +36,7 @@ One thing to check is the `scrollHeight`. If the `scrollHeight` of the root
 element is greater than the `clientHeight` of the root element, then that
 root element is going to need to scroll to show the overflowing content:
 
-{% highlight javascript %}
+[[!pygments lexer=javascript linenos=yes content="""
 var hasScrollbar
 
 if (typeof window.innerWidth === 'number')
@@ -49,7 +44,7 @@ if (typeof window.innerWidth === 'number')
 
 hasScrollbar = hasScrollbar ||
   document.documentElement.scrollHeight > document.documentElement.clientHeight
-{% endhighlight %}
+"""]]
 
 Again, this is an oversimplification. The `overflow` property of the root
 element can modify the appearance of scrollbars (to create on-screen _faux_ llbars).
@@ -57,14 +52,14 @@ Of course, once again, IE and modern browsers differ about how they&#8217;ve
 implemented the javascript api for accessing element styles. We can account
 for this difference and grab the overflow property like this:
 
-{% highlight javascript %}
+[[!pygments lexer=javascript linenos=yes content="""
 var overflowStyle
 
 if (typeof document.documentElement.currentStyle !== 'undefined')
   overflowStyle = document.documentElement.currentStyle.overflow
 
 overflowStyle = overflowStyle || window.getComputedStyle(document.documentElement, '').overflow
-{% endhighlight %}
+"""]]
 
 The two values of the `overflow` or `overflow-y` properties that will
 create scrollbars are `visible` and `auto` provided that the `scrollHeight`
@@ -79,7 +74,7 @@ just to be on the safe side let&#8217;s add it into our solution.
 
 The final solution looks like this:
 
-{% highlight javascript %}
+[[!pygments lexer=javascript linenos=yes content="""
 var hasScrollbar = function() {
   // The Modern solution
   if (typeof window.innerWidth === 'number')
@@ -110,7 +105,7 @@ var hasScrollbar = function() {
 
   return (contentOverflows && overflowShown) || (alwaysShowScroll)
 }
-{% endhighlight %}
+"""]]
 
 If I missed something, or if _this_ solution is a bit of an oversimplification
 (le sigh), please let me know in the comments.
@@ -118,4 +113,4 @@ If I missed something, or if _this_ solution is a bit of an oversimplification
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
-"""]][[!meta title="crossbrowser-javascript-scrollbar-detection.md"]]
+"""]][[!meta title="Cross-Browser JavaScript Scrollbar Detection"]]

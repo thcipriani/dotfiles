@@ -13,7 +13,7 @@ I'm still dumb and there are now new, non-obvious, ways to be dumb.
 
 One non-obvious example is below:
 
-{% highlight puppet %}
+[[!pygment lexer=bash content="""
 package { 'apache':
     ensure  => installed,
     require => File['/etc/apt/sources.list.d/some_source.list']
@@ -27,7 +27,7 @@ file { '/etc/apt/sources.list.d/some_source.list':
 exec { 'apt-get update': }
 
 ...
-{% endhighlight %}
+"""]]
 
 On the surface, this little contrived example seems fine: Apache requires a
 special source, adding that source triggers an `apt-get update`. Therefore, before
@@ -53,10 +53,10 @@ on the next run (after `apt-get update` has run).
 >
 > This relationship is easier to see when you take advantage of puppet's
 > `--graph` ability:
-> {% highlight bash %}
-> puppet apply --graph test.pp
-> dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationships.png
-> {% endhighlight %}
+> [[!pygment lexer=bash content="""
+ puppet apply --graph test.pp
+ dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationships.png
+ """]]
 >
 > ![Puppet relationship graph](/images/2016/2016-03-20_puppet-dot.png)
 
