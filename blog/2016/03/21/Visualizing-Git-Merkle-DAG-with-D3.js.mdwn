@@ -28,7 +28,7 @@ One way to think of a DAG is as a set of dependencies—each node may
 have a dependency on one or more other nodes. That is, in order to get to `Node B`
 you must route through `Node A`, so `Node B` depends on `Node A`:
 
-[[!pygments linenos="yes" content="""
+[[!pygments lexer=javascript linenos=yes content="""
 // Node → [dependent nodes]
 var dag = {
     'Node A': ['Node B'],
@@ -256,7 +256,7 @@ $ find .git/objects/ -type f
 
 What are Git objects? Because they look like nonsense:
 
-[[!pygments lexer="bash" content="""
+[[!pygments lexer=bash content="""
 $ cat .git/objects/1b/9f426a8407ffee551ad2993c5d7d3780296353
 xKOR02,V¢T¤̼¼̼t.
 """ ]]
