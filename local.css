@@ -281,6 +281,38 @@ a.feedbutton {
 .trailprev {
     top: 50%;
     transform: translateY(-50%);
+    display: table;
+}
+
+.trailarrow {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.trailnext a:link,
+.trailnext a:hover,
+.trailnext a:active,
+.trailnext a:visited,
+.trailprev a:link,
+.trailprev a:hover,
+.trailprev a:active,
+.trailprev a:visited {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.trailnext a:link,
+.trailnext a:hover,
+.trailnext a:active,
+.trailnext a:visited {
+    padding-right: 5%;
+}
+
+.trailprev a:link,
+.trailprev a:hover,
+.trailprev a:active,
+.trailprev a:visited {
+    padding-left: 5%;
 }
 
 .trail a:link,
@@ -288,6 +320,7 @@ a.feedbutton {
 .trail a:active,
 .trail a:visited {
     text-shadow: 2px 0 0 aliceblue, -2px 0 0 aliceblue;
+    background-image: none;
 }
 
 .thumb {
@@ -345,6 +378,21 @@ a.feedbutton {
 .month-calendar th,
 .month-calendar td {
     text-align: center;
+}
+
+/*
+ * Comments
+ * ==================================================== */
+
+.comment {
+    border: none;
+    border-top: 1px solid gainsboro;
+    padding: 1em 0;
+    margin: 1em 0;
+}
+
+.comment-header {
+    font-size: 0.85em;
 }
 
 /*
