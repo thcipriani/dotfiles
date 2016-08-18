@@ -1,0 +1,9 @@
+[[!comment format=mdwn
+ username="john@example.com"
+ nickname="John Q. Public"
+ date="2015-03-01T03:10:42"
+ avatar="http://cdn.libravatar.org/avatar/d4c74594d841139328695756648b6bd6"
+ subject="comment 2"
+ content="""
+I think it's more distracting that the animation is not there in my browser.
+"""]]

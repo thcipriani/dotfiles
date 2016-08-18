@@ -1,0 +1,12 @@
+[[!comment format=mdwn
+ username="clottes.code@gmail.com"
+ nickname="clottes"
+ date="2015-07-17T13:39:47"
+ avatar="http://cdn.libravatar.org/avatar/62f09893810401980e75227692c51fb5"
+ subject="comment 3"
+ content="""
+Note: that rootElem in my previous comment would only be viable then in the
+rest of the code for calculating things available on that element and would
+require changing, my point is rootElem will always be document.documentElement
+(because it exists in IE8 if I'm not mistaken)
+"""]]

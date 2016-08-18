@@ -1,0 +1,15 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2013-11-27T08:14:44"
+ avatar="http://cdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 4"
+ content="""
+I did forget to mention that in order to get an affiliate ID you need to
+become an associate. To become an associate, follow instructions here: [http:/
+/docs.aws.amazon.com/AWS...](http://docs.aws.amazon.com/AWSECommerceService/la
+test/GSG/GettingSetUp.html).
+
+If you have all your credentials correct, and your include path is correct,
+then this works. I just tested it today.
+"""]]
