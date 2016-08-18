@@ -7,6 +7,7 @@
 </TMPL_IF>
 </TMPL_IF>
 <TMPL_IF HTML5><meta charset="utf-8" /><TMPL_ELSE><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></TMPL_IF>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><TMPL_VAR TITLE></title>
 <script>
   /**
@@ -65,6 +66,11 @@
 </TMPL_IF>
 <!--</TMPL_LOOP>-->
 </TMPL_UNLESS>
+
+<!-- OpenID things -->
+<link rel="openid.server" href="https://openid.tylercipriani.com/" />
+<link rel="openid2.provider" href="https://openid.tylercipriani.com/" />
+<meta http-equiv="X-XRDS-Location" content="https://openid.tylercipriani.com/xrds/thcipriani" />
 
 </head>
 <body>
@@ -260,5 +266,20 @@ Last edited <TMPL_VAR MTIME>
 
 <TMPL_IF HTML5></article><TMPL_ELSE></div></TMPL_IF>
 
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.tylercipriani.com/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.tylercipriani.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
 </body>
 </html>
