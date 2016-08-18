@@ -1,0 +1,18 @@
+[[!meta date="2012-08-01"]] [[!meta author="Tyler Cipriani"]] [[!meta
+license=""" [[Creative Commons Attribution-ShareAlike
+License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
+copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
+
+[[!meta title="Book Things"]]
+
+I've been trying to read more books. In recent years my offline reading
+has really taken a hit. I spend most of my day communicating through an
+almost wholly text interface. While the number of words I read per day
+certainly puts me in a high percentile, the quality of the words read is
+probably not especially staggering.
+
+Anyway, here's my book things:
+
+* [[Library Thing|books/library-thing]]
+* [[Books read in 2016|books/2016]]
+* [[Books to read|books/to-read]]

@@ -1,0 +1,24 @@
+[[!meta date="2012-08-01"]] [[!meta author="Tyler Cipriani"]] [[!meta
+license=""" [[Creative Commons Attribution-ShareAlike
+License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
+copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
+
+[[!meta title="Library Thing(s)"]]
+
+Earlier this year, I stumbled across [[Library
+Thing|https://www.librarything.com]] and almost immediately decided that
+I wanted to join—which is a rare thing for me concerning online
+services.
+
+So I did what any normal person would do and I bought a [[barcode
+scanner|https://www.amazon.com/gp/product/B00406YZGK/ref=oh_aui_detailpage_o06_s01?ie=UTF8&psc=1]]
+and wrote some python to build my catalog.
+
+The [[python
+script|https://github.com/thcipriani/dotfiles/blob/master/bin/LibraryThing]]
+is just a loop that shows a prompt and waits for an ISBN, <code>t</code> to input a
+tag, <code>q</code> to quit. Meanwhile it's generating a csv file that
+can be uploaded to LibraryThing.
+
+The fruits of this labor were/are my (and Blazey's) [[Library Thing Catalog|https://www.librarything.com/catalog/thcipriani]]
+
