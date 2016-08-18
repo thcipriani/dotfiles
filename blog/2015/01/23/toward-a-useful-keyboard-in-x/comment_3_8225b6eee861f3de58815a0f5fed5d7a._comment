@@ -2,7 +2,7 @@
  username="john.ohno@gmail.com"
  nickname="John Ohno"
  date="2015-02-02T11:15:44"
- avatar="http://cdn.libravatar.org/avatar/f421b28a24f33ff21a6b49e3c07c2182"
+ avatar="https://seccdn.libravatar.org/avatar/f421b28a24f33ff21a6b49e3c07c2182"
  subject="comment 3"
  content="""
 Arrow key repeat rates are set by auto-repeat. Navigating to the middle of a
