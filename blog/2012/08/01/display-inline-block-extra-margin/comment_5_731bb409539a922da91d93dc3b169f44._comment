@@ -2,7 +2,7 @@
  username="foo@bar.com"
  nickname="foo"
  date="2015-01-06T15:32:35"
- avatar="http://cdn.libravatar.org/avatar/f3ada405ce890b6f8204094deb12d8a8"
+ avatar="https://seccdn.libravatar.org/avatar/f3ada405ce890b6f8204094deb12d8a8"
  subject="comment 5"
  content="""
 Two alternatives:

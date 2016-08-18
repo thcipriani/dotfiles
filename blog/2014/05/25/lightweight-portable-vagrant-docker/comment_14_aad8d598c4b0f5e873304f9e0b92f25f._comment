@@ -2,7 +2,7 @@
  username="chadcarbert@me.com"
  nickname="Chad"
  date="2015-09-18T21:39:49"
- avatar="http://cdn.libravatar.org/avatar/812d335fd352057dde17e507064c71f3"
+ avatar="https://seccdn.libravatar.org/avatar/812d335fd352057dde17e507064c71f3"
  subject="comment 14"
  content="""
 This is a great run down of using docker for local development. I'm working

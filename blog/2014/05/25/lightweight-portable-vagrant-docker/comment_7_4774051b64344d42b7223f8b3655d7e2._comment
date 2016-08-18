@@ -2,7 +2,7 @@
  username="lance@parsonsclan.com"
  nickname="Lance Parsons"
  date="2014-09-05T11:43:51"
- avatar="http://cdn.libravatar.org/avatar/7d08c391f4df423d629021d547a470e8"
+ avatar="https://seccdn.libravatar.org/avatar/7d08c391f4df423d629021d547a470e8"
  subject="comment 7"
  content="""
 Unfortunately, it seems that as of Vagrant 1.6, the Vagrant support for Docker

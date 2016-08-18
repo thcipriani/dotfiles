@@ -2,7 +2,7 @@
  username="thcipriani@gmail.com"
  nickname="thcipriani"
  date="2014-07-08T08:59:42"
- avatar="http://cdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ avatar="https://seccdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
  subject="comment 2"
  content="""
 I wonder if you need to setup openssh via the dockerfile and run it as part of
