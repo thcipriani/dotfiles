@@ -152,9 +152,9 @@ PROMPT_COMMAND=prompt
  (•◡•)❥ sleep 5
 5s (•◡•)❥
 """]]
-"""]]
 
 Motherfucking magic.
+
 [[!meta date="2016-01-19"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
