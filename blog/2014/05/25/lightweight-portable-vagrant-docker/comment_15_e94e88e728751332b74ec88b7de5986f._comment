@@ -1,0 +1,38 @@
+[[!comment format=mdwn
+ username="aladsa@gmail.com"
+ nickname="Ale"
+ date="2016-05-29T14:21:44"
+ avatar="http://cdn.libravatar.org/avatar/9ab9c5cf00ce3650628f287de57685e0"
+ subject="comment 15"
+ content="""
+INFO interface: error: There was an error loading a Vagrantfile. The file
+being loaded
+
+and the error message are shown below. This is usually caused by
+
+a syntax error.
+
+Path: <provider config:="" docker="">
+
+Line number: 6
+
+Message: NoMethodError: undefined method `<<' for #<object:0x00000002b0ea08>
+
+There was an error loading a Vagrantfile. The file being loaded
+
+and the error message are shown below. This is usually caused by
+
+a syntax error.
+
+Path: <provider config:="" docker="">
+
+Line number: 6
+
+Message: NoMethodError: undefined method `<<' for #<object:0x00000002b0ea08>
+
+INFO interface: Machine: error-exit ["Vagrant::Errors::VagrantfileLoadError",
+"There was an error loading a Vagrantfile. The file being loaded\nand the
+error message are shown below. This is usually caused by\na syntax
+error.\n\nPath: <provider config:="" docker="">\nLine number: 6\nMessage:
+NoMethodError: undefined method `<<' for #<object:0x00000002b0ea08>"]
+"""]]

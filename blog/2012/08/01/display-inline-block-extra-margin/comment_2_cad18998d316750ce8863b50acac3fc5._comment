@@ -1,0 +1,14 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2013-11-11T06:50:42"
+ avatar="http://cdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 2"
+ content="""
+Yezzur, that solution will depend on the font-size of the parent container. An
+easier solution might be to just set font-size: 0; on the parent container.
+
+The more I play with inline-block, the more I like the comment based solution.
+
+You'll see more solutions in that CSS Tricks article I have linked up.
+"""]]

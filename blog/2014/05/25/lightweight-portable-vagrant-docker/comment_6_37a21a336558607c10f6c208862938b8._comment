@@ -1,0 +1,17 @@
+[[!comment format=mdwn
+ username="anonymized-1575670602@disqus.com"
+ nickname="Guest"
+ date="2014-09-05T11:42:48"
+ avatar="http://cdn.libravatar.org/avatar/95a5911e2268a11ca0733b13561de5ad"
+ subject="comment 6"
+ content="""
+Unfortunately, the Vagrant support for Docker as a provider isn't quite
+seamless across platforms as the documentation seems to indicate. Ports are
+not forwarded from the docker host vm to the main host machine automatically.
+The fix is to use a proxy Vagrantfile that explicitly forwards the ports you
+need. See [https://gist.github.com/audion...](https://gist.github.com/audioner
+d/d7d77d9af080a7a87d9b) for a discussion of the issue and
+[https://github.com/simono/vm-e...](https://github.com/simono/vm-
+examples/blob/master/docker-host/Vagrantfile) for a simple and lightweight
+proxy Vagrantfile.
+"""]]

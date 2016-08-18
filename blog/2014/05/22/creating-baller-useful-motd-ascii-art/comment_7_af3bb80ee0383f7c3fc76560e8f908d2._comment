@@ -1,0 +1,17 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2015-03-06T10:08:47"
+ avatar="http://cdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 7"
+ content="""
+@sigilo:disqus I don't think you missed anything. I think it's just how that
+program is designed: it's meant to make files for use with ponysay
+[https://github.com/erkin/ponys...](https://github.com/erkin/ponysay) which is
+what you're seeing.
+
+You could try something as simple as `./img2ponysay [whatever] | tr -d
+'$balon5\\'` or cook up something with grep -Ev
+
+Sorry not much help—never tried to generate art dynamically.
+"""]]

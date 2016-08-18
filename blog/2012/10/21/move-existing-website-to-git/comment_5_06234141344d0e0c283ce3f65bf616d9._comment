@@ -1,0 +1,13 @@
+[[!comment format=mdwn
+ username="hthomasrye@gmail.com"
+ nickname="Thomas Rye"
+ date="2015-03-10T19:58:05"
+ avatar="http://cdn.libravatar.org/avatar/38c50aa6926dcd7a4e20bb5bf7124282"
+ subject="comment 5"
+ content="""
+Thanks for the write up. This is quite nearly exactly what I've been looking
+for. I'm trying to setup a faux-central repo on my webserver so I can develop
+locally, push to central repo and then pull from central repo to production.
+
+A couple things not quite working just yet, but I'm hopeful.
+"""]]

@@ -1,0 +1,11 @@
+[[!comment format=mdwn
+ username="aayix@hotmail.com"
+ nickname="Guest"
+ date="2014-04-24T00:45:16"
+ avatar="http://cdn.libravatar.org/avatar/469077e48d661a6a9c2ca089ff87a2e9"
+ subject="comment 4"
+ content="""
+Yes Guest, font size 0px is required if you want to display the inline-block
+elements aligned to center. if u have text in the inner elements u'll need to
+set the font size for those back again
+"""]]

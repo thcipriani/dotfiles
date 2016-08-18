@@ -1,0 +1,21 @@
+[[!comment format=mdwn
+ username="clottes.code@gmail.com"
+ nickname="clottes"
+ date="2015-07-17T13:35:13"
+ avatar="http://cdn.libravatar.org/avatar/62f09893810401980e75227692c51fb5"
+ subject="comment 2"
+ content="""
+// rootElem for quirksmode
+
+var rootElem = document.documentElement || document.body
+
+shouldn't you be checking if the clientHeight of document is 0 (not that
+documentElement exists) when assigning rootElem... (if I'm following your
+resoning above)
+
+isn't this what you mean:?
+
+var rootElem = document.documentElement
+
+if(!rootElem.clientHeight) rootElem = document.body
+"""]]

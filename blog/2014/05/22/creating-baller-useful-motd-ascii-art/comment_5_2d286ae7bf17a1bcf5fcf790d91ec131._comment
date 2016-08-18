@@ -1,0 +1,11 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2015-03-06T08:34:39"
+ avatar="http://cdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 5"
+ content="""
+I _think_ the jar used to be included in the util-say repo. You may have to
+generate it now: try running `make` inside the util-say repo and see where
+that gets you.
+"""]]
