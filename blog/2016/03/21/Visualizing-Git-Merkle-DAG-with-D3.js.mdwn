@@ -694,4 +694,5 @@ at the end of the `man` output (yes, it&#8217;s dumb).
 
 This should give you an idea of the complexity that is abstracted by
 the Git merkle graph: this repo contains 5 commits!
+
 <div class=merkle-container><div class=merkle-6></div></div>
