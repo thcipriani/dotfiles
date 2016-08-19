@@ -1,3 +1,13 @@
+> **EDIT**: 2016-08-19
+> 
+> I got an email a very long time ago that I meant to post about
+> ye old blog from a fellow named [Tom Duck](http://tomduck.ca/)
+> who built a CMS based around some of the ideas presented here.
+>
+> It's called 
+> [Bassclef](https://github.com/tomduck/bassclef/#bassclef-cms)
+> and it looks pretty amazing and folks should check it out.
+
 I used to use del.icio.us to keep track of links, then it went away.
 After del.icio.us shutdown, I used a ton of uniquely awful services to
 keep track of links. Eventually, I came around to the idea that all I
