@@ -1,7 +1,7 @@
 > **EDIT**: 2016-08-19
 > 
 > I got an email a very long time ago that I meant to post about
-> ye old blog from a fellow named [Tom Duck](http://tomduck.ca/)
+> on ye old weblog from a fellow named [Tom Duck](http://tomduck.ca/)
 > who built a CMS based around some of the ideas presented here.
 >
 > It's called 
