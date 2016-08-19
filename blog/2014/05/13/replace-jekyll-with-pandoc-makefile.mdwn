@@ -21,7 +21,7 @@ Previously Jekyllfied
 ----
 
 My `linuxtips` repo is just a dumb jekyll repo. Esentially all `linuxtips` is is
-just [a big `README` file](https://github.com/thcipriani/linuxtips/blob/master/README.md).
+just [a big `README` file](https://github.com/thcipriani/linuxtips/blob/master/README).
 So, for that repo, I created a `gh-pages` branch with a `_config.yml` and
 a `_layout` directory and popped in a [Makefile](https://github.com/thcipriani/linuxtips/blob/gh-pages/Makefile):
 
