@@ -1,9 +1,10 @@
 === The Good Stuff ===
 
 * [[About Me|about]]
+* [[Books|books]]
 * [[Posts|posts]]
 [[!if test="enabled(calendar)" then="""
-* [[Posts by date|archives]]
+* [[Archives|archives]]
 """]]
 
 === The last 5 posts to my [[weblog|blog]] were: ===

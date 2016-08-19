@@ -6,12 +6,14 @@ Copyright &copy; 2016 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 
+<div class="wiki-image">
 <figure class="thumb thumb-right">
 [[!img static/images/201307_p_tyler_studio_photo.jpg alt="Tyler Cipriani" size="320x350"]]
 <figcaption>
 Gentleman. Scholar. Lyrical genius.
 </figcaption>
 </figure>
+</div>
 
 
 = Contact =
