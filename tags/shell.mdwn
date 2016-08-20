@@ -1,0 +1,4 @@
+[[!meta title="pages tagged shell"]]
+
+[[!inline pages="tagged(shell)" actions="no" archive="yes"
+feedshow=10]]
