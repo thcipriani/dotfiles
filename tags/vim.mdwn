@@ -1,0 +1,4 @@
+[[!meta title="pages tagged vim"]]
+
+[[!inline pages="tagged(vim)" actions="no" archive="yes"
+feedshow=10]]
