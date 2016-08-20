@@ -4,6 +4,7 @@ License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
 copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
 
 [[!meta title="To Read"]]
+[[!tag books]]
 
 * the green hills of earth - Heinlein
 * H Is For Hawk - Helen Macdonald

@@ -59,3 +59,4 @@ So… <code>which vim</code>? <code>/usr/bin/vim</code>. Boom. Yeah, that&#8217;
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Installing Vim from source on CentOS&nbsp;6.3"]]
+[[!tag computing]]

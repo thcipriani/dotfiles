@@ -4,6 +4,7 @@ License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
 copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
 
 [[!meta title="Library Thing(s)"]]
+[[!tag books]]
 
 Earlier this year, I stumbled across [[Library
 Thing|https://www.librarything.com]] and almost immediately decided that

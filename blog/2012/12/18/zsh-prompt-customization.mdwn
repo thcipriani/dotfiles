@@ -87,3 +87,4 @@ called, <a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#oh
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="My ZSH (and bash) prompt"]]
+[[!tag computing shell]]

@@ -26,3 +26,4 @@ search Amazon's digital music store and output the large-format album art for th
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Using Amazon Product Advertising API to Grab Album Art"]]
+[[!tag computing]]

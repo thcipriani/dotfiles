@@ -144,3 +144,4 @@ set -g window-status-current-format "#[fg=colour234,bg=colour39]#[fg=colour16
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Knowledge Nuggets From My Tmux.conf"]]
+[[!tag computing shell tmux]]

@@ -160,3 +160,4 @@ Motherfucking magic.
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Command-Timing-Bash-Prompt"]]
+[[!tag computing shell]]

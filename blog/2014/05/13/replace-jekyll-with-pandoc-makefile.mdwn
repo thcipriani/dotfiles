@@ -344,3 +344,4 @@ commit:
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title=" Replacing Jekyll with Pandoc and a Makefile"]]
+[[!tag computing shell make jekyll]]

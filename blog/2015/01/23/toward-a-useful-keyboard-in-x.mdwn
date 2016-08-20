@@ -334,3 +334,4 @@ work *without* `X` Server..._le sigh_
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Toward a More Useful X Keyboard"]]
+[[!tag computing keyboard unicode]]

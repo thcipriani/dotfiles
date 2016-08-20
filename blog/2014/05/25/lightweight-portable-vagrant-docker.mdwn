@@ -235,3 +235,4 @@ without any noticeable jankyness on a notoriously janky laptop.[[!meta date="201
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Development Environments with Vagrant, Docker, and Supervisord"]]
+[[!tag computing shell docker vagrant]]

@@ -65,3 +65,4 @@ creating MOTDs that are so flossy![[!meta date="2014-05-22"]][[!meta author="Tyl
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Create a Baller/Useful MOTD with ANSI Art"]]
+[[!tag computing shell ansi]]

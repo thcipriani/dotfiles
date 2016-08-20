@@ -96,3 +96,4 @@ Out of curiousity I decided to see what these recommendations would look like fo
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Website Contrast Ratio in Practice"]]
+[[!tag design]]

@@ -59,3 +59,4 @@ a wellspring of ideas.
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Dotfile Boilerplate"]]
+[[!tag computing shell]]

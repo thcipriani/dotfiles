@@ -63,3 +63,4 @@ dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationshi
 """]][[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]][[!meta title="Puppet, apt-get-update, source-lists, and Dumbness"]]
+[[!tag computing configuration-management]]
