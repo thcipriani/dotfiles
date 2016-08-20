@@ -1,0 +1,4 @@
+[[!meta title="pages tagged javascript"]]
+
+[[!inline pages="tagged(javascript)" actions="no" archive="yes"
+feedshow=10]]
