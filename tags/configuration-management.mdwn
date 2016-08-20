@@ -1,0 +1,4 @@
+[[!meta title="pages tagged configuration-management"]]
+
+[[!inline pages="tagged(configuration-management)" actions="no" archive="yes"
+feedshow=10]]
