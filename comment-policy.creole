@@ -1,6 +1,6 @@
-[[!meta date='2016-08-23T14:50:00+7:00']]
-[[!meta title='Comment Policy']]
-[[!meta author='Tyler Cipriani']]
+[[!meta date="2016-08-23T14:50:00+7:00"]]
+[[!meta title="Comment Policy"]]
+[[!meta author="Tyler Cipriani"]]
 [[!meta copyright="""
 Copyright &copy; 2016 Tyler Cipriani
 """]]
