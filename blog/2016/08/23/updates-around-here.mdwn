@@ -1,0 +1,35 @@
+[[!meta date="2016-08-23T16:28:00-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!meta title="Updates around here"]]
+[[!tag computing administravia]]
+
+[[!toc ]]
+I've (mostly) finished moving my blog off of Jekyll and over to [IkiWiki](https://ikiwiki.info/).
+
+The source for my posts is still on github. My Jekyll stuff is still in [thcipriani/blog_src](https://github.com/thcipriani/blog_src). My IkiWiki stuff can be found in [thcipriani/wiki](thcipriani/wikihttps://github.com/thcipriani/wiki). I've also made a couple of plugins for IkiWiki—one to use [Pygments](http://pygments.org/) for syntax highlighting, another to use [s3cmd](http://s3tools.org/s3cmd) to do my publishing. I'll get around to publishing those plugins Soon™.  For whatever reason the [amazon_s3](https://ikiwiki.info/plugins/amazon_s3/) plugin for IkiWiki failed in strange ways for me.
+
+## Content Ownership
+
+This move was prompted mostly by content ownership and licensing issues.
+
+On the previous iteration of this site, I used the [Disqus](https://disqus.com/) service (which is really good) for comments—but I really wanted to own the comments on my blog! I wanted to be certain that the comments made here were owned by the folks that made them and licensed in a Free way. To that end, I exported all comments from Disqus (which is an awesome feature) and imported them into a service that I hosted on a tiny platform called [Isso](https://posativ.org/isso/). Isso seems like good software, and everything worked out of the box.
+
+## Copyleft
+
+So after a lot of yak shaving, I was running on Jekyll and Isso which are both [MIT Licensed](https://en.wikipedia.org/wiki/MIT_License) projects. For my personal blog, I really wanted to use something with a Copyleft license. The criteria of a statically-generated blog and comment system with a Copyleft license was surprisingly limiting.
+
+I looked at using [Pelican](http://blog.getpelican.com/) and IkiWiki. Ultimately, IkiWiki just seemed more flexible and extensible to me. Plus, I'm writing this via the CGI and it will be built statically and uploaded to s3 which is kind of neat.
+
+## Administravia
+
+I've made some effort to ensure that RSS feeds don't break. This effort consists of a single 301 redirect.
+
+I've also written a new [comment policy](/comment-policy/) for this site.
+
+Sorry if I've broken things. Let me know if I've broken things badly.
