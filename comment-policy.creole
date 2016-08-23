@@ -18,10 +18,14 @@ This page outlines the expectations I have of folks that leave comments on this 
 
 These are some general operating principals to which I will strive to adhere.
 
-; //Be inclusive//:Everyone should feel comfortable participating in the discussion.
-; //Be respectful//:We're not going to agree all the time, and that's fine.
-; //No anonymous comments//: You must login with [[OpenID|https://openid.net/]] to comment.
-; //Benevolent Dictator For Life (BDFL)//: My judgements about comments are final.
+* //Be inclusive//
+: Everyone should feel comfortable participating in the discussion.
+* //Be respectful//
+:We're not going to agree all the time, and that's fine.
+* //No anonymous comments//
+: You must login with [[OpenID|https://openid.net/]] to comment.
+* //Benevolent Dictator For Life (BDFL)//
+: My judgements about comments are final.
 
 == Comments that will be deleted ==
 
@@ -60,3 +64,7 @@ I will delete comments that contain content that is derogatory towards an entire
 == Copyright and Licensing ==
 
 Your comments on this blog are your own. You are the copyright holder of your comments. By commenting on this blog, you are agreeing to release your comment under the [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]].
+
+== Feed ==
+
+Comments and comment feeds are available on the [[comments]] page.
