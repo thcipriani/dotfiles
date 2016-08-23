@@ -1,3 +1,4 @@
+[[!toc ]]
 A few years ago I was using ZSH with Sindre Sorhus's
 [Pure prompt](https://github.com/sindresorhus/pure) and generally enjoying
 the experience. The big, dumb, obvious caveat of using ZSH is that it's not Bash.
@@ -7,7 +8,7 @@ emergency on a live application server. As a result, I switched
 back to using bash everywhere.
 
 How I learned to stop worrying and love bash.
-===
+---
 
 I never really missed fancy syntax highlighting, or the nice globbing
 features, or most of ZSH really. The one thing I missed immensely was not so
@@ -32,7 +33,7 @@ version just above your current prompt.
 """]]
 
 Bash it until it works
-===
+---
 
 Command execution time in Pure uses the `preexec` and `precmd` feature of
 ZSH, which doesn't exist in Bash. Instead Bash has the less intuitive `trap`

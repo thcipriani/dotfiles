@@ -689,7 +689,7 @@ img.img { margin: 0; }
 }
 
 #footer {
-    border-top: 1px solid gainsboro;
+    border-top: 1px solid #ccc;
     text-align: center;
 }
 
@@ -711,7 +711,7 @@ a.feedbutton {
 .inlinepage {
     padding: 0 0 2em;
     border: none;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid #ccc;
     overflow: auto;
 }
 
@@ -741,7 +741,8 @@ a.feedbutton {
     clear: both;
     position: relative;
     padding: 2em 0;
-    background: aliceblue;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
 }
 
 .trailnext,
@@ -786,12 +787,25 @@ a.feedbutton {
 .trail a:hover,
 .trail a:active,
 .trail a:visited {
-    text-shadow: 2px 0 0 aliceblue, -2px 0 0 aliceblue;
+    text-shadow: 2px 0 0 #f9f9f9, -2px 0 0 #f9f9f9;
     background-image: none;
 }
 
+.toc {
+    float: right;
+    background: #f9f9f9;
+    padding: 1em;
+    margin: 0 0 1em 1em;
+    border: 1px solid #ccc;
+    font-size: 0.85em;
+}
+
+.toc ol {
+    padding-left: 40px;
+}
+
 .thumb {
-    border: 1px solid gainsboro;
+    border: 1px solid #ccc;
     padding: 0.25em;
     font-size: 0.8em;
     color: #222;
@@ -815,7 +829,7 @@ a.feedbutton {
 
 .pageheader .actions ul {
     height: auto;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid #ccc;
     margin: 0;
     padding: 0 0 0.5em 0;
 }
@@ -860,7 +874,7 @@ a.feedbutton {
 
 .comment {
     border: none;
-    border-top: 1px solid gainsboro;
+    border-top: 1px solid #ccc;
     padding: 1em 0;
     margin: 1em 0;
 }
@@ -987,6 +1001,11 @@ pre { overflow: visible; }
     }
     .wiki-image {
         text-align: center;
+    }
+    .toc {
+        float: none;
+        margin: 0 0 1em 0;
+        padding: 0;
     }
 }
 

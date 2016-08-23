@@ -1,3 +1,4 @@
+[[!toc ]]
 I'm not sure when, exactly, it became clear that I was going to spend as
 much time as necessary perfecting my keyboard configuration. It's one of
 those things that you _know_ you can make absolutely perfect—given enough
@@ -26,7 +27,8 @@ C-code—not too shabby overall.
 * [Persistence](#persist)
 
 <div id="keymaps"></div>
-# Keymaps
+Keymaps
+---
 
 To start working with keyboard layout the lowest-risk command is `setxkbmap(1)`.
 `setxkbmap` temporarily maps the keyboard to use options specified on the command line.
@@ -57,7 +59,7 @@ This is a pretty vanilla setup—when you setup your computer and accept
 the defaults, this is what you get.
 
 <div id="altgr-intl"></div>
-## AltGr-Intl
+### AltGr-Intl
 
 One of the features I find myself using
 frequently is the [AltGr](https://en.wikipedia.org/wiki/AltGr_key) (or _Alternate Graphic_) key.
@@ -82,7 +84,7 @@ More information about the *AltGr-Intl* layout can be found in the
 (found via [Shinobu's Secrets](https://zuttobenkyou.wordpress.com/2011/08/24/xorg-using-the-us-international-altgr-intl-variant-keyboard-layout/))
 
 <div id="xcompose"></div>
-## `~/.XCompose`
+### `~/.XCompose`
 
 Text expansion is awesome. Being able to type a sequence of three characters
 to dump your public key into IRC is awesome. Or how about `ಠ_ಠ`? Being able
@@ -129,7 +131,7 @@ Example expansions for [`~/.XCompose`](https://github.com/thcipriani/dotfiles/bl
 """]]
 
 <div id="capslock"></div>
-## You're out of your element, CapsLock
+### You're out of your element, CapsLock
 
 CapsLock sucks and everyone hates it.
 
@@ -151,7 +153,7 @@ setxkbmap \
 """]]
 
 <div id="xcape"></div>
-## XCape
+### XCape
 
 The other function of my CapsLock key only happens when it is pressed without
 any additonal keys. Basically, if I hit `CapsLock+[t]`, I want a new tab,
@@ -188,7 +190,7 @@ setxkbmap \
 """]]
 
 <div id="autorepeat"></div>
-# Key Autorepeat
+## Key Autorepeat
 
 There are some keyboard options that cannot be set via `setxkbmap`. The
 `AutoRepeat` option was removed from the `X` keyboard driver (`kbd(4)`) as
@@ -229,7 +231,7 @@ xset -b
 """]]
 
 <div id="persist"></div>
-# Persistence
+## Persistence
 
 By placing the `setxkbmap` command, the `xcape` command, and the two `xset`
 commands shown above into `~/.xinitrc`, that configuration will load
