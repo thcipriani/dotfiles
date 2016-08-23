@@ -8,6 +8,7 @@ Copyright &copy; 2016 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 
+[[!toc ]]
 This page outlines the expectations I have of folks that leave comments on this blog, and what those people can expect of me as a comment moderator. Much of this page will be derived/completely stolen from:
 
 * [[The TODO Group's Open Code of Conduct v.1.0|http://todogroup.org/opencodeofconduct/]]
@@ -21,3 +22,41 @@ These are some general operating principals to which I will strive to adhere.
 ; //Be respectful//:We're not going to agree all the time, and that's fine.
 ; //No anonymous comments//: pseudonymous ones are fine.
 ; //Benevolent Dictator For Life (BDFL)//: My judgements about comments are final.
+
+== Comments that will be deleted ==
+
+I will delete comments that I find disrupt discussion or are harassing. I am mostly adopting the TODO Group's Open Code of Conduct's definition of harassment as defined below.
+
+* Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, neuro(a)typicality, physical appearance, body size, race, age, regional discrimination, political or religious affiliation
+* Unwelcome comments regarding a person’s lifestyle choices and practices, including those related to food, health, parenting, drugs, and employment
+* Deliberate misgendering. This includes deadnaming or persistently using a pronoun that does not correctly reflect a person’s lifestyle choices and practices, including those related to food, health, parenting, drugs, and employment
+* Simulated physical contact (eg, textual descriptions like “hug” or “backrub”) after a request to stop
+* Threats of violence, both physical and psychological
+* Incitement of violence towards any individual, including encouraging a person to commit suicide or to engage in self-harm
+* Deliberate intimidation
+* Sustained disruption of discussion
+* Unwelcome sexual attention, including gratuitous or off-topic sexual images or behaviour
+* Pattern of inappropriate social contact, such as requesting/assuming inappropriate levels of intimacy with others
+* Continued one-on-one communication after requests to cease
+* Deliberate “outing” of any aspect of a person’s identity without their consent except as necessary to protect others from intentional abuse
+* Publication of non-harassing private communication
+
+=== Priorities ===
+
+This blog prioritizes marginalized people’s safety over privileged people’s comfort. I will likely not act on complaints regarding:
+
+* ‘Reverse’ -isms, including ‘reverse racism,’ ‘reverse sexism,’ and ‘cisphobia’
+* Reasonable communication of boundaries, such as “leave me alone,” “go away,” or “I’m not discussing this with you”
+* Refusal to explain or debate social justice concepts
+* Communicating in a ‘tone’ you don’t find congenial
+* Criticizing racist, sexist, cissexist, or otherwise oppressive behavior or assumptions
+
+== Benevolent Dictator For Life (BDFL) status ==
+
+How I handle comments is entirely up to me. I will do what we need to to keep the discussions reasonable and on-topic, at my sole judgement and discretion.
+
+I will delete comments that contain content that is derogatory towards an entire class of people based on their race, sex, gender, sexual orientation, disability, class, religion, age, or other self-identified or imputed identity.
+
+== Copyright and Licensing ==
+
+Your comments on this blog are your own. You are the copyright holder of your comments. By commenting on this blog, you are agreeing to release your comment under the [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]].
