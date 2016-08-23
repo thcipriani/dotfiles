@@ -1,0 +1,23 @@
+[[!meta date='2016-08-23T14:50:00+7:00']]
+[[!meta title='Comment Policy']]
+[[!meta author='Tyler Cipriani']]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+
+This page outlines the expectations I have of folks that leave comments on this blog, and what those people can expect of me as a comment moderator. Much of this page will be derived/completely stolen from:
+
+* [[The TODO Group's Open Code of Conduct v.1.0|http://todogroup.org/opencodeofconduct/]]
+* [[GeekFeminism.org's comment policy|https://geekfeminism.org/comment-policy/]]
+
+== Guiding Values ==
+
+These are some general operating principals to which I will strive to adhere.
+
+; //Be inclusive//:Everyone should feel comfortable participating in the discussion.
+; //Be respectful//:We're not going to agree all the time, and that's fine.
+; //No anonymous comments//: pseudonymous ones are fine.
+; //Benevolent Dictator For Life (BDFL)//: My judgements about comments are final.
