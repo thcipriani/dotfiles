@@ -8,13 +8,13 @@ Copyright &copy; 2016 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 
-[[!toc ]]
 This page outlines the expectations I have of folks that leave comments on this blog, and what those people can expect of me as a comment moderator. Much of this page will be derived/completely stolen from:
 
 * [[The TODO Group's Open Code of Conduct v.1.0|http://todogroup.org/opencodeofconduct/]]
 * [[GeekFeminism.org's comment policy|https://geekfeminism.org/comment-policy/]]
 
 == Guiding Values ==
+[[!toc ]]
 
 These are some general operating principals to which I will strive to adhere.
 
@@ -53,7 +53,7 @@ This blog prioritizes marginalized people’s safety over privileged people’s 
 
 == Benevolent Dictator For Life (BDFL) status ==
 
-How I handle comments is entirely up to me. I will do what we need to to keep the discussions reasonable and on-topic, at my sole judgement and discretion.
+How I handle comments is entirely up to me. I will do what I need to to keep the discussions reasonable and on-topic, at my sole judgement and discretion.
 
 I will delete comments that contain content that is derogatory towards an entire class of people based on their race, sex, gender, sexual orientation, disability, class, religion, age, or other self-identified or imputed identity.
 
