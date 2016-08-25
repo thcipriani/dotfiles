@@ -7,6 +7,7 @@
 * [[Archives|archives]]
 """]]
 * [[Tags|tags]]
+* [[Résumé|https://tylercipriani.com/hireme/]] ([[source|https://github.com/thcipriani/hireme]])
 
 === The last 5 posts to my [[weblog|blog]] were: ===
 
