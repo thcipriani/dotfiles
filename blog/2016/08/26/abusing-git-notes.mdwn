@@ -41,7 +41,7 @@ that I opted to create hiraeth rather than use something that was already built:
 Hiraeth is invoked like: `publish [edited-photo-dir] [output-dir]`. Hiraeth
 looks for a file named `_metadata.yaml` inside the directory of edited photos
 and uses that to map photo files to photo descriptions and add titles and
-whatnot the page. It makes a few different sized thumbnails of each photo,
+whatnot to the page. It makes a few different sized thumbnails of each photo,
 grabs the exif info, and generates some html.
 
 Hiraeth was designed to look and behave like a static version of Flickr circa
@@ -73,7 +73,7 @@ We use gerrit at work and I genuinely like it.
 The web-UI is one of the worst interfaces I've ever used. The web interface is
 an unfortunate mix of late-90s, designed-by-engineers, impossibly-option-filled
 interface mashed together in an unholy union with a fancy-schmancy new-fangled
-javascripty single-page application. It's basically mix of two interface
+javascripty single-page application. It's basically a mix of two interface
 paradigms I hate, yet rarely see in concert: back-button breakage + no design
 aesthetic whatsoever.
 `</rant>`
