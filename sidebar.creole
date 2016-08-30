@@ -1,13 +1,11 @@
 === The Good Stuff ===
 
 * [[About Me|about]]
-* [[Books|books]]
-* [[Posts|posts]]
-[[!if test="enabled(calendar)" then="""
-* [[Archives|archives]]
-"""]]
-* [[Tags|tags]]
-* [[Résumé|https://tylercipriani.com/hireme/]] ([[source|https://github.com/thcipriani/hireme]])
+* [[Résumé|https://tylercipriani.com/hireme/]] <small>([[source|https://github.com/thcipriani/hireme]])</small>
+* [[Links|https://pinboard.in/u:thcipriani/]]
+* [[Photos|https://photos.tylercipriani.com]]
+* [[Reading|books]]
+* [[Notes|notes]]
 
 === The last 5 posts to my [[weblog|blog]] were: ===
 
