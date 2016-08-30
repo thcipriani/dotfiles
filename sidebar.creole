@@ -3,7 +3,7 @@
 * [[About Me|about]]
 * [[Résumé|https://tylercipriani.com/hireme/]] <small>([[source|https://github.com/thcipriani/hireme]])</small>
 * [[Links|https://pinboard.in/u:thcipriani/]]
-* [[Photos|https://photos.tylercipriani.com]]
+* [[Photography|http://photos.tylercipriani.com]]
 * [[Reading|books]]
 * [[Notes|notes]]
 
