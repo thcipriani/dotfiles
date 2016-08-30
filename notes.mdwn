@@ -1,0 +1,3 @@
+Attempting to move more notes over to this site:
+
+[[!inline pages="page(./notes/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=no]]
