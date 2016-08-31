@@ -1,0 +1,14 @@
+[[!comment format=mdwn
+ username="https://me.yahoo.com/a/uGtYQ7tunMNZEKGGXTIf0BJCU57PpRINgAlDvfht#10c08"
+ nickname="Durand D Souza"
+ avatar="https://seccdn.libravatar.org/avatar/bb34549283587b0b27bc5cd7a3cfc69bcbcac872ffde8e5edebb98c0a6f617c1"
+ subject="Great!"
+ date="2016-08-31T00:09:38Z"
+ content="""
+This article was really helpful, thanks! I'm trying to understand the significance of DAGs when it comes to networked storage such as IPFS. I was a bit surprised that git doesn't store files in blocks to reduce duplication but I suppose it was originally meant for source code rather than binary data.
+
+Cheers,
+Durand
+
+PS: it would be helpful to have Google/Facebook login for your comments because I had to dig up my yahoo account just to comment here!
+"""]]
