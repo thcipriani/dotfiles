@@ -11,7 +11,7 @@
 * [https://www.librarything.com/catalog/thcipriani library thing]
 
 == GPG Key ==
-* [[018FAC02.asc|tylercipriani.gpg]]
+* [[tylercipriani.gpg|018FAC02.asc]]
 * [https://pgp.mit.edu/pks/lookup?op=vindex&search=0xF6DAD285018FAC02 MIT keyserver]
 * [https://keybase.io/thcipriani Keybase]
 * Fingerprint: <code>6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02</code>
