@@ -46,11 +46,11 @@ donate more heavily in the upcoming year.
 To view currently applied options use: `setxkbmap -query` which should
 output something like:
 
-[[!pygments lexer=bash content="""
+```{.numberLines}
 rules:      evdev
 model:      pc105
 layout:     us
-"""]]
+```
 
 To achieve this with `setxkbmap` you would type in your xterm:
 `setxkbmap -model pc105 -layout us`
@@ -67,23 +67,22 @@ I like to be able to type international characters that are often used in
 English (like "é") without resorting to using deadkeys or
 esoteric key-compostability sequences.
 
-[[!pygments lexer=bash content="""
+```{.numberLines}
 "é" == [Right Alt] + [e]
 "ñ" == [Right Alt] + [n]
 "ö" == [Right Alt] + [p]
-"""]]
+```
 
 To enable this simply use the `setxkbmap` command:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 setxkbmap -model pc105 -layout us -variant altgr-intl
-"""]]
+```
 
 More information about the *AltGr-Intl* layout can be found in the
 [Xorg Mailing List](http://lists.x.org/archives/xorg/2007-July/026534.html)
 (found via [Shinobu's Secrets](https://zuttobenkyou.wordpress.com/2011/08/24/xorg-using-the-us-international-altgr-intl-variant-keyboard-layout/))
 
-<div id="xcompose"></div>
 ### `~/.XCompose`
 
 Text expansion is awesome. Being able to type a sequence of three characters
@@ -95,9 +94,9 @@ The [compose](https://en.wikipedia.org/wiki/Compose_key) (or _MultiKey_) key, ca
 to any number of keys or key combinations (again, see: [xkeyboard-config(7)](https://web.archive.org/web/20150125024107/http://www.dsm.fordham.edu/cgi-bin/man-cgi.pl?topic=xkeyboard-config&ampsect=7))
 I prefer to map my MultiKey to the right Ctrl key:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 setxkbmap -model pc105 -layout us -variant altgr-intl -option compose:rctrl
-"""]]
+```
 
 To type special symbols or expansions using the compose key, simply hit the
 compose key (in my case right Ctrl) and then type the additional character for the
@@ -112,7 +111,7 @@ that will generate any text output.
 
 Example expansions for [`~/.XCompose`](https://github.com/thcipriani/dotfiles/blob/master/XCompose):
 
-[[!pygments lexer=bash content="""
+```{.numberLines}
 # Quick ssh key output
 <Multi_key> <k> <e> <y> : "https://gist.github.com/thcipriani/5e95399457da6544a4cb"
 
@@ -128,9 +127,8 @@ Example expansions for [`~/.XCompose`](https://github.com/thcipriani/dotfiles/bl
 # misc
 <Multi_key> <colon> <bar> <bar> : "ಠ_ಠ"
 <Multi_key> <less> <3> : "❤"
-"""]]
+```
 
-<div id="capslock"></div>
 ### You're out of your element, CapsLock
 
 CapsLock sucks and everyone hates it.
@@ -143,16 +141,15 @@ _what have you become_?
 
 I like to remap my CapsLock key to a modifier key I use more frequently: Ctrl.
 
-[[!pygments lexer=bash content="""
+```{.numberLines}
 setxkbmap \
   -model pc105 \
   -layout us \
   -variant altgr-intl \
   -option compose:rctrl \
   -option ctrl:nocaps
-"""]]
+```
 
-<div id="xcape"></div>
 ### XCape
 
 The other function of my CapsLock key only happens when it is pressed without
@@ -165,21 +162,21 @@ on their own. And, since the CapsLock key is so central on my keyboard, I
 also use it as an escape key. Compiling `xcape` is pretty straight forward
 (provided you have the requisite build tools):
 
-[[!pygments lexer=bash content="""
+```{.bash}
 git clone https://github.com/alols/xcape.git .
 cd xcape && make
-"""]]
+```
 
 The command that allows for that functionality is also pretty straight-forward:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 xcape -e 'Control_L=Escape'
-"""]]
+```
 
 Finally, I also use the option that allows `[Ctrl]+[Alt]+[Backspace]` to
 end an `X` session. So my final `setxkbmap` looks like:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 setxkbmap \
   -model pc105 \
   -layout us \
@@ -187,9 +184,8 @@ setxkbmap \
   -option compose:rctrl \
   -option ctrl:nocaps \
   -option terminate:ctrl_alt_bksp
-"""]]
+```
 
-<div id="autorepeat"></div>
 ## Key Autorepeat
 
 There are some keyboard options that cannot be set via `setxkbmap`. The
@@ -204,9 +200,9 @@ autorepeat rate: AutoRepeatDelay and AutoRepeatRate
 
 The syntax for `xset` autorepeat is:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 xset [-r keycode] rate [AutoRepeatRate] [AutoRepeatDelay]
-"""]]
+```
 
 By omitting the `-r keycode` you apply the `rate` to all keys (e.g.,
 `xset -r 10` will apply the `rate` settings only to the "1" key). The
@@ -214,9 +210,9 @@ default AutoRepeatDelay is 660ms and the default AutoRepeatRate is 25Hz,
 which is fine, but after tweaking this rate and living with it for a few
 days it will seem _unbearably slow_. My settings are:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 xset r rate 330 75
-"""]]
+```
 
 These settings half the time I spend waiting for a key to auto-repeat, and
 triple the rate at which that auto-repeat fires.
@@ -226,18 +222,17 @@ It's that beep that happens when you double-tab Tab in Bash, or try to
 backspace beyond the beginning of a line (which happens a lot with a fast
 AutoRepeatRate). You can probably disable it many ways in `X`, but I use:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 xset -b
-"""]]
+```
 
-<div id="persist"></div>
 ## Persistence
 
 By placing the `setxkbmap` command, the `xcape` command, and the two `xset`
 commands shown above into `~/.xinitrc`, that configuration will load
 whenever `X` is started.
 
-[[!pygments lexer=bash content="""
+```{.bash .numberLines}
 #!/usr/bin/env bash
 #
 # ~/.xinitrc
@@ -264,7 +259,7 @@ xset -b            # Stop beeping at me (A.K.A turn off PC speaker)
 xset r rate 330 60 # Set keyboard repeat rate
 
 has? xcape && xcape -e 'Control_L=Escape' # https://github.com/alols/xcape
-"""]]
+```
 
 `~/.xinitrc` will NOT, however, keep those configurations when an external
 USB keyboard is added to the mix.
@@ -273,7 +268,7 @@ The configuration loaded by `setxkbmap` can easily become persistent
 since it is part of the `X` keyboard driver. I have the following in a
 file at `/etc/X11/xorg.conf.d/10-keyboard.conf`:
 
-[[!pygments lexer=bash content="""
+```{.numberLines}
 Section "InputDevice"
   Identifier "Muh Keyboard"
   MatchIsKeyboard "true"
@@ -283,7 +278,7 @@ Section "InputDevice"
   Option "Xkboptions" "terminate:ctrl_alt_bksp"
   Option "Xkboptions" "ctrl:nocaps"
 EndSection
-"""]]
+```
 
 The `xset` commands and `xcape` daemon are a bit more difficult to persist
 when attaching external keyboards.
@@ -292,7 +287,7 @@ In the lazy past, I created a file in my `~/bin/` directory
 (which, in my case, is on my `$PATH`) that I ran manually whenever a new
 keyboard was attached.
 
-[[!pygments lexer=bash content="""
+```{.bash .numberLines}
 #!/usr/bin/env bash
 #
 # ~/bin/keyboard—In case of new keyboard, break gla...er...I mean...run this.
@@ -306,7 +301,7 @@ keyboard was attached.
   xcape -e 'Control_L=Escape'
   DISPLAY=:0.0 notify-send "External USB Connected"
 ) &
-"""]]
+```
 
 Getting over to my terminal and typing: `keyboard` everytime I attached a
 new keyboard is pretty far from _perfect_.
@@ -322,15 +317,16 @@ tell that my `~/bin/keyboard` script has evolved to accommodate what he outlined
 in his article. In any event (pun intended), I created a file at `/etc/udev/rules.d/99-usb-keyboards.rules`
 with the following contents:
 
-[[!pygments lexer=bash content="""
+```{.bash}
 SUBSYSTEM=="input", ACTION=="add", RUN+="/bin/su tyler --shell=/bin/bash -c /home/tyler/bin/keyboard"
-"""]]
+```
 
 Which seems to do the trick!
 
 The configuration you see above is the result of _way too much_ thinking
 about how I use my keyboard. Now, I just need to get this configuration to
 work *without* `X` Server..._le sigh_
+
 [[!meta date="2015-01-23"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""

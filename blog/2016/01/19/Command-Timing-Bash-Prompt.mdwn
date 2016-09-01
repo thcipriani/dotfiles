@@ -21,7 +21,7 @@ By default, if a particular command takes longer than 5 seconds to run, Pure
 calculates the running time of that command, and renders a human-readable
 version just above your current prompt.
 
-[[!pygments lexer=bash content="""
+```{.bash}
 ~
 ❯ sleep 5
 
@@ -30,7 +30,7 @@ version just above your current prompt.
 
 ~ 10s
 ❯
-"""]]
+```
 
 Bash it until it works
 ---
@@ -47,7 +47,7 @@ command and the `PROMPT_COMMAND` shell variable.
 
 Using these two tools in conjunction, you can approximate `preexec`  and `precmd`:
 
-[[!pygments lexer=bash content="""
+```{.bash .numberLines}
 debug() {
     # do nothing if completing
     [[ -n "$COMP_LINE" ]] && return
@@ -64,21 +64,21 @@ prompt() {
 
 trap 'debug' DEBUG
 PROMPT_COMMAND=prompt
-"""]]
+```
 
 So now debug is executed before each "simple command" and `prompt` is executed
 before each issuing the primary prompt.
 
-[[!pygments lexer=bash content="""
+```{.bash}
 $ echo 'hi'
 debug
 hi
 prompt
-"""]]
+```
 
 Timing each command is then pretty trivial:
 
-[[!pygments lexer=bash content="""
+```{.bash .numberLines}
 debug() {
     # do nothing if completing
     [[ -n "$COMP_LINE" ]] && return
@@ -97,17 +97,17 @@ prompt() {
 
 trap 'debug' DEBUG
 PROMPT_COMMAND=prompt
-"""]]
+```
 
-[[!pygments lexer=bash content="""
+```{.bash}
 $ sleep 2
 2 seconds
 $
-"""]]
+```
 
 Integrating that into the prompt and making it look pretty is just a little-bit of code away:
 
-[[!pygments lexer=bash content="""
+```{.bash .numberLines}
 # Human readable time output
 # e.g., 5d 6h 3m 2s
 format_time() {
@@ -147,12 +147,12 @@ prompt() {
 
 trap 'debug' DEBUG
 PROMPT_COMMAND=prompt
-"""]]
+```
 
-[[!pygments lexer=bash content="""
+```{.bash}
  (•◡•)❥ sleep 5
 5s (•◡•)❥
-"""]]
+```
 
 Motherfucking magic.
 

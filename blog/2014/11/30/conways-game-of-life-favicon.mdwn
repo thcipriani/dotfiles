@@ -43,7 +43,7 @@ First, I created the [default favicon](/favicon.ico) for this site by
 rendering out a glider via JavaScript and rendering the canvas as a png
 on the page.
 
-[[!pygments linenos=yes lexer=javascript content="""
+```{.javascript .numberLines}
 GameOfLife.prototype.glider = [
   {x: 0, y: 1}
  ,{x: 1, y: 2}
@@ -83,7 +83,7 @@ GameOfLife.prototype.drawGrid = function() {
   var img = document.createElement('img')
   img.src = this.canvas.toDataURL('img/png')
 }
-"""]]
+```
 
 After rendering as a png in the browser, I saved the `.png` to my computer.
 Then I uploaded the png to [favicon-generator.org](http://favicon-generator.org/)
@@ -94,7 +94,7 @@ to be non-compliant with emerging standards (le sigh).
 The finishing touch is to make the `GameOfLife.prototype.drawGrid` function update
 my favicon&#8217;s `href` attribute on every `tick` function call:
 
-[[!pygments linenos=yes lexer=javascript content="""
+```{.javascript .numberLines}
 GameOfLife.prototype.createCanvas = function() {
   this.canvas = document.createElement('canvas')
   this.favicon = document.createElement('link')
@@ -107,7 +107,7 @@ GameOfLife.prototype.drawGrid = function() {
   /* ... */
   this.favicon.href = this.canvas.toDataURL('img/png')
 }
-"""]]
+```
 
 The entirety of this javascript is available under the
  [GPLv3 License](https://tldrlegal.com/license/gnu-general-public-license-v3-%28gpl-3%29)

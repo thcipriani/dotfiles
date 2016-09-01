@@ -25,22 +25,22 @@ There is a formula for calculating the contrast of two colors available at
 [the paciello group](http://www.paciellogroup.com/resources/contrast-analyser.html, 'Contrast Analyser')&#8212; 
 they also have a Contrast Analyser that you can download for Mac and Windows.
 
-Alternately, you could skip the download and the hand-cranking of numbers 
-and enter your hex codes into the 
+Alternately, you could skip the download and the hand-cranking of numbers
+and enter your hex codes into the
 [Luminosity Colour Contrast Ratio Analyser](http://juicystudio.com/services/luminositycontrastratio.php, 'Luminosity Colour Contrast Ratio Analyser')
 
 >**edit**&#8212;11/23/2012
 >
 >My new favorite tool for contrast checking is [Lea Verou&#8217;s constrast checker](http://leaverou.github.com/contrast-ratio/)
 
-<hr>
+---
 
 **Looking at popular websites contrast**
 
 The genesis of this exercise was to review websites I have built and to 
 review some other popular sites so lets do that &#8230;
 
-<hr>
+---
 
 **The contrast on this site**
 
@@ -59,7 +59,7 @@ it&#8217;easy to read, contrast-wise anyway.
 >meets the success cirterion for the current text-size of 24px! 
 >(which is, admittedly, very large, but whatever, I ain&#8217;t scared).
 
-<hr>
+---
 
 **Apple&#8217;s nav bar**
 
@@ -73,11 +73,11 @@ the lightest point of the gradient versus the text
 * **Contrast-ratio**: 4.81:1
 * **Analysis**: Passed at Level AA for regular text, and pass at Level AAA for large text (18pt or 14pt bold)&#8212;Apple&#8217;s nav text is SVG (ostensibly for the new retina displays), but it seems to be about 13pt&#8211;14pt. A little low-contrast perhaps, but not too drastic.
 
-<hr>
+---
 
 **Google&#8217;s account settings bar**
 
-<img class="blogImg" src="http://tylercipriani-files.s3.amazonaws.com/blog/google-account-settings.png" alt="Google's account settings bar">
+![Google's account settings bar](http://tylercipriani-files.s3.amazonaws.com/blog/google-account-settings.png)
 
 The Google account settings bar has always seemed to be fairly low-contrast 
 to me&#8212;let&#8217;s test a theory.

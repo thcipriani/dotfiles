@@ -15,13 +15,12 @@
 .merkle-5 { height: 18em; }
 .merkle-container {
     width: 100%;
-    height: 50em;
-    overflow: scroll;
+    height: 1100px;
+    overflow: auto;
 }
-.merkle-6 { width: 50em; height: 50em; }
-
-@media (max-width: 600px) {
-    .merkle-6 { width: 65em; height: 65em; }
+.merkle-6 {
+    width: 1000px;
+    height: 950px;
 }
 
 .node {

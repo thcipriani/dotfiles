@@ -11,8 +11,7 @@ Basics
 
 Most Debian installed bash completions live under `/usr/share/bash_completion/completions`
 
-[[!pygments lexer=bash content='''
-
+```{.bash .numberLines}
 # the first argument ($1) is the name of the command whose  arguments are being completed
 # the second argument ($2) is the word being completed,
 # and the third argument ($3) is the word preceding the word  being  completed  on the current command line
@@ -27,7 +26,7 @@ _some_function() {
   cmd=( "${COMP_WORDS[@]}" )
 }
 complete -F _some_function command
-''']]
+```
 
 `complete` options
 ---
@@ -42,7 +41,7 @@ Some complete options you want:
 Example
 ---
 
-[[!pygments lexer=bash content='''
+```{.bash .numberLines}
 # Many of the ideas presented in this script were stolen
 # in-part or wholesale from
 # <https://github.com/git/git/blob/master/contrib/completion/git-completion.bash>
@@ -88,4 +87,4 @@ _scap() {
 
 # By default append nospace except when completion comes from _scap
 complete -S' ' -o bashdefault -o default -o nospace -F _scap scap
-''']]
+```

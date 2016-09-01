@@ -1,0 +1,35 @@
+[[!meta title="About"]]
+
+= About =
+== Contact ==
+=== Holler at your boy ===
+* [mailto:tyler@tylercipriani.com tyler@tylercipriani.com]
+* irc: thcipriani (Freenode)
+* [https://twitter.com/thcipriani @thcipriani]
+* [https://github.com/thcipriani github]
+* [https://pinboard.in/u:thcipriani/ pinboard]
+* [https://www.librarything.com/catalog/thcipriani library thing]
+
+== GPG Key ==
+* [[018FAC02.asc|tylercipriani.gpg]]
+* [https://pgp.mit.edu/pks/lookup?op=vindex&search=0xF6DAD285018FAC02 MIT keyserver]
+* [https://keybase.io/thcipriani Keybase]
+* Fingerprint: <code>6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02</code>
+
+== An Autohagiography ==
+Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
+dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
+potentially derisive) things that could be said about me. I am currently a
+release engineer at the [https://wikimediafoundation.org/wiki/Home Wikimedia
+Foundation] working remotely from sunny Boulder, Colorado.
+
+When I’m not thinking about how to make the web a better, more dynamic
+place&mdash;you’ll find me
+[http://blazeyandtyler.com/wiki/Category:Beer homebrewing beer],
+[https://blazeyandtyler.com/wiki/Category:Coffee roasting coffee],
+[http://photos.tylercipriani.com/ snapping photos],
+or making the ''final'' adjustment to my admittedly already ridiculous collection of
+[https://github.com/thcipriani/dotfiles/ dotfiles].
+
+
+

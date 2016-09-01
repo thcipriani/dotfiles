@@ -1,0 +1,128 @@
+# -*- mode: org -*-
+#+TITLE: Git annex notes
+#+STARTUP: indent
+[[!meta date="Wed May 13 15:29:34 2015 -0700"]]
+
+* Setup New repo
+
+1. init git:
+   #+BEGIN_SRC sh
+    git init
+   #+END_SRC
+
+2. init git annex:
+    #+BEGIN_SRC sh
+    git annex init local
+    #+END_SRC
+
+3. Add S3 Remote named public-s3
+   #+BEGIN_SRC sh
+    git annex initremote public-s3 type=S3 encryption=none bucket=tyler.zone chunk=0
+   #+END_SRC
+
+4. Add file to git annex
+   #+BEGIN_SRC sh
+    git annex add [big-file]
+   #+END_SRC
+
+5. copy current directory to public-s3 remote
+   #+BEGIN_SRC sh
+    git annex copy --to public-s3
+   #+END_SRC
+
+6. remove local copy—will only remove if already in remote—nothing lost
+   #+BEGIN_SRC sh
+    git annex drop [file]
+   #+END_SRC
+
+7. Commit
+   #+BEGIN_SRC sh
+    git -a -m 'initial commit'
+   #+END_SRC
+
+* Setup NFS as remote using Rsync over ssh
+
+1. [[https://git-annex.branchable.com/special_remotes/rsync/][Add Rsync as unencrypted remote]]
+   #+BEGIN_SRC sh
+   git annex initremote nas type=rsync rsyncurl=nfs.blazeyandltyler.com:/volume1/homes/tyler/PicturesAnnex encryption=none
+   #+END_SRC
+
+2. Add file to nas
+   #+BEGIN_SRC sh
+   git annex copy --to=nas
+   #+END_SRC
+
+* Pull down photos
+
+#+BEGIN_SRC sh
+eval (~/.amazonrc)
+git annex enableremote public-s3
+git annex get [whatever]
+#+END_SRC
+
+* Make available to the public (after public s3 setup):
+
+#+BEGIN_SRC sh
+git annex addurl --file [filename] "http://tyler.zone/$(git annex lookupkey [filename])"
+#+END_SRC
+
+* List remotes and remote info
+
+** Show remotes
+#+BEGIN_SRC sh
+git annex enableremote
+#+END_SRC
+
+** Show remote info
+#+BEGIN_SRC sh
+git annex info [remote-name]
+git annex info tylercipriani-raw
+#+END_SRC
+
+* Finding info about files
+
+Find a file:
+#+BEGIN_SRC sh
+git annex whereis [filename]
+#+END_SRC
+
+Adding a file to http://tyler.zone
+#+BEGIN_SRC sh
+eval $(~/.amazonrc)
+git annex copy --to=photo-site [file]
+git annex addurl --file [file] "http://tyler.zone/$(git annex lookupkey [filename])"
+#+END_SRC
+
+* Sharing via Amazon s3
+
+** Links
+- http://git-annex.branchable.com/tips/publishing_your_files_to_the_public/
+- http://git-annex.branchable.com/tips/using_Amazon_S3/
+
+** Setup
+
+Make amazon bucket with policy:
+
+#+BEGIN_SRC json
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicRead",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::[bucket-name]/*"
+    }
+  ]
+}
+#+END_SRC
+
+Put creds out into the environment
+#+BEGIN_SRC sh
+eval (~/.amazonrc)
+cd into repo:
+cd /home/tyler/Projects/Timelapse
+#+END_SRC

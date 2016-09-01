@@ -1,4 +1,4 @@
-[!http://tylercipriani-files.s3.amazonaws.com/blog/junkfoodtheme.png](Junkfood theme in git directory)
+![Junkfood theme in git directory](http://tylercipriani-files.s3.amazonaws.com/blog/junkfoodtheme.png)
 
 [[!toc ]]
 In order to become a card-carrying Linux user, I feel like you _need_ to
@@ -15,8 +15,7 @@ I&#8217;m feeling the pride, joy, and anxiety that can only come from watching
 my little utf-8 baby move beyond my home directory and march deep into 
 the uncharted home directories of what I can only assume are **BILLIONS** of users.
 
-<h2>All your Oh-My-ZSH are belong to us!
-<a href="http://knowyourmeme.com/memes/all-your-base-are-belong-to-us">*</a></h2>
+## All your Oh-My-ZSH are belong to us! <a href="http://knowyourmeme.com/memes/all-your-base-are-belong-to-us">*</a>
 
 &#8230;or it will when you update your theme. See, cause, oh-my-zsh uses
 <a href="http://github.com/robbyrussell/oh-my-zsh/tree/master/themes/">themes</a>
@@ -24,15 +23,16 @@ to specify how your prompt looks. You can define what theme you&#8217;d like to 
 in your <code>~/.zshrc</code> file. On or around line 8 you&#8217;ll want to
 update the line that starts with <code>ZSH_THEME=&#8230;</code> to look like this:
 
-[[!pygments lexer=bash content="""
+~~~ {.bash .lineNumbers}
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="junkfood"
-"""]]
+~~~
 
-<h2>Almost, not quite&#8230;</h2>
+## Almost, not quite&#8230;
+
 Like any good dotfile obsessive, I&#8217;ve continued to make changes to this
 prompt since I made my pull request to ole Robby! I&#8217;ve modified the prompt
 to show the same sort of branch information about SVN repos that it currently 
@@ -40,11 +40,13 @@ displays for git repos (e.g., current branch name and local modifications).
 That little code chestnut is available over on 
 <a href="https://github.com/thcipriani/oh-my-zsh">my fork of the oh-my-zsh build</a>.
 
-<h2>Bash Junkfood theme</h2>
+## Bash Junkfood theme
+
 I also have a version of this prompt for Bash that I&#8217;ve made in preperation
 for the undoubted overwhelming demand that I expect to begin any time now:
 
-[[!pygments lexer=bash content="""
+
+```{.bash .lineNumbers}
 # An extravagent PS1 http://blog.bigdinosaur.org/easy-ps1-colors/
 function prompt {
   # 30m - Black
@@ -76,13 +78,15 @@ function prompt {
   export PS1="$WHITEBOLD# $GREEN\u$WHITEBOLD. $BLUE\h$WHITEBOLD. $YELLOW\d$WHITE at $PURPLE\@$WHITEBOLD. $CYAN\w\n  $WHITE"
 }
 prompt
-"""]]
+```
 
-<h2>Prompt Inspiration</h2>
+## Prompt Inspiration
+
 Most of the inspiration for moving to ZSH and for creating this _extravagant_ 
 (to borrow a phrase) prompt came from a blog post written by Mr. Steve Losh
 called, <a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#oh-my-zsh">
 &#8220;My Extravagant ZSH Prompt&#8221;</a>.
+
 [[!meta date="2012-12-18"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""

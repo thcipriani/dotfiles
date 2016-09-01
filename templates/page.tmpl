@@ -9,6 +9,12 @@
 <TMPL_IF HTML5><meta charset="utf-8" /><TMPL_ELSE><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></TMPL_IF>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><TMPL_VAR TITLE><TMPL_IF NAME="PARENTLINKS"> - <TMPL_VAR WIKINAME></TMPL_IF></title>
+<TMPL_UNLESS NOT_RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_UNLESS>
+<TMPL_IF FAVICON>
+<link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" />
+</TMPL_IF>
+
+<!-- tylercipriani additions -->
 <script>
   /**
 
@@ -38,10 +44,54 @@
   for the CSS and JavaScript code in this page.
   */
 </script>
-<TMPL_UNLESS NOT_RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_UNLESS>
-<TMPL_IF FAVICON>
-<link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" />
+<TMPL_IF pandoc_math_mathjax>
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script type="text/javascript" async src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</TMPL_IF>"></script>
 </TMPL_IF>
+<TMPL_IF pandoc_math_katex>
+<link rel="stylesheet" href="<TMPL_IF pandoc_math_custom_css><TMPL_VAR pandoc_math_custom_css><TMPL_ELSE>//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css</TMPL_IF>">
+<script src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js</TMPL_IF>"></script>
+<script type="text/javascript">
+window.addEventListener("load", function(){var mathElements = document.getElementsByClassName("math");
+  for (var i=0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    katex.render(texText.data, mathElements[i]);
+  }
+});
+</script>
+
+</TMPL_IF>
+<TMPL_IF pandoc_math_jsmath>
+<!-- jsmath is obsolete, so we emulate it using mathjax -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({extensions: ["jsMath2jax.js"]});</script>
+<script src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML</TMPL_IF>"></script>
+</TMPL_IF>
+<TMPL_IF pandoc_math_latexmathml>
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script type="text/javascript" src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>http://math.etsu.edu/LaTeXMathML/LaTeXMathML.js</TMPL_IF>"></script>
+<link rel="stylesheet" type="text/css" href="<TMPL_IF pandoc_math_custom_css><TMPL_VAR pandoc_math_custom_css><TMPL_ELSE>http://math.etsu.edu/LaTeXMathML/LaTeXMathML.standardarticle.css</TMPL_IF>" />
+</TMPL_IF>
+<TMPL_IF pandoc_math_asciimathml>
+<!-- use mathjax, since the mathml rendering mode of asciimathml has poor browser support --->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML</TMPL_IF>"></script>
+</TMPL_IF>
+<TMPL_IF pandoc_math_mathml>
+<!--mathml: native for firefox/mozilla - other browsers need custom js -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<TMPL_IF pandoc_math_custom_js><script src="<TMPL_VAR pandoc_math_custom_js>"></script></TMPL_IF>
+</TMPL_IF>
+<TMPL_IF pandoc_math_mimetex>
+<!-- mimetex for math with cgi script at <TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>/cgi-bin/mimetex.cgi</TMPL_IF> -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+</TMPL_IF>
+<TMPL_IF pandoc_math_webtex>
+<!-- webtex for math with <TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>a google charts api fallback URL</TMPL_IF> -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+</TMPL_IF>
+<!-- tylercipriani additions end -->
+
 <link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
 <TMPL_IF LOCAL_CSS>
 <link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
@@ -67,12 +117,14 @@
 <!--</TMPL_LOOP>-->
 </TMPL_UNLESS>
 
+<!-- tylercipriani additions -->
 <link rel="author" href="/humans.txt">
 
 <!-- OpenID things -->
 <link rel="openid.server" href="https://openid.tylercipriani.com/" />
 <link rel="openid2.provider" href="https://openid.tylercipriani.com/" />
 <meta http-equiv="X-XRDS-Location" content="https://openid.tylercipriani.com/xrds/thcipriani" />
+<!-- tylercipriani additions end -->
 
 </head>
 <body>
@@ -246,7 +298,7 @@ License: <TMPL_VAR LICENSE>
 
 <div class="pagedate">
 Last edited <TMPL_VAR MTIME>
-<!-- Created <TMPL_VAR CTIME> -->
+Created <TMPL_VAR CTIME>
 </div>
 
 <TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>

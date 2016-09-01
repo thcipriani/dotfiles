@@ -86,7 +86,7 @@ Gerrit is the first system I've seen use git-notes.
 
 Gerrit has a cool feature where it keeps all of the patch review in git-notes:
 
-[[!pygments lexer=console content='''
+```{.bash}
 tyler@taskmaster:mediawiki-core$ git fetch origin refs/notes/*:refs/notes/*
 remote: Counting objects: 176401, done
 remote: Finding sources: 100% (147886/147886)
@@ -124,7 +124,7 @@ tyler@taskmaster:mediawiki-core$ git log --show-notes=review --author='Tyler Cip
      Reviewed-on: https://gerrit.wikimedia.org/r/278923
      Project: mediawiki/core
      Branch: refs/heads/master
-''']]
+```
 
 This is super cool. You can have, effectively, an offline backup of lots of
 information you'd usually have to brave the gerrit web-ui to find. Plus, you
@@ -152,7 +152,7 @@ I wrote a [small bash
 script](https://gist.github.com/thcipriani/e56cdef56a98eb0cf7e93dadf94fbdd8) to
 play with some of these ideas.
 
-[[!pygments lexer=console content='''
+```{.bash}
 tyler@taskmaster:Pictures$ git photo show fish.jpg
 + git notes --ref=pictures show d4a9c57715ce63a228577900d1abc027
 error: No note found for object d4a9c57715ce63a228577900d1abc0273396e8ef.
@@ -177,7 +177,7 @@ FocalLength: 62.0 mm
 FNumber: 2.8
 ISO: 3200
 + set +x
-''']]
+```
 
 Now it seems like it _should be_ possible to `git push origin
 refs/notes/pictures`, fetch them on the other side, and modify hiraeth to read
