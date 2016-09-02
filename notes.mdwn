@@ -1,3 +1,12 @@
-Attempting to move more notes over to this site:
+I have a big private git repo of notes that I keep about almost every task that
+I think that I may have to do more than twice.
 
-[[!inline pages="page(./notes/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=no]]
+I manage these notes using [Emacs Org-Mode](http://orgmode.org/) and [Emacs
+Deft](http://jblevins.org/projects/deft/). Yes, it's amazing.
+
+In the interest of flailing publicly, I'm posting my non-incomprehensible,
+non-exploitable-info notes on the intertubes because I'm an idiot.
+
+**Note**: These notes may still be completely incomprehensible.
+
+[[!inline pages="page(./notes/*) and !*/Discussion" archive=yes quick=yes trail=no]]

@@ -1,0 +1,28 @@
+# -*- mode:org -*-
+#+TITLE: neovim on debian
+[[!meta date="Fri Apr 1 14:01:25 2016 -0700"]]
+
+* [[https://github.com/neovim/neovim/wiki/Building-Neovim][Installing Neovim]]
+1. [[https://github.com/neovim/neovim/wiki/Building-Neovim#ubuntu--debian][Install Prerequisites]]
+
+    #+BEGIN_SRC sh
+    sudo apt-get -f install libtool libtool-bin autoconf automake cmake g++ pkg-config unzip libmsgpack-dev libuv-dev libluajit-5.1-dev
+    #+END_SRC
+
+2. Clone repo
+    #+BEGIN_SRC sh
+    git clone https://github.com/neovim/neovim.git
+    #+END_SRC
+
+3. [[https://github.com/neovim/neovim/wiki/Installing-Neovim#install-from-source][Make install]]
+    #+BEGIN_SRC sh
+    cd neovim
+    make
+    sudo make install
+    #+END_SRC
+
+* [[https://neovim.io/doc/user/nvim_from_vim.html][Setup Neovim]]
+#+BEGIN_SRC sh
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+#+END_SRC

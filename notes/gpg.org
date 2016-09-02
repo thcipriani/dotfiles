@@ -1,0 +1,118 @@
+#+TITLE: GPG Things
+[[!meta date="Wed Dec 2 16:27:40 2015 -0800"]]
+* Get your fingerprint:
+
+#+BEGIN_SRC sh
+gpg --list-secret-keys --fingerprint
+#+END_SRC
+
+* Get someone elses key
+
+** Using email
+#+BEGIN_SRC sh
+gpg2 --search-keys EMAIL
+#+END_SRC
+
+** Using keyid
+#+BEGIN_SRC sh
+gpg2 --recv-key KEYID
+#+END_SRC
+
+* Sign keys
+
+#+BEGIN_SRC sh
+gpg2 --recv-key KEYID
+gpg2 --sign-key KEYID
+gpg2 --send-key KEYID
+#+END_SRC
+
+* Photos
+
+** View someone's photo
+#+BEGIN_SRC sh
+gpg --edit-key KEYID showphoto
+#+END_SRC
+
+** Add a photo
+
+Suggested image sizes are 240x288 pixels (GnuPG) or 120x144 pixels (PGP) to make a JPEG of 4K-6K in size. A 1.2 h:w ratio ~w = h / (144 / 120)~
+
+#+BEGIN_SRC sh
+gpg --edit-key KEYID addphoto
+#+END_SRC
+
+* Keysigning party etherpad
+** To Sign keys
+#+BEGIN_SRC sh
+gpg2 --recv-key KEYID
+gpg2 --sign-key KEYID
+gpg2 --send-key KEYID
+#+END_SRC
+
+** Script to quickly sign all keys
+#+BEGIN_SRC sh
+ for k in $(grep pub ksp-wmf-20160108.txt | awk '{print $2}' | awk -F '/' '{print $2}'); do
+    echo "Receiving $k"
+    gpg2 --recv-key $k
+    echo "Signing key $k"
+    gpg2 --sign-key $k
+    echo "Sending key $k"
+    gpg2 --send-key $k
+done
+#+END_SRC
+
+** IF YOU NEED A KEY, GET HELP!!
+
+** Resources
+
+PGP/GPG Intro
+
+- https://ssd.eff.org/en/module/introduction-public-key-cryptography-and-pgp
+- https://ssd.eff.org/en/module/how-use-pgp-mac-os-x
+
+OpenPGP Best practices
+
+- https://help.riseup.net/en/gpg-best-practices
+- https://help.riseup.net/en/security/message-security/openpgp/gpg-keys
+
+
+- http://web.monkeysphere.info/monkeysign/
+
+** WMF Keysigning
+
+
+https://people.wikimedia.org/~faidon/ksp-wmf-20160108.txt
+
+#+BEGIN_SRC txt
+SHA256 Checksum: 52F2 CF39   6A54 6D56   7F55 7138   7264 11BA
+                    AEE3 F34E   8880 681C   9A67 75D1   3BBC 74DC              [ ]
+                    52F2CF39 6A546D56 7F557138 726411BA AEE3F34E 8880681C 9A6775D1 3BBC74DC
+
+                    RIPEMD160 Checksum: BB44 91B6 0A4D 5865 2105    2A4C 19FB 11AD 8BCC C3C3    [ ]
+                    BB44 91B6 0A4D 5865 2105  2A4C 19FB 11AD 8BCC C3C3
+#+END_SRC
+
+* Mutt problems
+** "can't query passphrase in batch mode"
+
+Uncomment, =use agent= in =~/.gnupg/gpg.conf=
+
+* Pass problems
+
+** No Secret Key
+
+*** Problem
+#+BEGIN_SRC sh
+gpg: decryption failed: No secret key
+#+END_SRC
+
+*** Solution
+
+1. install =pinentry-curses=
+2. =~/.gnupg/gpg-agent.conf=
+
+#+BEGIN_SRC
+pinentry-program /usr/bin/pinentry
+#+END_SRC
+
+3. =gpg-connect-agent reloadagent /bye=
