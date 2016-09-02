@@ -1,0 +1,47 @@
+#+TITLE: Lowering the Barrier to Blogging
+[[!meta title="Lowering the Barrier to Blogging"]]
+[[!meta date="2016-09-02T09:00:28,800992195-07:00"]]
+[[!tag computing administravia]]
+
+I really want to blog more. The problem is that most of the posts to
+this blog are fairly long-form. This will probably change as I do blog
+more.
+
+I've also moved to Pandoc for rendering posts via [[https://github.com/sciunto-org/ikiwiki-pandoc][ikiwiki-pandoc]].
+
+In that process, I've also come to realize that pandoc handles
+[[https://orgmode.org][org-mode]] files almost completely unambiguously—which is not actually
+something you get in most markup languages/markup language
+interpreters. BONUS: I enjoy writing in org-mode.
+
+As is my wont, I've also created some (not-so) fancy scripts to help me:
+
+#+Name: ~/bin/blog
+#+BEGIN_SRC sh
+#!/usr/bin/env bash
+
+set -eu
+
+POST=$*
+BLOG_DIR=$(grep '^srcdir' ~/ikiwiki.setup | cut -d':' -f2 | xargs)
+DATE=$(date -Ins)
+BLOG_PATH=$(date +'blog/%Y/%m/%d')
+EXT='.org'
+
+SAFE_POST=$(echo "$POST" | \
+    tr '[:upper:]' '[:lower:]' | \
+    sed -e 's/\W/-/g')
+
+OUT="${BLOG_DIR}/${BLOG_PATH}/${SAFE_POST}${EXT}"
+
+mkdir -p "$(dirname "$OUT")"
+
+{
+    printf '#+TITLE: %b\n' "$POST"
+    printf '[[!meta title="%b"]]\n' "$POST"
+    printf '[[!meta date="%b"]]\n\n' "$DATE"
+} >> "$OUT"
+
+# http://www.emacswiki.org/emacs/EmacsClient
+exec emacsclient --no-wait --alternate-editor="" --create-frame "$OUT"
+#+END_SRC
