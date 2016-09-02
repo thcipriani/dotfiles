@@ -2,7 +2,7 @@
 [[!meta date="Fri Sep  2 16:29:05 PDT 2016"]]
 * Revocation Cert
 
-Needed to revoke your key should the master signing/certifying key ever be comprimised
+Needed to revoke your key should the master signing/certifying key ever be compromised
 
 #+BEGIN_SRC sh
 gpg --output \<tyler@tylercipriani.com\>.gpg-revocation-certificate --gen-revoke tyler@tylercipriani.com
@@ -92,7 +92,7 @@ gpg --list-keys tyler
 | sub                                      | rsa4096    | 2016-09-02 | [S]      | [expires:                 | 2018-09-02] |
 |                                          |            |            |          |                           |             |
 
-You can then remove your certification master key (make sure you've gone through the [[Key backup][key backup]] process before you do this!)
+You can then remove your certification master key (make sure you've gone through the [[#key-backup][key backup]] process before you do this!)
 
 1. Export all your secret subkeys
 2. Remove all your secret keys from your keyring
