@@ -959,6 +959,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
     .toc {
         float: none;
         margin: 0 0 1em 0;
+        padding-left: 2em;
     }
 }
 
