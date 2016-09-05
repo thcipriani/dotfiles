@@ -24,3 +24,4 @@ The goal here is to hit 2 books a month, so 24 for the year.
 # [[Do Androids Dream of Electric Sheep|https://openlibrary.org/works/OL2172532W/Do_Androids_Dream_of_Electric_Sheep]] by Philip K. Dick
 # [[Room|https://openlibrary.org/works/OL15536410W/Room]] by Emma Donoghue
 # [[Kitchen Confidential: adventures in the culinary underbelly|https://openlibrary.org/works/OL3348011W/Kitchen_Confidential]] by Anthony Bourdain
+# [[H is for Hawk|https://openlibrary.org/works/OL17110026W/H_Is_for_Hawk]] by Helen Macdonald
