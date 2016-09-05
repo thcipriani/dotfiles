@@ -503,7 +503,8 @@ body {
     font-weight: 400;
     font-size: 1.125em;
     line-height: 1.6em;
-    font-family: "Old Standard TT", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    /* font-family: "Old Standard TT", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
 
@@ -531,9 +532,6 @@ th,
 strong {
     font-weight: 100;
     color: black;
-    text-transform: uppercase;
-    font-size: 90%;
-    letter-spacing: 1px;
 }
 
 ol,
@@ -561,7 +559,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: #000;
     font-weight: 400;
     -webkit-font-feature-settings: "liga", "dlig";
        -moz-font-feature-settings: "liga=1, dlig=1";
@@ -575,6 +572,10 @@ a:active,
 a:visited,
 a:hover {
     text-decoration: none;
+}
+
+a:hover {
+    color: #06c;
     text-decoration: underline\9;
     text-shadow: 2px 0 0 #fefefe, -2px 0 0 #fefefe;
     background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
@@ -586,11 +587,11 @@ a:hover {
     background-position: 0 90%;
     -webkit-background-size: 100% 1px;
             background-size: 100% 1px;
+
 }
 
 a:link { color: #3498DB; }
 a:visited { color: #6a4c96; }
-a:hover { color: #06c; }
 
 a[href^="https://"]:after,
 a[href^="http://"]:after {
@@ -605,8 +606,8 @@ blockquote {
     background: #f9f9f9;
     padding: 1em 1em 1em 2em;
     border: 1px solid #ccc;
-    margin: 0 0 1em;
-    border-left: 5px solid #FF6347;
+    margin: 1em 0;
+    border-left: 5px solid #ccc;
 }
 
 blockquote ol,
@@ -663,23 +664,19 @@ img.img { margin: 0; }
 .header {
     margin: 1em 0;
     display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: 1.5125em;
-    line-height: 1.52381;
-    font-weight: 300;
+    font-size: 1.5em;
 }
 
-.header .parentlinks { font-size: 0.5em; }
+.header .parentlinks {
+    font-size: 0.5em;
+}
 
 .title {
     display: block;
-    letter-spacing: normal;
-    font-style: italic;
-    text-transform: capitalize;
     font-size: 2em;
     line-height: 1em;
     margin: 0.25em 0;
+    color: dimgray;
 }
 
 #footer {
@@ -705,9 +702,7 @@ a.feedbutton {
 }
 
 .inlineheader .header {
-    text-transform: none;
-    letter-spacing: normal;
-    text-align: left;
+    font-weight: 300;
 }
 
 .inlinepage {
@@ -866,17 +861,18 @@ a.feedbutton {
     padding: 0 0.5em 0 0;
 }
 
+.pageheader .trails {
+    display: none;
+}
+
 .inlinepage-header-info {
     font-size: 0.5em;
 }
 
 .inlinepage-header-info .author {
-    font-size: 1em;
     font-weight: 100;
-    display: inline;
     color: black;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 1em 0;
 }
 
 .inlinepage-header-info .pagedate {
