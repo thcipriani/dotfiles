@@ -9,18 +9,17 @@
 }
 
 .merkle-1,
-.merkle-2 { height: 12em; }
-.merkle-3 { height: 13em; }
-.merkle-4 { height: 14em; }
-.merkle-5 { height: 18em; }
+.merkle-2 { height: 192px; }
+.merkle-3 { height: 208px; }
+.merkle-4 { height: 240px; }
+.merkle-5 { height: 368px; }
 .merkle-container {
     width: 100%;
-    height: 1100px;
     overflow: auto;
 }
 .merkle-6 {
-    width: 1000px;
-    height: 950px;
+    width: 1280px;
+    height: 1280px;
 }
 
 .node {

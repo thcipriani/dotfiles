@@ -467,44 +467,15 @@ template {
     box-sizing: border-box;
 }
 
-
-
-@font-face {
-    font-family: 'Old Standard TT';
-    font-weight: 400;
-    font-style: normal;
-    src: url('/static/fonts/oldstandard_tt/oldstandard-tt.eot') format('eot');
-    src: local('Old Standard TT Regular'),
-         local('OldStandardTT-Regular'),
-         url('/static/fonts/oldstandard-tt/oldstandard-tt.eot') format('embedded-opentype'),
-         url('/static/fonts/oldstandard-tt/oldstandard-tt.woff2') format('woff2'),
-         url('/static/fonts/oldstandard-tt/oldstandard-tt.woff') format('woff'),
-         url('/static/fonts/oldstandard-tt/oldstandard-tt.ttf') format('truetype'),
-         url('/static/fonts/oldstandard-tt/oldstandard-tt.svg#OldStandardTT') format('svg');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Old Standard TT';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Old Standard TT Italic'),
-       local('OldStandardTT-Italic'),
-       url('/static/fonts/oldstandard-tt/oldstandard-tt_italic.woff2') format('woff2'),
-       url('/static/fonts/oldstandard-tt/oldstandard-tt_italic.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
 body {
     color: #444;
     background: #fefefe;
+    font-family: sans-serif;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
-    font-size: 1.125em;
+    font-size: 0.85em;
     line-height: 1.6em;
-    /* font-family: "Old Standard TT", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; */
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
 
@@ -536,21 +507,31 @@ strong {
 
 ol,
 ul {
-    padding-left: 0;
+    padding: 0;
+    margin: 0.5em 0 0.5em 1em;
+}
+
+ul {
+    list-style-type: disc;
+    list-style-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%2300528c%22%2F%3E%0A%3C%2Fsvg%3E%0A);
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANCAIAAADuXjPfAAAABnRSTlMA/wD/AP83WBt9AAAAHklEQVR4AWP4jwrowWcI6oEgEBtIISNCfFT9mOYDACO/lbNIGC/yAAAAAElFTkSuQmCC);
 }
 
 img {
     max-width: 100%;
 }
 
+h1,
+h2 {
+    margin: 1em 0 0.5em 0;
+}
+
 h1 {
-    margin: 1em 0;
     font-size: 1.5625em;
 }
 
 h2 {
     font-size: 1.25em;
-    margin: 1em 0;
 }
 
 h1,
@@ -559,6 +540,9 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: "Linux Libertine", Georgia, Times, serif;
+    color: #212121;
+    border-bottom: 1px solid #aaa;
     font-weight: 400;
     -webkit-font-feature-settings: "liga", "dlig";
        -moz-font-feature-settings: "liga=1, dlig=1";
@@ -610,11 +594,6 @@ blockquote {
     border-left: 5px solid #ccc;
 }
 
-blockquote ol,
-blockquote ul {
-    padding-left: 1em;
-}
-
 blockquote a {
     text-shadow: 2px 0 0 #f2f2f2, -2px 0 0 #f2f2f2;
 }
@@ -623,7 +602,6 @@ code {
     display: inline-block;
     white-space: no-wrap;
     background: #FFF;
-    font-size: .8em;
     line-height: 1.52381;
     color: #555;
     border: 1px solid #DDD;
@@ -672,6 +650,8 @@ img.img { margin: 0; }
 }
 
 .title {
+    font-family: "Linux Libertine", Georgia, Times, serif;
+    font-weight: 100;
     display: block;
     font-size: 2em;
     line-height: 1em;
@@ -680,7 +660,7 @@ img.img { margin: 0; }
 }
 
 #footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #aaa;
     text-align: center;
     color: #888;
 }
@@ -708,7 +688,7 @@ a.feedbutton {
 .inlinepage {
     padding: 0 0 2em;
     border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
     overflow: auto;
 }
 
@@ -820,22 +800,28 @@ a.feedbutton {
     padding: 1em;
     margin: 0 0 1em 1em;
     border: 1px solid #ccc;
-    font-size: 0.85em;
 }
 
 .toc ol {
     padding-left: 1em;
 }
 
+figure {
+    text-align: center;
+    font-size: 0.8em;
+    font-family: "Linux Libertine", Georgia, Times, serif;
+}
+
 .thumb {
     border: 1px solid #ccc;
     padding: 0.25em;
-    font-size: 0.8em;
     color: #222;
+    background: white;
 }
 
 .thumb-right {
     float: right;
+    margin: 0 0 1em 1em;
 }
 
 .thumb a:link,
@@ -852,7 +838,7 @@ a.feedbutton {
 
 .pageheader .actions ul {
     height: auto;
-    border-bottom: 1px solid #ccc;
+    border: none;
     margin: 0;
     padding: 0 0 0.5em 0;
 }
@@ -898,7 +884,7 @@ a.feedbutton {
 
 .comment {
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #aaa;
     padding: 1em 0;
     margin: 1em 0;
 }
@@ -915,7 +901,9 @@ a.feedbutton {
  * Syntax highlighting stuff
  * ================================== */
 
-pre { overflow: visible; }
+pre {
+    overflow: visible;
+}
 
 div.sourceCode {
     background: #f9f9f9;
@@ -941,13 +929,15 @@ pre code {
     border-radius: 0;
     padding: 0;
     margin: 0;
-    font-size: 0.75em;
-    line-height: 1.5em;
     color: #00428c;
+    font-size: 0.85em;
 }
 
 /* Generated by pandoc. */
-code { white-space: pre; }
+code {
+    white-space: pre;
+}
+
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
     margin: 0;
     padding: 0;
@@ -961,9 +951,9 @@ td.lineNumbers {
     padding-left: 4px;
     color: #ddd;
     border-right: none;
-    font-size: 0.75em;
-    line-height: 1.5em;
     width: 2em;
+    font-size: 0.85em;
+    line-height: 1.55em;
 }
 td.sourceCode { padding-left: 5px; }
 code > span.kw { color: #007020; font-weight: bold; }
@@ -982,9 +972,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
  * As responsive as I get
  * ======================= */
 @media (max-width: 720px) {
-    body {
-        font-size: 1em;
-    }
     .thumb {
         margin: 1em auto;
     }
