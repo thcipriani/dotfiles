@@ -9,6 +9,8 @@
 * [https://pinboard.in/u:thcipriani/ pinboard]
 * [https://www.librarything.com/catalog/thcipriani library thing]
 
+[[File:/static/images/fsf.png|Free Software Foundation Member]]
+
 == GPG Key ==
 
 * [[tylercipriani.gpg|018FAC02.asc]]
