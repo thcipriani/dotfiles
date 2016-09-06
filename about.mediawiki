@@ -1,8 +1,7 @@
 [[!meta title="About"]]
 
-= About =
 == Contact ==
-=== Holler at your boy ===
+
 * [mailto:tyler@tylercipriani.com tyler@tylercipriani.com]
 * irc: thcipriani (Freenode)
 * [https://twitter.com/thcipriani @thcipriani]
@@ -11,12 +10,14 @@
 * [https://www.librarything.com/catalog/thcipriani library thing]
 
 == GPG Key ==
+
 * [[tylercipriani.gpg|018FAC02.asc]]
 * [https://pgp.mit.edu/pks/lookup?op=vindex&search=0xF6DAD285018FAC02 MIT keyserver]
 * [https://keybase.io/thcipriani Keybase]
 * Fingerprint: <code>6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02</code>
 
 == An Autohagiography ==
+
 Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
 dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
 potentially derisive) things that could be said about me. I am currently a
