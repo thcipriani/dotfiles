@@ -17,4 +17,3 @@ Gentleman. Scholar. Lyrical genius.
 
 [[!inline pages=sidebar raw=yes]]
 
-{{/static/images/fsf.png|Free Software Foundation Member}}
