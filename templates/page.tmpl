@@ -106,7 +106,7 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 <TMPL_IF FEEDLINKS><TMPL_VAR FEEDLINKS></TMPL_IF>
 <TMPL_IF RELVCS><TMPL_VAR RELVCS></TMPL_IF>
 <TMPL_IF META><TMPL_VAR META></TMPL_IF>
-<!--<TMPL_LOOP TRAILLOOP>-->
+<TMPL_LOOP TRAILLOOP>
 <TMPL_IF PREVPAGE>
 <link rel="prev" href="<TMPL_VAR PREVURL>" title="<TMPL_VAR PREVTITLE>" />
 </TMPL_IF>
@@ -114,7 +114,7 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 <TMPL_IF NEXTPAGE>
 <link rel="next" href="<TMPL_VAR NEXTURL>" title="<TMPL_VAR NEXTTITLE>" />
 </TMPL_IF>
-<!--</TMPL_LOOP>-->
+</TMPL_LOOP>
 </TMPL_UNLESS>
 
 <!-- tylercipriani additions -->
