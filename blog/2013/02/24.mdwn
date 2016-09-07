@@ -1,1 +1,1 @@
-[[!inline pages="page(./24/*) and !*/Discussion" archive=yes limit=10 quick=yes trail=yes]]
+[[!inline pages="page(./24/*) and !*/Discussion" archive=yes limit=10 quick=yes trail=no]]
