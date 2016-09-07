@@ -1,4 +1,4 @@
-[[!inline pages="page(./blog/*) and !*/Discussion" show="5"
+[[!inline pages="page(./blog/*/*/*/*) and !*/Discussion" show="5"
 actions=yes rootpage="blog" postform=false]]
 
 * [[About Me|about]]

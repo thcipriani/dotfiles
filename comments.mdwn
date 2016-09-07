@@ -1,8 +1,8 @@
-[[!inline pages="comment_pending(./blog/*)" feedfile=pendingmoderation
+[[!inline pages="comment_pending(./blog/*/*/*/*)" feedfile=pendingmoderation
 description="comments pending moderation" show=-1]]
 Comments in the [[!commentmoderation desc="moderation queue"]]:
-[[!pagecount pages="comment_pending(./blog/*)"]]
+[[!pagecount pages="comment_pending(./blog/*/*/*/*)"]]
 
 Recent comments on posts in the [[blog|blog]]:
-[[!inline pages="./blog/*/Discussion or comment(./blog/*)"
+[[!inline pages="./blog/*/*/*/*/Discussion or comment(./blog/*/*/*/*)"
 template="comment"]]

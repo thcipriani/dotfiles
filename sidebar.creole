@@ -9,4 +9,4 @@
 
 === The last 5 posts to my [[weblog|blog]] were: ===
 
-[[!inline pages="page(./blog/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=no]]
+[[!inline pages="page(./blog/*/*/*/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=no]]
