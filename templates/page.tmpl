@@ -44,6 +44,7 @@
   for the CSS and JavaScript code in this page.
   */
 </script>
+
 <TMPL_IF pandoc_math_mathjax>
 <TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
 <script type="text/javascript" async src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</TMPL_IF>"></script>
