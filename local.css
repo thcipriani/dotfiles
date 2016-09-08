@@ -646,15 +646,21 @@ img.img { margin: 0; }
     font-size: 0.5em;
 }
 
+.pageheader .header .parentlinks a {
+    margin-right: 0.35em;
+}
+
 .title {
     font-family: "Linux Libertine", Georgia, Times, serif;
     font-weight: 100;
     display: block;
-    font-size: 2em;
-    line-height: 1em;
-    margin: 0.25em 0;
-    color: dimgray;
+    margin: 0 auto;
+    font-size: 2.5em;
+    line-height: 1.5em;
+    color: #b99a54;
+    /* color: #ee4938; */
     text-transform: capitalize;
+    border-bottom: 5px solid;
 }
 
 #footer {
