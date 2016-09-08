@@ -7,4 +7,4 @@ copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
 [[!tag books]]
 
 * the green hills of earth - Heinlein
-* H Is For Hawk - Helen Macdonald
+* [http://encore.coalliance.org/iii/encore/record/C__Rb15258367__SPeter%20Ludlow__P0%2C9__Orightresult__U__X4?lang=eng&suite=def](Crypto anarchy, cyberstates, and pirate utopias) by Peter Ludlow
