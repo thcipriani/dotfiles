@@ -656,11 +656,11 @@ img.img { margin: 0; }
     display: block;
     margin: 0 auto;
     font-size: 2.5em;
-    line-height: 1.5em;
+    line-height: 1em;
     color: #b99a54;
-    /* color: #ee4938; */
     text-transform: capitalize;
     border-bottom: 5px solid;
+    padding: 0.25em 0;
 }
 
 #footer {
