@@ -10,12 +10,4 @@ Copyright &copy; 2016 Tyler Cipriani
 
 I'll try to keep this page up-to-date as I learn new things. There will probably be a lot of junk here.
 
-[[!toc ]]
-
-## Sensible Editor
-
-**2016-09-07**
-
-`sensible-editor` is a shell script in Debian at `/usr/bin/sensible-editor` that selects a sensible editor.
-
-See also: `sensible-{browser,editor,pager}`
+[[!inline pages="page(./TIL/*/*/*/*) and !*/Discussion" archive=no feedshow=1000 quick=no trail=yes]]
