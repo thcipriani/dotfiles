@@ -1,0 +1,4 @@
+[[!meta title="pages tagged bash"]]
+
+[[!inline pages="tagged(bash)" actions="no" archive="yes"
+feedshow=10]]
