@@ -1,0 +1,4 @@
+[[!meta title="pages tagged ikiwiki"]]
+
+[[!inline pages="tagged(ikiwiki)" actions="no" archive="yes"
+feedshow=10]]
