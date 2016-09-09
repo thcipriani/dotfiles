@@ -1,0 +1,4 @@
+[[!meta title="pages tagged notes"]]
+
+[[!inline pages="tagged(notes)" actions="no" archive="yes"
+feedshow=10]]
