@@ -1,3 +1,4 @@
+[[!meta redir="tags/TIL"]]
 [[!meta title="TIL"]]
 [[!meta date="2016-09-07T10:48:08,990861510-07:00"]]
 [[!meta author="Tyler Cipriani"]]
@@ -8,6 +9,6 @@
 Copyright &copy; 2016 Tyler Cipriani
 """]]
 
-I'll try to keep this page up-to-date as I learn new things. There will probably be a lot of junk here.
+I realized that this page makes two parallel blogs which is unsustainable for the far-future. I'm mothballing this page, the correct page is now [[tags/TIL]].
 
-[[!inline pages="page(./TIL/*/*/*/*) and !*/Discussion" archive=no feedshow=1000 quick=no trail=yes]]
+[[!inline pages="tagged(TIL)" actions="no" archive="yes" feedshow=100 trail="yes"]]
