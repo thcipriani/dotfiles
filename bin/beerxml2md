@@ -47,13 +47,12 @@ def get_hops(hops):
 
 def get_yeast(yeast):
     ret = []
-    row = '*'
-    for key in ['LABORATORY', 'NAME']:
-        try:
-            row += ' {0:20}'.format(yeast[key])
-        except KeyError:
-            pass
-    ret.append(row)
+    row = "* {0:20} {1:20}"
+    try:
+        ret.append(
+            row.format(yeast["LABORATORY"], yeast["NAME"]))
+    except KeyError:
+        pass
     return "\n".join(ret)
 
 
