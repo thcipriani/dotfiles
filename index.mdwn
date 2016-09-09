@@ -17,6 +17,5 @@ Gentleman. Scholar. Lyrical genius.
 * [[About Me|about]]
 * [[Notes|tags/notes]]
 * [[TIL|tags/TIL]]
-* [[Reading|books]]
 
 [[!inline pages=sidebar raw=yes]]
