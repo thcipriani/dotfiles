@@ -1,3 +1,14 @@
 [[!meta title="Notes"]]
 
-[[!inline pages="tagged(notes)" actions="no" archive="yes" feedshow=100 trail="no"]]
+I have a big private git repo of notes that I keep about almost every task that
+I think that I may have to do more than twice.
+
+I manage these notes using [Emacs Org-Mode](http://orgmode.org/) and [Emacs
+Deft](http://jblevins.org/projects/deft/). Yes, it's amazing.
+
+In the interest of flailing publicly, I'm posting my non-incomprehensible,
+non-exploitable-info notes on the intertubes because I'm an idiot.
+
+**Note**: These notes may still be completely incomprehensible.
+
+[[!inline pages="tagged(notes)" actions="no" archive="yes" feedshow=100 trail="yes"]]

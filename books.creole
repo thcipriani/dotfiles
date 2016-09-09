@@ -1,3 +1,4 @@
+[[!meta redir="tags/books"]]
 [[!meta date="2012-08-01"]] [[!meta author="Tyler Cipriani"]] [[!meta
 license=""" [[Creative Commons Attribution-ShareAlike
 License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta

@@ -4,7 +4,6 @@ License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
 copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
 
 [[!meta title="To Read"]]
-[[!tag books]]
 
 * the green hills of earth - Heinlein
 * [[Crypto anarchy, cyberstates, and pirate utopias|http://encore.coalliance.org/iii/encore/record/C__Rb15258367__SPeter%20Ludlow__P0%2C9__Orightresult__U__X4?lang=eng&suite=def]] by Peter Ludlow
