@@ -1,5 +1,6 @@
 #+TITLE: Ikiwiki things
 #+DATE: Wed May 25 08:22:03 2016 -0600
+[[!tag computing ikiwiki notes]]
 [[!meta date="Wed May 25 08:22:03 2016 -0600"]]
 * Install
 

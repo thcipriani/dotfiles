@@ -1,5 +1,6 @@
 #+TITLE: VHS to MP4 on Linux
 #+DATE: Tue Apr 26 07:50:54 2016 -0700
+[[!tag computing video notes]]
 [[!meta date="Tue Apr 26 07:50:54 2016 -0700"]]
 I recently ordered a set of videos that I remember from a few years
 ago that did not make the jump to DVD, unfortunately.

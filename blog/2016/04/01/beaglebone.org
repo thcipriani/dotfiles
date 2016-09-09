@@ -2,6 +2,7 @@
 #+TITLE: Beaglebone Black Setup on Debian 8
 #+STARTUP: indent
 #+DATE: Fri Apr 1 14:01:25 2016 -0700
+[[!tag computing soc notes]]
 [[!meta date="Fri Apr 1 14:01:25 2016 -0700"]]
 
 * Flash eMMC with latest Debian image

@@ -1,3 +1,4 @@
+[[!meta redir="tags/notes"]]
 I have a big private git repo of notes that I keep about almost every task that
 I think that I may have to do more than twice.
 

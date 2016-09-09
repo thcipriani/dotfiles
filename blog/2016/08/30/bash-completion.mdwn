@@ -1,5 +1,6 @@
 [[!meta title="Bash Completion"]]
 [[!toc ]]
+[[!tag computing bash shell notes]]
 [[!meta date="Tue 2016-08-30 05:01:47 AM"]]
 
 Links

@@ -1,6 +1,7 @@
 # -*- mode:org -*-
 #+TITLE: neovim on debian
 #+DATE: Fri Apr 1 14:01:25 2016 -0700
+[[!tag vim computing notes]]
 [[!meta date="Fri Apr 1 14:01:25 2016 -0700"]]
 
 * [[https://github.com/neovim/neovim/wiki/Building-Neovim][Installing Neovim]]

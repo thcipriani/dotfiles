@@ -4,6 +4,7 @@
 #+LANGUAGE: en
 #+DATE: Wed May 25 08:22:03 2016 -0600
 [[!meta date="Wed May 25 08:22:03 2016 -0600"]]
+[[!tag computing gnu notes]]
 
 * Links
 - https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install

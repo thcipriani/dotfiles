@@ -1,5 +1,6 @@
 #+TITLE: GPG Security things
 #+DATE: Fri Sep  2 16:29:05 PDT 2016
+[[!tag computing crypto pgp notes]]
 [[!meta date="Fri Sep  2 16:29:05 PDT 2016"]]
 * Revocation Cert
 
