@@ -11,4 +11,4 @@ Copyright &copy; 2016 Tyler Cipriani
 
 I realized that this page makes two parallel blogs which is unsustainable for the far-future. I'm mothballing this page, the correct page is now [[tags/TIL]].
 
-[[!inline pages="tagged(TIL)" actions="no" archive="yes" feedshow=100 trail="yes"]]
+[[!inline pages="tagged(TIL)" actions="no" archive="yes" feedshow=100 trail="no"]]
