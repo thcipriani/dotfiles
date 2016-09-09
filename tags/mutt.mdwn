@@ -1,0 +1,4 @@
+[[!meta title="pages tagged mutt"]]
+
+[[!inline pages="tagged(mutt)" actions="no" archive="yes"
+feedshow=10]]
