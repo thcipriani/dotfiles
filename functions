@@ -2,6 +2,12 @@ _haz() {
   command -v "$1" > /dev/null 2>&1
 }
 
+spell() {
+    printf "%s\n" "$@" \
+    | aspell -a \
+    | awk -F':' '/^&/ {gsub("^ ", "", $2); print $2}'
+}
+
 # Copy w/ progress
 cp_p () {
   rsync -WavP --human-readable --progress $1 $2

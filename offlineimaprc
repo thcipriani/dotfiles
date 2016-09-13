@@ -57,5 +57,6 @@ folderfilter = lambda folder: folder in ['[Gmail]/All Mail',
                                          'CR',
                                          'CI',
                                          'auto',
+                                         'task',
                                          'INBOX',
                                         ]

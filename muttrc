@@ -9,17 +9,18 @@ unset record
 
 mailboxes \
   "+INBOX" \
-  "+CI" \
+  "+starred" \
+  "+task" \
   "+CR" \
-  "+ML.wmfall" \
   "+ML.wikitech-l" \
+  "+ML.wmfall" \
   "+ML.ops" \
   "+ML.debian-devel" \
+  "+CI" \
+  "+sent" \
   "+auto" \
-  "+starred" \
   "+drafts" \
   "+archive" \
-  "+sent" \
   "+spam" \
   "+trash"
 
@@ -46,8 +47,9 @@ set text_flowed
 
 # sort/threading
 set sort     = threads
-set sort_aux = reverse-last-date-received
-set sort_re
+set sort_aux = reverse-date-received
+# Too pedantic maybe
+# set sort_re
 
 # look and feel
 set pager_index_lines = 8
