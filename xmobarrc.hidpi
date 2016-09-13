@@ -4,11 +4,7 @@ Config { font = "-xos4-*-medium-r-normal-*-28-*-*-*-*-*-*-*"
        , bgColor = "#1d1f21"
        , fgColor = "#c5c8c6"
        , position = TopW L 100
-       , commands = [ Run Weather "KDEN" [
-                                        "--template"
-                                        ,"<fc=#969896>DIA:</fc><tempF>°F"
-                                        ] 36000
-                    , Run Cpu [
+       , commands = [ Run Cpu [
                               "--template", "<total>%"
                               -- "--Low","3"
                               -- , "--High", "50"
@@ -32,5 +28,5 @@ Config { font = "-xos4-*-medium-r-normal-*-28-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% <fc=#969896>//</fc> %KDEN%  <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{ <fc=#969896>Batt:</fc>%battery%  %date%"
+       , template = "%StdinReader% <fc=#969896>//</fc> <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{ <fc=#969896>Batt:</fc>%battery%  %date%"
        }

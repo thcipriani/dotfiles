@@ -6,10 +6,12 @@ USAGE:
     rec [screencastname]
 OPTIONS:
     --select|-s: use selection rectangle
-    --duration|-d: duration of recording (default: 10secs)
-    --path|-p: path of final file (default: ~/screencasts/<date>)
+    --public|-p: upload it to http://tyler.zone
+    --time|-t: duration of recording (default: 10secs)
+    --delay|-d: delay before recording starts (default: 5secs)
+    --help|-h: show help and exit
 EXAMPLE:
-    rec --select --path whatchamajig.gif
+    rec --select --public whatchamajig
 USE
 }
 
@@ -27,7 +29,10 @@ notify() {
 }
 
 record () {
-    notify "Recording starting in 5 seconds"
+    local i
+    i=${delay:-5}
+
+    notify "Recording starting in ${i} seconds"
     if [[ -n "$duration" ]]; then
         options="--duration=${duration}"
     fi
@@ -35,7 +40,6 @@ record () {
     options="${options} --delay=0 --x=${x_offset} --y=${y_offset} --width=${width} --height=${height}"
 
     # Countdown timer
-    local i=5
     while (( i > 0 )); do
         notify "$i"
         sleep 1
@@ -44,16 +48,16 @@ record () {
 
     notify "GO!!!!"
 
-    byzanz-record $options "$path"
+    byzanz-record $options "$full_path"
 }
 
 get_full_width() {
-    eval $(xrandr -q | awk -F'[,x]' 'NR==1 {gsub("( |current)", ""); print "width="$3"\nheight="$4}')
+    eval "$(xrandr -q | awk -F'[,x]' 'NR==1 {gsub("( |current)", ""); print "width="$3"\nheight="$4}')"
 }
 
 get_selection() {
     notify "Waiting for your selection..."
-    eval $(xrectsel | awk -F '[x+]' '{print "width=" $1 "\nheight=" $2 "\nx_offset=" $3 "\ny_offset=" $4}')
+    eval "$(xrectsel | awk -F '[x+]' '{print "width=" $1 "\nheight=" $2 "\nx_offset=" $3 "\ny_offset=" $4}')"
 }
 
 take_recording() {
@@ -67,12 +71,27 @@ take_recording() {
     fi
 
     if [[ -z "$path" ]]; then
-        path="${_SCREENCAST_PATH}/$(date --rfc-3339=seconds).gif"
+        path="$(date -Is)"
     fi
+
+    path="${path}.gif"
+    full_path="${_SCREENCAST_PATH}/${path}"
 
     record
 
     notify "Recording available at $path"
+}
+
+make_public() {
+    if ! command -v s3cmd > /dev/null 2>&1; then
+        notify "[ERR] s3cmd command not found in $PATH" "critical"
+    fi
+
+    s3cmd put "${full_path}" "s3://tyler.zone/${path}"
+    s3cmd setacl --acl-public "s3://tyler.zone/${path}"
+
+    notify "[URL] http://tyler.zone/${path}"
+    printf 'http://tyler.zone/%s' "${path}" | xsel -p
 }
 
 main() {
@@ -86,28 +105,40 @@ main() {
 
     mkdir -p "${_SCREENCAST_PATH:=$HOME/screencasts}"
 
+    public=0
+
     while [ -n "$1" ]; do
         case "$1" in
             --select|-s)
                 select=1
                 ;;
-            --duration|-d)
+            --time|-t)
                 shift
                 duration="$1"
                 ;;
-            --path|-p)
+            --delay|-d)
                 shift
-                path="$1"
+                delay="$1"
                 ;;
-            *)
+            --public|-p)
+                public=1
+                ;;
+            --help|-h)
                 show_help
                 exit 0
+                ;;
+            *)
+                path="$1"
                 ;;
         esac
         shift
     done
 
   take_recording
+
+  if (( public == 1 )); then
+      make_public
+  fi
 }
 
 main "$@"

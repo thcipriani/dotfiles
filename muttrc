@@ -65,7 +65,15 @@ set status_format = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
 # sidebar (requires patched mutt-sidebar)
 set sidebar_visible = yes
 set sidebar_width = 38
-set sidebar_delim='│'
+# set sidebar_delim='│'
+set mail_check_stats=yes
+set sidebar_visible=yes
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+# set sidebar_format="%B%*  %S%?N?(%N)?%?F?[%F]?"
+set sidebar_indent_string=" "
+set sidebar_folder_indent=yes
+set sidebar_short_path=yes
+
 
 # composing
 set fcc_attach
@@ -127,6 +135,7 @@ macro pager ,u "|urlview<enter>" "call urlview to open links"
 
 macro index gi "<change-folder>!<return>" "go to inbox"
 macro index ,z "<shell-escape>offlineimap -q -o<return>" "sync IMAP"
+macro pager ,g "|~/.mutt/view-gerrit.py<enter>" "Open gerrit link in browser"
 
 macro index <space> "<collapse-thread>" "uncollapse thread"
 

@@ -83,7 +83,7 @@ prompt() {
     local _exitcode=$?
 
     # https://www.debian-administration.org/article/543/Bash_eternal_history
-    echo "$$ $USER $(history 1)" >> "$HOME/.muh_history"
+    echo "$$ $PWD $USER $(history 1)" >> "$HOME/.muh_history"
 
     local _end_time=$(date +%s)
     local _total_time=$(( _end_time - _start_time ));
