@@ -1,0 +1,33 @@
+#+TITLE: ImageMagick to Extract a PDF Page
+#+AUTHOR: Tyler Cipriani
+#+DATE: 2016-09-13T09:35:22,934576833-07:00
+[[!meta title="ImageMagick to Extract a PDF Page"]]
+[[!meta date="2016-09-13T09:35:22,934576833-07:00"]]
+[[!tag TIL]]
+
+Today I was working with a PDF that was 27,000 pages long (god help me).
+
+I never tried to open that PDF. This is just the page count I got from
+a python script I wrote to parse that PDF to a CSV file.
+
+When the time came to spot-check the results of that python script
+I needed to compare some pages deep within the PDF with the output
+on the CSV file.
+
+I use the [[https://pwmt.org/projects/zathura/][Zathura]] document viewer to view PDFs, but I was reasonably
+certain that it would choke on such a large document. Instead I extracted
+one page at a time using [[https://www.imagemagick.org/script/index.php][ImageMagick]].
+
+#+BEGIN_SRC sh
+convert 'big.pdf[2000]' big-pg2000.pdf
+#+END_SRC
+
+Then I opened the generated PDF using Zathura.
+
+#+BEGIN_SRC sh
+zathura big-pg2000.pdf
+#+END_SRC
+
+I was able to compare that side-by-side with the generated CSV.
+
+Easy peasy.
