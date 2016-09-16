@@ -1,0 +1,4 @@
+[[!meta title="pages tagged rambling"]]
+
+[[!inline pages="tagged(rambling)" actions="no" archive="yes"
+feedshow=10]]
