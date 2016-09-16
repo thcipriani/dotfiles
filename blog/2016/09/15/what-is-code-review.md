@@ -16,7 +16,7 @@ bugs are shallow.
 > Given a large enough beta-tester and co-developer base, almost every
 > problem will be characterized quickly and the fix obvious to someone.
 >
-> -   Linus's Law, ESR, [The Cathedral and the Bazaar](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html)
+> --  Linus's Law, ESR, [The Cathedral and the Bazaar](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html)
 
 This is all part of a **collaborative model** of software development. A
 model in which anyone can submit code or feedback to an open project.
@@ -44,8 +44,7 @@ work within that system you must learn how that system came into being.
 > never works and cannot be patched up to make it work. You have to
 > start over with a working simple system.
 >
-> -   Gall's Law, John Gall, Systemantics: How Systems Really Work and
->     How They Fail
+> -- Gall's Law, John Gall, Systemantics: How Systems Really Work and How They Fail
 
 Through code review a newcomer learns about the design of the project—to
 work with the project's design rather than against it. And by working
@@ -116,7 +115,7 @@ one line means that I will spend at least 15 minutes mentally shifting
 gears, examining, running, and otherwise poking-at the code.
 
 There is no better way to exhaust the patience and goodwill of a
-software project that to continually submit obviously untested changes.
+software project than to continually submit obviously untested changes.
 Have you run the code? If not, the code is not ready for review.
 
 ### If everything is OK, then everything is OK
@@ -147,7 +146,7 @@ I try not to fuck up anyone's day.
 ### Nitpicks and show-stoppers
 
 When I review things, I try to be explicit if I can—"Fix this problem,
-and I'll merge the patch." There are times I may feel strongly that a of
+and I'll merge the patch." There are times I may feel strongly that
 a piece of code can be improved, but not strongly enough to reject the
 patch—"Nitpick: could use a comment here". I'll reply overall with,
 "Some nitpicks inline, but overall lgtm" and then ask in IRC if they're
