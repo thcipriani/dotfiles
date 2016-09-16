@@ -1,0 +1,2 @@
+[[!inline pages="page(./2016/37/15/*) and !*Discussion"
+            archive=no limit=10 quick=yes trail=no]]
