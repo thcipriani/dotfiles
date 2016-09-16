@@ -1,0 +1,4 @@
+[[!meta title="pages tagged software"]]
+
+[[!inline pages="tagged(software)" actions="no" archive="yes"
+feedshow=10]]
