@@ -96,66 +96,66 @@ I've done my share of review, and I've had my share of reviews—both good
 and bad. These are the things I try to remain mindful of during the
 review process—both as patch-submitter and as a reviewer.
 
-### It takes time
+* It takes time
 
-It takes a LOT of time. I spend so much time on each review because I
-want to offer helpful and meaningful feedback. I could easily spend my
-entire working day reviewing code (and sometimes, I do).
+    It takes a LOT of time. I spend so much time on each review because I
+    want to offer helpful and meaningful feedback. I could easily spend my
+    entire working day reviewing code (and sometimes, I do).
 
-I've seen rules and guidelines for how much time you should take for
-each SLOC in a review, but I think that's meaningless. If I haven't
-reasonably considered the consequences of a change—I'm not done
-reviewing the code.
+    I've seen rules and guidelines for how much time you should take for
+    each SLOC in a review, but I think that's meaningless. If I haven't
+    reasonably considered the consequences of a change—I'm not done
+    reviewing the code.
 
-When you submit a patch, you should be mindful that review takes time.
-If this is a one-line change that you want rubber-stamped, then you
-should be explicit about that. Honestly, I'm pretty OK rubber-stamping
-the work of peers that I trust; however, asking for code review on that
-one line means that I will spend at least 15 minutes mentally shifting
-gears, examining, running, and otherwise poking-at the code.
+    When you submit a patch, you should be mindful that review takes time.
+    If this is a one-line change that you want rubber-stamped, then you
+    should be explicit about that. Honestly, I'm pretty OK rubber-stamping
+    the work of peers that I trust; however, asking for code review on that
+    one line means that I will spend at least 15 minutes mentally shifting
+    gears, examining, running, and otherwise poking-at the code.
 
-There is no better way to exhaust the patience and goodwill of a
-software project than to continually submit obviously untested changes.
-Have you run the code? If not, the code is not ready for review.
+    There is no better way to exhaust the patience and goodwill of a
+    software project than to continually submit obviously untested changes.
+    Have you run the code? If not, the code is not ready for review.
 
-### If everything is OK, then everything is OK
+* If everything is OK, then everything is OK
 
-Sometimes, I can't find anything wrong with a large patch that was just
-submitted. If that's the case, I try to not to penalize that patch—I
-don't go back through the patch and **really** scrutinize the method
-names, I don't suggest libraries that do the same thing but in a way I
-slightly prefer, I don't enumerate the approaches that could have been
-taken. I just post, "+1 lgtm" and that's all I have to show for the hour
-of work I just put in reviewing, but I think that's OK.
+    Sometimes, I can't find anything wrong with a large patch that was just
+    submitted. If that's the case, I try to not to penalize that patch—I
+    don't go back through the patch and **really** scrutinize the method
+    names, I don't suggest libraries that do the same thing but in a way I
+    slightly prefer, I don't enumerate the approaches that could have been
+    taken. I just post, "+1 lgtm" and that's all I have to show for the hour
+    of work I just put in reviewing, but I think that's OK.
 
-I feel like this is part of project culture. If a person you don't know
-submits a good patch, that should be OK.
+    I feel like this is part of project culture. If a person you don't know
+    submits a good patch, that should be OK.
 
-### Say something nice
+* Say something nice
 
-This is probably my own weird insecurity. For each review, I go through
-and make sure to leave comments about some of the things I like in the
-patch. I know that whomever I am reviewing is my intellectual equal (or
-often intellectual better), and that they've just put a lot of time into
-this patch. I also know that when I've put a lot of time into something,
-and all of its redeeming qualities are ignored it stinks, and sometimes
-it fucks up my day.
+    This is probably my own weird insecurity. For each review, I go through
+    and make sure to leave comments about some of the things I like in the
+    patch. I know that whomever I am reviewing is my intellectual equal (or
+    often intellectual better), and that they've just put a lot of time into
+    this patch. I also know that when I've put a lot of time into something,
+    and all of its redeeming qualities are ignored it stinks, and sometimes
+    it fucks up my day.
 
-I try not to fuck up anyone's day.
+    I try not to fuck up anyone's day.
 
-### Nitpicks and show-stoppers
+* Nitpicks and show-stoppers
 
-When I review things, I try to be explicit if I can—"Fix this problem,
-and I'll merge the patch." There are times I may feel strongly that
-a piece of code can be improved, but not strongly enough to reject the
-patch—"Nitpick: could use a comment here". I'll reply overall with,
-"Some nitpicks inline, but overall lgtm" and then ask in IRC if they're
-fine with the patch merging as-is.
+    When I review things, I try to be explicit if I can—"Fix this problem,
+    and I'll merge the patch." There are times I may feel strongly that
+    a piece of code can be improved, but not strongly enough to reject the
+    patch—"Nitpick: could use a comment here". I'll reply overall with,
+    "Some nitpicks inline, but overall lgtm" and then ask in IRC if they're
+    fine with the patch merging as-is.
 
-The difference between a nitpick and a show-stopper is important when
-there are both types of problems in one patch. How do I know what
-**really** needs fixing versus (what really amounts to) the way the
-reviewer would have written the same patch?
+    The difference between a nitpick and a show-stopper is important when
+    there are both types of problems in one patch. How do I know what
+    **really** needs fixing versus (what really amounts to) the way the
+    reviewer would have written the same patch?
 
 A blatant disregard for best practice, A.K.A. JFDI.
 ---------------------------------------------------
