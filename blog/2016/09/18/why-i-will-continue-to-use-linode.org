@@ -16,10 +16,10 @@ network, my node will be where tor traffic exits the network, so it'll
 be my IP address that any end-points see as the source of traffic.
 
 When I decided to run an exit node, I was using Comcast as my
-ISP—running a tor exit node is definitely against Comcast's TOS. At
-the time I thought, well, that's it—I can't run a relay. By this point,
-I had been using Linode for many years to host a bunch of personal web
-projects, and I had no complaints. On a whim I perused the Linode TOS:
+ISP—running a tor exit node is definitely against Comcast's TOS. By
+this point, I had been using Linode for many years to host a bunch of
+personal web projects, and I had no complaints. On a whim I perused
+the Linode TOS:
 
 #+BEGIN_QUOTE
 Linode does not prohibit the use of distributed, peer to peer network
@@ -45,9 +45,9 @@ ExitPolicy accept *:80 # but not *that* dead
 ExitPolicy reject *:* # no other exits allowed
 #+END_SRC
 
-My tor exit node is sometimes abused. There are many fewer
-abuse-reports than I would have expected. I get probably 1 every 3 or
-4 months. I just handled an abuse report today from Linode (heavily
+My tor exit node is sometimes abused. There are fewer abuse-reports
+than I would have expected—I probably get 1 report every 3 or 4
+months. I just handled an abuse report today from Linode (heavily
 edited):
 
 #+BEGIN_QUOTE
