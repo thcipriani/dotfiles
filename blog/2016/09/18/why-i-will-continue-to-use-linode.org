@@ -1,0 +1,106 @@
+#+TITLE: Why I Will Continue to Use Linode
+#+AUTHOR: Tyler Cipriani
+#+DATE: 2016-09-18T17:58:05,752542115-07:00
+[[!meta title="Why I Will Continue to Use Linode"]]
+[[!meta date="2016-09-18T17:58:05,752542115-07:00"]]
+[[!meta html_extra_options="--toc"]]
+
+I know that Linode has had its share of [[https://slashdot.org/firehose.pl?op=view&type=submission&id=2603667][problems]] recently, but it's a
+service I won't be leaving any time soon.
+
+In July of 2014, as part of the Electronic Frontier Foundaiton's [[https://www.eff.org/torchallenge/][Tor
+Challenge]] I decided to build a tor node. Not only did I decide to
+build a tor node, I decided to build an *exit node*. Running an exit
+node means that instead of passing traffic to another node on the tor
+network, my node will be where tor traffic exits the network, so it'll
+be my IP address that any end-points see as the source of traffic.
+
+When I decided to run an exit node, I was using Comcast as my
+ISP—running a tor exit node is definitely against Comcast's TOS. At
+the time I thought, well, that's it—I can't run a relay. By this point,
+I had been using Linode for many years to host a bunch of personal web
+projects, and I had no complaints. On a whim I perused the Linode TOS:
+
+#+BEGIN_QUOTE
+Linode does not prohibit the use of distributed, peer to peer network
+services such as Tor, nor does Linode routinely monitor the network
+communications of customer Linodes as a normal business practice.
+#+END_QUOTE
+
+So with that, I created [[https://atlas.torproject.org/#details/2892073608985977DED33F98A9FA27A9C47C8B61][intothetylerzone]] (because naming things is
+hard). It's a fast (1MB/s), stable, exit node supporting exits on a
+number of ports:
+
+#+NAME: /etc/tor/torrc
+#+BEGIN_SRC sh
+ExitPolicy accept *:22  # ssh
+ExitPolicy accept *:465 # smtps (SMTP over SSL)
+ExitPolicy accept *:993 # imaps (IMAP over SSL)
+ExitPolicy accept *:994 # ircs (IRC over SSL)
+ExitPolicy accept *:995 # pop3s (POP3 over SSL)
+ExitPolicy accept *:5222 # xmpp
+ExitPolicy accept *:6660-6697 # allow irc ports, very widely
+ExitPolicy accept *:443 # http is dead
+ExitPolicy accept *:80 # but not *that* dead
+ExitPolicy reject *:* # no other exits allowed
+#+END_SRC
+
+My tor exit node is sometimes abused. There are many fewer
+abuse-reports than I would have expected. I get probably 1 every 3 or
+4 months. I just handled an abuse report today from Linode (heavily
+edited):
+
+#+BEGIN_QUOTE
+We have received a report of malicious activity originating from your
+Linode. It appears that your Linode is being used to scan hosts. We
+ask that you investigate this matter as soon as you are able.
+#+END_QUOTE
+
+There was a follow-up message on the ticket with the specific IPs that
+were being scanned. I blocked any exit to those targeted IPs in my
+=/etc/tor/torrc= and replied to the ticket (most of this language
+comes from the [[https://gitweb.torproject.org/tor.git/tree/contrib/operator-tools/tor-exit-notice.html][operator-tools exit notice html]]):
+
+#+BEGIN_QUOTE
+This router is part of the Tor Anonymity Network, which is dedicated
+to providing people with anonymity who need it most: average computer
+users. This router IP should be generating no other traffic.
+
+While Tor is not designed for malicious computer users, it is
+inevitable that some may use the network for malicious ends. In the
+mind of this operator, the social need for easily accessible
+censorship-resistant anonymous communication trumps the risk. Tor sees
+use by many important segments of the population, including whistle
+blowers, journalists, Chinese dissidents skirting the Great Firewall
+and oppressive censorship, abuse victims, stalker targets, the US
+military, and law enforcement, just to name a few.
+
+I've updated my /etc/tor/torrc to include all ports on the destination
+IP:
+
+    ExitPolicy reject [targeted-ip]:*
+
+I've also restarted the tor service. The destination IP should no
+longer receive any traffic from this machine.
+#+END_QUOTE
+
+Not 5 minutes later this reply came:
+
+#+BEGIN_QUOTE
+Hi,
+
+Thank you for your response. At this time, it looks like we can
+consider this case resolved. We will continue to monitor for
+additional complaints and let you know should we receive more.
+
+I’ve set this ticket to close automatically in 48 hours, so there’s no
+need to respond since this case is now resolved.
+
+Let us know if there's anything else we can do for you, and we'll be
+happy to help.
+#+END_QUOTE
+
+<3 Linode.
+
+Without Linode I would be unable to host a stable and fast node.
+Linode supports online freedom, so I support Linode.
