@@ -50,10 +50,10 @@ Using these two tools in conjunction, you can approximate `preexec`  and `precmd
 ```{.bash .numberLines}
 debug() {
     # do nothing if completing
-    [[ -n "$COMP_LINE" ]] && return
+    [ -n "$COMP_LINE" ] && return
 
     # don't cause a preexec for $PROMPT_COMMAND
-    [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return
+    [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return
 
     echo 'debug'
 }
@@ -81,10 +81,10 @@ Timing each command is then pretty trivial:
 ```{.bash .numberLines}
 debug() {
     # do nothing if completing
-    [[ -n "$COMP_LINE" ]] && return
+    [ -n "$COMP_LINE" ] && return
 
     # don't cause a preexec for $PROMPT_COMMAND
-    [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return
+    [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return
 
     start_time=$(date +'%s')
 }
@@ -130,10 +130,10 @@ format_time() {
 
 debug() {
     # do nothing if completing
-    [[ -n "$COMP_LINE" ]] && return
+    [ -n "$COMP_LINE" ] && return
 
     # don't cause a preexec for $PROMPT_COMMAND
-    [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return
+    [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return
 
     start_time=$(date +'%s')
 }
