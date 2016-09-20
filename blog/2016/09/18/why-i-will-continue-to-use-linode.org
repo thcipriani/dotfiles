@@ -8,18 +8,18 @@
 I know that Linode has had its share of [[https://slashdot.org/firehose.pl?op=view&type=submission&id=2603667][problems]] recently, but it's a
 service I won't be leaving any time soon.
 
-In July of 2014, as part of the Electronic Frontier Foundaiton's [[https://www.eff.org/torchallenge/][Tor
-Challenge]] I decided to build a tor node. Not only did I decide to
-build a tor node, I decided to build an *exit node*. Running an exit
-node means that instead of passing traffic to another node on the tor
-network, my node will be where tor traffic exits the network, so it'll
+In July of 2014, as part of the Electronic Frontier Foundation's [[https://www.eff.org/torchallenge/][Tor
+Challenge]] I decided to build a Tor node. Not only did I decide to
+build a Tor node, I decided to build an *exit node*. Running an exit
+node means that instead of passing traffic to another node on the Tor
+network, my node will be where Tor traffic exits the network, so it'll
 be my IP address that any end-points see as the source of traffic.
 
-When I decided to run an exit node, I was using Comcast as my
-ISP—running a tor exit node is definitely against Comcast's TOS. By
-this point, I had been using Linode for many years to host a bunch of
-personal web projects, and I had no complaints. On a whim I perused
-the Linode TOS:
+When I decided to run an exit node, I was using Comcast as my ISP—running a Tor
+exit node is definitely against Comcast's Terms of Service (TOS). By this
+point, I had been using Linode for many years to host a bunch of personal web
+projects, and I had no complaints. On a whim I perused the
+[[https://www.linode.com/tos][Linode TOS]]:
 
 #+BEGIN_QUOTE
 Linode does not prohibit the use of distributed, peer to peer network
@@ -45,7 +45,7 @@ ExitPolicy accept *:80 # but not *that* dead
 ExitPolicy reject *:* # no other exits allowed
 #+END_SRC
 
-My tor exit node is sometimes abused. There are fewer abuse-reports
+My Tor exit node is sometimes abused. There are fewer abuse-reports
 than I would have expected—I probably get 1 report every 3 or 4
 months. I just handled an abuse report today from Linode (heavily
 edited):
