@@ -1,0 +1,9 @@
+[[!comment format=mdwn
+ username="bbearnes@c1858629da201134d3ab6b4036afc9b92ef53b53"
+ nickname="bbearnes"
+ avatar="https://seccdn.libravatar.org/avatar/6661fcdfe29d168b3201cd3e6bfbdeef"
+ subject="code formatting"
+ date="2016-09-20T05:19:07Z"
+ content="""
+It looks like there're code formatting issues in this post - HTML getting escaped where it shouldn't?
+"""]]
