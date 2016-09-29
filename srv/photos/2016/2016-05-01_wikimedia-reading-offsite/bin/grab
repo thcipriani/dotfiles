@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eux
+
+DIR=$( cd "$( dirname "$0" )/../raw" && pwd)
+
+while read file; do
+    fn=$(basename "$file")
+    cp "$file" "${DIR}/${fn}"
+done < ./download
