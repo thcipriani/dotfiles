@@ -41,3 +41,10 @@ __pycache__/
 # Ignore the generated ikiwiki hook
 ikiwiki/ikiwiki-hooks/post-update.d/01-post-update
 ikiwiki/.s3cmd.HEAD
+
+# photo things
+# ---
+# Ignore where I download all the nasa files
+# also ignore my screenshots
+srv/photos/nasa/*
+srv/photos/screenshots/*
