@@ -1,0 +1,27 @@
+[[!comment format=mdwn
+ username="igmtsaol@gmail.com"
+ nickname="Israel Graniel"
+ date="2015-03-06T09:43:43"
+ avatar="https://seccdn.libravatar.org/avatar/0e87b17153ca572fa9825585c984ed9b"
+ subject="comment 6"
+ content="""
+yup, make did the trick! thank you! its now working but with a small caveat
+(easy to fix anyway). When i run cat on the generated TXT or when is displayed
+as the MOTD, some characaters display before the image:
+
+$balloon5$
+
+$\$
+
+$\$
+
+$\$
+
+Fixed by editing the TXT file and erasing those lines at the begining, but, is
+it caused by something i missed? is there a way to prevent that from
+happening?
+
+I'm trying to implement a dynamic auto-generated MOTD
+
+BTW, thanks so much for the reply and the tut! :)
+"""]]

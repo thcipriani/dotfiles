@@ -1,0 +1,4 @@
+[[!meta title="pages tagged jekyll"]]
+
+[[!inline pages="tagged(jekyll)" actions="no" archive="yes"
+feedshow=10]]

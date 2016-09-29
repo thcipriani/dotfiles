@@ -1,0 +1,68 @@
+# -*- mode: org -*-
+#+TITLE: Cucumber tests getting started
+#+STARTUP: indent
+#+DATE: Wed May 27 08:09:45 2015 -0700
+[[!meta date="Wed May 27 08:09:45 2015 -0700"]]
+[[!tag computing ruby notes]]
+
+https://gorails.com/setup/ubuntu/14.04
+
+* Check setup
+
+- ruby -v
+- gem list selenium
+- gem install selenium-webdriver
+- Firefox
+- IRB
+
+* Ruby install
+
+#+BEGIN_SRC sh
+❯ curl -fsSL https://gist.github.com/mislav/055441129184a1512bb5.txt | \
+  rbenv install --patch 2.2.3
+~ 6m 50s
+❯ rbenv global 2.2.2
+~
+❯ ruby -v
+ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux]
+~
+❯ echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+~
+#+END_SRC
+
+* Selenium webdriver
+
+require "selenium-webdriver"
+https://code.google.com/p/selenium/wiki/RubyBindings
+
+driver.class
+http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Driver
+
+* Core tests
+
+=[mw-core]/tests/browser/features/create_account.feature=
+
+#+BEGIN_SRC ruby
+Schenario Outline can be passed variable
+
+Scenario: [English text] # Just a comment, nothing is parsed
+Given [this thing] # Sets up the test
+When [other thing] # Action that is part of the test
+And
+But
+#+END_SRC
+
+* Bundler
+
+#+BEGIN_SRC sh
+cd [mwcore]/tests/browser
+bundle install
+bundle exec cucumber features/create_account.feature:14
+#+END_SRC
+
+* Important
+
+#+BEGIN_SRC sh
+export BROWSER=firefox
+export MEDIAWIKI_ENVIRONMENT=mw-vagrant-host
+#+END_SRC

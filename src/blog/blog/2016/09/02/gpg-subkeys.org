@@ -1,0 +1,110 @@
+#+TITLE: GPG Security things
+#+DATE: Fri Sep  2 16:29:05 PDT 2016
+[[!tag computing crypto pgp notes]]
+[[!meta date="Fri Sep  2 16:29:05 PDT 2016"]]
+* Revocation Cert
+
+Needed to revoke your key should the master signing/certifying key ever be compromised
+
+#+BEGIN_SRC sh
+gpg --output \<tyler@tylercipriani.com\>.gpg-revocation-certificate --gen-revoke tyler@tylercipriani.com
+lpr \<tyler@tylercipriani.com\>.gpg-revocation-certificate
+shred --remove \<tyler@tylercipriani.com\>.gpg-revocation-certificate
+#+END_SRC
+
+store printed revocation cert in file or safe-deposit box
+
+#+NAME: key-backup
+* Key backup
+
+[[http://www.jabberwocky.com/software/paperkey/][Paperkey]]
+
+Download paperkey and its gpg signature
+#+BEGIN_SRC sh
+wget -c http://www.jabberwocky.com/software/paperkey/paperkey-1.3.tar.gz
+wget -c http://www.jabberwocky.com/software/paperkey/paperkey-1.3.tar.gz.sig
+#+END_SRC
+
+Get David Shaw's public key (0x99242560) from your keyserver of choice
+#+BEGIN_SRC sh
+gpg --search-keys 'dshaw@jabberwocky.com'
+#+END_SRC
+
+Verify you have downloaded the right paper key and that the level of trust is sufficient for your purposes
+#+BEGIN_SRC sh
+gpg --verify Downloads/paperkey-1.3.tar.gz.sig paperkey-1.3.tar.gz
+gpg: Signature made Thu 03 Jan 2013 09:18:32 PM MST using RSA key ID FEA78A7AA1BC4FA4
+gpg: Good signature from "David M. Shaw <dshaw@jabberwocky.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 7D92 FD31 3AB6 F373 4CC5  9CA1 DB69 8D71 9924 2560
+     Subkey fingerprint: A154 3829 812C 9EA9 87F1  4526 FEA7 8A7A A1BC 4FA4
+#+END_SRC
+
+If you have a good signature from davidExtract and install
+#+BEGIN_SRC sh
+tar xvzf paperkey-1.3.tar.gz
+rm paperkey-1.3.tar.gz
+cd paperkey-1.3
+./configure
+make
+sudo make install
+#+END_SRC
+
+Print you secret key
+#+BEGIN_SRC sh
+gpg --export-secret-key tyler@tylercipriani.com | paperkey | lpr
+#+END_SRC
+
+Store it in your file or safe-deposit-box
+
+* Subkeys
+
+[[https://alexcabal.com/creating-the-perfect-gpg-keypair/][Good Resource]]
+
+By default, GnuPG creates a key for signing and an encryption subkey:
+
+#+BEGIN_SRC sh
+gpg --list-keys tyler
+#+END_SRC
+
+| pub                                      | rsa4096    | 2014-02-19 | [SC]     |                           |
+| 6237D8D3ECC1AE918729296FF6DAD285018FAC02 |            |            |          |                           |
+| uid                                      | [ultimate] |      Tyler | Cipriani | <tyler@tylercipriani.com> |
+| sub                                      | rsa4096    | 2014-02-19 | [E]      |                           |
+|                                          |            |            |          |                           |
+
+You can add a new subkey with the command
+
+#+BEGIN_SRC sh
+gpg --edit-key tyler
+gpg> addkey
+#+END_SRC
+
+And then you should see
+
+#+BEGIN_SRC sh
+gpg --list-keys tyler
+#+END_SRC
+
+| pub                                      | rsa4096    | 2014-02-19 | [SC]     |                           |             |
+| 6237D8D3ECC1AE918729296FF6DAD285018FAC02 |            |            |          |                           |             |
+| uid                                      | [ultimate] |      Tyler | Cipriani | <tyler@tylercipriani.com> |             |
+| sub                                      | rsa4096    | 2014-02-19 | [E]      |                           |             |
+| sub                                      | rsa4096    | 2016-09-02 | [S]      | [expires:                 | 2018-09-02] |
+|                                          |            |            |          |                           |             |
+
+You can then remove your certification master key (make sure you've gone through the [[#key-backup][key backup]] process before you do this!)
+
+1. Export all your secret subkeys
+2. Remove all your secret keys from your keyring
+3. Reimport only your subkeys
+
+#+BEGIN_SRC sh
+gpg --export-secret-subkeys tyler > subkeys
+gpg --delete-secret-key tyler
+gpg --import subkeys
+shred --remove subkeys
+#+END_SRC
+
+Now =gpg --list-keys= shows a =#= next to =sec#= next to my =[SC]= key. This indicates that the key is no longer accessible.

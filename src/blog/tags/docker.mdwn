@@ -1,0 +1,4 @@
+[[!meta title="pages tagged docker"]]
+
+[[!inline pages="tagged(docker)" actions="no" archive="yes"
+feedshow=10]]

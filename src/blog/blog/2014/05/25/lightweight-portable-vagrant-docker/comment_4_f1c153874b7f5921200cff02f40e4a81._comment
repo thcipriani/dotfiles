@@ -1,0 +1,12 @@
+[[!comment format=mdwn
+ username="willsp@gmail.com"
+ nickname="William"
+ date="2014-08-05T07:12:25"
+ avatar="https://seccdn.libravatar.org/avatar/aea6465ffa96d3e7ac868e562a6e71d9"
+ subject="comment 4"
+ content="""
+I tried to implement the code posted and, for some bizarre reason, nothing
+shows up on the browser when I go to http://localhost:8080/index.php. Looks
+like the ngnix is not forwarding the requests to PHP. Do you have a repo or
+something with the code so that I can test against your code? Thanks.
+"""]]

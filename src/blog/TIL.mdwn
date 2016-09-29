@@ -1,0 +1,14 @@
+[[!meta redir="tags/TIL"]]
+[[!meta title="TIL"]]
+[[!meta date="2016-09-07T10:48:08,990861510-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+
+I realized that this page makes two parallel blogs which is unsustainable for the far-future. I'm mothballing this page, the correct page is now [[tags/TIL]].
+
+[[!inline pages="tagged(TIL)" actions="no" archive="yes" feedshow=100 trail="no"]]

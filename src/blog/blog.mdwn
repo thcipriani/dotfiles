@@ -1,0 +1,6 @@
+[[!if test="enabled(calendar)" then="""
+To see posts by date, check out the [[archives]]
+"""]]
+
+[[!inline pages="page(./blog/*/*/*/*) and !*/Discussion" show="5"
+actions=yes rootpage="blog" postform=false]]

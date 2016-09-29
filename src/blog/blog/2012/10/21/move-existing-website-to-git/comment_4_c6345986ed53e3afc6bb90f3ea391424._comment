@@ -1,0 +1,12 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2014-04-07T07:30:16"
+ avatar="https://seccdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 4"
+ content="""
+No you're not, I am, actually! The `git remote add web` named the remote
+`web`. You can list out all your remotes with `git remote`.
+
+I'll get a fix up here soon. Nice catch!
+"""]]

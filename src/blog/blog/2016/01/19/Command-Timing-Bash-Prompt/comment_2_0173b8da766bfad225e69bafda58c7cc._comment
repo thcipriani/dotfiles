@@ -1,0 +1,19 @@
+[[!comment format=mdwn
+ username="https://tylercipriani.com/"
+ nickname="thcipriani"
+ avatar="https://seccdn.libravatar.org/avatar/5619bb7ad9df2b1811b5ef6f944f97e67232273cc5b2caca28652639b304302b"
+ subject="Fixed!"
+ date="2016-09-20T14:20:49Z"
+ content="""
+_Comment by bbearnes — Tue 2016-09-20 05:19:07 AM_
+
+> It looks like there’re code formatting issues in this post - HTML getting escaped where it shouldn’t?
+
+Thanks for the heads-up. This was ikiwiki's markup engine interpreting bash's `[[` builtin as the start of link.
+
+I fixed this in the dumbest way possible, that is, I made the code sh/POSIX-compliant so that it only uses `[` rather than `[[` :|
+
+I should find a better way around this problem...
+
+
+"""]]

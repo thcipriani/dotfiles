@@ -1,0 +1,72 @@
+#+TITLE: Git-Config Colors and Include
+#+AUTHOR: Tyler Cipriani
+#+DATE: 2016-09-21T17:56:33,574269585-07:00
+[[!meta title="Git-Config Include and Colors"]]
+[[!meta date="2016-09-21T17:56:33,574269585-07:00"]]
+[[!meta html_extra_options="--toc"]]
+
+[[!tag git TIL]]
+
+While I was looking through my =~/.gitconfig= today, I learned some new tricks.
+
+I've had the =color= section in my =~/.gitconfig= without really understanding it:
+
+#+BEGIN_SRC ini
+[color]
+    ui = true
+#+END_SRC
+
+First, it seems that =git config color.ui true= is superfluous as it
+has been set to =true= by default since Git 1.8.4. More importantly, I
+learned that you can customize the colors of =git-branch=, =git-diff=,
+=git-status=, =git log --decorate=, =git-grep=, and =git {add,clean} --interactive=
+
+The easiest way I could find to view what properties are available to
+colorize is to search for =<slot>= on the git-config man page.
+
+The other neat thing I learned is that you can include other
+config files by adding an =include= section in your =~/.gitconfig=:
+
+#+BEGIN_SRC ini
+[include]
+    path = ~/.config/git/colors.config
+#+END_SRC
+
+By combining these two tricks, you can create one colorscheme for a
+terminal that uses the [[https://github.com/ChrisKempson/Tomorrow-Theme][Tomorrow Theme]] and one for the terminal that
+uses [[http://ethanschoonover.com/solarized][Solarized]] and swap between them easily by swapping the symlink
+pointed at by =~/.config/git/color.config=
+
+#+BEGIN_SRC ini
+# Tomorrow Night Eighties in ~/.config/git/tomorrow-night-eighties.config
+# Included in ~/.gitconfig via:
+# [include]
+#     path = ~tyler/.config/git/tomorrow-night-eighties.config
+[color "status"]
+    header = "#999999"
+    added = "#99cc99"
+    changed = "#f2777a"
+    untracked = "#ffcc66"
+    branch = "#2d2d2d" "#6699cc"
+    # Because the phrase "Detached HEAD" isn't unnerving enough
+    nobranch = bold ul blink "#f99157"
+[color "diff"]
+    meta = "#515151"
+    func = "#cc99cc"
+    frag = "#66cccc"
+    context = "#999999"
+    old = "#f2777a" "#393939"
+    new = "#bef2be" "#515151"
+#+END_SRC
+
+I wish the symlink swap didn't have to happen – I wish you could just
+use environment variables.
+
+As far as I can tell the only variables that are expanded in =~/.gitconfig=
+are =~=  to point at the current user's home directory and =~[user]=
+points to =[user]='s home directory.
+
+=include= also fails silently by design.
+
+I feel like there are some other neat tricks to uncover here, but I
+haven't quite grokked this to fullness just yet.

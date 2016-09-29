@@ -1,0 +1,20 @@
+[[!comment format=mdwn
+ username="e158a3r@gmail.com"
+ nickname="e15ba3r"
+ date="2014-04-03T13:22:33"
+ avatar="https://seccdn.libravatar.org/avatar/fe0c2d9e5afac4ea72079dabb6cabf37"
+ subject="comment 3"
+ content="""
+Following these steps, I get an error:
+
+git push -u origin master
+
+fatal: 'origin' does not appear to be a git repository
+
+fatal: Could not read from remote repository.
+
+However, using 'web' rather than 'origin' results in what appears to be
+success.
+
+Am I in error?
+"""]]

@@ -1,0 +1,10 @@
+#+TITLE: sensible-editor
+#+AUTHOR: Tyler Cipriani
+#+DATE: 2016-09-07 16:34:11
+[[!meta title="sensible-editor"]]
+[[!meta date="2016-09-07 16:34:11"]]
+[[!tag TIL]]
+
+=sensible-editor= is a shell script in Debian at =/usr/bin/sensible-editor= that selects a *sensible editor*.
+
+See also: =sensible-{browser,editor,pager}=

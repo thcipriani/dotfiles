@@ -1,0 +1,70 @@
+#+TITLE: Ikiwiki things
+#+DATE: Wed May 25 08:22:03 2016 -0600
+[[!meta date="Wed May 25 08:22:03 2016 -0600"]]
+* Install
+
+Mostly it was pretty easy
+
+- Grabbed the [[https://packages.debian.org/unstable/source/ikiwiki][tar from debian]]
+- Followed install instructions from [[https://ikiwiki.info/install/][Ikiwiki's install page]]
+
+#+BEGIN_SRC sh
+tar xvzf ikiwiki_3.20160121.tar.gz
+cd ikiwiki_3.20160121
+sudo PERL5LIB=`pwd` PERL_MM_USE_DEFAULT=1 perl -MCPAN -e 'CPAN::Shell->install("Bundle::IkiWiki")'
+sudo PERL5LIB=`pwd` PERL_MM_USE_DEFAULT=1 perl -MCPAN -e 'CPAN::Shell->install("Bundle::IkiWiki::Extras")'
+make
+sudo make install
+#+END_SRC
+
+* OpenID Setup
+
++Ikiwiki requires an OpenID setup+.
+
+You can login to Ikiwiki with OpenID, and I think that's neat!
+
+Since OpenID is somewhat dead, I decided to setup a personal SimpleID.
+
+I put this all on the analytics server.
+
+First I had to create a DNS record for ~openid.tylercipriani.com~ so letsencrypt would work.
+
+Then I made a new letsencrypt cert:
+#+BEGIN_SRC sh
+/usr/local/src/letsencrypt/letsencrypt-auto certonly --standalone -d openid.tylercipriani.com
+#+END_SRC
+
+Then I grabbed and installed openid
+
+#+BEGIN_SRC sh
+cd /usr/local/src
+curl -sLO http://downloads.sourceforge.net/simpleid/simpleid-1.0.1.tar.gz
+tar xvzf simpleid-1.0.1.tar.gz
+mkdir /srv/www/openid.tylercipriani.com
+mv simpleid/{cache,identities,store,www} /srv/www/openid.tylercipriani.com
+mv /srv/www/openid.tylercipriani.com/{config.php.dist,config.php}
+#+END_SRC
+
+Edited the ~config.php~ file, changed root webserver and the pretty url thing
+
+I also made a virtualserver: openid.tylercipriani.com
+
+Identity file: ~thcipriani.identity~
+
+#+BEGIN_SRC ini
+identity="https://tylercipriani.com/"
+password="blah:sha1:salt"
+administrator=1
+[user_info]
+...
+[sreg]
+...
+#+END_SRC
+
+* Blog setup
+
+The things that I didn't understand about Ikiwiki:
+
+1. htmlscrubber removes all your scripts
+2. Some changes to the setup file (like =git_wrapper= updates) require you to run =ikiwiki --changesetup [setupfile]=
+3. I am running a staging wiki on my laptop, a wiki on my webserver, and then pushing the compiled files to s3: WAT‽

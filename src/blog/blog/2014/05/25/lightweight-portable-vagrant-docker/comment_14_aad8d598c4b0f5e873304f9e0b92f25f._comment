@@ -1,0 +1,30 @@
+[[!comment format=mdwn
+ username="chadcarbert@me.com"
+ nickname="Chad"
+ date="2015-09-18T21:39:49"
+ avatar="https://seccdn.libravatar.org/avatar/812d335fd352057dde17e507064c71f3"
+ subject="comment 14"
+ content="""
+This is a great run down of using docker for local development. I'm working
+through a similar issue, but I'm setting up a LAMP stack. In your situation
+everything exists only in the container environment, except with `/var/www`
+linked to the host, with some help from vagrant. In your example however
+you're not using a database, I was wondering how you would plan on persisting
+a database to the host file system. Taking a guess, would you just throw it
+somewhere with another VOLUME command in your Dockerfile, and sync it to a
+`db` folder?
+
+As a side-note I'm considering using `baseimage-docker` as an image starting
+point as it solves a few different issues in the multi-process setup. It also
+uses `runit` which the author finds to provide better performance than
+`supervisor`, but I haven't tested this.
+
+Instead of using vagrant, in a docker-only situation the "sync folders" that
+vagrant is doing would have to be done via a `docker run -v`. How a container
+links to its host is host-dependent, and should be managed via each person
+rather than making assumptions about the host's filesystem. This is one thing
+that your Vagrantfile sets up, although I suppose you could throw the `docker
+-run...` in a `[docker-run.sh](http://docker-run.sh)`.
+
+Thanks for writing up this, it solves my ninety percent of my use-case.
+"""]]

@@ -1,0 +1,4 @@
+[[!meta title="pages tagged vcs"]]
+
+[[!inline pages="tagged(vcs)" actions="no" archive="yes"
+feedshow=10]]

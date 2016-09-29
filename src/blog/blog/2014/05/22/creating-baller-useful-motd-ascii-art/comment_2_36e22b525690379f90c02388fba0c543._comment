@@ -1,0 +1,16 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2014-11-12T08:56:04"
+ avatar="https://seccdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 2"
+ content="""
+Make sure you have the util-say.jar file (`find /path/to/util-say -name 'util-
+say.jar'`), make sure your permissions are correct (I assume that read
+permissions are probably fine, but you may need execute—I also assume that the
+git repo likely has correct permissions), and also make sure you're in the
+correct directory when you run ./img2ponysay—probably won't work running
+`/home/user/Downloads/util-say/img2ponysay`.
+
+I say “Probably” because I've never tested that theory.
+"""]]

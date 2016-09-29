@@ -1,0 +1,88 @@
+#+TITLE: VHS to MP4 on Linux
+#+DATE: Tue Apr 26 07:50:54 2016 -0700
+[[!tag computing video notes]]
+[[!meta date="Tue Apr 26 07:50:54 2016 -0700"]]
+I recently ordered a set of videos that I remember from a few years
+ago that did not make the jump to DVD, unfortunately.
+
+I /do/ have a VCR; however, I never have it hooked up because...why would I?
+
+The solution here: convert my VHS tapes into H.264/MP3 mp4-contained files.
+
+Now the question is: how?
+
+* Hardware
+
+I managed to grab an [[http://www.amazon.com/WZYuan-Easycap-Adapter-Capture-Support/dp/B01D65M1CK?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o00_s00][EasyCap D60]] Recording device from Amazon.
+
+This device is supported inside the linux kernel (from version 3.18 forward...maybe?)
+
+Once I plugged in this device, it was working:
+
+#+BEGIN_SRC sh :export both
+lsusb
+#+END_SRC
+
+#+RESULTS:
+| Bus | 2 | Device | 001: | ID | 1d6b:0003 | Linux    | Foundation    |        3.0 | root    | hub       |
+| Bus | 1 | Device | 006: | ID | 03eb:8a0c | Atmel    | Corp.         |            |         |           |
+| Bus | 1 | Device | 005: | ID | 1bcf:2987 | Sunplus  | Innovation    | Technology | Inc.    |           |
+| Bus | 1 | Device | 003: | ID | 0f39:0611 | TG3      | Electronics   |            |         |           |
+| Bus | 1 | Device | 017: | ID | 1a7c:0191 | Evoluent | VerticalMouse |          4 |         |           |
+| Bus | 1 | Device | 016: | ID | 1b71:3002 | Fushicai | USBTV007      |      Video | Grabber | [EasyCAP] |
+| Bus | 1 | Device | 007: | ID | 05e3:0608 | Genesys  | Logic,        |       Inc. | Hub     |           |
+| Bus | 1 | Device | 001: | ID | 1d6b:0002 | Linux    | Foundation    |        2.0 | root    | hub       |
+
+This bad boy:
+| Bus | 1 | Device | 016: | ID | 1b71:3002 | Fushicai | USBTV007      |      Video | Grabber | [EasyCAP] |
+
+I checked out:
+#+BEGIN_SRC sh :export both
+ls /dev | grep -i video
+#+END_SRC
+
+#+RESULTS:
+| video0 |
+| video1 |
+
+And I noticed a *new* video device =video1=. Easy.
+
+* Capture Software
+
+I used VLC to caputre raw input.
+
+1. =Media= → =Open Caputre Device=
+2. =Video Device Name= → =/dev/video1=
+3. =Audio Device Name= → =hw:2,0=
+4. =Play= pulldown menu → =Convert=
+5. =Dump Raw Input=
+6. =Destination File= → =/home/tyler/Videos=
+7. =Start=
+8. Hit play on the VCR
+9. Hit the Rec. button in VLC
+
+The auto-named avi file in =~/Videos= was *FUCKING HUGE*.
+#+BEGIN_SRC sh :export both
+ls -lh ~/Videos | grep -i avi
+#+END_SRC
+
+#+RESULTS:
+: -rw-r--r-- 1 tyler tyler  35G Apr 22 15:17 vlc-record-2016-04-22-14h47m57s-Streaming-.avi
+
+* Conversion
+
+I found a [[https://www.guyrutenberg.com/2010/09/10/capturing-video-and-converting-to-h-264-using-ffmpeg/][blog]] where a person does this. I have a vauge memory about doing this at UpSync,
+so I'll give it a shot: 2-pass mp4 conversion.
+
+Let's see what happens!
+
+#+BEGIN_SRC sh
+ffmpeg -i ~/Videos/vlc-record-2016-04-22-14h47m57s-Streaming-.avi -c:v libx264 -pix_fmt yuv420p -preset slow -threads 0 -b:v 825k -strict -2 -c:a aac -b:a 96k -pass 1 -f mp4 -y /dev/null
+#+END_SRC
+
+#+BEGIN_SRC sh
+ffmpeg -i ~/Videos/vlc-record-2016-04-22-14h47m57s-Streaming-.avi -c:v libx264 -pix_fmt yuv420p \
+  -preset slow -threads 0 -b:v 825k -strict -2 -c:a aac -b:a 96k -pass 2 ~/Videos/out.mp4
+#+END_SRC
+
+The settings above created an mp4 that could be played via x264 on a RaspberryPi 3.

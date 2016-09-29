@@ -1,0 +1,162 @@
+# -*- mode: org -*-
+#+TITLE: Beaglebone Black Setup on Debian 8
+#+STARTUP: indent
+#+DATE: Fri Apr 1 14:01:25 2016 -0700
+[[!meta date="Fri Apr 1 14:01:25 2016 -0700"]]
+
+* Flash eMMC with latest Debian image
+1. Download Debian image [whatever].img.xz
+    - http://beagleboard.org/latest-images
+
+    #+BEGIN_SRC sh
+    unxz bone-debian-7.8-lxde-4gb-armhf-2015-03-01-4gb.img.xz
+    #+END_SRC
+
+2. Insert microSD card and make sure that it is unmounted
+    - =lsblk=
+    - =fdisk -l=
+
+3. Copy the img to the microSD card
+    #+BEGIN_SRC sh
+    sudo dd bs=4 if=bone-debian-7.8-lxde-4gb-armhf-2015-03-01-4gb.img of=/dev/mmcblk0 conv=fsync
+    #+END_SRC
+    This step will take a lot of time.
+
+4. Mount the microSD card and make sure it flashes to the beaglebone:
+   #+BEGIN_SRC sh
+   sudo mount /dev/mmcblk0p1 /mnt/sd-card
+   vim /mnt/sd-card/boot/uEnv.txt
+   #+END_SRC
+   Uncomment the line:
+   #+BEGIN_SRC sh
+   cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
+   #+END_SRC
+6. Hookup the [[https://www.adafruit.com/products/954][USB-to-serial cable]]
+   - Connect *Black Wire* to *Pin 1* (closest to 5v barrel)
+   - Connect *Green Wire* to *Pin 4* (2 pins from pin 1)
+   - Connect *White Wire* to *Pin 5*
+7. Connect to USB, check output of ~dmesg~ for which ~/dev/~ the serial connection is on
+8. Connect to serial connection via screen
+    #+BEGIN_SRC sh
+    screen /dev/ttyUSB0 115200
+    #+END_SRC
+9. put sdcard in BBB and power up, hold the S2 button, power up
+10. Wait, the status lights will flash in a cylon pattern, you can watch the eMMC flash progress via ~screen~
+11. All User LEDs should be solid on completion
+
+More info is available on the [[http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#FAQ][BeagleBoneBlack Wiki]]
+
+* Initial setup
+** Connect over SSH
+To connect via ssh: plugin beaglebone to computer via SSH
+#+BEGIN_SRC sh
+ssh -l root 192.168.7.2
+#+END_SRC
+** Wifi Setup
+1. Plugin the [[https://www.adafruit.com/products/814][wifi adapter]]
+2. Reboot (unplug it and plug it back in)
+3. Generate your pre-shared key using ~wpa_passphrase~ (see [[https://wiki.debian.org/WiFi/HowToUse#WPA-PSK_and_WPA2-PSK][Debian Wiki]])
+4. vim ~/etc/network/interfaces~
+    #+NAME: /etc/network/interfaces
+    #+BEGIN_SRC sh
+    auto wlan0
+    iface wlan0 inet dhcp
+        wpa-ssid "network-name"
+        wpa-psk "network-password"
+    #+END_SRC
+5. ~ifdown wlan0; ifup wlan0~
+6. use ~ip -o addr show~ to confirm that you have an ip address
+** Update debian
+
+Use the [[https://debian-handbook.info/browse/stable/sect.automatic-upgrades.html][Debian Upgrade Script]] to update debian:
+
+#+NAME: ~/bin/upgrade-debian
+#+BEGIN_SRC sh
+#!/usr/bin/env bash
+# Debian auto-upgrade script
+# https://debian-handbook.info/browse/stable/sect.automatic-upgrades.html
+
+# kill all cached creds
+sudo -k
+
+# ask for new creds
+sudo -v
+
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get update
+yes '' | sudo apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
+#+END_SRC
+
+* Basic security
+** Make a root password
+- Install ~pwgen~: ~sudo apt-get install pwgen~
+- Generate a root password: ~pwgen -Bsy 16 1~
+- Store that password in your password store—you'll never remember it
+- Login to beaglebone via ssh, run ~passwd~
+** Add a privileged non-root user
+- Generate a non-privileged user password: ~pwgen -Bsy 16 1~
+- Save password in password store
+- Add the user
+    #+BEGIN_SRC sh
+    sudo groupadd sudo-user
+    sudo groupadd ssh-user
+    useradd tyler
+    mkdir /home/tyler
+    mkdir /home/tyler/.ssh
+    touch /home/tyler/.ssh/authorized_keys
+    chown -R tyler:tyler /home/tyler
+    chmod 700 /home/tyler/.ssh
+    chmod 600 /home/tyler/.ssh/authorized_keys
+    usermod -a -G sudo-user tyler
+    usermod -a -G ssh-user tyler
+    usermod --shell /bin/bash tyler
+    passwd tyler
+    #+END_SRC
+- give that user sudo privileges
+  - ~EDITOR=vim visudo -f /etc/sudoers.d/sudo-user~
+  - Add the line: ~%sudo-user ALL=(ALL) NOPASSWD:ALL~
+- Add your laptop's key to user's ~authorized_keys~
+    #+BEGIN_SRC sh
+    # This should happen from your local machine: laptop/desktop/whatever
+    cat ~/.ssh/id_rsa.pub | ssh -l tyler 192.168.7.2 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys'
+    #+END_SRC
+** Remove demo user
+- ~userdel -fr debian~
+** Lockdown ssh
+- Generate better hostkeys
+    #+BEGIN_SRC sh
+    cd /etc/ssh
+    rm ssh_host_*key*
+    ssh-keygen -t rsa -b 4096 -f ssh_host_rsa_key < /dev/null
+    #+END_SRC
+- Modfiy ~/etc/ssh/sshd_config~ to make it like below:
+    #+NAME: /etc/ssh/sshd_config
+    #+BEGIN_SRC sh
+    Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+    KexAlgorithms diffie-hellman-group-exchange-sha256
+    MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+    Protocol 2
+    HostKey /etc/ssh/ssh_host_rsa_key
+    PubkeyAuthentication yes
+    PermitRootLogin no
+    PasswordAuthentication no
+    AllowGroups ssh-user
+    #+END_SRC
+- Restart SSH ~service ssh restart~
+- Open a new terminal window and make sure you can still login (you may need to delete and reaccept hostkeys)
+* Fun Stuff
+- Change ssh banner:
+    #+BEGIN_SRC sh
+    sudo apt-get install figlet
+    awk '$1 !~ /default/' /etc/issue.net > ~/issue.net && sudo mv ~/issue.net /etc/issue.net
+    sudo sh -c 'figlet BeagleBone >> /etc/issue.net'
+    #+END_SRC
+- BeagleBone pin-out
+  - http://stuffwemade.net/post/beaglebone-pinout
+
+* Things to remember
+thank god for 1wire temp sensor blog posts:
+- http://interactingobjects.com/ds18b20-temperature-sensor-on-a-beaglebone-black-running-ubuntu/
+- http://klaus.ede.hih.au.dk/index.php/BBB_and_OneWire
+
+ iwconfig when can't find wlan0 interface (could be wlan1)

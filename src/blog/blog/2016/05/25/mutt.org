@@ -1,0 +1,65 @@
+#+TITLE: Mutt
+#+DATE: Wed May 25 08:22:03 2016 -0600
+[[!tag computing mutt notes]]
+[[!meta date="Wed May 25 08:22:03 2016 -0600"]]
+* Contacts
+
+Install goobook:
+#+BEGIN_SRC sh
+sudo pip2 install -U goobook
+#+END_SRC
+
+I ran into some problems in arch, had to upgrade/reinstall a few deps:
+#+BEGIN_SRC sh
+(ﾉ^ヮ^)ﾉ*:・ﾟ✧ sudo pip2 install -U pyasn1
+(ﾉ^ヮ^)ﾉ*:・ﾟ✧ sudo pip2 install -U cryptography
+#+END_SRC
+
+goobook then needs to authenticate with gmail:
+#+BEGIN_SRC sh
+goobook authenticate
+#+END_SRC
+
+Once you go through the oauth song and dance you should be able to run a ~query~
+#+BEGIN_SRC sh
+(ﾉ^ヮ^)ﾉ*:・ﾟ✧ goobook query tyler
+
+thcipriani@gmail.com	Tyler Cipriani	other groups: "System Group: Friends"
+#+END_SRC
+
+From there, just need to add a bit of magic to the ~~/.muttrc~ file
+#+BEGIN_SRC sh
+set query_command="goobook query %s"
+macro index,pager a \
+    "<pipe-message>goobook add<return>" "add sender to google contacts"
+bind editor <Tab> complete-query
+#+END_SRC
+* Viewing URLs
+
+Install urlview: ncurses program parses urls out of text.
+
+Create a ~$HOME/urlview~ file:
+#+BEGIN_SRC sh
+COMMAND xdg-open %s &
+#+END_SRC
+
+Bind =\,u= in the editor:
+#+BEGIN_SRC sh
+macro pager ,u "|urlview<enter>" "call urlview to open links"
+#+END_SRC
+* Searching Mail
+
+Searching works really well via ~notmuch~
+
+Afer install, setup via
+#+BEGIN_SRC sh
+notmuch setup
+#+END_SRC
+
+After setup, it's just a matter of calling
+
+#+BEGIN_SRC sh
+notmuch new
+#+END_SRC
+
+to index the things

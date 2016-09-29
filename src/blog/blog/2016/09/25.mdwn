@@ -1,0 +1,2 @@
+[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]
+[[!inline pages="page(./25/*) and !*Discussion" archive=no limit=10 quick=yes trail=no]]

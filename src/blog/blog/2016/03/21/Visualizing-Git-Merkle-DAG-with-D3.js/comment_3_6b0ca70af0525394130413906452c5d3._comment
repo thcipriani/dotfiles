@@ -1,0 +1,16 @@
+[[!comment format=mdwn
+ username="https://tylercipriani.com/"
+ nickname="thcipriani"
+ avatar="https://seccdn.libravatar.org/avatar/5619bb7ad9df2b1811b5ef6f944f97e67232273cc5b2caca28652639b304302b"
+ subject="TODO"
+ date="2016-09-01T15:43:31Z"
+ content="""
+ On Wed 2016-08-31 12:09:38 AM, Durand D Souza wrote:
+> it would be helpful to have Google/Facebook login for your comments because I had to dig up my yahoo account just to comment here!
+
+heh, yeah, OpenIDs are, unfortunately, not super easy to come by anymore.
+
+There is also an email-based login system available for ikiwiki that I should look into setting up. I wonder if I can use an external SMTP provider? I really don't want to maintain an email server :(
+
+hrm...I'll look into this.
+"""]]

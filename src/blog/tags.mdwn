@@ -1,0 +1,3 @@
+[[!pagestats pages="./tags/*" among="./blog/*/*/*/*"]]
+
+Charismatic/obligatory tag cloud.

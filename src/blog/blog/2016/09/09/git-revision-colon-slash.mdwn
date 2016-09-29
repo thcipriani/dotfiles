@@ -1,0 +1,46 @@
+[[!meta date="2016-09-09T07:47:22,529067840-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!meta title="Git Revision Colon Slash"]]
+[[!tag TIL]]
+
+From `gitrevisions(7)`
+
+```{.bash}
+SPECIFYING REVISIONS
+
+    :/<text>, e.g. :/fix nasty bug
+        A colon, followed by a slash, followed by a text, names a commit whose
+        commit message matches the specified regular expression. This name
+        returns the youngest matching commit which is reachable from any ref.
+        The regular expression can match any part of the commit message. To
+        match messages starting with a string, one can use e.g.  :/^foo. The
+        special sequence :/! is reserved for modifiers to what is matched.
+        :/!-foo performs a negative match, while :/!!foo matches a literal !
+        character, followed by foo. Any other sequence beginning with :/! is
+        reserved for now.
+```
+
+This is the same revision that is returned by
+
+```{.bash}
+git log --grep '<regex>' -1
+```
+
+Where it seems awesome is in combination with `git revert` or
+`git commit --fixup`
+
+I could see running this in a panic:
+
+```{.bash}
+git revert --no-edit ':/that thing that broke'
+git commit
+git push origin HEAD:refs/for/master
+```
+
+Found via a [comment on hackernews](https://news.ycombinator.com/item?id=12461992)

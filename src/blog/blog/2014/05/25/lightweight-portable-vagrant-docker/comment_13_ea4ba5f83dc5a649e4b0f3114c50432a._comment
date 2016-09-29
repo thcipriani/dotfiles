@@ -1,0 +1,15 @@
+[[!comment format=mdwn
+ username="hugo.victor.dias.teodoro@gmail.com"
+ nickname="Hugo Dias"
+ date="2015-06-23T13:02:54"
+ avatar="https://seccdn.libravatar.org/avatar/3a79dbaefe96c98b26e6543864cf00fe"
+ subject="comment 13"
+ content="""
+THANKS for sharing your project folder structure man! That's the first post i
+found showing that stuff. I'll definitely use this structure for learning
+about docker. Thanks again :)
+
+Suggestion: As a OSX user i don't have docker on my machine. Why not add
+"d.image = "ubuntu/latest" in the vagrant file instead of using this command
+before do a vagrant up ?
+"""]]

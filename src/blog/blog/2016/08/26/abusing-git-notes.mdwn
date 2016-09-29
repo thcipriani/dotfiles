@@ -1,0 +1,186 @@
+[[!meta title="(ab)Using Git Notes"]]
+[[!meta date="2016-08-26T15:35:15-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!tag computing vcs git-abuse git]]
+
+[[!toc ]]
+Flickr
+---
+
+I like to post my [photos on the internet](http://photos.tylercipriani.com/).
+I used to post all of my photos on
+[Flickr](https://www.flickr.com/photos/tylercipriani/), but that site has been
+getting
+[worse](https://github.com/thcipriani/dotfiles/commit/c2ff9eeedb1c6634982efc940e43335264018269)
+and
+[worse](https://techcrunch.com/2013/05/20/flickr-gets-a-huge-revamp-with-hi-res-image-filled-ui-new-android-app-and-1tb-of-free-storage/)
+and
+[worse](https://www.theguardian.com/technology/2016/jul/25/yahoo-moves-next-for-flickr).
+More recently, I've been using a static photo gallery generator I
+<strike>wrote</strike> hacked together that I (perhaps unfortunately) named
+[hiraeth](https://github.com/thcipriani/dotfiles/tree/master/bin/hiraeth).
+
+Hiraeth is, to put it mildly, missing some features. There are a few reasons
+that I opted to create hiraeth rather than use something that was already built:
+
+1. I *need* to host my own photos now, evidently. The internet has seemingly decided
+   to sell its user-base to the highest bidder, so hosted services are out.
+2. I think it makes sense to host my photos statically, since they're static (mostly).
+3. I really *like* the way my `~/Pictures` directory is organized—I can find
+   stuff—and I don't want to mess all that up to generate a crappy website out
+   of my photos.
+4. I use git-annex to manage my `~/Pictures`, which creates...unique challenges
+   :)
+
+Hiraeth is invoked like: `publish [edited-photo-dir] [output-dir]`. Hiraeth
+looks for a file named `_metadata.yaml` inside the directory of edited photos
+and uses that to map photo files to photo descriptions and add titles and
+whatnot to the page. It makes a few different sized thumbnails of each photo,
+grabs the exif info, and generates some html.
+
+Hiraeth was designed to look and behave like a static version of Flickr circa
+2007. There are still features to add, but there is a base that works in place
+at least.
+
+Home Pictures
+---
+
+I mange my `~/Pictures` directory using
+[git-annex](https://git-annex.branchable.com/) (which I've wanted to write
+something about for a long time). This is mostly amazing and great.  Git-annex
+has a lot of cool features. For instance, in git-annex once you've copied files
+to a remote, it will allow you to "`drop`" a file locally to save space. You can
+still get the file back from the remote any time you rootin' tootin' feel like,
+so nbd. Occasionally, when I'm running out of space on one machine or another,
+I'll `drop` a bunch of photos.
+
+The ability to drop a bunch of photos means that hiraeth needs to be able to get
+photo metadata from a picture without having the file *actually* be on
+disk.
+
+Gerrit
+---
+
+We use gerrit at work and I genuinely like it.
+
+`<rant>`
+The web-UI is one of the worst interfaces I've ever used. The web interface is
+an unfortunate mix of late-90s, designed-by-engineers, impossibly-option-filled
+interface mashed together in an unholy union with a fancy-schmancy new-fangled
+javascripty single-page application. It's basically a mix of two interface
+paradigms I hate, yet rarely see in concert: back-button breakage + no design
+aesthetic whatsoever.
+`</rant>`
+
+**HOWEVER**, The workflow gerrit enforces, the git features it uses, and the
+beautiful repository history that results makes gerrit a really nice code
+review system.
+
+Gerrit is the first system I've seen use git-notes.
+
+Gerrit has a cool feature where it keeps all of the patch review in git-notes:
+
+```{.bash}
+tyler@taskmaster:mediawiki-core$ git fetch origin refs/notes/*:refs/notes/*
+remote: Counting objects: 176401, done
+remote: Finding sources: 100% (147886/147886)
+remote: Getting sizes: 100% (1723/1723)
+remote: Compressing objects: 100% (116810/116810)
+remote: Total 147886 (delta 120436), reused 147854 (delta 120434)
+Receiving objects: 100% (147886/147886), 14.91 MiB | 3.01 MiB/s, done.
+Resolving deltas: 100% (120449/120449), done.
+From ssh://gerrit.wikimedia.org:29418/mediawiki/core
+ * [new ref]         refs/notes/commits -> refs/notes/commits
+ * [new ref]         refs/notes/review -> refs/notes/review
+tyler@taskmaster:mediawiki-core$ ls -l .git/refs/notes
+total 8
+-rw-r--r-- 1 tyler tyler 41 Aug 28 16:44 commits
+-rw-r--r-- 1 tyler tyler 41 Aug 28 16:44 review
+tyler@taskmaster:mediawiki-core$ git log --show-notes=review --author='Tyler Cipriani'
+ commit ab131d4be475bf87b0f0a86fa356a2b1a188a673
+ Author: Tyler Cipriani <tcipriani@wikimedia.org>
+ Date:   Tue Mar 22 09:08:52 2016 -0700
+ 
+ Revert "Add link to anon's user page; remove "Not logged in""
+ 
+ This reverts change I049d0671a7050.
+ 
+ This change was reverted in the wmf/1.27.0-wmf.17. Since there is no
+ clear consensus, revert in master before branching wmf/1.27.0-wmf.18.
+ Bug: T121793
+ Change-Id: I2dc0f2562c908d4e419d34e80a64065843778f3d
+ 
+ Notes (review):
+     Verified+2: jenkins-bot
+     Code-Review+2: Legoktm <legoktm.wikipedia@gmail.com>
+     Submitted-by: jenkins-bot
+     Submitted-at: Tue, 22 Mar 2016 18:08:27 +0000
+     Reviewed-on: https://gerrit.wikimedia.org/r/278923
+     Project: mediawiki/core
+     Branch: refs/heads/master
+```
+
+This is super cool. You can have, effectively, an offline backup of lots of
+information you'd usually have to brave the gerrit web-ui to find. Plus, you
+don't *have to* have this information in your local repo taking up space, it's
+only there if you fetch it down.
+
+There is another project from Google that uses git-notes for review called
+[git-appraise](https://github.com/google/git-appraise).
+
+This is the stated use of git-notes in the docs: store extra information about a
+commit, without changing the SHA1 of the commit by modifying its contents.
+
+It is, however, noteworthy that you can store a note that points to any object
+in your repository and not just commit objects.
+
+EXIF data without pictures
+---
+
+After some minor testing it seems that I can store all the EXIF info I need
+about my images in git-notes without *actually* having those images on disk;
+i.e., I can have git-annex drop the actual files and just have broken symlinks
+that point to where the files live in annex.
+
+I wrote a [small bash
+script](https://gist.github.com/thcipriani/e56cdef56a98eb0cf7e93dadf94fbdd8) to
+play with some of these ideas.
+
+```{.bash}
+tyler@taskmaster:Pictures$ git photo show fish.jpg
++ git notes --ref=pictures show d4a9c57715ce63a228577900d1abc027
+error: No note found for object d4a9c57715ce63a228577900d1abc0273396e8ef.
+tyler@taskmaster:Pictures$ git photo add fish.jpg
++ git notes --ref=pictures add -m 'FileName: fish.jpg
+FileTypeExtension: jpg
+Make: NIKON CORPORATION
+Model: NIKON D610
+LensID: AF-S Zoom-Nikkor 24-70mm f/2.8G ED
+FocalLength: 62.0 mm
+FNumber: 2.8
+ISO: 3200' d4a9c57715ce63a228577900d1abc027
++ set +x
+tyler@taskmaster:Pictures$ git photo show fish.jpg
++ git notes --ref=pictures show d4a9c57715ce63a228577900d1abc027
+FileName: fish.jpg
+FileTypeExtension: jpg
+Make: NIKON CORPORATION
+Model: NIKON D610
+LensID: AF-S Zoom-Nikkor 24-70mm f/2.8G ED
+FocalLength: 62.0 mm
+FNumber: 2.8
+ISO: 3200
++ set +x
+```
+
+Now it seems like it _should be_ possible to `git push origin
+refs/notes/pictures`, fetch them on the other side, and modify hiraeth to read
+EXIF from notes when the symlink target doesn't exist.
+
+We'll see how any of that goes in practice :\

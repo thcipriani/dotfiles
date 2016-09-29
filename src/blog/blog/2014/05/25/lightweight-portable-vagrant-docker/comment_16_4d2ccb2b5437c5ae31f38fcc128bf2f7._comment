@@ -1,0 +1,20 @@
+[[!comment format=mdwn
+ username="thcipriani@gmail.com"
+ nickname="thcipriani"
+ date="2016-05-31T08:34:33"
+ avatar="https://seccdn.libravatar.org/avatar/43940a9fbd7ace03c05fb50aa2306b48"
+ subject="comment 16"
+ content="""
+I'm unclear if you're telling me something is wrong in my post, or if you're
+asking for help. Also, in future, use of a pastebin would be appreciated.
+
+It is difficult to troubleshoot without knowing the contents of the
+Vagrantfile and os/version of host; however, what is clear is that whatever
+you're sending the `<<` message to is an object that doesn't respond to that
+method. In my example above, `d.ports` is an [Array]([http://docs.ruby-
+lang.org/en/2...](http://docs.ruby-lang.org/en/2.0.0/Array.html#method-i-3C-
+3C)) that does accept the `<<` message.
+
+It's entirely possible something about Vagrantfiles has changed in the almost
+exactly 2 years since this post.
+"""]]

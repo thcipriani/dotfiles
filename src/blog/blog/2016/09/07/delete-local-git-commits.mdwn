@@ -1,0 +1,140 @@
+[[!meta title="Delete Local Git Commits"]]
+[[!meta date="2016-09-07T10:48:08,990861510-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+
+[[!tag computing git vcs]]
+
+
+Usually when I need to delete a commit from a local git repo I use:
+
+```{.bash}
+git rebase -i
+```
+
+This starts an interactive rebase session for all commits from
+`HEAD..@{u}`. Once I'm in the git rebase editor I put a `drop` on the line that
+has the commit I want to delete and save the file. Magic. Commit gone.
+
+```{.bash}
+drop c572357 [LOCAL] Change to be removed
+
+# Rebase dbfcb3a..c572357 onto dbfcb3a (1 command(s))
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+This is fine if you're there to drive an editor for an interactive rebase.
+[[!toc ]]
+## The problem with interactivity
+
+The problem with interactive rebase is you can't easily script it.
+
+At work I help to maintain our "beta cluster" which is a bunch of
+virtual machines that is supposed to mirror the setup of production.
+The extent to which production is actually mirrored is debatable;
+however, it is true that we use the same puppet repository as
+production. Further, this puppet repository resides on a virtual
+machine within the cluster that acts as the beta cluster's puppetmaster.
+
+Often, to test a patch for production puppet, folks will apply patches
+on top of beta's local copy of the production puppet repo.
+
+```{.bash}
+root@puppetmaster# cd /var/lib/git/operations/puppet
+root@puppetmaster# git apply --check --3way /home/thcipriani/0001-some.patch
+root@puppetmaster# git am --3way /home/thcipriani/0001-some.path
+root@puppetmaster# git status
+On branch production
+Your branch is ahead of 'origin/production' by 6 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+```
+
+The problem here is that a lot of these commits are old and busted.
+
+```{.bash}
+root@puppetmaster# git log -6 --format='%h %ai'
+ad4f419 2016-08-25 20:46:23 +0530
+d3e9ab8 2016-09-05 15:49:48 +0100
+59b7377 2016-08-30 16:21:39 -0700
+5d2609e 2016-08-17 14:17:02 +0100
+194ee1c 2016-07-19 13:19:54 -0600
+057c9f7 2016-01-07 17:11:12 -0800
+```
+
+It'd be nice to have a script that periodically cleans up these
+patches based on some criteria. This script would have to potentially
+be able to remove, say, `59b7377` while leaving all the others
+in-tact, and it would have to do so without any access to `git rebase -i`
+or any user input.
+
+## Non-interactive commit deletion
+
+The way to do this is with `git rebase --onto`.
+
+Selective quoting of `man git-rebase`
+
+```{.bash}
+SYNOPSIS
+    git rebase [--onto <newbase>] [<upstream>]
+
+DESCRIPTION
+    All changes made by commits in the current branch but that are not
+    in <upstream> are saved to a temporary area. This is the same set
+    of commits that would be shown by git log <upstream>..HEAD
+
+    The current branch is reset to <newbase> --onto option was supplied.
+
+    The commits that were previously saved into the temporary area are
+    then reapplied to the current branch, one by one, in order.
+```
+
+The commits we want are all the commits surrounding `59b7377` without `59b7377`.
+
+```{.bash}
+root@puppetmaster# git log --format='%h %ai' 59b7377..HEAD
+ad4f419 2016-08-25 20:46:23 +0530
+d3e9ab8 2016-09-05 15:49:48 +0100
+root@puppetmaster# git log --format='%h %ai' @{u}..59b7377^
+5d2609e 2016-08-17 14:17:02 +0100
+194ee1c 2016-07-19 13:19:54 -0600
+057c9f7 2016-01-07 17:11:12 -0800
+```
+
+So we really want to take the commits `59b7377..HEAD` and rebase them
+onto the commit before `59b7377` (which is `59b7377^`)
+
+```{.bash}
+root@puppetmaster# git rebase --onto 59b7377^ 59b7377
+root@puppetmaster# git log -6 --format='%h %ai'
+ad4f419 2016-08-25 20:46:23 +0530
+d3e9ab8 2016-09-05 15:49:48 +0100
+5d2609e 2016-08-17 14:17:02 +0100
+194ee1c 2016-07-19 13:19:54 -0600
+057c9f7 2016-01-07 17:11:12 -0800
+d5e1340 2016-09-07 23:45:25 +0200
+```
+
+Tada! Commit gone.

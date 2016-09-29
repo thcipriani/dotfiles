@@ -1,0 +1,4 @@
+[[!meta title="pages tagged irc"]]
+
+[[!inline pages="tagged(irc)" actions="no" archive="yes"
+feedshow=10]]

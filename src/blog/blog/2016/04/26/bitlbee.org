@@ -1,0 +1,41 @@
+#+TITLE: Bitlebee/IRC info
+#+STARTUP: indent
+#+DATE: Tue Apr 26 07:50:54 2016 -0700
+[[!tag irc computing bitlebee notes]]
+[[!meta date="Tue Apr 26 07:50:54 2016 -0700"]]
+
+
+* Helpful Posts
+
+[[https://pthree.org/2011/03/08/bitlbee-and-otr/][- pthree.org post]]
+- Datko's book has this same kinda stuff.
+
+* Restart bitlbee without restarting Weechat
+#+BEGIN_SRC bash
+sudo service bitlbee stop
+/disconnect localhost
+sudo service bitlbee start
+/connect localhost/6667
+/msg &bitlbee identify [password]
+#+END_SRC
+
+* Setup OTR
+
+First had to install the ~bitlbee-plugin-otr~ plugin:
+#+BEGIN_SRC bash
+sudo apt-get install bitlbee-plugin-otr
+#+END_SRC
+
+In the ~&bitlebee~ window
+#+BEGIN_SRC
+account list
+> @root 0 (gtalk): jabber, thcipriani@gmail.com (connected)
+> @root 1 (twitter): twitter, thcipriani (connected)
+#+END_SRC
+
+Will return a list of accounts that are currently setup in bitlbee.
+
+To generate a key for the 0th account—gmail in my case:
+#+BEGIN_SRC
+otr keygen 0
+#+END_SRC

@@ -1,0 +1,22 @@
+[[!meta copyright="""
+Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+
+<figure class="thumb thumb-right">
+[[!img static/images/201307_p_tyler_studio_photo.jpg alt="Tyler Cipriani" size="320x350"]]
+<figcaption>
+Gentleman. Scholar. Lyrical genius.
+</figcaption>
+</figure>
+
+## About
+
+* [[About Me|about]]
+* [[Notes|tags/notes]]
+* [[TIL|tags/TIL]]
+* [[Reading|tags/books]]
+
+[[!inline pages=sidebar raw=yes]]

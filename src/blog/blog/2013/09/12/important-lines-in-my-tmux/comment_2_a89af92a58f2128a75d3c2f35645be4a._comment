@@ -1,0 +1,12 @@
+[[!comment format=mdwn
+ username="peter@finack.com"
+ nickname="peterhbaker"
+ date="2014-03-18T21:48:05"
+ avatar="https://seccdn.libravatar.org/avatar/9930a023f8e63d1141c2e8f3b5eabc5b"
+ subject="comment 2"
+ content="""
+Great stuff Tyler. Quick question, on a mac are you able to just hit Meta then
+a tmux command? It looks like you bound ctrl-f to the prefix but I can't
+figure out how to get the option key on iTerm2 to send ctrl-f. Thanks for the
+article!
+"""]]

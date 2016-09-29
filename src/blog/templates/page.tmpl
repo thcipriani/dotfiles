@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<TMPL_IF HTML_LANG_CODE><html lang="<TMPL_VAR HTML_LANG_CODE>" dir="<TMPL_VAR HTML_LANG_DIR>" xmlns="http://www.w3.org/1999/xhtml"><TMPL_ELSE><html xmlns="http://www.w3.org/1999/xhtml"></TMPL_IF>
+<head>
+<TMPL_IF DYNAMIC>
+<TMPL_IF FORCEBASEURL><base href="<TMPL_VAR FORCEBASEURL>" /><TMPL_ELSE>
+<TMPL_IF BASEURL><base href="<TMPL_VAR BASEURL>" /></TMPL_IF>
+</TMPL_IF>
+</TMPL_IF>
+<TMPL_IF HTML5><meta charset="utf-8" /><TMPL_ELSE><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></TMPL_IF>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><TMPL_VAR TITLE><TMPL_IF NAME="PARENTLINKS"> - <TMPL_VAR WIKINAME></TMPL_IF></title>
+<TMPL_UNLESS NOT_RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_UNLESS>
+<TMPL_IF FAVICON>
+<link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" />
+</TMPL_IF>
+
+<!-- tylercipriani additions -->
+<script>
+  /**
+
+  https://www.gnu.org/philosophy/javascript-trap.html
+
+  @licstart  The following is the entire license notice for the
+  CSS and JavaScript code in this page.
+
+  Copyright (C) 2014 Tyler Cipriani
+
+  The JavaScript code in this page is free software: you can
+  redistribute it and/or modify it under the terms of the GNU
+  General Public License (GNU GPL) as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option)
+  any later version.  The code is distributed WITHOUT ANY WARRANTY;
+  without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+  As additional permission under GNU GPL version 3 section 7, you
+  may distribute non-source (e.g., minimized or compacted) forms of
+  that code without the copy of the GNU GPL normally required by
+  section 4, provided you include this license notice and a URL
+  through which recipients can access the Corresponding Source.
+
+
+  @licend  The above is the entire license notice
+  for the CSS and JavaScript code in this page.
+  */
+</script>
+
+<TMPL_IF pandoc_math_mathjax>
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script type="text/javascript" async src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</TMPL_IF>"></script>
+</TMPL_IF>
+<TMPL_IF pandoc_math_katex>
+<link rel="stylesheet" href="<TMPL_IF pandoc_math_custom_css><TMPL_VAR pandoc_math_custom_css><TMPL_ELSE>//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css</TMPL_IF>">
+<script src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js</TMPL_IF>"></script>
+<script type="text/javascript">
+window.addEventListener("load", function(){var mathElements = document.getElementsByClassName("math");
+  for (var i=0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    katex.render(texText.data, mathElements[i]);
+  }
+});
+</script>
+
+</TMPL_IF>
+<TMPL_IF pandoc_math_jsmath>
+<!-- jsmath is obsolete, so we emulate it using mathjax -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({extensions: ["jsMath2jax.js"]});</script>
+<script src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML</TMPL_IF>"></script>
+</TMPL_IF>
+<TMPL_IF pandoc_math_latexmathml>
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script type="text/javascript" src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>http://math.etsu.edu/LaTeXMathML/LaTeXMathML.js</TMPL_IF>"></script>
+<link rel="stylesheet" type="text/css" href="<TMPL_IF pandoc_math_custom_css><TMPL_VAR pandoc_math_custom_css><TMPL_ELSE>http://math.etsu.edu/LaTeXMathML/LaTeXMathML.standardarticle.css</TMPL_IF>" />
+</TMPL_IF>
+<TMPL_IF pandoc_math_asciimathml>
+<!-- use mathjax, since the mathml rendering mode of asciimathml has poor browser support --->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<script src="<TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML</TMPL_IF>"></script>
+</TMPL_IF>
+<TMPL_IF pandoc_math_mathml>
+<!--mathml: native for firefox/mozilla - other browsers need custom js -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+<TMPL_IF pandoc_math_custom_js><script src="<TMPL_VAR pandoc_math_custom_js>"></script></TMPL_IF>
+</TMPL_IF>
+<TMPL_IF pandoc_math_mimetex>
+<!-- mimetex for math with cgi script at <TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>/cgi-bin/mimetex.cgi</TMPL_IF> -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+</TMPL_IF>
+<TMPL_IF pandoc_math_webtex>
+<!-- webtex for math with <TMPL_IF pandoc_math_custom_js><TMPL_VAR pandoc_math_custom_js><TMPL_ELSE>a google charts api fallback URL</TMPL_IF> -->
+<TMPL_IF pandoc_math_custom_css><link rel="stylesheet" href="<TMPL_VAR pandoc_math_custom_css>"></TMPL_IF>
+</TMPL_IF>
+<!-- tylercipriani additions end -->
+
+<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
+<TMPL_IF LOCAL_CSS>
+<link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
+<TMPL_ELSE>
+<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
+</TMPL_IF>
+
+<TMPL_UNLESS DYNAMIC>
+<TMPL_IF EDITURL>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
+</TMPL_IF>
+<TMPL_IF FEEDLINKS><TMPL_VAR FEEDLINKS></TMPL_IF>
+<TMPL_IF RELVCS><TMPL_VAR RELVCS></TMPL_IF>
+<TMPL_IF META><TMPL_VAR META></TMPL_IF>
+<TMPL_LOOP TRAILLOOP>
+<TMPL_IF PREVPAGE>
+<link rel="prev" href="<TMPL_VAR PREVURL>" title="<TMPL_VAR PREVTITLE>" />
+</TMPL_IF>
+<link rel="up" href="<TMPL_VAR TRAILURL>" title="<TMPL_VAR TRAILTITLE>" />
+<TMPL_IF NEXTPAGE>
+<link rel="next" href="<TMPL_VAR NEXTURL>" title="<TMPL_VAR NEXTTITLE>" />
+</TMPL_IF>
+</TMPL_LOOP>
+</TMPL_UNLESS>
+
+<!-- tylercipriani additions -->
+<link rel="author" href="/humans.txt">
+
+<!-- OpenID things -->
+<link rel="openid.server" href="https://openid.tylercipriani.com/" />
+<link rel="openid2.provider" href="https://openid.tylercipriani.com/" />
+<meta http-equiv="X-XRDS-Location" content="https://openid.tylercipriani.com/xrds/thcipriani" />
+<!-- tylercipriani additions end -->
+
+</head>
+<body>
+
+<TMPL_IF HTML5><article class="page"><TMPL_ELSE><div class="page"></TMPL_IF>
+
+<TMPL_IF HTML5><section class="pageheader"><TMPL_ELSE><div class="pageheader"></TMPL_IF>
+<TMPL_IF HTML5><header class="header"><TMPL_ELSE><div class="header"></TMPL_IF>
+<span>
+<span class="parentlinks">
+<TMPL_LOOP PARENTLINKS>
+<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/ 
+</TMPL_LOOP>
+</span>
+<span class="title">
+<TMPL_VAR TITLE>
+<TMPL_IF ISTRANSLATION>
+&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)
+</TMPL_IF>
+</span>
+</span>
+<TMPL_UNLESS DYNAMIC>
+<TMPL_IF SEARCHFORM>
+<TMPL_VAR SEARCHFORM>
+</TMPL_IF>
+</TMPL_UNLESS>
+<TMPL_IF HTML5></header><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF HAVE_ACTIONS>
+<TMPL_IF HTML5><nav class="actions"><TMPL_ELSE><div class="actions"></TMPL_IF>
+<ul>
+<TMPL_IF EDITURL>
+<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
+</TMPL_IF>
+<TMPL_IF RECENTCHANGESURL>
+<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
+</TMPL_IF>
+<TMPL_IF HISTORYURL>
+<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
+</TMPL_IF>
+<TMPL_IF GETSOURCEURL>
+<li><a href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
+</TMPL_IF>
+<TMPL_IF PREFSURL>
+<li><a href="<TMPL_VAR PREFSURL>">Preferences</a></li>
+</TMPL_IF>
+<TMPL_IF ACTIONS>
+<TMPL_LOOP ACTIONS>
+<li><TMPL_VAR ACTION></li>
+</TMPL_LOOP>
+</TMPL_IF>
+<TMPL_IF COMMENTSLINK>
+<li><TMPL_VAR COMMENTSLINK></li>
+<TMPL_ELSE>
+<TMPL_IF DISCUSSIONLINK>
+<li><TMPL_VAR DISCUSSIONLINK></li>
+</TMPL_IF>
+</TMPL_IF>
+</ul>
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
+<TMPL_IF OTHERLANGUAGES>
+<TMPL_IF HTML5><nav id="otherlanguages"><TMPL_ELSE><div id="otherlanguages"></TMPL_IF>
+<ul>
+<TMPL_LOOP OTHERLANGUAGES>
+<li>
+<a href="<TMPL_VAR URL>"><TMPL_VAR LANGUAGE></a>
+<TMPL_IF MASTER>
+(master)
+<TMPL_ELSE>
+&nbsp;(<TMPL_VAR PERCENT>%)
+</TMPL_IF>
+</li>
+</TMPL_LOOP>
+</ul>
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
+<TMPL_UNLESS DYNAMIC>
+<TMPL_VAR TRAILS>
+</TMPL_UNLESS>
+
+<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_UNLESS DYNAMIC>
+<TMPL_IF SIDEBAR>
+<TMPL_IF HTML5><aside class="sidebar"><TMPL_ELSE><div class="sidebar"></TMPL_IF>
+<TMPL_VAR SIDEBAR>
+<TMPL_IF HTML5></aside><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+</TMPL_UNLESS>
+
+<div id="pagebody">
+
+<TMPL_IF HTML5><section<TMPL_ELSE><div</TMPL_IF> id="content" role="main">
+<TMPL_VAR CONTENT>
+<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF ENCLOSURE>
+<TMPL_IF HTML5><section id="enclosure"><TMPL_ELSE><div id="enclosure"></TMPL_IF>
+<a href="<TMPL_VAR ENCLOSURE>">Download</a>
+<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
+<TMPL_UNLESS DYNAMIC>
+<TMPL_IF COMMENTS>
+<TMPL_IF HTML5><section<TMPL_ELSE><div</TMPL_IF> id="comments" role="complementary">
+<TMPL_VAR COMMENTS>
+<TMPL_IF ADDCOMMENTURL>
+<div class="addcomment">
+<a href="<TMPL_VAR ADDCOMMENTURL>">Add a comment</a> (<a href="/comment-policy">Comment Policy</a>)
+</div>
+<TMPL_ELSE>
+<div class="addcomment">Comments on this page are closed.</div>
+</TMPL_IF>
+<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+</TMPL_UNLESS>
+
+</div>
+
+<TMPL_IF HTML5><footer<TMPL_ELSE><div</TMPL_IF> id="footer" class="pagefooter" role="contentinfo">
+
+<TMPL_VAR TRAILS>
+
+<TMPL_UNLESS DYNAMIC>
+<TMPL_IF HTML5><nav id="pageinfo"><TMPL_ELSE><div id="pageinfo"></TMPL_IF>
+
+
+<TMPL_IF TAGS>
+<TMPL_IF HTML5><nav class="tags"><TMPL_ELSE><div class="tags"></TMPL_IF>
+Tags:
+<TMPL_LOOP TAGS>
+<TMPL_VAR LINK>
+</TMPL_LOOP>
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
+<TMPL_IF BACKLINKS>
+<TMPL_IF HTML5><nav id="backlinks"><TMPL_ELSE><div id="backlinks"></TMPL_IF>
+Links:
+<TMPL_LOOP BACKLINKS>
+<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
+</TMPL_LOOP>
+<TMPL_IF MORE_BACKLINKS>
+<span class="popup">...
+<span class="balloon">
+<TMPL_LOOP MORE_BACKLINKS>
+<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
+</TMPL_LOOP>
+</span>
+</span>
+</TMPL_IF>
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
+<TMPL_IF COPYRIGHT>
+<div class="pagecopyright">
+<a name="pagecopyright"></a>
+<TMPL_VAR COPYRIGHT>
+</div>
+</TMPL_IF>
+
+<TMPL_IF LICENSE>
+<div class="pagelicense">
+<a name="pagelicense"></a>
+License: <TMPL_VAR LICENSE>
+</div>
+</TMPL_IF>
+
+<div class="pagedate">
+Last edited <TMPL_VAR MTIME>
+Created <TMPL_VAR CTIME>
+</div>
+
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+<TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
+</TMPL_UNLESS>
+
+<div class="epilogue">
+    <a class="logo" href="/" title="Tyler Cipriani Home">
+        <img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="Tyler Cipriani Logo">
+    </a>
+
+    <a class="license-icon" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img src="/static/images/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31">
+    </a>
+</div>
+
+<!-- from <TMPL_VAR WIKINAME> -->
+<TMPL_IF HTML5></footer><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF HTML5></article><TMPL_ELSE></div></TMPL_IF>
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.tylercipriani.com/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.tylercipriani.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+</body>
+</html>

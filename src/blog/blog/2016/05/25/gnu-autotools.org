@@ -1,0 +1,50 @@
+# -*- mode: org -*-
+#+TITLE: GNU Autotools
+#+STARTUP:  indent
+#+LANGUAGE: en
+#+DATE: Wed May 25 08:22:03 2016 -0600
+[[!meta date="Wed May 25 08:22:03 2016 -0600"]]
+[[!tag computing gnu notes]]
+
+* Links
+- https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
+* =configure.ac=
+- Written in m4sh (m4 + shell)
+- Program initialization: ~AC_INIT~ macro—needs name, version, maintainer
+- Initialize automake: ~AM_INIT_AUTOMAKE~
+- Make sure that C-compiler exists: ~AC_PROG_CC~
+- Build ~Makefile~ from ~Makefile.in~, replaces ~@PACKAGE_VERSION@~-type variables: ~AC_CONFIG_FILES([Makefile])~
+- Output the script: ~AC_OUTPUT~
+
+#+BEGIN_SRC makefile
+AC_INIT([hello-world], [0.1], [tyler@tylercipriani.com])
+
+# Initialize automake
+AM_INIT_AUTOMAKE
+
+# Ensure C-compiler exists
+AC_PROG_CC
+
+# Specify what files are to be created
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
+#+END_SRC
+
+* =Makefile.am=
+- The ~./configure~ script (created by ~configure.ac~), expects to find ~Makefile.in~
+- ~Makefile.in~ is long and dumb (just like ~./configure~), so we make a ~Makefile.am~
+- ~automake~ generates ~Makefile.in~
+- ~foreign~ AUTOMAKE_OPTIONS tells that the layout is "non standard"
+
+#+BEGIN_SRC makefile
+AUTOMAKE_OPTIONS = foreign
+bin_PROGRAMS = hello-world
+hello-world_SOURCES = hello-world.c
+#+END_SRC
+
+* Put it all together:
+
+- create m4 environment: ~aclocal~
+- ~autoconf~ does: ~configure.ac~ → ~configure~
+- ~automake --add-missing~ does: ~Makefile.am~ → ~Makefile.in~
+- ~autoreconf --install~: autoreconf runs autoconf, autoheader, aclocal, automake, libtoolize, and autopoint

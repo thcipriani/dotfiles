@@ -1,0 +1,4 @@
+[[!meta title="pages tagged make"]]
+
+[[!inline pages="tagged(make)" actions="no" archive="yes"
+feedshow=10]]
