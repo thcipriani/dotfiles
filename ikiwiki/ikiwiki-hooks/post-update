@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eu
+
+run-parts -v /home/tyler/TylerCipriani.git/hooks/post-update.d

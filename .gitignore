@@ -35,3 +35,9 @@ __pycache__/
 *.so
 *.egg-info/
 *.egg
+
+# Blog things
+# ---
+# Ignore the generated ikiwiki hook
+ikiwiki/ikiwiki-hooks/post-update.d/01-post-update
+ikiwiki/.s3cmd.HEAD
