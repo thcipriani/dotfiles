@@ -1,0 +1,206 @@
+#+TITLE: Git Annex Metadata Filtered Views
+#+AUTHOR: Tyler Cipriani
+#+DATE: 2016-09-28T20:30:55,784926044-07:00
+[[!meta title="Git-Annex Metadata Filtered Views"]]
+[[!meta date="2016-09-28T20:30:55-07:00"]]
+
+[[!tag git git-annex til]]
+
+Git annex goes mindbogglingly deep.
+
+I use git annex to manage my photos – I have tons of RAW photos in =~/Pictures= that are backed-up to a few git annex special remotes.
+
+Whenever I'm done editing a set of raw files I go through this song and dance:
+
+#+BEGIN_SRC sh
+cd raw
+git annex add
+git annex copy --to=s3
+git annex copy --to=nas
+git commit -m 'Added a bunch of files to s3'
+git push origin master
+git push origin git-annex
+git annex drop
+#+END_SRC
+
+And magically my raw files are available on s3 and my home NAS.
+
+If I jump over to a different machine I can run:
+
+#+BEGIN_SRC sh
+cd ~/Pictures
+git fetch
+git rebase
+git annex get [new-raw-file]
+#+END_SRC
+
+Now that raw file is available on my new machine, I can open it in Darktable, I can do whatever I want to it: it's just a file.
+
+This is a pretty powerful extension of git.
+
+While I was reading the [[https://git-annex.branchable.com/internals/][git annex internals]] page today I stumbled
+across an even more powerful feature: metadata. You can store and
+retrieve arbitrary metadata about any git annex file. For instance, if
+I wanted to store EXIF info for a particular file, I could do:
+
+#+BEGIN_SRC sh
+git annex metadata 20140118-BlazeyAndTyler.jpg --set exif="$(exiftool -S \
+  -filename \
+  -filetypeextensions \
+  -make \
+  -model \
+  -lensid \
+  -focallength \
+  -fnumber \
+  -iso 20140118-BlazeyAndTyler.jpg)"
+#+END_SRC
+
+And I can drop that file and still retrieve the EXIF data
+
+#+BEGIN_SRC sh
+$ git annex drop 20140118-BlazeyAndTyler.jpg
+drop 20140118-BlazeyAndTyler.jpg (checking tylercipriani-raw...) (checking tylercipriani-raw...) (checking tylercipriani-raw...) ok
+(recording state in git...)
+$ git annex metadata --get exif !$
+git annex metadata --get exif 20140118-BlazeyAndTyler.jpg
+FileName: 20140118-BlazeyAndTyler.jpg
+Make: SAMSUNG
+Model: SPH-L720
+FocalLength: 4.2 mm
+FNumber: 2.2
+ISO: 125
+#+END_SRC
+
+This is pretty neat, but it can also be achieved with [[https://tylercipriani.com/blog/2016/08/abusing-git-notes/][git notes]] so it's nothing too spectacular.
+
+But git annex metadata doesn't quite stop there.
+
+** Random background
+
+My picture directory is laid out like this:
+
+#+BEGIN_SRC txt
+Pictures/
+└── 2015
+    └── 2015-08-14_Project-name
+        ├── bin
+        │   └── convert-and-resize.sh
+        ├── edit
+        │   ├── 2015-08-14_Project-name_00001.jpg
+        │   └── 2015-08-14_Project-name_00002.jpg
+        └── raw
+            └── 2015-08-14_Project-name_00001.NEF
+#+END_SRC
+
+I have directories for each year, under those directories I create
+directories that are prefixed with the [[https://xkcd.com/1179/][ISO 8601]] import date for the photo, some
+memorable project name (like =mom-birthday= or =rmnp-hike=).
+Inside that directory I have 2 directories: =raw= and =edit=. Inside
+each one of those directories, I have photos that are named with ISO
+8601 import date, project name, and 5-digit import number and a file
+extension – raw files go in =raw= and edited/finished files =edit=.
+
+I got this system from [[http://www.rileybrandt.com/lessons/][Riley Brandt]] (I can't recommend the Open Source
+Photography Course enough – it's amazing!) and it's served me well. I
+can find stuff! But git annex really expands the possibilities of this system.
+
+** Fictional, real-world, totally real actually happening scenario
+
+I go to Rocky Mountain National Park (RMNP) multiple times per year.
+I've taken a lot of photos there. If I take a trip there in October I
+will generally import those photos in October and create
+=2015/2015-10-05_RMNP-hike/{raw,edit}=, and then if I go there again
+next March I'd create
+=2016/2016-03-21_RMNP-daytrip-with-blazey/{raw,edit}=. So if I want to
+preview my RMNP edited photos from October I'd go:
+
+#+BEGIN_SRC sh
+cd 2015/2015-10-05_RMNP-hike/edit
+git annex get
+geeqie .
+#+END_SRC
+
+But what happens if I want to see all the photos I've ever taken in
+RMNP? I could probably cook up some script to do this. Off the top of
+my head I could do something like =find . -iname '*rmnp*' -type l=,
+but that would undoubtedly miss some files from a project in RMNP that
+I didn't name with the string =rmnp=. Git annex gives me a different
+option: metadata tags.
+
+** Metadata Tags
+
+Git annex supports a special type of short metadata – =--tag=. With
+=--tag=, you can tag individual files in your repo.
+
+The WMF reading team offsite in 2016 was partially in RMNP, but I didn't
+name any photos =RMNP= because that wasn't the most memorable bit
+of information about those photos (=reading-team-offsite= seemed like
+a better project name) nor did =RMNP= represent all the photos from
+the offsite. I should tag a few of those photos =rmnp= with git annex:
+
+#+BEGIN_SRC sh
+$ cd ./2016/2016-05-01_wikimedia-reading-offsite/edit/
+$ git annex metadata --tag rmnp Elk.jpg
+metadata Elk.jpg 
+  lastchanged=2016-09-29@04-14-44
+  tag=rmnp
+  tag-lastchanged=2016-09-29@04-14-44
+ok
+(recording state in git...)
+$ git annex metadata --tag rmnp Reading\ folks\ bing\ higher\ up\ than\ it\ looks.jpg
+metadata Reading folks bing higher up than it looks.jpg 
+  lastchanged=2016-09-29@04-14-57
+  tag=rmnp
+  tag-lastchanged=2016-09-29@04-14-57
+ok
+(recording state in git...)
+#+END_SRC
+
+Also, when my old roommate came to town we went to RMNP, but I tagged
+those photos =cody-family-adventure-time=. So let's
+tag a few of those =rmnp=, too:
+
+#+BEGIN_SRC sh
+$ cd 2015/2016-01-25_cody-family-adventuretime/edit
+$ git annex metadata --tag rmnp alberta-falls.jpg
+metadata alberta-falls.jpg 
+  lastchanged=2016-09-29@04-17-48
+  tag=rmnp
+  tag-lastchanged=2016-09-29@04-17-48
+ok
+(recording state in git...)
+#+END_SRC
+
+** Metadata views
+
+Now the thing that was really surprising to me, you can filter the whole pictures directory based on a particular tag with git annex by
+using a [[https://git-annex.branchable.com/tips/metadata_driven_views/][metadata driven view]].
+
+#+BEGIN_SRC sh
+$ tree -d -L 1
+.
+├── 2011
+├── 2012
+├── 2013
+├── 2014
+├── 2015
+├── 2016
+├── instagram
+├── lib
+├── lossy
+├── nasa
+└── Webcam
+
+$ git annex view tag=rmnp
+view  (searching...) 
+Switched to branch 'views/(tag=rmnp)'
+ok
+$ ls
+alberta-falls_%2015%2016-01-25_cody-family-adventuretime%edit%.jpg
+Elk_%2016%2016-05-01_wikimedia-reading-offsite%edit%.jpg
+Reading folks bing higher up than it looks_%2016%2016-05-01_wikimedia-reading-offsite%edit%.jpg
+#+END_SRC
+
+I can even filter this view using other tags with ~git annex vfilter tag=whatever~. And I can continue to edit, refine, and work with the photo files from there.
+
+This feature absolutely blew my mind – I dropped what I was doing to write this – I'm trying to think of a good way to work it into my photo workflow :)
