@@ -61,7 +61,7 @@ cp -r "$HOME/.ikiwiki/ikiwiki-hooks/post-update.d" "$HOME/.dotfiles.git/hooks/po
 
 if [[ "$WHEREAMI" == 'local' ]]; then
     # No-op for the local setup
-    echo '/bin/true' > "$HOME/.dotfiles.git/hooks/post-update.d/99-amazon-update"
+    printf '#!/bin/bash\nexec /bin/true' > "$HOME/.dotfiles.git/hooks/post-update.d/99-amazon-update"
 fi
 
 chmod u+s "$HOME/.dotfiles.git/hooks/post-update"
