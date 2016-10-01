@@ -2,7 +2,7 @@
 #+AUTHOR: Tyler Cipriani
 #+DATE: 2016-09-13T09:35:22,934576833-07:00
 [[!meta title="ImageMagick to Extract a PDF Page"]]
-[[!meta date="2016-09-13T09:35:22,934576833-07:00"]]
+[[!meta date="2016-09-13T09:35:22-07:00"]]
 [[!tag TIL]]
 
 Today I was working with a PDF that was 27,000 pages long (god help me).

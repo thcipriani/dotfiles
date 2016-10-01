@@ -1,6 +1,6 @@
 #+TITLE: Lowering the Barrier to Blogging
 [[!meta title="Lowering the Barrier to Blogging"]]
-[[!meta date="2016-09-02T09:00:28,800992195-07:00"]]
+[[!meta date="2016-09-02T09:00:28-07:00"]]
 [[!tag computing administravia]]
 
 I really want to blog more. The problem is that most of the posts to

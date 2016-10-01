@@ -1,5 +1,5 @@
 [[!meta title="The 14KB in the TCP Initial Window"]]
-[[!meta date="2016-09-25T20:07:53,391867327-07:00"]]
+[[!meta date="2016-09-25T20:07:53-07:00"]]
 
 [[!tag tcp computing til]]
 

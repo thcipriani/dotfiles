@@ -1,4 +1,4 @@
-[[!meta date="2016-09-09T07:47:22,529067840-06:00"]]
+[[!meta date="2016-09-09T07:47:22-06:00"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]

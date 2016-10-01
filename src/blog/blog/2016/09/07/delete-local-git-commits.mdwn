@@ -1,5 +1,5 @@
 [[!meta title="Delete Local Git Commits"]]
-[[!meta date="2016-09-07T10:48:08,990861510-07:00"]]
+[[!meta date="2016-09-07T10:48:08-07:00"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
