@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -eu
+
+TOPIC=$(basename "$0")
+POST=$*
+BLOG_DIR=$(grep '^srcdir' ~/.ikiwiki/TylerCipriani.setup | cut -d':' -f2 | xargs)
+DATE=$(date -Ins)
+BLOG_PATH=$(date +'blog/%Y/%m/%d')
+EXT='.org'
+
+SAFE_POST=$(echo "$POST" | \
+    tr '[:upper:]' '[:lower:]' | \
+    sed -e 's/\W/-/g')
+
+OUT="${BLOG_DIR}/${BLOG_PATH}/${SAFE_POST}${EXT}"
+
+mkdir -p "$(dirname "$OUT")"
+
+YEAR_ARCH="${BLOG_DIR}/$(date +'blog/%Y.mdwn')"
+YEAR_SPEC=$(printf './%s/*/*/*' "$(date +'%Y')")
+
+if [ ! -f "$YEAR_ARCH" ]; then
+    {
+        printf '[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]'
+        printf '[[!inline pages="page(%b) and !*Discussion"
+                archive=no limit=10 quick=yes trail=no]]' "$YEAR_SPEC"
+    } > "$YEAR_ARCH"
+fi
+
+MONTH_ARCH="${BLOG_DIR}/$(date +'blog/%Y/%m.mdwn')"
+MONTH_SPEC=$(printf './%s/*/*' "$(date +'%m')")
+
+if [ ! -f "$MONTH_ARCH" ]; then
+    {
+        printf '[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]'
+        printf '[[!inline pages="page(%b) and !*Discussion"
+                archive=no limit=10 quick=yes trail=no]]' "$MONTH_SPEC"
+    } > "$MONTH_ARCH"
+fi
+
+
+DAY_ARCH="${BLOG_DIR}/$(date +'blog/%Y/%m/%d.mdwn')"
+DAY_SPEC=$(printf './%s/*' "$(date +'%d')")
+
+if [ ! -f "$DAY_ARCH" ]; then
+    {
+        printf '[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]'
+        printf '[[!inline pages="page(%b) and !*Discussion"
+                archive=no limit=10 quick=yes trail=no]]' "$DAY_SPEC"
+    } > "$DAY_ARCH"
+fi
+
+{
+    printf '#+TITLE: %b\n' "$POST"
+    printf '#+AUTHOR: Tyler Cipriani\n'
+    printf '#+DATE: %b\n' "$DATE"
+    printf '[[!meta title="%b"]]\n' "$POST"
+    printf '[[!meta date="%b"]]\n' "$DATE"
+    printf '[[!meta html_extra_options="--toc"]]\n\n'
+} >> "$OUT"
+
+if [[ "$TOPIC" != "blog" ]]; then
+    printf '[[!tag %s]]\n\n' "$TOPIC" >> "$OUT"
+fi
+
+# http://www.emacswiki.org/emacs/EmacsClient
+exec emacsclient --no-wait --alternate-editor="" --create-frame "$OUT"

@@ -17,7 +17,7 @@ adminuser:
 # users who are banned from the wiki
 banned_users: []
 # where the source of the wiki is located
-srcdir: /home/tyler/blog
+srcdir: /home/tyler/.dotfiles/src/blog
 # where to build the wiki
 destdir: /home/tyler/public_html/TylerCipriani
 # base url to the wiki
@@ -137,7 +137,7 @@ deterministic: 0
 
 # git plugin
 # git hook to generate
-git_wrapper: /home/tyler/TylerCipriani.git/hooks/post-update.d/01-post-update
+git_wrapper: /home/tyler/.dotfiles.git/hooks/post-update.d/01-post-update
 # shell command for git_wrapper to run, in the background
 #git_wrapper_background_command: git push github
 # mode for git_wrapper (can safely be made suid)
@@ -356,31 +356,24 @@ calendar_fill_gaps: 1
 # Should teximg use dvipng to render, or dvips and convert?
 #teximg_dvipng: ''
 # LaTeX prefix for teximg plugin
-#teximg_prefix: '\documentclass{article}
-#
+#teximg_prefix: |
+#  \documentclass{article}
 #  \usepackage[utf8]{inputenc}
-#
 #  \usepackage{amsmath}
-#
 #  \usepackage{amsfonts}
-#
 #  \usepackage{amssymb}
-#
 #  \pagestyle{empty}
-#
 #  \begin{document}
-#
-#'
 # LaTeX postfix for teximg plugin
 #teximg_postfix: \end{document}
 
 ######################################################################
 # other plugins
-#   (aggregate, amazon_s3, autoindex, brokenlinks, camelcase, ddate, embed,
-#    favicon, filecheck, flattr, goodstuff, htmlbalance, localstyle,
-#    loginselector, notifyemail, pagetemplate, pandoc, pingee, pinger,
-#    prettydate, recentchanges, recentchangesdiff, relativedate, rsync,
-#    sidebar, smiley, sortnaturally, tag, testpagespec, trail, transient)
+#   (aggregate, autoindex, brokenlinks, camelcase, ddate, embed, favicon,
+#    filecheck, flattr, goodstuff, htmlbalance, localstyle, loginselector,
+#    notifyemail, pagetemplate, pandoc, pingee, pinger, prettydate,
+#    recentchanges, recentchangesdiff, relativedate, rsync, sidebar,
+#    smiley, sortnaturally, tag, testpagespec, trail, transient)
 ######################################################################
 
 # aggregate plugin
@@ -388,20 +381,6 @@ calendar_fill_gaps: 1
 #aggregateinternal: 1
 # allow aggregation to be triggered via the web?
 #aggregate_webtrigger: 0
-
-# amazon_s3 plugin
-# public access key id
-#amazon_s3_key_id: XXXXXXXXXXXXXXXXXXXX
-# file holding secret key (must not be readable by others!)
-#amazon_s3_key_id: /home/tyler/.s3_key
-# globally unique name of bucket to store wiki in
-#amazon_s3_bucket: mywiki
-# a prefix to prepend to each page name
-#amazon_s3_prefix: wiki/
-# which S3 datacenter to use (leave blank for default)
-#amazon_s3_location: EU
-# store each index file twice? (allows urls ending in "/index.html" and "/")
-#amazon_s3_dupindex: 0
 
 # autoindex plugin
 # commit autocreated index pages

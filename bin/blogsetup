@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+set -eu
+
+# blogsetup
+# ~~~~~~~~~
+#
+# Pre running this you should run:
+#
+#   git clone https://github.com/thcipriani/dotfiles ~/.dotfiles.git
+#   git clone ~/.dotfiles.git ~/.dotfiles
+#
+# This program handles:
+#
+#   1. Ensuring that ~/.ikiwiki is setup and inplace
+#   2. Ensuring that the githooks are in place for ~/.dotfiles.git
+#   3. Ensuring that the post-update hooks are inplace for ~/.dotfiles.git
+
+(( $# < 1 )) && {
+    cat<<HELP
+    Usage: $(basename "$0") <local|remote>
+    ... Use remote for the server, local everywhere else
+HELP
+
+    exit 1
+}
+
+[[ -d "$HOME/.dotfiles" && -d "$HOME/.dotfiles.git" ]] || {
+    cat<<CLONE
+    This command assumes you've run:
+
+        git clone https://github.com/thcipriani/dotfiles ~/.dotfiles.git
+        git clone ~/.dotfiles.git ~/.dotfiles
+
+    ...so probably do that.
+CLONE
+    exit 2
+}
+
+USER=$(whoami)
+WHEREAMI=$1
+
+(( $(id -u) == 0 )) && {
+    echo "Don't run this as root, fool"
+    exit 3
+}
+
+[[ "$WHEREAMI" == 'local' || "$WHEREAMI" == 'remote' ]] || {
+    cat<<WHERE
+    '$WHEREAMI' should be either "local" or "remote"
+WHERE
+}
+
+if [[ ! -h "$HOME/.ikiwiki" ]]; then
+    mv "$HOME/.ikiwiki" "$HOME/.ikiwiki-$(date +%s)"
+    ln -sf "$HOME/.dotfiles/ikiwiki" "$HOME/.ikiwiki"
+fi
+
+cp "$HOME/.ikiwiki/ikiwiki-hooks/post-update" "$HOME/.dotfiles.git/hooks/post-update"
+cp -r "$HOME/.ikiwiki/ikiwiki-hooks/post-update.d" "$HOME/.dotfiles.git/hooks/post-update.d"
+
+if [[ "$WHEREAMI" == 'local' ]]; then
+    # No-op for the local setup
+    echo '/bin/true' > "$HOME/.dotfiles.git/hooks/post-update.d/99-amazon-update"
+fi
+
+chmod u+s "$HOME/.dotfiles.git/hooks/post-update"
+
+for file in "$HOME"/.dotfiles.git/hooks/post-update.d/*; do
+    chmod u+s "$file"
+done
+
+ikiwiki --changesetup "$HOME/.ikiwiki/TylerCipriani.setup"
+echo "DONE! Please oh please be done"

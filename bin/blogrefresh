@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# blogrefresh
+# ~~~~~~~~~~~
+# So I can quit hitting ^r to find out how to refresh my
+# blog...excuse me while I hit ^r to figure out how to
+# write this script (notjoking)
+
+ikiwiki --setup "$HOME/.ikiwiki/TylerCipriani.setup" --refresh
