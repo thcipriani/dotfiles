@@ -1,0 +1,4 @@
+[[!meta title="pages tagged git-annex"]]
+
+[[!inline pages="tagged(git-annex)" actions="no" archive="yes"
+feedshow=10]]
