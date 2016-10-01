@@ -59,6 +59,8 @@ fi
 cp "$HOME/.ikiwiki/ikiwiki-hooks/post-update" "$HOME/.dotfiles.git/hooks/post-update"
 cp -r "$HOME/.ikiwiki/ikiwiki-hooks/post-update.d" "$HOME/.dotfiles.git/hooks/post-update.d"
 
+ikiwiki --changesetup "$HOME/.ikiwiki/TylerCipriani.setup"
+
 if [[ "$WHEREAMI" == 'local' ]]; then
     # No-op for the local setup
     printf '#!/bin/bash\nexec /bin/true' > "$HOME/.dotfiles.git/hooks/post-update.d/99-amazon-update"
@@ -70,5 +72,4 @@ for file in "$HOME"/.dotfiles.git/hooks/post-update.d/*; do
     chmod u+s "$file"
 done
 
-ikiwiki --changesetup "$HOME/.ikiwiki/TylerCipriani.setup"
 echo "DONE! Please oh please be done"
