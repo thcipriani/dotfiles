@@ -34,6 +34,7 @@ sub update {
     my @cmd = ($s3cmd, 'sync');
     push(@cmd, "--add-header='Expires:max-age=604800'");
     push(@cmd, "--exclude '.git/*'");
+    push(@cmd, "--exclude 'ikiwiki.cgi'");
     push(@cmd, "--exclude 'robots.txt'");
     push(@cmd, "--acl-public");
     push(@cmd, $site_name . '/');
