@@ -27,7 +27,7 @@ cgiurl: https://ikiwiki.tylercipriani.com/cgi
 # do not adjust cgiurl if CGI is accessed via different URL
 reverse_proxy: 0
 # filename of cgi wrapper to generate
-cgi_wrapper: /home/tyler/public_html/wiki/ikiwiki.cgi
+cgi_wrapper: /home/tyler/public_html/TylerCipriani/ikiwiki.cgi
 # mode for cgi_wrapper (can safely be made suid)
 cgi_wrappermode: 06755
 # number of seconds to delay CGI requests when overloaded
