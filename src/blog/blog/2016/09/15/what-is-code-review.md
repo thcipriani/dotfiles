@@ -1,6 +1,6 @@
 [[!meta title="What is Code Review?"]]
 [[!meta author="Tyler Cipriani"]]
-[[!meta date="2016-09-15T16:37:22,001496792-07:00"]]
+[[!meta date="2016-09-15T16:37:22-07:00"]]
 [[!tag software rambling]]
 [[!toc ]]
 
