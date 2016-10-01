@@ -2,4 +2,4 @@
 
 set -eu
 
-run-parts -v ./post-update.d
+run-parts -v "$HOME/.dotfiles.git/hooks/post-update.d"
