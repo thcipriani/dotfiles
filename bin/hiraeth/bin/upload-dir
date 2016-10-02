@@ -30,3 +30,4 @@ PATH=$(grep path "$METADATA" | cut -d':' -f2 | xargs)
 
 /usr/sbin/s3cmd put --recursive "${DIR}/" "s3://photos.tylercipriani.com/${PATH}/"
 /usr/sbin/s3cmd setacl --acl-public  --recursive "s3://photos.tylercipriani.com/${PATH}/"
+/usr/sbin/s3cmd modify --add-header='Content-type:text/css' "s3://photos.tylercipriani.com/${PATH}/main.css"
