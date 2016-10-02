@@ -39,14 +39,20 @@ sub update {
     push(@cmd, "--acl-public");
     push(@cmd, $site_name . '/');
     push(@cmd, 's3://' . $bucket . $bucket_prefix);
+    push(@cmd, '>/dev/null');
+    push(@cmd, '2>&1');
 
     system(join(' ', @cmd));
 
     my @csscmd = ($s3cmd, 'setacl');
     push(@csscmd, '--acl-public', "--mime-type='text/css'");
+    push(@csscmd, '>/dev/null');
+    push(@csscmd, '2>&1');
 
     my @cssheaderscmd = ($s3cmd, 'modify');
     push(@cssheaderscmd, "--add-header='Content-type:text/css'");
+    push(@cssheaderscmd, '>/dev/null');
+    push(@cssheaderscmd, '2>&1');
 
     foreach my $css (@cssfiles) {
         my $s3css = 's3://' . $bucket . $bucket_prefix . $css;
