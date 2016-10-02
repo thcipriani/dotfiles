@@ -391,3 +391,19 @@ deb-files() {
     local list=$(curl -q -s "${os}/${release}/all/${package}/filelist")
     echo "$list" | sed -n -e '/<pre>/,/<\/pre>/p' | sed -e 's/<[^>]\+>//g' -e '/^$/d';
 }
+
+deb-grep() {
+    local package=$1
+    local grep_args=$2
+    for file in $(deb-files "$package"); do
+        if dpkg-query -W "$package" &> /dev/null; then
+            found=$(strings "$file" | grep $grep_args)
+            if [ -n "$found" ]; then
+                printf '\n\n[ %s ]\n' "$file"
+                printf "$found"
+            fi
+        else
+            echo "Package $package not installed"
+        fi
+    done
+}

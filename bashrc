@@ -11,7 +11,7 @@ export BROWSER="firefox"
 [ -z "$PS1" ] && return
 
 # I'm a bad speller.
-shopt -s cdspell dirspell globstar
+shopt -s autocd cdspell dirspell globstar
 
 # History
 shopt -s histappend                  # append to history

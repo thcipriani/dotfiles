@@ -85,7 +85,7 @@ myManageHook = composeAll
 scratchpads =
   [
     NS "scratch" "urxvt --title scratch" (title =? "scratch")
-      (customFloating $ W.RationalRect 0.6 0.6 0.35 0.2)
+      (customFloating $ W.RationalRect 0.6 0.6 0.4 0.4)
   ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]

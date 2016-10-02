@@ -73,3 +73,7 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 
     eval "$(rbenv init -)"
 fi
+
+# Try this out, so far it has some potential, would be nice to hook to
+# ~/.muh_history somehow...
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
