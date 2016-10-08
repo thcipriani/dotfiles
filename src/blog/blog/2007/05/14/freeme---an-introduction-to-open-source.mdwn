@@ -1,0 +1,13 @@
+[[!meta date="2007-05-14"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="Freeme - An Introduction to Open Source"]]
+
+[Freeme - Home of the free DVD on the web.](https://web.archive.org/web/20070630124144/http://questionsplease.org/freeme/) The DVD includes many different types of open source material. The DVD packs in a LOT including:
+
+* A live-cd Linux Distro
+* Movies that you can play on your DVD player
+* Lots of ebooks that have fallen into Public Domain
+
+So check out the DVD and also check out their website for more links to open source and freeware ish and welcome to the information age. [via [Boing Boing](https://web.archive.org/web/20070710205206/http://www.boingboing.net/2007/05/08/free_me_a_free_cultu.html)]
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)

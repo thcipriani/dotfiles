@@ -1,0 +1,94 @@
+[[!meta date="2007-06-04"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="Troubleshoot Firefox Multimedia Plugins"]]
+
+<p> OK, we've all been there, lookin' up some video in Firefox and when we find
+it, the player just sits there, no video plays, and we are sad. So, what do we
+do? We push foward, whenever the little yellow bar comes on top of our screen
+we mindlessly install the "missing" plugins but when it comes down to it,
+do we <i>really</i> know what to do in a multimedia-plugin-related crisis?
+What happens when you can't watch the latest episode of the <a
+href="https://web.archive.org/web/20070701212405/http://www.tomgreen.com/" target="_blank">Tom
+Green</a> show when you <i>think</i> you've got all your plugins
+<i>plugged-in</i>, so to speak? For most people, nothing happens;
+people have a way of just going about their lives missing out on great
+online video content simply because they can't figure out why the
+embeded video won't work. To this, I say, "NAY!" Ok, so maybe I
+wouldn't say <i>Nay</i> so much as I would say, "That Sucks, I ain't
+goin' out like that!" (Yeah, I'm gangsta! WHAT!?!) That's why this
+article is here, to help all the people adrift somewhere out in
+Firefox-internet-land without a plugin to save them.</p><ul><li>The
+first thing you might want to check once inside Firefox is what plugins
+you have installed. You can do this by keying up to Firefox's URL bar
+(Ctrl+L) and typing "about:plugins" without the quotes. This gives you
+a list of all the plugins that are installed in Firefox. You should see
+things like "RealPlayer Version Plugin", "Windows Media Player Plug-in
+Dynamic Link Library", "Java Plug-in", and "Microsoft® DRM". If you
+don't see some (or any) of those plugins don't sweat it, this article
+is <b>definitely</b> for you.</li> <li> Now that you know what you have
+installed you should test all of your plugins to make sure they're
+working (this is also a good way to see what you might still need to
+install if you couldn't tell from "about:plugins"). You can test all of
+your media plugins for Firefox <a
+href="https://web.archive.org/web/20070701212405/http://kb.mozillazine.org/Testing_plugins"
+target="_blank">here.</a></li> <li> Alright, by now you probably know
+what's what. You know what's missing so now you just need to download
+that ish. You can download most common Firefox plugins <a
+href="https://web.archive.org/web/20070701212405/https://addons.mozilla.org/en-US/firefox/browse/type:7"
+target="_blank">here</a> and you can get more Firefox info (and more
+plugins) <a href="https://web.archive.org/web/20070701212405/http://plugindoc.mozdev.org/"
+target="_blank">here</a>. <b>BUT WAIT</b> I wouldn't just go mindlessly
+downloading plugins (that's how you end up with embeded video that just
+doesn't work) If I were you, which I am (don't question me!) I wouldn't
+download iTunes and Quicktime just to watch the occasional embeded
+Quicktime video. Instead I would just download the light-weight version
+of Quicktime -- Quicktime Alternative <a
+href="https://web.archive.org/web/20070701212405/http://www.free-codecs.com/download/QuickTime_Alternative.htm"
+target="_blank">(Download Link)</a>. You should also download the
+alternative (to the much hated [by me]) RealPlayer -- RealPlayer
+Alternative <a
+href="https://web.archive.org/web/20070701212405/http://www.free-codecs.com/download/Real_Alternative.htm"
+target="_blank">(Download Link)</a>. I also don't like to use the
+bloated Adobe Acrobat and instead opted for the light-weight and agile
+<a href="https://web.archive.org/web/20070701212405/http://www.foxitsoftware.com/"
+target="_blank">Foxit Reader</a>.</li> <li> So you think you're pretty
+hot stuff don't ya? You've got all the plugins you need, huh? Think
+you're better than me? Well, mister (or Ma'am) it's time to put that
+theory to the test. Go back to step 2 and test all the plugins you
+updated or downloaded and make sure they work. If they don't work a
+good first step is to check for solutions to your specific problem on
+Google. If your problem pertains to embeded WMV, RealPlayer, or
+Quicktime then I would refer to this little <a
+href="https://web.archive.org/web/20070701212405/http://forums.mozillazine.org/viewtopic.php?t=206216"
+target="_blank">guide</a>. I had some trouble getting Quicktime
+Alternative to play embeded video, The procedure to solve that problem
+was pretty simple: click Start &gt; Control Panel &gt; Quicktime &gt;
+click on the browser tab &gt; make sure you have "Play movies
+automatically" checked &gt; click "MIME Settings..." &gt; under "MPEG -
+MPEG system, video, and audio files" &gt; I selected (checkboxed) all
+except AAC Audio and AAC Audio Book &gt; click "OK" &gt; click "Apply";
+Now restart your Firefox and that should be it! If you are having
+trouble with Windows Media Player (which is pretty common in Firefox)
+check out the amazingly detailed guide <a
+href="https://web.archive.org/web/20070701212405/http://forums.mozillazine.org/viewtopic.php?t=206213"
+target="_blank">here</a> That guide is so good, even I can follow
+it!</li> </ul><p>Alright, after reading this article you should be good
+to go as far as Firefox multimedia plugins are concerned. However,
+there is one last plugin I would recommend to you: the *balloontoablimp
+search plugin! With the
+*balloontoablimp search plugin you can search *balloontoablimp from the
+default search box in the upper-right corner of your browser and the
+plugin is incredibly simple to set up (what have you got to lose?
+Coolness? I don't think so). All you have to do is download these two
+files (<a
+href="https://web.archive.org/web/20070701212405/http://www.box.net/shared/9orrtfvepk"
+target="_blank">here</a> and <a
+href="https://web.archive.org/web/20070701212405/http://www.box.net/shared/d0zo2lc113"
+target="_blank">here</a>) and save them both to C:\Program
+Files\Mozilla Firefox\search plugins, restart your Firefox, and that's
+it. You can key up to your search box (Ctrl+K) and select
+*balloontoablimp from the drop-down menu, now you can search our
+website where ever ye be!<br /> So I guess that about does it. Happy
+Firefoxing (yeah, I used it as a verb, WHAT!?!).</p>
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)

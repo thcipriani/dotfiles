@@ -1,0 +1,15 @@
+[[!meta date="2007-05-25"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="Free Online Linux Courses"]]
+
+I wouldn't have thought that I'd need a linux course what with my experience
+with various live CD's, but a live CD and a HDD install are two different
+things entirely. I can't seem to find anything in the file system without the
+terminal. I just don't know where things go when I download them, what various
+folders do, etc. etc. ad nausium. Whatever, anyway, I'm smart enough to know
+when I need help. That's why when I was perusing the cleverly titled blog
+[[Geeks Are
+Sexy]](https://web.archive.org/web/20070701212920/http://www.geeksaresexy.net/),
+I was really pumped (for lack of a better sounding word) when I saw this post.
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)

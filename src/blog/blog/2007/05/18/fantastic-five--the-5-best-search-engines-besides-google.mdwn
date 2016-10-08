@@ -1,0 +1,60 @@
+[[!meta date="2007-05-18"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="Fantastic Five: The 5 Best Search Engines Besides Google"]]
+
+<p>    <img
+src="http://i189.photobucket.com/albums/z273/thcipriani/fantastic.gif"
+alt="fantastic five search engine beta" /></p><p>As everyone who has ever read
+this blog knows, I'm a Google junkie. This, recently, has begun to disturb me.
+I mean the connotation of the word junkie is rather negative when you think
+about it; people who are always looking to get their fix etc. However, when I
+thought about the true meaning of the word junkie, negative connotation and
+all, I realized that's what I am, a <i>Google Junkie.</i> In light of my recent
+epiphany I have decided to try to kick the habit, or at least ween myself off
+of Google slowly, by doing some research into new (better perhaps?) search
+engines. The following list is the cream-of-the-crop of search engines sans
+Google.</p><ol><li>Perhaps my favorite Google alternative of the moment is <a
+href="http://www.hakia.com/" target="_blank">hakia
+(beta)</a>. Even though the engine is still in beta it does some things that
+Google doesn't, like (a) compliment you on your choice of search, (b) seems to
+recognize questions versus search operators, (c) it categorizes your searches
+and then gives you a table of contents so you can find what you're looking for
+easier. A search for <a
+href="http://www.hakia.com/search.aspx?q=golf"
+target="_blank">golf</a> shows produces an exceptional table of contents
+featuring Headlines, Rules of the Sport, Hall of Fame Players, and nine other
+categories for you to peruse. <br /></li><li>My next favorite search engine in
+the game is probably <a
+href="http://www.exalead.com/search"
+target="_blank">exalead</a>. You can customize your homepage with some of your
+favorite shortcuts (kind of the equivalent of Opera's speed dial). Not only is
+that a neat feature but any search (like <a
+href="http://www.exalead.com/search/results?q=golf&amp;x=494&amp;y=6"
+target="_blank">golf</a> for example) results page has a preview of the website
+right next to the url. Plus, in a right hand column, you can choose to narrow
+your search to different file extensions, media types, languages, search terms,
+site types, you name it, exalead's got it.</li><li>Number three on my list is
+like almost like number one, except with less features, <a
+href="http://clusty.com/" target="_blank">Clusty</a> - the
+clustering search engine. This search engine basically takes all of your
+results and breaks them into meaningful "clusters." This site, while not as
+amazing as the two other search engines still warrants a mention on this
+list.</li><li>Number four on this list is not an unknown in the wide world of
+search, most people have probably heard of it and have their own opinion on it,
+<a href="http://www.snap.com/" target="_blank">Snap</a>. I
+think it has a lot of features that could be cool, if they were done right. For
+instance the webpage preview window on their site was done much better with
+exalead. Snap also has some features that are kind of annoying. For instance
+the suggestion drop down at the search box, who needs that? The only thing I
+use it for is if I can't spell what I'm searching for.</li><li>Finally a search
+engine that is kind of cheating from my Google cold-turkey resolution, <a
+href="http://www.sputtr.com/" target="_blank">Sputtr</a>.
+Sputtr is a meta search that lets you search almost any (popular) search site
+you can think of all from the comfort of their stylish web 2.0 interface. Check
+it out, it's the bomb (people still do say bomb, right?).</li></ol>Anyway,
+that's my list of search engines I use besides Google. Although there should be
+an honorable mention for Dogpile.com just for the music search. If any of my
+readers have a fav search engine that wasn't mentioned here, tell me about it
+in my yell box.</p>
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)

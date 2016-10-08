@@ -1,0 +1,26 @@
+[[!meta date="2007-07-01"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="The Meraki Solar Powered WiFi Kit"]]
+
+<p>So, if you know me (which you don't; DON'T ACT LIKE YOU KNOW ME!) you know
+that I loves me some WiFi. I'm constantly setting up an encryption key on my
+router without looking to see if I can crack it, I enjoy building little
+antennas or cantennas to see how far down the street I can get before I lose my
+signal, basically I'm a geek with a penchant for WiFi. As such, I really want
+this, what this is is a solar-powered WiFi kit. It's built for the outdoors and
+is supposed to increase wireless connectivity range about 700 feet (which means
+I could probably hop on <a
+href="http://www.watermarkbooks.com/"
+target="_blank">Watermark Books</a>' connection down the street). Plus it's
+solar powered so no need for any extra wiring and it's saving the enviroment
+(score one for the dolphins, I guess). So if you want to wire me some cash or
+just send one of these bad boys straight to me, then feel free. As a side note
+I'm also a huge fan of the wireless products over at <a
+href="http://www.wlanparts.com/c=eCS4nzhiacnVPxPG0ovaEo2Zc/"
+target="_blank">Pasadena Networks</a>.</p><a
+href="http://nexus404.com/Blog/2007/06/05/meraki-solar-powered-wi-fi-kit/trackback/"
+target="_blank">Link</a> (via <a
+href="http://nexus404.com/Blog/" target="_blank">Thoughts
+From the Sidelines</a>)
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)

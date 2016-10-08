@@ -1,0 +1,60 @@
+[[!meta date="2007-05-30"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="Optimize Firefox Part I: A New Hope for Search"]]
+
+This series of articles is about a subject that is near and dear to just about
+every geek's heart, making Mozilla Firefox just a wee bit faster and a wee bit
+more useful. For this part of the series you're going to need two files.
+</p><ul><li><a href="https://web.archive.org/web/20070701212241/http://www.mozilla.com/en-US/firefox/"
+target="_blank">Firefox 2.0</a> - A must have when optimizing firefox.</li>
+<li><a href="https://web.archive.org/web/20070701212241/http://www.box.net/shared/kcu2i7jk8b"
+target="_blank">*balloontoablimp's Keyword Searches</a> - A list of bookmarks
+that I'll show you how to install and use later.</li> </ul><p>Part I of this
+series deals with keyword searches. A keyword search allows a firefox user to
+search a website from their browser's url bar. If you, for instance, wanted to
+search Google for bears (after you set up the quick search I outline below) it
+would simply be a matter of keying up to your url bar and typing <b>g bears</b>
+and hitting <b>Enter</b>. Keyword searches are so quick they will proably save
+you years of your life. Lifehacker has an amazing article on how to set up
+keyword searches, you should really <a
+href="https://web.archive.org/web/20070701212241/http://lifehacker.com/software/geek-to-live/geek-to-live-fifteen-firefox-quick-searches-129658.php"
+target="_blank">check it out.</a> In case you hate lifehacker or just love me,
+I'll give you a brief tutorial on how to set up your own keyword searches.
+</p><ol><li>In firefox go to a search engine with an input box (like <a
+href="https://web.archive.org/web/20070701212241/http://www.google.com/"
+target="_blank">Google</a>)</li> <li>Right-click inside of the input box on the
+search engine</li> <li>From the drop down menu click <b>Add a <u>K</u>eyword
+for this Search...</b></li> <li>In the resulting dialog box in the
+<b><u>N</u>ame:</b> field type the name for this search, for instance, if
+you used Google, type, "Google Keyword Search"</li> <li>In the
+<b><u>K</u>eyword:</b> field type the keyword (or letter) that you want to
+use for this search, for instance, for Google, you could simply use the
+letter "g"</li> <li>Click <b>OK</b></li> </ol><p>This brings us to the file
+I had you download at the beginning of this article, "*balloontoablimp's
+Keyword Searches." This file is simply a compiled list of 13 keyword
+searches that I've already put together in a handy little package. To
+install, first, save the file somewhere on your computer. Then, inside
+firefox, on the menu bar, click <b><u>B</u>ookmarks &gt; Organize
+Bookmarks...</b> In the Bookmark Manager choose <b><u>F</u>ile &gt;
+<u>I</u>mport...</b> Inside the Import Wizard make sure the <b><u>F</u>rom
+File</b> radial button is selected and click <b><u>N</u>ext&gt;</b>. Then
+simply locate where you saved the file and click <b>Open</b> <br />So
+what's in this amazing Keyword Search package you ask? Well...First is the
+Google Keyword Search (once the package is installed) go to your url and
+type <b>g "whatever you're searching for"</b> and a google search will pop
+up.<br /><br />The Remaining twelve keyword searches (and url commands)
+are:</p><ul><li>Dogpile Music Search; url command: <b>music "whatever
+you're searching for"</b></li> <li>Dictionary.com Search; url: <b>dict
+"whatever"</b></li> <li>Thesaurus.com Search; url: <b>thes
+"whatever"</b></li> <li>Ebay Search; url: <b>e "whatever"</b></li>
+<li>Wikipedia Search; url: <b>w "whatever"</b></li> <li>Amazon.com Search;
+url: <b>a "whatever"</b></li> <li>Google Maps Search; url: <b>map
+"wherever"</b></li> <li>Google Image Search; url: <b>image
+"whatever"</b></li> <li>Google Video Search; url: <b>video
+"whatever"</b></li> <li>Technorati Search; url: <b>technorati
+"whatever"</b></li> <li>Bloomberg.com Stock Info; url: <b>quote "stock
+symbol"</b></li> <li>Pirate Bay Search; url: <b>pirate "whatever"</b></li>
+<p>This concludes part I of my firefox optimization series. Come around
+next weekish (give or take) for part II: Revenge of the user.js File!</p>
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)

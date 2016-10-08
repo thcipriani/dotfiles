@@ -1,0 +1,42 @@
+[[!meta date="2007-07-01"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta title="Navigate Your Computer the Easy Way"]]
+
+Keyboard shortcuts are the ish nizzle, they speed up your computing, they
+simplify navigation, they're old school. If you can't navigate your
+filesystem/computer without touching your mouse, then you aren't as cool as me,
+and that's the straight dope. I'm writing this because I saw an article today
+on the <a href="http://lifehacker.com/"
+target="_blank">lifehacker website</a> about <a
+href="http://lifehacker.com/software/video-demonstration/master-the-windows-key-267179.php"
+target="_blank">mastering the windows key</a>. All the article really was was
+<a
+href="http://www.metacafe.com/fplayer/627735/8_uses_for_the__windows__key_on_your_keyboard__quite_useful.swf"
+target="_blank">this video</a>. Actually, the video was <i>kind of</i>
+inaccurate. Sure, it's true that you use Windows Key+Pause/Break key to bring
+up System Properties, but what if you don't have a combo pause/break key? Well,
+if you're using XP you use WINDOWS_KEY+Pause and if you're using windows vista you use WINDOWS_KEY+break.<br /> 				Another thing about
+keyboard shortcuts is that you can <i>make</i> a keyboard shortcut for any
+program (or shortcut to a program) on your desktop by: (1) Right-clicking
+the icon (2) Clicking properties (3) clicking inside the shortcut input
+field and (4) pressing the key that you want to use in conjunction with
+Ctrl and Alt for your shortcut (i.e. if I were to click in the shortcut
+input box and press, "f" the shortcut to bring up the program would be
+"Ctrl+Alt+f").<br /> 				To learn more interesting shortcuts
+please check out the following:</p><ol><li><a
+href="http://support.microsoft.com/kb/126449"
+target="_blank">Windows XP Keyboard Shortcuts</a></li> 				<li><a
+href="http://windowshelp.microsoft.com/Windows/en-US/help/2503b91d-d780-4c80-8f08-2f48878dc5661033.mspx"
+target="_blank">Windows Vista Keyboard Shortcuts</a></li>
+<li><a
+href="http://onlyubuntu.blogspot.com/2007/03/bash-shell-keyboard-shortcuts-for-linux.html"
+target="_blank">Ubuntu Linux Keyboard Shortcuts</a> [via the <a
+href="http://onlyubuntu.blogspot.com/"
+target="_blank">Only Ubuntu Linux Blog</a>]</li> 				<li><a
+href="http://www.mozilla.org/support/firefox/keyboard"
+target="_blank">Firefox, Opera, and IE Keyboard Shortcuts</a></li></ol><br
+/>So that about wraps this little post up. If you have any favorite
+shortcuts, dear reader, that you'd like to share, post them in my shoutbox,
+or email them to me.<p>
+
+> I recovered this article from my old blog via the [Internet Archive](https://archive.org). If you found this article useful or entertaining (or even if you didn't) consider [donating to the Internet Archive](https://archive.org/donate/)
