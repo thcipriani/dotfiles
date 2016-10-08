@@ -1,0 +1,82 @@
+#+TITLE: Book Review: The Tombs of Atuan by Ursula K Le Guin
+#+AUTHOR: Tyler Cipriani
+#+DATE: 2016-10-08T10:36:10-06:00
+[[!meta title="Book Review: The Tombs of Atuan by Ursula K Le Guin"]]
+[[!meta date="2016-10-08T10:36:10-06:00"]]
+
+"Ahra", the Eaten One, the high priestess of the Tombs of Atuan
+belongs to the Nameless Ones. She is, herself, nameless. Her name
+along with her family and future were taken from her in a ceremony on
+which the novel opens. At the beginning of the novel, her 6-year-old
+life is spared so that she may live the remainder of her life serving
+the Nameless Ones of Karg in the far East, outside of the Archipelago,
+in the realm of EarthSea. So it has always been at Atuan and so it has
+always been with "Ahra" – the high priestess is also The One Priestess in
+that she is continually reborn as herself. Within an hour of the old
+priestess's death, a new One Priestess – who is the same in essence – is
+born.
+
+Ahra is under the often indifferent and sometimes cruel tutelage of
+Kossil – High Priestess of the GodKing – the rulers of Autan, Thar –
+priestess of the Twin Gods, and (to some degree) Mannan – a eunuch and
+her life-long companion. Each often conveys their understanding of the
+Tombs, the Nameless ones, and the appropriate place and behavior of
+the One Priestess.
+
+Thar, though harsh, is often an ally to Ahra. After Thar's death,
+Ahra's relationship with Kossil becomes increasingly strained. Kossil
+shows Ahra the Undertomb and Labyrinth that lay under the Tombs of
+Atuan – these are the dark realms of the One Priestess where the
+Nameless Ones have their greatest strength. Ahra becomes increasingly
+obsessed with memorizing all the twists and turns of the Undertomb and
+Labyrinth spending much of her time exploring their depths and
+learning the location of various spy-holes that look into the
+Labyrinth. Kossil makes mention of the ring of Erreth-Akbe that is
+the greatest and most magical treasure of all the many treasures kept
+in the Labyrinth.
+
+Soon Ahra discovers Sparrowhawk, who's origin story is covered
+in [[https://openlibrary.org/works/OL59852W/A_wizard_of_Earthsea][A Wizard of EarthSea]], wandering the Labyrinth in
+search of the ring of Erreth-Akbe. Although Ahra has been taught to
+fear magic and sorcerers her curiosity about this intruder who has
+lived a life so different than her own dull existence leads her to
+imprison Sparrowhawk in the Labyrinth rather than kill him (as she
+told Kossil she would).
+
+Eventually, Ahra grows to trust Sparrowhawk, particularly after he
+returns to her her name – Tenar, and after revealing his own true name
+– Ged. In EarthSea learning something's true name gives you power over
+that thing. Magic is just a recitation of the original language and
+magic is enacted over objects and people by calling them by their
+original and true names.
+
+After being won-over by Ged when Kossil's intensity and treachery
+reach a fever pitch, Tenar decides to help Ged escape Autan which,
+along with the her and Kossil's other indiscretions, leave the Nameless
+Ones a bit miffed.
+
+The Tombs of Atuan was a very readable and approachable novel,
+probably owing to its young-adult target audience – it is short at only
+211 pages. This is the second book of the EarthSea series and it seems
+slightly more focused and, perhaps, less expansive than the first – A
+Wizard of EarthSea. The themes of the power of names and places are
+mentioned throughout this book. It is interesting that the things over
+which no one has any control are nameless, specifically the Nameless
+Ones – the dark forces mentioned throughout the novel; however, it is
+only after regaining her own name that Tenar is able to exert any
+control over her own life.
+
+It's got a good beat and I can dance to it: 8/10.
+
+#+BEGIN_QUOTE
+*Meta Note*:
+
+As part of my effort to delve more deeply into reading, I will be
+featuring more review-type content. I will be tagging it all with the
+"books" tag. If you hate this, you can subscribe to the RSS feed for
+"computing" to continue to read my insights on something I'm perhaps
+even the slightest bit qualified to talk about in any sort of informed
+way.
+#+END_QUOTE
+
+[[!tag books]]
