@@ -1,68 +1,118 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
+# Make archive posts easier
 
-set -eu
+import argparse
+import os
+import re
 
-TOPIC=$(basename "$0")
-POST=$*
-BLOG_DIR=$(grep '^srcdir' ~/.ikiwiki/TylerCipriani.setup | cut -d':' -f2 | xargs)
-DATE=$(date -Ins)
-BLOG_PATH=$(date +'blog/%Y/%m/%d')
-EXT='.org'
+from datetime import date
 
-SAFE_POST=$(echo "$POST" | \
-    tr '[:upper:]' '[:lower:]' | \
-    sed -e 's/\W/-/g')
+BASE_PATH = "/home/tyler/.dotfiles/src/blog/blog"
 
-OUT="${BLOG_DIR}/${BLOG_PATH}/${SAFE_POST}${EXT}"
+CONTENT = '''[[!if test="enabled(calendar)" then="""
+To see posts by date, check out the [[archives]]
+"""]]
+[[!inline pages="page({page_spec}) and !*Discussion"
+  archive=no limit=10 quick=yes trail=no]]
+'''
 
-mkdir -p "$(dirname "$OUT")"
-
-YEAR_ARCH="${BLOG_DIR}/$(date +'blog/%Y.mdwn')"
-YEAR_SPEC=$(printf './%s/*/*/*' "$(date +'%Y')")
-
-if [ ! -f "$YEAR_ARCH" ]; then
-    {
-        printf '[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]'
-        printf '[[!inline pages="page(%b) and !*Discussion"
-                archive=no limit=10 quick=yes trail=no]]' "$YEAR_SPEC"
-    } > "$YEAR_ARCH"
-fi
-
-MONTH_ARCH="${BLOG_DIR}/$(date +'blog/%Y/%m.mdwn')"
-MONTH_SPEC=$(printf './%s/*/*' "$(date +'%m')")
-
-if [ ! -f "$MONTH_ARCH" ]; then
-    {
-        printf '[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]'
-        printf '[[!inline pages="page(%b) and !*Discussion"
-                archive=no limit=10 quick=yes trail=no]]' "$MONTH_SPEC"
-    } > "$MONTH_ARCH"
-fi
+FRONTMATTER = '''[[!meta date="{date}"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+    [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+    Copyright &copy; {year} Tyler Cipriani
+"""]]
+[[!meta title="{title}"]]
+[[!toc ]]
+'''
 
 
-DAY_ARCH="${BLOG_DIR}/$(date +'blog/%Y/%m/%d.mdwn')"
-DAY_SPEC=$(printf './%s/*' "$(date +'%d')")
+def make_path(args):
+    year, month, day = args['year'], args['month'], args['day']
+    times = {
+        'year': {
+            'dir': os.path.join(BASE_PATH, year),
+            'pagespec': './{}/*/*/*',
+        },
+        'month': {
+            'dir': os.path.join(BASE_PATH, year, month),
+            'pagespec': './{}/*/*',
+        },
+        'day': {
+            'dir': os.path.join(BASE_PATH, year, month, day),
+            'pagespec': './{}/*',
+        },
+    }
 
-if [ ! -f "$DAY_ARCH" ]; then
-    {
-        printf '[[!if test="enabled(calendar)" then="""To see posts by date, check out the [[archives]]"""]]'
-        printf '[[!inline pages="page(%b) and !*Discussion"
-                archive=no limit=10 quick=yes trail=no]]' "$DAY_SPEC"
-    } > "$DAY_ARCH"
-fi
+    for pagetime in times.keys():
+        data = times[pagetime]
 
-{
-    printf '#+TITLE: %b\n' "$POST"
-    printf '#+AUTHOR: Tyler Cipriani\n'
-    printf '#+DATE: %b\n' "$DATE"
-    printf '[[!meta title="%b"]]\n' "$POST"
-    printf '[[!meta date="%b"]]\n' "$DATE"
-    printf '[[!meta html_extra_options="--toc"]]\n\n'
-} >> "$OUT"
+        if not os.path.exists(data['dir']):
+            os.makedirs(data['dir'])
 
-if [[ "$TOPIC" != "blog" ]]; then
-    printf '[[!tag %s]]\n\n' "$TOPIC" >> "$OUT"
-fi
+        datadir = os.path.dirname(data['dir'])
+        database = os.path.basename(data['dir'])
+        datapage = os.path.join(datadir, '{}.mdwn'.format(database))
 
-# http://www.emacswiki.org/emacs/EmacsClient
-exec emacsclient --no-wait --alternate-editor="" --create-frame "$OUT"
+        if os.path.exists(datapage):
+            continue
+
+        with open(datapage, 'w') as f:
+            f.write(CONTENT.format(
+                page_spec=data['pagespec'].format(args[pagetime])))
+
+
+def make_safe_title(title):
+    dashed_title = '-'.join([re.sub(r'[^-\w]', '-', x.lower()) for x in title])
+    return '{}.mdwn'.format(dashed_title)
+
+
+def make_post(args):
+    year, month, day = args['year'], args['month'], args['day']
+
+    post_date = date(int(year), int(month), int(day)).isoformat()
+
+    safe_title = make_safe_title(args['title'])
+    title = ' '.join(args['title'])
+
+    post_path = os.path.join(BASE_PATH, year, month, day, safe_title)
+    if os.path.exists(post_path):
+        raise Exception('Post path exists: %s', post_path)
+
+    with open(post_path, 'w') as f:
+        f.write(FRONTMATTER.format(year=year, date=post_date, title=title))
+
+    print post_path
+
+
+def parse_args():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('-y', '--year', help='year of post')
+    ap.add_argument('-m', '--month', help='2 digit month')
+    ap.add_argument('-d', '--day', help='2 digit day')
+    ap.add_argument('title', nargs='*', help='Post title')
+
+    args = vars(ap.parse_args())
+    today = date.today()
+
+    if not args.get('year'):
+        args['year'] = today.strftime('%Y')
+
+    if not args.get('month'):
+        args['month'] = today.strftime('%m')
+
+    if not args.get('day'):
+        args['day'] = today.strftime('%d')
+
+    return args
+
+
+def main():
+    args = parse_args()
+    make_path(args)
+    make_post(args)
+
+if __name__ == '__main__':
+    main()

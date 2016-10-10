@@ -22,8 +22,14 @@ class PageImage(object):
     index = 0
 
     def __init__(self, img_path, page, config):
-        if not config.get('is_index'):
-            self.image = Image.open(img_path)
+        if config.get('is_index'):
+            ext = self.src_path.split('.')[-1]
+            if ext.lower() == 'jpg':
+                self.extension = 'jpeg'
+            self.extension = ext
+        else:
+            img = Image.open(img_path)
+            self.extension = img.format.lower()
 
         self.page = page
         self.src_path = img_path
@@ -78,7 +84,7 @@ class PageImage(object):
 
     def make_thumbs(self):
         for size, height in self.config.get('thumbs').iteritems():
-            utils.resize_image(self, self.size(size), side=height)
+            utils.resize_image(self.src_path, self.size(size), side=height)
 
     def link_size(self, size):
         if size == 'thumb':
@@ -92,15 +98,6 @@ class PageImage(object):
             size = 'small'
 
         return os.path.join(self.dir, '{}.{}'.format(size, self.extension))
-
-    @property
-    def extension(self):
-        if self.config.get('is_index'):
-            ext = self.src_path.split('.')[-1]
-            if ext.lower() == 'jpg':
-                return 'jpeg'
-            return ext
-        return self.image.format.lower()
 
     def get_exif(self):
         """This is fucking stupid."""

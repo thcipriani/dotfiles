@@ -41,17 +41,18 @@ def mkdir_p(path):
             raise
 
 
-def resize_gif(img, output, width, height):
+def resize_gif(path, output, width, height):
     """DUMB."""
     size = '{}x{}'.format(width, height)
 
-    resize_cmd = ['gifsicle', '-i', img.src_path, '--resize', size]
+    resize_cmd = ['gifsicle', '-i', path, '--resize', size]
     with open(output, 'wb+') as f:
         subprocess.Popen(resize_cmd, stdout=f)
 
 
-def resize_image(img, output, side=360):
-    ow, oh = img.image.size
+def resize_image(path, output, side=360):
+    img = Image.open(path)
+    ow, oh = img.size
 
     if ow > oh:
         h = int(float(side) / float(ow) * float(oh))
@@ -60,11 +61,11 @@ def resize_image(img, output, side=360):
         h = side
         w = int(float(side) / float(oh) * float(ow))
 
-    if img.image.format.lower() == 'gif':
-        resize_gif(img, output, w, h)
+    if img.format.lower() == 'gif':
+        resize_gif(path, output, w, h)
         return
 
     processor = processors.SmartResize(w, h)
-    new_img = processor.process(img.image)
+    new_img = processor.process(img)
 
-    utils.save_image(new_img, output, img.image.format)
+    utils.save_image(new_img, output, img.format)
