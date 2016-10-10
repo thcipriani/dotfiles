@@ -1,0 +1,14 @@
+[photo]
+	templates = ~/lib/templates
+	public = ~/public_html/photos
+	path = ~/Pictures
+	static =  ~/lib/static
+	sitename = Tyler's Photo Site
+	copyright = Tyler Cipriani
+	license = <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+[photo "thumbs"]
+	small = 240
+	medium = 640
+	large = 1280
+# Paths are where the index will look for information, empty by default
+[photo "paths"]

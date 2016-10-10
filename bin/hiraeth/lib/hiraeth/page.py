@@ -22,7 +22,7 @@ class Page(object):
             self.metadata = yaml.load(m.read())
 
         self.config = config
-        template_dir = config.get('template_dir')
+        template_dir = config.get('templates')
         self.page_template = os.path.join(template_dir,
                                           'page.html.j2')
         self.image_template = os.path.join(template_dir,
@@ -57,7 +57,7 @@ class Page(object):
             cfg['thumb_path'] = img.link_size('thumb')
             cfg['copyright'] = img.copyright
             cfg['license'] = img.license
-            cfg['license_link'] = img.license_link
+            cfg['licenselink'] = img.license_link
 
             with open(self.image_template, 'r') as t:
                 template = jinja2.Template(t.read())
@@ -77,7 +77,7 @@ class Page(object):
 
     @property
     def html(self):
-        self.metadata.update({'site_name': self.config.get('site_name'),
+        self.metadata.update({'site_name': self.config.get('sitename'),
                               'title': self.title,
                               'body': self._generate_html(),
                               'info': self.info})
@@ -110,7 +110,7 @@ class Page(object):
         return self.metadata.get('title', 'Pictures')
 
     def generate(self):
-        out_dir = self.config.get('publish_dir')
+        out_dir = self.config.get('public')
         with open(os.path.join(out_dir, 'index.html'), 'w+') as f:
             f.write(self.html)
 

@@ -1,0 +1,60 @@
+#!/usr/bin/env python2
+
+import os
+import sys
+
+import click
+
+
+root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+src = os.path.join(root, 'lib')
+
+sys.path.append(src)
+
+import hiraeth
+
+
+@click.group(context_settings={'help_option_names': ['-h', '--help']})
+def cli():
+    """Git photo
+
+    This is a photo manager that is integrated with git and git-annex
+    """
+
+
+@cli.group()
+def publish():
+    """Publish photos to the web."""
+    pass
+
+
+@publish.command()
+@click.argument('path')
+@click.argument('public')
+def gallery(**kwargs):
+    """Publish directory as a gallery."""
+    kwargs['is_index'] = False
+    app = hiraeth.App(hiraeth.Config(root, kwargs))
+    sys.exit(app.main())
+
+
+@publish.command()
+def index(**kwargs):
+    """Publish index of known galleries."""
+    kwargs['is_index'] = True
+    app = hiraeth.App(hiraeth.Config(root, kwargs))
+    sys.exit(app.main())
+
+
+@cli.command()
+def setup(**kwargs):
+    """
+    Initialize git photo for a directory.
+
+    Adds $PWD to git config photos.path.path
+    """
+    cfg = hiraeth.Config(root, kwargs)
+    cfg.setup()
+
+if __name__ == '__main__':
+    cli()

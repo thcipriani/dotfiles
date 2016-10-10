@@ -12,10 +12,10 @@ class Gallery(object):
         self.config = config
         self.titles = []
 
-        self.index_path = os.path.join(self.config.get('publish_dir'),
+        self.index_path = os.path.join(self.config.get('public'),
                                        'index.html')
 
-        template_dir = self.config.get('template_dir')
+        template_dir = self.config.get('templates')
         self.template = os.path.join(template_dir, 'index.html.j2')
         self.image_template = os.path.join(template_dir, 'image.html.j2')
 

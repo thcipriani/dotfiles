@@ -32,7 +32,7 @@ class PageImage(object):
                                  os.path.basename(img_path))
         self.name = os.path.basename(img_path)
 
-        self.template = os.path.join(self.config.get('template_dir'),
+        self.template = os.path.join(self.config.get('templates'),
                                      'image-page.html.j2')
 
         self.exif = {
@@ -57,7 +57,7 @@ class PageImage(object):
         except (TypeError, KeyError):
             self.caption = ''
 
-        self.dir = os.path.join(self.config.get('publish_dir'),
+        self.dir = os.path.join(self.config.get('public'),
                                 IMG_PATH, self.title)
 
         self.link_dir = os.path.join(IMG_PATH, self.title)
@@ -66,7 +66,7 @@ class PageImage(object):
         self.large_path = os.path.join(self.dir, 'large.html')
         self.original_path = os.path.join(self.dir, self.name)
 
-        copyright_holder = self.config.get('copyright_holder')
+        copyright_holder = self.config.get('copyright')
 
         if copyright_holder:
             year = date.today().year
@@ -74,7 +74,7 @@ class PageImage(object):
                                                             copyright_holder)
 
         self.license = self.config.get('license')
-        self.license_link = self.config.get('license_link')
+        self.license_link = self.config.get('licenselink')
 
     def make_thumbs(self):
         for size, height in self.config.get('thumbs').iteritems():
@@ -146,7 +146,7 @@ class PageImage(object):
         self.get_exif()
 
         cfg = {}
-        cfg['site_name'] = self.config.get('site_name')
+        cfg['site_name'] = self.config.get('sitename')
         cfg['size'] = 'medium'
         cfg['title'] = self.title
         cfg['gallery'] = self.page.title

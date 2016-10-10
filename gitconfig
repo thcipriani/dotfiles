@@ -2,10 +2,10 @@
 	name = Tyler Cipriani
 	email = tcipriani@wikimedia.org
 [alias]
-	lool = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lool = log --pretty=format:\"%C(33)%h%C(reset) %C(194)%s%C(224)%d%C(reset) [%an]\" --graph --date=short
 	lol = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate -1
 	ll = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate -10
-	up = "!git remote update -p; git merge --ff-only @{u}"
+	up = remote update -p
 	last = log -1 HEAD
 	ack = grep --break --heading --line-number
 	co = checkout
@@ -16,8 +16,7 @@
 	edit = !vim $(git ls-files -m) -p
 	whatadded = log --diff-filter=A
 	fetchdiff = log -p --no-merges HEAD..@{u}
-[color]
-	ui = true
+	branches = for-each-ref --sort=-committerdate --format='%(color:33)%(authordate:relative)\t%(color:194)%(authorname)\t%(color:white)%(color:bold)%(refname:short)' refs/remotes
 [push]
 	default = matching
 [status]
@@ -28,3 +27,6 @@
 	extendRegexp = true
 [url "ssh://gerrit.wikimedia.org:29418"]
 	pushInsteadOf = https://gerrit.wikimedia.org/r/p
+[include]
+	path = ~tyler/.color.gitconfig
+	path = /home/tyler/.config/git-photo/gitconfig

@@ -19,14 +19,13 @@ class App(object):
     def __init__(self, config):
         self.config = config
 
-        self.pic_dir = self.config.get('pic_dir')
-        self.publish_dir = self.config.get('publish_dir')
-        self.metadata_file = self.config.get('metadata_file')
-        self.static_dir = self.config.get('static_dir')
+        self.pic_dir = self.config.get('path')
+        self.publish_dir = self.config.get('public')
+        self.static_dir = self.config.get('static')
+        # TODO Remove this bullshit
+        self.metadata_file = '_metadata.y*ml'
         self.paths = []
         self.sub_pages = []
-
-        self.mkdirs()
 
     def mkdirs(self):
         """Make the output directory if it doesn't exist"""
@@ -52,6 +51,7 @@ class App(object):
         return pages
 
     def main(self, index_page=False):
+        self.mkdirs()
         self.paths = self.get_subdirs()
         self.sub_pages = self.get_subpages()
 
