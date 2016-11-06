@@ -54,7 +54,7 @@ class Page(object):
             cfg['title'] = img.title
             cfg['caption'] = img.caption
             cfg['img_path'] = img.link_dir
-            cfg['thumb_path'] = img.link_size('thumb')
+            cfg['thumb_path'] = img.thumb_path('thumb')
             cfg['copyright'] = img.copyright
             cfg['license'] = img.license
             cfg['licenselink'] = img.license_link
@@ -90,12 +90,7 @@ class Page(object):
         img = self.images[0]
         default = img.title
         img = self._img_by_name(self.metadata.get('cover', default))
-        try:
-            return os.path.join(self.metadata['path'], image.IMG_PATH,
-                                img.title, 'small.{}'.format(img.extension))
-        except AttributeError:
-            import pdb
-            pdb.set_trace()
+        img.thumb_path('thumb')
 
     @property
     def safe_title(self):

@@ -2,11 +2,13 @@
 
 import os
 import sys
+import subprocess
 
 import click
 
 
-root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+script = os.path.realpath(__file__)
+root = os.path.dirname(os.path.dirname(script))
 src = os.path.join(root, 'lib')
 
 sys.path.append(src)
@@ -44,6 +46,32 @@ def index(**kwargs):
     kwargs['is_index'] = True
     app = hiraeth.App(hiraeth.Config(root, kwargs))
     sys.exit(app.main())
+
+
+@cli.command()
+@click.argument('path')
+def add(**kwargs):
+    """Generate and add metadata to a git-annex photo."""
+    kwargs['is_index'] = False
+    photo = hiraeth.Pic(kwargs['path'], hiraeth.Config(root, kwargs))
+    print photo.exif
+
+
+@cli.command()
+@click.argument('path', nargs=-1)
+@click.argument('public', nargs=1)
+def thumbs(**kwargs):
+    """Generate thumbs for PATH output to PUBLIC."""
+    kwargs['is_index'] = False
+
+    # In case a wildcard is passed
+    for path in kwargs['path']:
+        subprocess.check_call([script, 'add', path])
+        args = kwargs
+        args['path'] = path
+
+        photo = hiraeth.Pic(path, hiraeth.Config(root, args))
+        photo.make_thumbs()
 
 
 @cli.command()

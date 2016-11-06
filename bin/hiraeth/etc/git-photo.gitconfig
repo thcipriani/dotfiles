@@ -1,11 +1,13 @@
 [photo]
+    thumburl = http://photos.tylercipriani.com/thumbs/
 	templates = ~/lib/templates
 	public = ~/public_html/photos
 	path = ~/Pictures
 	static =  ~/lib/static
-	sitename = Tyler's Photo Site
+	sitename = Tyler's Photography Site
 	copyright = Tyler Cipriani
-	license = <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+	license = CC BY-SA 4.0
+	licenselink = https://creativecommons.org/licenses/by-sa/4.0/
 [photo "thumbs"]
 	small = 240
 	medium = 640
