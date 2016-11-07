@@ -90,7 +90,7 @@ class Page(object):
         img = self.images[0]
         default = img.title
         img = self._img_by_name(self.metadata.get('cover', default))
-        img.thumb_path('thumb')
+        return img.thumb_path('thumb')
 
     @property
     def safe_title(self):

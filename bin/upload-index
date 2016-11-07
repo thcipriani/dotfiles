@@ -1,9 +1,24 @@
 #!/usr/bin/env bash
 
-eval "$("$HOME"/.amazonrc)"
-s3cmd put --recursive ~/public_html/ s3://photos.tylercipriani.com/
+if (( $# != 1 )); then
+    printf 'Usage: %s path/to/public_html\n' "$(basename "$0")"
+    exit 1
+fi
 
-for file in ~/public_html/*; do
+DIR="$1"
+
+if [ ! -d "$DIR" ]; then
+    printf '%s is not a directory!' "$DIR"
+    exit 1
+fi
+
+# Standardize format for $DIR
+DIR=$( cd "$DIR" && pwd )
+
+eval "$("$HOME"/.amazonrc)"
+s3cmd put --recursive "${DIR}/" "s3://photos.tylercipriani.com/"
+
+for file in "${DIR}"/*; do
     fn=$(basename "$file")
     s3cmd setacl --acl-public  --recursive "s3://photos.tylercipriani.com/${fn}"
 done

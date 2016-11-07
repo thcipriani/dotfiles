@@ -24,6 +24,16 @@ def cli():
     """
 
 
+@cli.command()
+@click.argument('path-to-add')
+def addpath(**kwargs):
+    """Add path to index publishing."""
+    path_to_add = os.path.realpath(os.path.expanduser(kwargs['path_to_add']))
+    kwargs['is_index'] = False
+    cfg = hiraeth.Config(root, kwargs)
+    cfg.add_path(path_to_add)
+
+
 @cli.group()
 def publish():
     """Publish photos to the web."""
@@ -41,11 +51,13 @@ def gallery(**kwargs):
 
 
 @publish.command()
+@click.argument('path')
+@click.argument('public')
 def index(**kwargs):
     """Publish index of known galleries."""
     kwargs['is_index'] = True
     app = hiraeth.App(hiraeth.Config(root, kwargs))
-    sys.exit(app.main())
+    sys.exit(app.main(index_page=True))
 
 
 @cli.command()

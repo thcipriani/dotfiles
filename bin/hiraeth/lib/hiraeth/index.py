@@ -41,7 +41,7 @@ class Gallery(object):
         with open(self.template, 'r') as t:
             template = jinja2.Template(t.read())
 
-        cfg = {'site_name': self.config.get('site_name'),
+        cfg = {'site_name': self.config.get('sitename'),
                'body': '\n'.join(html)}
 
         with open(self.index_path, 'w+') as i:

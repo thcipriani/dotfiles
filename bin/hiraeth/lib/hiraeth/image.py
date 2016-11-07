@@ -208,7 +208,6 @@ class PageImage(object):
         self.dir = os.path.join(self.config.get('public'),
                                 IMG_PATH, self.title)
 
-        utils.mkdir_p(self.dir)
         self.link_dir = os.path.join(IMG_PATH, self.title)
         self.index_path = os.path.join(self.dir, 'index.html')
         self.small_path = os.path.join(self.dir, 'small.html')
@@ -262,6 +261,7 @@ class PageImage(object):
         return os.path.join(thumburl, self.pic.thumb(size))
 
     def generate(self):
+        utils.mkdir_p(self.dir)
         output_exif = copy.copy(self.pic.exif)
         del output_exif['thumbs']
         del output_exif['File Type Extension']

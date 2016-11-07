@@ -22,6 +22,7 @@ class Config(object):
         self.config_dir = os.path.join(self.config_home, 'git-photo')
         self.config_file = os.path.join(self.config_dir, 'gitconfig')
         self._config = None
+        self._paths = None
 
     @property
     def config(self):
@@ -41,10 +42,14 @@ class Config(object):
         if not self._paths:
             cmd = [
                 'git', 'config', '--file', self.config_file,
-                '--get-all', 'photo.path']
+                '--get-all', 'photo.paths']
 
-            self._paths = map(
-                os.path.expanduser, subprocess.check_output(cmd).splitlines())
+            try:
+                self._paths = map(
+                    os.path.expanduser,
+                    subprocess.check_output(cmd).splitlines())
+            except subprocess.CalledProcessError:
+                self._paths = []
 
         return self._paths
 
@@ -78,6 +83,18 @@ class Config(object):
         cmd.append(self.config_file)
         subprocess.check_call(cmd)
         print 'Default git-photo config added to %s' % user_git_config
+
+    def add_path(self, path):
+        """Add path to config."""
+        if path in self.paths:
+            return
+
+        cmd = [
+            'git', 'config', '--file', self.config_file,
+            '--path', '--add', 'photo.paths']
+        cmd.append(path)
+
+        subprocess.check_output(cmd)
 
     def thumb_sizes(self):
         """Return hash of small, medium, and large thumb sizes."""
