@@ -51,3 +51,9 @@ unset file
 #  set -o vi
 #  bind -m vi-insert "\C-l":clear-screen
 # fi
+
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto verbose"
+. "$HOME"/bin/git-prompt.sh

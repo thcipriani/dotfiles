@@ -38,19 +38,6 @@ if (( color_prompt > 0 )); then
     RESET=$(tput sgr0)
 fi
 
-_parse_git_dirty() {
-  if git diff --no-ext-diff --quiet --exit-code; then
-    printf "${LIME_YELLOW}✔${RESET}"
-  else
-    printf "${RED}✗${RESET}"
-  fi
-}
-
-_parse_git_branch() {
-  git rev-parse --is-inside-work-tree &>/dev/null || return
-  printf " $(git rev-parse --abbrev-ref HEAD)[git]$(_parse_git_dirty)"
-}
-
 _rprompt() {
   local _time=$1
   (( $_time < 5 )) && return
@@ -82,9 +69,6 @@ exit_code_emote() {
 prompt() {
     local _exitcode=$?
 
-    # https://www.debian-administration.org/article/543/Bash_eternal_history
-    echo "$$ $PWD $USER $(history 1)" >> "$HOME/.muh_history"
-
     local _end_time=$(date +%s)
     local _total_time=$(( _end_time - _start_time ));
     if ((_end_time == _start_time || _start_time == 0)); then
@@ -106,7 +90,8 @@ prompt() {
         venv="(\[${BRIGHT}${MAGENTA}\]$(basename $VIRTUAL_ENV)\[${RESET}\])"
     fi
 
-    _top_row="\[${CYAN}\]\W\[${RESET}\]$(_parse_git_branch)\[${RESET}\]"
+    # __git_ps1 here is provided by ~/bin/git-prompt.sh sourced in ~/.bashrc
+    _top_row="\[${CYAN}\]\W\[${RESET}\]$(__git_ps1 ' (%s)')\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
 
@@ -117,8 +102,19 @@ prompt() {
 }
 
 _log_start() {
+  local hist
+
   [ -n "$COMP_LINE" ] && return  # do nothing if completing
   [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return # don't cause a preexec for $PROMPT_COMMAND
+
+  hist=$(HISTTIMEFORMAT= history 1 | { read -r _ this_command; echo "$this_command"; })
+  [[ -n "$hist" ]] && {
+    # https://www.debian-administration.org/article/543/Bash_eternal_history
+    echo "$$ $PWD $USER $hist $BASH_COMMAND" >> "$HOME/.muh_history"
+
+    commandlog add "$hist" "dummy" "$BASH_COMMAND"
+  }
+
   _start_time=$(date +%s)
 }
 

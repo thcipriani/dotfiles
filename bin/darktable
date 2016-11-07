@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -eu
+
+TMP_XRESOURCES=$(mktemp --suffix='dark-table-xresources')
+
+cat > "$TMP_XRESOURCES" <<OK
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+OK
+
+xrdb "$TMP_XRESOURCES"
+/usr/bin/darktable "$@"
+
+XRDB_OPTIONS=''
+[ -r "$HOME/.hacksrc" ] && . "$HOME/.hacksrc"
+[ -f "$HOME/.Xresources" ] && xrdb $XRDB_OPTIONS "$HOME/.Xresources"

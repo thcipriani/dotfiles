@@ -17,8 +17,8 @@ mailboxes \
   "+ML.ops" \
   "+ML.debian-devel" \
   "+CI" \
-  "+sent" \
   "+auto" \
+  "+sent" \
   "+drafts" \
   "+archive" \
   "+spam" \
@@ -135,7 +135,15 @@ macro pager ,u "|urlview<enter>" "call urlview to open links"
 
 macro index gi "<change-folder>!<return>" "go to inbox"
 macro index ,z "<shell-escape>offlineimap -q -o<return>" "sync IMAP"
-macro pager ,g "|~/.mutt/view-gerrit.py<enter>" "Open gerrit link in browser"
+
+macro pager ,g "|~/.mutt/view-web.py \
+    --trim '<>' --ltrim 'X-Gerrit-ChangeURL:' 'X-Gerrit-ChangeURL'<enter>" \
+    "Open gerrit link in browser"
+
+macro pager ,p ":set pipe_decode<enter>|~/.mutt/view-web.py \
+    'https://phabricator.wikimedia.org/'<enter> \
+    :unset pipe_decode<enter>" \
+    "Open phab link in browser"
 
 macro index <space> "<collapse-thread>" "uncollapse thread"
 

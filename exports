@@ -65,14 +65,16 @@ if [ -f "$HOME/.amazonrc" ]; then
     eval $(/usr/bin/env python2 "$HOME/.amazonrc")
 fi
 
-if [ -d "$HOME/.rbenv/bin" ]; then
-    export PATH="$HOME/.rbenv/bin":$PATH
-    if [ -d "$HOME/.rbenv/plugins/ruby-build/bin" ]; then
-        export PATH="$HOME/.rbenv/plugins/ruby-build/bin":$PATH
-    fi
+# if [ -d "$HOME/.rbenv/bin" ]; then
+#     export PATH="$HOME/.rbenv/bin":$PATH
+#     if [ -d "$HOME/.rbenv/plugins/ruby-build/bin" ]; then
+#         export PATH="$HOME/.rbenv/plugins/ruby-build/bin":$PATH
+#     fi
+# 
+#     eval "$(rbenv init -)"
+# fi
 
-    eval "$(rbenv init -)"
-fi
+[ -d "$HOME/.rvm/bin" ] && export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Try this out, so far it has some potential, would be nice to hook to
 # ~/.muh_history somehow...

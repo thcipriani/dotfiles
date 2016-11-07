@@ -126,6 +126,7 @@ has? volnoti && volnoti
 # has? filesync && filesync daemon > /dev/null 2>&1 &
 has? batterytrack && nohup batterytrack > /dev/null 2>&1 &
 has? syndaemon && syndaemon -i 1 -t -d
+has? xautolock && xautolock -time 10 -locker slock &
 
 # Nasa APOD
 has? nasapod && nasapod > /dev/null 2>&1 \

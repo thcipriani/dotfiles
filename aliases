@@ -39,8 +39,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias :q='exit'
 
-# I'm smart
-alias cd='cd -P'
+# I'm <strike>smart</strike> dumb
+# alias cd='cd -P'
 
 # be nice
 alias please='sudo'
