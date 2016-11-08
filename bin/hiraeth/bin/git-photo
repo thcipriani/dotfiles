@@ -2,7 +2,6 @@
 
 import os
 import sys
-import subprocess
 
 import click
 
@@ -27,7 +26,11 @@ def cli():
 @cli.command()
 @click.argument('path-to-add')
 def addpath(**kwargs):
-    """Add path to index publishing."""
+    """
+    Add path to index publishing.
+
+    This is not a thing that is useful just yet.
+    """
     path_to_add = os.path.realpath(os.path.expanduser(kwargs['path_to_add']))
     kwargs['is_index'] = False
     cfg = hiraeth.Config(root, kwargs)
@@ -60,38 +63,61 @@ def index(**kwargs):
     sys.exit(app.main(index_page=True))
 
 
-@cli.command()
-@click.argument('path')
-def add(**kwargs):
-    """Generate and add metadata to a git-annex photo."""
-    kwargs['is_index'] = False
-    photo = hiraeth.Pic(kwargs['path'], hiraeth.Config(root, kwargs))
-    print photo.exif
+@cli.group()
+def thumbs():
+    """Add thumbs, view thumbs."""
+    pass
 
 
-@cli.command()
+@thumbs.command()
 @click.argument('path', nargs=-1)
 @click.argument('public', nargs=1)
-def thumbs(**kwargs):
+def add(**kwargs):
     """Generate thumbs for PATH output to PUBLIC."""
     kwargs['is_index'] = False
 
     # In case a wildcard is passed
     for path in kwargs['path']:
-        subprocess.check_call([script, 'add', path])
         args = kwargs
         args['path'] = path
 
         photo = hiraeth.Pic(path, hiraeth.Config(root, args))
+        print photo.exif
         photo.make_thumbs()
+
+
+@thumbs.command()
+@click.argument('path', nargs=-1)
+def show(**kwargs):
+    """Generate thumbs for PATH output to PUBLIC."""
+    kwargs['is_index'] = False
+
+    # In case a wildcard is passed
+    for path in kwargs['path']:
+        args = kwargs
+        args['path'] = path
+
+        cfg = hiraeth.Config(root, args)
+        photo = hiraeth.Pic(path, cfg)
+        url = cfg.get('thumburl')
+        fmt = ('Original:\t{original}\n'
+               'Large:\t{large}\n'
+               'Med:\t{medium}\n'
+               'Small:\t{thumb}')
+        print fmt.format(
+            original=os.path.join(url, photo.thumb()),
+            large=os.path.join(url, photo.thumb('large')),
+            medium=os.path.join(url, photo.thumb('medium')),
+            thumb=os.path.join(url, photo.thumb('small')))
 
 
 @cli.command()
 def setup(**kwargs):
     """
-    Initialize git photo for a directory.
+    Initialize git photo.
 
-    Adds $PWD to git config photos.path.path
+    Creates and adds ~/.config/git-photo/gitconfig and adds that as an
+    include to an existing gitconfig.
     """
     cfg = hiraeth.Config(root, kwargs)
     cfg.setup()
