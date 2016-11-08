@@ -1,0 +1,97 @@
+[[!meta date="2016-11-07"]] [[!meta author="Tyler Cipriani"]] [[!meta
+license=""" [[Creative Commons Attribution-ShareAlike
+License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
+copyright=""" Copyright &copy; 2016 Tyler Cipriani """]] [[!meta
+title="My Remotee Desk"]] [[!toc ]]
+
+## Remote Culture
+### A rant
+
+It doesn't make sense to mandate that I sit in the same building as you
+to work on things somewhat related to the things you work on. By
+recognizing this fact, both employers and employees now have a great
+deal of freedom (for some value of the word "freedom"). Employers can
+hire people from across the globe, and employees can live anywhere on
+said globe.
+
+When I tell people I work from home I rarely get any sympathy, but the
+fact is that working remotely is harder than working in an office for
+millions of little reasons. The in-office workplace is the default – if
+you've ever had a job chances are you went to a building some place to
+do that job with other folks that did a slightly different job who were
+(at least nominally) working towards the same goals as you. And oooh
+the things you took for granted in your cushy IRL job!
+
+That meeting that was loosely scheduled for 4pm? I've got some time now,
+what if we just scrap project Foo? Work for you? Cool.  `{{done}}`. No
+one updated their calendars. No one likely bothered to update the
+documentation for the project Foo. I can just walk down the hall and
+talk to Jan faster than I can update the office wiki which is always
+hopelessly out-of-date anyway. Nobody checks the mailing list, everyone
+knows if there are project Foo questions, they can just ask me. Problem.
+Solved.
+
+Remote companies cannot be this lazy.
+
+It's not just that remote work is lonely (it is). It's not just that
+it's hard to find a good place to work when you're remote (it is hard).
+It's a million little things – documenting the little decisions so that
+when someone on the other side of the world wakes up, they don't have
+questions (because you won't be around to answer them), keeping the
+office wiki up-to-date, making sure to post big changes to the mailing
+list.
+
+Being "remote friendly" is not a thing, having a remote culture is.
+Remote culture is something that everyone has to cultivate constantly.
+
+## Remote Desks
+
+The Wikimedia Foundation strives for a remote culture. There are
+constant and seemingly innumerable challenges – both big and small, both
+technical and cultural.
+
+A couple of months ago there was an email thread on the staff mailing
+list that attempted to assail one of the remaining bastions of privilege
+exclusive to the physical, IRL office-worker: seeing people's desks!
+
+Walking around a physical office you see people's personalities laid out
+in physical space. You may discover that you have similar interests or
+hobbies, you may learn about a new topic, or you may discover the very
+key to existence simply by craning your neck slightly to take a good,
+long, hard look at another person's pile of accumulated doo-dads and
+brick-a-brack.
+
+Filled with this understanding, we shared our desks, and the things on
+them.
+
+## My Desk
+
+This is what my desk looked like in September of 2016.
+
+![My Desk](http://photos.tylercipriani.com/thumbs/30/2bd9e9e55c890d301f76822eec57656facd2d2/tyler-cipriani-desk-1280.jpg)
+
+Some of the the things on my desk, and some of the reasons for some of the
+things on it (in no order):
+
+1. [Data Science at the Command Line](http://shop.oreilly.com/product/0636920032823.do)
+2. [The Anarchist's Design Book](https://lostartpress.com/products/the-anarchists-design-book)
+3. [Phantom II Drone (with a GoPro Hero 3+)](https://archive.org/details/G0030009)
+4. [Manfrotto MTPIXI-B PIXI Mini Tripod](https://www.amazon.com/dp/B00D76RNLS/ref=cm_sw_su_dp)
+5. [Joby GorillaPod SLR-Zoom Tripod](http://joby.com/gorillapod/gorillapod-slr-zoom)
+6. Some rusty pliers
+7. A 12' Tape measure
+8. [Google Fi powered Nexus 5x](https://fi.google.com) - I dislike this phone
+9. 2x [EFF.org Laptop Camera Covers](https://supporters.eff.org/shop/laptop-camera-cover-set)
+10. [USB Barcode Reader](https://www.amazon.com/gp/product/B00406YZGK/ref=oh_aui_detailpage_o03_s01?ie=UTF8&psc=1) for my [[Library Project|tags/books]].
+11. [SouthOrd MPXS-14 Lock Pick Set](https://www.lockpickshop.com/MPXS-14.html) and a few MasterLocks for practice
+12. [GoF Book](https://en.wikipedia.org/wiki/Design_Patterns)
+13. [Brother HL-L2340DW Compact Laser Printer](https://www.amazon.com/gp/product/B00LZS5EEI/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) $99 – best printer ever.
+14. 3M LX550 Notebook riser – no need for a monitor, works great.
+15. [Vortex Poker II (with Cherry MX-Blues)](http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=458)
+16. A barcode that says "HI" to test out the barcode scanner
+17. [Evoluent VerticalMouse](https://evoluent.com/)
+18. Fair casino dice to generate [diceware passphrases](http://world.std.com/~reinhold/diceware.html)
+19. A desktop background from [NASA](http://apod.nasa.gov/apod/) (there's a thing in my [dotfiles](https://github.com/thcipriani/dotfiles/blob/master/bin/nasapod) to download a new one daily)
+20. [SparkFun Cerberus USB Cable](https://www.sparkfun.com/products/12016)
+21. Vintage Kodak ad of a kid with a squirrel to liven-up the joint
+22. Renewal form for the [American Homebrewer's Association](https://www.homebrewersassociation.org/) which is a problematic organization for many reasons

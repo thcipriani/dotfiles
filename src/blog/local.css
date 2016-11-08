@@ -501,7 +501,6 @@ body {
 
 th,
 strong {
-    font-weight: 100;
     color: black;
 }
 
@@ -524,6 +523,7 @@ img {
 h1,
 h2 {
     margin: 1em 0 0.5em 0;
+    border-bottom: 1px solid #aaa;
 }
 
 h1 {
@@ -542,8 +542,6 @@ h5,
 h6 {
     font-family: "Linux Libertine", Georgia, Times, serif;
     color: #212121;
-    border-bottom: 1px solid #aaa;
-    font-weight: 400;
     -webkit-font-feature-settings: "liga", "dlig";
        -moz-font-feature-settings: "liga=1, dlig=1";
         -ms-font-feature-settings: "liga", "dlig";
