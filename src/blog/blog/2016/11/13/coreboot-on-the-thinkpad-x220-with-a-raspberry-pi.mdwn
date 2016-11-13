@@ -14,7 +14,7 @@ My work laptop is terrible. About a year and a half ago, when I started by
 current gig, I received an Asus Zenbook that has been the bane of my existence
 ever since. First, it is impossible to work outside on this shiny monstrosity:
 all you see is your own dumb face squinting back at you, slightly obscured by
-very noticeable fingerprints from it's mirror-like screen. Why are there
+very noticeable fingerprints from its mirror-like screen. Why are there
 fingerprints on the screen? Because, oh yeah, it's a terrible touchscreen for
 no real reason. While the keyboard is serviceable, it is far from being a joy
 to use. There are no physical mouse buttons which, on a Linux install, means
@@ -30,12 +30,12 @@ add it as a boot drive until you've sweated enough and/or there is a
 sufficiently powerful cosmic ray to flip the bits necessary to allow you to
 continue your life. This problem pretty much killed my productivity at my last
 offsite -- as a result I decided to drop $500 and get a refurb ThinkPad X220
-with more RAM, and a bigger SSD than the ($1800) Zenbook.
+with more RAM and a bigger SSD than the ($1800) Zenbook.
 
 X-Series ThinkPads are niiiiice
 ---
 
-I have been using a ThinkPad X230t for the past 3 years and, although the
+I have been using a ThinkPad X230t for the past 3 years, and, although the
 tablet is a little bulky, it has been everything I need in a work laptop --
 matte screen, physical buttons for all the things, an Ethernet port -- it's
 basically *not* an unbelievably stupid laptop design (which is the bar now,
@@ -54,9 +54,10 @@ spread over a few sources, with some sizable gaps in process.
 
 I spent the past 2 days pretty lost, flailing in the dark, booting my freshly
 flashed laptop to a momentary flicker of the green power-light, no fans,
-nothing, sighing, and compiling again.
+nothing, sighing, and compiling again. Now I stand victorious, Debian stable
+(8.6 as of November 2016) is booting from SeaBIOS.
 
-BUT! I kept a lot of notes on the process. Hopefully, these notes save someone
+I kept a lot of notes on the process. Hopefully, these notes save someone
 some frustration, or make this process a tiny bit more approachable.
 
 Things you need
