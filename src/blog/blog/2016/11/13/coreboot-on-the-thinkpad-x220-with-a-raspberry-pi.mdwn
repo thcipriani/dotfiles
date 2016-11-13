@@ -8,7 +8,7 @@
 [[!tag computing coreboot hardware notes]]
 [[!toc ]]
 
-My work laptop is terrible. About a year and a half ago, when I started by
+My work laptop is terrible. About a year and a half ago, when I started my
 current gig, I received an Asus Zenbook that has been the bane of my existence
 ever since. First, it is impossible to work outside on this shiny monstrosity:
 all you see is your own dumb face squinting back at you, slightly obscured by
