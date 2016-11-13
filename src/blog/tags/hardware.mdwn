@@ -1,0 +1,4 @@
+[[!meta title="pages tagged hardware"]]
+
+[[!inline pages="tagged(hardware)" actions="no" archive="yes"
+feedshow=10]]
