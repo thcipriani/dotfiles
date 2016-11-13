@@ -1,8 +1,6 @@
 [[!meta date="2016-11-13"]]
 [[!meta author="Tyler Cipriani"]]
-[[!meta license="""
-    [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
-"""]]
+[[!meta license="""Creative Commons Attribution-ShareAlike License"""]]
 [[!meta copyright="""
     Copyright &copy; 2016 Tyler Cipriani
 """]]
@@ -60,13 +58,15 @@ nothing, sighing, and compiling again. Now I stand victorious, Debian stable
 I kept a lot of notes on the process. Hopefully, these notes save someone
 some frustration, or make this process a tiny bit more approachable.
 
+**Caveat Emptor** -- I'm terrible at hardware stuff and writing, so follow these steps at your own peril!
+
 Things you need
 ---
 
 -   Lonovo ThinkPad X220
 -   [USB to TTY Serial Cable](https://www.adafruit.com/products/954)
 -   [Raspberry Pi 3 Model B](https://www.amazon.com/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
--   [Pamona SOIC8 5250 Test Clip](https://www.amazon.com/gp/product/B00HHH65T4/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
+-   [Pomona SOIC8 5250 Test Clip](https://www.amazon.com/gp/product/B00HHH65T4/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
 -   8x [Female Jumper Wire](https://www.adafruit.com/products/266)
 -   An HDMI monitor and external keyboard (possibly, you may be able to figure out how to do this without one)
 -   Another computer that will act as your Raspberry Pi terminal via the USB to TTY serial cable (is what I did anyway)
@@ -123,6 +123,12 @@ Unfortunately, you do seem to need a monitor with HDMI to setup the Pi (someone 
 
 After the initial setup I was able to switch to using a serial cable
 interface.
+
+> **GIANT HUGE WARNING OF DOOM**: Hook your Pomona clip to your motherboard
+> **ONLY WITH THE BATTERY REMOVED, THE X220 UNPLUGGED, AAAANNDDD THE RASPBERRY
+> PI OFF!!!!** You could probably fry this chip. I don't actually know, but I
+> was paranoid about it throughout the process. Power on the Raspberry Pi only
+> when you're certain the Pomona clip is secure.
 
 1.  Download the [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/) torrent
 2.  Unzip the rasbian zip file and copy to an sd card
@@ -188,7 +194,7 @@ interface.
     sudo modprobe spidev
     ```
 
-9.  Hook your Pi to your Pomona clip, then hook the Pomona clip to the Motherboard.
+9.  Power down the Pi, Hook your Pi to your Pomona clip, then hook the Pomona clip to the motherboard, and power back up.
 
     ![Raspberry Pi 3 attached to ThinkPad X220 Pomona Clip](http://photos.tylercipriani.com/thumbs/1f/2067e7cd72a601f189c9cd60f17c3ecbac0039/pomona-clip-to-raspberry-pi-1280.jpg)
 
@@ -239,7 +245,9 @@ interface.
     No operations were specified.
     ```
 
-11.  Read your flashchip and verify that the md5sums match
+11.  Read your flashchip and verify that the md5sums match. If the md5sums of
+     your reads don't match repeat steps 9 and 10 until they do. If they never
+     do, check your wiring with a multimeter (I had to do this at one point).
 
     ``` {.bash}
     pi@raspberrypi:~$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0 -r flash01.bin
