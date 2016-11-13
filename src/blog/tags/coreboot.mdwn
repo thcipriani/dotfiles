@@ -1,0 +1,4 @@
+[[!meta title="pages tagged coreboot"]]
+
+[[!inline pages="tagged(coreboot)" actions="no" archive="yes"
+feedshow=10]]
