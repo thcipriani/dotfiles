@@ -1,3 +1,5 @@
 [ ! "$TERM" = 'dumb' ] && [ -n "$PS1" ] && . "$HOME/.bashrc"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    . "$HOME/.rvm/scripts/rvm"
+fi

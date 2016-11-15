@@ -90,7 +90,13 @@ prompt() {
         venv="(\[${BRIGHT}${MAGENTA}\]$(basename $VIRTUAL_ENV)\[${RESET}\])"
     fi
 
-    # __git_ps1 here is provided by ~/bin/git-prompt.sh sourced in ~/.bashrc
+    GIT_PS1_SHOWCOLORHINTS=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWUPSTREAM="auto verbose"
+    . "$HOME"/bin/git-prompt.sh
+
+    # __git_ps1 here is provided by ~/bin/git-prompt.sh
     _top_row="\[${CYAN}\]\W\[${RESET}\]$(__git_ps1 ' (%s)')\[${RESET}\]"
     [[ "$SSH_CONNECTION" != '' ]] && \
       _top_row="\[${BRIGHT}${MAGENTA}\]\u\[${RESET}\]@\[${ORANGE}\]\h\[${RESET}\]:${_top_row}"
@@ -107,12 +113,14 @@ _log_start() {
   [ -n "$COMP_LINE" ] && return  # do nothing if completing
   [[ "$BASH_COMMAND" == "$PROMPT_COMMAND" ]] && return # don't cause a preexec for $PROMPT_COMMAND
 
-  hist=$(HISTTIMEFORMAT= history 1 | { read -r _ this_command; echo "$this_command"; })
+  hist=$(HISTTIMEFORMAT='%s ' history 1 | { read -r _ this_command; echo "$this_command"; })
   [[ -n "$hist" ]] && {
     # https://www.debian-administration.org/article/543/Bash_eternal_history
     echo "$$ $PWD $USER $hist $BASH_COMMAND" >> "$HOME/.muh_history"
 
-    commandlog add "$hist" "dummy" "$BASH_COMMAND"
+    if command -v commandlog &> /dev/null; then
+        commandlog add "$hist" "dummy" "$BASH_COMMAND"
+    fi
   }
 
   _start_time=$(date +%s)

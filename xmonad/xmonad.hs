@@ -132,7 +132,7 @@ myTerminal = "urxvt"
 -- Main Layout
 -- =======================================
 main = do
-    xmproc <- spawnPipe "xmobar /home/tyler/.xmobarrc"
+    xmproc <- spawnPipe "xmobar ~/.xmobarrc"
     yeganesh_cmd <- lookupEnv "YEGANESH_CMD"
     let yeganesh = fromMaybe "yeganesh -x -- -i -fn '-xos4-*-medium-r-*-*-16-*'" yeganesh_cmd
     xmonad $ withUrgencyHook LibNotifyUrgencyHook $ defaultConfig
