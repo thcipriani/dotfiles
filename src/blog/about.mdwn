@@ -6,8 +6,8 @@
 Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
 dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
 potentially derisive) things that could be said about me. I am currently a
-release engineer at the [https://wikimediafoundation.org/wiki/Home Wikimedia
-Foundation] working remotely from sunny Boulder, Colorado.
+release engineer at the [Wikimedia
+Foundation]( https://wikimediafoundation.org/wiki/Home) working remotely from sunny Boulder, Colorado.
 
 When I’m not thinking about how to make the web a better, more dynamic
 place—you’ll find me
