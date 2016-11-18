@@ -28,5 +28,5 @@
 [url "ssh://gerrit.wikimedia.org:29418"]
 	pushInsteadOf = https://gerrit.wikimedia.org/r/p
 [include]
-	path = ~tyler/.color.gitconfig
-	path = /home/tyler/.config/git-photo/gitconfig
+	path = ~/.color.gitconfig
+	path = ~/.config/git-photo/gitconfig
