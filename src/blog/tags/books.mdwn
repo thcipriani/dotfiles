@@ -7,7 +7,7 @@ certainly puts me in a high percentile, the quality of the words read is
 probably not especially staggering.
 
 For want of a better place to put this information, here is a list of books
-I've read in 2016 as of 2016-11-14:
+I've read in 2016 as of 2016-11-22:
 
 1. [[Stranger in a Strange Land|https://openlibrary.org/books/OL7500496M/Stranger_in_a_Strange_Land]] by Robert A. Heinlein
 2. [[Black Hole|https://openlibrary.org/works/OL573448W/Black_hole]] by Charles Burns
@@ -31,5 +31,8 @@ I've read in 2016 as of 2016-11-14:
 20. [[A Confederacy of Dunces|https://openlibrary.org/works/OL3501731W/A_confederacy_of_dunces]] by John Kennedy Toole
 21. [[Everything but Espresso|https://openlibrary.org/works/OL17595809W/Everything_but_Espresso]] by Scott Rao
 22. [[Harry Potter and the Sorcerer's Stone|https://openlibrary.org/works/OL82592W/Harry_Potter_and_the_Sorcerer's_Stone]] by J.K. Rowling
+23. [[Harry Potter and the Chamber of Secrets|https://openlibrary.org/works/OL16313123W/Harry_Potter_and_the_Chamber_of_Secrets]] by J.K. Rowling
+24. [[Harry Potter and the Prisoner of Azkaban|https://openlibrary.org/works/OL13716956W/Harry_Potter_and_the_prisoner_of_Azkaban]] by J.K. Rowling
+25. [[Naked Lunch|https://openlibrary.org/works/OL483571W/Naked_Lunch]] by William S. Burroughs
 
 [[!inline pages="tagged(books)" actions="no" archive="yes" feedshow=100 trail="yes"]]
