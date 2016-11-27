@@ -294,6 +294,10 @@ interface.
         -  Flash ROM locking on S3 resume (Don't lock ROM sections on S3 resume)
         - [*] Add Intel descriptor.bin file
           (3rdparty/blobs/mainboard/$(MAINBOARDDIR)/descriptor.bin) Path and filename of the descriptor.bin file
+        - [*] Add Intel ME/TXE firmware
+          (3rdparty/blobs/mainboard/$(MAINBOARDDIR)/me.bin) Path to management engine firmware
+        - [*] Add gigabit ethernet firmware
+          (3rdparty/blobs/mainboard/$(MAINBOARDDIR)/gbe.bin) Path to gigabit ethernet firmware
     devices
         - [*] Use native graphics initialization
     display
@@ -325,6 +329,10 @@ interface.
     make iasl
     make
     ```
+
+    > **EDIT -- 2016-11-27**
+    > Andreas Sinninger pointed out I was missing the path to the Intel ME/TXE
+    > firmware -- corrected.
 
 13. FINALLY! Flash your new `coreboot.rom` to your rom chip:
     ``` {.bash}
