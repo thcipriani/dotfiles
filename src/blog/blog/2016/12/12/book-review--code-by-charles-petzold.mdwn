@@ -8,7 +8,7 @@
 """]]
 [[!meta title="Book Review: CODE by Charles Petzold"]]
 
-[CODE: The hidden Language of Computer Hardware and Software](https://openlibrary.org/works/OL1972516W/Code) by Charles Petzold
+[CODE: The Hidden Language of Computer Hardware and Software](https://openlibrary.org/works/OL1972516W/Code) by Charles Petzold
 
 The language of computer hardware and software is not particularly well hidden
 in my experience. The more I interact with software, the more those
@@ -29,7 +29,7 @@ haven't fixed any of the low-level problems either (tried subtracting
 
 These incredible Rube Goldberg, hacks-all-the-way-down, leaking piles of
 abstractions that are modern computers are fascinating and powerful. The modern
-computer reveals its own history -- each layer of abstraction represnting a
+computer reveals its own history -- each layer of abstraction representing a
 previous geologic era. The [ancient `.plan`](http://www.dave.org/oldplans.html)
 files of the Sumerians and Hittites.
 
