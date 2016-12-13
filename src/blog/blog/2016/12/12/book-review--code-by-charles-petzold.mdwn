@@ -1,0 +1,81 @@
+[[!meta date="2016-12-12"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+    [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+    Copyright &copy; 2016 Tyler Cipriani
+"""]]
+[[!meta title="Book Review: CODE by Charles Petzold"]]
+
+[CODE: The hidden Language of Computer Hardware and Software](https://openlibrary.org/works/OL1972516W/Code) by Charles Petzold
+
+The language of computer hardware and software is not particularly well hidden
+in my experience. The more I interact with software, the more those
+interactions reflect their makers and materials. This fact is slowly permeating the zeitgeist
+as we all, collectively, realize that [facebook is not
+the](http://bits.blogs.nytimes.com/2015/03/16/facebook-explains-what-it-bans-and-why/)
+[open](https://act.eff.org/action/dear-facebook-authentic-names-are-authentically-dangerous-for-your-users)
+[internet](http://www.nytimes.com/2016/09/10/technology/facebook-vietnam-war-photo-nudity.html?_r=0)
+(no matter how much it may [insist on its own
+benevolence](https://info.internet.org/en/)), and that the current state of AI
+is simply one of [money laundering for
+bias](http://idlewords.com/talks/sase_panel.htm). While it is increasingly true
+that our high-level interactions with machines are
+[broken](https://twitter.com/internetofshit), it's important to recall that we
+haven't fixed any of the low-level problems either (tried subtracting
+`399999999999998` from `399999999999999` in Google's calculator
+[lately](https://blog.codinghorror.com/why-do-computers-suck-at-math/)?).
+
+These incredible Rube Goldberg, hacks-all-the-way-down, leaking piles of
+abstractions that are modern computers are fascinating and powerful. The modern
+computer reveals its own history -- each layer of abstraction represnting a
+previous geologic era. The [ancient `.plan`](http://www.dave.org/oldplans.html)
+files of the Sumerians and Hittites.
+
+_CODE_ builds forward through time. Revealing each innovation necessary to
+create a fully functioning computer. It works its way towards the modern
+computer starting with binary data representation using [morse
+code](https://www.morsecode.io/). From there it covers non-base-10 number
+systems, telegraphs, electromagnets and the invention of the relay, the
+flip-flop switch that allows temporary storage of a single bit. All of this
+background culminates in a truly wonderful chapter in which you use this
+technology to build a fully functional computer in your mind's eye.
+
+The book goes on to explain the [Von Neumann
+architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) and from
+there moves into topics with which I am more familiar -- high level programming
+languages, object-oriented programming languages, and "The Graphical
+Revolution". In these later chapters, an evident object-oriented/graphical/IDE
+as the logical end-point for computing bias rears its ugly head, but in a book
+published by Microsoft Press it's a surprisingly light touch.
+
+_CODE_ is one of the more interesting technical books I have ever read, and
+also one of the few that I read cover-to-cover over the course of a few reading
+sessions. It is a story rather than a series of ideas surrounding a theme. It
+is a history book, not a handbook.
+
+My one critique is that the chapters after the climactic computer construction
+feel a bit disjointed. There is no real conclusion to the book -- I expected a
+more satisfying wrap-up than I was given. Instead of a tying-up of loose-ends
+we move on to topics like object-oriented programming, and [IEEE 754
+floating-point numbers](https://en.wikipedia.org/wiki/IEEE_754-1985).  While
+the treatment this book provides these topics is interesting, the organization
+is somewhat lacking.
+
+To spite the lack of organization towards the end of the book, I found _CODE_ a
+wonderful read and would have no qualms recommending it to anyone at any level
+of computer literacy.
+
+*Rating: 9/10*
+
+> *Meta Note*:
+>
+> As part of my effort to delve more deeply into reading, I will be
+> featuring more review-type content. I will be tagging it all with the
+> "books" tag. If you hate this, you can subscribe to the RSS feed for
+> "computing" to continue to read my insights on something I'm perhaps
+> even the slightest bit qualified to talk about in any sort of informed
+> way.
+
+[[!tag books]]
