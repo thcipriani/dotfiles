@@ -1,6 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+
 import os
 
 import jinja2
@@ -14,9 +16,8 @@ class PageException(Exception):
 
 
 class Page(object):
-    images = []
-
     def __init__(self, path, config):
+        self.images = []
         self.root_path = os.path.dirname(path)
         with open(path, 'r') as m:
             self.metadata = yaml.load(m.read())
@@ -105,6 +106,10 @@ class Page(object):
         return self.metadata.get('title', 'Pictures')
 
     def generate(self):
+        if not self.metadata.get('publish', True):
+            print('Not publishing, metadata publish set to false')
+            return
+
         out_dir = self.config.get('public')
         with open(os.path.join(out_dir, 'index.html'), 'w+') as f:
             f.write(self.html)

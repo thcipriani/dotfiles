@@ -49,7 +49,15 @@ class Pic(object):
             'ISO',
             'Create Date',
             'File Type Extension',
+            'File Name',
+            'Title',
+            'Comment',
         ]
+
+    @property
+    def date(self):
+        """Return create date of image for sorting."""
+        return self.exif.get('Create Date', '1969:12:31 00:00:00.00')
 
     @property
     def exif(self):
@@ -111,9 +119,95 @@ class Pic(object):
             print('%s --> %s' % (out_path, public_path))
             utils.mkdir_p(os.path.dirname(out_path))
             utils.resize_image(self.config.path, out_path, side=height)
+            self._make_page(out_path, size)
         self._upload_original()
         print('%s ready to upload to %s' % (self.config.public,
                                             self.config.thumburl))
+
+    def _make_page(self, out_path, size='original'):
+        """Generate thumbnail pages."""
+        output_exif = copy.copy(self.exif)
+        del output_exif['thumbs']
+        del output_exif['File Type Extension']
+        del output_exif['File Name']
+
+        if output_exif.get('Title'):
+            del output_exif['Title']
+
+        if output_exif.get('Comment'):
+            del output_exif['Comment']
+
+        copyright_holder = self.config.get('copyright')
+
+        if copyright_holder:
+            year = date.today().year
+            self.copyright = 'Copyright&#169; {} {}'.format(year,
+                                                            copyright_holder)
+
+        self.license = self.config.get('license')
+        self.license_link = self.config.get('licenselink')
+
+        cfg = {}
+        cfg['site_name'] = self.config.get('sitename')
+        cfg['size'] = size
+        # By design, we don't involve _metadata.yaml, so just guess
+        cfg['title'] = self._guess_title()
+
+        caption = self._guess_caption()
+        if caption:
+            cfg['caption'] = caption
+
+        cfg['original'] = os.path.basename(self._thumb_name())
+        cfg['image'] = os.path.basename(out_path)
+        cfg['exif'] = output_exif
+        cfg['copyright'] = self.copyright
+        cfg['license'] = self.license
+        cfg['license_link'] = self.license_link
+
+        page_path = os.path.dirname(out_path)
+        page_name = '{}.html'.format(size)
+        if size == 'medium':
+            page_name = 'index.html'
+
+        thumb_page = os.path.join(page_path, page_name)
+
+        template = os.path.join(
+            self.config.get('templates'), 'image-page.html.j2')
+
+        with open(template, 'r') as t:
+            template = jinja2.Template(t.read())
+
+        with open(thumb_page, 'w+') as f:
+            f.write(template.render(cfg))
+
+    def _guess_title(self):
+        """
+        Guess a title.
+
+        Soooo a pic doesn't necissarily have an Image, but *now* I want to
+        build a page as part of uploading thumbs. The easiest thing to do
+        here is to just guess at a title. If I care, I can set the filename
+        or I can set the exif title correctly.
+        """
+        fn = self.exif.get('Title', self.exif.get('File Name', None))
+
+        if not fn:
+            # Won't even guess here, should maybe be an exception
+            return '¯\_(ツ)_/¯'
+
+        # If the we're using just the filename, remove the extension
+        if fn.endswith(self.extension):
+            return fn[:-(len('.' + self.extension))]
+
+        return fn
+
+    def _guess_caption(self):
+        """
+        Guess a caption.
+
+        Uses the exif comment, e.g. exiftool -Comment[="whatevs"] [img]
+        """
+        return self.exif.get('Comment')
 
     def _upload_original(self):
         """Upload original to thumb site."""
@@ -265,6 +359,14 @@ class PageImage(object):
         output_exif = copy.copy(self.pic.exif)
         del output_exif['thumbs']
         del output_exif['File Type Extension']
+        del output_exif['File Name']
+
+        if output_exif.get('Title'):
+            del output_exif['Title']
+
+        if output_exif.get('Comment'):
+            del output_exif['Comment']
+
         cfg = {}
         cfg['site_name'] = self.config.get('sitename')
         cfg['size'] = 'medium'

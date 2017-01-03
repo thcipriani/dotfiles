@@ -56,8 +56,7 @@ class App(object):
         self.sub_pages = self.get_subpages()
 
         if index_page:
-            gallery = index.Gallery(self.sub_pages, self.config)
-            gallery.generate()
+            index.make(self.sub_pages, self.config)
             return 0
 
         for subpage in self.sub_pages:

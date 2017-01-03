@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
 
     {% if prev %}
     <link rel="prev" href="{{ prev }}" />
@@ -18,11 +18,14 @@
         <nav>
             <ul>
                 <li><a href="../../..">{{ site_name }}</a></li>
+                {% if gallery %}
                 <li><a href="../..">{{ gallery }}</a></li>
+                {% endif %}
                 <li>{{ title }}</li>
             </ul>
         </nav>
     </header>
+    {% if next or prev %}
     <div class="next-links">
         {% if prev %}
         <a href="{{ prev }}">Prev</a>
@@ -32,6 +35,7 @@
         <a href="{{ next }}">Next</a>
         {% endif %}
     </div>
+    {% endif %}
 
 
     <main class="image">
@@ -63,7 +67,7 @@
         </p>
         <p>
           <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-            <img alt="Creative Commons License" src="../../cc-by-sa-4.0.png">
+            <img alt="Creative Commons License" src="../../../cc-by-sa-4.0.png">
           </a>
         </p>
     </footer>
