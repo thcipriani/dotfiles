@@ -1,3 +1,11 @@
+> **EDIT**: 2017-01-08
+> 
+> [Igor Rzegocki](https://www.rzegocki.pl/) has a project that uses the same
+> technique outline here to make some incredible ready-made [Street FIghter
+> MotDs](https://github.com/ajgon/street-fighter-motd) -- it is really cool,
+> and if you are interested in abusing ansi escape sequences to make MotDs you
+> should check it out :)
+
 ![Zangief MOtD](https://tylercipriani-files.s3.amazonaws.com/zangief_motd.png)
 
 [[!toc ]]

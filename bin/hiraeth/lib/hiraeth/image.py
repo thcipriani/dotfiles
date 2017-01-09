@@ -113,7 +113,7 @@ class Pic(object):
         utils.mkdir_p(self.config.public)
         thumb_names = self._thumb_names()
         for size, height in self.config.get('thumbs').iteritems():
-            thumb_name = thumb_names[size]
+            thumb_name = thumb_names[size]['name']
             out_path = os.path.join(self.config.public, thumb_name)
             public_path = os.path.join(self.config.thumburl, thumb_name)
             print('%s --> %s' % (out_path, public_path))
@@ -252,9 +252,20 @@ class Pic(object):
         """Get thumb names, memoized if possible."""
         if not self._thumbs:
             for size, height in self.config.get('thumbs').iteritems():
-                self._thumbs[size] = self._thumb_name(height)
+                w, h, img = utils.calculate_size(self.config.path, height)
+                self._thumbs[size] = {
+                    'name': self._thumb_name(height),
+                    'width': w,
+                    'height': h,
+                }
 
-            self._thumbs['original'] = self._thumb_name()
+            w, h, img = utils.calculate_size(self.config.path)
+            w, h = img.size
+            self._thumbs['original'] = {
+                'name': self._thumb_name(),
+                'width': w,
+                'height': h,
+            }
 
         return self._thumbs
 

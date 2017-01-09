@@ -6,9 +6,11 @@ Copyright &copy; 2016 Tyler Cipriani
 """]]
 
 <figure class="thumb thumb-right">
-[[!img static/images/201307_p_tyler_studio_photo.jpg alt="Tyler Cipriani" size="320x350"]]
+<img title="I see you there. Reading my blog. You think I don't see you -- look at my face. I see you." src="https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/2017-01-06_tyler-cipriani-640.jpg" alt="Tyler Cipriani">
 <figcaption>
-Gentleman. Scholar. Lyrical genius.
+<a title="Tyler Cipriani - Gentleman. Scholar. Lyrical genius." href="https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/">
+    Gentleman. Scholar. Lyrical genius.
+</a>
 </figcaption>
 </figure>
 

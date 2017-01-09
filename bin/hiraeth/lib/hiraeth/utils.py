@@ -51,6 +51,20 @@ def resize_gif(path, output, width, height):
 
 
 def resize_image(path, output, side=360):
+    w, h, img = calculate_size(path, side)
+    if img.format.lower() == 'gif':
+        resize_gif(path, output, w, h)
+        return w, h
+
+    processor = processors.SmartResize(w, h)
+    new_img = processor.process(img)
+
+    utils.save_image(new_img, output, img.format)
+    return w, h
+
+
+def calculate_size(path, side=360):
+    """Calculate the width and height of the resized image."""
     img = Image.open(path)
     ow, oh = img.size
 
@@ -61,11 +75,4 @@ def resize_image(path, output, side=360):
         h = side
         w = int(float(side) / float(oh) * float(ow))
 
-    if img.format.lower() == 'gif':
-        resize_gif(path, output, w, h)
-        return
-
-    processor = processors.SmartResize(w, h)
-    new_img = processor.process(img)
-
-    utils.save_image(new_img, output, img.format)
+    return w, h, img
