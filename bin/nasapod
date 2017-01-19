@@ -13,13 +13,13 @@ test -z "$convert" && exit 1
 ! _haz xrandr && exit 1
 ! _haz awk && exit 1
 
-base="http://apod.nasa.gov/apod/"
+base="https://apod.nasa.gov/apod/"
 base_dir="$HOME/Pictures/nasa/"
 wallpapers="$HOME/.wallpaper/"
 img_name="$(date '+%Y%m%d')_nasa_pod.jpg"
-monitor_size=$(xrandr --query | awk -F',' 'NR==1 {gsub("( |current)", ""); print $2}')
+monitor_size=$(xrandr -q | awk -F',' 'NR==1 {split($2, a, " "); print a[2]"x"a[4]}')
 
-img=$(curl -s $base | grep jpg | head -n 1 | sed 's/.*="\(.*.jpg\)">*/\1/')
+img=$(curl -s $base | awk '/jpg/ {split($0, a, "\""); print a[2]; exit}')
 
 mkdir -p "$base_dir"
 mkdir -p "$wallpapers"

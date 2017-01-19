@@ -13,9 +13,14 @@ mailboxes \
   "+task" \
   "+CR" \
   "+ML.wikitech-l" \
+  "+ML.mediawiki-l" \
   "+ML.wmfall" \
   "+ML.ops" \
+  "+ML.debian-security" \
+  "+ML.debian-user" \
   "+ML.debian-devel" \
+  "+ML.coreboot" \
+  "+ML.unicode" \
   "+CI" \
   "+auto" \
   "+sent" \

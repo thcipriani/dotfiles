@@ -14,6 +14,17 @@ function getnetrc (key)
     return value
 end
 
+-- Create mailbox if it doesn't exist
+function mailbox_maybe(account, mailbox)
+    exist, _, _, _ = account[mailbox]:check_status()
+    if exist < 0 then
+        print(string.format('Creating mailbox %q', mailbox))
+        account:create_mailbox(mailbox)
+    else
+        print(string.format('Mailbox %q already created...', mailbox))
+    end
+end
+
 account = IMAP {
     server = 'imap.gmail.com',
     username = getnetrc('login'),
@@ -23,43 +34,70 @@ account = IMAP {
 
 inbox = account['INBOX']
 
--- account:create_mailbox('ML')
--- account:create_mailbox('ML/wmfall')
+mailbox_maybe(account, 'ML')
+mailbox_maybe(account, 'ML/wmfall')
+mailbox_maybe(account, 'ML/wikitech-l')
+mailbox_maybe(account, 'ML/mediawiki-l')
+mailbox_maybe(account, 'ML/ops')
+mailbox_maybe(account, 'ML/debian-user')
+mailbox_maybe(account, 'ML/debian-devel')
+mailbox_maybe(account, 'ML/debian-security')
+mailbox_maybe(account, 'ML/coreboot')
+mailbox_maybe(account, 'ML/unicode')
+mailbox_maybe(account, 'CR')
+mailbox_maybe(account, 'auto')
+mailbox_maybe(account, 'task')
+
 results = inbox:contain_to('wmfall@lists.wikimedia.org')
 results:move_messages(account['ML/wmfall'])
 
--- account:create_mailbox('ML/wikitech-l')
 results = inbox:contain_to('wikitech-l@lists.wikimedia.org')
 results:move_messages(account['ML/wikitech-l'])
 
-results = inbox:contain_to('ops@lists.wikimedia.org')
-results:move_messages(account['ML/ops'])
+results = inbox:contain_to('mediawiki-l@lists.wikimedia.org')
+results:move_messages(account['ML/mediawiki-l'])
 
--- account:create_mailbox('ML/debian-devel')
+-- Ops is fairly low traffic, let it hit the inbox for a bit
+-- results = inbox:contain_to('ops@lists.wikimedia.org')
+-- results:move_messages(account['ML/ops'])
+
+results = inbox:contain_to('debian-user@lists.debian.org')
+results:move_messages(account['ML/debian-user'])
+
 results = inbox:contain_to('debian-devel@lists.debian.org')
 results:move_messages(account['ML/debian-devel'])
 
--- account:create_mailbox('CR')
+results = inbox:contain_to('debian-security-announce@lists.debian.org')
+results:move_messages(account['ML/debian-security'])
+
+results = inbox:contain_to('coreboot@coreboot.org')
+results:move_messages(account['ML/coreboot'])
+
+results = inbox:contain_to('unicode@unicode.org')
+results:move_messages(account['ML/unicode'])
 
 -- Gerrit
 results = inbox:contain_from('gerrit@wikimedia.org')
-results:move_messages(account['CR'])
+results:mark_flagged()
+-- results:move_messages(account['CR'])
 
 -- Phabricator-mail-tags that contain differential
 -- X-Phabricator-Mail-Tags: <differential-review-request>, <differential-other>, <differential-reviewers>
 -- results = inbox:contain_field('X-Phabricator-Mail-Tags', '<differential-review-request>')
 -- results = inbox:match_header('.*X-Phabricator-Mail-Tags: <differential-review-request>.*')
 results = inbox:contain_subject('[Differential]')
-results:move_messages(account['CR'])
+results:mark_flagged()
+-- results:move_messages(account['CR'])
 
--- account:create_mailbox('auto')
 results = inbox:contain_from('jenkins-bot@wikimedia.org')
 results:move_messages(account['auto'])
 results = inbox:contain_to('betacluster-alerts@lists.wikimedia.org')
 results:move_messages(account['auto'])
 results = inbox:contain_from('git@palladium.eqiad.wmnet')
 results:move_messages(account['auto'])
+results = inbox:contain_subject('customchannels@ccubuntu')
+results:move_messages(account['auto'])
 
--- account:create_mailbox('task')
 results = inbox:contain_subject('[Maniphest]')
-results:move_messages(account['task'])
+results:mark_flagged()
+-- results:move_messages(account['task'])

@@ -96,11 +96,11 @@ make_public() {
 
 main() {
     if ! command -v xrectsel > /dev/null 2>&1; then
-      notify "scrot command not found in \$PATH" "error"
+      notify "xrectsel command not found in \$PATH" "error"
     fi
 
     if ! command -v byzanz-record > /dev/null 2>&1; then
-      notify "scrot command not found in \$PATH" "error"
+      notify "byzanz-record command not found in \$PATH" "error"
     fi
 
     mkdir -p "${_SCREENCAST_PATH:=$HOME/screencasts}"
