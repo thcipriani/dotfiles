@@ -105,10 +105,10 @@ def show(**kwargs):
                'Med:\t{medium}\n'
                'Small:\t{thumb}')
         print fmt.format(
-            original=os.path.join(url, photo.thumb()),
-            large=os.path.join(url, photo.thumb('large')),
-            medium=os.path.join(url, photo.thumb('medium')),
-            thumb=os.path.join(url, photo.thumb('small')))
+            original=os.path.join(url, photo.thumb()['name']),
+            large=os.path.join(url, photo.thumb('large')['name']),
+            medium=os.path.join(url, photo.thumb('medium')['name']),
+            thumb=os.path.join(url, photo.thumb('small')['name']))
 
 
 @cli.command()
