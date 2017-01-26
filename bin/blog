@@ -7,25 +7,24 @@ import re
 
 from datetime import date
 
-BASE_PATH = "/home/tyler/.dotfiles/src/blog/blog"
+BASE_PATH = os.path.join(
+    os.environ['HOME'], '.dotfiles', 'src', 'blog', 'blog')
 
 CONTENT = '''[[!if test="enabled(calendar)" then="""
 To see posts by date, check out the [[archives]]
 """]]
 [[!inline pages="page({page_spec}) and !*Discussion"
-  archive=no limit=10 quick=yes trail=no]]
+  archive=yes limit=10 quick=yes trail=no]]
 '''
 
 FRONTMATTER = '''[[!meta date="{date}"]]
 [[!meta author="Tyler Cipriani"]]
-[[!meta license="""
-    [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
-"""]]
 [[!meta copyright="""
     Copyright &copy; {year} Tyler Cipriani
 """]]
 [[!meta title="{title}"]]
 [[!toc ]]
+[[!tag computing]]
 '''
 
 
@@ -113,6 +112,7 @@ def main():
     args = parse_args()
     make_path(args)
     make_post(args)
+
 
 if __name__ == '__main__':
     main()
