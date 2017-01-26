@@ -1,0 +1,91 @@
+[[!meta date="2017-01-26"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+    Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Yearly Reading: Done and To Do"]]
+[[!toc ]]
+[[!tag books]]
+
+Reading fiction is not that dissimilar from watching a movie in your brain.
+The ways in which audio-visual consumption of fiction and reading fiction
+diverge is in their demand on engagement -- when reading I must learn new words, I
+struggle to find meaning, I use my imagination, I slowly strengthen
+understanding -- I meet books more than half-way in my mind's eye.
+
+Movies and television, in contrast, demand less engagement from the viewer --
+much of the vision and interpretation is handed (or forced) on the audience.
+As popular movies and TV demand less, they also seem more apt to acquiesce to
+popular whim -- mirroring the culture that consumes them rather
+than challenging it. The level of engagement demanded by audio-visual
+entertainment is also subject to a shifting baseline -- that is, it's gotten
+less challenging over time.
+
+This is not a knock on *all* television and movies as a form of art. Often
+television, movies, and documentaries are the perfect medium to convey a particular
+message. Also, there are many movies and television programs which are, in
+fact, very challenging to their audience in addition to being very enjoyable.
+
+Also, it is noteworthy that I tend to read mass-market crap -- the
+book-equivalent of high-fructose corn syrup. I've come to terms with this fact.
+I read some crap, I read some good things, occasionally I'll read a few great
+(and nominally "great") things. I end up with a greater sense of accomplishment
+and satisfaction from reading crap rather than watching crap -- YMMV.
+
+This is a long way of saying -- I think that reading is a Good Thing™ and
+I want to do more of it. To enforce more of a habit, I set reading goals
+for myself at the start of each year. In 2015 I wanted to read a book a month.
+In 2016 I wanted to read 2 books a month. In both 2015 and 2016 my grasp has
+exceeded my reach -- which is not how goals are supposed to work.
+
+Books read in 2016
+---
+
+1. [[Stranger in a Strange Land|https://openlibrary.org/books/OL7500496M/Stranger_in_a_Strange_Land]] by Robert A. Heinlein
+2. [[Black Hole|https://openlibrary.org/works/OL573448W/Black_hole]] by Charles Burns
+3. [[Fun Home|https://openlibrary.org/works/OL17314347W/Fun_Home]] by Alison Bechdel
+4. [[The Girl on the Train|https://openlibrary.org/works/OL17112428W/The_Girl_on_the_Train]] by Paula Hawkins
+5. [[Starship Troopers|https://openlibrary.org/works/OL59740W/Starship_Troopers]] by Robert A. Heinlein
+6. [[Ready Player One|https://openlibrary.org/works/OL15936512W/Ready_Player_One]] by Ernest Cline
+7. [[The Circle|https://openlibrary.org/works/OL16808654W/The_Circle]] by Dave Eggers
+8. [[Notorious RBG|https://openlibrary.org/works/OL17318135W/Notorious_RBG]] by Irin Carmon and Shana Knizhnik
+9. [[The Three-Body Problem|https://openlibrary.org/works/OL17335914W/The_Three_Body_Problem ]] by Cixin Liu
+10. [[A Wizard of Earthsea|https://openlibrary.org/works/OL59852W/A_wizard_of_Earthsea]] by Ursula K. Le Guin
+11. [[Stoner|https://openlibrary.org/works/OL271675W/Stoner]] by John Williams
+12. [[Prost! The Story of German Beer|https://openlibrary.org/works/OL2670584W/Prost]] by Horst D. Dornbusch
+13. [[Bock|https://openlibrary.org/works/OL3673999W/Bock]] by Darryl Richman
+14. [[Do Androids Dream of Electric Sheep|https://openlibrary.org/works/OL2172532W/Do_Androids_Dream_of_Electric_Sheep]] by Philip K. Dick
+15. [[Room|https://openlibrary.org/works/OL15536410W/Room]] by Emma Donoghue
+16. [[Kitchen Confidential: adventures in the culinary underbelly|https://openlibrary.org/works/OL3348011W/Kitchen_Confidential]] by Anthony Bourdain
+17. [[H is for Hawk|https://openlibrary.org/works/OL17110026W/H_Is_for_Hawk]] by Helen Macdonald
+18. [[Watchers|https://openlibrary.org/works/OL497198W/Watchers]] by Dean Koontz
+19. [[The Tombs of Atuan|https://openlibrary.org/works/OL59862W/The_Tombs_of_Atuan_(The_Earthsea_Cycle_Book_2)]] by Ursula K. Le Guin
+20. [[A Confederacy of Dunces|https://openlibrary.org/works/OL3501731W/A_confederacy_of_dunces]] by John Kennedy Toole
+21. [[Everything but Espresso|https://openlibrary.org/works/OL17595809W/Everything_but_Espresso]] by Scott Rao
+22. [[Harry Potter and the Sorcerer's Stone|https://openlibrary.org/works/OL82592W/Harry_Potter_and_the_Sorcerer's_Stone]] by J.K. Rowling
+23. [[Harry Potter and the Chamber of Secrets|https://openlibrary.org/works/OL16313123W/Harry_Potter_and_the_Chamber_of_Secrets]] by J.K. Rowling
+24. [[Harry Potter and the Prisoner of Azkaban|https://openlibrary.org/works/OL13716956W/Harry_Potter_and_the_prisoner_of_Azkaban]] by J.K. Rowling
+25. [[Naked Lunch|https://openlibrary.org/works/OL483571W/Naked_Lunch]] by William S. Burroughs
+26. [[CODE: The Hidden Language of Computer Hardware and Software|https://openlibrary.org/works/OL1972516W/Code]] by Charles Petzold
+27. [[The Crying of Lot 49|https://openlibrary.org/works/OL2636674W/The_crying_of_lot_49]] by Thomas Pynchon
+28. [[The Best Christmas Pageant Ever|https://openlibrary.org/works/OL15434618W/The_Best_Christmas_Pageant_Ever]] by Barbara Robinson
+29. [[Harry Potter and the Goblet of Fire|https://openlibrary.org/works/OL82589W/Harry_Potter_and_the_goblet_of_fire]] by J.K. Rowling
+
+I also [[reviewed|tags/books]] a couple of these books over the course of 2016,
+hopefully I can continue down that path in the year to come.
+
+Goals for 2017
+---
+
+I'm going to try to read roughly a book a week in 2017 -- 50 books for the year.
+Hopefully 50 books is an ambitious enough goal.
+Additionally, I'd like to try to do 6 book reviews on this blog as a means of:
+
+* Tracking what I've read
+* Checking my understanding
+* Engaging and owning what I've read
+
+I'd also like to lay claim to my crazy ambitious plan to read 4 whole, real, grown-up (i.e., not
+beer- or computer-related) non-fiction books this year.
+
+As I'm proclaiming these goals publicly for the first time, I'm sure I'll come up woefully and shamefully short -- yay blogging! :)

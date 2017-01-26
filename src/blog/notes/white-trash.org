@@ -1,0 +1,132 @@
+#+TITLE: White Trash
+[[!meta date="2016-12-28"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""Creative Commons Attribution-ShareAlike License"""]]
+[[!meta copyright="""Copyright &copy; 2016 Tyler Cipriani"""]]
+[[!meta title="White Trash"]]
+
+#+BEGIN_QUOTE
+These are some random notes on the Book White Trash by Nancy Isenberg
+#+END_QUOTE
+
+* Taking out the Trash
+** Highlights
+- Starts with the American colonies late-1500s
+- [[https://en.wikipedia.org/wiki/Richard_Hakluyt][Richard Hakluyt]] both Elder and Younger, propagandasists for colonization (Sir Walter Raleigh was friends with the younger)
+- Idea is to cultivate the land on the New World with the poor and indigent of old world
+
+*** Jamestown (1607)
+- British colony where the ideas of moving England's poor to the new world were tested
+- Horrible people shitting in the streets
+- idle folks gonna idle, new world or not
+- 80% of the original 6000 died
+- tobacco became _the_ cash crop in 1609
+- People became indentured servants to buy passage to the new world. If they died, their children or spouse became indebted.
+- Orphan Children as property
+
+*** Mayflower/Massachusetts Bay Colony (1620–1675)
+- Puritans got a "patent" from the Virginia company, sailed to the hudson bay, established Massachusetts bay and the City on the Hill
+- John Winthrop was an early and important figure (1630—...) and asshole
+- Puritans were super strict and "obsessed with class and rank"
+- In a family, children were treated as servants; nobody (laws, etc) distinguished between west african slaves, indentured servants, and children.
+
+*** Bacon's rebellion
+- Being further away from the center of power meant you got less protection and gained less wealth
+- Women's fertility and the fertility of a new land were treated interchangeably
+- Indentured servants' children became indentured servants just as calves became the property of the owners of the cow
+
+** Vocabulary
+
+- **Sumptuary** \Sump"tu*a*ry\, a. [L. sumptuarius, fr. sumptus
+  expense, cost, fr. sumere, sumptum, to take, use, spend; sub
+  under + emere to take, buy: cf. F. somptuaire. See {Redeem}.]
+  Relating to expense; regulating expense or expenditure.
+  --Bacon.
+  [1913 Webster]
+
+  {Sumptuary laws} or {Sumptuary regulations}, laws intended to
+  restrain or limit the expenditure of citizens in apparel,
+  food, furniture, etc.; laws which regulate the prices of
+  commodities and the wages of labor; laws which forbid or
+  restrict the use of certain articles, as of luxurious
+  apparel.
+  [1913 Webster]
+
+- **King Philip's War**, sometimes called the First Indian War, Metacom's War,
+  Metacomet's War, or Metacom's Rebellion, was an armed conflict between
+  Native American inhabitants of present-day New England and English
+  colonists and their Native American allies in 1675–78
+
+- **Fecundity** \Fe*cun"di*ty\, n. [L. fecunditas: cf. F.
+  f['e]condit['e]. See {Fecund}.]
+  1. The quality or power of producing fruit; fruitfulness;
+     especially (Biol.), the quality in female organisms of
+     reproducing rapidly and in great numbers.
+     [1913 Webster]
+* John Locke's Lubberland - Carolina and Georgia
+** Highlights
+*** John Locke and North Carolina
+- Locke authored the _Fundamental Constitutions of Carolina_ (1669)
+- Locke was very pro-slavery
+- Locke created a feudal system with different titles
+  - Leet-men vs. serfs (Caciques and Landgraves)
+- Was worried about democracy (he thought it was dangerous)
+- N. Carolina was the "poor Carolina"
+- William Byrd II (Virginian) thought N. Carolina sucked.
+    #+BEGIN_QUOTE
+    Surely there is no place in the World where the Inhabitants live with
+    less Labour than in N Carolina. It approaches nearer to the
+    Description of Lubberland than any other, by the great felicity of the
+    Climate, the easiness of raising Provisions, and the Slothfulness of
+    the People
+
+    — William Byrd II, History of the Dividing Line, 1729
+    #+END_QUOTE
+- Lubberland was an English folk-tale about Lawrence Lazy in the town of Sloth in Neverwork county in the realm of Lubberland
+
+*** John Oglethorpe and Georgia
+- Georgia was founded as a charitable venture designed to lift up poor people
+- African slavery was not allowed, nor was alcohol
+  - Slavery disenfranchised poor whites by inducing them to give up their land to buy slaves until the slave traders owned all the land
+- Land was allotted and owned under a "fee tail" or "tail-male" trust, it couldn't be sold or given away, it was given to the eldest son
+- Nobody could own more than 500 acres in Georgia, no large estates
+- John Oglethorpe assassination attempt in 1740, left Georgia in 1743, all land owned by 5% of the population by 1750
+
+** Vocabulary
+- **Villain** \Vil"lain\, n. [OE. vilein, F. vilain, LL. villanus,
+  from villa a village, L. villa a farm. See {Villa}.]
+  [1913 Webster]
+  1. (Feudal Law) One who holds lands by a base, or servile,
+     tenure, or in villenage; a feudal tenant of the lowest
+     class, a bondman or servant. [In this sense written also
+     {villan}, and {villein}.]
+     [1913 Webster]
+* Benjamin Franklin's American Breed
+- Benjamin Franklin came from a poor(er) background, escaped apprenticeship in Boston and fled to Philidelphia
+- He felt that America wanted/needed people and that breeding was a good thing, regardless of parentage, wrote stuff about that
+- Experiments with the "natural state" pigeons and ants led him to believe that class would take care of itself by natural means
+- Mostly western expansion fixes class
+- The idea of "happy mediocrity" — I read it as having a wide enough country that folks can move to a place where they are not the lowliest
+- Thomas Paine - _Common Sense_ (January 1776)
+- Paine emphasies commercial alliances over class divisions
+- Paine dismissed the aristocracy, noting that they could be ignorant and unfit or children of noble birth who were not ready to rule
+- If aristocracy wasn't "real" – maybe not class either
+- Both men seemed to think class would resolve itself because America
+* Thomas Jefferson's Rubbish
+- Jefferson seemed to hate the idea of industrialization and instead liked the idea of farming, gentleman farmers, the pastoral
+- Jefferson was certainly more part of the traditional aristocracy than Franklin
+- Wanted people to be farmers and believed in "raking the rubbish" to produce scholars from the lower class
+- Often denied that there was class in the US to spite plain evidence otherwise
+- Believed class to be permeable rather than inborn
+- Believed that people could "breed" out of their class (Sally Hemmings children would be ⅛ non-white)
+- Debated John Adams a lot about class issues, I guess
+* Andrew Jackson's Cracker Country
+- 1800 ⅕ of Americans lived on the western frontier (between Appalachian Mtns and Mississippi River)
+- Squatters in the North, Crackers in the south: Both disreputable poor white people with no social mobility living in the frontier
+- Jackson was a cracker president (1824, 1828, 1832)
+- Davy Crockett (also — like Jackson — of Tennessee ) elected to the House in 1827
+- Both men absurd, boastful, racist — Crockett, to his credit, was against removing the Cherokee (as was the Supreme Court). Jackson didn't give a single shit.
+- Jackson dueled in the streets, killed Charles Dickinson in a duel. Left Jackson with a bullet next to his heart.
+- Jackson seemed like the Trump of the 1800s :(((
+- Universal Adult Male suffrage became a thing in the mid-1800s (1857 N. Carolina lifted the freehold requirement)
+- The net result of all of this was that politicians need cracker/squatter/poor votes

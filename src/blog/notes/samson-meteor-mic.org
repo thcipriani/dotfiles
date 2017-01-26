@@ -1,0 +1,24 @@
+#+TITLE: Samson Meteor Mic
+
+* Getting it working...
+
+I tried a few things to get the meteor mic working. I'm not sure if
+any of them worked. Most of them are from the [[https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Microphone][Arch Wiki]].
+
+1. To check to see if mic is recognized by alsa
+    #+BEGIN_SRC sh
+    arecord -l
+    #+END_SRC
+   Listed like: =hw:CARD,DEVICE=, in my instance that means =hw:1,0= (card: 1; device: 0)
+2. I added this in =/etc/pulse/default.pa=:
+    #+BEGIN_SRC sh
+    load-module module-alsa-source device=hw:0,0
+    #+END_SRC
+   And then reloaded pulse audio:
+    #+BEGIN_SRC sh
+    pulseaudio -k
+    #+END_SRC
+3. Alsamixer remove =CAPTURE DEVICE=
+   So...I have no idea if this did anything, but I opened =alsamixer=,
+   selected =HDA Intel PCH= and hit =f5=, then used <SPACE> to toggle
+   =CAPTURE= ¯\_(ツ)_/¯
