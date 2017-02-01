@@ -468,13 +468,12 @@ template {
 }
 
 body {
-    color: #444;
+    color: #333;
     background: #fefefe;
     font-family: sans-serif;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
-    font-size: 0.85em;
     line-height: 1.6em;
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
@@ -522,16 +521,16 @@ img {
 
 h1,
 h2 {
-    margin: 1em 0 0.5em 0;
-    border-bottom: 1px solid #aaa;
 }
 
 h1 {
-    font-size: 1.5625em;
+    font-size: 1.6em;
+    line-height: 1.25em;
 }
 
 h2 {
-    font-size: 1.25em;
+    font-size: 1.5em;
+    line-height: 1.51em;
 }
 
 h1,
@@ -540,8 +539,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Linux Libertine", Georgia, Times, serif;
-    color: #212121;
     -webkit-font-feature-settings: "liga", "dlig";
        -moz-font-feature-settings: "liga=1, dlig=1";
         -ms-font-feature-settings: "liga", "dlig";
@@ -690,9 +687,7 @@ a.feedbutton {
 }
 
 .inlineheader .header {
-    font-family: "Linux Libertine", Georgia, Times, serif;
     font-weight: 300;
-
     margin: 1em 0;
 }
 
@@ -834,25 +829,6 @@ a.feedbutton {
 figure {
     text-align: center;
     font-size: 0.8em;
-    font-family: "Linux Libertine", Georgia, Times, serif;
-}
-
-.thumb {
-    border: 1px solid #ccc;
-    padding: 0.25em;
-    color: #222;
-    background: white;
-}
-
-.thumb-right {
-    float: right;
-    margin: 0 0 1em 1em;
-}
-
-.thumb a:link,
-.thumb a:hover,
-.thumb a:active {
-    background-image: none;
 }
 
 .page {
@@ -970,7 +946,7 @@ td.lineNumbers {
     color: #ddd;
     border-right: none;
     width: 2em;
-    font-size: 0.85em;
+    font-size: 0.82em;
     line-height: 1.55em;
 }
 td.sourceCode { padding-left: 5px; }
@@ -990,13 +966,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
  * As responsive as I get
  * ======================= */
 @media (max-width: 720px) {
-    .thumb {
-        margin: 1em auto;
-    }
-    .thumb-right {
-        float: none;
-        display: inline-block;
-    }
     .comment-avatar {
         width: 50px;
     }
