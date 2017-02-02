@@ -572,10 +572,12 @@ a:hover {
 a:link { color: #3498DB; }
 a:visited { color: #6a4c96; }
 
-a[href^="https://"]:after,
-a[href^="http://"]:after {
-    content: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Cpath%20fill%3D%22%23fff%22%20stroke%3D%22%233498DB%22%20d%3D%22M1.5%204.518h5.982V10.5H1.5z%22%2F%3E%3Cpath%20d%3D%22M5.765%201H11v5.39L9.427%207.937l-1.31-1.31L5.393%209.35l-2.69-2.688%202.81-2.808L4.2%202.544z%22%20fill%3D%22%2306f%22%2F%3E%3Cpath%20d%3D%22M9.995%202.004l.022%204.885L8.2%205.07%205.32%207.95%204.09%206.723l2.882-2.88-1.85-1.852z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E);
-    margin: 0 0 0 1px;
+a[href*="//"]:not([href*="tylercipriani.com"]) {
+    break-after: avoid;
+}
+
+a[href*="//"]:not([href*="tylercipriani.com"]):after {
+    content: "\0000a0" url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
 }
 
 blockquote {
@@ -610,6 +612,10 @@ code {
  * Fiddly stuff
  * ==================================================== */
 img.img { margin: 0; }
+
+.epilogue {
+    margin: 4em 0 3em;
+}
 
 .logo,
 .logo:visited,
@@ -660,12 +666,8 @@ img.img { margin: 0; }
 
 #footer {
     border-top: 1px solid #aaa;
-    text-align: center;
     color: #888;
-}
-
-.epilogue {
-    margin: 2em 0;
+    font-size: small;
 }
 
 .license-icon:link,
@@ -673,6 +675,7 @@ img.img { margin: 0; }
 .license-icon:active,
 .license-icon:visited {
     background-image: none;
+    display: block;
 }
 
 .feedlink {
@@ -699,6 +702,13 @@ a.feedbutton {
     font-style: normal;
 }
 
+.pagedate,
+.pagelicense,
+.pagecopyright {
+    font-style: normal;
+    margin-top: 0;
+}
+
 .inlinepage {
     padding: 0 0 2em;
     border: none;
@@ -720,7 +730,9 @@ a.feedbutton {
 
 /* Top trails is different than footer trails */
 .trails {}
-#footer .trails {}
+#footer .trails {
+    font-size: medium;
+}
 
 .trail {
     clear: both;
@@ -828,7 +840,7 @@ a.feedbutton {
 
 figure {
     text-align: center;
-    font-size: 0.8em;
+    font-size: small;
 }
 
 .page {
@@ -837,14 +849,14 @@ figure {
     margin: 0 auto;
 }
 
-.pageheader .actions ul {
+.actions ul {
     height: auto;
     border: none;
     margin: 0;
     padding: 0 0 0.5em 0;
 }
 
-.pageheader .actions ul li {
+.actions ul li {
     padding: 0 0.5em 0 0;
 }
 
@@ -888,7 +900,7 @@ figure {
 }
 
 .comment-header {
-    font-size: 0.85em;
+    font-size: small;
 }
 
 /*

@@ -68,7 +68,7 @@ them.
 
 This is what my desk looked like in September of 2016.
 
-![My Desk](http://photos.tylercipriani.com/thumbs/30/2bd9e9e55c890d301f76822eec57656facd2d2/tyler-cipriani-desk-1280.jpg)
+![[My Desk](https://photos.tylercipriani.com/thumbs/30/2bd9e9e55c890d301f76822eec57656facd2d2/tyler-cipriani-desk-original.jpg)](https://photos.tylercipriani.com/thumbs/30/2bd9e9e55c890d301f76822eec57656facd2d2/tyler-cipriani-desk-1280.jpg)
 
 Some of the the things on my desk, and some of the reasons for some of the
 things on it (in no order):

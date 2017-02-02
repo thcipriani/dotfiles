@@ -71,7 +71,7 @@ Things you need
 -   An HDMI monitor and external keyboard (possibly, you may be able to figure out how to do this without one)
 -   Another computer that will act as your Raspberry Pi terminal via the USB to TTY serial cable (is what I did anyway)
 
-    ![What the whole flashing setup looked like for me X230 -> USB-to-TTY -> Raspberry Pi -> Pomona Clip -> X220](https://photos.tylercipriani.com/thumbs/13/0a884ef61214ae613c739a1460245b6da8c506/x220-spi-raspberry-pi-in-screen-1280.jpg)
+![[What the whole flashing setup looked like for me X230 -> USB-to-TTY -> Raspberry Pi -> Pomona Clip -> X220](https://photos.tylercipriani.com/thumbs/13/0a884ef61214ae613c739a1460245b6da8c506/x220-spi-raspberry-pi-in-screen-original.jpg)](https://photos.tylercipriani.com/thumbs/13/0a884ef61214ae613c739a1460245b6da8c506/x220-spi-raspberry-pi-in-screen-1280.jpg)
 
 ThinkPad X220 Disassembly
 ---
@@ -112,7 +112,7 @@ ThinkPad X220 Disassembly
     -   The BIOS chip you are looking for is **right there** -- the
         left-front of the motherboard if the screen is facing you.
 
-![Pomona 5250 attached to BIOS clip on ThinkPad X220](https://photos.tylercipriani.com/thumbs/de/8c2006845e8c04acda39da8c1ff39b6330175e/pomona-clip-on-x220-1280.jpg)
+![[Pomona 5250 attached to BIOS clip on ThinkPad X220](https://photos.tylercipriani.com/thumbs/de/8c2006845e8c04acda39da8c1ff39b6330175e/pomona-clip-on-x220-original.jpg)](https://photos.tylercipriani.com/thumbs/de/8c2006845e8c04acda39da8c1ff39b6330175e/pomona-clip-on-x220-1280.jpg)
 
 Setup Your Pi as a Flasher
 ---
@@ -138,7 +138,9 @@ interface.
     ```
 
 3.  Hook up your Raspberry Pi to a monitor and boot
+
 4.  Change password using `passwd` (default user/pass: `pi`/`raspberry`)
+
 5.  Setup wifi by editing `/etc/wpa_supplicant/wpa_supplicant.conf`
 
     ``` {.bash}
@@ -196,7 +198,7 @@ interface.
 
 9.  Power down the Pi, Hook your Pi to your Pomona clip, then hook the Pomona clip to the motherboard, and power back up.
 
-    ![Raspberry Pi 3 attached to ThinkPad X220 Pomona Clip](https://photos.tylercipriani.com/thumbs/1f/2067e7cd72a601f189c9cd60f17c3ecbac0039/pomona-clip-to-raspberry-pi-1280.jpg)
+    ![[Raspberry Pi 3 attached to ThinkPad X220 Pomona Clip](https://photos.tylercipriani.com/thumbs/1f/2067e7cd72a601f189c9cd60f17c3ecbac0039/pomona-clip-to-raspberry-pi-original.jpg)](https://photos.tylercipriani.com/thumbs/1f/2067e7cd72a601f189c9cd60f17c3ecbac0039/pomona-clip-to-raspberry-pi-1280.jpg)
 
     X220 BIOS Chip pinout
 
