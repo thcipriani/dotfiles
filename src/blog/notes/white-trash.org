@@ -2,7 +2,7 @@
 [[!meta date="2016-12-28"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta license="""Creative Commons Attribution-ShareAlike License"""]]
-[[!meta copyright="""Copyright &copy; 2016 Tyler Cipriani"""]]
+[[!meta copyright="""Copyright &copy; 2017 Tyler Cipriani"""]]
 [[!meta title="White Trash"]]
 
 #+BEGIN_QUOTE

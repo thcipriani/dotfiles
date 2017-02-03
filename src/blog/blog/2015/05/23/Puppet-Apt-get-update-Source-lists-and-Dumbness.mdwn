@@ -51,11 +51,11 @@ on the next run (after `apt-get update` has run).
 > puppet apply --graph test.pp dot -Tpng /var/lib/puppet/state/graphs/relationships.dot -o Pictures/relationships.png
 > ```
 >
-> ![Puppet relationship graph](/static/images/2016/2016-03-20_puppet-dot.png)
+> ![Puppet relationship graph](/static/images/2016/2016-03-20_puppet-dot.png)\
 
 [[!meta date="2015-05-23"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Puppet, apt-get-update, source-lists, and Dumbness"]]
 [[!tag computing configuration-management]]

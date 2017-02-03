@@ -1,4 +1,11 @@
 [[!meta title="Bash Completion"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!toc ]]
 [[!tag computing bash shell notes]]
 [[!meta date="Tue 2016-08-30 05:01:47 AM"]]

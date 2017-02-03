@@ -1,5 +1,11 @@
 [[!meta date="2007-05-30"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Optimize Firefox Part I: A New Hope for Search"]]
 
 This series of articles is about a subject that is near and dear to just about

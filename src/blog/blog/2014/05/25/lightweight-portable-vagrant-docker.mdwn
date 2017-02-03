@@ -235,6 +235,6 @@ docker/vagrant instance for about 45 minutes alongside chrome and tmux/xterm
 without any noticeable jankyness on a notoriously janky laptop.[[!meta date="2014-05-25"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Development Environments with Vagrant, Docker, and Supervisord"]]
 [[!tag computing shell docker vagrant]]

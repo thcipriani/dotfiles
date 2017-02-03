@@ -1,4 +1,11 @@
 #+TITLE: Lowering the Barrier to Blogging
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!meta title="Lowering the Barrier to Blogging"]]
 [[!meta date="2016-09-02T09:00:28-07:00"]]
 [[!tag computing administravia]]

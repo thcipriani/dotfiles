@@ -710,6 +710,7 @@ img.img { margin: 0; }
     float: right;
     background-image: none;
     display: block;
+    margin: 0 0 1em 1em;
 }
 
 .feedlink {

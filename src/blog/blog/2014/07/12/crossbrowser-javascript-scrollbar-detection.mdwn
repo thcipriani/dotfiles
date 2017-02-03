@@ -112,6 +112,6 @@ If I missed something, or if _this_ solution is a bit of an oversimplification
 [[!meta date="2014-07-12"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Cross-Browser JavaScript Scrollbar Detection"]]
 [[!tag computing design javascript]]

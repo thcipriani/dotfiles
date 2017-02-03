@@ -37,6 +37,6 @@ Now if only OSX Mountain Lion possessed the awesome power of moving windows betw
 [[!meta date="2013-02-09"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title=" Vim, the OSX clipboard and Tmux"]]
 [[!tag computing shell vim tmux]]

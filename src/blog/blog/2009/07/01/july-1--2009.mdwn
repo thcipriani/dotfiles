@@ -1,5 +1,11 @@
 [[!meta date="2009-07-01"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="July 1, 2009"]]
 
 > The opposite of youth is compromise – Girl

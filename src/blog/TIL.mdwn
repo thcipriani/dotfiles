@@ -6,7 +6,7 @@
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]]
 
 I realized that this page makes two parallel blogs which is unsustainable for the far-future. I'm mothballing this page, the correct page is now [[tags/TIL]].

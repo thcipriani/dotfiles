@@ -1,7 +1,7 @@
 [[!meta date="2016-08-20"]] [[!meta author="Tyler Cipriani"]] [[!meta
 license=""" [[Creative Commons Attribution-ShareAlike
 License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
-copyright=""" Copyright &copy; 2016 Tyler Cipriani """]]
+copyright=""" Copyright &copy; 2017 Tyler Cipriani """]]
 
 [[!meta title="Books Read (so far) in 2016"]]
 [[!tag books]]

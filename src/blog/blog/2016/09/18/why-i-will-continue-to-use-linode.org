@@ -1,6 +1,13 @@
 #+TITLE: Why I Will Continue to Use Linode
 #+AUTHOR: Tyler Cipriani
 #+DATE: 2016-09-18 17:58:05-07:00
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!meta title="Why I Will Continue to Use Linode"]]
 [[!meta date="2016-09-18 17:58:05-7:00"]]
 [[!meta html_extra_options="--toc"]]

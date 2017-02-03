@@ -1,7 +1,9 @@
 [[!meta date="2016-11-13"]]
 [[!meta author="Tyler Cipriani"]]
-[[!meta license="""Creative Commons Attribution-ShareAlike License"""]]
 [[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta title="Coreboot on the ThinkPad X220 with a Raspberry Pi"]]

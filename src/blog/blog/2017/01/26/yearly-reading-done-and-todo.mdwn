@@ -1,7 +1,10 @@
 [[!meta date="2017-01-26"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta copyright="""
-    Copyright &copy; 2017 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta title="Yearly Reading: Done and To Do"]]
 [[!toc ]]

@@ -1,5 +1,11 @@
 [[!meta date="2007-07-01"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="The Meraki Solar Powered WiFi Kit"]]
 
 <p>So, if you know me (which you don't; DON'T ACT LIKE YOU KNOW ME!) you know

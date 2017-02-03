@@ -1,8 +1,13 @@
-[[!meta date="2016-11-07"]] [[!meta author="Tyler Cipriani"]] [[!meta
-license=""" [[Creative Commons Attribution-ShareAlike
-License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
-copyright=""" Copyright &copy; 2016 Tyler Cipriani """]] [[!meta
-title="My Remote Desk"]] [[!toc ]]
+[[!meta date="2016-11-07"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta title="My Remote Desk"]]
+[[!toc ]]
 
 ## Remote Culture
 ### A rant

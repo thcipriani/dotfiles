@@ -1,7 +1,7 @@
 > **EDIT**: 2017-01-08
 > 
 > [Igor Rzegocki](https://www.rzegocki.pl/) has a project that uses the same
-> technique outline here to make some incredible ready-made [Street FIghter
+> technique outlined here to make some incredible ready-made [Street FIghter
 > MotDs](https://github.com/ajgon/street-fighter-motd) -- it is really cool,
 > and if you are interested in abusing ansi escape sequences to make MotDs you
 > should check it out :)
@@ -72,6 +72,6 @@ one that looks kinda cool) but there are exactly none-better articles on
 creating MOTDs that are so flossy![[!meta date="2014-05-22"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Create a Baller/Useful MOTD with ANSI Art"]]
 [[!tag computing shell ansi]]

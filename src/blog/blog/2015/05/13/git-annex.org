@@ -2,6 +2,13 @@
 #+TITLE: Git annex notes
 #+STARTUP: indent
 #+DATE: Wed May 13 15:29:34 2015 -0700
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!meta date="Wed May 13 15:29:34 2015 -0700"]]
 [[!tag computing git notes]]
 

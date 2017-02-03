@@ -1,5 +1,12 @@
 #+TITLE: GPG Security things
 #+DATE: Fri Sep  2 16:29:05 PDT 2016
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!tag computing crypto pgp notes]]
 [[!meta date="Fri Sep  2 16:29:05 PDT 2016"]]
 * Revocation Cert

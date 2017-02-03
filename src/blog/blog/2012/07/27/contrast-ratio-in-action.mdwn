@@ -94,6 +94,6 @@ Out of curiousity I decided to see what these recommendations would look like fo
 [[!meta date="2012-07-27"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Website Contrast Ratio in Practice"]]
 [[!tag design]]

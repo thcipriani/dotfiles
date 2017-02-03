@@ -4,7 +4,7 @@
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]]
 [[!meta title="Visualizing Git&#8217;s Merkle DAG with D3.js"]]
 [[!meta stylesheet=static/css/merkel-dag-d3 rel="stylesheet" title="merkle-dag-stylesheet"]]

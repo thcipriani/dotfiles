@@ -1,4 +1,11 @@
 [[!meta title="Asus debian jessie install"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta date="Mon Jun 8 10:48:42 2015 -0600"]]
 [[!tag computing debian notes]]
 

@@ -1,6 +1,13 @@
 #+TITLE: Bitlebee/IRC info
 #+STARTUP: indent
 #+DATE: Tue Apr 26 07:50:54 2016 -0700
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!tag irc computing bitlebee notes]]
 [[!meta date="Tue Apr 26 07:50:54 2016 -0700"]]
 

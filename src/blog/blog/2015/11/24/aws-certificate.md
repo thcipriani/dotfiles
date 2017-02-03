@@ -1,5 +1,12 @@
 [[!meta title="AWS Cloudfront SSL Cert"]]
 [[!meta date="Tue Nov 24 08:40:55 2015 -0700"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!tag computing crypto notes]]
 Setup an Comodo positive SSL cert on AWS Cloudfront
 

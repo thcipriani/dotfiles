@@ -1,5 +1,11 @@
 [[!meta date="2007-06-06"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Steampunk No.2 is Here (and it's still free)"]]
 
 <p>I'm not sure how many of my readers are aware of a little indie online 'zine

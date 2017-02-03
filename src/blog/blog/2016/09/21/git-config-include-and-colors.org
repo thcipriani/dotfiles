@@ -1,6 +1,13 @@
 #+TITLE: Git-Config Colors and Include
 #+AUTHOR: Tyler Cipriani
 #+DATE: 2016-09-21T17:56:33,574269585-07:00
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!meta title="Git-Config Include and Colors"]]
 [[!meta date="2016-09-21T17:56:33-07:00"]]
 [[!meta html_extra_options="--toc"]]

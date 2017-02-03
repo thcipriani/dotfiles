@@ -1,5 +1,11 @@
 [[!meta date="2009-06-22"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Why Is There So Much Unemployment in a Depression?"]]
 
 <h2><a href="/web/20090820011215/http://correspondents.theatlantic.com/richard_posner/2009/06/why_is_there_unemployment_in_a_depression.php"  target="_blank" >Why Is There So Much Unemployment in a Depression?</a></h2>

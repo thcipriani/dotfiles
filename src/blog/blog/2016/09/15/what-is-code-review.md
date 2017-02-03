@@ -1,6 +1,12 @@
 [[!meta title="What is Code Review?"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta date="2016-09-15T16:37:22-07:00"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
 [[!tag software rambling]]
 [[!toc ]]
 

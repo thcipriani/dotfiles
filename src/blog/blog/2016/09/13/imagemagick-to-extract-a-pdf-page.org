@@ -1,6 +1,13 @@
 #+TITLE: ImageMagick to Extract a PDF Page
 #+AUTHOR: Tyler Cipriani
 #+DATE: 2016-09-13T09:35:22,934576833-07:00
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!meta title="ImageMagick to Extract a PDF Page"]]
 [[!meta date="2016-09-13T09:35:22-07:00"]]
 [[!tag TIL]]

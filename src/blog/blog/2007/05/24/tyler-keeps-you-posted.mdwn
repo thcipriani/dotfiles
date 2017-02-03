@@ -1,5 +1,11 @@
 [[!meta date="2007-05-24"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Tyler Keeps You Posted"]]
 
 <p>I realize that this update is long overdue, in fact, that is the point of

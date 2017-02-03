@@ -1,5 +1,11 @@
 [[!meta date="2007-03-25"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Best Thing(s) of All Time Ever."]]
 
 <h2>3♠25♠2007</h2><br /><ul><li><a

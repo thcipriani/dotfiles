@@ -1,5 +1,11 @@
 [[!meta date="2007-05-25"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Free Online Linux Courses"]]
 
 I wouldn't have thought that I'd need a linux course what with my experience

@@ -1,4 +1,11 @@
 [[!meta title="The 14KB in the TCP Initial Window"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
 [[!meta date="2016-09-25T20:07:53-07:00"]]
 
 [[!tag tcp computing til]]
@@ -51,7 +58,7 @@ bytes used for the TCP header and the IP header, so my machine sent the
 MSS size of 1460 to the server in the `Options` section of the SYN TCP
 segment that it initially sent my webserver.
 
-![Client MSS](/static/images/2016/mss.png)
+![Client MSS](/static/images/2016/mss.png)\
 
 So the data portion of a TCP segment sent in this particular connection
 should never exceed 1460 bytes.
@@ -63,7 +70,7 @@ which I suppose became the limiting factor in how much data could be
 sent per segment (rather than the 1460 MSS sent by my client – the
 browser):
 
-![Server MSS](/static/images/2016/server-mss.png)
+![Server MSS](/static/images/2016/server-mss.png)\
 
 Each TCP segment had a header-size of 20 bytes, so that leaves 34
 unexplained bytes which (I guess) were part of the IP header.

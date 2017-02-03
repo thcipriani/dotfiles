@@ -90,6 +90,6 @@ called, <a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#oh
 [[!meta date="2012-12-18"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="My ZSH (and bash) prompt"]]
 [[!tag computing shell]]

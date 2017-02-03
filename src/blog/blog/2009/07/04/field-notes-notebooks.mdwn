@@ -1,5 +1,11 @@
 [[!meta date="2009-07-04"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 This has been another recent obsession of mine. These simple field notebooks are quite a step-up from a moleskine in design but a step down in price. Sweet.
 
 Also, be sure to check out the [Draplin Design company](http://draplin.com/) and [Coudal Partners](http://www.coudal.com/) (the duo responsible for these mean little notepads).

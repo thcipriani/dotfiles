@@ -2,6 +2,13 @@
 #+TITLE: Beaglebone Black Setup on Debian 8
 #+STARTUP: indent
 #+DATE: Fri Apr 1 14:01:25 2016 -0700
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!tag computing soc notes]]
 [[!meta date="Fri Apr 1 14:01:25 2016 -0700"]]
 

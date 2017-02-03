@@ -132,6 +132,6 @@ You can view my complete `tmux.conf` on [my github](https://github.com/thciprian
 [[!meta date="2013-09-12"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Knowledge Nuggets From My Tmux.conf"]]
 [[!tag computing shell tmux]]

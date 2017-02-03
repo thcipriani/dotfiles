@@ -1,5 +1,12 @@
 #+TITLE: GPG Things
 #+DATE: Wed Dec 2 16:27:40 2015 -0800
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!tag computing crypto pgp notes]]
 [[!meta date="Wed Dec 2 16:27:40 2015 -0800"]]
 * Get your fingerprint:

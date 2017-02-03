@@ -2,6 +2,13 @@
 #+TITLE: Cucumber tests getting started
 #+STARTUP: indent
 #+DATE: Wed May 27 08:09:45 2015 -0700
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!meta date="Wed May 27 08:09:45 2015 -0700"]]
 [[!tag computing ruby notes]]
 

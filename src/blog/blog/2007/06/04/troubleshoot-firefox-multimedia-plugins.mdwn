@@ -1,5 +1,11 @@
 [[!meta date="2007-06-04"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Troubleshoot Firefox Multimedia Plugins"]]
 
 <p> OK, we've all been there, lookin' up some video in Firefox and when we find

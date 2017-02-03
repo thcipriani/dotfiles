@@ -1,5 +1,12 @@
 #+TITLE: Ikiwiki things
 #+DATE: Wed May 25 08:22:03 2016 -0600
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta license="""
+Creative Commons Attribution-ShareAlike License
+"""]]
 [[!tag computing ikiwiki notes]]
 [[!meta date="Wed May 25 08:22:03 2016 -0600"]]
 * Install

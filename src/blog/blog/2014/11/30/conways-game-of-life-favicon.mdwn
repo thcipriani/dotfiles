@@ -116,6 +116,6 @@ on [my github](https://github.com/thcipriani/conways-favicon).
 [[!meta date="2014-11-30"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="Conway&#8217;s Favicon"]]
 [[!tag computing javascript]]

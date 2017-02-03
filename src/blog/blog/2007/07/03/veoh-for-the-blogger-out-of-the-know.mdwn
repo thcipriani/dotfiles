@@ -1,5 +1,11 @@
 [[!meta date="2007-07-03"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Veoh for the Blogger Out-of-the-Know"]]
 
 So, for an in-the-know, pop-culture savy, finger-on-the-pulse-of-the-zeitgeist,

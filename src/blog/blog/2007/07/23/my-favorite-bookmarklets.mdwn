@@ -1,5 +1,11 @@
 [[!meta date="2007-07-23"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="My Favorite Bookmarklets"]]
 Bookmarklets &#8212; I&#8217;ve heard the word. I never really cared about them; just one more thing online that I&#8217;m not interested in. This was my opinion before I actually knew what bookmarklets were. Now I know, bookmarklets are tiny bits of javascript that you bookmark to add functionality to your browser. It sounds pointless, but when you find some useful bookmarklets, you&#8217;ll see a point. Added bonus? Finally use your Firefox bookmark toolbar for good instead of evil. Before I get started on my list you might want to check out a useful <a href="http://weblog.infoworld.com/udell/gems/bookmarklet.html">screencast on using bookmarklets</a>.</p>
 <ul>

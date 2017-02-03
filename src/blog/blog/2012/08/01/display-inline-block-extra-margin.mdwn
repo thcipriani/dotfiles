@@ -48,6 +48,6 @@ Here&#8217;s an example of what the second solution would look like:
 [[!meta date="2012-08-01"]][[!meta author="Tyler Cipriani"]][[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]][[!meta copyright="""
-Copyright &copy; 2016 Tyler Cipriani
+Copyright &copy; 2017 Tyler Cipriani
 """]][[!meta title="CSS display inline-block Extra Margin/Space"]]
 [[!tag computing design]]

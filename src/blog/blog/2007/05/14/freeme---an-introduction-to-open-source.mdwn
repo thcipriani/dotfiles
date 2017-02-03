@@ -1,5 +1,11 @@
 [[!meta date="2007-05-14"]]
 [[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
 [[!meta title="Freeme - An Introduction to Open Source"]]
 
 [Freeme - Home of the free DVD on the web.](https://web.archive.org/web/20070630124144/http://questionsplease.org/freeme/) The DVD includes many different types of open source material. The DVD packs in a LOT including:
