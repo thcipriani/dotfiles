@@ -468,7 +468,7 @@ template {
 }
 
 body {
-    color: #333;
+    color: rgba(0, 0, 0, 0.8);
     background: #fefefe;
     font-family: sans-serif;
     font-style: normal;
@@ -613,23 +613,60 @@ code {
  * ==================================================== */
 img.img { margin: 0; }
 
-.epilogue {
-    margin: 4em 0 3em;
-}
-
 .logo,
 .logo:visited,
 .logo:hover,
 .logo:active,
 .logo:link {
-    display: block;
+    float: left;
+    padding: 0.5em 2em 0;
     background-image: none;
 }
 
-.logo .logo-img {
+.main-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.main-header-nav {
+    float: right;
+}
+
+.main-header-nav-list {
+    list-style-type: none;
+    list-style-image: none;
+    overflow: hidden;
+    margin: 0;
+}
+
+.main-header-nav-list-item {
+    float: left;
+}
+
+.main-header-nav-list-item a {
     display: block;
-    width: 76px;
-    margin: 0 auto 0.25em;
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 0.65em 2em;
+}
+
+.main-header-nav-list-item a:hover {
+    text-decoration: none;
+    background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
+    background-image: -webkit-linear-gradient(left, currentColor 0%, currentColor 100%);
+    background-image:      -o-linear-gradient(left, currentColor 0%, currentColor 100%);
+    background-image:      -o-linear-gradient(left, currentColor 0%, currentColor 100%);
+    background-image:         linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    -webkit-background-size: 100% 5px;
+            background-size: 100% 5px;
+
+
+}
+
+.logo .logo-img {
+    width: 45px;
+    margin: 0;
 }
 
 .sidebar {
@@ -652,21 +689,17 @@ img.img { margin: 0; }
 }
 
 .title {
-    font-family: "Linux Libertine", Georgia, Times, serif;
-    font-weight: 100;
     display: block;
     margin: 0 auto;
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 1em;
-    color: #b99a54;
     text-transform: capitalize;
-    border-bottom: 5px solid;
     padding: 0.25em 0;
 }
 
 #footer {
     border-top: 1px solid #aaa;
-    color: #888;
+    color: rgba(0, 0, 0, 0.7);
     font-size: small;
 }
 
@@ -674,6 +707,7 @@ img.img { margin: 0; }
 .license-icon:hover,
 .license-icon:active,
 .license-icon:visited {
+    float: right;
     background-image: none;
     display: block;
 }
@@ -839,7 +873,8 @@ a.feedbutton {
 }
 
 figure {
-    text-align: center;
+    width: 120%;
+    margin-left: -10%;
     font-size: small;
 }
 
@@ -977,7 +1012,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
 /*
  * As responsive as I get
  * ======================= */
-@media (max-width: 720px) {
+@media (max-width: 54em) {
+    figure {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
     .comment-avatar {
         width: 50px;
     }

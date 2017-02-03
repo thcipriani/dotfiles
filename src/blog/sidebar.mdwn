@@ -1,3 +1,3 @@
-## Recent [[Posts|posts]]
+## [[Recent Posts|posts]]
 
 [[!inline pages="page(./blog/*/*/*/*) and !*/Discussion" archive=yes limit=5 quick=yes trail=no]]

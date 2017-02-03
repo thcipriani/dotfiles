@@ -130,6 +130,22 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 </head>
 <body>
 
+<header class="main-header">
+    <a class="logo" href="/" title="Tyler Cipriani Home">
+        <img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="Tyler Cipriani Logo">
+    </a>
+    <nav class="main-header-nav">
+        <ul class="main-header-nav-list">
+            <li class="main-header-nav-list-item">
+                <a href="/about/" title="Tyler Cipriani About">About</a>
+            </li>
+            <li class="main-header-nav-list-item">
+                <a href="/posts/" title="Tyler Cipriani About">Posts</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
 <TMPL_IF HTML5><article class="page"><TMPL_ELSE><div class="page"></TMPL_IF>
 
 <TMPL_IF HTML5><section class="pageheader"><TMPL_ELSE><div class="pageheader"></TMPL_IF>
@@ -215,11 +231,14 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 </div>
 
 <TMPL_IF HTML5><footer<TMPL_ELSE><div</TMPL_IF> id="footer" class="pagefooter" role="contentinfo">
-
 <TMPL_VAR TRAILS>
 
 <TMPL_UNLESS DYNAMIC>
 <TMPL_IF HTML5><nav id="pageinfo"><TMPL_ELSE><div id="pageinfo"></TMPL_IF>
+
+<a class="license-icon" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="/static/images/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31">
+</a>
 
 
 <TMPL_IF TAGS>
@@ -301,16 +320,6 @@ Created <TMPL_VAR CTIME>
 </ul>
 <TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
 </TMPL_IF>
-<a class="license-icon" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img src="/static/images/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31">
-</a>
-<div class="epilogue">
-    <a class="logo" href="/" title="Tyler Cipriani Home">
-        <img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="Tyler Cipriani Logo">
-    </a>
-</div>
-
-
 <TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
 <TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
 </TMPL_UNLESS>
