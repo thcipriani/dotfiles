@@ -65,7 +65,7 @@ set smart_wrap
 set tilde
 unset markers
 set date_format="%y-%m-%d %T"
-set status_format = "-%r- %f%?t? Tagged:%t?%?p? Drafts:%p? -%>-"
+set status_format = "-%r- %f%?t? Tagged:%t?%?n? New:%n? -%>-"
 
 # sidebar (requires patched mutt-sidebar)
 set sidebar_visible = yes

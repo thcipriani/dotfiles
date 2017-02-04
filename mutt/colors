@@ -32,6 +32,19 @@ uncolor index "~N"
 uncolor index "~T"
   color index brightgreen default "~T"
 
+# Code review
+uncolor index "~s '^\\[Gerrit\\]'"
+  color index color136 default "~f 'gerrit@wikimedia.org'"
+
+uncolor index "~s '^\\[Differential\\]'"
+  color index color136 default "~s '^\\[Differential\\]'"
+
+# Tasks
+uncolor index "~s '^\\[Maniphest\\]'"
+  color index color129 default "~s '^\\[Maniphest\\]'"
+
+color body black green "(tyler|cipriani|thcipriani)"
+
 # deleted
 uncolor index "~D"
   color index brightred default "~D"

@@ -78,7 +78,7 @@ results:move_messages(account['ML/unicode'])
 
 -- Gerrit
 results = inbox:contain_from('gerrit@wikimedia.org')
-results:mark_flagged()
+-- results:mark_flagged()
 -- results:move_messages(account['CR'])
 
 -- Phabricator-mail-tags that contain differential
@@ -86,7 +86,7 @@ results:mark_flagged()
 -- results = inbox:contain_field('X-Phabricator-Mail-Tags', '<differential-review-request>')
 -- results = inbox:match_header('.*X-Phabricator-Mail-Tags: <differential-review-request>.*')
 results = inbox:contain_subject('[Differential]')
-results:mark_flagged()
+-- results:mark_flagged()
 -- results:move_messages(account['CR'])
 
 results = inbox:contain_from('jenkins-bot@wikimedia.org')
@@ -99,5 +99,5 @@ results = inbox:contain_subject('customchannels@ccubuntu')
 results:move_messages(account['auto'])
 
 results = inbox:contain_subject('[Maniphest]')
-results:mark_flagged()
+-- results:mark_flagged()
 -- results:move_messages(account['task'])
