@@ -114,11 +114,9 @@ set message_cachedir = "~/Mail/Cache"
 set mailcap_path = "~/.mutt/mailcap"
 bind attach <return> view-mailcap
 
-# Ctrl-n, Ctrl-p to select next, previous folder.
-# Ctrl-o to open selected folder.
-bind index,pager \Cp sidebar-prev
-bind index,pager \Cn sidebar-next
-bind index,pager \Co sidebar-open
+bind index,pager \CP sidebar-prev       # Ctrl-Shift-P - Previous Mailbox
+bind index,pager \CN sidebar-next       # Ctrl-Shift-N - Next Mailbox
+bind index,pager \CO sidebar-open       # Ctrl-Shift-O - Open Highlighted Mailbox
 
 # Fix backspce in urxvt
 bind index,pager  previous-line

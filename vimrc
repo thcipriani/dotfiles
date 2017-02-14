@@ -109,9 +109,10 @@ syntax sync minlines=256  " Makes big files slow
 set synmaxcol=2048        " Also long lines are slow
 set autoindent            " try your darndest to keep my indentation
 set smartindent           " Be smarter about indenting dummy
-set formatoptions=tcqr    " I like smart comments
+set formatoptions=cotqr  " I like smart comments
 
-set foldmethod=marker     " Fold on 3x{
+" set foldmethod=marker     " Fold on 3x{
+set foldmethod=indent
 set nofoldenable          " But turn it off initially
 " set shell=/bin/bash\ --login
 " set shell=bash            " Needed if using fishshell
@@ -261,6 +262,11 @@ autocmd Filetype php setlocal noexpandtab
 autocmd BufRead,BufNewFile *.pp set filetype=puppet
 autocmd BufRead,BufNewFile *.pp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab textwidth=80 smarttab
 " }}}
+
+augroup mail_filetype
+    autocmd!
+    autocmd VimEnter /tmp/mutt* set formatoptions=aw tw=72
+augroup END
 
 " Development Tools --------------------------------------------------- {{{
 " Tagbar (requires Exuberant ctags 5.5+)
