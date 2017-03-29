@@ -1,0 +1,22 @@
+[[!comment format=mdwn
+ username="glinnewe@c767d80f8cfcf64684e0b2072b1cb21945247013"
+ nickname="glinnewe"
+ avatar="https://seccdn.libravatar.org/avatar/d6a06ece025a793641b05c5f955ed1de"
+ subject="Using the code"
+ date="2017-03-29T14:44:06Z"
+ content="""
+Hi,
+
+Thanks for the great write up!  
+
+Could you please go until a bit more detail regarding how we would apply the code?  
+
+For example,
+I'd like to do a check to see if the scrollbar exists and is pushing the content over and, if so, then add a class to the body. How would this be done?
+
+I basically want to be able to do the following:
+
+if ( hasScrollBar ) {
+    $('body').addClass('window_has_scrollbar');
+}
+"""]]
