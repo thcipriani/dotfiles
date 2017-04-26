@@ -15,7 +15,7 @@ Xft.rgba: rgb
 OK
 
 xrdb "$TMP_XRESOURCES"
-/usr/bin/darktable "$@"
+/usr/bin/darktable "$@" &
 
 XRDB_OPTIONS=''
 [ -r "$HOME/.hacksrc" ] && . "$HOME/.hacksrc"

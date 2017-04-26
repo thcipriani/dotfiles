@@ -117,10 +117,6 @@ _log_start() {
   [[ -n "$hist" ]] && {
     # https://www.debian-administration.org/article/543/Bash_eternal_history
     echo "$$ $PWD $USER $hist $BASH_COMMAND" >> "$HOME/.muh_history"
-
-    if command -v commandlog &> /dev/null; then
-        commandlog add "$hist" "dummy" "$BASH_COMMAND"
-    fi
   }
 
   _start_time=$(date +%s)

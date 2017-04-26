@@ -48,7 +48,6 @@ Plugin 'tpope/vim-rsi'
 Plugin 'dag/vim-fish'
 Plugin 'rodjek/vim-puppet'
 Plugin 'ClockworkNet/vim-vcl'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
 
 
@@ -440,7 +439,16 @@ endfunction
 
 command! -nargs=1 BangOpen :call BangOpen(<f-args>)
 " }}}
-"
+
+function! SetSpaces(arg)
+    echo "settings spaces to: " . a:arg
+    execute 'set tabstop=' . a:arg
+    execute 'set shiftwidth=' . a:arg
+    execute 'set softtabstop=' . a:arg
+endfunction
+
+command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
+
 set timeout
 set timeoutlen=2500
 set ttimeoutlen=10

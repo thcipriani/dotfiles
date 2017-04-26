@@ -2,10 +2,69 @@ _haz() {
   command -v "$1" > /dev/null 2>&1
 }
 
+human() {
+    local number=${1:-0}
+    local decimal
+    local sizeIdx=0
+    local size=(Bytes {K,M,G,T,E,P,Y,Z}B)
+
+    while ((number > 1000)); do
+        decimal="$(printf ".%02d" $((number % 1000 * 100 / 1000)))"
+        number=$((number / 1000))
+        (( sizeIdx++ ))
+    done
+
+    printf "$number$decimal ${size[$sizeIdx]}\n"
+}
+
+
 spell() {
-    printf "%s\n" "$@" \
-    | aspell -a \
-    | awk -F':' '/^&/ {gsub("^ ", "", $2); print $2}'
+    local candidates oldifs word array_pos
+    oldifs="$IFS"
+    IFS=':'
+
+    # Parse the apsell format and return a list of ":" separated words
+    read -a candidates <<< "$(printf "%s\n" "$1" \
+        | aspell -a \
+        | awk -F':' '/^&/ {
+            split($2, a, ",")
+            result=""
+            for (x in a) {
+                gsub(/^[ \t]/, "", a[x])
+                result = a[x] ":" result
+            }
+            gsub(/:$/, "", result)
+            print result
+        }')"
+
+    # Reverse number and print the parsed bash array because the list comes
+    # out of gawk backwards
+    for item in "${candidates[@]}"; do
+        printf '%s\n' "$item"
+    done \
+        | tac \
+        | nl \
+        | less -FirSX
+
+    printf "[ $(tput setaf 2)?$(tput sgr0) ]\t%s" \
+        'Enter the choice (empty to cancel, 0 for input): '
+    read index
+
+    [[ -z "$index" ]] && return
+    [[  "$index" == 0 ]] && word="$1"
+
+    [[ -z "$word" ]] && {
+        array_pos=$(( ${#candidates[@]} - index ))
+        word="${candidates[$array_pos]}"
+    }
+
+    [[ -n "$word" ]] && {
+        printf "$word" | xsel -p
+        printf "Copied '%s' to clipboard!\n" "$word"
+    } || printf "[ $(tput setaf 1):($(tput sgr0) ] %s\n" 'No match found'
+
+
+    IFS="$oldifs"
 }
 
 # Copy w/ progress
@@ -214,15 +273,15 @@ if _haz complete; then
 
 fi
 
-note () {
-  if (( $# == 0 )); then
-    local fn="${_N_PATH:=$HOME/.notes}"
-  else
-    local fn="${_N_PATH:=$HOME/.notes}/${@}.note"
-  fi
-
-  mkdir -p "${_N_PATH:=$HOME/.notes}"; vim --cmd "autocmd VimLeave *.note :! bash -ci \"gist %\" &> /dev/null" -- "$fn";
-}
+# note () {
+#   if (( $# == 0 )); then
+#     local fn="${_N_PATH:=$HOME/.notes}"
+#   else
+#     local fn="${_N_PATH:=$HOME/.notes}/${@}.note"
+#   fi
+# 
+#   mkdir -p "${_N_PATH:=$HOME/.notes}"; vim --cmd "autocmd VimLeave *.note :! bash -ci \"gist %\" &> /dev/null" -- "$fn";
+# }
 
 gist () {
   if [[ "$1" == *.note ]]; then

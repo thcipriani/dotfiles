@@ -19,6 +19,7 @@ mailboxes \
   "+ML.debian-security" \
   "+ML.debian-user" \
   "+ML.debian-devel" \
+  "+ML.debian-bugs" \
   "+ML.coreboot" \
   "+ML.unicode" \
   "+CI" \
@@ -105,6 +106,7 @@ my_hdr X-PGP-Key: https://tylercipriani.com/018FAC02.asc
 
 # color
 source "$HOME/.mutt/colors"
+source "$HOME/.mutt/subscribe"
 
 # caching for faster search
 set header_cache     = "~/Mail/Cache"

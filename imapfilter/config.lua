@@ -42,6 +42,7 @@ mailbox_maybe(account, 'ML/ops')
 mailbox_maybe(account, 'ML/debian-user')
 mailbox_maybe(account, 'ML/debian-devel')
 mailbox_maybe(account, 'ML/debian-security')
+mailbox_maybe(account, 'ML/debian-bugs')
 mailbox_maybe(account, 'ML/coreboot')
 mailbox_maybe(account, 'ML/unicode')
 mailbox_maybe(account, 'CR')
@@ -63,6 +64,9 @@ results:move_messages(account['ML/mediawiki-l'])
 
 results = inbox:contain_to('debian-user@lists.debian.org')
 results:move_messages(account['ML/debian-user'])
+
+results = inbox:contain_to('*@bugs.debian.org')
+results:move_messages(account['ML/debian-bugs'])
 
 results = inbox:contain_to('debian-devel@lists.debian.org')
 results:move_messages(account['ML/debian-devel'])
