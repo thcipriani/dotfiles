@@ -21,7 +21,7 @@ if (( $# == 0 )); then
   while ((1)); do
     _prog=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
     _wintitle=$(xwininfo -root -children | grep $(printf '%x' $(xdotool getwindowfocus)) | grep -oEi '"[^"]+"' | head -1 | tr -d '"')
-    _weather=$(weathermajig boulder --short)
+    _weather=$(weathermajig boulder)
     _date=$(date +'%Y-%m-%d %H:%M:%S')
     # date/time | weather | program | window title
     echo "$_date | $_weather | $_prog | $_wintitle" >> "$logfile"

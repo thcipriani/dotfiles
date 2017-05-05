@@ -19,6 +19,15 @@
 
 # To export: http://orgmode.org/manual/HTML-export.html (C-c C-e h h)
 
+* Reading is forgetting
+
+#+BEGIN_QUOTE
+Knowledge, wisdom even, lies in depth, not extension.
+
+- Tim Parks
+  [[http://www.nybooks.com/daily/2015/06/26/reading-is-forgetting][Reading Is Forgetting]]
+#+END_QUOTE
+
 * Bitwise Gotcha
 
 I've been working on porting some bitwise logic from Java to Python
