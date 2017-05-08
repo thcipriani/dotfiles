@@ -1,0 +1,78 @@
+[[!meta date="2017-05-08"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+    Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="What I Told the FCC"]]
+[[!toc ]]
+[[!tag computing]]
+
+I think that new FCC proposal for "[Restoring Internet
+Freedom](https://www.fcc.gov/ecfs/search/proceedings?q=name:17-108)" would
+completely destroy the internet. Should this proposal go any further, the
+internet will no longer be recognizable within a very short amount of time. I'm
+worried that I will no longer have a place on the internet because my internet
+activity and work isn't designed to invade people's homes and privacy to sell
+them things they don't need. Non-profits on the internet are dead.
+
+This proposal is entirely rent-seeking by big ISPs. ISPs will make more
+money without providing any additional service for users, and the FCC would be
+enabling it all.
+
+> <h2 style="color: red">Big Disclaimer</h2>
+>
+> This is a post where I feel it is important to make absolutely clear that my
+> views are my own and do not represent the views of my employer(s past or
+> present)
+
+My comments to the FCC
+---
+
+The FCC has opened their proposal to [public
+comment](https://www.fcc.gov/ecfs/search/proceedings?q=name:17-108) and I
+encourage you to do so.
+
+Here's what I wrote:
+
+> I am a Colorado resident and I've worked as an internet engineer for my
+> entire professional career (small disclaimer that my views my own and do
+> not represent those of my employer), and I'm worried that new FCC rules may
+> allow large ISPs to destroy the internet.
+>
+> The current state of the internet is possible because ISPs aren't selling
+> tiers of websites to their users. If we create internet fast-lanes, then we
+> create a tiered internet. This is currently the way cable channels already
+> work: if you just want CNN and ESPN you can pay one amount, but if you want
+> HBO you pay a little more. The problem is that the internet is constantly in
+> flux, there are constantly new websites being built. This is a major driver
+> of economic growth and is good for everyone who uses the internet.
+>
+> If you start offering internet fast-lanes, internet tiers become possible: if
+> you just want Facebook and Google then you pay one amount, but if you want
+> Wikipedia you pay a little more. Ipso facto, Wikipedia is unavailable to a
+> portion of the internet population.
+>
+> There may be those who make the argument that this is how the free market
+> works: if Wikipedia were good, people would be willing to pay more for it;
+> however, this artificial choice between Google and Wikipedia is only made
+> possible by a perversion of the design of the internet. Bits of information
+> are bits of information, an ISP is arguing that you should pay more while it
+> offers the same service. ISPs want customers to pay more for them to move 100
+> bytes from the backbone to your house if that 100 bytes was put on the
+> internet backbone by Netflix. Moving 100 bytes from the backbone to someone's
+> house, the so-called "last mile" is no additional work for an ISP so why
+> should Netflix have to pay more? Because it's popular?
+>
+> Meanwhile, large ISPs that move bits from the internet backbone over the
+> "last mile" do not compete with one another by means of designed but unspoken
+> collusion. The suggestion that an internet user should have to choose between
+> Google and my blog is being made by companies that make all of their money by
+> rent-seeking and now demand more money for less service. Consumers are not
+> being protected, only ISP shareholders are.
+>
+> This proposal has the net-effect of censoring the internet so that only
+> websites that have enough money to pay protection fees to ISPs will be
+> available to people. This proposal is censorship that stifles freedom and
+> innovation and will destroy the internet.
+
+/me drops mic.
