@@ -35,7 +35,7 @@ encourage you to do so.
 Here's what I wrote:
 
 > I am a Colorado resident and I've worked as an internet engineer for my
-> entire professional career (small disclaimer that my views my own and do
+> entire professional career (small disclaimer that my views are my own and do
 > not represent those of my employer), and I'm worried that new FCC rules may
 > allow large ISPs to destroy the internet.
 >
@@ -56,12 +56,12 @@ Here's what I wrote:
 > works: if Wikipedia were good, people would be willing to pay more for it;
 > however, this artificial choice between Google and Wikipedia is only made
 > possible by a perversion of the design of the internet. Bits of information
-> are bits of information, an ISP is arguing that you should pay more while it
-> offers the same service. ISPs want customers to pay more for them to move 100
-> bytes from the backbone to your house if that 100 bytes was put on the
-> internet backbone by Netflix. Moving 100 bytes from the backbone to someone's
-> house, the so-called "last mile" is no additional work for an ISP so why
-> should Netflix have to pay more? Because it's popular?
+> are bits of information, an ISP is arguing that websites should pay more
+> while it offers the same service. ISPs want Netflix to pay more than Google
+> for them to move 100 bytes from the internet backbone to your houuse. Moving
+> 100 bytes from the backbone to someone's house, the so-called "last mile", is
+> same amount of work whether those bytes are from Google or Netflix so why
+> should Netflix have to pay more?
 >
 > Meanwhile, large ISPs that move bits from the internet backbone over the
 > "last mile" do not compete with one another by means of designed but unspoken
