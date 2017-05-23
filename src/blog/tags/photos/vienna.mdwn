@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/vienna"]]
+
+[[!inline pages="tagged(photos/vienna)" actions="no" archive="yes"
+feedshow=10]]
