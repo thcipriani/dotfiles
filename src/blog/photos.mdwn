@@ -1,0 +1,4 @@
+[[!meta redir="tags/photos"]]
+I take a lot of photos. I have no idea how or where to host them.
+
+[[!inline pages="page(./photos/*) and !*/Discussion" archive=yes quick=yes trail=no]]

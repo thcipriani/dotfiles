@@ -1,4 +1,0 @@
-[[!meta title="pages tagged photo"]]
-
-[[!inline pages="tagged(photo)" actions="no" archive="yes"
-feedshow=10]]

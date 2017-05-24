@@ -1,0 +1,36 @@
+[[!meta date="2017-05-14 06:32:21"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Neue Burg, Hofberg Palace, Vienna Austria"]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+photos/vienna
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/bb/9004203c71a97747cc57ddd2912a0f/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/bb/9004203c71a97747cc57ddd2912a0f/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/bb/9004203c71a97747cc57ddd2912a0f/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/bb/9004203c71a97747cc57ddd2912a0f/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/bb/9004203c71a97747cc57ddd2912a0f/original.tif)](https://photos.tylercipriani.com/thumbs/bb/9004203c71a97747cc57ddd2912a0f/large.jpg)
+
+Back side of Neue Burg, part of the Hofberg Palace complex in Vienna
+
+EXIF |
+--- | ---
+ExposureTime | 1/80
+FNumber | 8.0
+Description | Back side of Neue Burg, part of the Hofberg Palace complex in Vienna
+Title | Neue Burg, Hofberg Palace, Vienna Austria
+FocalLength | 14.0 mm
+CreateDate | 2017-05-14 06:32:21
+GPSLongitude | 16.365428
+Lens | 14mm f/2.8-1.4
+ISO | 125
+GPSLatitude | 48.205018
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=48.205018&mlon=16.365428&zoom=19&layers=M)

@@ -1,4 +1,5 @@
-[[!meta title="pages tagged photos/vienna"]]
+[[!meta title="Photos of Vienna"]]
 
-[[!inline pages="tagged(photos/vienna)" actions="no" archive="yes"
-feedshow=10]]
+The [2017 Wikimedia Hackathon](https://www.mediawiki.org/wiki/Wikimedia_Hackathon_2017) was held in Vienna, Austria. I went. Here are some pictures I took.
+
+[[!inline pages="tagged(photos/vienna)" actions="no" archive="no" trail=yes limit=0]]

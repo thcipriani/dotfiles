@@ -1,0 +1,4 @@
+[[!meta title="Photos"]]
+I take a lot of photos. I have no idea how or where to host them. Here're some recent'ns.
+
+[[!inline pages="tagged(photos)" actions="no" archive="no" trail=yes limit=20]]

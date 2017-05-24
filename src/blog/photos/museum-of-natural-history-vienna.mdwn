@@ -1,0 +1,36 @@
+[[!meta date="2017-05-17 20:46:33"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Museum of Natural History, Vienna"]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+photos/vienna
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/78/43f0a949a19ef6c654e516898e93b9/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/78/43f0a949a19ef6c654e516898e93b9/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/78/43f0a949a19ef6c654e516898e93b9/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/78/43f0a949a19ef6c654e516898e93b9/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/78/43f0a949a19ef6c654e516898e93b9/original.tif)](https://photos.tylercipriani.com/thumbs/78/43f0a949a19ef6c654e516898e93b9/large.jpg)
+
+Natural History Museum, built 1881 in Maria-Theresien-Platz, Vienna, Austria
+
+EXIF |
+--- | ---
+ExposureTime | 4
+FNumber | 8.0
+Description | Natural History Museum, built 1881 in Maria-Theresien-Platz, Vienna, Austria
+Title | Museum of Natural History, Vienna
+FocalLength | 14.0 mm
+CreateDate | 2017-05-17 20:46:33
+GPSLongitude | 16.361255
+Lens | 14mm f/2.8-1.4
+ISO | 100
+GPSLatitude | 48.204944
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=48.204944&mlon=16.361255&zoom=19&layers=M)

@@ -1,0 +1,36 @@
+[[!meta date="2017-05-14 06:15:07"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Josef Haydn with the Church of Mariahilf"]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+photos/vienna
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/c7/0d0949fc75369e3c381b1878ed05c7/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/c7/0d0949fc75369e3c381b1878ed05c7/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/c7/0d0949fc75369e3c381b1878ed05c7/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/c7/0d0949fc75369e3c381b1878ed05c7/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/c7/0d0949fc75369e3c381b1878ed05c7/original.tif)](https://photos.tylercipriani.com/thumbs/c7/0d0949fc75369e3c381b1878ed05c7/large.jpg)
+
+Statue of Josef Haydn on Mariahilfer Str. Vienna, Austira
+
+EXIF |
+--- | ---
+ExposureTime | 1/320
+FNumber | 8.0
+Description | Statue of Josef Haydn on Mariahilfer Str. Vienna, Austira
+Title | Josef Haydn with the Church of Mariahilf
+FocalLength | 14.0 mm
+CreateDate | 2017-05-14 06:15:07
+GPSLongitude | 16.353131
+Lens | 14mm f/2.8-1.4
+ISO | 125
+GPSLatitude | 48.199364
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=48.199364&mlon=16.353131&zoom=19&layers=M)

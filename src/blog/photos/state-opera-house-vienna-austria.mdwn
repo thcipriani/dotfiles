@@ -1,0 +1,36 @@
+[[!meta date="2017-05-18 13:18:10"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="State Opera House Vienna, Austria"]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+photos/vienna
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/9b/7f465c19afa42233a72aa93d99208d/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/9b/7f465c19afa42233a72aa93d99208d/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/9b/7f465c19afa42233a72aa93d99208d/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/9b/7f465c19afa42233a72aa93d99208d/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/9b/7f465c19afa42233a72aa93d99208d/original.tif)](https://photos.tylercipriani.com/thumbs/9b/7f465c19afa42233a72aa93d99208d/large.jpg)
+
+Night time view of the state opera house in Vienna, Austria. This view was the cause of the loss of the lens that took this image :((
+
+EXIF |
+--- | ---
+ExposureTime | 3
+FNumber | 8.0
+Description | Night time view of the state opera house in Vienna, Austria. This view was the cause of the loss of the lens that took this image :((
+Title | State Opera House Vienna, Austria
+FocalLength | 14.0 mm
+CreateDate | 2017-05-18 13:18:10
+GPSLongitude | 16.368597
+Lens | 14mm f/2.8-1.4
+ISO | 100
+GPSLatitude | 48.204131
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=48.204131&mlon=16.368597&zoom=19&layers=M)

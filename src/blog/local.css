@@ -608,6 +608,28 @@ code {
     margin: -1px 0;
 }
 
+table {
+    border-collapse: collapse;
+    border: 1px solid #c6cbd1;
+}
+
+
+table tr {
+    border-top: 1px solid #c6cbd1;
+}
+
+table .odd { background: #f6f8fa; }
+
+table .header { border-top: none; }
+
+table tr td,
+table tr th {
+    padding: 0.5em 1em;
+    border: 1px solid #dfe2e5;
+}
+
+table .header { display: table-row; }
+
 /*
  * Fiddly stuff
  * ==================================================== */
@@ -877,6 +899,11 @@ figure {
     width: 120%;
     margin-left: -10%;
     font-size: small;
+}
+
+.inlinecontent figure {
+    width: 100%;
+    margin-left: 0;
 }
 
 .page {

@@ -1,0 +1,36 @@
+[[!meta date="2017-05-17 20:43:04"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Monument for empress Maria Theresien"]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+photos/vienna
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/ef/5edebba85f3dc5bbc31b375484f8bc/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/ef/5edebba85f3dc5bbc31b375484f8bc/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/ef/5edebba85f3dc5bbc31b375484f8bc/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/ef/5edebba85f3dc5bbc31b375484f8bc/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/ef/5edebba85f3dc5bbc31b375484f8bc/original.tif)](https://photos.tylercipriani.com/thumbs/ef/5edebba85f3dc5bbc31b375484f8bc/large.jpg)
+
+Monument for empress Maria Theresien in Maria-Theresien-Platz Vienna, Austria
+
+EXIF |
+--- | ---
+ExposureTime | 4
+FNumber | 8.0
+Description | Monument for empress Maria Theresien in Maria-Theresien-Platz Vienna, Austria
+Title | Monument for empress Maria Theresien
+FocalLength | 14.0 mm
+CreateDate | 2017-05-17 20:43:04
+GPSLongitude | 16.361255
+Lens | 14mm f/2.8-1.4
+ISO | 100
+GPSLatitude | 48.204944
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=48.204944&mlon=16.361255&zoom=19&layers=M)

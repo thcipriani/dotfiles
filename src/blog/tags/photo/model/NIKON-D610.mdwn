@@ -1,4 +1,0 @@
-[[!meta title="pages tagged photo/model/NIKON-D610"]]
-
-[[!inline pages="tagged(photo/model/NIKON-D610)" actions="no" archive="yes"
-feedshow=10]]
