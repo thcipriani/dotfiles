@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 4.4.0-Exiv2">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+    xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:darktable="http://darktable.sf.net/"
+   xmpMM:DerivedFrom="2017-05-18_vienna-iii_00007.nef"
+   xmp:Rating="1"
+   darktable:xmp_version="2"
+   darktable:raw_params="0"
+   darktable:auto_presets_applied="1"
+   darktable:history_end="2">
+   <dc:creator>
+    <rdf:Seq>
+     <rdf:li>Tyler Cipriani</rdf:li>
+    </rdf:Seq>
+   </dc:creator>
+   <dc:rights>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">Copyright 2017 Tyler Cipriani CC-BY-SA</rdf:li>
+    </rdf:Alt>
+   </dc:rights>
+   <darktable:mask_id>
+    <rdf:Seq/>
+   </darktable:mask_id>
+   <darktable:mask_type>
+    <rdf:Seq/>
+   </darktable:mask_type>
+   <darktable:mask_name>
+    <rdf:Seq/>
+   </darktable:mask_name>
+   <darktable:mask_version>
+    <rdf:Seq/>
+   </darktable:mask_version>
+   <darktable:mask>
+    <rdf:Seq/>
+   </darktable:mask>
+   <darktable:mask_nb>
+    <rdf:Seq/>
+   </darktable:mask_nb>
+   <darktable:mask_src>
+    <rdf:Seq/>
+   </darktable:mask_src>
+   <darktable:history>
+    <rdf:Seq>
+     <rdf:li
+      darktable:operation="cacorrect"
+      darktable:enabled="1"
+      darktable:modversion="1"
+      darktable:params="32000000"
+      darktable:multi_name=""
+      darktable:multi_priority="0"
+      darktable:blendop_version="7"
+      darktable:blendop_params="gz12eJxjYGBgkGAAgRNODESDBnsIHll8ANNSGQM="/>
+     <rdf:li
+      darktable:operation="lens"
+      darktable:enabled="1"
+      darktable:modversion="5"
+      darktable:params="gz04eJyzZoCASY4N9gwMIJzgCOQ69jImOTICGX6Z2fl5Ci5mhgYMAwKCE3MrE/PSFQxNcnMV0vSN9CwUHF0VXF0UHIMVPN0UQn2d6eEKWNgwMAAABHUSTA=="
+      darktable:multi_name=""
+      darktable:multi_priority="0"
+      darktable:blendop_version="7"
+      darktable:blendop_params="gz12eJxjYGBgkGAAgRNODESDBnsIHll8ANNSGQM="/>
+    </rdf:Seq>
+   </darktable:history>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>
