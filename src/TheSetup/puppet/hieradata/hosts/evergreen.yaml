@@ -1,0 +1,26 @@
+---
+user::user: 'thcipriani'
+user::group: 'thcipriani'
+dotfiles::homedir: "/home/thcipriani"
+dotfiles::owner: "thcipriani"
+dotfiles::group: "thcipriani"
+
+mail::user: 'thcipriani'
+mail::group: 'thcipriani'
+mail::homedir: "/home/thcipriani"
+
+classes:
+    - salt
+    - mail
+    - user
+    - base
+    - vim
+    - dotfiles
+    - google::talk
+    - google::chrome
+    - volnoti
+    - vagrant
+    - docker::jessie
+    - python
+    - nodejs
+    - ansible

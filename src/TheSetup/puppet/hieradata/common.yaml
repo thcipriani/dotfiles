@@ -1,0 +1,16 @@
+---
+vagrant::ubuntu::version: 1.7.2
+git::package: 'git'
+
+user::pass: '$6$m0)mE7$mgCFvV6n6j/zMs4ctIeqtZl3DzLhyLymOVZ7oC6aBFwmvwC4KvcLXCWZKZzrXuTx4u9ofcV8C/CjPnbyKDvuO.'
+user::user: 'tyler'
+user::group: 'tyler'
+user::sudo: true
+user::sshkey: 'AAAAB3NzaC1yc2EAAAADAQABAAACAQC7RiliDKbL3aLE5F8GPf6d66c43QZGcwsX8sktKfgTW3T5nSYPO6WDoS6eWWMANta/2uzB5DKp+NhWb4MFubRqYLkVKarZTOPM4l4Iss4kk/xfagJ6BeE1MJWGsMzSI43LR5yokF8+nFpOMr4pVzMtkuXXt0IK4alImULBiKJYXe+PRuL1ne7hScUyzU1r3eIFQrqt5duUExUOvRw3tme/aR4LzMTamLzqomKMlXvJ9u4Ccqz1bJEhguk43HIv4M+t2ACJ7zFwGRDvLOlt//h+zlO2iKnU0gb1tAupoll4Qlvx4NdXTf+NRkuDuwqBS8x25QwNz4O6bER7D198o6V5uhCybDgkzS3XFONYtpVwrCNqAF0tBQjjz4j2NZ3iIj/9lTVI6bYNFTxYjDO2eCIjAQC7e4lKechfUEsmNv1y9ST8rpkZqwlt6WEMhaY1u0e7Hl2jtxxw9jOwuIFT4bP+g10fdEOaL/NmduRdPymj7ntHKwH5KmSnKtXJA1KGVz/gmd/3DDLecbeaBsqUiiJXk+Wj/aSJLZ4DbYjJXFRkncj6yzMSK8bzdxbi3q1zVU4GI2/mLiI/ox+zR5qluu6ASgFVKpdof26UEGnXKL8dEqI9Rdw12x86w9CZzHxZSBXA5qH6gAWc9wXV6HMQNAjPCUqbWZIxQ8EipeEFGkP8Kw=='
+
+dotfiles::dotfile_repo: "https://github.com/thcipriani/dotfiles.git"
+dotfiles::emacs_repo: "https://github.com/thcipriani/emacsd.git"
+dotfiles::homedir: "/home/tyler"
+dotfiles::owner: "tyler"
+dotfiles::group: "tyler"
+salt::master: "ryu.local"

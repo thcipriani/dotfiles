@@ -1,0 +1,12 @@
+---
+classes:
+  - '::salt'
+  - '::user'
+  - '::base'
+  - '::vim'
+  - '::dotfiles'
+  - '::vagrant'
+  - '::xsession'
+  - '::phpsh'
+  - '::jjb'
+  - '::openstack'

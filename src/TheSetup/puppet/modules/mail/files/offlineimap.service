@@ -1,0 +1,12 @@
+# Run offlineIMAP
+#
+# Managed by puppet
+# ripped off from http://babushk.in/posts/offlineimap-systemd.html
+
+[Unit]
+Description = Grab mail from gmail
+After = network.target
+
+[Service]
+Type = oneshot
+ExecStart = /usr/bin/offlineimap -u quiet -o

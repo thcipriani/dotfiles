@@ -1,0 +1,13 @@
+sh ./configure --with-features=huge \
+      --enable-rubyinterp \
+      --enable-largefile \
+      --disable-netbeans \
+      --enable-pythoninterp \
+      --with-python-config-dir=/usr/lib/python2.7/config \
+      --enable-perlinterp \
+      --enable-luainterp \
+      --with-luajit \
+      --enable-gui=auto \
+      --enable-fail-if-missing \
+      --with-lua-prefix=/usr/include/lua5.1 \
+      --enable-cscope && make && make install
