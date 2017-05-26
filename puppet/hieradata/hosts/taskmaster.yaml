@@ -1,0 +1,15 @@
+---
+classes:
+    - salt
+    - user
+    - base
+    - vim
+    - dotfiles
+    - google::talk
+    - google::chrome
+    - volnoti
+    - vagrant
+    - docker::jessie
+    - python
+    - nodejs
+    - ansible
