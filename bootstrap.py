@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
+import argparse
 import os
 import subprocess
-import sys
 
 DRY_RUN = False
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -76,7 +76,7 @@ def hardlink_plans():
     .plan and .project. Link 'em.
     """
     for hard in HARDS:
-        cmd = ['ln']
+        cmd = ['ln', '-f']
         cmd.append(os.path.join(BASE_PATH, hard))
         cmd.append(os.path.join(HOME, '.%s' % hard))
         doit(cmd)
@@ -110,10 +110,25 @@ def vimshit():
     doit(cmd)
 
 
-def main():
+def parse_args():
+    """
+    I thought I could get away without it, but I can't
+    """
     global DRY_RUN
-    if sys.argv[1] == '--test':
+    ap = argparse.ArgumentParser('Setup muh dotfiles')
+    ap.add_argument(
+        '-t',
+        '--test',
+        action='store_true',
+        help='Dry run')
+    args = ap.parse_args()
+
+    if args.test:
         DRY_RUN = True
+
+
+def main():
+    parse_args()
     link_dotfiles()
     link_nondotfiles()
     hardlink_plans()
