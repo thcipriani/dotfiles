@@ -1,6 +1,0 @@
-[submodule "bootstrap"]
-	path = bootstrap
-	url = https://github.com/hashicorp/puppet-bootstrap.git
-[submodule "puppet/modules/stdlib"]
-	path = puppet/modules/stdlib
-	url = https://github.com/puppetlabs/puppetlabs-stdlib.git

@@ -1,3 +1,9 @@
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
+[submodule "bootstrap"]
+	path = src/TheSetup/bootstrap
+	url = https://github.com/hashicorp/puppet-bootstrap.git
+[submodule "puppet/modules/stdlib"]
+	path = src/TheSetup/puppet/modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
