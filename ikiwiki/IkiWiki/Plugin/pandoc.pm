@@ -432,12 +432,15 @@ sub htmlize ($@) {
     waitpid $to_json_pid, 0;
 
     # Parse the title block out of the JSON and set the meta values
-    my @json_content = @{decode_json($json_content)};
-    my $meta = {};
-    if (ref $json_content[0] eq 'HASH') {
-        $meta = $json_content[0]->{'unMeta'};
+    my $meta = undef;
+    my $decoded_json = decode_json($json_content);
+    # The representation of the meta block changed in pandoc version 1.18
+    if (ref $decoded_json eq 'HASH' && $decoded_json->{'meta'}) {
+        $meta = $decoded_json->{'meta'} || {}; # post-1.18 version
+    } elsif (ref $decoded_json eq 'ARRAY') {
+        $meta = $decoded_json->[0]->{'unMeta'} || {}; # pre-1.18 version
     }
-    else {
+    unless ($meta) {
         warn "WARNING: Unexpected format for meta block. Incompatible version of Pandoc?\n";
     }
 

@@ -1,0 +1,33 @@
+[[!meta date="2017-02-24 07:39:46"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Good Morning Flatirons"]]
+[[!tag
+photos
+photos/24-70mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/d8/7627dbd0c7e95a0d5a09cf1fa4b9fc/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/d8/7627dbd0c7e95a0d5a09cf1fa4b9fc/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/d8/7627dbd0c7e95a0d5a09cf1fa4b9fc/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/d8/7627dbd0c7e95a0d5a09cf1fa4b9fc/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/d8/7627dbd0c7e95a0d5a09cf1fa4b9fc/original.jpg)](https://photos.tylercipriani.com/thumbs/d8/7627dbd0c7e95a0d5a09cf1fa4b9fc/large.jpg)
+
+Woke up at 5am to get out to Chautauqua before the sunrise. The light was awesome for all of 5 minutes.
+
+EXIF |
+--- | ---
+ExposureTime | 1/4
+FNumber | 11.0
+Description | Woke up at 5am to get out to Chautauqua before the sunrise. The light was awesome for all of 5 minutes.
+Title | Good Morning Flatirons
+FocalLength | 70.0 mm
+CreateDate | 2017-02-24 07:39:46
+Lens | 24-70mm f/2.8
+ISO | 79
+Model | NIKON D610
+Make | NIKON CORPORATION
+

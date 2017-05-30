@@ -6,8 +6,8 @@ use strict;
 use warnings;
 use IkiWiki 3.00;
 
-my $s3script = $config{s3cmd_script} || '/home/tyler/.dotfiles.git/hooks/post-update.d/99-amazon-update';
-my $s3statepath = $config{s3cmd_state_path} || '/home/tyler/.ikiwiki/.s3cmd.HEAD';
+my $s3script = $config{s3cmd_script} || $ENV{'HOME'} . '/.dotfiles.git/hooks/post-update.d/99-amazon-update';
+my $s3statepath = $config{s3cmd_state_path} || $ENV{'HOME'} . '/.ikiwiki/.s3cmd.HEAD';
 
 sub import {
     hook(type => "savestate", id => "foo", call => \&needs_update);
