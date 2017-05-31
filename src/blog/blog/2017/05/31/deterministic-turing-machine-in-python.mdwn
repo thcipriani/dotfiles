@@ -1,0 +1,255 @@
+[[!meta date="2017-05-31T08:25:42-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Deterministic Turing Machine in Python"]]
+[[!tag computing]]
+
+Below is a Turing machine implementation based on the example in [_Understanding Computation_](http://computationbook.com/) by Tom Stuart.
+The Turing machine is an entertaining thought exercise that makes computer science feel a bit like poetry. Most things I learn on about computers
+on a day-to-day basis are decidedly unpoetic.
+
+```{.python .numberLines}
+"""
+Deterministic Turing Machine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is a turing machine written in python. This code closely follows code from
+chapter 5 of the book _Understanding Computation_ by Tom Stuart.
+This is basically a Finite State Machine with a tape.
+"""
+
+import collections
+
+
+LEFT = 'left'
+RIGHT = 'right'
+BLANK = '_'
+
+
+Rule = collections.namedtuple('Rule', [
+    'state',
+    'head',
+    'next_state',
+    'write',
+    'move'])
+
+
+def rule_applies(rule, state, tape):
+    """Determine whether a rule applies to a state."""
+    correct_state = rule.state == state
+    correct_read = rule.head == tape.head
+    return correct_state and correct_read
+
+
+def follow_rule(rule, state, tape):
+    """Follows the current rule."""
+    if rule_applies(rule, state, tape):
+        state = rule.next_state
+        tape.middle = rule.write
+        tape.move(rule.move)
+
+    return rule, state, tape
+
+
+class Tape(object):
+    """Represents the tape in a turing machine."""
+    def __init__(self, left=None, middle=None, right=None, blank=BLANK):
+        """Initialize and show initial state."""
+        self.left = left or []
+        self.right = right or []
+
+        self.middle = middle
+        if self.middle is None:
+            self.middle = blank
+
+        self.blank = blank
+
+    def move_right(self):
+        """Move tape one unit right, add blanks as needed."""
+        self.left = self.left + [self.middle]
+        if self.right:
+            self.middle = self.right.pop(0)
+        else:
+            self.middle = self.blank
+
+    def move_left(self):
+        """Move tape one unit left, add blanks as needed."""
+        self.right = [self.middle] + self.right
+        if self.left:
+            self.middle = self.left.pop()
+        else:
+            self.middle = self.blank
+
+    @property
+    def head(self):
+        return str(self.middle)
+
+    def move(self, direction):
+        """Move tape left or right."""
+        if not direction in [LEFT, RIGHT]:
+            raise RuntimeError('Unrecognized direction "%s"' % direction)
+
+        if direction == LEFT:
+            return self.move_left()
+
+        if direction == RIGHT:
+            return self.move_right()
+
+    def __repr__(self):
+        """Tape state with current head in parens, like _12(3)4."""
+        out = '{}({}){}'.format(
+            ''.join(map(str, self.left)),
+            self.middle,
+            ''.join(map(str, self.right)))
+        return out
+
+
+class DeterministicTuringMachine(object):
+    """This is a turing machine."""
+    def __init__(self, state, tape, accept_states, rules):
+        """
+        Initialize machine
+        :state: - integer - that represents the current state of the machine
+        :tape: - Tape - the machine's tape
+        :accept_states: - [integer] - represents states when the machine has
+                                      exited successfully
+        :rules: - [Rule] - list of rules for the machine to follow
+        """
+        self.state = state
+        self.tape = tape
+        self.accept_states = accept_states
+        self.rules = rules
+
+    @property
+    def accepting(self):
+        return self.state in self.accept_states
+
+    @property
+    def stuck(self):
+        """Stuck when we have no next rule."""
+        return not self.next_rule
+
+    @property
+    def working(self):
+        """Working when not done and we still have rules to apply."""
+        return not (self.accepting or self.stuck)
+
+    @property
+    def next_rule(self):
+        """Get next rule."""
+        rules = self._find_rules()
+
+        if rules:
+            return rules[0]
+
+        return rules
+
+    def _find_rules(self):
+        """Find a rules we can apply."""
+        applicable_rules = [rule for rule in self.rules
+                            if rule_applies(rule, self.state, self.tape)]
+
+        return applicable_rules
+
+    def step(self):
+        """Apply any rules we can find."""
+        _, self.state, self.tape = follow_rule(
+            self.next_rule, self.state, self.tape)
+
+    def run(self):
+        while self.working:
+            self.step()
+```
+
+This machine contains objects for a tape (`Tape`), rules for a machine to
+follow (`Rule`), and an object representing the state of the Turing machine
+itself (`DeterministicTuringMachine`).
+
+## Incrementing binary numbers
+
+Given the appropriate set of rules, this machine can perform general computing
+tasks. In the book, the rules for incrementing a binary number are used as an
+example.
+
+We start with the number `10111` (A.K.A, 23), which we'd like to increment
+by 1 to get `11000` (A.K.A., 24). To begin we set the tape with the
+number we'd like to increment with the read head of the tape resting on
+right-most digit of the binary number:
+
+```{.python}
+# Tape looks like: 1011(1)
+# Where () represents the read/write head
+t = Tape(left=[1,0,1,1], middle=1)
+```
+
+This machine will have three available machine "states" that help to define the
+rules for the Turing machine to follow. When the machine is in a particular
+state, and encounters a particular condition (i.e., the read head is over a
+particular number) it will follow a particular rule -- that is, it will write either
+a `1` or a `0`, move the read head either `LEFT` or `RIGHT`, and, possibly,
+change machine state. These rules are based on machine state in combination
+with a read condition.
+
+The machine will start in state `1`. When the machine enters into one of the
+`accept_states`, the machine will stop processing. The only accept_state for
+this machine is `3`.
+
+```{.python}
+# Availale states in this example are 1, 2, 3
+initial_state = 1
+
+m = DeterministicTuringMachine(
+    state=initial_state, tape=t, accept_states=[3], rules=[
+        # if the state is 1 and the read head is ... etc
+        Rule(state=1, head='0', next_state=2, write='1', move=RIGHT),
+        Rule(state=1, head='1', next_state=1, write='0', move=LEFT),
+        Rule(state=1, head=BLANK, next_state=2, write='1', move=RIGHT),
+
+        # if the state is 2 and the read head is ... etc
+        Rule(state=2, head='0', next_state=2, write='0', move=RIGHT),
+        Rule(state=2, head='1', next_state=2, write='1', move=RIGHT),
+        Rule(state=2, head=BLANK, next_state=3, write=BLANK, move=LEFT)
+    ]
+)
+```
+
+If we call the `step` method of the state machine we can trace how it follows rules.
+
+```{.python}
+>>> m.tape
+1011(1)
+>>> m.step()
+>>> print(m.state)
+1
+>>> print(m.tape)
+101(1)0
+```
+
+Since it was in state `1` and the read head was over a `1` it followed rule
+`Rule(state=1, head='1', next_state=1, write='0', move=LEFT)` -- it wrote `0`
+in its current location, it moved the read head `LEFT`, and stayed in the `1`
+state. Since the state is still `1` and the read head is once-again over a `1`,
+the same rule will be followed again:
+
+```{.python}
+>>> m.tape
+101(1)0
+>>> m.step()
+>>> print(m.state)
+1
+>>> print(m.tape)
+10(1)00
+```
+
+Calling the `run` method of the machine will continue to follow the defined rules until state `3` is reached:
+
+```{.python}
+>>> m.run()
+>>> print(m.state)
+3
+>>> print(m.tape)
+1100(0)_
+```
+
+Turing machines are magic, I guess is what I'm saying.

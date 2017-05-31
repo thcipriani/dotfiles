@@ -1021,8 +1021,8 @@ td.lineNumbers {
     color: #ddd;
     border-right: none;
     width: 2em;
-    font-size: 0.82em;
-    line-height: 1.55em;
+    font-size: 0.84em;
+    line-height: 1.5em;
 }
 td.sourceCode { padding-left: 5px; }
 code > span.kw { color: #007020; font-weight: bold; }
