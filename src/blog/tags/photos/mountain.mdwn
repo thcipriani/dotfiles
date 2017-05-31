@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/mountain"]]
+
+[[!inline pages="tagged(photos/mountain)" actions="no" archive="yes"
+feedshow=10]]
