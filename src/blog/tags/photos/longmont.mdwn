@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/longmont"]]
+
+[[!inline pages="tagged(photos/longmont)" actions="no" archive="yes"
+feedshow=10]]
