@@ -1,0 +1,36 @@
+[[!meta date="2017-03-11 18:38:23"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Meeker from McIntosh Lake at Sunset"]]
+[[!tag
+photos
+photos/24-70mm-f-2.8
+photos/nikon-d610
+photos/landscape
+photos/mountain
+photos/longmont
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/fb/62fab62bd0a3440eb4883eb4d26f37/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/fb/62fab62bd0a3440eb4883eb4d26f37/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/fb/62fab62bd0a3440eb4883eb4d26f37/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/fb/62fab62bd0a3440eb4883eb4d26f37/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/fb/62fab62bd0a3440eb4883eb4d26f37/original.jpg)](https://photos.tylercipriani.com/thumbs/fb/62fab62bd0a3440eb4883eb4d26f37/large.jpg)
+
+Edited with all FOSS software, blended from three exposures: +0, -2, +2. Darktable and GIMP.
+
+EXIF |
+--- | ---
+ExposureTime | 1/20
+FNumber | 16.0
+Description | Edited with all FOSS software, blended from three exposures: +0, -2, +2. Darktable and GIMP.
+Title | Meeker from McIntosh Lake at Sunset
+FocalLength | 70.0 mm
+CreateDate | 2017-03-11 18:38:23
+Lens | 24-70mm f/2.8
+ISO | 100
+Model | NIKON D610
+Make | NIKON CORPORATION
+

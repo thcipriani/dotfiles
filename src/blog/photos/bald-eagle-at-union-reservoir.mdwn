@@ -1,0 +1,36 @@
+[[!meta date="2017-03-04 08:34:49"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Bald Eagle at Union Reservoir"]]
+[[!tag
+photos
+photos/0mm-f-0
+photos/nikon-d610
+photos/animal
+photos/bird
+photos/eagle
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/aa/d90bfaf41f901e6d34cf689207777c/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/aa/d90bfaf41f901e6d34cf689207777c/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/aa/d90bfaf41f901e6d34cf689207777c/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/aa/d90bfaf41f901e6d34cf689207777c/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/aa/d90bfaf41f901e6d34cf689207777c/original.jpg)](https://photos.tylercipriani.com/thumbs/aa/d90bfaf41f901e6d34cf689207777c/large.jpg)
+
+Shot with a manual focus Nikon Nikkor 70-210mm f/4.5-5.6 that I got for $40. 210mm, f/4.5.
+
+EXIF |
+--- | ---
+ExposureTime | 1/400
+FNumber | 0
+Description | Shot with a manual focus Nikon Nikkor 70-210mm f/4.5-5.6 that I got for $40. 210mm, f/4.5.
+Title | Bald Eagle at Union Reservoir
+FocalLength | 0.0 mm
+CreateDate | 2017-03-04 08:34:49
+Lens | 0mm f/0
+ISO | 100
+Model | NIKON D610
+Make | NIKON CORPORATION
+
