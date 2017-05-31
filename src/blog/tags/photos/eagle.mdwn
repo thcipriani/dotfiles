@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/eagle"]]
+
+[[!inline pages="tagged(photos/eagle)" actions="no" archive="yes"
+feedshow=10]]
