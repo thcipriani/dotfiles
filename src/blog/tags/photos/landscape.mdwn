@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/landscape"]]
+
+[[!inline pages="tagged(photos/landscape)" actions="no" archive="yes"
+feedshow=10]]
