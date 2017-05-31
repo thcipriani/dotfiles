@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/flatirons"]]
+
+[[!inline pages="tagged(photos/flatirons)" actions="no" archive="yes"
+feedshow=10]]
