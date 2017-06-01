@@ -1,0 +1,15 @@
+/* TEAM */
+	name: Tyler Cipriani
+	www: http://gangsta.party
+	twitter: @thcipriani
+	github: @thcipriani
+	from: Longmont, Colorado, USA
+
+/* THANKS */
+	Mom
+
+/* SITE */
+	Standards: HTML5, CSS3
+	Language: English
+	Doctype:HTML5
+	Built With: vim, git, ikiwiki, blood, sweat, tears

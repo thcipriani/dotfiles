@@ -1,0 +1,28 @@
+<item>
+	<title><TMPL_VAR TITLE></title>
+<TMPL_IF GUID>
+	<guid isPermaLink="false"><TMPL_VAR GUID></guid>
+<TMPL_ELSE>
+	<guid isPermaLink="false"><TMPL_VAR URL></guid>
+</TMPL_IF>
+	<link><TMPL_VAR PERMALINK></link>
+<TMPL_IF AUTHOR>
+	<dc:creator><TMPL_VAR AUTHOR ESCAPE=HTML></dc:creator>
+</TMPL_IF>
+<TMPL_IF CATEGORIES>
+<TMPL_LOOP CATEGORIES>
+	<category><TMPL_VAR CATEGORY></category>
+</TMPL_LOOP>
+</TMPL_IF>
+	<pubDate><TMPL_VAR CDATE_822></pubDate>
+	<dcterms:modified><TMPL_VAR MDATE_3339></dcterms:modified>
+<TMPL_IF ENCLOSURE>
+	<enclosure url="<TMPL_VAR ENCLOSURE>" type="<TMPL_VAR TYPE>" length="<TMPL_VAR LENGTH>" />
+</TMPL_IF>
+<TMPL_UNLESS SIMPLEPODCAST>
+	<description><TMPL_VAR CONTENT ESCAPE=HTML></description>
+</TMPL_UNLESS>
+<TMPL_IF COMMENTSURL>
+	<comments><TMPL_VAR COMMENTSURL></comments>
+</TMPL_IF>
+</item>

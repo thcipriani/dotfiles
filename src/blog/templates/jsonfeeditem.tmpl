@@ -1,0 +1,34 @@
+{
+<TMPL_IF GUID>
+    "id": "<TMPL_VAR GUID>",
+<TMPL_ELSE>
+    "id": "<TMPL_VAR URL>",
+</TMPL_IF>
+    "url": "<TMPL_VAR PERMALINK>",
+<TMPL_IF AUTHOR>
+    "author": {
+        "name": "<TMPL_VAR AUTHOR ESCAPE=HTML>"
+    },
+</TMPL_IF>
+<TMPL_IF CATEGORIES>
+    "tags": [
+<TMPL_LOOP CATEGORIES>
+     "<TMPL_VAR CATEGORY>"<TMPL_UNLESS NAME="__last__">,</TMPL_UNLESS>
+</TMPL_LOOP>
+    ],
+</TMPL_IF>
+    "date_published": "<TMPL_VAR CDATE_3339>",
+    "date_modified": "<TMPL_VAR MDATE_3339>",
+<TMPL_IF ENCLOSURE>
+    "attachments": [
+        {
+            "url": "<TMPL_VAR ENCLOSURE>",
+            "mime_type": "<TMPL_VAR TYPE>",
+            "size_in_bytes": "<TMPL_VAR LENGTH>"
+        }
+    ]<TMPL_UNLESS SIMPLEPODCAST>,</TMPL_UNLESS>
+</TMPL_IF>
+<TMPL_UNLESS SIMPLEPODCAST>
+    "content_html": "<TMPL_VAR CONTENT ESCAPE=JS>"
+</TMPL_UNLESS>
+}<TMPL_UNLESS LASTPAGE>,</TMPL_UNLESS>

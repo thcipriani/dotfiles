@@ -1,0 +1,19 @@
+<form <TMPL_IF POSTFORMID>id="<TMPL_VAR POSTFORMID ESCAPE=HTML>"</TMPL_IF> action="<TMPL_VAR CGIURL>" method="get">
+<div class="blogform">
+<TMPL_IF RSSURL>
+<a class="feedbutton" type="application/rss+xml" rel="alternate" title="<TMPL_VAR RSSDESC>" href="<TMPL_VAR RSSURL>">RSS</a>
+</TMPL_IF>
+<TMPL_IF ATOMURL>
+<a class="feedbutton" type="application/atom+xml" rel="alternate" title="<TMPL_VAR ATOMDESC>" href="<TMPL_VAR ATOMURL>">Atom</a>
+</TMPL_IF>
+<TMPL_IF JSONFEEDURL>
+<a class="feedbutton" type="application/json" rel="alternate" title="<TMPL_VAR JSONFEEDESC>" href="<TMPL_VAR JSONFEEDURL>">JSON Feed</a>
+</TMPL_IF>
+<input type="hidden" name="do" value="blog" />
+<input type="hidden" name="from" value="<TMPL_VAR ROOTPAGE>" />
+<input type="hidden" name="subpage" value="1" />
+<TMPL_VAR POSTFORMTEXT>
+<input name="title" size="40" />
+<input type="submit" value="Edit" />
+</div>
+</form>
