@@ -23,7 +23,7 @@
   @licstart  The following is the entire license notice for the
   CSS and JavaScript code in this page.
 
-  Copyright (C) 2014 Tyler Cipriani
+  Copyright (C) 2014-2017 Tyler Cipriani
 
   The JavaScript code in this page is free software: you can
   redistribute it and/or modify it under the terms of the GNU
@@ -119,7 +119,7 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 </TMPL_UNLESS>
 
 <!-- tylercipriani additions -->
-<link rel="author" href="/humans.txt">
+<link rel="author" href="<TMPL_VAR BASEURL>humans.txt">
 
 <!-- OpenID things -->
 <link rel="openid.server" href="https://openid.tylercipriani.com/" />
@@ -131,16 +131,19 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 <body>
 
 <header class="main-header">
-    <a class="logo" href="/" title="Tyler Cipriani Home">
-        <img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="Tyler Cipriani Logo">
+    <a class="logo" href="<TMPL_VAR BASEURL>" title="<TMPL_VAR WIKINAME> - Home">
+        <img class="logo-img" src="https://tylercipriani-files.s3.amazonaws.com/blog/201307_p_tyler_logo.png" alt="<TMPL_VAR WIKINAME> Logo">
     </a>
     <nav class="main-header-nav">
         <ul class="main-header-nav-list">
             <li class="main-header-nav-list-item">
-                <a href="/about/" title="Tyler Cipriani About">About</a>
+                <a href="<TMPL_VAR BASEURL>about/" title="<TMPL_VAR WIKINAME> - About">About</a>
             </li>
             <li class="main-header-nav-list-item">
-                <a href="/posts/" title="Tyler Cipriani About">Posts</a>
+                <a href="<TMPL_VAR BASEURL>tags/photos/" title="<TMPL_VAR WIKINAME> - Photos">Photos</a>
+            </li>
+            <li class="main-header-nav-list-item">
+                <a href="<TMPL_VAR BASEURL>posts/" title="<TMPL_VAR WIKINAME> - Posts">Posts</a>
             </li>
         </ul>
     </nav>
@@ -237,7 +240,7 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 <TMPL_IF HTML5><nav id="pageinfo"><TMPL_ELSE><div id="pageinfo"></TMPL_IF>
 
 <a class="license-icon" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img src="/static/images/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31">
+    <img src="<TMPL_VAR BASEURL>static/images/cc-by-sa.png" alt="Creative Commons Attribution-ShareAlike" width="88" height="31">
 </a>
 
 
