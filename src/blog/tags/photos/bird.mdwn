@@ -11,7 +11,7 @@ An incomplete list of birds I have seen.
 * American kestrel
     * Burch Lake, Longmont, CO -- 2017-04-14
 * Bald Eagle
-    * [photos/bald-eagle-at-union-reservoir|Union Resevoir] -- 2017-03-04
+    * [[Union Resevoir|photos/bald-eagle-at-union-reservoir]] -- 2017-03-04
     * Common at Roger's Grove in Longmont
 * Black-capped Chickadee
     * Very common -- always at my feeder

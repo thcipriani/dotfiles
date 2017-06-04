@@ -1,0 +1,35 @@
+[[!meta date="2017-06-03 19:43:43"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Young Bull Moose"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+photos/animal
+photos/rocky-mountain-national-park
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/5e/6304197781e39d3812803fcfccd378/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/5e/6304197781e39d3812803fcfccd378/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/5e/6304197781e39d3812803fcfccd378/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/5e/6304197781e39d3812803fcfccd378/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/5e/6304197781e39d3812803fcfccd378/original.jpg)](https://photos.tylercipriani.com/thumbs/5e/6304197781e39d3812803fcfccd378/large.jpg)
+
+A young bull moose wondered into the Moraine Park Campground at Rocky Mountain National Park.
+
+EXIF |
+--- | ---
+ExposureTime | 1/80
+FNumber | 5.0
+Description | A young bull moose wondered into the Moraine Park Campground at Rocky Mountain National Park.
+Title | Young Bull Moose
+FocalLength | 200.0 mm
+CreateDate | 2017-06-03 19:43:43
+Lens | 70-200mm f/2.8
+ISO | 1000
+Model | NIKON D610
+Make | NIKON CORPORATION
+
