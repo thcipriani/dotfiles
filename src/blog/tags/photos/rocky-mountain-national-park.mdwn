@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/rocky-mountain-national-park"]]
+
+[[!inline pages="tagged(photos/rocky-mountain-national-park)" actions="no" archive="yes"
+feedshow=10]]
