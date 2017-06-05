@@ -3,6 +3,8 @@
 use warnings;
 use strict;
 
+use File::Find::Rule;
+
 use File::Which qw(which);
 use Carp qw(croak);
 
@@ -16,6 +18,25 @@ my $bucket = 'tylercipriani.com';
 my $bucket_prefix = '';
 
 my @cssfiles = ('local.css', 'style.css', 'static/css/merkel-dag-d3.css');
+
+sub jsonfiles {
+    my $jsonfiles = File::Find::Rule->file()->name('*.json');
+    my $common_path = $site_path . '/' . $site_name;
+
+    if ( not $bucket_prefix =~ /\/$/) {
+        $bucket_prefix .= '/';
+    }
+
+    my @cmd = ($s3cmd, 'modify');
+    push(@cmd, "--add-header='Content-type:application/json'");
+
+    foreach my $jsonfile ($jsonfiles->in($common_path)) {
+        if ( $jsonfile =~ s/^$common_path\/// ) {
+            my $jsons3 = 's3://' . $bucket . $bucket_prefix . $jsonfile;
+            system(join(' ', @cmd) . ' ' . $jsons3 . ' >/dev/null 2>&1');
+        }
+    }
+}
 
 sub update {
     chdir($site_path);
@@ -46,19 +67,17 @@ sub update {
 
     my @csscmd = ($s3cmd, 'setacl');
     push(@csscmd, '--acl-public', "--mime-type='text/css'");
-    push(@csscmd, '>/dev/null');
-    push(@csscmd, '2>&1');
 
     my @cssheaderscmd = ($s3cmd, 'modify');
     push(@cssheaderscmd, "--add-header='Content-type:text/css'");
-    push(@cssheaderscmd, '>/dev/null');
-    push(@cssheaderscmd, '2>&1');
 
     foreach my $css (@cssfiles) {
         my $s3css = 's3://' . $bucket . $bucket_prefix . $css;
-        system(join(' ', @csscmd) . ' ' . $s3css);
-        system(join(' ', @cssheaderscmd) . ' ' . $s3css);
+        system(join(' ', @csscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
+        system(join(' ', @cssheaderscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
     }
+
+    jsonfiles;
 }
 
 sub main {
