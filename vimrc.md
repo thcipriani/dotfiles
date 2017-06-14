@@ -1,0 +1,1 @@
+src/blog/blog/2017/06/14/literate-vimrc.mdwn

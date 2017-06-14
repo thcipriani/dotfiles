@@ -970,11 +970,8 @@ figure {
  * Syntax highlighting stuff
  * ================================== */
 
+div.sourceCode,
 pre {
-    overflow: visible;
-}
-
-div.sourceCode {
     background: #f9f9f9;
     border: 1px solid #ccc;
     padding: 0.5em;
@@ -983,6 +980,13 @@ div.sourceCode {
     overflow-x: auto;
     margin: 1em 0;
     border-left: 5px solid #95abd0;
+}
+
+.sourceCode pre {
+    border: none;
+    padding: none;
+    overflow: auto;
+    margin: 0;
 }
 
 pre code {

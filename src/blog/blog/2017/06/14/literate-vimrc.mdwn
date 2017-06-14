@@ -1,0 +1,709 @@
+[[!meta date="2017-06-14T08:46:30-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Literate Vimrc"]]
+[[!tag computing]]
+
+# Literate `~/.vimrc`
+
+This blog post is my `~/.vimrc` now.
+
+Hold on, let me explain.
+
+## Why would anyone do a thing like this?
+
+I have tons of comments in my `~/.vimrc` file. I try to leave a lot of comments
+because everything in my Vim configuration is hard-won knowledge. My `~/.vimrc`
+is accumulated knowledge from the day I first opened the editor and couldn't
+figure out how to leave until now, many years later, when I open my editor and
+don't have any reason to leave.  I have tweaked, cajoled, and tamed this beast
+called Vim. I think a lot of folks have configuration kind of like that -- it's
+knowledge that is locked-away, not privately or purposefully, just
+badly-documented and ubiquitous. This is a problem.
+
+So I made a thing.
+
+This is an experiment that seeks to answer: can my `~/.vimrc` be a page on
+my website?
+
+## Literate programming
+
+Literate programming is the idea that your code should work as a narrative as
+well as a functional piece of software. This is a practice that was popularized
+by [Donald Knuth](https://cs.stanford.edu/~uno/) and was utilized in writing
+the [source code for TeX](https://www.tug.org/texlive/devsrc/Build/source/texk/web2c/tex.web).
+
+The are times when
+[literate programming may not be appropriate](http://harryrschwartz.com/2016/05/19/when-is-literate-programming-appropriate.html);
+however, in this instance -- the case of a `.vimrc` -- I feel like literate
+programming will be helpful to remind me what a setting is and why I applied
+it. This also may mean that my accumulated Vim knowledge (however limited it
+may be) is more generally accessible than if it were just a plaintext documents
+sitting in my [dotfiles](https://github.com/thcipriani/dotfiles).
+
+## Literate Vimscript
+
+My resolve to make a literate `~/.vimrc` led to some searching on DuckDuckGo
+and a slow, settling realization that I was going to have to write the plugin
+that does this. Keeping your Emacs configuration as a literate document written in
+[org-mode](http://orgmode.org/) is pretty common practice at this point, so I
+made the faulty assumption that a Vim configuration written in Markdown would
+be a common aspiration as well.
+
+I was wrong and thus was the genesis of [LiterateVimrc](https://github.com/thcipriani/literate-vimrc).
+
+"Literate" Vimrc is more than a bit of a misnomer. It, unlike Donald Knuth's
+vision of Literate Programming, does not support a loosely coupled web of macros
+-- instead it just lets you write a file in Markdown that has codeblocks (as
+defined by [v0.27 of the CommonMark spec](http://spec.commonmark.org/0.27/))
+containing Vimscript as your `~/.vimrc` file.
+
+### Install
+
+To install LiterateVimsrc copy the `autoload/literavevimrc.vim` file into
+your `~/.vim/autoload` directory, move your current `~/.vimrc` to `~/.vimrc.md`
+and add `~~~` to to first and last lines of that file (to create fenced
+codeblock). Inside your (now empty) `~/.vimrc` add the line `execute
+literatevim#load("~/.vimrc.md")` and everything should remain the same.
+
+Now you are free to add text explaining your configuration and divide your
+configuration into blocks. This blog post is currently acting as my `~/.vimrc`
+file, as of this writing. This may be a bad idea. I do expect to update it
+somewhat regularly, but his frontmatter should remain the same.
+
+# My `~/.vimrc`
+
+This begins the content of my `~/.vimrc` file. It includes various explanations
+and links that may only make sense to me. Here be dragons. You have been
+warned.
+
+The first lines that should be in every `~/.vimrc` -- disabling arrow keys --
+because it's not enough to use vim, you've got to [live
+it](https://tylercipriani.com/vim.html).
+
+```vim
+noremap <up> <nop>
+inoremap <up> <nop>
+
+noremap <down> <nop>
+inoremap <down> <nop>
+
+noremap <left> <nop>
+noremap <right> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+" B A start
+```
+
+## What is this 'Vee-Eye' of which you speak?
+
+Vim's `compatible` mode means lots of plugins won't work. It evidently means
+that you can't use `\` in vim scripts to break a command across a few lines.
+`nocompatible` is also necessary for
+[Vundle](https://github.com/VundleVim/Vundle.vim) which is my vim
+packagemanager of choice.
+
+```vim
+set nocompatible
+```
+
+## Plugins
+
+All of my plugins. To install all of my plugins on a brand new machine I can
+run `vim +PluginInstall +qall`, which is pretty neat.
+
+```vim
+filetype off " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Other plugins
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'tpope/vim-surround'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'goldfeld/vim-seek'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'joonty/vdebug'
+Plugin 'vim-airline/vim-airline'
+" BOOO!
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'juvenn/mustache'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rsi'
+Plugin 'dag/vim-fish'
+Plugin 'rodjek/vim-puppet'
+Plugin 'ClockworkNet/vim-vcl'
+Plugin 'airblade/vim-gitgutter'
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+```
+
+## A Random solution to a random problem
+
+This disables Background Color Erase (BCE) when the `$TERM` env var contains
+the text `256color`. The problem I was seeing is summarized on Suraj N.
+Kurapati's [blog post](http://snk.tuxfamily.org/log/vim-256color-bce.html).
+
+This may, in fact, not be necessary. At least according to
+[reddit](http://www.reddit.com/r/vim/comments/1a29vk/fixing_vims_background_color_erase_for_256color/c8thqe7)
+
+```vim
+if &term =~ '256color'
+   set t_ut=
+endif
+```
+
+## Basic options
+
+```
+let mapleader=','
+set t_Co=256              " My terminal's got all those colors, yo
+
+set title                 " Change the terminal title
+set encoding=utf-8        " Show utf-8 chars
+set showcmd               " count highlighted
+set ruler                 " Show where I am in the command area
+set showmode              " -- INSERT (appreciation)-- :)
+set laststatus=2          " always show the status line
+                          " ↪ (0 = never, 1 = default [multi-window only])
+set mouse=a               " Use the mouse
+
+set modelines=0           " Don't read first/last lines of file for settings
+set hidden                " Stash unwritten files in buffer
+set vb                    " Don't beep at me
+set cursorline            " Highlight current line
+set scrolloff=3           " Start scrolling when I'm 3 lines from top/bottom
+set history=1000          " Remember commands and search history
+set backspace=2           " Backspace over indent, eol, and insert
+set mousehide             " Hide the mouse pointer while typing
+
+set number                " Show linenumbers
+set nowrap                " Turn off linewrap
+set list                  " Show invisible chars
+set tabstop=4             " 4 spaces
+set shiftwidth=4          " 4 spaces
+set softtabstop=4         " 4 spaces
+set expandtab             " Expand tabs to spaces
+
+set hlsearch              " highlight my search
+set incsearch             " incremental search
+set wrapscan              " Set the search scan to wrap around the file
+
+set ignorecase            " when searching
+set smartcase             " …unless I use an uppercase character
+```
+
+## Syntax
+
+I have actually been considering what it would be like to work without syntax
+highlighting. I may be too far gone to start trying, but it'd certainly make me
+more attune to various code problems rather than code colors. In any event,
+with some of the huge files I view the `syntax sync minline` option and the
+`synmaxcol=2048` are lifesavers.
+
+```
+syntax on                 " Syntax highlighting
+syntax sync minlines=256  " Makes big files slow
+set synmaxcol=2048        " Also long lines are slow
+set autoindent            " try your darndest to keep my indentation
+set smartindent           " Be smarter about indenting dummy
+```
+
+## Format options
+
+> `c` - Auto-wrap comments using textwidth, inserting the current comment leader automatically.
+>
+> `o` - Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+>
+> `t` - Auto-wrap text using textwidth
+>
+> `q` - Allow formatting of comments with "gq".
+>
+> `r` - Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+
+I have a different setting for format options when emailing in mutt. There I
+use `set formatoptions=aw` which works for
+[format-flowed](https://joeclark.org/ffaq.html) emails.
+
+```
+set formatoptions=cotqr  " I like smart comments
+```
+
+## Folding
+
+At some point in the past I used to use the `marker` for folding (which was
+opened with `{{{` and closed by `}}}`) I found this a nice way to divide up
+things like my `~/.vimrc` for instance; however, what's even nicer is folding
+on indent. It makes reading `yaml` files super easy. I read lots of very (VERY)
+large `yaml` files. I suppose I could do this with an `autocmd`, but I set it
+globally instead `¯\_(ツ)_/¯`.
+
+```
+" set foldmethod=marker     " Fold on 3x{
+set foldmethod=indent
+set nofoldenable          " But turn it off initially
+```
+
+## Fishshell
+
+I needed this for running some commands in Vim inside
+[fishshell](https://fishshell.com/) which I used for a time and then abandoned.
+I think that fishshell is really great (and it's an actual programming
+language), the problem with it is two-fold:
+
+1. Nobody wants to push fishshell on a server -- which I understand
+2. Using it requires a million little hacks like the one below
+
+This is the flip side of fixing all the dumb decisions of the bourne shell --
+everyone else has already worked around them ([obligatory
+xkcd](https://xkcd.com/1172/)).
+
+```
+" set shell=/bin/bash\ --login
+" set shell=bash            " Needed if using fishshell
+```
+
+## Backup and Swap files
+
+I hate all the little backup and swap files all over the place. There has been
+1 time when these would have come in handy in the past decade as far as I can
+remember.
+
+```
+set nobackup
+set nowritebackup
+set noswapfile
+```
+
+## Colorschemes
+
+```
+" Colorscheme
+" https://github.com/altercation/vim-colors-solarized
+" colorscheme solarized
+" let darkcolorbg='#839496'
+
+set background=dark
+let darkcolorbg=234
+colorscheme Tomorrow-Night
+
+" GUI Font (same as my gnome-terminal font)
+" https://github.com/adobe/source-code-pro
+set guifont=Source\ Code\ Pro\ 14
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬\,trail:·
+```
+
+## Vim 7.0.3 new features
+
+Maybe I should update the stuff that hedges on a machine not having Vim 7.0.3
+since version 8 is out now. This is a project for later.
+
+```
+if v:version >= 703
+  set colorcolumn=75
+  hi ColorColumn ctermbg=234
+  set undodir=~/.vim-undo
+  set undofile
+  set undolevels=1000 "max number of changes that can be undone
+  set undoreload=10000 "max number lines to save for undo on buffer reload
+
+  " Toggle line numbers in normal mode, set by default
+  set number relativenumber
+  function! NumberToggle()
+    if(&relativenumber == 1)
+      set number norelativenumber
+    else
+      set number relativenumber
+    endif
+  endfunc
+
+  nnoremap <leader>n :call NumberToggle()<cr>
+endif
+```
+
+## OSX
+
+I don't really know why I still have OSX hacks in all my dotfiles. Maybe
+someday I'll be forced to jump off the Linux ship. I assume I'll be jumping to
+a BSD or something at that point though.
+
+```
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        set clipboard=unnamed
+    endif
+endif
+```
+
+## Very Magic
+
+I'm not sure if I should turn this off. Half the time I think it's great, the
+other half it's a pain. I guess leaving it on for now seems fine.
+
+```
+nnoremap / /\v
+```
+
+## Mappings
+
+```
+" Vimrc editing
+nnoremap <silent><leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent><leader>sv :source $MYVIMRC<cr>
+
+" un-highlight search results
+nnoremap <silent><leader><space> :noh<cr>
+
+" Toggle auto-indent before clipboard paste
+set pastetoggle=<leader>p
+
+" Shortcut to rapidly toggle `set list`
+nnoremap <silent><leader>l :set list!<cr>
+
+" Normal/Visual tab for bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+"Opens a vertical split and switches over (,v)
+nnoremap <leader>v <C-w>v<C-w>l
+
+"Moves around split windows
+nnoremap <leader>w <C-w><C-w>
+
+"Close a window
+nnoremap <silent><leader>q :q<cr>
+
+" Close buffer
+noremap <silent><leader>d :bd<cr>
+
+" Buffer previous
+noremap <silent><leader>z :bp<CR>
+
+" Buffer next
+noremap <silent><leader>x :bn<CR>
+
+nnoremap <S-Tab> gT
+nnoremap <silent> <S-t> :tabnew %<CR>
+
+" Set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+
+" Vmap for maintain Visual Mode after shifting > and <, prevents the use of
+" '.' to repeat
+" vmap < <gv
+" vmap > >gv
+
+" Better use of folding
+" nnoremap <leader>z za
+```
+
+## Status Line
+
+I leave this status line here more as a reference than anything. Currently (as
+can be seen in the [Plugins](#plugins) section) I'm using
+[vim-airline](https://github.com/vim-airline/vim-airline) for my statusbar.
+
+```
+augroup ft_statuslinecolor
+    au!
+    au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
+    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
+augroup END
+set statusline=%f    " Path.
+set statusline+=%m   " Modified flag.
+set statusline+=%r   " Readonly flag.
+set statusline+=%w   " Preview window flag.
+set statusline+=\    " Space.
+set statusline+=%=   " Right align.
+" Line and column position and counts.
+set statusline+=\ %l\/%L\ \/\/\ %03c)
+```
+
+## Autocmds
+
+Don't expand tabs in `Makefile`s or php files
+
+```
+autocmd FileType make setlocal noexpandtab
+autocmd Filetype php setlocal noexpandtab
+```
+
+Highlight any trailing whitespace in red
+
+```
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+```
+
+Ensure that puppet files are handled properly in Vim. IIRC I pulled this
+line from the office wiki somewhere...
+
+```
+" detect puppet filetype
+autocmd BufRead,BufNewFile *.pp set filetype=puppet
+autocmd BufRead,BufNewFile *.pp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab textwidth=80 smarttab
+```
+
+These are the settings I use for my email. I try to send `format=flowed`
+emails that sill look good in terminal readers like Mutt.
+
+```
+augroup mail_filetype
+    autocmd!
+    autocmd VimEnter /tmp/mutt* set formatoptions=aw tw=72
+augroup END
+```
+
+## Plugin settings
+
+```
+" Tagbar (requires Exuberant ctags 5.5+)
+nnoremap <silent><leader>c :TagbarToggle<cr>
+```
+
+It's kind of insane that you can use Vim to drive a debugger like XDebug. As
+evidenced by the path maps here, I haven't used this in a while and it was
+a pain to setup when I did. Kept here as a reminder that Vim is amazing.
+
+```
+" Xdebug local debugger
+let g:vdebug_options = {
+\    'server': '33.33.33.1',
+\    'port': '9000',
+\    'path_maps' : {
+\        '/srv/www/local.people.dev': '/Users/tyler/Development/upsync-vagrant/shared/people'
+\    }
+\}
+```
+
+```vim
+let g:syntastic_javascript_jshint_conf="$HOME/.jshintrc"
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+" let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:jedi#force_py_version=2
+```
+
+NERDTree was the first plugin I ever installed.
+
+```
+" NERDTree Settings---------------------------------------------------- {{{
+"map <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeTabsToggle<cr>
+" Close vim if NERDTree is the last thing standing
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" }}}
+
+" Included for Airline ------------------------------------------------ {{{
+let g:airline_theme = 'tomorrow'
+let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" }}}
+
+" CtrlP --------------------------------------------------------------- {{{
+let g:ctrlp_max_files = 0 " Set no max file limit
+let g:ctrlp_working_path_mode = 0 " Search current directory not project root
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = {
+    \ 'types': {
+      \ 1: ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'],
+      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+      \ },
+    \ 'fallback': 'ag %s -l --nocolor -g ""'
+    \ }
+
+endif
+
+let g:ctrlp_show_hidden = 1
+"}}}
+```
+
+These are all settings for neocomplete and neosnippet which requires Vim 7.0.4
+or higher and `+lua` when you do `vim --version`.
+
+```vim
+if v:version >= 704 && has("lua")
+  " Neocomplete.vim --------------------------------------------------- {{{
+  " Disable AutoComplPop.
+  let g:acp_enableAtStartup = 0
+  " Use neocomplete.
+  let g:neocomplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:neocomplete#enable_smart_case = 1
+  " Set minimum syntax keyword length.
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+  let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+  " I will probably never hit <TAB> 10 times
+  let g:neocomplete#max_list = 10
+
+  " Automatically open and close the popup menu / preview window
+  " https://github.com/JessicaKMcIntosh/TagmaBufMgr/issues/8
+  au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+  set completeopt=menuone,menu,longest
+
+  " Define dictionary.
+  let g:neocomplete#sources#dictionary#dictionaries = {
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+          \ }
+
+  " Define keyword.
+  if !exists('g:neocomplete#keyword_patterns')
+      let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+  " Plugin key-mappings.
+  inoremap <expr><C-g>     neocomplete#undo_completion()
+  inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+  " Recommended key-mappings.
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return neocomplete#smart_close_popup() . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  endfunction
+  " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-y>  neocomplete#close_popup()
+  inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+  " Close popup by <Space>.
+  " inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+  " Enable omni completion.
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+  " Enable heavy omni completion.
+  if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+  let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+  let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+  let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+  " For perlomni.vim setting.
+  " https://github.com/c9s/perlomni.vim
+  let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+  " }}}
+
+  " Neosnippet.vim ------------------------------------------------------ {{{
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+
+  " Enable snipMate compatibility feature.
+  let g:neosnippet#enable_snipmate_compatibility = 1
+
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+  " }}}
+endif
+" }}}
+```
+
+Indent guides are neat. I need to figure out a way to have the `ctermbg` vary
+with colorscheme though :\
+
+```vim
+" Indent Guides ------------------------------------------------------- {{{
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_space_guides = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
+" }}}
+```
+
+## Custom Functions
+
+`:BangOpen` lets you open the file that results from
+the output of a command. I was sort of surprised I had to write a function that
+did this. The most common use case would be: `:BangOpen which
+script_I_wrote_thats_in_my_path_but_I_forget_where`.
+
+`SetSpaces` is a function that [Steve Barbera](http://stevebarbera.com/) wrote
+that I think is kinda neat. It sets all of your spaces and things to the
+same value with one command. This is kinda what `modelines` are for, but
+`modelines` have always struck me as weird and potentially dangerous (which
+is why I have them disabled in [Basic Setting](#basic-options)).
+
+```vim
+" BangOpen ------------------------------------------------------------ {{{
+function! BangOpen(arg)
+    execute 'tabe ' . system(a:arg)
+endfunction
+
+command! -nargs=1 BangOpen :call BangOpen(<f-args>)
+" }}}
+
+function! SetSpaces(arg)
+    echo "settings spaces to: " . a:arg
+    execute 'set tabstop=' . a:arg
+    execute 'set shiftwidth=' . a:arg
+    execute 'set softtabstop=' . a:arg
+endfunction
+
+command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
+```
+
+I must've been having some trouble with keycode mapping and added these.
+I can't remember the context of these.
+
+```
+set timeout
+set timeoutlen=2500
+set ttimeoutlen=10
+```
