@@ -277,6 +277,26 @@ interface.
     mv ~/flashregion_3_gbe.bin gbe.bin
     ```
 
+    > **NOTE**: 2017-06-15
+    >
+    > Thomas Maulbeck emailed me and mentioned that `git submodule update
+    > --init --recursive` did not populate the `3rdparty/blobs` directory. It
+    > seems that `.gitmodules` for coreboot has several urls that look in the
+    > parent directory for bare git repositories that don't exist in the setup
+    > I've described in this post.
+    >
+    > Maulbeck was able to work around compilation errors by cloning
+    > `3rdparty/blobs` directly:
+    >
+    > ``` {.bash}
+    > cd ~/coreboot/3rdparty
+    > git clone http://review.coreboot.org/p/blobs.git
+    > ```
+    >
+    > If compilation fails with some mention of a missing
+    > `3rdparty/blobs/cpu/intel/model_206ax/microcode.bin` this may be the
+    > root cause.
+
 12.  Build coreboot on the Pi [following the wiki instructions](https://www.coreboot.org/Build_HOWTO)
 
     -   configure via (**note** -- this is completely cargo-culted
