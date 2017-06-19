@@ -447,6 +447,7 @@ Don't expand tabs in `Makefile`s or php files
 ```
 autocmd FileType make setlocal noexpandtab
 autocmd Filetype php setlocal noexpandtab
+autocmd Filetype go setlocal noexpandtab
 ```
 
 Highlight any trailing whitespace in red

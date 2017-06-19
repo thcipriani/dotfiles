@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
-percent=$(printf "scale=2;$(cat /sys/class/power_supply/BAT0/energy_now) \
-    / $(cat /sys/class/power_supply/BAT0/energy_full) \
+set -eu
+
+[ -f /sys/class/power_supply/BAT0/charge_now ] && {
+    FULL_FILE=/sys/class/power_supply/BAT0/charge_full
+    NOW_FILE=/sys/class/power_supply/BAT0/charge_now
+}
+
+[ -f /sys/class/power_supply/BAT0/energy_now ] && {
+    FULL_FILE=/sys/class/power_supply/BAT0/energy_full
+    NOW_FILE=/sys/class/power_supply/BAT0/energy_now
+}
+
+percent=$(printf "scale=2;$(cat $NOW_FILE) \
+    / $(cat $FULL_FILE) \
     * 100\n" \
     | bc --mathlib)
 #❚❚❚

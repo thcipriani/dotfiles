@@ -1,0 +1,37 @@
+[[!meta date="2017-06-16 10:45:51"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Bushtit"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+photos/animal
+photos/bird
+photos/2017
+photos/2017/06
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/50/2025b1cee720754b213ffda0a58484/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/50/2025b1cee720754b213ffda0a58484/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/50/2025b1cee720754b213ffda0a58484/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/50/2025b1cee720754b213ffda0a58484/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/50/2025b1cee720754b213ffda0a58484/original.jpg)](https://photos.tylercipriani.com/thumbs/50/2025b1cee720754b213ffda0a58484/large.jpg)
+
+Super tiny bird that kept attacking its reflection in the window of my office. I went outside and there were a group of these tiny birds in my bushes. I *think* it is a bushtit.
+
+EXIF |
+--- | ---
+ExposureTime | 1/500
+FNumber | 2.8
+Description | Super tiny bird that kept attacking its reflection in the window of my office. I went outside and there were a group of these tiny birds in my bushes. I *think* it is a bushtit.
+Title | Bushtit
+FocalLength | 200.0 mm
+CreateDate | 2017-06-16 10:45:51
+Lens | 70-200mm f/2.8
+ISO | 560
+Model | NIKON D610
+Make | NIKON CORPORATION
+
