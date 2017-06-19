@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/2017/06"]]
+
+[[!inline pages="tagged(photos/2017/06)" actions="no" archive="yes"
+feedshow=10]]
