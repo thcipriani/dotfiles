@@ -1,61 +1,86 @@
 [[!meta title="Birds"]]
+[[!toc]]
 
 ## Life list
 
 An incomplete list of birds I have seen.
 
-* American crow
-    * Very common, but still [amazing](https://www.youtube.com/watch?v=AVaITA7eBZE).
-* American robin
-    * Very common
-* American kestrel
-    * Burch Lake, Longmont, CO -- 2017-04-14
-* Bald Eagle
-    * [[Union Resevoir|photos/bald-eagle-at-union-reservoir]] -- 2017-03-04
+**American crow**
+:   * Very common, but still [amazing](https://www.youtube.com/watch?v=AVaITA7eBZE).
+
+**American robin**
+:   * Very common
+
+**American kestrel**
+:   * Burch Lake, Longmont, CO -- 2017-04-14
+
+**Bald Eagle**
+:   * [[Union Resevoir|photos/bald-eagle-at-union-reservoir]] -- 2017-03-04
     * Common at Roger's Grove in Longmont
-* Black-capped Chickadee
-    * Very common -- always at my feeder
-* Blacked-billed magpie
-    * Rocky Mountain National Park -- 2017-06-03
-* Broad-throated hummingbird
-    * Common at higher elevations/Rock Mountain National Park
-* Bushtit
-    * [[At my office window|photos/bushtit]] -- 2017-06-16 10:45:51
-* Canada Goodse
-    * Very common
-* Dark-eyed Junco
-    * Common at my feeder
-* Eurpoean starling
-    * Saw a lone starling (strange) at McIntosh lake
-* Gray Jay
-    * Rocky Mountain National Park -- 2017-06-03
-* Great blue heron
-    * Common at McIntosh lake
-* House finch
-    * Very common -- always at [[my feeder|photos/male-house-finch]]
-* Killdeer
-    * Commmon at Roger's grove, Longmont, CO
-* Mallard
-    * Very common
-* Mountain Chickadee
-    * Rocky Mountain National Park -- 2017-06-03
-* Osprey
-    * Longmont has several nests
-    * [[Boulder County Fairgrounds|photos/osprey-at-boulder-county-fairgrounds]] - 2017-05-06
-* Red Breasted Nuthatch
-    * Rocky Mountain National Park -- 2017-06-03
-* Red-winged blackbird
-    * Common at McIntosh Lake and Roger's grove in Longmont, CO
-* Ring-necked Duck
-    * Rocky Mountain National Park -- 2017-06-03
-* Ruby-crowned kinglet
-    * Rocky Mountain National Park -- 2017-06-03
-* Steller's Jay
-    * Common at higher elevations
-* Turkey vulture
-    * Common -- unfortunately used to live under a tree full :(
-* Western Meadowlark
-    * Common
+
+**Black-capped Chickadee**
+:   * Very common -- always at my feeder
+
+**Blacked-billed magpie**
+:   * Rocky Mountain National Park -- 2017-06-03
+
+**Broad-throated hummingbird**
+:   * Common at higher elevations/Rock Mountain National Park
+
+**Bushtit**
+:   * [[At my office window|photos/bushtit]] -- 2017-06-16 10:45:51
+
+**Canada Goose**
+:   * Very common
+
+**Dark-eyed Junco**
+:   * Common at my feeder
+
+**Eurpoean starling**
+:   * Saw a lone starling (strange) at McIntosh lake
+
+**Gray Jay**
+:   * Rocky Mountain National Park -- 2017-06-03
+
+**Great blue heron**
+:   * Common at McIntosh lake
+
+**House finch**
+:   * Very common -- always at [[my feeder|photos/male-house-finch]]
+
+**Killdeer**
+:   * Commmon at Roger's grove, Longmont, CO
+
+**Mallard**
+:   * Very common
+
+**Mountain Chickadee**
+:   * Rocky Mountain National Park -- 2017-06-03
+
+**Osprey**
+:   * Longmont has several nests
+:   * [[Boulder County Fairgrounds|photos/osprey-at-boulder-county-fairgrounds]] - 2017-05-06
+
+**Red Breasted Nuthatch**
+:   * Rocky Mountain National Park -- 2017-06-03
+
+**Red-winged blackbird**
+:   * Common at McIntosh Lake and Roger's grove in Longmont, CO
+
+**Ring-necked Duck**
+:   * Rocky Mountain National Park -- 2017-06-03
+
+**Ruby-crowned kinglet**
+:   * Rocky Mountain National Park -- 2017-06-03
+
+**Steller's Jay**
+:   * Common at higher elevations
+
+**Turkey vulture**
+:   * Common -- unfortunately used to live under a tree full :(
+
+**Western Meadowlark**
+:   * Common
     * McIntosh lake 2017-04-23
 
 ## All bird photos
