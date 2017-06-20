@@ -1,0 +1,3 @@
+[[!inline pages="creation_month(08) and creation_year(2017) and blog/* and !*/Discussion" show=0 feeds=no reverse=yes]]
+
+[[!calendar type=month month=08 year=2017 pages="blog/* and !*/Discussion"]]
