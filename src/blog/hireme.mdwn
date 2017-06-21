@@ -1,0 +1,114 @@
+[[!meta date="2017-06-20T08:28:03-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Résumé"]]
+[[!meta stylesheet=static/css/resume rel="stylesheet" title="resume-stylesheet"]]
+
+## Contact
+
+[tyler@tylercipriani.com][email]
+
+`6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
+
+(720)515-2479
+
+## About
+
+> ![Tyler Cipriani][]
+>
+> ### Hi! I'm Tyler. `/me *waves*`
+> I ♥ the internet -- I worry about it all the time.
+>
+> [tyler@tylercipriani.com][email]
+>
+> ```
+> 6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02
+> ```
+
+## Open Source
+
+[Scap](https://github.com/wikimedia/scap)
+:   * Wikimedia foundation's deployment software. I led the most-recent update
+      for this software.
+
+[Keyholder](https://github.com/wikimedia/keyholder)
+:   * Python3 `ssh-agent` proxy. I wrote about
+      [Keyholder](https://blog.wikimedia.org/2017/03/22/keyholder/) for the
+      Wikimedia Foundation blog.
+
+[JenkHub](https://github.com/sparkfun/jenkhub) `INACTIVE`
+:   * Ruby daemon for monitoring GitHub for tagged SparkFun pull requests -- may
+      still be in use `¯\_(ツ)_/¯`
+
+[.dotfiles](https://github.com/thcipriani/dotfiles)
+:   * May save the world some day. Probably won't though. I'm writing this inside
+      my `~/.dotfiles` right now.
+
+## Experience
+
+![Wikimedia Foundation][] **Wikimedia Foundation** --  _Software Engineer_ -- 2015-02-09 - _Present_
+:   * Led development of new deployment tooling
+
+    * Deployed 600 times to 300+ servers in fiscal year 2016 alone
+
+    * **Environment**:\
+        `python` `PHP` `Debian` `Git` `puppet` `Gearman` `Jenkins` `saltstack`
+
+![SparkFun][] **SparkFun** --  _Web Developer/Systems Administrator_ -- 2013-11-18 - 2015-02-07
+
+:   * Built continuous integration system on top of OpenStack and Jenkins
+
+    * Created android-tablet, ReactJS-based shipping software
+
+    * **Environment**:\
+        `PHP` `PostgreSQL` `Debian` `chef` `Git` `nginx` `MongoDB` `Memcached`
+        `Beanstalk` `Gearman` `Nagios` `Jenkins` `CasperJS` `PHPUnit`
+        `jQuery` `QUnit` `Bootstrap` `saltstack`
+
+![UpSync][] **UpSync** -- _Web Developer/Systems Administrator_ -- 2012-10-22 - 2013-11-15
+:   * Developed features for mobile, offline project with PHP 5.4, JavaScript, and Objective-C
+
+    * Built, monitored, and maintained load-balanced VPC CentOS-6-based LAMP stack on AWS
+
+    * **Environment**:\
+        `AWS` `CentOS` `PHP` `MySQL` `XCode/Objective-C` `SVN` `Nagios` `Cacti`
+        `WebSQL` `AMD.js` `Backbone` `D3` `jQuery`
+
+![Custom Channels][] **Custom Channels** -- _Director of Technology_ -- 2009-07-22 - 2012-10-19
+:   * Built and maintained small pool of Xen-based virtual servers
+
+    * Built and maintained Linux (CentOS and Ubuntu) VPS machines for file
+      storage, streaming media, and web applications
+
+    * Built command line tools to manage 100s of thousands of OGG, FLAC, and
+      MP3 files
+
+    * Environment:\
+        `Xen` `Ubuntu` `CentOS` `Perl5` `Wordpress` `MySQL` `IceCast`
+        `OPML` `Git` `Nagios` `Prototype` `Bootstrap`
+
+## Writing
+
+I write things, sometimes about work, sometimes about other stuff. Here are a
+few choice bits for getting to know me better.
+
+* [[My Remote Desk|blog/2016/11/07/my-remote-desk]]
+* [[Why I Will Continue to use Linode|blog/2016/09/18/why-i-will-continue-to-use-linode]]
+* [[Visualizing Git's Merkle Dag|blog/2016/03/21/Visualizing-Git-Merkle-DAG-with-D3.js]]
+* [[(ab)Using Git Notes|blog/2016/08/26/abusing-git-notes]]
+* [[Coreboot on X220 with Raspberry Pi|blog/2016/11/13/coreboot-on-the-thinkpad-x220-with-a-raspberry-pi]]
+
+[[Even more →|posts]]
+
+[email]: mailto:tyler@tylercipriani.com "Tyler Cipriani -- Email"
+[Tyler Cipriani]: https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/2017-01-06_tyler-cipriani-240.jpg "Tyler Cipriani -- Avatar"
+[homepage]: https://tylercipriani.com "Tyler Cipriani -- Home"
+[Wikimedia Foundation]: https://photos.tylercipriani.com/thumbs/0d/a64f7d1d1a423ef5120c951cfe4c63/original.png "Wikimedia Foundation"
+[UpSync]: https://photos.tylercipriani.com/thumbs/6f/56b8d60a441ecb01c8b41c2a8e6066/original.png "UpSync"
+[Custom Channels]: https://photos.tylercipriani.com/thumbs/0a/438de3b9332d0809984aa058e60334/original.png "Custom Channels"
+[SparkFun]: https://photos.tylercipriani.com/thumbs/b0/34b2be93607df291d8d16817f90dbe/original.png "SparkFun"

@@ -1,0 +1,100 @@
+#contact { display: none; }
+#about { display: block; }
+#about h2 { display: none; }
+
+blockquote,
+section {
+    overflow: hidden;
+    clear: both;
+}
+
+blockquote figure {
+    width: auto;
+    margin-left: 0;
+    float: left;
+    border: none;
+}
+
+blockquote figcaption {
+    display: none;
+}
+
+section > blockquote {
+    margin: 0 0 1em 0;
+}
+
+dt img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.25em 0 0;
+}
+
+@media (max-width: 54em) {
+    blockquote figure {
+        float: none;
+        width: 100%;
+    }
+}
+
+/* Print Styles {{{
+ * ================================================== */
+@media print {
+  #contact { display: block; }
+  #contact h2 { display: none; }
+  #about { display: none; }
+
+  .header { margin: 0 !important; }
+
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  *:before,
+  *:after {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5em !important;
+  }
+
+  @page { margin: 0.5cm; }
+
+  a[href]:after { content: " (" attr(href) ")" !important; }
+  a[href^='javascript:']:after,
+  a[href^='#']:after { content: ''; }
+
+  header,
+  footer,
+  blockquote figure,
+  .title,
+  #writing,
+  #open-source {
+    display: none;
+  }
+
+  .pageheader .header .parentlinks { font-size: 0 }
+  .pageheader .header .parentlinks a { font-size: 18pt !important; }
+
+  h2,
+  section,
+  blockquote {
+    background: #fff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  p,
+  h2 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2 { page-break-after: avoid; }
+}
+/* }}} */

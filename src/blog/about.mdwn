@@ -35,8 +35,8 @@ or making the ''final'' adjustment to my admittedly already ridiculous collectio
 
 ## Links
 
-* [[Résumé|https://tylercipriani.com/hireme/]] <small>([[source|https://github.com/thcipriani/hireme]])</small>
-* [[Photography|http://photos.tylercipriani.com]]
+* [[Résumé|hireme]]
+* [[Photography|tags/photos]]
 * [[Links|https://pinboard.in/u:thcipriani/]]
 
 ![Free Software Foundation Member](/static/images/fsf.png)\
