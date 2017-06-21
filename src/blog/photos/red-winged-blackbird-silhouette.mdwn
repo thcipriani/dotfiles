@@ -1,0 +1,37 @@
+[[!meta date="2017-04-23 06:08:44"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Red-Winged Blackbird Silhouette"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+photos/bird
+photos/animal
+photos/2017
+photos/2017/04
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/6a/6f25f0e2820a020756a4f7b296b93b/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/6a/6f25f0e2820a020756a4f7b296b93b/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/6a/6f25f0e2820a020756a4f7b296b93b/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/6a/6f25f0e2820a020756a4f7b296b93b/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/6a/6f25f0e2820a020756a4f7b296b93b/original.jpg)](https://photos.tylercipriani.com/thumbs/6a/6f25f0e2820a020756a4f7b296b93b/large.jpg)
+
+Male red-winged blackbird against the sunrise at McIntosh Lake.
+
+EXIF |
+--- | ---
+ExposureTime | 1/4000
+FNumber | 2.8
+Description | Male red-winged blackbird against the sunrise at McIntosh Lake.
+Title | Red-Winged Blackbird Silhouette
+FocalLength | 200.0 mm
+CreateDate | 2017-04-23 06:08:44
+Lens | 70-200mm f/2.8
+ISO | 1600
+Model | NIKON D610
+Make | NIKON CORPORATION
+

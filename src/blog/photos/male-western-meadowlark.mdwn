@@ -1,0 +1,37 @@
+[[!meta date="2017-04-23 06:15:05"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Male Western Meadowlark"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+photos/bird
+photos/animal
+photos/2017
+photos/2017/04
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/ca/72988b9b03ba75863380d6cb4fb24c/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/ca/72988b9b03ba75863380d6cb4fb24c/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/ca/72988b9b03ba75863380d6cb4fb24c/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/ca/72988b9b03ba75863380d6cb4fb24c/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/ca/72988b9b03ba75863380d6cb4fb24c/original.jpg)](https://photos.tylercipriani.com/thumbs/ca/72988b9b03ba75863380d6cb4fb24c/large.jpg)
+
+Male Western meadowlark on a fencepost at McIntosh Lake, Longmont, Coloardo.
+
+EXIF |
+--- | ---
+ExposureTime | 1/320
+FNumber | 4.0
+Description | Male Western meadowlark on a fencepost at McIntosh Lake, Longmont, Coloardo.
+Title | Male Western Meadowlark
+FocalLength | 200.0 mm
+CreateDate | 2017-04-23 06:15:05
+Lens | 70-200mm f/2.8
+ISO | 1600
+Model | NIKON D610
+Make | NIKON CORPORATION
+
