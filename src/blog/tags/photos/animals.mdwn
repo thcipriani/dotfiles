@@ -1,4 +1,0 @@
-[[!meta title="pages tagged photos/animals"]]
-
-[[!inline pages="tagged(photos/animals)" actions="no" archive="yes"
-feedshow=10]]
