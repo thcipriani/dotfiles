@@ -10,7 +10,7 @@ section {
 
 blockquote figure {
     width: auto;
-    margin-left: 0;
+    margin: 1em 1em 1em 0;
     float: left;
     border: none;
 }
@@ -29,7 +29,7 @@ dt img {
     margin: 0 0.25em 0 0;
 }
 
-@media (max-width: 54em) {
+@media (max-width: 32em) {
     blockquote figure {
         float: none;
         width: 100%;

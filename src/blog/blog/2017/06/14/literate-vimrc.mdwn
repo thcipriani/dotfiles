@@ -150,6 +150,7 @@ Plugin 'dag/vim-fish'
 Plugin 'rodjek/vim-puppet'
 Plugin 'ClockworkNet/vim-vcl'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-go'
 
 
 call vundle#end()            " required

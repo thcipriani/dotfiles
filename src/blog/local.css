@@ -641,12 +641,12 @@ img.img { margin: 0; }
 .logo:active,
 .logo:link {
     float: left;
-    padding: 0.5em 2em 0;
+    padding: 0.85em 2em 0;
     background-image: none;
 }
 
 .main-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    background: cornsilk;
     overflow: hidden;
 }
 
@@ -667,8 +667,7 @@ img.img { margin: 0; }
 
 .main-header-nav-list-item a {
     display: block;
-    border-left: 1px solid rgba(0, 0, 0, 0.25);
-    padding: 0.65em 2em;
+    padding: 1em 2em;
 }
 
 .main-header-nav-list-item a:hover {
@@ -697,7 +696,7 @@ img.img { margin: 0; }
 }
 
 .pageheader .header {
-    margin: 1em 0;
+    margin: 0.5em 0;
     display: block;
     font-size: 1.5em;
 }
@@ -896,19 +895,13 @@ a.feedbutton {
 }
 
 figure {
-    width: 120%;
-    margin-left: -10%;
+    margin: 1em 0;
     font-size: small;
 }
 
-.inlinecontent figure {
-    width: 100%;
-    margin-left: 0;
-}
-
 .page {
-    width: 45em;
-    max-width: 85%;
+    max-width: 1280px;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -1045,32 +1038,38 @@ code > span.er { color: #ff0000; font-weight: bold; }
  * As responsive as I get
  * ======================= */
 @media (max-width: 54em) {
+    .page {
+        width: 85%;
+    }
+
     figure {
-        width: 100%;
-        margin-left: 0;
         text-align: center;
     }
+
     .comment-avatar {
         width: 50px;
     }
+
     .wiki-image {
         text-align: center;
     }
+
     .toc {
         float: none;
         margin: 0 0 1em 0;
         padding-left: 2em;
     }
 
-    .main-header-nav {
-        float: none;
+    .logo,
+    .logo:visited,
+    .logo:hover,
+    .logo:active,
+    .logo:link {
+        padding: 0.85em 1em 0;
     }
-    .main-header-nav-list-item {
-        float: none;
-        border-top: 1px solid rgba(0, 0, 0, 0.25);
-    }
-    .main-header-nav-list-item:first-child {
-        border-top: none;
+
+    .main-header-nav-list-item a {
+        padding: 1em 1em;
     }
 }
 
