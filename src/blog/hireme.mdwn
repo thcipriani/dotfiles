@@ -26,9 +26,7 @@ Copyright &copy; 2017 Tyler Cipriani
 >
 > [tyler@tylercipriani.com][email]
 >
-> ```
-> 6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02
-> ```
+> `6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
 
 ## Open Source
 

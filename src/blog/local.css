@@ -477,6 +477,7 @@ body {
     line-height: 1.6em;
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
+    word-wrap: break-word;
 
     font-variant-ligatures: common-ligatures additionalligatures;
 
@@ -581,11 +582,10 @@ a[href*="//"]:not([href*="tylercipriani.com"]):after {
 }
 
 blockquote {
-    background: #f9f9f9;
+    background: #f6f8fa;
     padding: 1em 1em 1em 2em;
-    border: 1px solid #ccc;
     margin: 1em 0;
-    border-left: 5px solid #ccc;
+    border-left: 2px solid tomato;
 }
 
 blockquote a {
@@ -593,19 +593,23 @@ blockquote a {
 }
 
 code {
-    display: inline-block;
+    padding: 0.2em 0;
     white-space: no-wrap;
-    background: #FFF;
-    line-height: 1.52381;
     color: #555;
-    border: 1px solid #DDD;
-    -webkit-border-radius: .4em;
-    -moz-border-radius: .4em;
-    -ms-border-radius: .4em;
-    -o-border-radius: .4em;
-    border-radius: .4em;
-    padding: 0 .3em;
-    margin: -1px 0;
+    background: rgba(0, 0, 0, 0.05);
+    font-size: 85%;
+
+    -webkit-border-radius: .2em;
+       -moz-border-radius: .2em;
+        -ms-border-radius: .2em;
+         -o-border-radius: .2em;
+            border-radius: .2em;
+}
+
+code:before,
+code:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
 }
 
 table {
@@ -672,6 +676,7 @@ img.img { margin: 0; }
 
 .main-header-nav-list-item a:hover {
     text-decoration: none;
+    text-shadow: 2px 0 0 cornsilk, -2px 0 0 cornsilk;
     background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
     background-image: -webkit-linear-gradient(left, currentColor 0%, currentColor 100%);
     background-image:      -o-linear-gradient(left, currentColor 0%, currentColor 100%);
@@ -970,14 +975,13 @@ p {
 
 div.sourceCode,
 pre {
-    background: #f9f9f9;
-    border: 1px solid #ccc;
+    background: #f6f8fa;
     padding: 0.5em;
     width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
     margin: 1em 0;
-    border-left: 5px solid #95abd0;
+    border-left: 2px solid #40a070;
 }
 
 .sourceCode pre {
@@ -1018,13 +1022,11 @@ table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
 table.sourceCode { width: 100%; }
 td.lineNumbers {
     text-align: right;
-    padding-right: 4px;
-    padding-left: 4px;
     color: #ddd;
     border-right: none;
     width: 2em;
-    font-size: 0.84em;
-    line-height: 1.5em;
+    /*font-size: 0.84em;
+    line-height: 1.5em;*/
 }
 td.sourceCode { padding-left: 5px; }
 code > span.kw { color: #007020; font-weight: bold; }
