@@ -899,6 +899,11 @@ figure {
     font-size: small;
 }
 
+/* readability */
+p {
+    max-width: 45em;
+}
+
 .page {
     max-width: 1280px;
     width: 75%;
