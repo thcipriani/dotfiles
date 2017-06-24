@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/bug"]]
+
+[[!inline pages="tagged(photos/bug)" actions="no" archive="yes"
+feedshow=10]]
