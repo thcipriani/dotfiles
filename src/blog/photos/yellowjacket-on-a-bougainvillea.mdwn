@@ -1,0 +1,35 @@
+[[!meta date="2017-06-24 09:29:03"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Yellowjacket on a bougainvillea"]]
+[[!tag
+photos
+photos/0mm-f-0
+photos/nikon-d610
+photos/macro
+photos/bug
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/49/c39e5a96f35edf390ae471870b9dc1/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/49/c39e5a96f35edf390ae471870b9dc1/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/49/c39e5a96f35edf390ae471870b9dc1/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/49/c39e5a96f35edf390ae471870b9dc1/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/49/c39e5a96f35edf390ae471870b9dc1/original.jpg)](https://photos.tylercipriani.com/thumbs/49/c39e5a96f35edf390ae471870b9dc1/large.jpg)
+
+Saw a lethargic yellowjacket on a bougainvillea in my yard this morning.
+
+EXIF |
+--- | ---
+ExposureTime | 1/800
+FNumber | 0 (f/16)
+Description | Saw a lethargic yellowjacket on a bougainvillea in my yard this morning.
+Title | Yellowjacket on a bougainvillea
+FocalLength | 0.0 mm (70mm, reversed)
+CreateDate | 2017-06-24 09:29:03
+Lens | 0mm f/0 (Nikkor 70-210mm f/4.5-f/5.6)
+ISO | 3200
+Model | NIKON D610
+Make | NIKON CORPORATION
+
