@@ -1,28 +1,42 @@
 [[!meta title="About"]]
-[[!toc ]]
 
 ## An Autohagiography
 
-Digital rights ideologue, Vim lover, beer geek, emoji junkie (:joy_cat:),
-dotfile tinkerer and unabashed Sriracha addict&mdash; are all true (and
-potentially derisive) things that could be said about me. I am currently a
-release engineer at the [Wikimedia
-Foundation]( https://wikimediafoundation.org/wiki/Home) working remotely from sunny Boulder, Colorado.
+I'm depressing to follow on social media.
 
-When I’m not thinking about how to make the web a better, more dynamic
-place—you’ll find me
-[homebrewing beer](http://blazeyandtyler.com/wiki/Category:Beer),
-[roasting coffee](https://blazeyandtyler.com/wiki/Category:Coffee),
-[snapping photos](http://photos.tylercipriani.com/),
-or making the ''final'' adjustment to my admittedly already ridiculous collection of
-[dotfiles](https://github.com/thcipriani/dotfiles/).
+I [make beer](http://blazeyandtyler.com/wiki/Category:Beer).
+I [roast coffee](https://blazeyandtyler.com/wiki/Category:Coffee).
+I have taken a [[photo|tags/photos]] or two in my day.
+
+I work remotely for the [Wikimedia Foundation](
+https://wikimediafoundation.org/wiki/Home) from my home in Longmont, Colorado
+although my views do not represent the views of my employer. I have worked for
+other places, and I have listed those places on my [[Résumé|hireme]].
+
+My [dotfiles](https://github.com/thcipriani/dotfiles/) may be the only thing
+standing between humanity and certain destruction -- I don't really know for
+sure.
+
+[[!img static/images/fsf.png alt="Free Software Foundation Member"]]
+
+I believe in a robust, free, and open internet. The internet -- as it exists
+currently -- is fragile, centralized, and is vulnerable to (and increasingly
+captured and subverted by) longstanding societal power structures. I believe a
+digital dark age is coming and/or here. I believe we will continue down the
+path of destroying the internet because we need regulation to stop it, and the
+current state of late-stage capitalism means that politicians are beholden to
+different class of people than me.
+
+I guess this is a rambly way of saying that I've lost faith in real democracy
+and the internet is dead.
+
+I &#128569; the internet. I worry about it all the time.
 
 ## Contact
 
 * [tyler@tylercipriani.com](mailto:tyler@tylercipriani.com)
 * irc: thcipriani (Freenode)
 * @[thcipriani](https://twitter.com/thcipriani)
-* [github](https://github.com/thcipriani)
 * [pinboard](https://pinboard.in/u:thcipriani/)
 * [library thing](https://www.librarything.com/catalog/thcipriani)
 
@@ -32,11 +46,3 @@ or making the ''final'' adjustment to my admittedly already ridiculous collectio
 * [MIT keyserver](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xF6DAD285018FAC02)
 * [Keybase](https://keybase.io/thcipriani)
 * Fingerprint: `6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
-
-## Links
-
-* [[Résumé|hireme]]
-* [[Photography|tags/photos]]
-* [[Links|https://pinboard.in/u:thcipriani/]]
-
-![Free Software Foundation Member](/static/images/fsf.png)\
