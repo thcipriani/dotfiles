@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/flower"]]
+
+[[!inline pages="tagged(photos/flower)" actions="no" archive="yes"
+feedshow=10]]
