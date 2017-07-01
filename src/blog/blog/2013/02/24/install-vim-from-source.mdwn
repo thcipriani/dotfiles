@@ -1,4 +1,3 @@
-[[!toc ]]
 …or, I suppose, other Linux-es…Linuxi…Linux distributions.
 
 Many of the Vim features on which I&#8217;ve come to depend simply aren't available in Vim pre-7.3.3. That&#8217;s fine if I&#8217;m working on an OS that cares about having up-to-date software like Ubuntu or OSX; however, it ain&#8217;t so great if I&#8217;m working on a shared host that uses CentOS **_five point something dumb_** because the hosting-providers weren&#8217;t hugged as children (I&#8217;d guess).

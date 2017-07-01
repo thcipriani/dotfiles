@@ -1,6 +1,5 @@
 [[!meta script=static/js/conways-favicon defer]]
 
-[[!toc ]]
 I find favicons pretty useful overall. That weird little
 [Earthworm-Jim-esque bug-head](https://bugs.r-project.org/bugzilla3/images/favicon.ico)
 in my bookmarks bar immediately queues me in on where to click to get to

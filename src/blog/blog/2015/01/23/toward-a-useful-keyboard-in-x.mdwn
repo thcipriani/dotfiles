@@ -1,4 +1,3 @@
-[[!toc ]]
 I'm not sure when, exactly, it became clear that I was going to spend as
 much time as necessary perfecting my keyboard configuration. It's one of
 those things that you _know_ you can make absolutely perfect—given enough

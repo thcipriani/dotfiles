@@ -4,7 +4,6 @@
 Copyright &copy; 2017 Tyler Cipriani
 """]]
 [[!meta title="What I Told the FCC"]]
-[[!toc ]]
 [[!tag computing]]
 
 I think that new FCC proposal for "[Restoring Internet

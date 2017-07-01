@@ -6,7 +6,6 @@
 [[!meta copyright="""
 Copyright &copy; 2017 Tyler Cipriani
 """]]
-[[!toc ]]
 [[!tag computing bash shell notes]]
 [[!meta date="Tue 2016-08-30 05:01:47 AM"]]
 
@@ -79,7 +78,7 @@ _scap() {
     # limit the command to autocomplete to the first 3 words
     if (( COMP_CWORD >= 2 )); then
         # don't complete any sub-subcommands, only options
-        if [[ -n "$cur" && "${cur:0:1}" != '-' ]]; then
+        if \[[ -n "$cur" && "${cur:0:1}" != '-' ]]; then
             COMPREPLY=()
             return
         fi

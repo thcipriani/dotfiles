@@ -9,7 +9,6 @@ Copyright &copy; 2017 Tyler Cipriani
 [[!meta title="Updates around here"]]
 [[!tag computing administravia]]
 
-[[!toc ]]
 I've (mostly) finished moving my blog off of Jekyll and over to [IkiWiki](https://ikiwiki.info/).
 
 The source for my posts is still on github. My Jekyll stuff is still in [thcipriani/blog_src](https://github.com/thcipriani/blog_src). My IkiWiki stuff can be found in [thcipriani/wiki](thcipriani/wikihttps://github.com/thcipriani/wiki). I've also made a couple of plugins for IkiWiki—one to use [Pygments](http://pygments.org/) for syntax highlighting, another to use [s3cmd](http://s3tools.org/s3cmd) to do my publishing. I'll get around to publishing those plugins Soon™.  For whatever reason the [amazon_s3](https://ikiwiki.info/plugins/amazon_s3/) plugin for IkiWiki failed in strange ways for me.

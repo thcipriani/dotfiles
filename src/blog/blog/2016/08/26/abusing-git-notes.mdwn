@@ -9,7 +9,6 @@ Copyright &copy; 2017 Tyler Cipriani
 """]]
 [[!tag computing vcs git-abuse git]]
 
-[[!toc ]]
 Flickr
 ---
 

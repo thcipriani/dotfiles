@@ -8,7 +8,6 @@ Copyright &copy; 2017 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!tag software rambling]]
-[[!toc ]]
 
 A jargon-less definition of code review is a difficult thing to pin-
 down. Code review is what happens when someone submits some code to a

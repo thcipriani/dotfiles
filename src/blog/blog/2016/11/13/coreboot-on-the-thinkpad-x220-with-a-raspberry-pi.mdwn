@@ -8,7 +8,6 @@ Copyright &copy; 2017 Tyler Cipriani
 """]]
 [[!meta title="Coreboot on the ThinkPad X220 with a Raspberry Pi"]]
 [[!tag computing coreboot hardware notes]]
-[[!toc ]]
 
 My work laptop is terrible. About a year and a half ago, when I started my
 current gig, I received an Asus Zenbook that has been the bane of my existence

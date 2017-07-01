@@ -1,4 +1,3 @@
-[[!toc ]]
 I&#8217;ve been an Ubuntu user for 4 years now. Since I started working at Upsync 3 months ago, I&#8217;ve found myself a very lonely desktop Linux user. Also, since this job is my first heavy-duty exposure to back-end web development, I&#8217;ve found myself a very confused desktop Linux user.
 
 While there are many tools for working on a website backend available in Ubuntu, few are as shiny as those available in OSX (Charles Proxy, usable in Chrome. I want that. I want it hard.). Also, want to do any iOS work? (you know I do)&mdash;then you <em>must</em> have a mac.

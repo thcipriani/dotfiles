@@ -1,4 +1,3 @@
-[[!toc ]]
 A few years ago I was using ZSH with Sindre Sorhus's
 [Pure prompt](https://github.com/sindresorhus/pure) and generally enjoying
 the experience. The big, dumb, obvious caveat of using ZSH is that it's not Bash.

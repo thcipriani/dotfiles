@@ -1,5 +1,4 @@
 [[!meta title="Bash Completion"]]
-[[!toc ]]
 [[!meta date="Tue 2016-08-30 05:01:47 AM"]]
 
 Links

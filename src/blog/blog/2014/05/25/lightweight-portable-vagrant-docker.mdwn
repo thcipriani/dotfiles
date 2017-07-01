@@ -1,4 +1,3 @@
-[[!toc ]]
 I&#8217;ve used Vagrant a fair amount in my day, and it&#8217;s great. I
 enjoy being able to spin-up toy linux environments to test out ideas.
 I tend to use the [Chef provisioner](http://docs.vagrantup.com/v2/provisioning/chef_solo.html) with Vagrant

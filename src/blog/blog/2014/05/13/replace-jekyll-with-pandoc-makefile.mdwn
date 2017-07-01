@@ -8,7 +8,6 @@
 > [Bassclef](https://github.com/tomduck/bassclef/#bassclef-cms)
 > and it looks pretty amazing and folks should check it out.
 
-[[!toc ]]
 I used to use del.icio.us to keep track of links, then it went away.
 After del.icio.us shutdown, I used a ton of uniquely awful services to
 keep track of links. Eventually, I came around to the idea that all I

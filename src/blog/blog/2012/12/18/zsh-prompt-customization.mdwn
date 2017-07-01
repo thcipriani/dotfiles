@@ -1,6 +1,5 @@
 ![Junkfood theme in git directory](http://tylercipriani-files.s3.amazonaws.com/blog/junkfoodtheme.png)
 
-[[!toc ]]
 In order to become a card-carrying Linux user, I feel like you _need_ to
 have spent a truly astounding amount of time fiddling with your
 <a href="https://github.com/thcipriani/dotfiles">dotfiles.</a> 

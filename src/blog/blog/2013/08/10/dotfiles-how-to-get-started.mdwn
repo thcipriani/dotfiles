@@ -1,4 +1,3 @@
-[[!toc ]]
 Earlier today I made a tweak to one of my ever-growing collection of 
 [dotfiles](https://github.com/thcipriani/dotfiles/) and it reminded me 
 that I&#8217;m not too happy with my dotfile&#8217;s `bootstrap` script.

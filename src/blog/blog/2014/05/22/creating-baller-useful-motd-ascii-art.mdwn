@@ -8,7 +8,6 @@
 
 ![Zangief MOtD](https://tylercipriani-files.s3.amazonaws.com/zangief_motd.png)
 
-[[!toc ]]
 Everyone universally agrees that most [Message of the Days (MOTDs)](http://linux.die.net/man/5/motd)
 are stupid and suck. By the end of reading this post, your mind grapes should be swollen with the knowledge
 of how to make an MOTD that isn&#8217;t stupid and, some would say, _doesn&#8217;t_

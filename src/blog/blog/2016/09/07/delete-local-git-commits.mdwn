@@ -45,7 +45,7 @@ drop c572357 [LOCAL] Change to be removed
 ```
 
 This is fine if you're there to drive an editor for an interactive rebase.
-[[!toc ]]
+
 ## The problem with interactivity
 
 The problem with interactive rebase is you can't easily script it.

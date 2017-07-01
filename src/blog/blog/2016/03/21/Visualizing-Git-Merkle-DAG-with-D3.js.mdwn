@@ -12,7 +12,6 @@ Copyright &copy; 2017 Tyler Cipriani
 [[!meta script=static/js/merkle-dag-d3 defer]]
 [[!tag computing vcs javascript]]
 
-[[!toc ]]
 The [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)
 (DAG) is a concept I run into over-and-over again; which is, perhaps,
 somewhat ironic.

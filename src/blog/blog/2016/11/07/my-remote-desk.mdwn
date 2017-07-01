@@ -7,7 +7,6 @@ Copyright &copy; 2017 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta title="My Remote Desk"]]
-[[!toc ]]
 
 ## Remote Culture
 ### A rant

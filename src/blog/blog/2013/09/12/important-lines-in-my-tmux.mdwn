@@ -1,5 +1,3 @@
-[[!toc ]]
-
 When I switched from GNU Screen to Tmux, I was just jazzed that Tmux _had_ a 
 status bar. To achieve that same effect in Screen I had a cryptic 
 115-character `hardstatus` string that I copy&#8211;pasted from someplace 
