@@ -1,0 +1,35 @@
+[[!meta date="2017-07-07 17:06:55"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Lily"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/9d/7ace987709173068952bfbbba4dc4b/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/9d/7ace987709173068952bfbbba4dc4b/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/9d/7ace987709173068952bfbbba4dc4b/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/9d/7ace987709173068952bfbbba4dc4b/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/9d/7ace987709173068952bfbbba4dc4b/original.jpg)](https://photos.tylercipriani.com/thumbs/9d/7ace987709173068952bfbbba4dc4b/large.jpg)
+
+A lily Blazey potted last weekend.
+
+Used a 12mm extension tube to focus a little closer in this instance.
+
+EXIF |
+--- | ---
+ExposureTime | 1/200
+FNumber | 13.0
+Description | A lily Blazey potted last weekend.
+Title | Lily
+FocalLength | 200.0 mm
+CreateDate | 2017-07-07 17:06:55
+Lens | 70-200mm f/2.8
+ISO | 320
+Model | NIKON D610
+Make | NIKON CORPORATION
+
