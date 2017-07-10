@@ -1,0 +1,256 @@
+[[!meta date="│2017-07-09T20:08:50-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="The Rsync Algorithm in Python"]]
+[[!tag computing]]
+
+I've often pondered this great and terrible beast -- `rsync`. It's spiny, nearly
+impenetrable command-line interface. Its majestic and wonderful efficiency.
+The depths of its man page, and the heights of its use-cases.
+
+Leaving aside the confusing implications of trailing slashes, `rsync` is
+amazing. The Wikimedia deployment tooling --
+[scap](https://phabricator.wikimedia.org/source/scap) (which at this point has been
+iterated on for over a decade) -- still makes heavy use of `rsync`. At `$DAYJOB -
+3`, `rsync` is used to manage a library of hundreds of thousands of `flac`,
+`mp3`, and `ogg` files.  It's hard to argue with `rsync`.  The amount of
+network traffic generated via `rsync` is really hard to beat with any other
+program.
+
+## But what's it doing?
+
+`rsync` is fast. `rsync` is ubiquitous. `rsync` uses few client resources, and
+little network IO. OK...Why?
+
+I started reading about the `rsync` algorithm when a [fellow I work
+alongside](https://github.com/20after4) began espousing the relative
+superiority of [zsync](http://zsync.moria.org.uk/) for the case of our
+deployment server. Currently `scap` has a built-in (and quite fancy) fan-out
+system so as not to put too high of a load on only 1 server; however, `zsync`
+flips the `rsync` algorithm on its head, running the `rsync` algorithm on the
+client rather than the server. What exactly is `rsync` doing that makes the
+load on the server so high?
+
+## The Meat
+
+For the purposes of explanation, lets say you ran the command: `rsync
+𝑎 𝑏`.
+
+The `rsync` algorithm boils down to [5
+steps](https://rsync.samba.org/tech_report/node2.html) --
+
+1. Split file 𝑏 into chunks of length 𝑛.
+2. Calculate a weak (adler32) and strong (md4) checksum for each chunk of file 𝑏.
+3. Send those checksums to the rsync server (where file 𝑎 is)
+4. Find all the chunks of length 𝑛 in 𝑎 that are in 𝑏 by comparing checksums
+5. Create a list of instructions to recreate 𝑎 from 𝑏
+
+Easy.
+
+## Do it then
+
+I actually think it would have been easier for me to understand a bad python
+implementation of the `rsync` algorithm, than to read a tech report on `rsync`.
+So with that in mind, here's a bad python implementation of the `rsync`
+algorithm.
+
+## Pythonic!
+
+First it might be helpful to define my block size, and create a couple of
+helper functions to create the rolling checksums.
+
+```{.python}
+import collections
+import hashlib
+import zlib
+
+
+BLOCK_SIZE = 4096
+
+
+# Helper functions
+# ----------------
+def md5_chunk(chunk):
+    """
+    Returns md5 checksum for chunk
+    """
+    m = hashlib.md5()
+    m.update(chunk)
+    return m.hexdigest()
+
+
+def adler32_chunk(chunk):
+    """
+    Returns adler32 checksum for chunk
+    """
+    return zlib.adler32(chunk)
+```
+
+I'll also need a function that creates a rolling checksum of a file. The
+`checksums_file` function will read in `BLOCK_SIZE` bytes through to the end of
+the file, calculate both the `adler32` checksum and the `md5` checksum for
+those chunks, and then put those chunks in a data structure. I'd like a nice
+interface beyond primitives for both the signatures and the list of checksums
+-- I'll create 2 objects `Signature` and `Chunks` to make that interface.
+`Chunks` is basically a list of `Signatures` with a few other methods for
+fanciness.
+
+```{.python}
+# Checksum objects
+# ----------------
+Signature = collections.namedtuple('Signature', 'md5 adler32')
+
+
+class Chunks(object):
+    """
+    Data stucture that holds rolling checksums for file B
+    """
+    def __init__(self):
+        self.chunks = []
+        self.chunk_sigs = {}
+
+    def append(self, sig):
+        self.chunks.append(sig)
+        self.chunk_sigs.setdefault(sig.adler32, {})
+        self.chunk_sigs[sig.adler32][sig.md5] = len(self.chunks) - 1
+
+    def get_chunk(self, chunk):
+        adler32 = self.chunk_sigs.get(adler32_chunk(chunk))
+
+        if adler32:
+            return adler32.get(md5_chunk(chunk))
+
+        return None
+
+    def __getitem__(self, idx):
+        return self.chunks[idx]
+
+    def __len__(self):
+        return len(self.chunks)
+
+
+# Build Chunks from a file
+# ------------------------
+def checksums_file(fn):
+    """
+    Returns object with checksums of file
+    """
+    chunks = Chunks()
+    with open(fn) as f:
+        while True:
+            chunk = f.read(BLOCK_SIZE)
+            if not chunk:
+                break
+
+            chunks.append(
+                Signature(
+                    adler32=adler32_chunk(chunk),
+                    md5=md5_chunk(chunk)
+                )
+            )
+
+        return chunks
+```
+
+Now I need a couple of methods to complete the algorithm -- one that will find
+the `BLOCK_SIZE` chunks in file 𝑏 that are in file 𝑎, and one that will produce
+instructions that can be used to assemble the new and improved 𝑏 from the 𝑏
+we've already got.
+
+The `_get_block_list` function will return a list of chunk indices and bytes.
+The chunk indices are indices of chunks already present in file 𝑏 (we know
+from the `checksums_file` function), the bytes are raw bytes that are in 𝑎 but
+may not be in 𝑏. If a chunk is found in 𝑎 that is not in 𝑏 then the first byte
+of that chunk is appended to the output list and a checksum is calculated for
+the next `BLOCK_SIZE` chunk. This is why network IO for `rsync` is so efficient
+-- the only raw data that is sent is the information missing from the remote.
+This is also why `rsync` causes higher load on the server than the client --
+it's not just checksumming files, it's checksumming, comparing, and building
+a diff. And it's doing that process for every machine to which it is attempting
+to sync.
+
+```{.python}
+def _get_block_list(file_one, file_two):
+    """
+    The good stuff.
+
+    1. create rolling checksums file_two
+    2. for each chunk in file one, determine if chunk is already in file_two
+        a. If so:
+            i. return the index of that chunk
+            ii. move the read head by the size of a chunk
+        b. If not:
+            i. return the next byte
+            ii. move the read head by 1 byte
+    3. start over at 2 until you're out of file to read
+    """
+    checksums = checksums_file(file_two)
+    blocks = []
+    offset = 0
+    with open(file_one) as f:
+        while True:
+            chunk = f.read(BLOCK_SIZE)
+            if not chunk:
+                break
+
+            chunk_number = checksums.get_chunk(chunk)
+
+            if chunk_number is not None:
+                offset += BLOCK_SIZE
+                blocks.append(chunk_number)
+                continue
+            else:
+                offset += 1
+                blocks.append(chunk[0])
+                f.seek(offset)
+                continue
+
+    return blocks
+```
+
+The poorly named `file` function (but it's in the `rsync.py` module, so
+`rsync.file` is good...right? No? OK.) takes the list of chunk offsets and raw
+bytes from `_get_block_list`, finds the chunks in 𝑏 referenced by the index,
+combines those chunks with the raw bytes from 𝑎 and returns a string that is
+the same as file 𝑎 -- it just took a weird route to get there :)
+
+```{.python}
+def file(file_one, file_two):
+    """
+    Essentially this returns file one, but in a fancy way :)
+
+    The output from get_block_list is a list of either chunk indexes or data as
+    strings.
+
+    If it's a chunk index, then read that chunk from the file and append it to
+    output. If it's not a chunk index, then it's actual data and should just be
+    appended to output directly.
+    """
+    output = ''
+    with open(file_two) as ft:
+        for block in _get_block_list(file_one, file_two):
+            if isinstance(block, int):
+                ft.seek(block * BLOCK_SIZE)
+                output += ft.read(BLOCK_SIZE)
+            else:
+                output += block
+
+    return output
+```
+
+Creating a python file that imports this script as a module, and invokes `file`
+is all you need to actually run it. I wrote a bunch of tests to help me write
+the script.  The core of the test file was simply:
+
+```{.python}
+import rsync
+
+if __name__ == '__main__':
+    rsync.file('fixtures/foo.txt', 'fixtures/bar.txt')
+```
+
+And at the end of our python-ing, we came to see the `rsync` beast in a new
+light -- not a beast at all, just a misunderstood algorithm with a lot of
+command line flags. The End.
