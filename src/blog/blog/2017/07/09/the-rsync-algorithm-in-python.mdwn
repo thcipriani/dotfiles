@@ -35,17 +35,17 @@ load on the server so high?
 
 ## The Meat
 
-For the purposes of explanation, let's say you ran the command: `rsync
-𝑎 𝑏`.
+For the purposes of explanation, let's say you ran the command: <code>rsync
+&alpha; &beta;</code>.
 
 The `rsync` algorithm boils down to [5
 steps](https://rsync.samba.org/tech_report/node2.html) --
 
-1. Split file 𝑏 into chunks of length 𝑛.
-2. Calculate a weak (adler32) and strong (md4) checksum for each chunk of file 𝑏.
-3. Send those checksums to the rsync server (where file 𝑎 is)
-4. Find all the chunks of length 𝑛 in 𝑎 that are in 𝑏 by comparing checksums
-5. Create a list of instructions to recreate 𝑎 from 𝑏
+1. Split file &beta; into chunks of length _n_.
+2. Calculate a weak (adler32) and strong (md4) checksum for each chunk of file &beta;.
+3. Send those checksums to the rsync server (where file &alpha; is)
+4. Find all the chunks of length _n_ in &alpha; that are in &beta; by comparing checksums
+5. Create a list of instructions to recreate &alpha; from &beta;
 
 Easy.
 
@@ -156,14 +156,14 @@ def checksums_file(fn):
 ```
 
 Now I need a couple of methods to complete the algorithm -- one that will find
-the `BLOCK_SIZE` chunks in file 𝑏 that are in file 𝑎, and one that will produce
-instructions that can be used to assemble the new and improved 𝑏 from the 𝑏
+the `BLOCK_SIZE` chunks in file &beta; that are in file &alpha;, and one that will produce
+instructions that can be used to assemble the new and improved &beta; from the &beta;
 we've already got.
 
 The `_get_block_list` function will return a list of chunk indices and bytes.
-The chunk indices are indices of chunks already present in file 𝑏 (we know
-from the `checksums_file` function), the bytes are raw bytes that are in 𝑎 but
-may not be in 𝑏. If a chunk is found in 𝑎 that is not in 𝑏 then the first byte
+The chunk indices are indices of chunks already present in file &beta; (we know
+from the `checksums_file` function), the bytes are raw bytes that are in &alpha; but
+may not be in &beta;. If a chunk is found in &alpha; that is not in &beta; then the first byte
 of that chunk is appended to the output list and a checksum is calculated for
 the next `BLOCK_SIZE` chunk.
 
@@ -214,9 +214,9 @@ def _get_block_list(file_one, file_two):
 
 The poorly named `file` function (but it's in the `rsync.py` module, so
 `rsync.file` is good...right? No? OK.) takes the list of chunk indices and raw
-bytes from `_get_block_list`, finds the chunks in 𝑏 referenced by the index,
-combines those chunks with the raw bytes from 𝑎 and returns a string that is
-the same as file 𝑎 -- it just took a weird route to get there :)
+bytes from `_get_block_list`, finds the chunks in &beta; referenced by the index,
+combines those chunks with the raw bytes from &alpha; and returns a string that is
+the same as file &alpha; -- it just took a weird route to get there :)
 
 ```{.python}
 def file(file_one, file_two):
