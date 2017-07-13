@@ -547,6 +547,14 @@ h6 {
             font-feature-settings: "kern" 1, "liga" 1, "swsh" 1;
 }
 
+h2 a {
+    display: none;
+}
+
+h2:hover a {
+    display: inline;
+}
+
 a:link,
 a:active,
 a:visited,
