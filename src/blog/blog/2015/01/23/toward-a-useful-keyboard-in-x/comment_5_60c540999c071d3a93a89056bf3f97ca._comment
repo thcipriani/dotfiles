@@ -1,0 +1,19 @@
+[[!comment format=mdwn
+ username="mrashley@ac7ad09b8d27b26139b8ac6dc7306b049e80ae4b"
+ nickname="mrashley"
+ avatar="https://seccdn.libravatar.org/avatar/935df3abce69f1724566f213f587b1ef"
+ subject="Auto-repeat as context menu"
+ date="2017-07-26T17:11:27Z"
+ content="""
+Here's my two cents:
+
+Auto-repeat is silly. Why do you ever need to retype the same letter over and over again? Perhaps a dash for an ASCII line to create a visual bar. Auto-repeating is silly.
+
+I'd like all the variants of a letter to appear in a context menu when you hold down a relevant letter. Holding down the dollar symbol? Maybe the euro, pound, etc symbols appear. Holding down the e, all the variations of éêë appear.
+
+I think this is a more human approach. I doesn't require learning, or memorization in the same way that every other method I've seen requires. It's already been shown to us by smartphones etc.
+
+Cheers,
+
+Ashley
+"""]]
