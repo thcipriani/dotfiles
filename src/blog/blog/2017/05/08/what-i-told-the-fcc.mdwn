@@ -57,7 +57,7 @@ Here's what I wrote:
 > possible by a perversion of the design of the internet. Bits of information
 > are bits of information, an ISP is arguing that websites should pay more
 > while it offers the same service. ISPs want Netflix to pay more than Google
-> for them to move 100 bytes from the internet backbone to your houuse. Moving
+> for them to move 100 bytes from the internet backbone to your house. Moving
 > 100 bytes from the backbone to someone's house, the so-called "last mile", is
 > same amount of work whether those bytes are from Google or Netflix so why
 > should Netflix have to pay more?
