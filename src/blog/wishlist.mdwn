@@ -1,0 +1,10 @@
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Wishlist"]]
+
+So you've found yourself honorbound to present me with gifts?
+You've come to the right place
+
+[[!inline pages="page(./wishlist/*) and !*/Discussion" archive=yes quick=yes trail=no]]
