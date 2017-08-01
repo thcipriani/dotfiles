@@ -1,0 +1,4 @@
+[[!meta title="pages tagged wishlist"]]
+
+[[!inline pages="tagged(wishlist)" actions="no" archive="yes"
+feedshow=10]]
