@@ -22,11 +22,11 @@ And so I did.
 - [[https://www.amazon.com/dp/B00KR69WHY/ref=cm_sw_su_dp][Flysight Black Pearl RC801 5.8Ghz 7" HD Screen Diversity Monitor with Integrated Battery, 1024x600]]
 - [[https://kano.me/store/us/products/kano-kit][Kano Computer Kit]]
 ** List for blazey
-- [[https://www.etsy.com/listing/522914585/chalkboard-tap-handles][Chalkboard Tap Handle]]
-- [[http://www.homebrewing.com/equipment/pin-cask/][5 gallon pin cask]]
-- [[https://www.morebeer.com/products/torpedo-ball-lock-kegs.html][1.5 Gal Torpedo Ball Lock Kegs]]
+- [[http://www.aroxa.com/beer/beer-flavour-standard-kit/uno-kits/beer-uno-kit][beer uno kit]]
 - [[http://www.flavoractiv.com/products/dms-beer-flavour-standard/][DMS Beer Flavour Standard]]
-- [[http://order.flavoractiv.com/Products/List/1][Oxidised GMP Flavour Standard]]
+- [[https://www.morebeer.com/products/torpedo-ball-lock-kegs.html][1.5 Gal Torpedo Ball Lock Kegs]]
+- [[http://www.homebrewing.com/equipment/pin-cask/][5 gallon pin cask]]
+- [[https://www.etsy.com/listing/522914585/chalkboard-tap-handles][Chalkboard Tap Handle]]
 ** List for everybody
 - [[https://www.amazon.com/Advanced-Programming-UNIX-Environment-Edition/dp/0321637739][Advanced Programming in the UNIX Environment]]
 - [[https://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746][Mindstorms: Children, Computers, And Powerful Ideas by Seymour A. Papert]]
