@@ -25,6 +25,8 @@ And so I did.
 - [[https://www.etsy.com/listing/522914585/chalkboard-tap-handles][Chalkboard Tap Handle]]
 - [[http://www.homebrewing.com/equipment/pin-cask/][5 gallon pin cask]]
 - [[https://www.morebeer.com/products/torpedo-ball-lock-kegs.html][1.5 Gal Torpedo Ball Lock Kegs]]
+- [[http://www.flavoractiv.com/products/dms-beer-flavour-standard/][DMS Beer Flavour Standard]]
+- [[http://order.flavoractiv.com/Products/List/1][Oxidised GMP Flavour Standard]]
 ** List for everybody
 - [[https://www.amazon.com/Advanced-Programming-UNIX-Environment-Edition/dp/0321637739][Advanced Programming in the UNIX Environment]]
 - [[https://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746][Mindstorms: Children, Computers, And Powerful Ideas by Seymour A. Papert]]
