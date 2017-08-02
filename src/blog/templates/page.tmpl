@@ -8,7 +8,7 @@
 </TMPL_IF>
 <TMPL_IF HTML5><meta charset="utf-8" /><TMPL_ELSE><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></TMPL_IF>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><TMPL_VAR TITLE><TMPL_IF NAME="PARENTLINKS"> - <TMPL_VAR WIKINAME></TMPL_IF></title>
+<title><TMPL_VAR TITLE> - <TMPL_VAR WIKINAME></title>
 <TMPL_UNLESS NOT_RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_UNLESS>
 <TMPL_IF FAVICON>
 <link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" />
@@ -121,12 +121,6 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 <!-- tylercipriani additions -->
 <link rel="author" href="<TMPL_VAR BASEURL>humans.txt">
 
-<!-- OpenID things -->
-<link rel="openid.server" href="https://openid.tylercipriani.com/" />
-<link rel="openid2.provider" href="https://openid.tylercipriani.com/" />
-<meta http-equiv="X-XRDS-Location" content="https://openid.tylercipriani.com/xrds/thcipriani" />
-<!-- tylercipriani additions end -->
-
 </head>
 <body>
 
@@ -153,6 +147,7 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 
 <TMPL_IF HTML5><section class="pageheader"><TMPL_ELSE><div class="pageheader"></TMPL_IF>
 <TMPL_IF HTML5><header class="header"><TMPL_ELSE><div class="header"></TMPL_IF>
+<TMPL_IF NAME="PARENTLINKS">
 <span>
 <span class="parentlinks">
 <TMPL_LOOP PARENTLINKS>
@@ -166,6 +161,7 @@ window.addEventListener("load", function(){var mathElements = document.getElemen
 </TMPL_IF>
 </span>
 </span>
+</TMPL_IF>
 <TMPL_UNLESS DYNAMIC>
 <TMPL_IF SEARCHFORM>
 <TMPL_VAR SEARCHFORM>

@@ -5,6 +5,7 @@ Copyright &copy; 2017 Tyler Cipriani
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta title="Hello."]]
+[[!meta openid="https://openid.tylercipriani.com/" server="https://openid.tylercipriani.com/" xrds-location="https://openid.tylercipriani.com/xrds/thcipriani"]]
 
 <figure>
 <img title="I see you there. Reading my blog. You think I don't see you -- look at my face. I see you." src="https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/2017-01-06_tyler-cipriani-1280.jpg" alt="Tyler Cipriani">

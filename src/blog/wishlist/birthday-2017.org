@@ -7,6 +7,7 @@ Copyright &copy; 2017 Tyler Cipriani
 """]]
 [[!meta title="Birthday 2017"]]
 [[!tag wishlist]]
+[[!meta  robots="index, nofollow"]]
 
 It's been requested that I make a birthday list.
 
