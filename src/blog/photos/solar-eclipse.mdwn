@@ -1,0 +1,150 @@
+[[!meta date="2017-08-21 10:17:27"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Solar Eclipse"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/f2/8ccc3b93f55e0ae6249f72675b851c/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/f2/8ccc3b93f55e0ae6249f72675b851c/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/f2/8ccc3b93f55e0ae6249f72675b851c/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/f2/8ccc3b93f55e0ae6249f72675b851c/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/f2/8ccc3b93f55e0ae6249f72675b851c/original.jpg)](https://photos.tylercipriani.com/thumbs/f2/8ccc3b93f55e0ae6249f72675b851c/large.jpg)
+
+The view of a 93.8% solar eclipse from Sandstone Ranch in Longmont, Colorado.
+These photos were taken from 10:23 AM MDT &ndash; 1:14 PM MDT.  The center of
+this image is the peak of 93.8% of the sun obscured at
+2017-08-21T11:47:39-06:00.
+
+## Gear
+
+![[eclipse camera setup](https://photos.tylercipriani.com/thumbs/61/473e6f5497d9a2c20463da879e8b4c/index.html) (the big blurry spot is a scratch on the lens of my Nexus 5x)](https://photos.tylercipriani.com/thumbs/61/473e6f5497d9a2c20463da879e8b4c/small.jpg)
+
+1. [Nikon D610](https://www.amazon.com/Nikon-D610-FX-Format-Digital-Camera/dp/B00FOTF8M2/ref=sr_1_3) - full-frame DSLR that I've had for a few years
+2. [Nikon 70-200mm f/2.8G ED VR II](https://www.amazon.com/Nikon-70-200mm-Nikkor-Digital-Cameras/dp/B002JCSV8U/ref=sr_1_2) - longest lens I own
+3. [Nikon Auto Focus-S FX TC-20E III 2x Teleconverter](https://www.amazon.com/Nikon-Focus-S-TC-20E-Teleconverter-Cameras/dp/B0030BG8ZC/ref=sr_1_1) - gave me an effective 400mm focal length
+4. [iOptron SkyGuider Pro](https://www.amazon.com/iOptron-SkyGuider-Camera-Mount-Package/dp/B07199QMR6) - this canceled out the motion of the earth relative to the sun, so didn't have to worry about constantly realigning my camera.
+5. Thousand Oaks 77mm threaded mylar solar filter
+6. ThinkPad x230 acting as a shitty intervalometer
+
+## "Software"
+
+(notice the quotes)
+
+I used my ThinkPad x230 as a shitty intervalometer rather than my
+[[x220|blog/2016/11/13/coreboot-on-the-thinkpad-x220-with-a-raspberry-pi]] as I
+have no faith in the battery life of the x220. I really thought this was my
+PocketCHIP's time to shine, but `gphoto2` was pretty out-of-date. Updating to
+stretch proved to be a bad time, as one might expect. I used `gphoto2` to take
+7 pictures every 4(ish) minutes at different exposures using a bash script I
+wrote:
+
+```
+#!/usr/bin/env bash
+
+starttime="$(date +%s)"
+
+# 4 Minutes intervalometer
+sleeptime=$(( 4 * 60 ))
+
+gphoto2 --camera='Nikon DSC D610' --set-config autoiso=1
+
+while /bin/true; do
+    # Shutter delay 1s to avoid mirror-up shake
+    gphoto2 --camera='Nikon DSC D610' --set-config d06a=2
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/8 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.005 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+
+    # Turn off shutter delay
+    gphoto2 --camera='Nikon DSC D610' --set-config d06a=3
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/8 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.00125 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+
+    # Shutter delay 1s to avoid mirror-up shake
+    gphoto2 --camera='Nikon DSC D610' --set-config d06a=2
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/11 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.005 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+
+    # Turn off shutter delay
+    gphoto2 --camera='Nikon DSC D610' --set-config d06a=3
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/11 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.00125 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+
+    # Shutter delay 1s to avoid mirror-up shake
+    gphoto2 --camera='Nikon DSC D610' --set-config d06a=2
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/11 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.02 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/8 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.125 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+    gphoto2 --camera='Nikon DSC D610' --set-config f-number=f/8 \
+        --set-config capturetarget=1 \
+        --set-config shutterspeed=0.5 \
+        --set-config iso=100 \
+        --set-config imagequality=3 \
+        --trigger-capture
+    sleep 1
+
+    sleep $sleeptime
+done
+
+endtime="$(date +%s)"
+totaltime=$(( endtime - starttime ))
+echo "Total time: $totaltime"
+```
+
+Overall I was happy with this setup. You can see sunspots in each of my images
+fairly clearly. So what changes for the 2024 eclipse? Longer lenses never hurt
+anyone: I wasn't a huge fan of the teleconverter and I felt that I lost some
+sharpness. I'm also not sure that I didn't lose some sharpness with my solar
+filter, too.
+
+EXIF |
+--- | ---
+ExposureTime | 1/200
+FNumber | 8.0
+Description | The view of a 93% solar eclipse from Sandstone Ranch in Longmont Colorado.
+Title | Solar Eclipse
+FocalLength | 400.0 mm
+CreateDate | 2017-08-21 10:17:27
+GPSLongitude | -105.037979
+Lens | 70-200mm f/2.8
+ISO | 100
+GPSLatitude | 40.152786
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=40.152786&mlon=-105.037979&zoom=19&layers=M)
