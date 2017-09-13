@@ -946,6 +946,45 @@ p {
     text-align: center;
 }
 
+/* Beer alchemy crap */
+
+.sectionHeading {
+    border: none;
+}
+
+.sectionHeading tr,
+.sectionHeading td {
+    border: none;
+}
+
+.sectionHeading tr .title {
+    text-align: left;
+    padding: 0.5em 0;
+    font-weight: 700;
+}
+
+.darkBackgroundAlignCenter,
+.darkBackgroundAlignLeft,
+.darkBackgroundAlignRight {
+    background: #f6f8fa;
+}
+
+.lightBackgroundAlignRight,
+.darkBackgroundAlignRight {
+    text-align: right;
+}
+
+.lightBackgroundAlignLeft,
+.darkBackgroundAlignLeft {
+    text-align: left;
+}
+
+.lightBackgroundAlignCenter,
+.darkBackgroundAlignCenter {
+    text-align: center;
+}
+
+
 /*
  * Comments
  * ==================================================== */
