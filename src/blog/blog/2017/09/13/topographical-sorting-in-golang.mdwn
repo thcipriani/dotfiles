@@ -1,0 +1,167 @@
+[[!meta date="2017-09-13T21:09:52-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Topographical Sorting in Golang"]]
+[[!tag computing]]
+
+I own a fair number of computer books that I have never read from
+cover-to-cover (and a slim few that I have). I tend to dip in-and-out of
+programming books---absorbing a chapter here and a chapter there. One of the
+books I pick up with some frequency is [_Algorithms Unlocked_][algorithms_unlocked]
+by Thomas H. Cormen, who is one of the authors of the often cited [CLRS][CLRS]
+which is a hugely comprehensive textbook covering the topic of algorithms.
+
+_Algorithms Unlocked_, in contrast to its massive textbook counterpart, is a
+slim and snappy little book filled with all kinds of neat algorithms. It
+doesn't focus on any specific language implementations, but rather describes
+algorithms in pseudo-code and plain English. After an algorithm is introduced,
+there is a discussion of the Big-O and Big-&Theta; run-times.
+
+One of the things I like to do is read about a particular algorithm and test my
+understanding by implementing the pseudo code in some programming language.
+Since I recently ran into a graph problem while working on [blubber][blubber]
+---which is a Go project---I figured I'd implement the first algorithm in
+the Directed Acyclic Graph (DAG) chapter in Go.
+
+Also, since I haven't written anything on my blog in a while, I figured I'd
+write up my adventure!
+
+## Directed Graphs Represented in Go
+
+The first problem when attempting to create a topographic sort of a graph in
+any programming language is figuring out how to represent a graph. I chose a
+`map` with an `int` as a key (which seems pretty much like a `slice` but the
+use of a `map` makes this implementation type agnostic). Each vertex _n_ is
+represented with a key in the `map`, each vertex that adjacent to
+_n_---_m_---is stored as a `slice` in the `map` referenced by the key _n_.
+
+```{.go}
+package main
+
+import "fmt"
+
+func main() {
+	// Directed Acyclic Graph
+	vertices := map[int][]int{
+		1:  []int{4},
+		2:  []int{3},
+		3:  []int{4, 5},
+		4:  []int{6},
+		5:  []int{6},
+		6:  []int{7, 11},
+		7:  []int{8},
+		8:  []int{14},
+		9:  []int{10},
+		10: []int{11},
+		11: []int{12},
+		13: []int{13},
+		14: []int{},
+	}
+
+	// As yet unimplemented topographicalSort
+	fmt.Println(topographicalSort(vertices))
+}
+```
+
+# Topographical Sort
+
+I implemented the algorithm in a function named `topographicalSort`. The inline
+comments are the pseudo-code from the book---also noteworthy I stuck with the
+unfortunate variable names from the book (although somewhat adapted to
+camelCase to stick, a bit, to Go conventions):
+
+
+
+```{.go}
+// topographicalSort Input: g: a directed acyclic graph with vertices number 1..n
+// Output: a linear order of the vertices such that u appears before v
+// in the linear order if (u,v) is an edge in the graph.
+func topographicalSort(g map[int][]int) []int {
+	linearOrder := []int{}
+
+	// 1. Let inDegree[1..n] be a new array, and create an empty linear array of
+	//    verticies
+	inDegree := map[int]int{}
+
+	// 2. Set all values in inDegree to 0
+	for n := range g {
+		inDegree[n] = 0
+	}
+
+	// 3. For each vertex u
+	for _, adjacent := range g {
+		// A. For each vertex *v* adjacent to *u*:
+		for _, v := range adjacent {
+			//	i. increment inDegree[v]
+			inDegree[v]++
+		}
+	}
+
+	// 4. Make a list next consisting of all vertices u such that
+	//    in-degree[u] = 0
+	next := []int{}
+	for u, v := range inDegree {
+		if v != 0 {
+			continue
+		}
+
+		next = append(next, u)
+	}
+
+	// 5. While next is not empty...
+	for len(next) > 0 {
+		// A. delete a vertex from next and call it vertex u
+		u := next[0]
+		next = next[1:]
+
+		// B. Add u to the end of the linear order
+		linearOrder = append(linearOrder, u)
+
+		// C. For each vertex v adjacent to u
+		for _, v := range g[u] {
+			// i. Decrement inDegree[v]
+			inDegree[v]--
+
+			// ii. if inDegree[v] = 0, then insert v into next list
+			if inDegree[v] == 0 {
+				next = append(next, v)
+			}
+		}
+	}
+
+	// 6. Return the linear order
+	return linearOrder
+}
+```
+
+In our `vertices` DAG, the only vertices with an `inDegree` of 0 are `1`, `2`,
+and `9`, so in a topographic sort one of those number would be first. Running
+this code seems to support that assertion:
+
+```{.sh}
+$ go build -o topo_sort
+$ ./topo_sort
+[9 1 2 10 3 4 5 6 7 11 8 12 14]
+```
+
+In fact, all the vertices with no `inDegrees` ended up right at the beginning of
+this slice.
+
+## Can you dig it?
+
+DAGs are ubiquitous and have [[many uses|blog/2016/03/21/Visualizing-Git-Merkle-DAG-with-D3.js/]] both inside and
+outside of computers. I keep running into them again and again: I stare this
+dad-joke cold in the face, once again, this evening.
+
+_Algorithms Unlocked_ talks in approachable language about using a DAG to graph
+and understand things like the order of operations for cooking a meal or for
+putting on hockey goalie equipment---I find the plain-spoken explanations
+charming and helpful. I dig this book, and this is far from the first exercise
+I've hacked through out of it. I'm sure I'll be picking up this book again sometime in
+the near future--who knows?--I might even finish it!
+
+[algorithms_unlocked]: https://en.wikipedia.org/wiki/Algorithms_Unlocked
+[CLRS]: https://en.wikipedia.org/wiki/Introduction_to_Algorithms
+[blubber]: https://phabricator.wikimedia.org/source/blubber/
