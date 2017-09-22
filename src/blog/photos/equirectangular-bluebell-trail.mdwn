@@ -1,0 +1,52 @@
+[[!meta date="2017-04-16 08:26:06"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Equirectangular Bluebell Trail"]]
+[[!meta stylesheet=static/css/pannellum rel="stylesheet" title="pannellum"]]
+[[!meta script=static/js/pannellum defer]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+]]
+
+<figure>
+<div id="panorama">
+<img class="panorama-hidden" src="https://photos.tylercipriani.com/thumbs/9e/d3b765e6aefef7c2f798a716552d7a/large.jpg">
+</div>
+<figcaption>
+<p>
+<a href="https://photos.tylercipriani.com/thumbs/9e/d3b765e6aefef7c2f798a716552d7a/small.jpg">Small</a> |
+<a href="https://photos.tylercipriani.com/thumbs/9e/d3b765e6aefef7c2f798a716552d7a/medium.jpg">Medium</a> |
+<a href="https://photos.tylercipriani.com/thumbs/9e/d3b765e6aefef7c2f798a716552d7a/large.jpg">Large</a> |
+<a href="https://photos.tylercipriani.com/thumbs/9e/d3b765e6aefef7c2f798a716552d7a/original.jpg">Original</a>
+</p>
+
+</figcaption>
+</figure>
+
+This photo was taken from the middle of Bluebell trail, the Flatirons,
+Chautauqua park, Boulder, Colorado. Photo was taken using a Nodal Ninja NN3
+MKII on a Sirui T-025X carbon fiber tripod.
+
+The image was created from 144 photos that were lens-corrected in Darktable,
+averaged using enfuse, and stitched using hugin. Created with 100% open source
+software.
+
+EXIF |
+--- | ---
+ExposureTime | 1/60
+FNumber | 8.0
+Description | This photo was taken from the middle of Bluebell trail, the Flatirons, Chautauqua park, Boulder, Colorado. Photo was taken using a Nodal Ninja NN3 MKII on a Sirui T-025X carbon fiber tripod. The image was created from 144 photos that were lens-corrected in Darktable, averaged using enfuse, and stitched using hugin. Created with 100% open source software
+Title | Equirectangular Bluebell Trail
+FocalLength | 14.0 mm
+CreateDate | 2017-04-16 08:26:06
+GPSLongitude | -105.29006
+Lens | 14mm f/2.8-1.4
+ISO | 100
+GPSLatitude | 39.996313
+Model | NIKON D610
+Make | NIKON CORPORATION
+GPS Link | [View in OpenStreepMap](https://www.openstreetmap.org/?mlat=39.996313&mlon=-105.29006&zoom=19&layers=M)
