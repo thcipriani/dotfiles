@@ -1,0 +1,315 @@
+[[!meta date="2017-09-26T08:00:15-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Ssh Key Fingerprints, Identicons, and ASCII art"]]
+[[!meta stylesheet=static/css/ansi rel="stylesheet" title="ansi"]]
+[[!tag computing]]
+
+> Security at the expense of usability comes at the expense of security.
+>
+> -- [AviD][AviD]
+
+Public key authentication is confusing, even for "[professionals][adobe]".
+Part of the confusion is that base64-encoded public keys and private keys are
+just huge globs of meaningless letters and numbers. Even the hashed
+fingerprints of these keys are just slightly smaller meaningless globs of
+letters and numbers.
+
+> It is a known fact in psychology that people are slow and unreliable
+> at processing or memorizing meaningless strings
+>
+> -- [Hash Visualization: a New Technique to improve Real-World Security][randomart]
+
+Ensuring that two keys are the same means comparing key hashes---
+_fingerprints_. When using the `md5` hash algorithm, comparing a key
+fingerprint means comparing 16, 16-bit numbers (and for the uninitiated that
+means blankly staring at 32 meaningless letters and numbers). In practice, that
+usually means *not* comparing 32 meaningless letters and numbers except when
+strictly necessary: _Security at the expense of usability comes at the expense of security_.
+
+## SSH Tricks
+
+I am constantly troubleshooting ssh. I spend a lot of time looking at the
+authlog and comparing keys.
+
+I've learned some fun tricks that I use constantly:
+
+*Get fingerprint from public key `ssh-keygen(1)`*
+:   `ssh-keygen -l [-E md5] -f [public key]`
+
+*Generate a public key given a private key `ssh-keygen(1)`*
+:   `ssh-keygen -y -f [private key]`
+
+*Automatically add server key to `known_hosts` file `ssh-keyscan(1)`:*
+:   `ssh-keyscan -H [hostname] >> ~/.ssh/known_hosts`
+
+*List key fingerprints in ssh-agent `ssh-agent(1)`*
+:   `ssh-add [-E md5] -l`
+
+When I get the message, `Permission denied (publickey)`, I have a protocol.
+
+1. Find the fingerprint of the key being used by the authenticating host. This
+   will either be in `ssh-agent` or I may have to use `ssh-keygen -l -E md5 -f [publickey]`
+   on the authenticating host.
+2. Find the `authorized_keys` file on the target machine: `grep 'AuthorizedKeysFile' /etc/ssh/sshd_config`
+3. Compare the fingerprint of the public key from the authenticating host is among the fingerprints listed in the `authorized_keys` file.
+
+Most ssh problems are caused by (SURPRISE!) the public key of the
+authenticating host not being present in the `AuthorizedKeysFile` on the
+target.
+
+## The Worm Bishop
+
+Most of the time when I "compare fingerprints" of keys, I copy, I paste, and
+finally I use the time-honored [global regular expression print][historygrep]
+command.  This is insecure behavior for [myriad][pastejacking] reasons. The
+secure way to compare keys is by manually comparing fingerprints, but
+meaningless string comparison is hard, which makes security hard, and, so, most folks
+simply aren't secure. _Security at the expense of usability comes at the expense of
+security_.
+
+In the release announcement for OpenSSH 5.1 a different approach to comparing
+fingerprints was announced:
+
+> Visual fingerprinnt [sic] display is controlled by a new
+> ssh_config(5) option "VisualHostKey". The intent is to render
+> SSH host keys in a visual form that is amenable to easy recall and
+> rejection of changed host keys.
+>
+> -- [Announce: OpenSSH 5.1 released][openssh5.1]
+
+The "VisualHostKey" is the source of the randomart ascii that you see if you
+add the `-v` flag to the `ssh-keygen` command from above:
+
+<pre class="f9 b9">
+$ ssh-keygen -lv -E md5 -f ~/.ssh/id_rsa.old.pub
+2048 MD5:b2:c7:2a:77:84:3a:62:97:56:d0:95:49:63:fd:5d:2b tyler@tylercipriani.com (RSA)
++---[RSA 2048]----+
+|       .++       |
+|       .+..     .|
+|     . .   . . ..|
+|    . .     .E.. |
+|     ...S     .  |
+|      o+.        |
+|     +..o        |
+|  o B .o.        |
+| . + +..         |
++------[MD5]------+
+</pre>
+
+This is something like an [identicon][identicon] for your ssh key:
+
+> Identicons’ intended applications are in helping users recognize or
+> distinguish textual information units in context of many.
+>
+> -- Don Park
+
+Although it is important to note that while the intent of an identicon is to
+distinguish against many, the intent of the `VisualHostKey` is more ambiguous.
+
+The work to add this randomart was based on the paper [_Hash Visualization: a
+New Technique to improve Real-World Security_][randomart], and the algorithm
+that generates these bits of art is discussed in detail in the paper [The
+drunken bishop: An analysis of the OpenSSH fingerprint visualization
+algorithm][drunkenbishop]. Also, interestingly, while the above paper contains
+a reference to the apocryphal drunken bishop leaving stacks of coins in each
+square he's visited, the code [comments][ccode] in OpenSSH refer to a "worm
+crawling over a discrete plane leaving a trace [...] everywhere it goes".
+
+Regardless of whether the algorithm's protagonist is a worm or a bishop the
+story is similar. There is a discrete plane (or an atrium), the protagonist is
+in the middle (and possibly drunk), and moves around the room leaving a trail
+(either because they are slimy or because they are...drunk? and dropping coins
+because they're drunk? I guess.), the more times they visit a particular part
+of the plane/atrium, the slimier/more-coin-filled it becomes.  The direction of
+movement is determined by the little-endian processing of each word in the md5
+checksum, so each run should create the same unique randomart for the same
+unique checksum.
+
+I wrote a simple [python version][muhcode] that visualizes the algorithm
+step-by-step which may be a better explainer than any meaningless strings I can
+group together:
+
+![The Drunken Slime Bishop][drunken-bishop-run]
+
+## ASCII Art is meaningless characters
+
+Confession time: I have never used randomart even when copying and pasting is
+impossible---I just compare strings. I have `VisualHostKey yes` in my
+`~/.ssh/config`, but I almost never look at since OpenSSH warns me if a
+host-key has changed, so mostly it's just taking up vertical space.
+
+But why?
+
+I think the reason I don't use `VisualHostKey` to help distinguish between
+public-keys is that it failed to meet the _regularity_ property of hash
+visualization:
+
+> Humans are good at identifying geometric objects
+> (such as circles, rectangles, triangles, and lines), and
+> shapes in general. We call images, which contain mostly
+> recognizable shapes, regular images. If an image is not
+> regular, i.e. does not contain identifiable objects or patterns,
+> or is too chaotic (such as white noise), it is difficult
+> for humans to compare or recall it.
+>
+> -- [Hash Visualization: a New Technique to improve Real-World Security][randomart]
+
+Randomized ASCII art that is composed of common letters and frequently used
+symbols is very nearly the same as a string. The constituent parts are the
+same. This is the first problem: while Unicode contains symbols that are more
+recognizable, ASCII contains a very limited set of characters. This is a
+property that makes ASCII as an art-medium so charming, but makes abstract
+ASCII-art hard to remember as it fails to form geometric patterns that are
+easily distinguished from noise.
+
+Secondly, ASCII randomart lacks any color, which is a property mentioned for
+hash visualizations as well as one of the more distinguishing features of
+identicons:
+
+> humans are very good at identifying geometrical shapes, patterns, and colors,
+> and they can compare two images efficiently
+>
+> -- [Hash Visualization: a New Technique to improve Real-World Security][randomart]
+
+## Can I do better?
+
+No. Probably not if I had to work under the constraint that these hash
+visualizations need to work everywhere OpenSSH works. OpenSSH is an amazing
+piece of software and they are solving Hard™ problems while folks like me write
+blogs about ASCII art.
+
+[Donate to them now][donate]...I'll wait.
+
+For the purposes of differentiation, under the constraint that it must work on
+all terminals, I like the current solution. My liking the solution didn't, of
+course, stop me from fiddling with the existing solution.
+
+## Add color
+
+The first stab I took at this was to add color. As an initial try I simply used
+the first 6 hex digits of the md5 checksum, converted those to rgb, and
+converted those to true-color ansi output:
+
+```{.python}
+def to_rgb(color):
+    return int(color[:2], 16), int(color[2:4], 16), int(color[4:], 16)
+
+
+def to_ansi_rgb(color):
+    r, g, b = to_rgb(color)
+    return '\x1b[38;2;{};{};{}m'.format(r, g, b)
+```
+
+This actually makes a huge difference in my ability to quickly differentiate
+between on key and another:
+
+<pre class="f9 b9">
+b2c72a77843a629756d0954963fd5d2b
+<span class="f2">+-----------------+</span>
+<span class="f2">|       .++       |</span>
+<span class="f2">|       .+..     .|</span>
+<span class="f2">|     . .   . . ..|</span>
+<span class="f2">|    . .     .E.. |</span>
+<span class="f2">|     ...S     .  |</span>
+<span class="f2">|      o+.        |</span>
+<span class="f2">|     +..o        |</span>
+<span class="f2">|  o B .o.        |</span>
+<span class="f2">| . + +..         |</span>
+<span class="f2">+-----------------+</span>
+</pre>
+
+vs
+
+<pre class="f9 b9">
+161bc25962da8fed6d2f59922fb642aa
+<span class="ef140">+-----------------+</span>
+<span class="ef140">|      o .        |</span>
+<span class="ef140">|     = +         |</span>
+<span class="ef140">|    . = o        |</span>
+<span class="ef140">|       = +       |</span>
+<span class="ef140">|      . S  .     |</span>
+<span class="ef140">|       o..o .    |</span>
+<span class="ef140">|       o. o=     |</span>
+<span class="ef140">|      . ..=..    |</span>
+<span class="ef140">|    E.   o.+.    |</span>
+<span class="ef140">+-----------------+</span>
+</pre>
+
+Becomes <span class="ef140">purple-ish</span> vs <span class="f2">green</span>,
+which is easy for me, but probably less easy for a sizable portion of the
+population. Further, while this solution works in terminals that support
+true-color output, I didn't even take the time to make it fail gracefully to
+8-bit color. Of course, with 8-bit color there are fewer means to differentiate
+via color. While color is visually distinctive to me, it is likely infeasible
+to implement, or unhelpful to a large portion of the population. Fair enough.
+
+## Different Charsets
+
+Unicode encodes some interesting characters to represent slime nowadays. There
+is the [block element set][blockset], the [drawing set][drawingset], and even a
+[micellaneous symbols][miscset] set. I'm on linux so obviously some of these
+sets just look like empty boxes to me. But in my [slime-bishop][muhcode] repo I
+did add support for a few symbols.
+
+Oddly, I don't think the symbols add too much to help differentiation.
+
+<pre class="f9 b9">
+b2c72a77843a629756d0954963fd5d2b
+<span class="f2">+-----------------+</span>
+<span class="f2">|       ░▓▓       |</span>
+<span class="f2">|       ░▓░░     ░|</span>
+<span class="f2">|     ░ ░   ░ ░ ░░|</span>
+<span class="f2">|    ░ ░     ░E░░ |</span>
+<span class="f2">|     ░░░S     ░  |</span>
+<span class="f2">|      ▒▓░        |</span>
+<span class="f2">|     ▓░░▒        |</span>
+<span class="f2">|  ▒ ▆ ░▒░        |</span>
+<span class="f2">| ░ ▓ ▓░░         |</span>
+<span class="f2">+-----------------+</span>
+</pre>
+
+I think the problem of memory persists (sensible-chuckle.gif). We're good at
+remembering regular pictures, but do abstract pictures count as regular?
+
+## Final thoughts
+
+Visual hash algorithms are a novel concept, and may become more useful over
+time. At the very least the ability to quickly reject that two keys match at
+a glance is a step in the right direction. The drunken bishop is certainly a
+fun algorithm to try to improve (while paying absolutely no attention to
+reasonable constrains like "terminal background color" or "POSIX
+compatibility"). The drunken slimy worm bishop, with their coins and/or their
+slime trails is certainly useful for *differentiation* (just like identicons),
+but it is not useful for *identification*. I hope that the
+distinction between *differentiation* and *identification* is clear for users
+of OpenSSH, but I'm not entirely sure that it is.
+
+Improving the usability of security tooling is as important as it's ever been;
+however, the corollary of, "security at the expense of usability comes at the
+expense of security." is: usability that creates a false sense of security is
+at the expense of security. And we must remain mindful that we are not
+providing usability that is meaningless or (worse) usability that widens the
+attack surface without providing any real security benefit. Part of that comes
+from a shared understanding of the available features in the tools we already
+collectively use. In this way we can build on the work of one another, each
+bringing a unique perspective, and ultimately, maybe (just maybe) create
+tools that are *usable* and *secure*.
+
+[AviD]: <https://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase/6116#6116>
+[openssh5.1]: <https://lists.mindrot.org/pipermail/openssh-unix-dev/2008-July/026693.html>
+[adobe]: <https://arstechnica.com/information-technology/2017/09/in-spectacular-fail-adobe-security-team-posts-private-pgp-key-on-blog/>
+[randomart]: <http://www.netsec.ethz.ch/publications/papers/validation.pdf>
+[identicon]: <https://blog.docuverse.com/2011/07/29/what-is-identicon/>
+[drunkenbishop]: <http://www.dirk-loss.de/sshvis/drunken_bishop.pdf>
+[pastejacking]: <https://security.love/Pastejacking/>
+[historygrep]: <https://medium.com/@rualthanzauva/grep-was-a-private-command-of-mine-for-quite-a-while-before-i-made-it-public-ken-thompson-a40e24a5ef48>
+[ccode]: <https://github.com/openssh/openssh-portable/blob/master/sshkey.c#L1005-L1010>
+[muhcode]: <https://github.com/thcipriani/slime-bishop>
+[drunken-bishop-run]: <https://photos.tylercipriani.com/thumbs/slime-bishop.gif>
+[donate]: <https://www.openssh.com/donations.html>
+[blockset]: <https://en.wikipedia.org/wiki/Block_Elements>
+[drawingset]: <https://en.wikipedia.org/wiki/Box_Drawing>
+[miscset]: <https://en.wikipedia.org/wiki/Miscellaneous_Symbols>
