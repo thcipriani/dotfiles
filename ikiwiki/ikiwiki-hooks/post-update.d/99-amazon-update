@@ -16,105 +16,71 @@ my $bucket = 'tylercipriani.com';
 # Name of subpath in site
 my $bucket_prefix = '';
 
-sub updateJsonFile($) {
-    my $jsonFile = shift;
+sub updateMimeForFile($$) {
+    my $file = shift;
+    my $mime = shift;
 
     if ( not $bucket_prefix =~ /\/$/) {
         $bucket_prefix .= '/';
     }
 
-    my @cmd = ($s3cmd, 'modify');
-    push(@cmd, "--add-header='Content-type:application/json'");
+    my @cmd = ($s3cmd, 'setacl');
+    push(@cmd, '--acl-public', "--mime-type='${mime}'");
 
-    my $jsons3 = 's3://' . $bucket . $bucket_prefix . $jsonFile;
-    system(join(' ', @cmd) . ' ' . $jsons3 . ' >/dev/null 2>&1');
+    my @headerCmd = ($s3cmd, 'modify');
+    push(@headerCmd, "--add-header='Content-type:${mime}'");
+
+    my $s3Path = 's3://' . $bucket . $bucket_prefix . $file;
+
+    system(join(' ', @cmd) . ' ' . $s3Path . ' >/dev/null 2>&1');
+    system(join(' ', @headerCmd) . ' ' . $s3Path . ' >/dev/null 2>&1');
+}
+
+sub checkCachedMtime($$$) {
+    my $extension = shift;
+    my $mime = shift;
+    my $callback = shift;
+
+    my $ucExtension = ucfirst $extension;
+
+    my $allFilesFound = File::Find::Rule->file()->name('*.' . $extension);
+    my $fileDB = "$ENV{HOME}/.ikiwiki${ucExtension}DB";
+    my $common_path = $site_path . '/' . $site_name;
+    my %dbFiles;
+
+    if (open(my $fh, '<', $fileDB)) {
+        while (my $line = <$fh>) {
+            chomp $line;
+            my @nameSum = split(/:/, $line);
+            $dbFiles{$nameSum[0]} = $nameSum[1];
+        }
+
+        close($fh);
+    }
+
+    open(my $writeFh, '>', $fileDB)
+        or die "Can't open $fileDB";
+
+    foreach my $foundFile ($allFilesFound->in($common_path)) {
+        my $mtime = (stat($foundFile))[9];
+        if ( $foundFile =~ s/^$common_path\/// ) {
+            print $writeFh "${foundFile}:${mtime}\n";
+            if (defined $dbFiles{$foundFile} &&
+                $dbFiles{$foundFile} != $mtime) {
+                    $callback->($foundFile, $mime);
+            }
+        }
+    }
+
+    close($writeFh);
 }
 
 sub jsonfiles {
-    my $allJsonFiles = File::Find::Rule->file()->name('*.json');
-    my $jsonDB = "$ENV{HOME}/.ikiwikiJsonDB";
-    my $common_path = $site_path . '/' . $site_name;
-    my %jsonFiles;
-
-    if (open(my $fh, '<', $jsonDB)) {
-        while (my $line = <$fh>) {
-            chomp $line;
-            my @nameSum = split(/:/, $line);
-            $jsonFiles{$nameSum[0]} = $nameSum[1];
-        }
-
-        close($fh);
-    }
-
-    open(my $writeFh, '>', $jsonDB)
-        or die "Can't open $jsonDB";
-
-    foreach my $jsonfile ($allJsonFiles->in($common_path)) {
-        my $mtime = (stat($jsonfile))[9];
-        if ( $jsonfile =~ s/^$common_path\/// ) {
-            print $writeFh "${jsonfile}:$mtime\n";
-            if (defined $jsonFiles{$jsonfile}) {
-                if ($jsonFiles{$jsonfile} != $mtime) {
-                    updateJsonFile $jsonfile;
-                }
-            }
-        }
-    }
-
-    close($writeFh);
-}
-
-sub updateCssFile($) {
-    my $cssfile = shift;
-
-    if ( not $bucket_prefix =~ /\/$/) {
-        $bucket_prefix .= '/';
-    }
-
-    my $s3css = 's3://' . $bucket . $bucket_prefix . $cssfile;
-
-    my @csscmd = ($s3cmd, 'setacl');
-    push(@csscmd, '--acl-public', "--mime-type='text/css'");
-
-    my @cssheaderscmd = ($s3cmd, 'modify');
-    push(@cssheaderscmd, "--add-header='Content-type:text/css'");
-
-    system(join(' ', @csscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
-    system(join(' ', @cssheaderscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
+    checkCachedMtime('json', 'application/json', \&updateMimeForFile);
 }
 
 sub cssfiles {
-    my $allCssFiles = File::Find::Rule->file()->name('*.css');
-    my $cssDB = "$ENV{HOME}/.ikiwikiCssDB";
-    my $common_path = $site_path . '/' . $site_name;
-    my %cssFiles;
-
-    if (open(my $fh, '<', $cssDB)) {
-        while (my $line = <$fh>) {
-            chomp $line;
-            my @nameSum = split(/:/, $line);
-            $cssFiles{$nameSum[0]} = $nameSum[1];
-        }
-
-        close($fh);
-    }
-
-    open(my $writeFh, '>', $cssDB)
-        or die "Can't open $cssDB";
-
-    foreach my $cssfile ($allCssFiles->in($common_path)) {
-        my $mtime = (stat($cssfile))[9];
-        if ( $cssfile =~ s/^$common_path\/// ) {
-            print $writeFh "${cssfile}:$mtime\n";
-            if (defined $cssFiles{$cssfile}) {
-                if ($cssFiles{$cssfile} != $mtime) {
-                    updateCssFile $cssfile;
-                }
-            }
-        }
-    }
-
-    close($writeFh);
+    checkCachedMtime('css', 'text/css', \&updateMimeForFile);
 }
 
 sub update {
