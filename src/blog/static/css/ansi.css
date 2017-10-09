@@ -263,10 +263,7 @@
 .ef254 { color: #e4e4e4; } .eb254 { background-color: #e4e4e4; }
 .ef255 { color: #eeeeee; } .eb255 { background-color: #eeeeee; }
 
-.f9 {
-    line-height: 1;
-    color: #000000; }
-.b9 { background-color: #FFFFFF; }
+.f9 { line-height: 1; color: black; }
 .f9 > .bold,.bold > .f9, body.f9 > pre > .bold {
   /* Bold is heavy black on white, or bright white
      depending on the default background */

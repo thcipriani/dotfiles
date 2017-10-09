@@ -583,14 +583,13 @@ a[href*="//"]:not([href*="tylercipriani.com"]):after {
 }
 
 blockquote {
-    background: #f6f8fa;
+    background: #ffe;
     padding: 1em 1em 1em 2em;
     margin: 1em 0;
-    border-left: 2px solid tomato;
 }
 
 blockquote a {
-    text-shadow: 2px 0 0 #f2f2f2, -2px 0 0 #f2f2f2;
+    text-shadow: 2px 0 0 #ffe, -2px 0 0 #ffe;
 }
 
 code {
@@ -1010,17 +1009,16 @@ p {
 
 div.sourceCode,
 pre {
-    background: #f6f8fa;
+    background: #f6f8ff;
     padding: 0.5em;
     width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
     margin: 1em 0;
-    border-left: 2px solid #40a070;
 }
 
 .sourceCode pre {
-    border: none;
+    background: none;
     padding: none;
     overflow: auto;
     margin: 0;
