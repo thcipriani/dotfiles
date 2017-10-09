@@ -36,15 +36,15 @@ sub jsonfiles {
     my $common_path = $site_path . '/' . $site_name;
     my %jsonFiles;
 
-    open(my $fh, '<', $jsonDB);
+    if (open(my $fh, '<', $jsonDB)) {
+        while (my $line = <$fh>) {
+            chomp $line;
+            my @nameSum = split(/:/, $line);
+            $jsonFiles{$nameSum[0]} = $nameSum[1];
+        }
 
-    while (my $line = <$fh>) {
-        chomp $line;
-        my @nameSum = split(/:/, $line);
-        $jsonFiles{$nameSum[0]} = $nameSum[1];
+        close($fh);
     }
-
-    close($fh)
 
     open(my $writeFh, '>', $jsonDB)
         or die "Can't open $jsonDB";
@@ -53,8 +53,10 @@ sub jsonfiles {
         my $mtime = (stat($jsonfile))[9];
         if ( $jsonfile =~ s/^$common_path\/// ) {
             print $writeFh "${jsonfile}:$mtime\n";
-            if ($jsonFiles{$jsonfile} != $mtime) {
-                updateJsonFile $jsonfile;
+            if (defined $jsonFiles{$jsonfile}) {
+                if ($jsonFiles{$jsonfile} != $mtime) {
+                    updateJsonFile $jsonfile;
+                }
             }
         }
     }
@@ -87,15 +89,15 @@ sub cssfiles {
     my $common_path = $site_path . '/' . $site_name;
     my %cssFiles;
 
-    open(my $fh, '<', $cssDB);
+    if (open(my $fh, '<', $cssDB)) {
+        while (my $line = <$fh>) {
+            chomp $line;
+            my @nameSum = split(/:/, $line);
+            $cssFiles{$nameSum[0]} = $nameSum[1];
+        }
 
-    while (my $line = <$fh>) {
-        chomp $line;
-        my @nameSum = split(/:/, $line);
-        $cssFiles{$nameSum[0]} = $nameSum[1];
+        close($fh);
     }
-
-    close($fh);
 
     open(my $writeFh, '>', $cssDB)
         or die "Can't open $cssDB";
@@ -104,8 +106,10 @@ sub cssfiles {
         my $mtime = (stat($cssfile))[9];
         if ( $cssfile =~ s/^$common_path\/// ) {
             print $writeFh "${cssfile}:$mtime\n";
-            if ($cssFiles{$cssfile} != $mtime) {
-                updateCssFile $cssfile;
+            if (defined $cssFiles{$cssfile}) {
+                if ($cssFiles{$cssfile} != $mtime) {
+                    updateCssFile $cssfile;
+                }
             }
         }
     }
