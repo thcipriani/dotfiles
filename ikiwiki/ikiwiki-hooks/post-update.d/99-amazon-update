@@ -8,7 +8,6 @@ use File::Find::Rule;
 use File::Which qw(which);
 use Carp qw(croak);
 
-
 my $s3cmd = 's3cmd';
 my $site_path = "$ENV{HOME}/public_html";
 my $site_name = 'TylerCipriani';
@@ -17,11 +16,8 @@ my $bucket = 'tylercipriani.com';
 # Name of subpath in site
 my $bucket_prefix = '';
 
-my @cssfiles = ('local.css', 'style.css', 'static/css/merkel-dag-d3.css');
-
-sub jsonfiles {
-    my $jsonfiles = File::Find::Rule->file()->name('*.json');
-    my $common_path = $site_path . '/' . $site_name;
+sub updateJsonFile($) {
+    my $jsonFile = shift;
 
     if ( not $bucket_prefix =~ /\/$/) {
         $bucket_prefix .= '/';
@@ -30,12 +26,89 @@ sub jsonfiles {
     my @cmd = ($s3cmd, 'modify');
     push(@cmd, "--add-header='Content-type:application/json'");
 
-    foreach my $jsonfile ($jsonfiles->in($common_path)) {
+    my $jsons3 = 's3://' . $bucket . $bucket_prefix . $jsonfile;
+    system(join(' ', @cmd) . ' ' . $jsons3 . ' >/dev/null 2>&1');
+}
+
+sub jsonfiles {
+    my $allJsonFiles = File::Find::Rule->file()->name('*.json');
+    my $jsonDB = "$ENV{HOME}/.ikiwikiJsonDB";
+    my $common_path = $site_path . '/' . $site_name;
+    my %jsonFiles;
+
+    open(my $fh, '<', $jsonDB);
+
+    while (my $line = <$fh>) {
+        chomp $line;
+        my @nameSum = split(/:/, $line);
+        $jsonFiles{$nameSum[0]} = $nameSum[1];
+    }
+
+
+    open(my $fh, '>', $jsonDB)
+        or die "Can't open $jsonDB";
+
+    foreach my $jsonfile ($allJsonFiles->in($common_path)) {
+        my $mtime = (stat($jsonfile))[9];
         if ( $jsonfile =~ s/^$common_path\/// ) {
-            my $jsons3 = 's3://' . $bucket . $bucket_prefix . $jsonfile;
-            system(join(' ', @cmd) . ' ' . $jsons3 . ' >/dev/null 2>&1');
+            print $fh "${jsonfile}:$mtime\n";
+            if ($jsonFiles{$jsonfile} != $mtime) {
+                updateJsonFile $jsonfile;
+            }
         }
     }
+
+    close($fh);
+}
+
+sub updateCssFile($) {
+    my $cssfile = shift;
+
+    if ( not $bucket_prefix =~ /\/$/) {
+        $bucket_prefix .= '/';
+    }
+
+    my $s3css = 's3://' . $bucket . $bucket_prefix . $cssfile;
+
+    my @csscmd = ($s3cmd, 'setacl');
+    push(@csscmd, '--acl-public', "--mime-type='text/css'");
+
+    my @cssheaderscmd = ($s3cmd, 'modify');
+    push(@cssheaderscmd, "--add-header='Content-type:text/css'");
+
+    system(join(' ', @csscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
+    system(join(' ', @cssheaderscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
+}
+
+sub cssfiles {
+    my $allCssFiles = File::Find::Rule->file()->name('*.css');
+    my $cssDB = "$ENV{HOME}/.ikiwikiCssDB";
+    my $common_path = $site_path . '/' . $site_name;
+    my %cssFiles;
+
+    open(my $fh, '<', $cssDB);
+
+    while (my $line = <$fh>) {
+        chomp $line;
+        my @nameSum = split(/:/, $line);
+        $cssFiles{$nameSum[0]} = $nameSum[1];
+    }
+
+    close($fh);
+
+    open(my $fh, '>', $cssDB)
+        or die "Can't open $cssDB";
+
+    foreach my $cssfile ($allCssFiles->in($common_path)) {
+        my $mtime = (stat($cssfile))[9];
+        if ( $cssfile =~ s/^$common_path\/// ) {
+            print $fh "${cssfile}:$mtime\n";
+            if ($cssFiles{$cssfile} != $mtime) {
+                updateCssFile $cssfile;
+            }
+        }
+    }
+    close($fh);
 }
 
 sub update {
@@ -65,18 +138,7 @@ sub update {
 
     system(join(' ', @cmd));
 
-    my @csscmd = ($s3cmd, 'setacl');
-    push(@csscmd, '--acl-public', "--mime-type='text/css'");
-
-    my @cssheaderscmd = ($s3cmd, 'modify');
-    push(@cssheaderscmd, "--add-header='Content-type:text/css'");
-
-    foreach my $css (@cssfiles) {
-        my $s3css = 's3://' . $bucket . $bucket_prefix . $css;
-        system(join(' ', @csscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
-        system(join(' ', @cssheaderscmd) . ' ' . $s3css . ' >/dev/null 2>&1');
-    }
-
+    cssfiles;
     jsonfiles;
 }
 

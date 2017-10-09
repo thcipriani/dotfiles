@@ -48,3 +48,7 @@ ikiwiki/.s3cmd.HEAD
 # also ignore my screenshots
 srv/photos/nasa/*
 srv/photos/screenshots/*
+
+# IkiWiki things
+# ---
+ikiwiki/TylerCipriani.setup
