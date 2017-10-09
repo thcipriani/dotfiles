@@ -26,7 +26,7 @@ sub updateJsonFile($) {
     my @cmd = ($s3cmd, 'modify');
     push(@cmd, "--add-header='Content-type:application/json'");
 
-    my $jsons3 = 's3://' . $bucket . $bucket_prefix . $jsonfile;
+    my $jsons3 = 's3://' . $bucket . $bucket_prefix . $jsonFile;
     system(join(' ', @cmd) . ' ' . $jsons3 . ' >/dev/null 2>&1');
 }
 
@@ -44,21 +44,22 @@ sub jsonfiles {
         $jsonFiles{$nameSum[0]} = $nameSum[1];
     }
 
+    close($fh)
 
-    open(my $fh, '>', $jsonDB)
+    open(my $writeFh, '>', $jsonDB)
         or die "Can't open $jsonDB";
 
     foreach my $jsonfile ($allJsonFiles->in($common_path)) {
         my $mtime = (stat($jsonfile))[9];
         if ( $jsonfile =~ s/^$common_path\/// ) {
-            print $fh "${jsonfile}:$mtime\n";
+            print $writeFh "${jsonfile}:$mtime\n";
             if ($jsonFiles{$jsonfile} != $mtime) {
                 updateJsonFile $jsonfile;
             }
         }
     }
 
-    close($fh);
+    close($writeFh);
 }
 
 sub updateCssFile($) {
@@ -96,19 +97,20 @@ sub cssfiles {
 
     close($fh);
 
-    open(my $fh, '>', $cssDB)
+    open(my $writeFh, '>', $cssDB)
         or die "Can't open $cssDB";
 
     foreach my $cssfile ($allCssFiles->in($common_path)) {
         my $mtime = (stat($cssfile))[9];
         if ( $cssfile =~ s/^$common_path\/// ) {
-            print $fh "${cssfile}:$mtime\n";
+            print $writeFh "${cssfile}:$mtime\n";
             if ($cssFiles{$cssfile} != $mtime) {
                 updateCssFile $cssfile;
             }
         }
     }
-    close($fh);
+
+    close($writeFh);
 }
 
 sub update {
