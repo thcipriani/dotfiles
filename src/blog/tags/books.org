@@ -36,5 +36,7 @@ here as well because I game the system however I damn well please.
 23. [[https://openlibrary.org/works/OL59863W/The_dispossessed][The Dispossessed]] by Ursula K. Le Guin
 24. [[https://openlibrary.org/works/OL17554076W/Neptunes_Brood][Neptune's Brood]] by Charles Stross
 25. [[https://openlibrary.org/works/OL81634W/Misery][Misery]] by Stephen King
+26. [[https://openlibrary.org/works/OL5961779W/Storm_Front_(The_Dresden_Files_Book_1)_(Dresden_Files)][Storm Front (The Dresden Files, Book 1)]] by Jim Butcher
+27. [[https://openlibrary.org/works/OL5961788W/Fool_Moon][Fool Moon (The Dresden Files, Book 2)]] by Jim Butcher
 
 [[!inline pages="tagged(books)" actions="no" archive="yes" feedshow=100 trail="yes"]]
