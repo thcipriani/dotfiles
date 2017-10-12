@@ -78,7 +78,7 @@ FNumber: 2.2
 ISO: 125
 #+END_SRC
 
-This is pretty neat, but it can also be achieved with [[https://tylercipriani.com/blog/2016/08/abusing-git-notes/][git notes]] so it's nothing too spectacular.
+This is pretty neat, but it can also be achieved with [[https://tylercipriani.com/blog/2016/08/26/abusing-git-notes/][git notes]] so it's nothing too spectacular.
 
 But git annex metadata doesn't quite stop there.
 
