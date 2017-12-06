@@ -42,7 +42,7 @@ I &#128569; the internet. I worry about it all the time.
 
 ## GPG Key
 
-* [tylercipriani.gpg](018FAC02.asc)
+* [[tylercipriani.gpg|018FAC02.asc]]
 * [MIT keyserver](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xF6DAD285018FAC02)
 * [Keybase](https://keybase.io/thcipriani)
 * Fingerprint: `6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
