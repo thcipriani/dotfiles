@@ -1,0 +1,34 @@
+[[!meta date="2017-08-25 13:16:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Bald Blue Jay"]]
+[[!tag
+photos
+photos/bird
+photos/70-200mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/67/cce4f50d88a763f599eb8a3ff4f226/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/67/cce4f50d88a763f599eb8a3ff4f226/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/67/cce4f50d88a763f599eb8a3ff4f226/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/67/cce4f50d88a763f599eb8a3ff4f226/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/67/cce4f50d88a763f599eb8a3ff4f226/original.jpg)](https://photos.tylercipriani.com/thumbs/67/cce4f50d88a763f599eb8a3ff4f226/large.jpg)
+
+Evidently...in late summer each year juveniles blue jays exhibit a very unusual molt pattern. The things you notice when you have a bird feeder :)
+
+EXIF |
+--- | ---
+ExposureTime | 1/800
+FNumber | 5.6
+Description | Evidently...in late summer each year juveniles blue jays exhibit a very unusual molt pattern. The things you notice when you have a bird feeder :)
+Title | Bald Blue Jay
+FocalLength | 400.0 mm
+CreateDate | 2017-08-25 13:16:00
+Lens | 70-200mm f/2.8
+ISO | 1100
+Model | NIKON D610
+Make | NIKON CORPORATION
+
