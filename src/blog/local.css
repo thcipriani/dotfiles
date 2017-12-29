@@ -769,7 +769,6 @@ a.feedbutton {
     padding: 0 0 2em;
     border: none;
     border-bottom: 1px solid #aaa;
-    overflow: auto;
 }
 
 .inlinecontent > hr {

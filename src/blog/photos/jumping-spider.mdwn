@@ -1,0 +1,33 @@
+[[!meta date="2017-12-29 08:31:51"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="Jumping Spider"]]
+[[!tag
+photos
+photos/24-70mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/original.jpg)](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/large.jpg)
+
+Jumping spider I found wandering around my counter this morning. Taken with the pop-up flash on my camera and a 12mm extension tube (and then heavily cropped). By the time I got my external flash and my 20mm extension tube my friend the spider was gone.
+
+EXIF |
+--- | ---
+ExposureTime | 1/250
+FNumber | 2.8
+Description | Jumping spider I found wandering around my counter this morning. Taken with the pop-up flash on my camera and a 12mm extension tube (and then heavily cropped). By the time I got my external flash and my 20mm extension tube my friend the spider was gone.
+Title | Jumping Spider
+FocalLength | 70.0 mm
+CreateDate | 2017-12-29 08:31:51
+Lens | 24-70mm f/2.8
+ISO | 640
+Model | NIKON D610
+Make | NIKON CORPORATION
+
