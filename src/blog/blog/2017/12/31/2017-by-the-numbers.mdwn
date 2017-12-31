@@ -1,0 +1,63 @@
+[[!meta date="2017-12-31T15:43:42-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2017 Tyler Cipriani
+"""]]
+[[!meta title="2017 by the numbers"]]
+
+These are some meaningless numbers.
+
+* Books read: 34 (goal 50)
+    1. [White trash: the 400-year untold history of class in America](https://openlibrary.org/works/OL17360507W/White_trash) by Nancy Isenberg
+    2. [Harry Potter and the Order of the Phoenix](https://openlibrary.org/works/OL13716955W/Harry_Potter_and_the_Order_of_the_Phoenix) by J.K. Rowling
+    3. [Harry Potter and the Half-Blood Prince](https://openlibrary.org/works/OL13716954W/Harry_Potter_and_the_Half-Blood_Prince) by J.K. Rowling
+    4. [Brave New World](https://openlibrary.org/works/OL64468W/Brave_New_World) by Aldous Huxley
+    5. [Harry Potter and the Deathly Hallows](https://openlibrary.org/works/OL82586W/Harry_Potter_and_the_Deathly_Hallows) by J.K. Rowling
+    6. [The Camera](https://openlibrary.org/works/OL79132W/The_camera) by Ansel Adams
+    7. [Learning to See Creatively](https://openlibrary.org/works/OL8532656W/Learning_to_See_Creatively) by Bryan Peterson
+    8. Bitch Planet, Vol. 1: Extraordinary Machine by Kelly Sue DeConnick
+    9. Black Panther .1 by Ta-Nehisi Coates
+    10. [The Handmaid's Tale](https://openlibrary.org/works/OL675783W/The_handmaid's_tale) by Margaret Atwood
+    11. [The Sandman, Vol. 1: Preludes and Nocturnes](https://openlibrary.org/works/OL9200964W/The_Sandman_Vol._1)  by Neil Gaiman
+    12. [The Sandman, Vol. 2: The Doll's House](https://openlibrary.org/works/OL15449786W/The_Sandman_Volume_2)  by Neil Gaiman
+    13. [The Sandman, Vol. 3: Dream Country](https://openlibrary.org/works/OL14975232W/The_Sandman_Vol._3) by Neil Gaiman
+    14. The Sandman, Vol. 4: Season of Mists by Neil Gaiman
+    15. The Sandman, Vol. 5: A Game of You by Neil Gaiman
+    16. The Sandman, Vol. 6: Fables and Reflections by Neil Gaiman
+    17. The Sandman, Vol. 7: Brief Lives by Neil Gaiman
+    18. Continental Pilsner by David Miller
+    19. [The Sandman, Vol. 8: The World's End](https://openlibrary.org/works/OL679308W/The_Sandman_Vol._8) by Neil Gaiman
+    20. [The Sandman, Vol. 9: The Kindly Ones](https://openlibrary.org/works/OL14975250W/The_Sandman_Vol._9) by Neil Gaiman
+    21. The Sandman, Vol. 10: The Wake
+    22. Brewing Local: American-Grown Beer by Stan Hieronymus
+    23. [The Dispossessed](https://openlibrary.org/works/OL59863W/The_dispossessed) by Ursula K. Le Guin
+    24. [Neptune's Brood](https://openlibrary.org/works/OL17554076W/Neptunes_Brood) by Charles Stross
+    25. [Misery](https://openlibrary.org/works/OL81634W/Misery) by Stephen King
+    26. [Storm Front (The Dresden Files, Book 1)](https://openlibrary.org/works/OL5961779W/Storm_Front_[The_Dresden_Files_Book_1]_[Dresden_Files]) by Jim Butcher
+    27. [Fool Moon (The Dresden Files, Book 2)](https://openlibrary.org/works/OL5961788W/Fool_Moon) by Jim Butcher
+    28. [The Postman](https://openlibrary.org/works/OL58717W/The_Postman) by David Brin
+    29. [Slaughterhouse-five: or, The children's crusade, a duty-dance with death](https://openlibrary.org/works/OL98474W/Slaughterhouse-five) by Kurt Vonnegut
+    30. Turtles All The Way Down by John Green
+    31. [Breakfast of Champions: or, Goodbye blue Monday!](https://openlibrary.org/works/OL98488W/Breakfast_of_Champions) by Kurt Vonnegut
+    32. [El Deafo](https://openlibrary.org/works/OL17095216W/El_Deafo) by Cece Bell
+    33. [Digger](http://diggercomic.com/) by Ursula Vernon
+    34. [Pride and Prejudice](https://openlibrary.org/works/OL15839230W/Pride_and_Prejudice) by Jane Austen
+* Miles run: 124.57 (goal 100)
+* Meditation sessions: 47 (goal 100)
+* Commits (on github): 445
+* Deployments to Wikimedia production: 377
+* Trick-or-treaters on Halloween: 229
+* Gallons of beer brewed: 70 (14x5 gallon batches)
+* Medals won for brewing: 3
+    - Gold - Colorado State Fair - Mild
+    - Gold - Rocky Mountain Homebrew Challenge - Hefeweizen
+    - Bronze - Hoppy Halloween - Mild
+* Beer competitions entered: 3
+* Beers entered into competitions: 8
+* Body fat % difference: -0.2
+* Raw photos added to my computer: 2,995
+* Roughly, number of photos taken: 12,782 (via `exiftool -ShutterCount`)
+* FCC licenses received: 2 (technician and general)
+
+I felt pretty powerless against the rising tide of horribleness that seemingly
+permeated every aspect of 2017 -- that is not captured by these numbers.
