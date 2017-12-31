@@ -1,0 +1,49 @@
+[[!comment format=mdwn
+ username="https://me.yahoo.com/a/ZWmKpxIopfl9hhiAy5RrYOVhuIgtLRXMjg--#f84d9"
+ nickname="Emily"
+ avatar="https://seccdn.libravatar.org/avatar/31ec0ea5071ed185a3d04c9712d981b8db024ad255ea35c84b0e2b6ca1157a68"
+ subject="Alternative way for Git to support color schemes"
+ date="2017-12-31T07:34:55Z"
+ content="""
+You can simply pass ANSI color code indices as the color arguments. These indices are to a color palette which is very easily changed from within the settings of your terminal or terminal emulator \(effectively giving all color-aware console applications support for psuedocolors\). [Here](https://stackoverflow.com/questions/21539607/git-color-ui-support-for-256-colors) is a post with more information on Git 256 color support. For examples of how to do this on various Windows terminals see [this stackoverflow post](https://superuser.com/questions/1114549/how-do-you-change-the-color-scheme-in-bash-on-ubuntu-for-windows), though it is also possible on Linux and Mac OSX or really any platform with an even remotely modern terminal. This method is superior in ease-of-use as well as portability. View [this Imgur gallery](https://imgur.com/a/gqIq5) for several pictures of various color schemes being dynamically changed within my terminal.
+
+
+It is important to point out that ANSI color code indices are laid out in a specific way such that certain indices usually correspond to certain usages or hues. This means that, for example, using the color index of 0 is usually the \"default background color\" of any given theme. [Here](http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#256-colors) is a resource which explains the ANSI 256 colors mode escape sequences \(note that we are only providing the palette index to Git and don't need to worry about directly writing an ANSI escape sequence\!\)
+
+
+Here is the Git configuration I am using to generate these indexed color codes within diffs:
+
+    [color]
+    branch = auto
+    decorate = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    pager = true
+    showbranch = auto
+    status = auto
+    ui = auto
+
+    #color slot= [attributes] foreground [background]
+    #color = 0 - 256 (ANSI); #000000 (24bit Hex); black, red, green, yellow, blue, magenta, cyan, white (ANSI color words); normal (custom Git Color?)
+    #attributes: bold dim italic ul blink reverse strike
+  
+    [color \"status\"]
+    header = 8
+    added = 10
+    changed = 12
+    untracked = 14
+    branch = 0 9
+    nobranch = bold ul blink 12
+
+    [color \"diff\"]
+    meta = 3
+    func = 13
+    frag = 11
+    context = 8
+    old = 12 1
+    new = 10 3
+
+
+Note: I \"translated\" the posted Tomorrow Night Eighties color theme file from the original post into this format as closely as possible without making changes to my terminals built-in color themes. As a result several of the hex code colors have been modified to a closely matching color code index for my terminal's version of the 16 colors for the Tomorrow Night Eighties theme.
+"""]]
