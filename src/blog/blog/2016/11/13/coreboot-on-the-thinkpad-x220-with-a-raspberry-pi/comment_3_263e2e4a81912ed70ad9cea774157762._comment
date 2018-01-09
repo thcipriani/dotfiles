@@ -1,0 +1,13 @@
+[[!comment format=mdwn
+ username="elvirolo@4cdbd61c89ae62d2a9a5f04c25c366d59d7445dd"
+ nickname="elvirolo"
+ avatar="https://seccdn.libravatar.org/avatar/728017136fb35595bd5d82c2cac7ae6c"
+ subject="me_cleaner "
+ date="2018-01-09T14:18:38Z"
+ content="""
+I was able to flash the new ROM internally (with a neutered ME - see [this guide](https://github.com/corna/me_cleaner/wiki/Internal-flashing-with-coreboot)) by running the following command on the laptop: 
+
+flashrom  -p internal:laptop=force_I_want_a_brick -c MX25L6445E -w coreboot_mecleaned.rom
+
+Of course, you need to recompile coreboot first. But it does work :)
+"""]]
