@@ -1,0 +1,32 @@
+[[!comment format=mdwn
+ username="elvirolo@4cdbd61c89ae62d2a9a5f04c25c366d59d7445dd"
+ nickname="elvirolo"
+ avatar="https://seccdn.libravatar.org/avatar/728017136fb35595bd5d82c2cac7ae6c"
+ subject="SPI flashing using an Olimex Olinuxino Lime2 board"
+ date="2018-01-09T10:11:39Z"
+ content="""
+Hi!
+
+Thanks a lot for your guide, which has helped me tremendously. I'd like to add a few instructions here for people wanting to flash their BIOS chip with an Olimex Olinuxino Lime2 board. It took me several days to figure out how to do it, so I thought it might be helpful to include a brief summary of the required steps here.
+
+1) Flash the latest version of [Armbian (Debian) Stretch for the Lime2 board](https://www.armbian.com/olimex-lime-2/) onto an SD card. It should also work with Olimex's official image, but I couldn't get it to work. If you do use the Olimex image, which includes a 3.xx kernel, please refer to [this page](https://linux-sunxi.org/Fex_Guide#spi_configuration). Since it didn't work with me, I won't be telling you how to do it here, but feel free to send me an email if you think I can help.
+
+2) Before booting the board, you should wire it up to the BIOS chip. Because the pin spacing (pitch) on the Lime 2 is smaller (0.05\") than that of the Raspberry Pi (0.1\"), the easiest way to do it is to get [this adapter](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2-UEXT/open-source-hardware) as well as [this ribbon cable](https://www.olimex.com/Products/Components/Cables/CABLE-40-40-10CM/) from Olimex.
+
+Plug one end of the ribbon cable to the GPIO2 port on the board, and the other end on the adapter. Make sure to plug it in the right way (use the pin numbers that are printed on the board as a helper). Connect the jumper wires to the Pomona clip as described in Tyler's guide. The pins you should use on the adapter are the following:
+GND: pin 2, VCC (3.3V): pin 3, CS(0): pin 29, CLK: pin 31, MOSI: pin 33, MISO: pin 35.
+
+3) Boot your lime2 board, find its IP, and SSH into in (ssh root@ip). The default password is 1234. You will be prompted to change it when you log in. 
+
+Add the following lines in /boot/armbianEnv.txt:
+
+   overlays=spi0 spi-spidev
+
+   param_spidev_spi_bus=0
+
+Reboot. /dev/spidev0.0 should have appeared!
+
+Note: I couldn't get my board to power the chip, for some reason. I thus removed the VCC cable, and instead enabled Wake On Lan in the BIOS, switched the laptop off, removed the battery, plugged in the AC adapter and an Ethernet cable. The chip then gets powered and the flashing process works. I read that one cannot use me_cleaner if the chip is powered that way. I haven't tried yet, so I can't confirm that. I'd be grateful if someone who knows more about this would let me know.
+
+PS: I found a [script](https://notabug.org/Velsoth/x220-coreboot) that automates much of the process. I haven't tried it, but it looks very helpful!
+"""]]
