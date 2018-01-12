@@ -1,0 +1,17 @@
+[[!comment format=mdwn
+ username="https://tylercipriani.com/"
+ nickname="thcipriani"
+ avatar="https://seccdn.libravatar.org/avatar/5619bb7ad9df2b1811b5ef6f944f97e67232273cc5b2caca28652639b304302b"
+ subject="thanks elvirolo"
+ date="2018-01-12T15:46:40Z"
+ content="""
+elvirolo -- thank you for all the resources! Very cool!
+
+I definitely used `me_cleaner` on my machine as well following a guide on the [hardened gnu/linux](https://hardenedlinux.github.io/firmware/2016/11/17/neutralize_ME_firmware_on_sandybridge_and_ivybridge.html) site.
+
+_Comment by elvirolo — Tue 2018-01-09 02:18:38 PM_
+
+> flashrom -p internal:laptop=force_I_want_a_brick -c MX25L6445E -w coreboot_mecleaned.rom
+
+_that command_ :)
+"""]]
