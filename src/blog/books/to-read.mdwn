@@ -1,0 +1,21 @@
+[[!meta date="2012-08-01"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta author="Tyler Cipriani"]]
+
+[[!meta title="To Read"]]
+
+I may not read most of these books, but I don't want to forget about them for some reason...
+
+* [Crypto anarchy, cyberstates, and pirate utopias](http://encore.coalliance.org/iii/encore/record/C__Rb15258367__SPeter%20Ludlow__P0%2C9__Orightresult__U__X4?lang=eng&suite=def) - Peter Ludlow
+* My Brain is Open: The Mathematical Journeys of Paul Erdos - Bruce Schechter
+* Green Hills of Earth - Robert A. Heinlein
+* Deep Work: Rules for Focused Success in a Distracted World - Cal Newport
+* It Can't Happen Here - Sinclair Lewis
+* Lovecraft Country - Matt Ruff
+* [Perfecting Sound Forever: An Aural History of Recorded Music](https://www.amazon.com/gp/product/0865479380)
+* [I Hate the Internet](https://www.amazon.com/I-Hate-Internet-Jarett-Kobek/dp/0996421807/ref=asap_bc?ie=UTF8)
+* [Masters of Atlantis](https://www.amazon.com/Masters-Atlantis-Charles-Portis/dp/1585670219/)
+* [Writing An Interpreter In Go](https://interpreterbook.com/)
+* [Princeton Companion to Mathematics](https://www.amazon.com/Princeton-Companion-Mathematics-Timothy-Gowers/dp/0691118809)

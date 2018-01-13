@@ -1,49 +1,7 @@
+[[!meta redir="/books"]]
 #+TITLE: Books
 [[!meta title="Books"]]
 
-I've been trying to read more books. In recent years my offline reading
-has really taken a hit. I spend most of my day communicating through an
-almost wholly text interface. While the number of words I read per day
-certainly puts me in a high percentile, the quality of the words read is
-probably not especially staggering.
-
-For want of a better place to put this information, here is a list of
-books I've read in 2017 as of 2017-08-11. I've included graphic novels
-here as well because I game the system however I damn well please.
-
-1. [[https://openlibrary.org/works/OL17360507W/White_trash][White trash: the 400-year untold history of class in America]] by Nancy Isenberg
-2. [[https://openlibrary.org/works/OL13716955W/Harry_Potter_and_the_Order_of_the_Phoenix][Harry Potter and the Order of the Phoenix]] by J.K. Rowling
-3. [[https://openlibrary.org/works/OL13716954W/Harry_Potter_and_the_Half-Blood_Prince][Harry Potter and the Half-Blood Prince]] by J.K. Rowling
-4. [[https://openlibrary.org/works/OL64468W/Brave_New_World][Brave New World]] by Aldous Huxley
-5. [[https://openlibrary.org/works/OL82586W/Harry_Potter_and_the_Deathly_Hallows][Harry Potter and the Deathly Hallows]] by J.K. Rowling
-6. [[https://openlibrary.org/works/OL79132W/The_camera][The Camera]] by Ansel Adams
-7. [[https://openlibrary.org/works/OL8532656W/Learning_to_See_Creatively][Learning to See Creatively]] by Bryan Peterson
-8. Bitch Planet, Vol. 1: Extraordinary Machine by Kelly Sue DeConnick
-9. Black Panther .1 by Ta-Nehisi Coates
-10. [[https://openlibrary.org/works/OL675783W/The_handmaid's_tale][The Handmaid's Tale]] by Margaret Atwood
-11. [[https://openlibrary.org/works/OL9200964W/The_Sandman_Vol._1][The Sandman, Vol. 1: Preludes and Nocturnes]]  by Neil Gaiman
-12. [[https://openlibrary.org/works/OL15449786W/The_Sandman_Volume_2][The Sandman, Vol. 2: The Doll's House]]  by Neil Gaiman
-13. [[https://openlibrary.org/works/OL14975232W/The_Sandman_Vol._3][The Sandman, Vol. 3: Dream Country]] by Neil Gaiman
-14. The Sandman, Vol. 4: Season of Mists by Neil Gaiman
-15. The Sandman, Vol. 5: A Game of You by Neil Gaiman
-16. The Sandman, Vol. 6: Fables and Reflections by Neil Gaiman
-17. The Sandman, Vol. 7: Brief Lives by Neil Gaiman
-18. Continental Pilsner by David Miller
-19. [[https://openlibrary.org/works/OL679308W/The_Sandman_Vol._8][The Sandman, Vol. 8: The World's End]] by Neil Gaiman
-20. [[https://openlibrary.org/works/OL14975250W/The_Sandman_Vol._9][The Sandman, Vol. 9: The Kindly Ones]] by Neil Gaiman
-21. The Sandman, Vol. 10: The Wake
-22. Brewing Local: American-Grown Beer by Stan Hieronymus
-23. [[https://openlibrary.org/works/OL59863W/The_dispossessed][The Dispossessed]] by Ursula K. Le Guin
-24. [[https://openlibrary.org/works/OL17554076W/Neptunes_Brood][Neptune's Brood]] by Charles Stross
-25. [[https://openlibrary.org/works/OL81634W/Misery][Misery]] by Stephen King
-26. [[https://openlibrary.org/works/OL5961779W/Storm_Front_(The_Dresden_Files_Book_1)_(Dresden_Files)][Storm Front (The Dresden Files, Book 1)]] by Jim Butcher
-27. [[https://openlibrary.org/works/OL5961788W/Fool_Moon][Fool Moon (The Dresden Files, Book 2)]] by Jim Butcher
-28. [[https://openlibrary.org/works/OL58717W/The_Postman][The Postman]] by David Brin
-29. [[https://openlibrary.org/works/OL98474W/Slaughterhouse-five][Slaughterhouse-five: or, The children's crusade, a duty-dance with death]] by Kurt Vonnegut
-30. Turtles All The Way Down by John Green
-31. [[https://openlibrary.org/works/OL98488W/Breakfast_of_Champions][Breakfast of Champions: or, Goodbye blue Monday!]] by Kurt Vonnegut
-32. [[https://openlibrary.org/works/OL17095216W/El_Deafo][El Deafo]] by Cece Bell
-33. [[http://diggercomic.com/][Digger]] by Ursula Vernon
-34. [[https://openlibrary.org/works/OL15839230W/Pride_and_Prejudice][Pride and Prejudice]] by Jane Austen
-
-[[!inline pages="tagged(books)" actions="no" archive="yes" feedshow=100 trail="yes"]]
+If you are on this page, my redirect skills have failed and I am
+sorry. If you want to see things about books that I have written
+then check out my [[Book Things|books]] page.

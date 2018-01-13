@@ -1,8 +1,11 @@
-[[!meta redir="tags/books"]]
-[[!meta date="2012-08-01"]] [[!meta author="Tyler Cipriani"]] [[!meta
-license=""" [[Creative Commons Attribution-ShareAlike
-License|https://creativecommons.org/licenses/by-sa/4.0/]] """]] [[!meta
-copyright=""" Copyright &copy; 2017 Tyler Cipriani """]]
+[[!meta date="2012-08-01"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta license="""
+[[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
+"""]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
 
 [[!meta title="Book Things"]]
 
@@ -14,6 +17,9 @@ probably not especially staggering.
 
 Anyway, here's my book things:
 
-* [[Library Thing|books/library-thing]]
+* [[Books read in 2018|books/2018]]
+* [[Books read in 2017|books/2017]]
 * [[Books read in 2016|books/2016]]
 * [[Books to read|books/to-read]]
+
+[[!inline pages="tagged(books)" actions="no" archive="yes" feedshow=100 trail="yes"]]
