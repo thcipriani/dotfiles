@@ -8,4 +8,5 @@ Copyright &copy; 2018 Tyler Cipriani
 
 So far...
 
-1. [Evicted:Poverty and Profit in the American City](https://openlibrary.org/books/OL26416591M/Evicted) by Matthew Desmond
+1. [Evicted: Poverty and Profit in the American City](https://openlibrary.org/books/OL26416591M/Evicted) by Matthew Desmond
+2. [Fire And Fury: Inside the Trump White House](https://openlibrary.org/books/OL26418863M/Fire_And_Fury) by Michael Wolff
