@@ -8,10 +8,13 @@ section {
 }
 
 blockquote figure {
-    width: auto;
+    height: 13em;
+    width: 13em;
     margin: 1em 1em 1em 0;
     float: left;
     border: none;
+    border-radius: 13em;
+    overflow: hidden;
 }
 
 blockquote figcaption {
@@ -20,6 +23,12 @@ blockquote figcaption {
 
 section > blockquote {
     margin: 0 0 1em 0;
+    background: none;
+    padding: 1em 1em 1em 0;
+}
+
+blockquote figure img {
+    max-width: none;
 }
 
 dt img {
@@ -32,6 +41,7 @@ dt img {
     blockquote figure {
         float: none;
         width: 100%;
+        border-radius: unset;
     }
 }
 

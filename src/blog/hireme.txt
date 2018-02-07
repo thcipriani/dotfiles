@@ -1,0 +1,89 @@
+Tyler Cipriani
+tyler@tylercipriani.com
+(720)-515-CIPY (2479)
+https://tylercipriani.com
+https://github.com/thcipriani
+296F F6DA D285 018F AC02
+
+Howdy! I'm Tyler.
+
+I believe in libre software that works for users to help empower a vibrant and
+thoughtful community.
+
+EXPERIENCE
+----------
+
+Wikimedia Foundation (2015-02-09--Present)
+
+- Led creation of python-based deployment tooling that deploys changes for all
+  software in production--including MediaWiki--to around 1,000 production
+  servers
+- Work as part of a cross-department team to migrate production microservices
+  to a continuous deployment pipeline using Go, Docker, Minikube, and
+  Kubernetes
+- Run daily deploys of MediaWiki for Wikipedia and other wiki
+  projects---deployed 600 times in fiscal year 2016
+
+  Tech: Linux, Debian, Python, Git, Puppet, Jenkins, Go, Docker, Kubernetes,
+  MediaWiki PHP
+
+SparkFun Electronics (2013-11-18--2015-02-07)
+
+- Built continuous integration system on top of OpenStack and Jenkins
+- Migrated important table logging from MongoDB to PostgreSQL-trigger audit
+  trail
+- Created android-tablet, ReactJS-based shipping software
+
+  Tech: Linux, Debian, PHP, PostgreSQL, Chef, Git, Nginx, MongoDB, MemcacheD,
+  Beanstalk, Gearman, Nagios, Jenkins, CasperJS, PHPUnit, jQuery, QUnit,
+  Bootstrap, React, Saltstack
+
+UpSync (2012-10-22--2013-11-15)
+
+- Developed features for mobile, offline MVC project with PHP 5.4, JavaScript,
+  and Objective-C
+- Built, monitored, and maintained load-balanced VPC CentOS-6-based LAMP stack
+  on AWS
+
+  Tech: Linux, ReHat, CentOS, AWS, PHP, MySQL, XCode/Objective-C, Subversion,
+  Nagios, Cacti, WebSQL, AMD.js, BackboneJS, D3, jQuery
+
+Custom Channels (2009-07-22--2012-10-19)
+
+- Built and maintained Linux (CentOS and Ubuntu) VPS machines for file storage,
+  streaming media, and web applications
+- Developed, designed, and architected internal and customer-facing MVC web
+  services to stream music and manage a playlist of songs
+
+  Tech: Linux, Ubuntu, CentOS, Xen, Perl, Wordpress, MySQL, IceCast, OPML, Git,
+  Nagios, Prototype, Bootstrap
+
+PROJECTS
+--------
+
+Scap
+
+- Wikimedia foundation's deployment software
+
+  https://github.com/wikimedia/scap
+
+Keyholder
+
+- Python3 ssh-agent proxy
+- I wrote about on the Wikimedia Foundation blog
+
+  https://github.com/wikimedia/keyholder
+  https://blog.wikimedia.org/2017/03/22/keyholderKeyholder
+
+JenkHub
+
+- Ruby daemon to connect SparkFun's internal Jenkins server with our GitHub hosted repository
+
+  https://github.com/sparkfun/jenkhub
+
+Dotfiles
+
+- My dotfiles became a personal archive several years ago. This repository
+  keeps my configuration and scripts, serves my blog, and holds all my photos.
+
+  https://github.com/thcipriani/dotfiles

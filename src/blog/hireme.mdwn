@@ -22,7 +22,7 @@ Copyright &copy; 2017 Tyler Cipriani
 > ![Tyler Cipriani][]
 >
 > ### Hi! I'm Tyler. `/me *waves*`
-> I ♥ the internet -- I worry about it all the time.
+> I believe in libre software that works for users to help empower a vibrant and thoughtful community.
 >
 > [tyler@tylercipriani.com][email]
 >
@@ -40,28 +40,36 @@ Copyright &copy; 2017 Tyler Cipriani
       Wikimedia Foundation blog.
 
 [JenkHub](https://github.com/sparkfun/jenkhub) `INACTIVE`
-:   * Ruby daemon for monitoring GitHub for tagged SparkFun pull requests -- may
-      still be in use `¯\_(ツ)_/¯`
+:   * Ruby daemon to connect SparkFun's internal Jenkins server with our GitHub
+      hosted repository
 
 [.dotfiles](https://github.com/thcipriani/dotfiles)
-:   * May save the world some day. Probably won't though. I'm writing this inside
-      my `~/.dotfiles` right now.
+:   * My dotfiles became a personal archive several years ago. This repository
+      keeps my configuration and scripts, serves my blog, and holds all my photos.
+      One repository to maintain over many years.
+
 
 ## Experience
 
 ![Wikimedia Foundation][] **Wikimedia Foundation** --  _Software Engineer_ -- 2015-02-09 - _Present_
-:   * Led development of new deployment tooling
+:   * Led creation of python-based deployment tooling that deploys changes for all
+      software in production--including MediaWiki--to around 1,000 production
+      servers
 
-    * Deployed 600 times to 300+ servers in fiscal year 2016 alone
+    * Work as part of a cross-department team to migrate production microservices
+      to a continuous deployment pipeline using Go, Docker, Minikube, and
+      Kubernetes
 
-    * **Environment**:\
-        `python` `PHP` `Debian` `Git` `puppet` `Gearman` `Jenkins` `saltstack`
+    * Tech:\
+      `Linux` `Debian` `Python` `Git` `Puppet` `Jenkins` `Go` `Docker` `Kubernetes`
+      `MediaWiki` `PHP`
 
 ![SparkFun][] **SparkFun** --  _Web Developer/Systems Administrator_ -- 2013-11-18 - 2015-02-07
 
-:   * Built continuous integration system on top of OpenStack and Jenkins
+:   * Created android-tablet, ReactJS-based shipping software
 
-    * Created android-tablet, ReactJS-based shipping software
+    * Migrated important table logging from MongoDB to PostgreSQL-trigger audit
+      trail
 
     * **Environment**:\
         `PHP` `PostgreSQL` `Debian` `chef` `Git` `nginx` `MongoDB` `Memcached`
@@ -86,9 +94,8 @@ Copyright &copy; 2017 Tyler Cipriani
     * Built command line tools to manage 100s of thousands of OGG, FLAC, and
       MP3 files
 
-    * Environment:\
-        `Xen` `Ubuntu` `CentOS` `Perl5` `Wordpress` `MySQL` `IceCast`
-        `OPML` `Git` `Nagios` `Prototype` `Bootstrap`
+    * Developed, designed, and architected internal and customer-facing MVC web
+      services to stream music and manage a playlist of songs
 
 ## Writing
 
