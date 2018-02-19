@@ -23,7 +23,7 @@ is my second night trying to image this object (or any DSO, actually).
 
 This is a stack of 10x88-second exposures (roughly 15 minutes total exposure
 time). Polar-alignment on my SkyGuider Pro proved to be a bit difficult (once I
-added the camera and counter balance I had to re-align), so this minutes is the
+added the camera and counter balance I had to re-align), so this 15 minutes is the
 result of me fiddling for an hour and a half or so. I did all the processing
 for this photo using libre software. Camera/lens correction in RawTherapee,
 aligned using `align_image_stack` in Hugin, average stacking using G'MIC,
@@ -34,7 +34,7 @@ EXIF |
 --- | ---
 ExposureTime | 88
 FNumber | 2.8
-Description | This is the Great Orion Nebula, M42. I realized this is fairly easy to see with a sufficient optical boost from my backyard which is roughly Bortle 6/7. This is my second night trying to image this object (or any DSO, actually). This is a stack of 10x88-second exposures (roughly 15 minutes total exposure time). Polar-alignment on my SkyGuider Pro proved to be a bit difficult (once I added the camera and counter balance I had to re-align), so this minutes is the result of me fiddling for an hour and a half or so. I did all the processing for this photo using libre software. Camera/lens correction in RawTherapee, aligned using `align_image_stack` in hugin, average stacking using G'MIC, final stacked image tone curve/RGB curve/saturation adjustments in RawTherapee
+Description | This is the Great Orion Nebula, M42. I realized this is fairly easy to see with a sufficient optical boost from my backyard which is roughly Bortle 6/7. This is my second night trying to image this object (or any DSO, actually). This is a stack of 10x88-second exposures (roughly 15 minutes total exposure time). Polar-alignment on my SkyGuider Pro proved to be a bit difficult (once I added the camera and counter balance I had to re-align), so this 15 minutes is the result of me fiddling for an hour and a half or so. I did all the processing for this photo using libre software. Camera/lens correction in RawTherapee, aligned using `align_image_stack` in hugin, average stacking using G'MIC, final stacked image tone curve/RGB curve/saturation adjustments in RawTherapee
 Title | Orion Nebula, M42
 FocalLength | 200.0 mm
 CreateDate | 2018-02-17 20:34:58
