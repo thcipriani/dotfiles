@@ -1,0 +1,38 @@
+[[!meta date="2018-02-19 15:52:18"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Snowflake Macro"]]
+[[!tag
+photos
+photos/50mm-f-1.8
+photos/nikon-d610
+photos/macro
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/original.jpg)](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/large.jpg)
+
+Had the day off today for President's Day. Decided to spend it hunched over
+taking macro photos of snowflakes. This was taken using 3 extension tubes
+totaling 68mm. I found that I needed auto-focus very much so I decided to
+forego doing reverse-lens work, although I think the additional magnification
+would have been nice to have. This is an averages stack of 3 aligned images.
+
+EXIF |
+--- | ---
+ExposureTime | 1/5
+FNumber | 11.0
+Description | Had the day off today for President's Day. Decided to spend it hunched over taking macro photos of snowflakes. This was taken using 3 extension tubes totaling 68mm. I found that I needed auto-focus very much so I decided to forego doing reverse-lens work, although I think the additional magnification would have been nice to have. This is an averages stack of 3 aligned images.
+Title | Snowflake Macro
+FocalLength | 50.0 mm
+CreateDate | 2018-02-19 15:52:18
+Lens | 50mm f/1.8
+ISO | 100
+Model | NIKON D610
+Make | NIKON CORPORATION
+

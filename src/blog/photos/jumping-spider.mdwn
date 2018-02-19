@@ -8,6 +8,7 @@ Copyright &copy; 2017 Tyler Cipriani
 photos
 photos/24-70mm-f-2.8
 photos/nikon-d610
+photos/macro
 ]]
 
 ![[Small](https://photos.tylercipriani.com/thumbs/8a/4b52ab78a32ba2081ec763b46b9730/small.jpg) |
