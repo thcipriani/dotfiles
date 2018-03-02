@@ -52,7 +52,7 @@ mount() {
   else
     echo "mounting crypt"
     sshfs -o uid=$(id -u) -o gid=$(id -g) -o idmap=user -o allow_other \
-      172.16.0.10:/volume1/homes/tyler/backup "$HOME/.backup/crypt"
+      tyler@172.16.0.10:/volume1/homes/tyler/backup "$HOME/.backup/crypt"
 
     # check if it's mounted yet
     if ! mountpoint -q "$HOME/.backup/crypt"; then

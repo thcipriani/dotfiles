@@ -35,11 +35,20 @@ An incomplete list of birds I have seen.
 **Canada Goose**
 :   * Very common
 
+**Cooper's Hawk**
+:   * Startled some doves and I got a crappy photo [2018-02-14](http://tyler.zone/2018-02-14_hawk-of-somekind.jpg)
+
 **Dark-eyed Junco**
 :   * Common at my feeder
 
+**Downey Woodpecker**
+:   * 2017-08-22
+
 **Eurpoean starling**
 :   * Saw a lone starling (strange) at McIntosh lake
+
+**Eurasian Collared-Dove**
+:   * 2017-08-24 -- pretty common at my feeder
 
 **Gray Jay**
 :   * Rocky Mountain National Park -- 2017-06-03
@@ -59,9 +68,13 @@ An incomplete list of birds I have seen.
 **Mountain Chickadee**
 :   * Rocky Mountain National Park -- 2017-06-03
 
+**Northern Flicker**
+:   * 2017-09-23
+    * 2017-12-01
+
 **Osprey**
 :   * Longmont has several nests
-:   * [[Boulder County Fairgrounds|photos/osprey-at-boulder-county-fairgrounds]] - 2017-05-06
+    * [[Boulder County Fairgrounds|photos/osprey-at-boulder-county-fairgrounds]] - 2017-05-06
 
 **Red Breasted Nuthatch**
 :   * Rocky Mountain National Park -- 2017-06-03
@@ -74,6 +87,9 @@ An incomplete list of birds I have seen.
 
 **Ruby-crowned kinglet**
 :   * Rocky Mountain National Park -- 2017-06-03
+
+**Rufous Hummingbird**
+:   * Like to fight with the broad-throats at my feeder in the summer
 
 **Steller's Jay**
 :   * Common at higher elevations

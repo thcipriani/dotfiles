@@ -204,7 +204,6 @@ jpg_thumb() {
             -thumbnail "${new_width}x${new_height}!" \
             +set Thumb::URI \
             -depth 8 \
-            -sharpen 0x0.8 \
             -sampling-factor '2x2, 1x1, 1x1' \
             -interlace plane \
             "$outpath"
@@ -237,8 +236,10 @@ readme() {
 
     thumbext="${ext}"
 
+    echo "Ext ${ext}"
+
     case "${ext}" in
-        jpg|jpeg|JPEG|JPG|tif|tiff|TIF|TIFF)
+        jpg|jpeg|JPEG|JPG|tif|tiff|TIF|TIFF|nef|NEF)
             thumbext="jpg"
             ;;
         *)
@@ -246,12 +247,13 @@ readme() {
     esac
 
 
-    imgtitle="$(/usr/bin/exiftool -Title "$infile" | awk -F':' '{print $2}')"
-    imgdesc="$(/usr/bin/exiftool -Description "$infile" | awk -F':' '{print $2}')"
+    imgtitle="$(/usr/bin/exiftool -Title "$infile" | awk -F':' '{$1=""; print $0}')"
+    imgdesc="$(/usr/bin/exiftool -Description "$infile" | awk -F':' '{$1=""; print $0}')"
 
     cat<<README > "$readmefile"
 <!doctype html>
 <html>
+<meta charset="utf-8">
 <title>${TITLE} :: $imgtitle</title>
 <style>
 body {

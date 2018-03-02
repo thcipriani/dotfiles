@@ -129,16 +129,18 @@ macro index,pager a \
     "<pipe-message>goobook add<return>" "add sender to google contacts"
 bind editor <Tab> complete-query
 
-bind pager gg top
-bind pager G  bottom
 bind index,pager R  group-reply
 
 # Shortcuts
+
+source "$HOME/.mutt/vim-keys.rc"
+
 macro index ,t '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager ,t '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 macro pager ,u "|urlview<enter>" "call urlview to open links"
 
 macro index gi "<change-folder>!<return>" "go to inbox"
+macro index gs "<change-folder> =starred<return>" "go to starred"
 macro index ,z "<shell-escape>offlineimap -q -o<return>" "sync IMAP"
 
 macro pager ,g "|~/.mutt/view-web.py \
@@ -151,6 +153,13 @@ macro pager ,p ":set pipe_decode<enter>|~/.mutt/view-web.py \
     "Open phab link in browser"
 
 macro index <space> "<collapse-thread>" "uncollapse thread"
+
+macro index ,r \
+    "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+    <pipe-message>notmuch-mutt -r thread<enter>\
+    <change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+    <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+        "notmuch: reconstruct thread"
 
 macro index ,s \
     "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\

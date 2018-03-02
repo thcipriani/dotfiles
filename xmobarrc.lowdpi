@@ -1,14 +1,19 @@
-Config { font = "-xos4-*-medium-r-normal-*-16-*-*-*-*-*-*-*"
+-- font = "-xos4-*-medium-r-normal-*-16-*-*-*-*-*-*-*"
+Config { font = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
        -- solarized, bgColor = "#073642"
        -- solarized, fgColor = "#657b83"
        , bgColor = "#1d1f21"
        , fgColor = "#c5c8c6"
        , position = TopW L 100
-       , commands = [ Run Weather "KDEN" [
-                                        "--template"
-                                        ,"<fc=#969896>DIA:</fc><tempF>°F"
-                                        ] 36000
-                    , Run Cpu [
+       , commands = [
+                    -- Run Com "weathermajig" ["80501"] "weathermajig" 300,
+                    Run Com "weathermajig" ["94104"] "weathermajig" 300,
+                    -- Run Weather "KDEN" [
+                    --                     "--template"
+                    --                     ,"<fc=#969896>DIA:</fc><tempF>°F"
+                    --                     ] 36000
+                    --,
+                    Run Cpu [
                               "--template", "<total>%"
                               -- "--Low","3"
                               -- , "--High", "50"
@@ -18,7 +23,7 @@ Config { font = "-xos4-*-medium-r-normal-*-16-*-*-*-*-*-*-*"
                     , Run Memory [
                                   "--template", "<usedratio>%"
                                  ] 10
-                    , Run Date "%a %D %r <fc=#969896>KW%V DOY%j</fc>" "date" 10
+                    , Run Date "%a %F %T <fc=#969896>KW%V DOY%j</fc>" "date" 10
                     , Run Battery [
                                   "--template"      , "<left>% <fc=#969896>[<timeleft>]</fc>"
                                   -- "--template" , "<acstatus>(<left>%)"
@@ -32,5 +37,6 @@ Config { font = "-xos4-*-medium-r-normal-*-16-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% <fc=#969896>//</fc> %KDEN%  <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{ <fc=#969896>Batt:</fc>%battery%  %date%"
+--       , template = "%StdinReader% <fc=#969896>//</fc> %KDEN%  <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{ <fc=#969896>Batt:</fc>%battery%  %date%"
+       , template = "%StdinReader% <fc=#969896>//</fc> <fc=#969896>CPU:</fc>%cpu%  <fc=#969896>Mem:</fc>%memory%}{  %weathermajig% <fc=#969896>Batt:</fc>%battery% %date%"
        }

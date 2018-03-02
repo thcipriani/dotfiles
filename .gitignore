@@ -52,3 +52,7 @@ srv/photos/screenshots/*
 # IkiWiki things
 # ---
 ikiwiki/TylerCipriani.setup
+
+# why? I don't know.
+# ---
+bin/youtube-dl

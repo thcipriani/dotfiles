@@ -20,10 +20,9 @@ To see posts by date, check out the [[archives]]
 FRONTMATTER = '''[[!meta date="{date}"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta copyright="""
-    Copyright &copy; {year} Tyler Cipriani
+Copyright &copy; {year} Tyler Cipriani
 """]]
 [[!meta title="{title}"]]
-[[!toc ]]
 [[!tag computing]]
 '''
 

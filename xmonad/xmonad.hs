@@ -160,7 +160,7 @@ main = do
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
      , ("M-v", spawn "urxvt -e alsamixer -c 1")
      , ("M-S-v", spawn "xdotool click 2")
-     , ("M-l", spawn "slock")
+     , ("M-l", spawn "lock")
      , ("M-b", sendMessage ToggleStruts)
      , ("M1-<Tab>", prevScreen)
      , ("M1-S-<Tab>",  nextScreen)

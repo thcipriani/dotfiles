@@ -57,7 +57,10 @@ if [[ ! -h "$HOME/.ikiwiki" ]]; then
 fi
 
 cp "$HOME/.ikiwiki/ikiwiki-hooks/post-update" "$HOME/.dotfiles.git/hooks/post-update"
-cp -r "$HOME/.ikiwiki/ikiwiki-hooks/post-update.d" "$HOME/.dotfiles.git/hooks/post-update.d"
+
+if [[ ! -d "$HOME/.dotfiles.git/hooks/post-update.d" ]]; then
+    cp -r "$HOME/.ikiwiki/ikiwiki-hooks/post-update.d" "$HOME/.dotfiles.git/hooks/post-update.d"
+fi
 
 ikiwiki --changesetup "$HOME/.ikiwiki/TylerCipriani.setup"
 

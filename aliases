@@ -156,3 +156,9 @@ alias sw='telnet towel.blinkenlights.nl'
 alias whatisit='curl "http://itsthisforthat.com/api.php?text"'
 alias cats="echo && curl -s -k -X GET http://placekitten.com/ | head -n 25 | tail -n 15 && echo"
 alias vintage='[ -r "/usr/lib/xscreensaver/apple2" ] && /usr/lib/xscreensaver/apple2 -text -fast -program bash'
+
+if command -v sshecret > /dev/null 2>&1; then
+    alias sssh='sshecret'
+    alias ssh='sshecret'
+    alias scp='scp -S sshecret'
+fi

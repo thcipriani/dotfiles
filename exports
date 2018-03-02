@@ -10,7 +10,7 @@ prepend_to_path() {
 
   if [[ -d "${dir}" ]]; then
     if [[ ":$PATH:" != *"${dir}"* ]]; then
-      export PATH="${dir}:${PATH}"
+      PATH="${dir}:${PATH}"
     fi
   fi
 }
@@ -32,8 +32,8 @@ prepend_to_path "$HOME/.local/bin"
 prepend_to_path "$HOME/bin"
 
 if [  "$(uname -s)" = "Darwin" ]; then
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
@@ -58,24 +58,25 @@ fi
 
 if [ -d "$HOME/go" ]; then
     export GOPATH="$HOME/go"
-    export PATH="$GOPATH/bin:$PATH"
+    PATH="$GOPATH/bin:$PATH"
 fi
 
 if [ -f "$HOME/.amazonrc" ]; then
     eval $(/usr/bin/env python2 "$HOME/.amazonrc")
 fi
 
-# if [ -d "$HOME/.rbenv/bin" ]; then
-#     export PATH="$HOME/.rbenv/bin":$PATH
-#     if [ -d "$HOME/.rbenv/plugins/ruby-build/bin" ]; then
-#         export PATH="$HOME/.rbenv/plugins/ruby-build/bin":$PATH
-#     fi
-# 
-#     eval "$(rbenv init -)"
-# fi
+[ -d "$HOME/.rvm/bin" ] && prepend_to_path "$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-[ -d "$HOME/.rvm/bin" ] && export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[ -d "$HOME/.rbenv/bin" ] && {
+    prepend_to_path "$HOME/.rbenv/bin"
+    prepend_to_path "$HOME/.rbenv/plugins/ruby-build/bin"
+    eval "$(rbenv init -)"
+}
 
 # Try this out, so far it has some potential, would be nice to hook to
 # ~/.muh_history somehow...
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if command -v sshecret > /dev/null 2>&1; then
+    export GIT_SSH=sshecret
+fi

@@ -16,7 +16,7 @@ echo $$ > "$pidfile"
 trap "rm '$pidfile'" EXIT SIGTERM
 while true; do
   cat "${batterydir}/uevent" | tr '\n' ',' >> "$logfile"
-  printf "$(date +'%m-%d-%Y %H:%I:%S')" >> "$logfile"
+  printf "$(date +'%m-%d-%Y %H:%M:%S')" >> "$logfile"
   printf "\n" >> "$logfile"
   sleep 1800
 done

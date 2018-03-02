@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+help() {
+    cat<<HELP 2>&1
+USAGE:
+    ksphelper <party name> <keymaster> <keysfile>
+
+    ksphelper helps create a gpgparticipants file from a list of keys.
+    Outputs a ksp-text.txt in the current directory from gpgparticipants
+    and won't mess with your normal gpg keyring to do it.
+
+OPTIONS:
+    <party name>    Name for your keysigning party, passed as title to
+                    gpgparticipants(1)
+    <keymaster>     KSP organizer in the format: "Name <email@domain.tld>",
+                    passed as organizer to gpgparticipants(1)
+    <keysfile>      Path to text file that contains the keys of all
+                    participants, one per line, comments and blank lines
+                    are ignored.
+
+EXAMPLE:
+
+    ksphelper "WMFRelEng" "Tyler Cipriani <tcipriani@wikimedia.org>" keys
+HELP
+}
+
+if (( $# < 3 )); then
+    help
+    exit 1
+fi
+
+KSP_NAME="$1"
+KEYMASTER="$2"
+KEYS_FILE="$3"
+KEYRING_DIR="$(mktemp -d -q --suffix=_ksphelper)"
+KEYRING="pubring.kbx"
+
+touch "${KEYRING_DIR}/${KEYRING}"
+
+# Grab all the keys into a local keychain
+grep -v '^#' keys | \
+grep -v '^\s*$' | xargs gpg \
+    --no-options \
+    --no-default-keyring \
+    --keyring="${KEYRING_DIR}/${KEYRING}" \
+    --recv-keys
+
+grep -v '^#' keys | \
+grep -v '^\s*$' | GNUPGHOME="$KEYRING_DIR" gpgparticipants \
+    - ksp-file.txt "$(date --iso=seconds)" "$KEYMASTER" "$KSP_NAME"
+
+\rm -rf "$KEYRING_DIR"

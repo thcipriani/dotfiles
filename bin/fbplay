@@ -1,20 +1,4 @@
 #!/bin/bash
-#
-# Uses omxplayer to stream local videos or youtube videos,
-# also searches youtube if a video or url is not provided.
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 show_help() {
     cat<<USE
@@ -22,6 +6,7 @@ show_help() {
       fbplay [-t audio-track] <filename or url>
     OPTIONS:
       --track|-t: audio track number
+      --subs|-s: subtitle track number
 USE
 }
 
@@ -34,12 +19,15 @@ clear_screen() {
     tput clear
     tput civis
     tput setaf 0
+    if [ -n "$TMUX" ]; then
+        tmux set -g status off
+    fi
 }
 
 loading_screen() {
     clear_screen
     tput sgr0
-    printf "%s\n%s\n" "$(figlet Loading...)" "$(fortune)" | cowsay -n -f "$(ls /usr/share/cowsay/cows/ | shuf -n1)"
+    printf "%s\n%s\n" "$(figlet Loading...)" "$(fortune)" | cowsay -n -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
     tput setaf 0
 }
 
@@ -48,6 +36,9 @@ reset_screen() {
     tput cnorm
     tput sgr0
     tput clear
+    if [ -n "$TMUX" ]; then
+        tmux set -g status on
+    fi
 }
 
 main() {
@@ -57,6 +48,7 @@ main() {
     fi
 
     local audio_track=1
+    local subtitle_track=1
     local media
 
     while :; do
@@ -64,6 +56,24 @@ main() {
             -h|-\?|--help)
                 show_help
                 exit
+                ;;
+            -s|--subs)
+                if [[ -n "$2" ]]; then
+                    subtitle_track=$2
+                    shift 2
+                    continue
+                else
+                    error '"-s|--subs" requires a non-empty option argument.'
+                    exit 1
+                fi
+                ;;
+            --subs=?*)
+                # Delete everything up to "=" and assign the remainder.
+                subtitle_track=${1#*=}
+                ;;
+            --subs=)
+                error '"--subs" requires a non-empty option argument.'
+                exit 1
                 ;;
             -t|--track)
                 if [[ -n "$2" ]]; then
@@ -105,11 +115,17 @@ main() {
     media="$1"
     loading_screen
     if [[ ! -f "$media" ]]; then
-       media="$(youtube-dl --default-search "ytsearch" --get-url "$media" 2>/dev/null)"
+       if [[ "$media" == http* ]]; then
+           touch /tmp/here
+           media="$(youtube-dl --format 18 --get-url "${media}" 2>/dev/null)"
+       else
+           media="$(youtube-dl --format 18 --get-url "ytsearch:${media}" 2>/dev/null)"
+       fi
     fi
+    echo "$media" > /tmp/media
     clear_screen
     # Use global dbus control
-    OMXPLAYER_DBUS_ADDR="/tmp/omxplayerdbus.global" omxplayer -n"$audio_track" -z "$media" | echo ""
+    OMXPLAYER_DBUS_ADDR="/tmp/omxplayerdbus.global" omxplayer -t"$subtitle_track" -n"$audio_track" -z "$media" | echo ""
     reset_screen
 }
 
