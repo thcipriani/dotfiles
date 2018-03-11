@@ -1,0 +1,9 @@
+[[!comment format=mdwn
+ username="https://me.yahoo.com/a/t_7XR1Q7yc4hwkNWXlGxdbnot4xppR0-#21850"
+ nickname="Pratyush"
+ avatar="https://seccdn.libravatar.org/avatar/041c2599446eb25da1d604f74d9feef650a5f7663bc7f4d1ccd26eb722a07d92"
+ subject="Thanks!"
+ date="2018-03-11T00:45:00Z"
+ content="""
+Hey great article. Thanks for posting. The source article also mentions that \"Ideally, the ATF content should fit under 98KB - this allows the browser to paint the page after just three roundtrips to have plenty time budget for server response latency and client rendering.\". Can you explain how do they arrive at the number of 98kb?
+"""]]
