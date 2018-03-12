@@ -1,0 +1,52 @@
+[[!meta date="2018-03-04 00:13:35"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Waning Gibbous"]]
+[[!tag
+photos
+photos/0mm-f-0
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/16/8e540549643ff7e338fb3ee87409e6/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/16/8e540549643ff7e338fb3ee87409e6/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/16/8e540549643ff7e338fb3ee87409e6/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/16/8e540549643ff7e338fb3ee87409e6/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/16/8e540549643ff7e338fb3ee87409e6/original.jpg)](https://photos.tylercipriani.com/thumbs/16/8e540549643ff7e338fb3ee87409e6/large.jpg)
+
+Taken from my backyard, bortle 6/7 zone
+
+Equipment
+---
+* Nikon D610 using T-Ring at prime focus
+* Celestron NexStar 5se
+* 41 Frames captured at ISO 800, 1/500 sec
+* Processing
+* Processed using all libre software.
+
+Software
+---
+* Debian GNU/Linux buster
+* Siril (GPLv3 license)
+    * Image Pattern Alignment (Planetary Full Disk)
+    * Sum Stacking
+    * Best Images (planetary) — 50% of frames (21 images)
+    * Wavelets Transform — BSpline, 1st plan 25.00 and that's it
+* Raw Therapee (GPLv3 license)
+    * LAB noise reduction
+    * Cropping
+    * White balance
+
+EXIF |
+--- | ---
+ExposureTime | 1/80
+FNumber | 0
+FocalLength | 0.0 mm
+CreateDate | 2018-03-04 00:13:35
+Lens | 0mm f/0
+ISO | 125
+Model | NIKON D610
+Make | NIKON CORPORATION
+

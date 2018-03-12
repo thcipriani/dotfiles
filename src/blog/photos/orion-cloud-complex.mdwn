@@ -1,0 +1,55 @@
+[[!meta date="2018-03-10 21:35:40"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Orion Cloud Complex"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/eb/aeedaa971eecf8ecc5a34bc50a3034/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/eb/aeedaa971eecf8ecc5a34bc50a3034/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/eb/aeedaa971eecf8ecc5a34bc50a3034/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/eb/aeedaa971eecf8ecc5a34bc50a3034/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/eb/aeedaa971eecf8ecc5a34bc50a3034/original.jpg)](https://photos.tylercipriani.com/thumbs/eb/aeedaa971eecf8ecc5a34bc50a3034/large.jpg)
+
+Orion cloud complex from my back yard.
+
+Equipment
+---
+* Nikon D610
+* iOptron Skyguider Pro
+* 11 Frames captured at ISO 800, 45 seconds, f/2.8
+* Processed using all libre software.
+
+Software
+---
+* Debian GNU/Linux buster
+* Siril (GPLv3 license)
+    * Global Star Alignment (deep sky)
+    * Sum Stacking
+    * Winsorized Sigma Clipping -- all images in sequence
+    * Background Extraction
+    * Color Calibration
+    * Auto stretching
+* Raw Therapee (GPLv3 license)
+    * LAB noise reduction
+    * Cropping
+* GIMP 2.8 (GPLv3 license)
+    * Saturation
+    * Sharpening
+
+EXIF |
+--- | ---
+ExposureTime | 42.2
+FNumber | 2.8
+FocalLength | 200.0 mm
+CreateDate | 2018-03-10 21:35:40
+Lens | 70-200mm f/2.8
+ISO | 800
+Model | NIKON D610
+Make | NIKON CORPORATION
+
