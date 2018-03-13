@@ -1,0 +1,9 @@
+[[!comment format=mdwn
+ username="https://me.yahoo.com/a/t_7XR1Q7yc4hwkNWXlGxdbnot4xppR0-#21850"
+ nickname="Pratyush"
+ avatar="https://seccdn.libravatar.org/avatar/041c2599446eb25da1d604f74d9feef650a5f7663bc7f4d1ccd26eb722a07d92"
+ subject="Re: Thanks!"
+ date="2018-03-13T12:49:15Z"
+ content="""
+Ok. Got it. They are counting 3 trips for 98KB size ATF content because TCP after initial packets of 14kb, TCP doubles the packet size in each connection to 28 KB, and then 56 KB (TCP packet size keeps on increasing until there is data loss). So in three roundtrips, you can get 14 kb + 28 kb + 56 kb = 98 KB of content!
+"""]]
