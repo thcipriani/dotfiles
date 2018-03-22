@@ -1,1 +1,1 @@
-execute literatevim#load("~/.vimrc.md")
+execute literatevimrc#load("~/.vimrc.md")

@@ -28,7 +28,7 @@ RESET=''
 if (( color_prompt > 0 )); then
     RED=$(tput setaf 1)
     CYAN=$(tput setaf 6)
-    GREEN=$(tput setaf 190)
+    GREEN=$(tput setaf 2)
     MAGENTA=$(tput setaf 9)
     ORANGE=$(tput setaf 172)
     PURPLE=$(tput setaf 141)
@@ -80,9 +80,9 @@ prompt() {
     exit_code_emote $_exitcode
 
     if [ $_exitcode -eq 0 ]; then
-      color=${LIME_YELLOW}
+      color=${GREEN}
     else
-      color=${MAGENTA}
+      color=${RED}
     fi
 
     venv=''

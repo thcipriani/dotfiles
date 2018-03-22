@@ -1,37 +1,51 @@
 ! https://lists.debian.org/debian-user/2005/09/msg01385.html
-urxvt*buffered: true
-urxvt*cursorBlink: true
-urxvt*underlineColor: yellow
+URxvt.buffered: true
+URxvt.cursorBlink: true
+URxvt.underlineColor: yellow
+
+Xft.hinting: 1
+Xft.antialias: 1
 
 #ifdef HI_DPI
 ! These are the things I must do to see ಠ_ಠ
-urxvt*font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*, \
-    xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=28:antialias=true:hinting=slight, \
-    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight, \
-    xft:Symbola:style=Regular:pixelsize=28:antialias=true:hinting=slight
+URxvt.font:  xft:terminus:weight=medium:pixelsize=16, \
+    xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=28, \
+    xft:Lohit\ Kannada:pixelsize=16, \
+    xft:Symbola:pixelsize=28
 Emacs.font: -*-terminesspowerline-*-*-*-*-28-*-*-*-*-*-*-*
+
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
 #else
-urxvt*font: -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*, \
-    xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Book:pixelsize=16:antialias=true:hinting=slight, \
-    xft:Lohit\ Kannada:style=Regular:pixelsize=16:antialias=true:hinting=slight, \
-    xft:Symbola:style=Regular:pixelsize=16:antialias=true:hinting=slight
-Emacs.font: -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*
+
+URxvt.font: xft:terminus:weight=medium:pixelsize=16, \
+    xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=16, \
+    xft:Lohit\ Kannada:pixelsize=16, \
+    xft:Symbola:pixelsize=16
+Emacs.font:  -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*
 #endif
 
-urxvt*depth: 32
-urxvt*borderless: 1
-urxvt*scrollBar: false
-urxvt*loginShell: true
-urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
-urxvt*saveLines: 5000
-urxvt*termName: rxvt-unicode
-urxvt*iso14755: false
-urxvt.iso14755_52: false
-urxvt.perl-ext-common: default,matcher,resize-font
-urxvt.url-launcher: /usr/bin/xdg-open
-urxvt.matcher.button: 1
-urxvt*urgentOnBell: true
-urxvt*visualBell: false
+URxvt.depth:            32
+URxvt.borderless:       1
+URxvt.scrollBar:        false
+URxvt.loginShell:       true
+
+! Enable Shift-PageUp/Down in screen
+URxvt.secondaryScroll:  true
+
+URxvt.saveLines:        5000
+URxvt.termName:         rxvt-unicode
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
+URxvt.perl-lib:         $HOME/.urxvt
+URxvt.perl-ext-common:  default,matcher,resize-font
+URxvt.url-launcher:     /usr/bin/xdg-open
+URxvt.matcher.button:   1
+URxvt*urgentOnBell:     true
+URxvt*visualBell:       false
 
 ! Cursor settings
 xcursor.theme: DMZ-Black
@@ -179,14 +193,40 @@ xcursor.size: 16
 *color14:      #8abeb7
 *color15:      #ecebec
 
-#endif
+! URxvt.background:           #ffffff
+! URxvt.foreground:           #333333
+! URxvt.fading:               40
+! 
+! !black
+! URxvt.color8:               #000000
+! URxvt.color0:               #cccccc
+! 
+! !red
+! URxvt.color9:               #F22659
+! URxvt.color1:               #F8D3D4
+! 
+! !green
+! URxvt.color10:             #00CC00
+! URxvt.color2:              #008800
+! 
+! !yellow
+! URxvt.color11:             #333333
+! URxvt.color3:              #FFC439
+! 
+! !blue
+! URxvt.color12:               #004488
+! URxvt.color4:              #006FE0
+! 
+! !magena
+! URxvt.color13:               #FF0099
+! URxvt.color5:              #DD5CA5
+! 
+! !cyan
+! URxvt.color14:               #007777
+! URxvt.color6:              #00bbbb
+! 
+! !white
+! URxvt.color7:               #E2E1D5
+! URxvt.color15:              #ffffe0
 
-#ifdef HI_DPI
-Xft.dpi: 180
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
 #endif
