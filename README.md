@@ -8,6 +8,6 @@
 1. Clone this repo into a directory named <code>.dotfiles</code>:
     git clone http://github.com/thcipriani/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
-2. ruby bootstrap.rb
+2. python bootstrap.py
 
 For more info see the [CHANGELOG.md](CHANGELOG.md).

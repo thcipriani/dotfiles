@@ -84,7 +84,7 @@ myManageHook = composeAll
 
 scratchpads =
   [
-    NS "scratch" "urxvt --title scratch" (title =? "scratch")
+    NS "scratch" "urxvt -name scratch" (appName =? "scratch")
       (customFloating $ W.RationalRect 0.6 0.6 0.4 0.4)
   ]
 

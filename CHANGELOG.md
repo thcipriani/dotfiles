@@ -1,3 +1,32 @@
+# Version 1.1.0
+
+## Random version tag
+
+I Know. I know. I haven't updated this changlog in a good long while. But now
+I want to make note of a few changes I made.
+
+## Changes
+
+* URxvt/XResources font size plugin
+* trying out [Base16](http://chriskempson.com/projects/base16/) (thanks @caseydentinger)
+* As a result of Base16 use, I've simplifed and decrufted a lot of color usage
+* I also had to fiddle with weechat a bit
+
+## Future work
+
+Make xmobar and xmonad realize when I'm using a light vs dark colorscheme...
+
+## Weechat fiddling note
+
+I have no idea what I'm doing with Weechat, but here are the commands I used
+to ensure that sutff is readable:
+
+    /set weechat.color.chat_highlight 0
+    /set weechat.color.chat_highlight_bg 9
+    /set buffers.color.hotlist_message_fg 2
+    /set buffers.color.hotlist_low_fg 7
+    /set buffers.color.hotlist_highlight_bg 4
+
 # Version 1.0
 
 ## Overview

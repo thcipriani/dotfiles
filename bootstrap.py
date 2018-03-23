@@ -110,6 +110,21 @@ def vimshit():
     doit(cmd)
 
 
+def base16shit():
+    """
+    Do dat base16 shit
+
+    ...is this better than submodules?
+    """
+    cmd = [
+        '/usr/bin/git',
+        'clone',
+        'https://github.com/chriskempson/base16-shell.git',
+        os.path.join(HOME, '.config', 'base16-shell')
+    ]
+    doit(cmd)
+
+
 def parse_args():
     """
     I thought I could get away without it, but I can't
@@ -134,6 +149,7 @@ def main():
     hardlink_plans()
     submodules()
     vimshit()
+    base16shit()
 
 
 if __name__ == '__main__':

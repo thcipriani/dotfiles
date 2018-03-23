@@ -136,6 +136,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'goldfeld/vim-seek'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ajgrf/parchment'
+Plugin 'chriskempson/base16-vim'
 Plugin 'joonty/vdebug'
 Plugin 'vim-airline/vim-airline'
 " BOOO!
@@ -299,13 +300,12 @@ set noswapfile
 
 ```
 " Colorscheme
-" https://github.com/altercation/vim-colors-solarized
-" colorscheme solarized
-" let darkcolorbg='#839496'
-
-set background=dark
-let darkcolorbg=234
-colorscheme Tomorrow-Night
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+else
+    colorscheme Tomorrow-Night
+endif
 
 " GUI Font (same as my gnome-terminal font)
 " https://github.com/adobe/source-code-pro
@@ -323,7 +323,6 @@ since version 8 is out now. This is a project for later.
 ```
 if v:version >= 703
   set colorcolumn=75
-  hi ColorColumn ctermbg=8
   set undodir=~/.vim-undo
   set undofile
   set undolevels=1000 "max number of changes that can be undone
@@ -663,10 +662,6 @@ with colorscheme though :\
 ```vim
 " Indent Guides ------------------------------------------------------- {{{
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_space_guides = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 " }}}
 ```
 

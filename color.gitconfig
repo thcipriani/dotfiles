@@ -3,20 +3,20 @@
 [color "grep"]
     match = 33
 [color "status"]
-    header = "#999999"
-    added = "#99cc99"
-    changed = "#f2777a"
-    untracked = "#ffcc66"
-    branch = "#2d2d2d" "#6699cc"
+    header = 8
+    added = 10
+    changed = 9
+    untracked = 3
+    branch = 0 5
 
     # Because you want an even more unnerving detatched head state
-    nobranch = bold ul blink "#f99157"
+    nobranch = bold ul blink 1
 
 [color "diff"]
-    meta = "#515151"
-    func = "#cc99cc"
-    frag = "#66cccc"
-    old = "#f2777a" "#393939"
-    context = "#999999"
-    new = "#99cc99" "#515151"
+    meta = 8
+    func = 6
+    frag = 8
+    old = 9
+    context = 7
+    new = 10
 
