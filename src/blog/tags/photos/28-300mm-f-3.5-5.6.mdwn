@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/28-300mm-f-3.5-5.6"]]
+
+[[!inline pages="tagged(photos/28-300mm-f-3.5-5.6)" actions="no" archive="yes"
+feedshow=10]]
