@@ -1,0 +1,36 @@
+[[!meta date="2018-03-28 10:32:43"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Statue of Liberty"]]
+[[!tag
+photos
+photos/28-300mm-f-3.5-5.6
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/51/1022e2b3a070b7d704dc688eee71dd/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/51/1022e2b3a070b7d704dc688eee71dd/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/51/1022e2b3a070b7d704dc688eee71dd/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/51/1022e2b3a070b7d704dc688eee71dd/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/51/1022e2b3a070b7d704dc688eee71dd/original.jpg)](https://photos.tylercipriani.com/thumbs/51/1022e2b3a070b7d704dc688eee71dd/large.jpg)
+
+
+A pretty overcast day, flat altostratus clouds made for a totally boring
+background that I completely blew out.  On the plus side, the Nikon 28-300mm
+f/3.5-5.6 that I rented was more than up to the task of taking a nice sharp
+picture of the statue.
+
+
+EXIF |
+--- | ---
+ExposureTime | 1/320
+FNumber | 8.0
+FocalLength | 300.0 mm
+CreateDate | 2018-03-28 10:32:43
+Lens | 28-300mm f/3.5-5.6
+ISO | 100
+Model | NIKON D610
+Make | NIKON CORPORATION
+
