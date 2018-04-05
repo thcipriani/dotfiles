@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+BASE16_SHELL="$HOME"/.config/base16-shell
+BASE16_SCRIPTS="$BASE16_SHELL"/scripts
+
+[ -x "$BASE16_SHELL"/profile_helper.sh ] || exit 1
+
+THEME_PATH=$(ls "$BASE16_SCRIPTS"/*.sh | shuf -n1)
+THEME_NAME=$(basename "$THEME_PATH")
+THEME_NAME=${THEME_NAME%.*}
+THEME_NAME=${THEME_NAME:7}
+
+eval "$($BASE16_SHELL/profile_helper.sh)"
+_base16 "$THEME_PATH" "$THEME_NAME"
+
+. "$BASE16_SHELL"/colortest
+
+printf -- '---\nCurrent Theme: %s\n---\n' "$THEME_NAME"
