@@ -238,6 +238,12 @@ interface.
      the pins for your pi – I realized I had my pins setup as if I were
      on the 26-GPIO pin Raspberry Pi rather than the 40-GPIO pin model 3)
 
+    > **NOTE**: 2018-04-06
+    >
+    > One person emailed to indicate that the flashrom commands below
+    > required setting an `spispeed`, i.e.,
+    >  `sudo flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=512`
+
     ``` {.bash}
     pi@raspberrypi:~$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0
     flashrom v0.9.9-r1954 on Linux 4.4.26-v7+ (armv7l)
@@ -343,6 +349,13 @@ interface.
     debugging
         - (nothing checked)
     ```
+
+    > **NOTE**: 2018-04-06
+    >
+    > One person emailed to mention that `make nconfig` may require a number
+    > of dependencies, see the [coreboot wiki](https://www.coreboot.org/Build_HOWTO#debian) for
+    > a complete list. As of this writing that list reads:
+    > `apt-get install git build-essential gnat flex bison libncurses5-dev wget zlib1g-dev`
 
     -   Compile coreboot!
 
