@@ -1,0 +1,200 @@
+[[!meta date="2018-04-13T14:20:56-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="2018 NHC First Round"]]
+
+![Nothing in this photo is from this year](https://photos.tylercipriani.com/thumbs/8a/308211cce415651937e48473784f25/large.jpg "Pretty ribbons")
+
+I got my 2018 NHC first round results today. I put in 3 beers and 1 mead which
+hits the 4 entry limit-cap.
+
+My entries were:
+
+1. [[Dark Mild|/brewing/2016-06-19-mild]]
+2. Weissbier
+3. American IPA
+4. [[Traditional Mead|/brewing/nhc-2014-gold-medal-tupelo-mead]]
+
+The mead was *not* the same mead that won gold in 2014. I used Wyeast Sweet
+Mead yeast instead of 71B, but other than that it was the same (even made it in
+late 2011 IIRC).
+
+## Results
+
+* 1st Place American IPA -- 40 points
+* 1st Place Traditional Mead -- 43 points
+* 3rd Place Weissbier -- 40 points
+* Dark Mild -- 28 points
+
+## Random thoughts and low-grade ranting
+
+I'm happy that I'm moving on with 3 entries. But I do have a good rant built
+up: my dark mild was judged badly. By that I don't mean some very fine folks
+judged it to be poor, I mean that the judges were wrong.
+
+Steve Piatz (who is a grand master BJCP judge) scored my mild 39 points at
+Hoppy Halloween this year (where it took 3rd). My dark mild also took 1st at
+the Colorado State Fair in 2017. I've had a good number of dark english milds
+in pubs in the UK. My mild is spot-on.
+
+It's fine that my mild didn't win, but the judging was *sooo* bad -- in
+their comments the judges describe a perfect mild:
+
+* "brown sugar/toffee"
+* "light roast, caramel, nutty"
+* "toasted malt, low toffee, low herbal hops, low bitterness, light dark fruit
+  esters (raisin), malty"
+
+And then they both put it closer to "Not to style" than "Classic example" --
+what‽ I'm not saying I should win everything. I'm not saying I should have won
+this category. I don't even have a problem with a 28. My beer may very well
+have fallen lifeless on this particular day for these particular judges -- all
+that is totally cool. But I do have a problem when judges describe a mild --
+verbatim -- from the guidelines that they clearly haven't read and then tell me
+it's not to style.
+
+`</rant>`
+
+I was thrilled with my other scoresheets, I didn't expect to do so well. The
+weissbier was particularly surprising since I've struggled so much with that
+style -- I'm sure I've brewed at least 3 sulfury examples in the past year!
+
+## Recipes
+
+I don't think I've ever posted a weissbier recipe, and I did a few things
+differently with my IPA, so here goes:
+
+## American IPA (2018-02-01)
+
+Stats
+-----
+
+-   OG: ¯\\\_(ツ)\_/¯
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 96.5
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+
+Fermentables
+------------
+
+  Ingredient                   Amount    %      When
+  ---------------------------- --------- ------ ------
+  Root Shoot Meridian Pale     15 lbs    85     Mash
+  Briess Carapils              1 lbs     6      Mash
+  Corn Sugar                   1 lbs     6      Mash
+  Bards Carastan               0.5 lbs   3      Mash
+  Weyermann - Acidualted Malt  4 oz      1      Mash
+
+Hops
+----
+
+  Variety    Alpha    Amount     IBU    Form           Time
+  ---------- -------- ---------- ------ -------------- -----------
+  Chinook    13.0 %   1.00 oz.   36.3   Loose Pellet   FWH
+  Amarillo   9.5 %    1.00 oz.   20.7   Loose Pellet   45 Min
+  Columbus   15.5 %   1.00 oz.   28.3   Loose Pellet   30 Min
+  Mosaic     13.0 %   1.00 oz.   18.5   Loose Pellet   10 Min
+  Citra      15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Columbus   15.5 %   1.00 oz    7.3    Loose Pellet   Flame Out
+  Ekuanot    12.5 %   1.00 oz    5.9    Loose Pellet   Flame Out
+  Galaxy     15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Mosaic     13.0 %   1.00 oz    6.1    Loose Pellet   Flame Out
+  Citra      15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Columbus   15.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Ekuanot    12.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Galaxy     15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Mosaic     13.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+
+
+Yeast
+-----
+
+  Strain         Amount             Starter
+  -------------- ------------------ ---------
+  A07 Imperial   1 New pack thing   Nope
+
+Steps
+-----
+
+1.  Dough in with 9.7 Gallons of Water at 164°F for a strike temp of
+    154°F
+2.  2 tsp Gypsum to mash for calcium
+3.  Rest 60 min @ 154°F
+4.  Sparge 20 min with 170°F water
+5.  Preboil 9 gallons at 1.040
+6.  Boil 90 minutes to reduce to 7 gallons
+7.  Add recirc arm and chiller at 20 minutes
+8.  1 tsp Wyeast Beer Nutrient Blend at 10 minutes
+9.  1 whilfloc tab at 2 minutes
+10. Hot whirlpool with flameout hops 20 minutes
+10. Chill to 62°F using ice water through Hydra Immersion Chiller
+11. Transfer to conical and use 90 seconds of oxygen through air stone at 1 LPM
+12. Pitch 1 pack A07 dated 2018-01-28
+13. Set space heater for 64°F
+14. Add 1oz Columbus, 1oz Mosaic, 1oz Ekuanot T-90 pellets to fermentor on day 3
+15. Jumper to keg with surescreen and 1oz Galaxy T-90, 1oz Citra T-90, 1oz
+    Ekuanot LupuLN2™, 1oz Mosaic LupuLN2™
+16. Move keg to kegerator on day 3
+17. Jumper to clean keg, add gelatian, put under 30 PSI for 2 days
+18. Reduce pressure to 12 psi, pour off a few chunky pints, enjoy!
+
+## Weissbier (2017-01-15)
+
+Stats
+-----
+
+-   OG: ¯\\\_(ツ)\_/¯
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 12.3
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+
+Fermentables
+------------
+
+  Ingredient                   Amount    %      When
+  ---------------------------- --------- ------ ------
+  Weyermann Pale Wheat         4 lbs     59     Mash
+  Root Shoot Odyssey Pilsner   5 lbs     37     Mash
+  Best Dark Munich             8 oz      4      Mash
+
+Hops
+----
+
+  Variety    Alpha    Amount     IBU    Form           Time
+  ---------- -------- ---------- ------ -------------- -----------
+  Hallertau  4.5 %    1.00 oz.   12.3   Loose Pellet   60 min
+
+
+Yeast
+-----
+
+  Strain            Amount             Starter
+  ----------------- ------------------ ---------
+  White Labs WLP300 1 New pack thing   Nope
+
+Steps
+-----
+
+1.  Dough in with 8.25 Gallons of Water at 114°F for a strike temp of 110°F
+    hold 15 minutes
+2.  Recirculate and heat to 125°F
+3.  Add 2 tsp gypsum
+4.  hold 10 minutes
+5.  Pull 9 quarts of thick mash (at a water/grist ratio of 1qt/lb) into a
+    decoction pot and heat to 160°F, hold 15 minutes
+6.  Recirculate and heat main mash to 147°F
+7.  Bring decoction to a boil and boil for 20 minutes
+8.  Return decoction to main mash to hit 158°F
+9.  Hold 25 minutes
+10. 1.038 preboil gravity for 9 gallons
+11. 1 tsp Wyeast Beer Nutrient Blend at 10 minutes
+12. 1 whirlfloc tablet at 2 minutes
+13. Chill to 58°F using ice water through Hydra Immersion Chiller
+14. Transfer to conical and use 90 seconds of oxygen through air stone and wand
+    at 1 LPM
+15. Fermentation peaked at 70°F
+16. Keg at 2.5 weeks, 30 psi for 2 days, 12 psi after
