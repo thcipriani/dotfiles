@@ -1,0 +1,74 @@
+[[!meta date="2016-05-22"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Say, Orange Blossom Mead Makes a Nice Gift"]]
+
+
+<div class="pull-right">
+![A nice-looking
+mead](https://photos.tylercipriani.com/thumbs/64/a5069a1f1fff15d76110a8f2e642a5/medium.jpg "A nice-looking mead"){width="500"}
+
+![Setting up the corker to bottle
+mead](https://photos.tylercipriani.com/thumbs/1a/221cc11c0e91a9fd0eca53a9c7d710/medium.jpg "Setting up the corker to bottle mead"){width="500"}
+
+![Finished, bottled
+mead](https://photos.tylercipriani.com/thumbs/bb/adb8b811c626985a30d7a1f0d80de4/medium.jpg "Finished, bottled mead"){width="300"}
+</div>
+
+I made this mead on a bit of a whim to sort of act as a mead-making
+demo. I intended to back-sweeten, but ultimately I enjoyed the flavor
+without any sweetening, so this became a semi-sweet mead.
+
+This is the first mead I've ever put in fancy bottles and it's been making
+really convenient to give gifts. Although if I worked out the cost per bottle
+I'd probably be shocked :)
+
+Stats
+-----
+
+-   Batch Size: 5 Gallons (18.93 L)
+
+Fermentables
+------------
+
+  Ingredient             Amount              %      When
+  ---------------------- ------------------- ------ ----------------------------
+  Orange blossom honey   15 lbs (6.803 kg)   100%   mixed in a bucket to start
+
+Yeast
+-----
+
+  Strain                      Amount    Starter
+  --------------------------- --------- ---------
+  Lalvin 71B-1122 dry yeast   2 packs   N/A
+
+Other
+-----
+
+  Ingredient                   Amount   When
+  ---------------------------- -------- ----------------------
+  Go-Ferm                      28g      Rehydrating yeast
+  Diammonium phosphate (DAP)   8g       Primary Fermentation
+  Fermaid-K                    18g      Primary Fermentation
+
+Notes
+-----
+
+100% RO water
+
+[Kristen England Even-Speed Mead
+method](http://www.ahaconference.org/wp-content/uploads/presentations/2008/KrisEngland_NHC.pdf)
+
+-   Day 0: 4.5 g Fermaid K, 2g DAP, Rehydrate 2 packs 71B with 28 g
+    Go-Ferm
+-   Days 1, 3, 5, 7, 8: stir
+-   Day 2, 4, 6: 4.5g Fermaid K, 2g DAP, 10 mL 2M KOH Stir
+
+Primary Fermentation: 14 days at 68° F (ish) (20° C)
+
+Secondary Fermentation: ??? some amount of months in a glass carboy with
+a silicon airlock
+
+Post-fermentation: SuperKleer KC used in the carboy prior to kegging

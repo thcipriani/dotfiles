@@ -1,0 +1,68 @@
+[[!meta date="2016-05-17"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="NHC 2014 Gold Medal Tupelo Mead"]]
+
+This mead won 1st place in Traditional Mead (Category \#24) at the [2014
+National Homebrewers
+Competition](http://www.homebrewersassociation.org/homebrew-recipe/tupelo-mead/)
+hosted by the American Homebrewer's Association (AHA).
+
+I don't like that the AHA has locked down award-winning recipes—the
+world is better when information is free for everyone, so I've posted my
+recipe here. I'm also going to start explicitly licensing my recipes
+Creative Commons Attribution Share-Alike.
+
+This was the 3rd mead I ever made, the recipe is a little ridiculous,
+but the results were outstanding.
+
+Stats
+-----
+
+-   Original Gravity: 1.150
+-   Final Gravity: 1.030
+-   ABV: 15.75%
+-   Batch Size: 5 Gallons (18.93 L)
+
+Fermentables
+------------
+
+  Ingredient     Amount               %      When
+  -------------- -------------------- ------ ----------------------------
+  Tupelo honey   26.0 lb (11.79 kg)   100%   mixed in a bucket to start
+
+Yeast
+-----
+
+  Strain                      Amount    Starter
+  --------------------------- --------- ---------
+  Lalvin 71B-1122 dry yeast   2 packs   N/A
+
+Other
+-----
+
+  Ingredient                   Amount   When
+  ---------------------------- -------- ----------------------
+  Go-Ferm                      28g      Rehydrating yeast
+  Diammonium phosphate (DAP)   8g       Primary Fermentation
+  Fermaid-K                    18g      Primary Fermentation
+
+Notes
+-----
+
+100% RO water
+
+[Kristen England Even-Speed Mead
+method](http://www.ahaconference.org/wp-content/uploads/presentations/2008/KrisEngland_NHC.pdf)
+
+-   Day 0: 4.5 g Fermaid K, 2g DAP, Rehydrate 2 packs 71B with 28 g
+    Go-Ferm
+-   Days 1, 3, 5, 7, 8: stir
+-   Day 2, 4, 6: 4.5g Fermaid K, 2g DAP, Stir
+
+Primary Fermentation: 14 days at 68° F (20° C)
+
+Post-fermentation: potassium sorbate and back-sweeten with 1+ lbs of
+Tupelo honey to taste.

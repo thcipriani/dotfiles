@@ -1,0 +1,71 @@
+[[!meta date="2015-04-09"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Colorado State Fair Mild Ale"]]
+
+
+Stats
+-----
+
+-   Batch Size: 5.5 gal
+-   Boil Size: 9 gal
+-   Boil Time: 1.500 hr
+-   Efficiency: 70%
+-   OG: 1.036 sg
+-   FG: 1.011 sg
+-   ABV: 3.3%
+-   Bitterness: 12.6 IBU (Tinseth)
+-   Color: 19.1 srm (Morey)
+
+Fermentables
+------------
+
+  Name                      Type    Amount     %    Color
+  ------------------------- ------- ---------- ---- -----------
+  Crisp - Maris Otter       Grain   8.500 lb   84   3.0 srm
+  Simpsons - Crystal Dark   Grain   1.250 lb   12   80.0 srm
+  Chocolate Malt (UK)       Grain   5.000 oz   3    450.0 srm
+  Carafa                    Grain   1.000 oz   1    337.0 srm
+
+Hops
+----
+
+  Name            Alpha   Amount     Use    Time         Form     IBU
+  --------------- ------- ---------- ------ ------------ -------- -----
+  Kent Goldings   5.5%    0.500 oz   Boil   1.000 hr     Pellet   8.5
+  Kent Goldings   5.5%    0.500 oz   Boil   15.000 min   Pellet   4.2
+
+Miscs
+-----
+
+  Name         Type          Use    Amount      Time
+  ------------ ------------- ------ ----------- ------------
+  Wyeast BCN   Other         Boil   1.000 tsp   10.000 min
+  Whirlfloc    Fining        Boil   1.000 tsp   2.000 min
+  Gypsum       Water Agent   Mash   2.000 tsp   0.000 s
+
+Yeast
+-----
+
+  Name                      Type   Form     Amount         Starter
+  ------------------------- ------ -------- -------------- --------- ---
+  Wyeast - London ESB Ale   Ale    Liquid   1 Smack pack   NO
+
+Mash
+----
+
+  Name      Type          Amount      Temp        Target      Time
+  --------- ------------- ----------- ----------- ----------- --------
+  155       Infusion      4.352 gal   163.533 F   155.000 F   30 min
+  mashout   Temperature   ---         ---         168.000 F   10 min
+
+Notes
+-----
+
+Recipe comes from **NHC Mild** from *Modern Homebrew Recipes* by Gordon
+Strong
+
+**2017-09-01**: 1st place, Colorado State Fair, English Brown Ale
+category

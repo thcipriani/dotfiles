@@ -1,0 +1,626 @@
+[[!meta date="2015-04-09"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Saison"]]
+
+
+<!-- God help me, this is exported from beeralchemy -->
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Selected Style and Target Specs
+</TD>
+</TR>
+</TABLE>
+16C-Belgian And French Ale-Saison<BR><BR>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Minimum OG:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.048 SG
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Maximum OG:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.065 SG
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Minimum FG:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.002 SG
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Maximum FG:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.012 SG
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Minimum IBU:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+20 IBU
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Maximum IBU:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+35 IBU
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Minimum Color:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+5.0 SRM
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Maximum Color:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+14.0 SRM
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+
+
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Recipe Overview
+</TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Wort Volume Before Boil:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+14.00 US gals
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Wort Volume After Boil:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+12.00 US gals
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Volume Transferred:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+11.00 US gals
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Water Added To Fermenter:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0.0 qts
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Volume At Pitching:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+11.00 US gals
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Volume Of Finished Beer:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+10.00 US gals
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Expected Pre-Boil Gravity:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.048 SG
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Expected OG:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.056 SG
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Expected FG:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+1.012 SG
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Apparent Attenuation:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+77.4 %
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Expected ABV:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+5.8 %
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Expected ABW:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+4.5 %
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Expected IBU: (using Tinseth):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+22.6 IBU
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Expected Color: (using Morey):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+4.7 SRM
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+BU:GU ratio:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0.41
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Approx Color:
+</TD>
+<TD WIDTH="15%" class="colorCell">
+
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Mash Efficiency:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+70.0 %
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignRight">
+
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Boil Duration:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+90.0 mins
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignRight">
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Fermentation Temperature:
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+64 ˚F
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignRight">
+
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Fermentables
+</TD>
+</TR>
+</TABLE>
+
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+<B>Ingredient</B>
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignCenter">
+<B>Amount</B>
+</TD>
+<TD WIDTH="12.5%" class="darkBackgroundAlignCenter">
+<B>%</B>
+</TD>
+<TD WIDTH="12.5%" class="darkBackgroundAlignCenter">
+<B>MCU</B>
+</TD>
+<TD WIDTH="25%" class="darkBackgroundAlignCenter">
+<B>When</B>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="35%" class="lightBackgroundAlignLeft">
+Belgian Pilsen Malt
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+16lb 0oz
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+66.7 %
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+2.1
+</TD>
+<TD WIDTH="25%" class="lightBackgroundAlignCenter">
+In Mash/Steeped
+</TD>
+</TR><TR>
+<TD WIDTH="35%" class="lightBackgroundAlignLeft">
+German Dark Munich Malt
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+4lb 0oz
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+16.7 %
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+3.0
+</TD>
+<TD WIDTH="25%" class="lightBackgroundAlignCenter">
+In Mash/Steeped
+</TD>
+</TR><TR>
+<TD WIDTH="35%" class="lightBackgroundAlignLeft">
+German Wheat Malt
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+2lb 0oz
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+8.3 %
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+0.3
+</TD>
+<TD WIDTH="25%" class="lightBackgroundAlignCenter">
+In Mash/Steeped
+</TD>
+</TR><TR>
+<TD WIDTH="35%" class="lightBackgroundAlignLeft">
+Sugar - White Sugar/Sucrose
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+2lb 0oz
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+8.3 %
+</TD>
+<TD WIDTH="12.5%" class="lightBackgroundAlignCenter">
+0.0
+</TD>
+<TD WIDTH="25%" class="lightBackgroundAlignCenter">
+In Mash/Steeped
+</TD>
+</TR>
+
+</TABLE><BR><BR>
+
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Hops
+</TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="25%" class="darkBackgroundAlignLeft">
+<B>Variety</B>
+</TD>
+<TD WIDTH="10%" class="darkBackgroundAlignCenter">
+<B>Alpha</B>
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignCenter">
+<B>Amount</B>
+</TD>
+<TD WIDTH="10%" class="darkBackgroundAlignCenter">
+<B>IBU</B>
+</TD>
+<TD WIDTH="20%" class="darkBackgroundAlignCenter">
+<B>Form</B>
+</TD>
+<TD WIDTH="20%" class="darkBackgroundAlignCenter">
+<B>When</B>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="25%" class="lightBackgroundAlignLeft">
+US Sterling
+</TD>
+<TD WIDTH="10%" class="lightBackgroundAlignCenter">
+7.0 %
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+2.00 oz
+</TD>
+<TD WIDTH="10%" class="lightBackgroundAlignCenter">
+22.6
+</TD>
+<TD WIDTH="20%" class="lightBackgroundAlignCenter">
+Loose Pellet Hops
+</TD>
+<TD WIDTH="20%" class="lightBackgroundAlignCenter">
+60 Min From End
+</TD>
+</TR><TR>
+<TD WIDTH="25%" class="lightBackgroundAlignLeft">
+US Sterling
+</TD>
+<TD WIDTH="10%" class="lightBackgroundAlignCenter">
+7.0 %
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+1.00 oz
+</TD>
+<TD WIDTH="10%" class="lightBackgroundAlignCenter">
+0.0
+</TD>
+<TD WIDTH="20%" class="lightBackgroundAlignCenter">
+Loose Pellet Hops
+</TD>
+<TD WIDTH="20%" class="lightBackgroundAlignCenter">
+At turn off
+</TD>
+</TR>
+
+</TABLE>
+<BR><BR>
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Other Ingredients
+</TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+<B>Ingredient</B>
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignCenter">
+<B>Amount</B>
+</TD>
+<TD WIDTH="50%" class="darkBackgroundAlignCenter">
+<B>When</B>
+</TD>
+</TR>
+
+
+
+</TABLE>
+<BR><BR>
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Yeasts
+</TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+<B>Yeast Strain</B>
+</TD>
+<TD WIDTH="15%" class="darkBackgroundAlignCenter">
+<B>Amount</B>
+</TD>
+<TD WIDTH="50%" class="darkBackgroundAlignCenter">
+<B>Used</B>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="35%" class="lightBackgroundAlignLeft">
+White Labs WLP565-Belgian Saison I
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignCenter">
+2 packs
+</TD>
+<TD WIDTH="50%" class="lightBackgroundAlignCenter">
+
+</TD>
+</TR>
+
+</TABLE>
+<BR><BR>
+
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Water Profile
+</TD>
+</TR>
+</TABLE>
+
+
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Target Profile:
+</TD>
+<TD WIDTH="65%" class="lightBackgroundAlignLeft">
+No Water Profile Chosen
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Mash pH:
+</TD>
+<TD WIDTH="65%" class="lightBackgroundAlignLeft">
+5.2
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+pH Adjusted with:
+</TD>
+<TD WIDTH="65%" class="lightBackgroundAlignLeft">
+Unadjusted
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Total Calcium (ppm):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Total Magnesium (ppm):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Total Sodium (ppm):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Total Sulfate (ppm):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Total Chloride (ppm):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0
+</TD>
+<TD WIDTH="35%" class="darkBackgroundAlignRight">
+Total Bicarbonate (ppm):
+</TD>
+<TD WIDTH="15%" class="lightBackgroundAlignRight">
+0
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Mash Schedule
+</TD>
+</TR>
+</TABLE>
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Mash Type:
+</TD>
+<TD WIDTH="65%" class="lightBackgroundAlignLeft">
+Full Mash
+</TD>
+</TR>
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+Schedule Name:
+</TD>
+<TD WIDTH="65%" class="lightBackgroundAlignLeft">
+No Chosen Schedule
+</TD>
+</TR>
+</TABLE>
+<BR>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="35%" class="darkBackgroundAlignLeft">
+<B>Step Type</B>
+</TD>
+<TD WIDTH="32.5%" class="darkBackgroundAlignCenter">
+<B>Temperature</B>
+</TD>
+<TD WIDTH="32.5%" class="darkBackgroundAlignCenter">
+<B>Duration</B>
+</TD>
+</TR>
+
+
+
+</TABLE>
+<BR><BR>
+
+<TABLE class="sectionHeading">
+<TR>
+<TD class="title">
+Recipe Notes
+</TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" class="data">
+<TR>
+<TD WIDTH="100%" class="lightBackgroundAlignLeft">
+
+</TD>
+</TR>	
+</TABLE>
+<BR>
+<BR>

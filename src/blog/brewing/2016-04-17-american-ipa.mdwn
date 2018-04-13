@@ -1,0 +1,121 @@
+[[!meta date="2016-04-17"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title=" NHC 2016 Final Round American IPA"]]
+
+<div class="pull-right">
+![Finished IPA | [Original](https://photos.tylercipriani.com/thumbs/06/df79f443f2ce179dfe83001a20861e/original.jpg)](https://photos.tylercipriani.com/thumbs/06/df79f443f2ce179dfe83001a20861e/medium.jpg "Finished IPA")
+</div>
+
+Brewed for the final round of the National Homebrewers Competition 2016 in 2 categories:
+
+1.  American IPA
+2.  Fruit Beer (American IPA with Mango)
+
+For the fruit beer portion I added Olive Nation mango extract to taste
+(6 mL / 12 oz bottle after filling).
+
+I named this beer **13 Grand Tutors**. I've been mining a list of [Shaw
+brothers
+films](https://en.wikipedia.org/wiki/List_of_Shaw_Brothers_films) for
+beer names, which has worked well so far. I recently realized there were
+13 hop additions in this beer—like *just now*.
+
+The fruit beer is named **Sweet Memories**, another Shaw brother's film.
+
+Stats
+-----
+
+-   OG: 1.067
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 132.9
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+-   Mash Eff: 70%
+
+Fermentables
+------------
+
+  Ingredient                   Amount     %        When
+  ---------------------------- ---------- -------- ------
+  Rahr 2-row                   14lb 0oz   88.9 %   Mash
+  Briess CaraPils              1lb 0 oz   6.3 %    Mash
+  Bards Carastan               8.00 oz    3.2 %    Mash
+  Weyermann Sauer(Acid) Malt   2 oz       1.6 %    Mash
+
+Hops
+----
+
+  Variety         Alpha    Amount     IBU    Form           Time
+  --------------- -------- ---------- ------ -------------- -----------
+  Chinook         10.5 %   1.00 oz.   32.5   Loose Pellet   FWH
+  Columbus        15.5 %   1.00 oz.   28.6   Loose Pellet   30 Min
+  Mosaic          13.0 %   1.00 oz.   18.5   Loose Pellet   10 Min
+  Galaxy          15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Mosaic          13.0 %   1.00 oz    6.1    Loose Pellet   Flame Out
+  Citra           15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Nelson Sauvin   12.5 %   1.00 oz    5.9    Loose Pellet   Flame Out
+  Columbus        15.5 %   1.00 oz    7.3    Loose Pellet   Flame Out
+  Galaxy          15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Mosaic          13.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Citra           15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Nelson Sauvin   12.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Columbus        15.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+
+Other
+-----
+
+  Ingredient   Amount     When
+  ------------ ---------- ---------------------------
+  Wyeast BCN   1 tsp.     10 Min. remaining in boil
+  Whirlfloc    1 tablet   2 Min. remaining in boil
+
+Mash
+----
+
+  Step type   Temp    Duration
+  ----------- ------- ----------
+  Rest        154°F   60 Min.
+
+Yeast
+-----
+
+  Strain                             Amount                     Starter
+  ---------------------------------- -------------------------- ---------
+  White Labs WLP001–California Ale   1 New-Fangled Pack Thing   Nope
+
+Notes
+-----
+
+-   Heat 9 Gallon water to 164°F
+-   2 tsp. Gypsum in mash—no pH taken
+-   Preboil gravity: 1.047
+-   Chilled with hydra chiller and ice-water pump
+-   Fermented in SS Conical
+-   60 sec 02 @1LPM through sintered stone at bottom of SS Conical
+-   Conical in office closet
+
+Updates
+-------
+
+2016-04-22: Added 1oz Columbus, 1oz Mosaic to primary fermentor
+
+<!-- -->
+
+2016-04-30: Move to keg with surescreen + 1oz each Equinox, Citra, Galaxy
+
+<!-- -->
+
+2016-05-06: Move to serving keg w/1 pack gelatin @ 45 PSI for 3 days, 12 PSI thereafter
+
+<!-- -->
+
+2016-05-20: Bottling day!
+
+<!-- -->
+
+2016-06-13: Didn't win, but made it to mini-BOS in both categories ![](https://photos.tylercipriani.com/thumbs/2016-final-nhc-scores.png "fig:Final-nhc-scores.png"){width="798"}
+
+

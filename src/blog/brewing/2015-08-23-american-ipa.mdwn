@@ -1,0 +1,80 @@
+[[!meta date="2015-04-09"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="House American IPA"]]
+
+This is a recipe that I play with quite a bit. I think I've dialed in
+the malt bill and the hop additions over time; however, I'm constantly
+playing with the hop varieties and, more rarely, the yeast. Below is a
+recipe brewed on 2015-08-23 that I thought was particularly successful
+given the amount of hop varieties with which I was unfamiliar.
+
+Stats
+-----
+
+-   OG: 1.066
+-   FG: 1.014
+-   IBU (Tensith): 127.2
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+-   Mash Eff: 70%
+
+Fermentables
+------------
+
+  Ingredient                   Amount    %      When
+  ---------------------------- --------- ------ ------
+  Colorado Malting Pale Malt   14 lbs    90.3   Mash
+  Carapils                     1 lbs     6.5    Mash
+  Bards Carastan               0.5 lbs   3.2    Mash
+
+Hops
+----
+
+  Variety         Alpha   Amount      IBU    Form      Time
+  --------------- ------- ----------- ------ --------- ---------
+  NB HopShot      16.0    1 syringe   50.0   Extract   60 Min
+  US Mosaic       13.0    1.00 oz     6.1    Pellet    0 Min
+  US Citra        15.0    1.00 oz     7.1    Pellet    0 Min
+  Topaz           15.0    1.00 oz     7.1    Pellet    0 Min
+  Nelson Sauvin   12.5    1.00 oz     5.4    Pellet    0 Min
+  Galaxy          15.0    1.00 oz     7.1    Pellet    0 Min
+  Mosaic          13.0    1.00 oz     0.0    Pellet    Dry Hop
+  Citra           15.0    1.00 oz     0.0    Pellet    Dry Hop
+  Topaz           15.0    1.00 oz     0.0    Pellet    Dry Hop
+  Nelson Sauvin   12.5    1.00 oz     0.0    Pellet    Dry Hop
+  Galaxy          15.0    1.00 oz     0.0    Pellet    Dry Hop
+  Simcoe          8.0     1.00 oz     0.0    Pellet    Dry Hop
+
+Yeast
+-----
+
+  Strain   Amount             Starter
+  -------- ------------------ ---------
+  WLP001   1 New pack thing   Nope
+
+Steps
+-----
+
+1.  1 tsp of Gypsum to mash water
+2.  Dough in with 5.8 Gallons of Water at 155°F for a strike temp of
+    145°F
+3.  mash pH of 5.66
+4.  Added another tsp of Gypsum
+5.  Rest 30 mins
+6.  Raise via flame to 155°F
+7.  Adjusted mash pH 5.64
+8.  Add ½ tsp phosphoric acid to sparge water
+9.  Preboil pH 5.70
+10. Preboil gravity 11.6 Brix for 8 gallons (1.047)
+11. Add Wyeast Brewers Choice Nutrient at 7 mins
+12. Add whirlfloc tablet at 2 mins
+13. Add 5 oz of hops at flame out, whirlpool 15 mins
+14. Turn off whirlpool pump and let rest 15 mins
+15. Rack to fermentor
+16. Oxygenate with mix-stir for 60 seconds
+17. Pitch WL fancy new yeast pack
+18. Fermentation temp initially 68°F
+19. Let rise to wherever it wanted to go

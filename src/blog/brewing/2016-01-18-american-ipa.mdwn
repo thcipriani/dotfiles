@@ -1,0 +1,106 @@
+[[!meta date="2016-01-18"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="NHC 2016 First Round American IPA"]]
+
+<div class="pull-right">
+![My 2016-01-18 IPA (left) vs. Ballast Point Sculpin (right) | [Original](https://photos.tylercipriani.com/thumbs/da/961c63159476cf1de9b1cef75312f6/original.jpg)](https://photos.tylercipriani.com/thumbs/da/961c63159476cf1de9b1cef75312f6/medium.jpg "My 2016-01-18 IPA (left) vs. Ballast Point Sculpin (right)")
+</div>
+
+The efficiency on this batch was terrible. I believe this is due to
+Colorado Malting Co. Pale Ale malt, which I used as the base. It's been
+hit and miss for me. I love the idea of using primarily local
+ingredients in brewing.
+
+Updates
+-------
+
+2016-02-22: Added 1oz Columbus, 1oz Mosaic to primary fermentor
+
+<!-- -->
+
+2016-01-31: Move to keg with surescreen + 1oz each Equinox, Citra, Galaxy
+
+<!-- -->
+
+2016-04-09: 3rd place, American IPA, NHC Denver (First Round); 2nd place, Fruit beer (Mango added), NHC Denver (First Round)
+
+Stats
+-----
+
+-   OG: ¯\\\_(ツ)\_/¯
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 122.9
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+-   Mash Eff: 48%
+
+Fermentables
+------------
+
+  Ingredient                       Amount     %        When
+  -------------------------------- ---------- -------- ------
+  Colorado Malting Pale Ale Malt   14lb 0oz   88.9 %   Mash
+  Briess CaraPils                  1lb 0 oz   6.3 %    Mash
+  Bards Carastan                   8.00 oz    3.2 %    Mash
+  Weyermann Sauer(Acid) Malt       4 oz       1.6 %    Mash
+
+Hops
+----
+
+  Variety    Alpha    Amount     IBU    Form           Time
+  ---------- -------- ---------- ------ -------------- -----------
+  Chinook    10.5 %   1.00 oz.   32.5   Loose Pellet   FWH
+  Columbus   15.5 %   1.00 oz.   28.6   Loose Pellet   30 Min
+  Mosaic     13.0 %   1.00 oz.   18.5   Loose Pellet   10 Min
+  Galaxy     15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Mosaic     13.0 %   1.00 oz    6.1    Loose Pellet   Flame Out
+  Citra      15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Equinox    12.5 %   1.00 oz    5.9    Loose Pellet   Flame Out
+  Columbus   15.5 %   1.00 oz    7.3    Loose Pellet   Flame Out
+  Galaxy     15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Mosaic     13.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Citra      15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Equinox    12.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Columbus   15.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+
+Other
+-----
+
+  Ingredient   Amount     When
+  ------------ ---------- ---------------------------
+  Wyeast BCN   1 tsp.     10 Min. remaining in boil
+  Whirlfloc    1 tablet   2 Min. remaining in boil
+
+Mash
+----
+
+  Step type   Temp    Duration
+  ----------- ------- ----------
+  Rest        154°F   60 Min.
+
+Yeast
+-----
+
+  Strain                             Amount                     Starter
+  ---------------------------------- -------------------------- ---------
+  White Labs WLP001–California Ale   1 New-Fangled Pack Thing   Nope
+
+Notes
+-----
+
+-   Had to sub Equinox for Nelson Sauvin.
+-   10 Gallons RO Water (faucet was frozen)
+-   Heat 7.5 Gallon water to 165°F
+-   2 tsp. Gypsum in mash—no pH taken
+-   Preboil gravity 1.037 :(
+    -   Added ½ gallon of water to make up volume
+    -   Added 1 lb Corn Sugar Preboil to make up gravity—all that was
+        available
+-   Final vol. \~5gal :(
+-   Fermented in SS Conical
+-   60 sec 02 @1LPM through sintered stone at bottom of SS Conical
+-   Conical in dining room—basement was too cold.
+

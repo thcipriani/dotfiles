@@ -1,0 +1,76 @@
+[[!meta date="2016-08-21"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Libre Hopped American IPA"]]
+
+This is my regular IPA, but I took a stab at a recipe that doesn't use any
+patent-encumbered hops...
+
+Stats
+-----
+
+-   OG: ¯\\\_(ツ)\_/¯
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 122.9
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+-   Mash Eff: 48%
+
+Fermentables
+------------
+
+  Ingredient                       Amount     %        When
+  -------------------------------- ---------- -------- ------
+  Colorado Malting Pale Ale Malt   14lb 0oz   88.9 %   Mash
+  Briess CaraPils                  1lb 0 oz   6.3 %    Mash
+  Bards Carastan                   8.00 oz    3.2 %    Mash
+  Weyermann Sauer(Acid) Malt       4 oz       1.6 %    Mash
+
+Hops
+----
+
+  Variety           Alpha    Amount     IBU    Form           Time
+  ----------------- -------- ---------- ------ -------------- -----------
+  Chinook           10.5 %   1.00 oz.   32.5   Loose Pellet   FWH
+  Columbus          15.5 %   1.00 oz.   28.6   Loose Pellet   30 Min
+  Northern Brewer   13.0 %   1.00 oz.   18.5   Loose Pellet   10 Min
+  Willamette        15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Northern Brewer   13.0 %   1.00 oz    6.1    Loose Pellet   Flame Out
+  Centennial        15.0 %   1.00 oz    7.0    Loose Pellet   Flame Out
+  Crystal           12.5 %   1.00 oz    5.9    Loose Pellet   Flame Out
+  Columbus          15.5 %   1.00 oz    7.3    Loose Pellet   Flame Out
+  Willamette        15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Northern Brewer   13.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Centennial        15.0 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Crystal           12.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+  Columbus          15.5 %   1.00 oz    0.0    Loose Pellet   Dry Hop
+
+Other
+-----
+
+  Ingredient   Amount     When
+  ------------ ---------- ---------------------------
+  Wyeast BCN   1 tsp.     10 Min. remaining in boil
+  Whirlfloc    1 tablet   2 Min. remaining in boil
+
+Mash
+----
+
+  Step type   Temp    Duration
+  ----------- ------- ----------
+  Rest        154°F   60 Min.
+
+Yeast
+-----
+
+  Strain                             Amount                     Starter
+  ---------------------------------- -------------------------- ---------
+  White Labs WLP001–California Ale   1 New-Fangled Pack Thing   Nope
+
+Notes
+-----
+
+Updates
+-------

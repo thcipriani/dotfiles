@@ -1,0 +1,87 @@
+[[!meta date="2016-06-13"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Munich Helles First Try"]]
+
+I recently started really appreciating this style. In my research for
+attempting to create a good example of this style I found a really
+amazing beer that has a wonderful German Beer character—Spaten Premium
+Lager. I'd like to recreate something similar. Spaten Premium Lager will
+likely be my gold standard (as Ballast Point Sculpin is for my IPA),
+which is to say: it's the beer against which I will be judging my
+homebrewed examples.
+
+As a first pass at this style, I'm keeping it simple, but I'm also
+testing a theory.
+
+Stats
+-----
+
+-   OG: 1.049
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 16.7
+-   Batch Size: 7 Gallons
+-   Boil Time: 90 Minutes
+-   Mash Eff: 70%
+
+Fermentables
+------------
+
+  ingredient              amount   %     when
+  ----------------------- -------- ----- ------
+  Weyerman Pilsner Malt   12 lbs   100   mash
+
+Hops
+----
+
+  Variety    Alpha   Amount   IBU    Form     Time
+  ---------- ------- -------- ------ -------- ------
+  Sterling   meh.    1 oz     meh.   Pellet   FWH
+
+Other
+-----
+
+  Ingredient   Amount     When
+  ------------ ---------- ---------------------------
+  Servomyces   1 unit     10 Min. remaining in boil
+  Whirlfloc    1 tablet   2 Min. remaining in boil
+
+Mash
+----
+
+Double decoction
+
+-   Dough-in 133°F
+-   Pull 1st decoction, raise to 158°F, hold for 10 mins
+-   Bring 1st decoction to a boil for 10 mins
+-   Remix mash to 148°F
+-   Pull 2nd thick decoction, raise to 158°F, hold for 10 mins
+-   Bring 2nd decoction to a boil for 10 mins
+-   Remix to 158°F
+-   Raise to mashout at 168°F
+
+Yeast
+-----
+
+  Strain                       Amount         Starter
+  ---------------------------- -------------- ---------
+  Wyeast 2124 Bohemian Lager   1 Smack-Pack   Nope
+
+Notes
+-----
+
+The theory I'm testing here is: I don't necessarily think you need to
+have temperature control to ferment a fine lager. I'm fermenting at
+\~68°F (I have no temp control right now). Also, I pitched 1 smack-pack
+without a starter. We'll see how all this works out. Seems to be
+fermenting happily for the time being.
+
+The Future
+----------
+
+I'd like to look into [Best Chit
+Malz](http://www.countrymaltgroup.com/ingredients/malts/bz-chit-malt/)
+and see how that works out. Triple decoction on that at 100%. Would that
+even work? Guess I'd find out :O
