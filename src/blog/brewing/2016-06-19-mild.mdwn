@@ -5,6 +5,7 @@ Copyright &copy; 2018 Tyler Cipriani
 """]]
 [[!meta title="Colorado State Fair Mild Ale"]]
 
+![Gold medal](http://photos.tylercipriani.com/thumbs/eb/544ffd2e58bdbfa44a552b210027c8/large.jpg "Pure pure gold")
 
 Stats
 -----
