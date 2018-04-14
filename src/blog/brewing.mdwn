@@ -5,4 +5,4 @@ national competition medals for my beer and mead including a national gold
 medal for my [[Tupelo Mead|brewing/nhc-2014-gold-medal-tupelo-mead]] at the
 National Homebrew Competition in 2014.
 
-[[!inline pages="page(./brewing/*) and !*/Discussion" archive=yes quick=yes trail=no]]
+[[!inline pages="page(./brewing/*) and !*/Discussion" actions=no archive=yes trail=yes limit=20]]
