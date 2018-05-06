@@ -1,0 +1,50 @@
+[[!meta date="2018-05-06"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Using AWK like grep with envvars"]]
+[[!tag computing]]
+
+This is a little tip that was impossible for me to DuckDuckGo (that's right, I
+use DuckDuckGo like a verb). Like everyone who lives the daily joy (and,
+frequently, deep frustration) of using the command line to accomplish
+day-to-day tasks I am a fairly deft manipulator of strings. Often, I turn to
+AWK to achieve powerful results quickly.
+
+Using AWK like grep
+---
+There is usually [no reason to use grep with
+AWK](http://blog.jpalardy.com/posts/skip-grep-use-awk/). AWK lets you use
+`/[whatever]/` to search for lines containing `[whatever]`. You can also use
+`/! [whatever]/` to search for the opposite of `[whatever]`. After you've found
+the line you want to act upon, you can manipulate it further using the powerful
+functionality of AWK.
+
+Today, however, I wanted to use AWK to find the rotation of my current display
+using `xrandr`. The name of current display device was stored in the
+environment variable `$DISPLAY_DEVICE` (and in this instance was `LVDS-1`). I
+could not figure out, nor could I find the right words to search for, how to do
+this.
+
+I tried:
+
+    xrandr -q | awk -v device="$DISPLAY_DEVICE" '/device/ {print}'
+
+I tried
+
+    xrandr -q | awk '/'"$DISPLAY_DEVICE"'/ {print}'
+
+Finally, I figured it out! This is something I thought I should document for
+others using the same search terms (and for myself in a month):
+
+The Magic
+---
+
+    awk -v device="$DISPLAY_DEVICE" '$0 ~ device {print}'
+
+To get the rotation of a device from `xrandr` if you know the device name it's:
+
+    xrandr -q | awk -v device='LVDS-1' '$0 ~ device {gsub("([()]| primary)", ""); print $4}'
+
+<3 AWK so darn much.
