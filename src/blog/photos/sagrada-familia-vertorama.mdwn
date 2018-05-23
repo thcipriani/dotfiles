@@ -1,0 +1,38 @@
+[[!meta date="2018-05-17 07:33:55"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Sagrada Família Vertorama"]]
+[[!tag
+photos
+photos/14mm-f-2.8-1.4
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/18/25235707ad2e325c717df98106a7c1/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/18/25235707ad2e325c717df98106a7c1/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/18/25235707ad2e325c717df98106a7c1/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/18/25235707ad2e325c717df98106a7c1/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/18/25235707ad2e325c717df98106a7c1/original.jpg)](https://photos.tylercipriani.com/thumbs/18/25235707ad2e325c717df98106a7c1/xlarge.jpg "Vertorama")
+
+Interior HDR Vertorama composed of 15 bracketed photos taken hand-held inside
+Sagrada Família in Barcelona, Spain.
+
+### Technical
+
+15 photos, 3 exposures -1, 0, +1 EV, lens correction applied in Darktable,
+blended using `align_image_stack` and G'MIC to create 5 HDR images. Imported to
+Hugin to create a vertorama.
+
+EXIF |
+--- | ---
+ExposureTime | 1/160
+FNumber | 2.8
+FocalLength | 14.0 mm
+CreateDate | 2018-05-17 07:33:55
+Lens | 14mm f/2.8-1.4
+ISO | 1600
+Model | NIKON D610
+Make | NIKON CORPORATION
+
