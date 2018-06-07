@@ -1,0 +1,29 @@
+[[!meta date="2018-06-07T14:14:32-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Bloop! Audible Error Logs"]]
+[[!tag computing]]
+
+As a frequent deployer of software, I'm usually watching several different
+flavors of system monitoring all at the same time.  A few logstash dashboards
+in a few browser windows, a few grafana dashboards, a few different logs being
+tailed in a few different tmux windows.
+
+If it all goes wrong during a deployment -- if the error log suddenly explodes
+-- I want to know.  Even if I'm looking at another metric, or at IRC, or at my
+email -- I want to know about log explosion immediately.
+
+So I made a thing that plays a little noise whenever a new line is recieved on
+stdin. I call it [Bloop!](https://notabug.org/thcipriani/bloop)
+
+And I've been using it to tail logs like:
+
+    ssh logsever -- tail -f /var/log/important/error.log | bloop -s
+
+So now my stomach drops when I hear, "bloop...bloop...blobloopboopbloop".
+
+I'm sure this thing has been build a million times because it's a
+braindead-simple idea, but I couldn't find the right words to search for it so
+I made new one. Itch? Scratched.
