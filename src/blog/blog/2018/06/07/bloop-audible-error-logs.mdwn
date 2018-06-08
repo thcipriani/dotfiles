@@ -16,7 +16,7 @@ If it all goes wrong during a deployment -- if the error log suddenly explodes
 email -- I want to know about log explosion immediately.
 
 So I made a thing that plays a little noise whenever a new line is recieved on
-stdin. I call it [Bloop!](https://notabug.org/thcipriani/bloop)
+stdin. I call it [Bloop!](https://fossil.tylercipriani.com/bloop)
 
 And I've been using it to tail logs like:
 
