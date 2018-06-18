@@ -1110,11 +1110,15 @@ code > span.er { color: #ff0000; font-weight: bold; }
     }
 
     .main-header-nav-list-item a {
-        padding: 1em 1em;
+        padding: 1em 0.70em;
     }
 }
 
 @media (max-width: 320px) {
+    .main-header-nav-list-item a {
+        padding: 1em .4em;
+    }
+
     .page {
         max-width: 95%;
     }
