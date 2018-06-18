@@ -1,0 +1,190 @@
+[[!meta date="2018-06-18T03:35:22.598825"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Reverse Polish Notation, Lambdas, and Currying in Python"]]
+[[!tag computing]]
+
+I just finished reading _The Python Corner_'s post "[Lambdas and Functions in
+Python](http://www.thepythoncorner.com/2018/05/lambdas-and-functions-in-python.html)." The post
+acts as an introduction to the use of functions as first-class objects in python. The
+demo code is the implementation of a "Reverse Polish Notation" calculator.
+
+I had never heard of [reverse polish
+notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)(RPN) before this
+post. The short explanation of RPN is available on Wikipedia:
+
+> In reverse Polish notation, the operators follow their operands; for
+> instance, to add 3 and 4, one would write 3 4 + rather than 3 + 4.
+
+In that blog post RPN is implemented as a stack of operands and after an
+operator is pushed onto the stack, the `compute()` method is called which
+triggers the evaluation of the `lambda` specified by the operator. Like this:
+
+```{.python}
+rpn = rpn_engine()
+rpn.push(2)
+rpn.push(2)
+print(rpn.compute('+'))  # Prints 4
+```
+
+The point of the post is to show a python dict using operands as keys with
+lambdas as values; this demonstrates that lambdas are functions and functions
+are first-class objects. This allows the `compute` method of the `RPNEngine`
+class to look up a lambda in a dict, and `pop()` off the stack using the
+`signature` function of the `inspect` module to determine how many arguments
+are needed for a particular lambda.  From there, lambda evaluation is handed
+off to helper functions named, for instance,
+`compute_operation_with_two_operands` and `compute_operation_with_one_operand`
+
+## Currying
+
+One other functional concept that could have helped the example code is
+that of _currying_.  [Currying](https://en.wikipedia.org/wiki/Currying)
+involves changing a function with multiple airity into a series of evaluations
+of multiple functions each with an airity of 1.
+
+This is a fancy way to say:
+
+```{.python}
+add = lambda x, y: x + y
+add_curried = lambda x: lambda y: x + y
+
+assert(add(2, 2) == add_curried(2)(2))
+```
+
+By turning the `compute_operation_with_`_n_`_operands`-type functions into
+curried functions, the code gets much cleaner. That is, instead of a switch like:
+
+```{.python}
+if number_of_operands == 2:
+    self.compute_operation_with_two_operands(self.catalog[operation])
+
+if number_of_operands == 1:
+    self.compute_operation_with_one_operand(self.catalog[operation])
+```
+
+You can implement a curried function using a callable python object and do
+something like:
+
+```
+func = self.catalog[operation]
+
+while not func.resolved:
+    func(self.pop())
+```
+
+This gets rid of the clunky `compute_operation_with_`_n_`_operands` functions.
+Here is the full code for a solution using currying:
+
+```{.python}
+#!/usr/bin/env python3
+"""
+Engine class for RPN Calculator
+"""
+
+import math
+
+from functools import partial
+from inspect import signature
+
+
+class Curry(object):
+    """
+    Curry a callable
+
+    Given a callable, returns a an object that can be used like a curried
+    callable.
+
+    >>> c1 = Curry(lambda x, y: x + y)
+    >>> c2 = Curry(lambda x, y: x + y)
+    >>> c1(2, 2) == c2(2)(2)
+    True
+
+    :func: callable
+    """
+    def __init__(self, func):
+        self.func = func
+        self.argc = len(signature(self.func).parameters)
+        self.resolved = False
+        self.answer = None
+
+    def __call__(self, *args):
+        if len(args) == self.argc:
+            self.answer = self.func(*args)
+            self.resolved = True
+
+        for arg in args:
+            self.func = partial(self.func, arg)
+            self.argc = len(signature(self.func).parameters)
+
+        return self
+
+
+class RPNEngine(object):
+    """
+    Reverse Polish Notation (RPN) Engine
+
+    A RPN calculator
+    >>> rpn = RPNEngine()
+    >>> rpn.push(2)
+    >>> rpn.push(2)
+    >>> rpn.compute('+') == 4
+    True
+    >>> rpn.compute('AC')
+    >>> rpn.push(2)
+    >>> rpn.compute('^2') == 4
+    True
+    """
+    def __init__(self):
+        self.stack = []
+        self.functions = self._get_functions()
+
+    def _get_functions(self):
+        return {
+            '+': Curry(lambda x, y: x + y),
+            '-': Curry(lambda x, y: x - y),
+            '*': Curry(lambda x, y: x * y),
+            '/': Curry(lambda x, y: x / y),
+            '^2': Curry(lambda x: x * x),
+            "SQRT": Curry(lambda x: math.sqrt(x)),
+            "C": Curry(lambda: self.stack.pop()),
+            "AC": Curry(lambda: self.stack.clear()),
+        }
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        try:
+            return self.stack.pop()
+        except IndexError:
+            pass
+
+    def compute(self, operation):
+        func = self.functions.get(operation)
+
+        if not func:
+            raise BaseException('%s not a valid function' % operation)
+
+        if len(self.stack) < func.argc:
+            raise BaseException(
+                '%s requires %d operands, %d given' % (
+                    operation,
+                    func.argc,
+                    len(self.stack)
+                )
+            )
+
+        if func.argc == 0:
+            func()
+
+        while not func.resolved:
+            func(self.pop())
+
+        return func.answer
+```
+
+Reading the final code in the _Python Corner_ post made me me really itchy to
+implement the solution I posted here.
