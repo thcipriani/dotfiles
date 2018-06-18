@@ -42,8 +42,8 @@ off to helper functions named, for instance,
 
 One other functional concept that could have helped the example code is
 that of _currying_.  [Currying](https://en.wikipedia.org/wiki/Currying)
-involves changing a function with multiple airity into a series of evaluations
-of multiple functions each with an airity of 1.
+involves changing a function with multiple arity into a series of evaluations
+of multiple functions each with an arity of 1.
 
 This is a fancy way to say:
 
