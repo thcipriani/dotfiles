@@ -90,7 +90,7 @@ hr {
 
 pre {
   font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: 1rem; /* 2 */
 }
 
 /* Text-level semantics
@@ -468,7 +468,9 @@ template {
 }
 
 body {
-    line-height: 1.6em;
+    font-size: 1.2em;
+    line-height: 1.75em;
+    color: rgba(0, 0, 0, 0.8);
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
     word-wrap: break-word;
@@ -501,13 +503,20 @@ strong {
 ol,
 ul {
     padding: 0;
-    margin: 0.5em 0 0.5em 1em;
 }
 
 ul {
     list-style-type: disc;
     list-style-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%2300528c%22%2F%3E%0A%3C%2Fsvg%3E%0A);
     list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANCAIAAADuXjPfAAAABnRSTlMA/wD/AP83WBt9AAAAHklEQVR4AWP4jwrowWcI6oEgEBtIISNCfFT9mOYDACO/lbNIGC/yAAAAAElFTkSuQmCC);
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    padding-left: 1.5em;
+    margin: 0 auto;
 }
 
 img {
@@ -583,14 +592,18 @@ a[href*="//"]:not([href*="tylercipriani.com"]):after {
 }
 
 blockquote {
-    background: #ffe;
-    padding: 1em 1em 1em 2em;
+    padding: 1em;
     margin: 1em 0;
+    border-left: 2px solid rgba(100, 100, 150, 1);
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
 }
 
+/*
 blockquote a {
     text-shadow: 2px 0 0 #ffe, -2px 0 0 #ffe;
 }
+*/
 
 code {
     padding: 0.2em 0;
@@ -615,6 +628,7 @@ code:after {
 table {
     border-collapse: collapse;
     border: 1px solid #c6cbd1;
+    width: 100%;
 }
 
 
@@ -705,7 +719,8 @@ img.img { margin: 0; }
 }
 
 .pageheader .header .parentlinks {
-    font-size: 0.5em;
+    font-size: 0.625em;
+    font-weight: normal;
 }
 
 .pageheader .header .parentlinks a {
@@ -713,9 +728,12 @@ img.img { margin: 0; }
 }
 
 .title {
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
     display: block;
     text-transform: capitalize;
-    padding: 0.5em 0 0;
+    padding: 0.25em 0;
 }
 
 #footer {
@@ -735,7 +753,9 @@ img.img { margin: 0; }
 }
 
 .feedlink {
-    margin: 1em 0 0;
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
 }
 
 a.feedbutton {
@@ -747,10 +767,6 @@ a.feedbutton {
 
 .inlineheader .header {
     font-weight: 300;
-    margin: 1em 0;
-}
-
-.archivepage {
     margin: 1em 0;
 }
 
@@ -778,6 +794,22 @@ a.feedbutton {
 #content > hr {
     display: none;
 }
+
+#content > p:first-child {
+    color: rgba(0, 0, 50, 0.5);
+    font-size: 1.25em;
+    text-align: center;
+    line-height: 1.75em;
+}
+
+/*
+#content > p:first-child::first-letter {
+    color: rgba(0, 0, 0, 0.8);
+    float: left;
+    font-size: 2em;
+    padding: 0.15em 0;
+    font-style: bold;
+}*/
 
 #pageinfo {
     border-top: none;
@@ -894,13 +926,24 @@ a.feedbutton {
 }
 
 figure {
-    margin: 1em 0;
+    margin: 1em 0 2em;
     font-size: small;
+    text-align: center;
 }
 
 /* readability */
-p {
+p,
+ol,
+ul,
+h2,
+h3,
+h4,
+h5,
+dl,
+.archivepage,
+table {
     max-width: 40em;
+    margin: 1em auto;
 }
 
 .page {
@@ -991,7 +1034,8 @@ p {
     border: none;
     border-top: 1px solid #aaa;
     padding: 1em 0;
-    margin: 1em 0;
+    margin: 1em auto;
+    max-width: 40em;
 }
 
 .addcomment {
@@ -1014,6 +1058,7 @@ pre {
     overflow-y: hidden;
     overflow-x: auto;
     margin: 1em 0;
+    line-height: 1.5em;
 }
 
 .sourceCode pre {
@@ -1053,6 +1098,7 @@ table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
     vertical-align: baseline;
     border: none;
 }
+
 table.sourceCode { width: 100%; }
 td.lineNumbers {
     text-align: right;
@@ -1079,12 +1125,18 @@ code > span.er { color: #ff0000; font-weight: bold; }
  * As responsive as I get
  * ======================= */
 @media (max-width: 54em) {
-    .page {
-        width: 85%;
+    body {
+        font-size: 1em;
+        line-height: 1.6em;
     }
 
-    figure {
-        text-align: center;
+    .title {
+        font-size: 1.8em;
+        padding: 0.25em 0 0;
+    }
+
+    .page {
+        width: 85%;
     }
 
     .comment-avatar {
