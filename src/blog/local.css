@@ -665,6 +665,7 @@ img.img { margin: 0; }
 
 .main-header {
     overflow: hidden;
+    font-size: 1rem;
 }
 
 .main-header-nav {
@@ -719,7 +720,7 @@ img.img { margin: 0; }
 }
 
 .pageheader .header .parentlinks {
-    font-size: 0.625em;
+    font-size: 1rem;
     font-weight: normal;
 }
 
@@ -733,7 +734,7 @@ img.img { margin: 0; }
     text-align: center;
     display: block;
     text-transform: capitalize;
-    padding: 0.25em 0;
+    padding: 0.5em 0.25em;
 }
 
 #footer {
