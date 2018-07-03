@@ -1,0 +1,193 @@
+[[!meta date="2018-06-21T15:51:52.464009"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="A Lovely Hefe"]]
+
+I have been brewing hefeweizen since before the dawn of time (if we can agree
+time's dawn was roughly 2012). My most recent attempt won a bronze medal in the
+final round of the largest beer competition in the world -- so I've got that
+going for me.
+
+![My Winning Hefe | [Small](https://photos.tylercipriani.com/thumbs/3e/c2acb984cb88db94d71b49a8b89abc/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/3e/c2acb984cb88db94d71b49a8b89abc/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/3e/c2acb984cb88db94d71b49a8b89abc/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/3e/c2acb984cb88db94d71b49a8b89abc/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/3e/c2acb984cb88db94d71b49a8b89abc/large.jpg)](https://photos.tylercipriani.com/thumbs/3e/c2acb984cb88db94d71b49a8b89abc/large.jpg "Mighty. Mighty fine hefe")
+
+## Learnings
+
+I brewed my first hefeweizen in 2011 and it was pretty awful. I don't think
+I've changed the recipe very much since then as hefes are not really about
+recipe.
+
+My early hefes were undrinkably sulfury -- not in a subtle SO<sub>2</sub>-way
+that fades into a nice banana, but in an in-your-face H<sub>2</sub>S-way that
+smells like liquefied rotten egg.
+
+In 2012, I had a short email exchange with Jess Caudill, then of Wyeast, about
+sulfur and pitching rates for Wyeast 3068 (their _Weihenstephan Weizen_ strain)
+that changed my perspective on pitching rates for hefes and greatly improved my
+beers:
+
+> We ran trials using 3068 at pitch rates of 3, 6, 12 and 24 million cells per
+> ml.  The 3 and 6 had strong banana aromas, the 12 million had very slight
+> banana aroma and 24 million and no banana, and for a completely non-technical
+> description, tasted like crap.
+
+I stopped making starters for my hefe (or any of my beers actually). I've
+stopped doing cell-counts.  I've stopped taking pH readings. I've stopped
+controlling my temperature outside of putting my fermenter in the basement
+where it stays cool.
+
+I don't own a hydrometer.
+
+I don't know that I would recommend any of these things.
+
+Things I would recommend:
+
+* Increased nutrient during the boil
+* Low oxygen before pitching
+* Ferulic acid rest
+* Decoction mash
+    * or maybe adding straight glucose to the kettle -- I've never tried
+      this, but I think it should achieve, roughly, what I get with a
+      complicated mash
+* Leave as much cold break as possible in the kettle
+* Don't overpitch
+* Use fresh vigorous yeast
+
+I'm still learning new things about hefes all the time and mine is far from
+perfect (or finished). Things I'd like to try in future:
+
+* Stop adding oxygen post-boil
+* Double nutrient (again -- I already do double the recommended rate)
+* Krausening
+    * I've done this once
+    * It turned out really nicely, but I didn't do it for nationals
+* Double decoction
+    * My mash schedule comes from Eric Warner's _German Wheat Beers_ -- I'd
+      like to try the more intense mash he wrote about
+
+## Brew Day
+
+Here be dragons.
+
+I brewed a hefeweizen for the 2nd round of nationals on 2018-05-22. This beer
+took 3rd in the German Wheat Beer category at the 2018 National Homebrew
+Competition besting 197 of the 200 entries in the category.
+
+### Recipe
+
+#### Stats
+
+-   OG:  1.050
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 12.3
+-   Batch Size: 6 Gallons
+-   Boil Time: 90 Minutes
+
+#### Fermentables
+
+  Ingredient                   Amount    %      When
+  ---------------------------- --------- ------ ------
+  Weyermann® Pale Wheat        8 lbs     59     Mash
+  Root Shoot Odyssey Pilsner   4.75 lbs  35     Mash
+  Weyermann® Carahell®         12 oz     6      Mash
+
+#### Hops
+
+  Variety    Alpha    Amount     IBU    Form           Time
+  ---------- -------- ---------- ------ -------------- -----------
+  Hallertau  4.5 %    1.00 oz.   12.3   Loose Pellet   60 min
+
+
+#### Yeast
+
+  Strain            Amount             Starter
+  ----------------- ------------------ ---------
+  White Labs WLP300 1 New pack thing   Nope
+
+## Steps
+
+![Collecting Water | [Small](https://photos.tylercipriani.com/thumbs/ef/819b52e3ce4bb468c8df24d3eefe98/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/ef/819b52e3ce4bb468c8df24d3eefe98/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/ef/819b52e3ce4bb468c8df24d3eefe98/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/ef/819b52e3ce4bb468c8df24d3eefe98/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/ef/819b52e3ce4bb468c8df24d3eefe98/large.jpg)](https://photos.tylercipriani.com/thumbs/ef/819b52e3ce4bb468c8df24d3eefe98/large.jpg "Collecting water")
+
+The water in Longmont is about as close to having reverse osmosis water
+straight from the tap as you're going to find. For this brewday, I
+carbon-filtered 15 gallons of water that I recorded as having 42 ppm TDS
+according to my cheap meter.
+
+I heated 8.25 gallons of water (which is 1.5 quarts of water per lb of grain +
+the 3 gallons of foundation water below my false-bottom) to 113°F targeting a
+dough-in temp of 111°F for a ferulic acid rest. At this point I haven't added
+anything to my water or my mash. I want the pH to be high at this point.
+
+![Dough-in | [Small](https://photos.tylercipriani.com/thumbs/76/714e4336df7fc1d3fc4dbed49234d8/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/76/714e4336df7fc1d3fc4dbed49234d8/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/76/714e4336df7fc1d3fc4dbed49234d8/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/76/714e4336df7fc1d3fc4dbed49234d8/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/76/714e4336df7fc1d3fc4dbed49234d8/large.jpg)](https://photos.tylercipriani.com/thumbs/76/714e4336df7fc1d3fc4dbed49234d8/large.jpg "Dough-in")
+
+I held 111°F for 10 minutes. I then recirculated while heating my mash tun to
+bring my temperature up to 125°F for a protein rest. I added 2 tsp. of gypsum
+before turning on my pump. That's my standard water treatment, and I do the
+same thing for all my beers to increase the calcium content.
+
+After 10 minutes at 125°F I pulled 10 scoops of thick mash (at about 1qt/lb)
+into my decoction pot while raising the main mash up to 148°F.
+
+I held the main mash at 148°F while doing the decoction.
+
+I first heated the decoction to 160°F and held for 15 minutes to ensure full
+conversion. Then I boiled for 20 minutes. I love the beautiful crème brûlée
+look of a mash after decoction:
+
+![mmmm Melanoidins | [Small](https://photos.tylercipriani.com/thumbs/cd/cec2273ad7fae50c5363e7c97d4c97/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/cd/cec2273ad7fae50c5363e7c97d4c97/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/cd/cec2273ad7fae50c5363e7c97d4c97/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/cd/cec2273ad7fae50c5363e7c97d4c97/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/cd/cec2273ad7fae50c5363e7c97d4c97/large.jpg)](https://photos.tylercipriani.com/thumbs/cd/cec2273ad7fae50c5363e7c97d4c97/large.jpg "mmm Melanoidins")
+
+After boiling the decoction I added it to the main mash to hit 158°F. I held
+that for 25 minutes before heating the mash to 170°F for mashout. I sparged
+with 170°F water (with no additions) to collect 9 gallons to boil for 90
+minutes down to 7 gallons.
+
+![Boil with chiller | [Small](https://photos.tylercipriani.com/thumbs/36/030e16cf6831f2bb64ea65d751aec0/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/36/030e16cf6831f2bb64ea65d751aec0/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/36/030e16cf6831f2bb64ea65d751aec0/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/36/030e16cf6831f2bb64ea65d751aec0/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/36/030e16cf6831f2bb64ea65d751aec0/large.jpg)](https://photos.tylercipriani.com/thumbs/36/030e16cf6831f2bb64ea65d751aec0/large.jpg "Boil with chiller")
+
+I added 1 oz Hallertau at 60 minutes.
+
+1 tsp Wyeast nutrient at 10 minutes.
+
+1 tablet of whirlfloc at 2 minutes.
+
+From there I chilled using a pond-pump I bought at harbor freight to
+recirculate ice-water through my hydra chiller. I chilled to 55°F.
+
+![Right before pitch | [Small](https://photos.tylercipriani.com/thumbs/2b/e030ab2dfea3b5c58cb764490099d0/small.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/2b/e030ab2dfea3b5c58cb764490099d0/medium.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/2b/e030ab2dfea3b5c58cb764490099d0/large.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/2b/e030ab2dfea3b5c58cb764490099d0/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/2b/e030ab2dfea3b5c58cb764490099d0/large.jpg)](https://photos.tylercipriani.com/thumbs/2b/e030ab2dfea3b5c58cb764490099d0/large.jpg "Right before pitch")
+
+I oxygenated through a stone on the end of a wand for 1 minute at 1 liter per minute. After that
+I pitched a single pack of WLP300 dated 2018-05-03.
+
+### Post Brewday
+
+* **2018-05-23T0710-600**: Bubbles in the airlock, no krausen, 60°F.
+* **2018-05-24T0638-600**: 66°F, krausen to 6 gallon mark, light clove smell, mostly clean.
+* **2018-05-25T0621-600**: 67°F, temperature peaked 2018-05-24 at 68°F. Smell is now all bananas and clove. Hopefully it's not too subdued. Still has a big kreusen.
+* **2018-06-01T1200-600**: 63°F for many days, pushed to keg from conical with CO<sub>2</sub>. Put in keggerator at 32°F @ 40 PSI.
+* **2018-06-16**: Bottled using counter-pressure filler, labeled, stored in fridge.
+* **2018-06-18**: Shipped 2nd-day air to Portland for nationals in a box lined with styrofoam with a few ice-packs.
+
