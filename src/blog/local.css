@@ -734,7 +734,7 @@ img.img { margin: 0; }
     text-align: center;
     display: block;
     text-transform: capitalize;
-    padding: 0.5em 0.25em;
+    padding: 0.5em 0.25em 0 0.25em;
 }
 
 #footer {
@@ -801,6 +801,7 @@ a.feedbutton {
     font-size: 1.25em;
     text-align: center;
     line-height: 1.75em;
+    margin: 2em auto;
 }
 
 /*
@@ -936,15 +937,24 @@ figure {
 p,
 ol,
 ul,
+dl,
+h1,
 h2,
 h3,
 h4,
 h5,
-dl,
 .archivepage,
 table {
     max-width: 40em;
-    margin: 1em auto;
+    margin: 0 auto 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0 auto 1em;
 }
 
 .page {
