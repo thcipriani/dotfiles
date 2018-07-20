@@ -2,10 +2,10 @@
 
 It's that time again.
 
-* [[https://www.ikea.com/us/en/catalog/products/S49084965/][SKARSTA sit/stand desk]]
-* [[https://www.amazon.com/dp/B004T6M6Y4/ref%3Dtwister_B00WJYS246?_encoding%3DUTF8&psc%3D1][All-Clad 4201.5 1.5-Quart, Silver]]
-* [[https://www.amazon.com/Oxford-Companion-Beer-Hardcover/dp/0195367138/ref%3Dsr_1_1][The Oxford Companion to Beer]]
-* [[https://www.amazon.com/NITECORE-Version-Tactical-Flashlight-Waterproof/dp/B00GZYNX8G/ref%3Dsr_1_4][Nitecore P12 2015 Version]]
-* [[https://www.amazon.com/Princeton-Companion-Mathematics-Timothy-Gowers/dp/0691118809][The Princeton Companion to Mathematics]]
-* [[https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/r][Mastering Regular Expressions]]
-* [[https://www.amazon.com/Advanced-Programming-UNIX-Environment-Edition/dp/0321637739][Advanced Programming in the UNIX Environment]]
+- [[https://www.ikea.com/us/en/catalog/products/S49084965/][SKARSTA sit/stand desk]]
+- [[https://www.amazon.com/dp/B004T6M6Y4/ref%3Dtwister_B00WJYS246?_encoding%3DUTF8&psc%3D1][All-Clad 4201.5 1.5-Quart, Silver]]
+- [[https://www.amazon.com/Oxford-Companion-Beer-Hardcover/dp/0195367138/ref%3Dsr_1_1][The Oxford Companion to Beer]]
+- [[https://www.amazon.com/NITECORE-Version-Tactical-Flashlight-Waterproof/dp/B00GZYNX8G/ref%3Dsr_1_4][Nitecore P12 2015 Version]]
+- [[https://www.amazon.com/Princeton-Companion-Mathematics-Timothy-Gowers/dp/0691118809][The Princeton Companion to Mathematics]]
+- [[https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/r][Mastering Regular Expressions]]
+- [[https://www.amazon.com/Advanced-Programming-UNIX-Environment-Edition/dp/0321637739][Advanced Programming in the UNIX Environment]]
