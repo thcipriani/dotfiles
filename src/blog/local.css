@@ -717,6 +717,7 @@ img.img { margin: 0; }
 .pageheader .header {
     display: block;
     font-size: 1.5em;
+    margin: 2rem 0;
 }
 
 .pageheader .header .parentlinks {
@@ -729,7 +730,7 @@ img.img { margin: 0; }
 }
 
 .title {
-    font-size: 3em;
+    font-size: 2.75em;
     line-height: 1em;
     text-align: center;
     display: block;
@@ -801,7 +802,7 @@ a.feedbutton {
     font-size: 1.25em;
     text-align: center;
     line-height: 1.75em;
-    margin: 2em auto;
+    max-width: 40em;
 }
 
 /*
@@ -945,7 +946,7 @@ h4,
 h5,
 .archivepage,
 table {
-    max-width: 40em;
+    max-width: 40rem;
     margin: 0 auto 2em;
 }
 
