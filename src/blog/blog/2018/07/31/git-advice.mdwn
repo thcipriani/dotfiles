@@ -1,0 +1,45 @@
+[[!meta date="2018-07-31T17:53:02.086677"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Git Advice"]]
+[[!tag computing]]
+
+Git can be
+[[confusing|blog/2016/03/21/Visualizing-Git-Merkle-DAG-with-D3.js]]. It's more
+confusing fumbling with git under pressure. As a release engineer fumbling with
+git under pressure is a appreciable chunk of my job; as such, I've learned a
+trick or two.
+
+Recently I added some general [git
+advice](https://wikitech.wikimedia.org/wiki/SWAT_deploys/Deployers#git) to our
+shared wiki page for deployers. I am reproducing this advice here for
+posterity. The goal of this advice is to ensure that deployers are seeing all
+the information they need to make smart decisions about the current state of a
+git repository. There are times when this advice has allowed me to figure out a
+problem with a git repository simply by `cd`-ing into its worktree.
+
+1. **Use a git-aware prompt.**
+    The [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
+    script that is included in git's contrib tree is my preferred prompt. There are
+    instructions for use in
+    [comments](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh#L10-L31)
+    at the beginning of the file. One simple way to use it (on Debian machines
+    anyway) is to add the following to your shell initialization file:
+    ```{.bash}
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWUPSTREAM="auto verbose"
+    . /etc/bash_completion.d/git-prompt
+    PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+    ```
+
+2. **Set `status.submoduleSummary`.**
+    By default submodules have limited visibility in `git status` which makes
+    it easy to miss a `git submodule update` step. After adding
+    `status.submoduleSummary` to your `~/.gitconfig`, git will show you a short
+    summary of submodule changes in the output of `git status`. Set it by executing:
+    ```{.shell-session}
+    you@computer:~$ git config --global status.submoduleSummary true
+    ```
