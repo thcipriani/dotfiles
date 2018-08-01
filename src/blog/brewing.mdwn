@@ -1,8 +1,10 @@
 I have been homebrewing since 2007. I am the former the president of the
 Wichita Homebrewers Organization (and I designed their logo!). I am a
-recognized BJCP judge and an AHA member. I've won a fair number of regional and
-national competition medals for my beer and mead including a national gold
-medal for my [[Tupelo Mead|brewing/nhc-2014-gold-medal-tupelo-mead]] at the
-National Homebrew Competition in 2014.
+recognized BJCP judge and an AHA member.
+
+Here are a few awards I'm proud of:
+
+* Gold -- National Homebrew Competiton (2014) -- [[Tupelo Mead|brewing/nhc-2014-gold-medal-tupelo-mead]]
+* Bronze -- National Homebrew Competition (2018) -- [[Hefewezien|brewing/a-lovely-hefe]]
 
 [[!inline pages="page(./brewing/*) and !*/Discussion" actions=no archive=yes trail=yes limit=20]]
