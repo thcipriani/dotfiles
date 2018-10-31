@@ -28,7 +28,7 @@ projector (enjoy with
 [flavacol](https://www.amazon.com/Gold-Medal-Prod-Flavacol-Seasoning/dp/B004W8LT10)
 for extra authenticity). In 2015 I discovered
 [AtmosFearFX](https://atmosfx.com/) which is a company that produces content
-meant to projected onto walls or out of windows or onto curtains. For our
+meant to be projected onto walls or out of windows or onto curtains. For our
 front-room I project a ghostly apparition onto a sheer curtain so that it
 roughly looks like it's walking around inside. This has been a big hit with
 trick-or-treaters, so much so that I bought a(n extremely crappy) [mini
@@ -60,11 +60,11 @@ subsequently began spending too much money there.
 My big project this year is a pneumatic pop-up that uses an air-compressor.
 This is controlled a motion-sensing Raspberry Pi.
 
-The key competent is the solenoid
+The key component is the solenoid
 
 ![3-way solenoid with 1/4" ports](https://photos.tylercipriani.com/thumbs/46/314f9a0c3f88ad65288dcc7a7c354e/large.jpg)
 
-This controls the 20PSI (or so) coming from my air compressor to a pneumatic
+This controls the 30PSI (or so) coming from my air compressor to a pneumatic
 cylinder. The solenoid is controlled via 12V. This is more than my Raspberry Pi
 is capable of pushing out over GPIO. Fortunately, I have an [Adafruit
 MotorHAT](https://www.adafruit.com/product/2348). The MotorHAT has its own 12V
