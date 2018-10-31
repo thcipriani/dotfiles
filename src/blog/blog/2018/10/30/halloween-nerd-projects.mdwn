@@ -58,9 +58,9 @@ DuckDuckGos I stumbled on [FrightProps](https://www.frightprops.com/) and
 subsequently began spending too much money there.
 
 My big project this year is a pneumatic pop-up that uses an air-compressor.
-This is controlled a motion-sensing Raspberry Pi.
+This is controlled by a motion-sensing Raspberry Pi.
 
-The key component is the solenoid
+The key component is the solenoid:
 
 ![3-way solenoid with 1/4" ports](https://photos.tylercipriani.com/thumbs/46/314f9a0c3f88ad65288dcc7a7c354e/large.jpg)
 
