@@ -122,7 +122,7 @@ class Pneumatic(object):
 Which lets me test-drive the setup pretty easily via ipython:
 
 ```
->>> from very-scary import Pneumatic
+>>> from scary import Pneumatic
 >>> motor_output = 4
 >>> popup = Pneumatic()
 >>> popup.up()
