@@ -1,0 +1,138 @@
+[[!meta date="2018-10-30T21:10:30.263886"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Halloween Nerd Projects 👻"]]
+[[!tag computing]]
+
+Last year I got 229 trick-or-treaters at my house.
+
+![Candy, yo!](https://photos.tylercipriani.com/thumbs/7e/0e0d506c3bfe2ff4bf6743191ce05f/large.jpg "Why, yes, actually, this is 1,200(!) pieces of candy.")
+
+
+The previous year it was 194. The year before that it was 176. The year before
+that I lived in a duplex that was roughly two blocks from my current house;
+that year I didn't think to track how many trick-or-treaters showed up at my
+door -- it was less than 10.
+
+The only logical conclusion we can draw from the above data is that our current
+house is imbued with dark Halloween voodoo. We've made every attempt to decorate
+accordingly. The first year it was spider webs and a black light. For every
+subsequent year we've tried to out-do our previous selves.
+
+## It begins
+
+In order to create an authentic movie-experience at home I own a
+projector (enjoy with
+[flavacol](https://www.amazon.com/Gold-Medal-Prod-Flavacol-Seasoning/dp/B004W8LT10)
+for extra authenticity). In 2015 I discovered
+[AtmosFearFX](https://atmosfx.com/) which is a company that produces content
+meant to projected onto walls or out of windows or onto curtains. For our
+front-room I project a ghostly apparition onto a sheer curtain so that it
+roughly looks like it's walking around inside. This has been a big hit with
+trick-or-treaters, so much so that I bought a(n extremely crappy) [mini
+projector](https://www.amazon.com/gp/product/B01EOXLC5K/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
+that I would never be able to use for movies, but -- none-the-less -- works great for
+projecting weird zombie hands groping for freedom on the window of our porch.
+
+This was the same year I began incorporating microcontrollers to trigger
+effects. I built a project with a [Particle core](https://www.particle.io/)
+attached to a [reed switch](https://www.adafruit.com/product/375) on my front
+door. The Particle board sent a web request to my
+[hue](https://www2.meethue.com/en-us) light bulb on the porch (scream sound warning):
+
+<figure>
+    <video controls=true>
+        <source src="https://photos.tylercipriani.com/videos/halloween-2015-particle-lights.mp4" type="video/mp4">
+        <source src="https://photos.tylercipriani.com/videos/halloween-2015-particle-lights.ogv" type="video/ogg">
+    </video>
+<figcaption>Halloween 2015: Controlling Hue bulbs with a Particle and Reed Switch</figcaption>
+</figure>
+
+## Now
+
+Fast-forward a few years and my setup has become even more elaborate. Sometime
+around 2016 I began fooling around with pneumatic pop-ups. After a few
+DuckDuckGos I stumbled on [FrightProps](https://www.frightprops.com/) and
+subsequently began spending too much money there.
+
+My big project this year is a pneumatic pop-up that uses an air-compressor.
+This is controlled a motion-sensing Raspberry Pi.
+
+The key competent is the solenoid
+
+![3-way solenoid with 1/4" ports](https://photos.tylercipriani.com/thumbs/46/314f9a0c3f88ad65288dcc7a7c354e/large.jpg)
+
+This controls the 20PSI (or so) coming from my air compressor to a pneumatic
+cylinder. The solenoid is controlled via 12V. This is more than my Raspberry Pi
+is capable of pushing out over GPIO. Fortunately, I have an [Adafruit
+MotorHAT](https://www.adafruit.com/product/2348). The MotorHAT has its own 12V
+power supply and can be controlled by a Raspberry Pi. I also used a [PIR
+sensor](https://www.adafruit.com/product/189) to detect motion and trigger my
+popup.
+
+![Raspberry Pi with MotorHAT](https://photos.tylercipriani.com/thumbs/2d/bc1481da196c3d4d494fdbadc29717/large.jpg "Raspberry Pi with MotorHAT")
+
+The pop-up dummy itself is made out of 1/2" PVC tubing, zip ties, a skeleton I
+bought at Home Depot, and love.
+
+![PVC and love](https://photos.tylercipriani.com/thumbs/ad/e44b4a3d0455c209b797ff201eb0a4/large.jpg)
+
+I control the whole contraption with some some [python
+code](https://github.com/thcipriani/halloween-2017) running on the Pi. I've wrapped the Adafruit MotorHAT code in a nicer interface:
+
+```{.python}
+from Adafruit_MotorHAT import Adafruit_MotorHAT
+
+class Pneumatic(object):
+    """
+    Abstraction for Adafruit MotorHAT that I'm using as a weird way to drive
+    a pneumatic pop-up.
+    """
+
+    UP = Adafruit_MotorHAT.FORWARD
+    DOWN = Adafruit_MotorHAT.RELEASE
+
+    def __init__(self, motor=4):
+        """
+        :motor: Integer - 1-4. Motor output to use on the MotorHAT
+        """
+        mh = Adafruit_MotorHAT(addr=0x60)
+        self.pop_up = mh.getMotor(motor)
+
+        # Max motor speed is 255
+        self.pop_up.setSpeed(255)
+
+    @property
+    def is_up(self):
+        return self.status == UP
+
+    def up(self):
+        self.status = UP
+        self.pop_up.run(self.UP)
+
+    def down(self):
+        self.status = DOWN
+        self.pop_up.run(self.DOWN)
+```
+
+Which lets me test-drive the setup pretty easily via ipython:
+
+```
+>>> from very-scary import Pneumatic
+>>> motor_output = 4
+>>> popup = Pneumatic()
+>>> popup.up()
+>>> popup.is_up
+True
+>>> popup.down()
+```
+
+<figure>
+    <video controls=true>
+        <source src="https://photos.tylercipriani.com/videos/2018-10-30_halloween-fun_popup.mp4" type="video/mp4">
+        <source src="https://photos.tylercipriani.com/videos/2018-10-30_halloween-fun_popup.ogv" type="video/ogg">
+    </video>
+	<figcaption>Halloween 2018: Controlling a pneumatic with python</figcaption>
+</figure>

@@ -7,4 +7,8 @@ Copyright &copy; 2017 Tyler Cipriani
 So you've found yourself honorbound to present me with gifts?
 You've come to the right place
 
+## Random Stuff
+
+* [Peak Design Everyday Backpack 30L (Ash Camera Bag)](https://www.amazon.com/Peak-Design-Everyday-Backpack-Camera/dp/B01M3Y038Q)
+
 [[!inline pages="page(./wishlist/*) and !*/Discussion" archive=yes quick=yes trail=no]]
