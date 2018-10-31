@@ -79,8 +79,10 @@ bought at Home Depot, and love.
 
 ![PVC and love](https://photos.tylercipriani.com/thumbs/ad/e44b4a3d0455c209b797ff201eb0a4/large.jpg)
 
-I control the whole contraption with some some [python
-code](https://github.com/thcipriani/halloween-2017) running on the Pi. I've wrapped the Adafruit MotorHAT code in a nicer interface:
+I control the whole contraption with some [python
+code](https://github.com/thcipriani/halloween-2017) running on the Pi. I've
+wrapped the Adafruit MotorHAT code in (what I think is) a nicer interface for
+this project:
 
 ```{.python}
 from Adafruit_MotorHAT import Adafruit_MotorHAT
