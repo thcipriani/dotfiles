@@ -1,0 +1,33 @@
+[[!meta date="2018-10-27 07:25:18"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Fall Sunrise at McIntosh"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+photos/mountain
+photos/landscape
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/11/7d977d49c924e9a514a3546fcf89cb/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/11/7d977d49c924e9a514a3546fcf89cb/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/11/7d977d49c924e9a514a3546fcf89cb/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/11/7d977d49c924e9a514a3546fcf89cb/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/11/7d977d49c924e9a514a3546fcf89cb/original.jpg)](https://photos.tylercipriani.com/thumbs/11/7d977d49c924e9a514a3546fcf89cb/large.jpg)
+
+Sunrise looking West towards Meeker from the path around McIntosh Lake.
+
+EXIF |
+--- | ---
+ExposureTime | 1/6
+FNumber | 8.0
+FocalLength | 105.0 mm
+CreateDate | 2018-10-27 07:25:18
+Lens | 70-200mm f/2.8
+ISO | 50
+Model | NIKON D610
+Make | NIKON CORPORATION
+
