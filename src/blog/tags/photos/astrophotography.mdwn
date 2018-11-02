@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/astrophotography"]]
+
+[[!inline pages="tagged(photos/astrophotography)" actions="no" archive="yes"
+feedshow=10]]
