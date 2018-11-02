@@ -1,0 +1,33 @@
+[[!meta date="2018-08-09 22:08:35"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Milky Way from Moraine Park"]]
+[[!tag
+photos
+photos/35mm-f-1.4
+photos/nikon-d610
+photos/rocky-mountain-national-park
+photos/astrophotography
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/80/8bfe40253face4013598ea8fb754e0/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/80/8bfe40253face4013598ea8fb754e0/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/80/8bfe40253face4013598ea8fb754e0/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/80/8bfe40253face4013598ea8fb754e0/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/80/8bfe40253face4013598ea8fb754e0/original.jpg)](https://photos.tylercipriani.com/thumbs/80/8bfe40253face4013598ea8fb754e0/large.jpg)
+
+
+
+EXIF |
+--- | ---
+ExposureTime | 5
+FNumber | 1.4
+FocalLength | 35.0 mm
+CreateDate | 2018-08-09 22:08:35
+Lens | 35mm f/1.4
+ISO | 6400
+Model | NIKON D610
+Make | NIKON CORPORATION
+
