@@ -935,6 +935,10 @@ figure {
     text-align: center;
 }
 
+video {
+    max-width: 100%;
+}
+
 /* readability */
 p,
 ol,
