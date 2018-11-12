@@ -1,0 +1,106 @@
+[[!meta date="2018-11-08T14:55:57.663587"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Unicorn Blood"]]
+
+Dragon Fruit Berliner Weisse with Glitter
+
+![Halloween Beer](https://photos.tylercipriani.com/thumbs/35/cb6e3fb84522b207d7738556127e06/large.jpg)
+
+I figured I should post about my Halloween beer before it's Thanksgiving. This
+beer took 3rd place in the Prairie Homebrewing Companions [Hoppy
+Halloween](http://www.hoppyhalloween.com/results.htm) competition in the
+"Halloween theme beer" category.
+
+> The blood of a unicorn will keep you alive, even if you are an inch from
+> death, but at a terrible price. You have slain something pure and defenceless
+> to save yourself, and you will have but a half-life, a cursed life, from the
+> moment the blood touches your lips.
+>
+> -- Harry Potter and the Philosopher's Stone[^1]
+
+The basic recipe is [Milk the Funk's Berliner
+Weissbier](http://www.milkthefunk.com/wiki/Berliner_Weissbier#Milk_the_Funk_Berliner_Weissbier_Recipe)
+with a handful of tricks.
+
+## Recipe
+### Stats
+
+-   OG: ¯\\\_(ツ)\_/¯
+-   FG: ¯\\\_(ツ)\_/¯
+-   IBU (Tensith): 10.7
+-   Batch Size: 6 Gallons
+-   Boil Time: 105 Minutes
+
+### Fermentables
+
+  Ingredient            Amount   %      When
+  --------------------- -------- ------ ------
+  Weyermann®  Pilsner   8 lbs    70     Mash
+  Weyermann® Pale Wheat 3.5 lbs  30     Mash
+
+### Hops
+
+  Variety    Alpha    Amount     IBU    Form           Time
+  ---------- -------- ---------- ------ -------------- -----------
+  Lemon Drop 5.5 %    2.00 oz.   10.7   Loose Pellet   60 min
+
+### Yeast
+
+  Strain                        Amount  Starter
+  ----------------------------- ------- ---------
+  Vanilla Chamomile GoodBelly   4 packs N/A
+  Imperial Citrus               1 pack  Nope
+
+## Steps
+
+### 2018-09-26 -- Mash day
+
+1. Collect 15 gallons [carbon-filtered](https://www.morebeer.com/products/water-filter-kit-10.html) Longmont tap water
+2. Add all grains to a mesh bag and throw into kettle to create mash in with 11.3 gallons of strike water @ 152°F in kettle
+3. Mash temp 150°F
+4. Add 3mL of 88% lactic acid, 1.5 tsp of gypsum, 0.5 tsp CaCl2 -- mash ph 5.83.
+5. Remove malt, boil 15 minutes
+6. Chill to 111°F
+7. Add 12mL 88% lactic acid and 4x [vanilla chamomile
+   GoodBelly](https://goodbelly.com/products/vanilla-chamomile/) shots to kettle,
+   cover with plastic wrap, bungee cord a hot pad to it to keep >75°F for 4 days
+
+![Kettle wrapped with hotpad](https://photos.tylercipriani.com/thumbs/b3/1383c344650b270a408dcbbc8e1cbb/large.jpg)
+
+### 2018-09-30 -- boiling day
+
+1. After 4 days, boil for 90 minutes (because you did your calculations all wrong because you don't do this very much and you need to boil-off A LOT!)
+2. Preboil pH: 3.54
+3. 10 minute: Add 1 tsp Wyeast Brewer's Choice Nutrient
+4. 2 minute: Add 1 tablet whirlfloc
+5. Chill to 68°F with [hydra](https://jadedbrewing.com/products/the-hydra)
+6. Collect 5.5 Gallons wort
+7. Pitch with 1 pack Imperial Citrus (2018-08-09 mfg date)
+
+### 2018-10-06 -- fruiting day
+
+1. Add 6lbs partially thawed frozen tropical medley (strawberry, blueberry,
+   mango), and 1lb frozen dragon fruit puree, this will drop temp to 57°F, panic
+   briefly, shrug and walk away instead.
+
+### 2018-10-21 -- <strike>Yak shaving</strike> Bottling day
+
+![Finished bottle](https://photos.tylercipriani.com/thumbs/32/1318a169cb43a8a3a7ab0eda245a90/large.jpg)
+
+1. Add 4x jars of [CK Products Super Pearl Edible Luster
+   dust](https://www.amazon.com/CK-Products-Super-Luster-Dust-Edible/dp/B01HDP9QKE?th=1)
+   to the keg
+2. [Counter-pressure](https://www.morebeer.com/products/counter-pressure-bottle-filler.html) fill a few [Bormioli Rocco Fiaschetta bottles](https://www.amazon.com/gp/product/B0118OJQT2/).
+3. Be amazed:
+
+<figure>
+    <video autoplay loop>
+        <source src="https://photos.tylercipriani.com/videos/2018-11-07_unicorn-blood.mp4" type="video/mp4">
+    </video>
+    <figcaption>Weeeeeeeeeeee</figcaption>
+</figure>
+
+[^1]: http://harrypotter.wikia.com/wiki/Unicorn_blood
