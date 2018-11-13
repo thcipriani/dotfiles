@@ -97,7 +97,7 @@ with a handful of tricks.
 3. Be amazed:
 
 <figure>
-    <video autoplay loop>
+    <video autoplay loop controls>
         <source src="https://photos.tylercipriani.com/videos/2018-11-07_unicorn-blood.mp4" type="video/mp4">
     </video>
     <figcaption>Weeeeeeeeeeee</figcaption>
