@@ -4,4 +4,3 @@ startup_message off
 vbell off
 altscreen on
 term screen-256color
-escape ^Ff

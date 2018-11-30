@@ -5,10 +5,10 @@ import argparse
 import os
 import re
 
-from datetime import date
+from datetime import datetime
 
 BASE_PATH = os.path.join(
-    os.environ['HOME'], '.dotfiles', 'src', 'blog', 'blog')
+    os.environ['HOME'], '.dotfiles', 'src', 'blog')
 
 CONTENT = '''[[!if test="enabled(calendar)" then="""
 To see posts by date, check out the [[archives]]
@@ -31,15 +31,15 @@ def make_path(args):
     year, month, day = args['year'], args['month'], args['day']
     times = {
         'year': {
-            'dir': os.path.join(BASE_PATH, year),
+            'dir': os.path.join(BASE_PATH, 'blog', year),
             'pagespec': './{}/*/*/*',
         },
         'month': {
-            'dir': os.path.join(BASE_PATH, year, month),
+            'dir': os.path.join(BASE_PATH, 'blog', year, month),
             'pagespec': './{}/*/*',
         },
         'day': {
-            'dir': os.path.join(BASE_PATH, year, month, day),
+            'dir': os.path.join(BASE_PATH, 'blog', year, month, day),
             'pagespec': './{}/*',
         },
     }
@@ -67,17 +67,31 @@ def make_safe_title(title):
     return '{}.mdwn'.format(dashed_title)
 
 
-def make_post(args):
-    year, month, day = args['year'], args['month'], args['day']
+def make_post_path(year, month, day, title, is_brewing=False):
+    safe_title = make_safe_title(title)
 
-    post_date = date(int(year), int(month), int(day)).isoformat()
+    if is_brewing:
+        post_path = os.path.join(BASE_PATH, 'brewing')
+    else:
+        post_path = os.path.join(BASE_PATH, 'blog', year, month, day)
 
-    safe_title = make_safe_title(args['title'])
-    title = ' '.join(args['title'])
+    post_path = os.path.join(post_path, safe_title)
 
-    post_path = os.path.join(BASE_PATH, year, month, day, safe_title)
     if os.path.exists(post_path):
         raise Exception('Post path exists: %s', post_path)
+
+    return post_path
+
+
+def make_post(args):
+    year, month, day, post_date = (
+        args['year'], args['month'], args['day'], args['datetime']
+    )
+
+    title = ' '.join(args['title'])
+
+    post_path = make_post_path(
+        year, month, day, args['title'], args['brewing'])
 
     with open(post_path, 'w') as f:
         f.write(FRONTMATTER.format(year=year, date=post_date, title=title))
@@ -90,26 +104,42 @@ def parse_args():
     ap.add_argument('-y', '--year', help='year of post')
     ap.add_argument('-m', '--month', help='2 digit month')
     ap.add_argument('-d', '--day', help='2 digit day')
+    ap.add_argument('--brewing', action='store_true', help='Is a brewing blog')
     ap.add_argument('title', nargs='*', help='Post title')
 
     args = vars(ap.parse_args())
-    today = date.today()
+    now = datetime.utcnow()
+
+    if not (args.get('year') and args.get('month') and args.get('day')):
+        args['datetime'] = datetime.isoformat(now)
 
     if not args.get('year'):
-        args['year'] = today.strftime('%Y')
+        args['year'] = now.strftime('%Y')
 
     if not args.get('month'):
-        args['month'] = today.strftime('%m')
+        args['month'] = now.strftime('%m')
 
     if not args.get('day'):
-        args['day'] = today.strftime('%d')
+        args['day'] = now.strftime('%d')
+
+    if not args.get('datetime'):
+        args['datetime'] = datetime.isoformat(
+            datetime(
+                int(args['year']),
+                int(args['month']),
+                int(args['day'])
+            )
+        )
 
     return args
 
 
 def main():
     args = parse_args()
-    make_path(args)
+
+    if not args['brewing']:
+        make_path(args)
+
     make_post(args)
 
 

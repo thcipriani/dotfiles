@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+
+import argparse
+import glob
+import os
+import subprocess
+
+
+def grab_audio(video, artist):
+    cmd = [
+        'youtube-dl',
+        '--audio-quality',
+        '0',
+        '--prefer-ffmpeg',
+        '--extract-audio',
+        '--audio-format', 'mp3',
+        video,
+        '--output', '{} - %(title)s.%(ext)s'.format(artist)
+    ]
+
+    subprocess.check_call(cmd)
+
+
+def tag_and_clean(args):
+    cmd = [
+        'id3tag',
+        '--artist="{}"'.format(args.artist),
+    ]
+
+    if args.album:
+        cmd.append('--album="{}"'.format(args.album))
+
+    for song in glob.glob('{} - *.mp3'.format(args.artist)):
+        title = make_title(song, args.artist)
+        subprocess.check_call(cmd + ['--song="{}"'.format(title), song])
+
+
+def make_title(song, artist):
+    title = song.split('-')
+    title_parts = title[1:]
+    title_parts = [part for part in title_parts if artist not in part]
+    title = ' '.join(title_parts)
+    title = title.split('(')[0]
+    if title.endswith('.mp3'):
+        title = title[:-4]
+
+    return title.strip()
+
+
+def parse_args():
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        '--artist', required=True, help='Artist name (for tagging)')
+    ap.add_argument('--album', help='Album name (for tagging)')
+    ap.add_argument('--output', default='.', help='Output location')
+    ap.add_argument('video', nargs='?', help='Video url (for youtube-dl)')
+    return ap.parse_args()
+
+
+if __name__ == '__main__':
+    args = parse_args()
+    output_dir = os.path.realpath(os.path.expanduser(args.output))
+    os.makedirs(output_dir, exist_ok=True)
+    os.chdir(output_dir)
+    grab_audio(args.video, args.artist)
+    tag_and_clean(args)

@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+LOCK_SCREEN=/var/lock/i3lock-screen.png
+LOCK_PID_FILE="$HOME/.cache/autolock.pid"
+
+has?() {
+    command -v "$1" > /dev/null 2>&1
+}
+
+needs() {
+    missing="$1"
+    exit 1
+}
+
+check_autolock() {
+    local needs_start=0
+
+    if [ -f "$LOCK_PID_FILE" ]; then
+        ps -p $(cat "$LOCK_PID_FILE") &>/dev/null || needs_start=1
+    else
+        needs_start=1
+    fi
+
+    if (( needs_start == 1 )); then
+        xautolock -time 10 -locker "$HOME/bin/lock" &
+        LOCK_PID=$!
+        printf "%d\n" "$LOCK_PID" > "$LOCK_PID_FILE"
+    fi
+}
+
+main() {
+    xwobf "$LOCK_SCREEN"
+    i3lock -i "$LOCK_SCREEN"
+
+    check_autolock
+}
+
+has? xautolock || needs "xautolock"
+has? xwobf || needs "xwobf"
+has? i3lock || needs "i3lock"
+
+main "$@"

@@ -9,10 +9,11 @@ DRY_RUN=0
 START_DIR=/mnt/sd-card/DCIM/100ND610
 START_FILE_NUM=1
 END_FILE_NUM=999999999
+EXTENSION=NEF
 
 help() {
     cat<<HELP
-Usage: $(basename $0) <--shoot-name|-n name> [--start-file-number|-s n] [--end-file-number|-e n] [--from-dir|-f dir-name] [--dry-run]
+Usage: $(basename $0) <--shoot-name|-n name> [--start-file-number|-s n] [--end-file-number|-e n] [--from-dir|-f dir-name] [--extension nef] [--dry-run]
 
 --from-dir|f    default /mnt/sd-card/DCIM/100ND610
 HELP
@@ -38,7 +39,7 @@ run() {
         mkdir -p "$DEST_DIR"
     }
 
-    for file in "$START_DIR"/*.NEF; do
+    for file in "${START_DIR}"/*."${EXTENSION}"; do
         set -- "$(printf '%s\n' "$file" | awk \
             -v start="$START_FILE_NUM" \
             -v end="$END_FILE_NUM" \
@@ -48,7 +49,7 @@ run() {
 
         pad_count=$(printf "%05d\n" $count)
         exif_created=$(exiftool -d '%Y-%m-%d' -printFormat '$CreateDate' "$file")
-        new_fn="${DEST_DIR}/${exif_created}_${SHOOT}_${pad_count}.nef"
+        new_fn="${DEST_DIR}/${exif_created}_${SHOOT}_${pad_count}.${EXTENSION,,}"
 
         say "$file -> $new_fn"
 
@@ -91,6 +92,14 @@ main() {
             --from-dir=*)
                 START_DIR="${1#*=}"
                 ;;
+            --extension)
+                shift
+                EXTENSION="$1"
+                ;;
+            --extension=*)
+                EXTENSION="${1#*=}"
+                ;;
+
             --dry-run|-d)
                 DRY_RUN=1
                 ;;

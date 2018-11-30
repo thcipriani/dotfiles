@@ -82,11 +82,13 @@ myManageHook = composeAll
     , namedScratchpadManageHook scratchpads
     ]
 
-scratchpads =
-  [
-    NS "scratch" "urxvt -name scratch" (appName =? "scratch")
-      (customFloating $ W.RationalRect 0.6 0.6 0.4 0.4)
-  ]
+scratchpads = [NS "scratch" "urxvt -name scratch"
+      (appName =? "scratch")
+      (customFloating $ W.RationalRect 0.55 0.55 0.45 0.45)
+    , NS "capture" "emacsclient -n -e '(make-capture-frame)'"
+      (appName =? "capture")
+      (customFloating $ W.RationalRect 0.55 0.55 0.45 0.45)
+    ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
 
@@ -158,6 +160,8 @@ main = do
      `additionalKeysP`
      [ ("M-p", spawn $ "x=$(" ++ yeganesh ++ ") && exec $x")
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
+     -- http://www.solasistim.net/posts/org_mode_with_capture_and_xmonad/
+     , ("M-S-o", namedScratchpadAction scratchpads "capture" )
      , ("M-v", spawn "urxvt -e alsamixer -c 1")
      , ("M-S-v", spawn "xdotool click 2")
      , ("M-l", spawn "lock")
@@ -166,12 +170,16 @@ main = do
      , ("M1-S-<Tab>",  nextScreen)
      , ("M-/", windowPromptGoto defaultXPConfig)
      , ("M-q", spawn "xmonad --recompile && xmonad --restart")
+     , ("M-i", spawn "toggleupsidedown && notify-send 'Welcome' 'to the ǝpısdn uʍop' -t 750")
      , ("M-<F11>",  nextWS)
      , ("M-<F12>",  prevWS)
      -- , ("M-S-<Space>", layoutScreens 2 (TwoPane 0.33 0.66))
      -- , ("M-S-C-<Space>", rescreen)
+     , ("M-c", spawn "find-cursor")
      , ("<XF86KbdBrightnessUp>", spawn "keyboard-bl up")
      , ("<XF86KbdBrightnessDown>", spawn "keyboard-bl down")
+     , ("<XF86BrightnessUp>", spawn "brightness up")
+     , ("<XF86BrightnessDown>", spawn "brightness down")
      , ("<XF86AudioRaiseVolume>", spawn "volume up")
      , ("<XF86AudioLowerVolume>", spawn "volume down")
      , ("<XF86AudioMute>", spawn "volume mute")

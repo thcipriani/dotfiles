@@ -15,6 +15,7 @@ THUMBS=(
     [small]=240
     [medium]=640
     [large]=1024
+    [larger]=1200
     [xlarge]=2048
 )
 
@@ -145,7 +146,7 @@ get_dims() {
 get_rotation() {
     local infile
     infile="$1"
-    /usr/bin/exiftool -Rotate "$infile"  | awk '{print $4}'
+    /usr/bin/exiftool -Orientation "$infile"  | awk '{print $4}'
 }
 
 upload_to_s3() {
@@ -174,6 +175,9 @@ jpg_thumb() {
     set -- $(get_rotation "$infile")
 
     rotate="$1"
+    if [[ "$rotate" == "(normal)" ]]; then
+        rotate=''
+    fi
 
     doit mkdir -p "$(dirname "$outfile")"
 
@@ -338,9 +342,9 @@ run() {
             *)
                 die "Driver for $ext no implemented :(("
         esac
-    done
 
-    readme "$infile" "${OUTPUT_DIR}/${key}" "$filename" "$ext"
+        readme "$infile" "${OUTPUT_DIR}/${key}" "$filename" "$ext"
+    done
 
     (( PUBLIC > 0 )) && {
         upload_to_s3

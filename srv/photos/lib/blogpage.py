@@ -103,11 +103,23 @@ def get_exif(photo):
     return for_some_reason_a_list[0]
 
 
+def get_title(exif):
+    """
+    prompt for title if not set
+    """
+    global TITLE
+    title = exif.get('title')
+    if not title:
+        title = raw_input('Enter title for blog post: ').strip()
+
+    return title
+
+
 def page_escaped_path(exif):
     """
     get title escaped path for page
     """
-    title = exif['Title'].lower().encode('utf8').decode('ascii', 'ignore')
+    title = get_title(exif).lower().encode('utf8').decode('ascii', 'ignore')
     page_name = re.sub('[^0-9a-zA-Z]+', '-', title)
     return os.path.join(PHOTO_PATH, '{}.mdwn'.format(page_name.decode('utf8')))
 
@@ -169,7 +181,7 @@ def make_page(photo, thumbs, exif):
     print('Making page %s' % path)
     cur_year = date.today().year
     page_content = FMT.format(
-        title=exif['Title'].encode('utf8'),
+        title=get_title(exif).encode('utf8'),
         description=exif.get('Description', ''),
         date=exif['CreateDate'],
         year=cur_year,

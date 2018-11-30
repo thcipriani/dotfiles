@@ -2,8 +2,10 @@
 
 pkill nm-applet &> /dev/null
 pkill trayer &> /dev/null
+pkill blueman-applet &> /dev/null
 
 nohup nm-applet &> /dev/null &
+nohup blueman-applet &> /dev/null &
 
 trayer \
   --edge top \

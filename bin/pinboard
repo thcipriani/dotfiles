@@ -1,0 +1,4 @@
+#!/bin/bash
+
+method="${1:-posts/recent}"
+curl -sL "https://api.pinboard.in/v1/${method}?auth_token=$(getnetrc pinboard.in login):$(getnetrc pinboard.in)&format=json" | jq '.'

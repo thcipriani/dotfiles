@@ -73,10 +73,6 @@ fi
     eval "$(rbenv init -)"
 }
 
-# Try this out, so far it has some potential, would be nice to hook to
-# ~/.muh_history somehow...
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 if command -v sshecret > /dev/null 2>&1; then
     export GIT_SSH=sshecret
 fi

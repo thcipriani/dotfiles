@@ -24,11 +24,12 @@ Xft.rgba: rgb
 
 #else
 
-URxvt.font: xft:terminus:weight=medium:pixelsize=16, \
-    xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=16, \
-    xft:Lohit\ Kannada:pixelsize=16, \
-    xft:Symbola:pixelsize=16
+URxvt.font: xft:Cousine\ for\ Powerline:pixelsize=14, \
+    xft:Lohit\ Kannada:pixelsize=14, \
+    xft:Symbola:pixelsize=14
 Emacs.font:  -*-terminesspowerline-*-*-*-*-16-*-*-*-*-*-*-*
+
+URxvt.letterSpace: -1
 
 xcursor.size: 16
 #endif

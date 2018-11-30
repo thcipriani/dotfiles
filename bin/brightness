@@ -1,16 +1,49 @@
 #!/usr/bin/env bash
 
+INCREMENT=10
+
 if [ ! -f /sys/class/backlight/intel_backlight/brightness ]; then
-  echo "No acpi_video0 brightness file"
+  printf "No acpi_video0 brightness file. Exiting...\n"
   exit 1
 fi
 
+usage() {
+    cat<<HELP
+usage: $(basename "$0") [up|down|<number>]
+HELP
+}
+
+CURRENT_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
+MAX_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+
+printf "Brightness: %s\n" "$CURRENT_BRIGHTNESS"
+printf "Max Brightness: %s\n" "$MAX_BRIGHTNESS"
+
 if (( $# < 1 )); then
-    printf "Brightness: "
-    cat /sys/class/backlight/intel_backlight/brightness
-    printf "Max Brightness: "
-    cat /sys/class/backlight/intel_backlight/max_brightness
+    usage
     exit 0
 fi
 
-sudo su - -c "echo $1 > /sys/class/backlight/intel_backlight/brightness"
+while [ -n "$1" ]; do
+    case "$1" in
+        u*|U*)
+            NEW_BRIGHTNESS=$(( CURRENT_BRIGHTNESS + INCREMENT ))
+            shift
+            ;;
+        d*|D*)
+            NEW_BRIGHTNESS=$(( CURRENT_BRIGHTNESS - INCREMENT ))
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+[[ -z "$NEW_BRIGHTNESS" ]] && NEW_BRIGHTNESS="$1"
+(( NEW_BRIGHTNESS < 0 )) && NEW_BRIGHTNESS=0
+(( NEW_BRIGHTNESS > MAX_BRIGHTNESS )) && NEW_BRIGHTNESS="$MAX_BRIGHTNESS"
+
+printf "New Brightness: %s\n" "$NEW_BRIGHTNESS"
+
+sudo su - -c "echo $NEW_BRIGHTNESS > /sys/class/backlight/intel_backlight/brightness"

@@ -115,8 +115,9 @@ main() {
     media="$1"
     loading_screen
     if [[ ! -f "$media" ]]; then
-       if [[ "$media" == http* ]]; then
-           touch /tmp/here
+       if [[ "$media" == https://live* ]]; then
+           media="$(youtube-dl --format hls-3628-0 --get-url "${media}" 2>/dev/null)"
+       elif [[ "$media" == http* ]]; then
            media="$(youtube-dl --format 18 --get-url "${media}" 2>/dev/null)"
        else
            media="$(youtube-dl --format 18 --get-url "ytsearch:${media}" 2>/dev/null)"

@@ -1,13 +1,9 @@
--- font = "-xos4-*-medium-r-normal-*-16-*-*-*-*-*-*-*"
 Config { font = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
-       -- solarized, bgColor = "#073642"
-       -- solarized, fgColor = "#657b83"
        , bgColor = "#1d1f21"
        , fgColor = "#c5c8c6"
        , position = TopW L 100
        , commands = [
-                    -- Run Com "weathermajig" ["80501"] "weathermajig" 300,
-                    Run Com "weathermajig" ["94104"] "weathermajig" 300,
+                    Run Com "weathermajig" ["80501"] "weathermajig" 300,
                     -- Run Weather "KDEN" [
                     --                     "--template"
                     --                     ,"<fc=#969896>DIA:</fc><tempF>°F"

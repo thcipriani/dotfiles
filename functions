@@ -229,7 +229,8 @@ speedread () {
 
 # http://notary.icsi.berkeley.edu/
 bdns() {
-    sum=$(openssl s_client -connect ${1}:443 < /dev/null 2>/dev/null | openssl x509 -outform DER | openssl sha1)
+    sum=$(openssl s_client -connect ${1}:443 < /dev/null 2>/dev/null | openssl x509 -outform DER | openssl sha1 | awk '{print $2}')
+    echo "$sum"
     dig +short txt ${sum}.notary.icsi.berkeley.edu
 }
 
@@ -239,7 +240,14 @@ jump () {
 }
 
 mark() {
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+    local markdirname="$(dirname $1)"
+    if [[ "$markdirname" != "." ]]; then
+        mkdir -p "$MARKPATH/${markdirname}"
+    else
+        mkdir -p "$MARKPATH"
+    fi
+
+    ln -s "$(pwd)" "$MARKPATH/$1"
 }
 
 unmark() {
@@ -465,4 +473,8 @@ deb-grep() {
             echo "Package $package not installed"
         fi
     done
+}
+
+thousands() {
+    awk '{ printf("%'"'"'d\n",$1); }'
 }

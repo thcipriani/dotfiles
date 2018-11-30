@@ -7,6 +7,7 @@ dir="$HOME"
 backend="s3://s3.amazonaws.com/tylercipriani-backup/$(hostname -s)"
 backend_mail="s3://s3.amazonaws.com/tylercipriani-backup/Mail"
 backend_pictures="s3://s3.amazonaws.com/tylercipriani-backup/Pictures"
+getnetrc="$HOME"/bin/getnetrc
 
 show_help() {
   cat<<DOC
@@ -15,8 +16,8 @@ DOC
 }
 
 get_creds() {
-  export AWS_ACCESS_KEY_ID=$(/home/tyler/bin/getnetrc duplicity login)
-  export AWS_SECRET_ACCESS_KEY=$(/home/tyler/bin/getnetrc duplicity)
+  export AWS_ACCESS_KEY_ID=$($getnetrc duplicity login)
+  export AWS_SECRET_ACCESS_KEY=$($getnetrc duplicity)
 }
 
 backup_pictures() {
@@ -63,45 +64,30 @@ backup_other() {
     --asynchronous-upload \
     --volsize=100 \
     --log-file "$log_file" \
-    --exclude "$HOME/.adobe" \
-    --exclude "$HOME/.macromedia" \
-    --exclude "$HOME/.cache" \
-    --exclude "$HOME/.gvfs" \
-    --exclude "$HOME/.local/share/gvfs-metadata" \
-    --exclude "$HOME/.Private" \
-    --exclude "$HOME/.dbus" \
-    --exclude "$HOME/.cache" \
-    --exclude "$HOME/.Trash" \
-    --exclude "$HOME/.local/share/Trash" \
-    --exclude "$HOME/.cddb" \
-    --exclude "$HOME/.aptitude" \
-    --exclude "$HOME/.xsession-errors" \
-    --exclude "$HOME/.recently-used" \
-    --exclude "$HOME/.recently-used.xbel" \
-    --exclude "$HOME/.thumbnails" \
-    --exclude "$HOME/.Xauthority" \
-    --exclude "$HOME/.ICEauthority" \
-    --exclude "$HOME/.gksu.lock" \
-    --exclude "$HOME/.pulse" \
-    --exclude "$HOME/.pulse-cookie" \
-    --exclude "$HOME/.esd_auth" \
-    --exclude "$HOME/.kde" \
-    --exclude "$HOME/.mozilla" \
-    --exclude "$HOME/.opera" \
-    --exclude "$HOME/.komodoedit" \
-    --exclude "$HOME/.config/google-chrome" \
-    --exclude "$HOME/.pulse/icons" \
-    --exclude "$HOME/.java/deployment/cache" \
-    --exclude "$HOME/.icedteaplugin" \
-    --exclude "$HOME/.icedtea" \
-    --exclude "$HOME/.gnome2/epiphany/favicon_cache" \
-    --exclude "$HOME/.gnupg" \
-    --exclude "$HOME/annex" \
-    --exclude "$HOME/Media" \
-    --exclude "$HOME/VirtualBox VMs" \
-    --exclude "$HOME/Pictures" \
-    --exclude "$HOME/Mail" \
-    --exclude "$HOME/.cabal" \
+    --include "$HOME/.aws" \
+    --include "$HOME/.backups" \
+    --include "$HOME/.batterytrack.log" \
+    --include "$HOME/.config" \
+    --include "$HOME/.cups" \
+    --include "$HOME/.dotfiles" \
+    --include "$HOME/.emacs.d" \
+    --include "$HOME/.marks" \
+    --include "$HOME/.muh_history" \
+    --include "$HOME/.netrc" \
+    --include "$HOME/.password-store" \
+    --include "$HOME/.zotero" \
+    --include "$HOME/ArduinoProjects" \
+    --include "$HOME/Backups" \
+    --include "$HOME/Documents" \
+    --include "$HOME/Music" \
+    --include "$HOME/notebooks" \
+    --include "$HOME/Projects" \
+    --include "$HOME/public_html" \
+    --include "$HOME/Videos" \
+    --include "$HOME/Webcam" \
+    --exclude "**cache/**" \
+    --exclude "**logs/**" \
+    --exclude "**" \
     "$dir" "$backend"
 }
 

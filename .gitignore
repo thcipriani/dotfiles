@@ -56,3 +56,11 @@ ikiwiki/TylerCipriani.setup
 # why? I don't know.
 # ---
 bin/youtube-dl
+
+# Gerriiiiiitttt
+# ---
+bin/bazel
+bin/Patchwork*
+bin/patchwork*
+bin/eclipse
+bin/helm

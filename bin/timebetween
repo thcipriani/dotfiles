@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+output() {
+    printf "%s %s\n" "$@"
+}
+
+STARTDATE="$1"
+ENDDATE="$2"
+
+STARTSECONDS=$(date +%s -d"${STARTDATE}")
+ENDSECONDS=$(date +%s -d"${ENDDATE}")
+
+DIFFSECONDS=$(( ENDSECONDS - STARTSECONDS ))
+
+UNIT="years"
+UNITPRINT="year(s)"
+
+if (( DIFFSECONDS < 60 )); then
+    output "$DIFFSECONDS" "second(s)"
+    exit 0
+
+elif (( DIFFSECONDS < 3600 )); then
+    UNIT="minutes"
+    UNITPRINT="minute(s)"
+
+elif (( DIFFSECONDS < 86400 )); then
+    UNIT="hours"
+    UNITPRINT="hour(s)"
+
+elif (( DIFFSECONDS < 604800 )); then
+    UNIT="days"
+    UNITPRINT="day(s)"
+
+elif (( DIFFSECONDS < 31536000 )); then
+    UNIT="weeks"
+    UNITPRINT="week(s)"
+fi
+
+DIFFTIME=$(units "${DIFFSECONDS}seconds" "${UNIT}" | awk '/*/ {print $2}')
+output "$DIFFTIME" "${UNITPRINT}"

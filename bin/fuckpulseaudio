@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+PID=$(pgrep -f '/usr/bin/pulseaudio --start --log-target=syslog')
+
+if [ -z "$PID" ] || (( PID < 10 )); then
+    printf "Couldn't find old pulseaudio process :(\n"
+else
+    kill -9 "$PID"
+fi
+
+/usr/bin/pulseaudio --start --log-target=syslog

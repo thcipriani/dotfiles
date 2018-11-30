@@ -165,7 +165,15 @@ tablet() {
   rot="$1"
 
   if [[ -z "$rot" ]]; then
-    rot=$(xrandr -q | grep "$xrandr_local" | awk '{print $4}' | tr -d '(')
+        rot=$(xrandr -q | \
+            awk -v display="$xrandr_local" \
+                '$0 ~ display {
+                    gsub("[()]", "")
+                    gsub("primary ", "")
+                    print $4
+                }')
+        echo "The rot is $rot"
+    # rot=$(xrandr -q | grep "$xrandr_local" | awk '{print $4}' | tr -d '(')
   fi
 
   case $rot in
@@ -263,6 +271,14 @@ main() {
     external) show_external ;;
     mirror) mirror ;;
     tablet) tablet ;;
+    unfuck)
+        notify-send "Attempting to unfuck the display"
+        tablet "left" && sleep 2
+        tablet "right" && sleep 2
+        tablet "left" && sleep 2
+        tablet "right" && sleep 2
+        tablet "normal"
+        ;;
     tabletmode)
       touch $_tabletfile
       if [[ "$(cat $_tabletfile)" == "on" ]]; then

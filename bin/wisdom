@@ -3,7 +3,7 @@
 # This script provides wisdom
 # You can now exit in a decent way.
 
-FORTUNE=/usr/sbin/fortune
+FORTUNE=fortune
 
 while true; do
 echo "On which topic do you want advice?"
