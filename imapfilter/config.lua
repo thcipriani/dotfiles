@@ -49,7 +49,10 @@ mailbox_maybe(account, 'CR')
 mailbox_maybe(account, 'auto')
 mailbox_maybe(account, 'task')
 
-results = inbox:contain_to('wmfall@lists.wikimedia.org')
+-- results = inbox:contain_to('wmfall@lists.wikimedia.org')
+-- results:move_messages(account['ML/wmfall'])
+
+results = inbox:contain_to('foundation-optional@wikimedia.org')
 results:move_messages(account['ML/wmfall'])
 
 results = inbox:contain_to('wikitech-l@lists.wikimedia.org')
