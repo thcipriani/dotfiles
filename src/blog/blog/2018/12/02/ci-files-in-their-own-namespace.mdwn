@@ -1,0 +1,69 @@
+[[!meta date="2018-12-02T18:35:29.765306"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="CI Files in Their Own Namespace"]]
+[[!tag computing]]
+
+I recently had a random idea to fix a problem that evidently only bothers me.
+It has become de rigueur to litter every project with a random smattering of
+top-level dotfiles.  I'm thinking of the `.travis.yaml`-type files that are
+regarded as a necessary evil to perform some kind of testing or deployment in a
+particular repo.
+
+I have designed several systems that use this trope. Yes, I feel appropriately
+ashamed.
+
+My problem is simple: dotfiles clutter my work tree. Given all of the
+myriad problems with the current state of software "engineering" this
+particular issue may seem a relatively minor one; however, if this
+issue is minor, a minor fix may well be all that's needed.
+
+The idea I had recently is to use a `ref` namespace in git for these files.
+
+Something like:
+
+```
+$ git checkout --orphan CI
+$ git rm -rf .
+$ mkdir travis
+$ cat > travis/config.yaml
+language: ruby
+rvm:
+ - 2.2
+ - jruby
+
+$ git commit -a -m 'Add travis config for testing'
+$ git push origin refs/heads/CI:refs/meta/ci
+```
+
+In GitHub, using the example above, `refs/meta/ci` doesn't appear in the branch
+dropdown in the web UI, but the ref is stored on the server and accessible by
+people fetching the repo.
+
+In CI (or any tooling hoping to use these configuration files) this namespace can
+be easily accessed via:
+
+```
+$ git fetch origin refs/meta/ci:refs/meta/ci
+$ git show refs/meta/ci:travis/config.yaml
+language: ruby
+rvm:
+ - 2.2
+ - jruby
+```
+
+A whole `refs/meta/ci` namespace with folders for each service seems so much
+nicer to me.
+
+There are a few downsides I can think of to this method. Firstly, it's
+git-specific; however, I am sure the concept of a branch is not entirely
+foreign to most version control systems and it could be supported to some
+degree. In practical terms, supporting git seems to be good enough for most
+tools.
+
+Another downside is opacity. That is, CI files are less discoverable using this
+method; however, if this style of configuration file were to become the de
+facto standard then much tooling could be written to surface interfaces for
+these files and their namespaces.
