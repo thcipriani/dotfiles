@@ -1,6 +1,7 @@
 [user]
 	name = Tyler Cipriani
 	email = tcipriani@wikimedia.org
+	signingkey = F6DAD285018FAC02
 [alias]
 	lool = log --pretty=format:\"%C(33)%h%C(reset) %C(194)%s%C(224)%d%C(reset) [%an]\" --graph --date=short
 	lol = log --graph --date=short --oneline --abbrev-commit --all --graph --decorate -1
@@ -40,4 +41,4 @@
 [http]
 	cookiefile = /home/thcipriani/.gitcookies
 [commit]
-	template = /home/thcipriani/.gitcommitmessage
+	template = /home/thcipriani/.git-commit-zomg
