@@ -13,13 +13,17 @@ test -z "$convert" && exit 1
 ! _haz xrandr && exit 1
 ! _haz awk && exit 1
 
-base="https://apod.nasa.gov/apod/"
+DATE="${1:-today}"
+
+page="https://apod.nasa.gov/apod/"
+subpage="ap$(date '+%y%m%d' --date="$DATE").html"
+url="${page}${subpage}"
 base_dir="$HOME/Pictures/nasa/"
 wallpapers="$HOME/.wallpaper/"
-img_name="$(date '+%Y%m%d')_nasa_pod.jpg"
+img_name="$(date '+%Y%m%d' --date="$DATE")_nasa_pod.jpg"
 monitor_size=$(xrandr -q | awk -F',' 'NR==1 {split($2, a, " "); print a[2]"x"a[4]}')
 
-img=$(curl -s $base | awk '/jpg/ {split($0, a, "\""); print a[2]; exit}')
+img=$(curl -s "$url" | awk '/jpg/ {split($0, a, "\""); print a[2]; exit}')
 
 mkdir -p "$base_dir"
 mkdir -p "$wallpapers"
@@ -27,7 +31,7 @@ mkdir -p "$wallpapers"
 if [[ "$img" == http* ]]; then
   wget -O "${base_dir}${img_name}" "${img}" --quiet
 else
-  wget -O "${base_dir}${img_name}" "${base}${img}" --quiet
+  wget -O "${base_dir}${img_name}" "${page}${img}" --quiet
 fi
 
 $convert "${base_dir}${img_name}" -resize $monitor_size "${wallpapers}${img_name}"
