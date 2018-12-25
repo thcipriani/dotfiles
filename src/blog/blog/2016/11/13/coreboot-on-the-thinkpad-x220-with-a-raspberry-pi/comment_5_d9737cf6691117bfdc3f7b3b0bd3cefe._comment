@@ -1,0 +1,15 @@
+[[!comment format=mdwn
+ username="techge@00c31842eb192a344d324c5a7e9a00ff313ab735"
+ nickname="techge"
+ avatar="https://seccdn.libravatar.org/avatar/1fe9fecb4c1a7d23a09777c74a0afe11"
+ subject="Not always winbound chip"
+ date="2018-12-25T19:22:55Z"
+ content="""
+Hey,
+
+I used this instructions before and they really helped me in the past. Now I bought another x220 and wanted to do the same and was quite confused, that I couldn't find the winbound chip anymore. I did the trick with spispeed=512 and expected to get it. Instead I needed to use the Macronix Chip with the flag '-c MX25L6405' as flashrom suggest, but needed a long time to get that.
+
+So someone in the future: don't get confused, not every x220 has a winbound chip, just proceed ;-)
+
+regards
+"""]]
