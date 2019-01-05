@@ -24,3 +24,4 @@ I may not read most of these books, but I don't want to forget about them for so
 * [Capitalist Realism: Is There No Alternative?](https://www.amazon.com/Capitalist-Realism-There-Alternative-Books/dp/1846943175)
 * [Measurement](https://www.amazon.com/Measurement-Paul-Lockhart/dp/0674284380)
 * [Books People Leave Behind in Hotels](https://www.travelandleisure.com/culture-design/books/top-books-people-leave-in-hotels) - These books all look like crap, but may be good plane books
+* [Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation](https://www.amazon.com/dp/0321601912)
