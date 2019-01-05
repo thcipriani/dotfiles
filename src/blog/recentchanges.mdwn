@@ -1,0 +1,7 @@
+[[!if test="enabled(meta)" then="""
+[[!meta title="RecentChanges"]]
+"""]]
+Recent changes to this wiki:
+
+[[!inline pages="internal(recentchanges/change_*) and !*/Discussion" 
+template=recentchanges show=0]]
