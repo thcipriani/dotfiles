@@ -1,0 +1,31 @@
+[[!meta date="2019-01-20 23:21:59"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Lunar Eclipse Composite"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/original.jpg)](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/large.jpg)
+
+
+
+EXIF |
+--- | ---
+ExposureTime | 1
+FNumber | 5.6
+FocalLength | 400.0 mm
+CreateDate | 2019-01-20 23:21:59
+Lens | 70-200mm f/2.8
+ISO | 1600
+Model | NIKON D610
+Make | NIKON CORPORATION
+
