@@ -17,13 +17,52 @@ photos/nikon-d610
 [Original](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/original.jpg)](https://photos.tylercipriani.com/thumbs/2d/429eaba994b0be5df251119de7bed6/large.jpg)
 
 
+This is a composite image combining some of the 689 pictures I took of the full
+lunar eclipse on the night of Sunday, 20 Jan 2019 from the middle of my
+backyard in Longmont, Colorado. The time span covered in this image spans from
+roughly 21:00–23:45.
+
+## Gear
+
+* Nikon D610
+* Nikon 70-200mm f/2.8G ED VR II
+* Nikon Auto Focus-S FX TC-20E III 2x Teleconverter
+* iOptron SkyGuider Pro
+* Cheap Pangshi intervalometer
+
+## Acquisition
+
+I took 50 shots (or so) every 15 minutes for the duration of the eclipse.
+
+## Software
+
+I do all image processing with FOSS software (with the unfortunate exception of
+camera and tracker firmware).
+
+* Debian Buster
+* Darktable
+    * Chromatic aberration
+    * Lens correction
+    * Cropping
+    * Export to 16-bit TIF
+* Siril
+    * Create new FITs sequence from exported TIF
+    * Planetary Full-Disk registration
+    * Average stacking with rejection -- Windsorized Sigma Clipping
+    * Wavelets sharpening
+    * Save final stacked as 16-bit TIF
+* GIMP 2.10.8
+    * Combining images into one composite
+    * Export as 8-bit JPEG
+* Bash
+    * So much bash.
 
 EXIF |
 --- | ---
 ExposureTime | 1
 FNumber | 5.6
 FocalLength | 400.0 mm
-CreateDate | 2019-01-20 23:21:59
+CreateDate | 2019-01-20 22:21:59
 Lens | 70-200mm f/2.8
 ISO | 1600
 Model | NIKON D610
