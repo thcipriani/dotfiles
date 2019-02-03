@@ -1,0 +1,32 @@
+[[!meta date="2019-01-27 16:13:13"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Golden Gate Bridge from Crissy Field"]]
+[[!tag
+photos
+photos/35mm-f-1.4
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/98/3c37bc39c56c3e5ac4ee4c5362585a/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/98/3c37bc39c56c3e5ac4ee4c5362585a/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/98/3c37bc39c56c3e5ac4ee4c5362585a/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/98/3c37bc39c56c3e5ac4ee4c5362585a/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/98/3c37bc39c56c3e5ac4ee4c5362585a/original.jpg)](https://photos.tylercipriani.com/thumbs/98/3c37bc39c56c3e5ac4ee4c5362585a/large.jpg)
+
+
+
+EXIF |
+--- | ---
+ExposureTime | 1/200
+FNumber | 8.0
+Title | Golden Gate Bridge from Crissy Field
+FocalLength | 35.0 mm
+CreateDate | 2019-01-27 16:13:13
+Lens | 35mm f/1.4
+ISO | 50
+Model | NIKON D610
+Make | NIKON CORPORATION
+
