@@ -233,10 +233,10 @@ interface.
        Body of Pi (closest to you)
     ```
 
-10.  See if `flashrom` can detect your chipset (if you see
-     `No EEPROM/flash device found.` double check your connections and
-     the pins for your pi – I realized I had my pins setup as if I were
-     on the 26-GPIO pin Raspberry Pi rather than the 40-GPIO pin model 3)
+10. See if `flashrom` can detect your chipset (if you see
+    `No EEPROM/flash device found.` double check your connections and
+    the pins for your pi – I realized I had my pins setup as if I were
+    on the 26-GPIO pin Raspberry Pi rather than the 40-GPIO pin model 3)
 
     > **NOTE**: 2018-04-06
     >
@@ -254,16 +254,16 @@ interface.
     No operations were specified.
     ```
 
-11.  Read your flashchip and verify that the md5sums match. If the md5sums of
-     your reads don't match repeat steps 9 and 10 until they do. If they never
-     do, check your wiring with a multimeter (I had to do this at one point).
+11. Read your flashchip and verify that the md5sums match. If the md5sums of
+    your reads don't match repeat steps 9 and 10 until they do. If they never
+    do, check your wiring with a multimeter (I had to do this at one point).
 
     ``` {.bash}
     pi@raspberrypi:~$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0 -r flash01.bin
     pi@raspberrypi:~$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0 -r flash02.bin
     pi@raspberrypi:~$ md5sum flash01.bin flash02.bin
     ```
-12.  Download coreboot on the Pi. Compile and use `ifdtool` to extract all the
+12. Download coreboot on the Pi. Compile and use `ifdtool` to extract all the
     needed bits to all the right places in the coreboot `blobs` directory.
 
     ``` {.bash}
@@ -302,7 +302,7 @@ interface.
     > `3rdparty/blobs/cpu/intel/model_206ax/microcode.bin` this may be the
     > root cause.
 
-12.  Build coreboot on the Pi [following the wiki instructions](https://www.coreboot.org/Build_HOWTO)
+13. Build coreboot on the Pi [following the wiki instructions](https://www.coreboot.org/Build_HOWTO)
 
     -   configure via (**note** -- this is completely cargo-culted
         bullshit and YMMV...a lot) `make nconfig`
@@ -370,7 +370,7 @@ interface.
     > Andreas Sinninger pointed out I was missing the path to the Intel ME/TXE
     > firmware -- corrected.
 
-13. FINALLY! Flash your new `coreboot.rom` to your rom chip:
+14. FINALLY! Flash your new `coreboot.rom` to your rom chip:
     ``` {.bash}
     pi@raspberrypi:~$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0 -r flash01.bin
     pi@raspberrypi:~$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0 -r flash02.bin
@@ -387,7 +387,7 @@ Resources
 
 These are some general resources without which my X220 would be a pathetic pile of smashed up silicon by now.
 
--   [ThinkPad X220 on the coreboot wiki](https://www.coreboot.org/Board:lenovo/x220)
--   [GitHub Coreboot-ThinkPad wiki, Hardware Flashing with Raspberry Pi](https://github.com/bibanon/Coreboot-ThinkPads/wiki/Hardware-Flashing-with-Raspberry-Pi)
--   [noq2 - Corebooting ThinkPad x230](https://blog.noq2.net/corebooting-thinkpad-x230.html)
--   [Eric Holzback - Coreboot on the Lonovo X230](https://www.ericholzbach.net/blog/x230_coreboot/)
+- [ThinkPad X220 on the coreboot wiki](https://www.coreboot.org/Board:lenovo/x220)
+- [GitHub Coreboot-ThinkPad wiki, Hardware Flashing with Raspberry Pi](https://github.com/bibanon/Coreboot-ThinkPads/wiki/Hardware-Flashing-with-Raspberry-Pi)
+- [noq2 - Corebooting ThinkPad x230](https://blog.noq2.net/corebooting-thinkpad-x230.html)
+- [Eric Holzback - Coreboot on the Lonovo X230](https://www.ericholzbach.net/blog/x230_coreboot/)
