@@ -1,0 +1,10 @@
+[[!meta date="2019-03-06T15:33:09-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Books Read in 2019"]]
+[[!tag books]]
+
+1. [How to Read a Book](https://openlibrary.org/books/OL8673330M/How_to_Read_a_Book) by Mortimer J. Adler
+2. [The Big Year: A Tale of Man and Fowl Obsession](https://openlibrary.org/books/OL7928211M/The_Big_Year) by Mark Obmascik
