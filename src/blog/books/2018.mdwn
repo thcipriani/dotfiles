@@ -6,8 +6,6 @@ Copyright &copy; 2018 Tyler Cipriani
 [[!meta title="Books Read in 2018"]]
 [[!tag books]]
 
-So far...
-
 1. [Evicted: Poverty and Profit in the American City](https://openlibrary.org/books/OL26416591M/Evicted) by Matthew Desmond
 2. [Fire And Fury: Inside the Trump White House](https://openlibrary.org/books/OL26418863M/Fire_And_Fury) by Michael Wolff
 3. [The Fifth Season](https://openlibrary.org/works/OL17363125W/The_Fifth_Season) by N. K. Jemisin
@@ -17,3 +15,4 @@ So far...
 7. [Make Mead Like A Viking](https://openlibrary.org/books/OL26461539M/Make_Mead_Like_a_Viking) by Jereme Zimmerman
 8. [The Making of a Chef](https://openlibrary.org/works/OL2701691W/The_Making_of_a_Chef) by Michael Ruhlman
 9. [Educated](https://openlibrary.org/works/OL18139176W/Educated) by Tara Westover
+10. [The Comic Book Story of Beer](https://openlibrary.org/works/OL19089732W/The_Comic_Book_Story_of_Beer) by Jonathan Hennessey
