@@ -1,0 +1,4 @@
+[[!meta title="pages tagged gerrit"]]
+
+[[!inline pages="tagged(gerrit)" actions="no" archive="yes"
+feedshow=10]]
