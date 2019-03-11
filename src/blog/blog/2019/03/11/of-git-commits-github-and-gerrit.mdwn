@@ -1,0 +1,332 @@
+[[!meta date="2019-03-11T10:50:36-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2018 Tyler Cipriani
+"""]]
+[[!meta title="Of Git Commits, GitHub, and Gerrit"]]
+[[!tag git gerrit computing]]
+
+I am a connoisseur of fine git commit messages. I also find myself in the
+unenviable position of Gerrit defender. These two facts are not entirely
+unrelated.
+
+Impassioned ranting about the format of commit messages[^linus] often feels
+like cringe-inducing gatekeeping. Many times such rants seem to be written
+using language both bombastic and bellicose -- the message is: fuck off if you
+don't agree.
+
+The fact that the authors of many of these rants tend to be respected in the
+software community is confounding to many. Defense of these rants is commonplace
+and, likewise, is swift, absolute, and equally, seemingly, meant as a giant
+middle-finger to the uninitiated.
+
+Explaining new concepts to people unfamiliar with them is a good way of testing
+your understanding. Explaining new concepts repeatedly, in a seemingly unending
+cycle, is a good test of your patience. Neither lack of understanding or lack
+of patience excuse the bad behavior that is all-too-typical of the software
+hegemony.
+
+This post is meant to explain when and why commit messages matter.
+Additionally, it explains a few thoughts about the Gerrit code review system.
+
+## Pull Request vs Commit
+
+The common wisdom is that commit messages don't matter on GitHub. When I
+collaborate on GitHub I commit often and my commit messages frequently contain
+".gif", `¯\_(ツ)_/¯`, various curse words, and copious emoji. This is because
+the [unit of change in GitHub is the pull
+request](https://zachholman.com/posts/git-commit-history/). My pull requests
+are thoughtful, and attempt to explain why I developed this particular patch,
+and try to provide means of testing for this change. When trying to bisect
+history in a repository developed on GitHub the merges of pull requests are the
+thing; i.e., `Merge pull request #763` is meaningful. Pull request #763
+probably has an explanation for what changed (even if your git log doesn't).
+
+The information contianed in a pull request is useful, but is -- by design --
+only accessible online with a web browser through github.com.
+
+My current job uses [Gerrit](https://gerrit.wikimedia.org/) instead of
+GitHub. Gerrit doesn't have pull requests, it has patches. The code review
+interface is arguably not as good as GitHub -- I can't set a unified diff view by
+default in my preferences, for instance.
+[Gitiles](https://gerrit.googlesource.com/gitiles) is no substitute for using
+GitHub as a repo browser -- you can't link to blocks of code, for instance.
+Gerrit/Gitiles URLs are hard to remember, unlike GitHub's. There is little in
+the way of a "prescribed workflow". You as a developer must decide how to
+split patches meaningfully, and how to do that in such a way that adheres with
+any shared agreements about particular branches (e.g., `master` must be
+deployable).
+
+Despite its flaws, I really like Gerrit.
+
+Gerrit's use of git aligns well with git's design. The git history that Gerrit
+produces is beautiful, available offline, distributed, and useable via the git
+command line interface (more usable than in the browser, unfortunately). This
+is partially because the unit of change in Gerrit is a commit. As a result,
+`git log --oneline` is totally readable and totally useful!
+
+I prefer the repo produced by Gerrit to the repo produced by GitHub for reasons
+that relate to development, operations, and values.
+
+## Development
+
+If I'm considering making a change in a repository, especially when this change
+is an obvious or simple one, I worry. I worry: why wasn't this approach chosen
+in the first place? Is there a bug that is being worked around by using a
+non-obvious approach? Am I in an area of code that is used in many areas of the
+code base, or is it used very seldom? Is there test coverage for this function
+that I can use to ensure I am not creating a regression? A good commit message would
+answer all of these questions, and maybe more I haven't thought of yet.
+
+This information in Gerrit lives with the repository, in GitHub the information
+lives on github.com. It's very important that the information exist _somewhere_.
+
+I like the freedom to work on code when I'm on an airplane or somewhere else
+without WiFi. There may be software that can make this happen for GitHub. In
+Gerrit the unit-of-change is the Commit, so the commit has most
+information that I want. With the addition of the
+[review-notes](https://gerrit.wikimedia.org/r/Documentation/config-plugins.html#reviewnotes)
+Gerrit plugin, code reviews live in a special git note namespace
+(`/refs/notes/review`) and are also available with the repository offline.
+
+Gerrit makes no recommendations whatsoever about how you develop, and nothing
+in the patch interface aligns with your local view of your changes necessarily.
+I feel like this is confusing for people new to using Gerrit, but it is also, after
+initiation to the concept, not a bad way to develop.
+
+## Operations
+
+An appreciable portion of my job is `grep`ing through git history in the shaky
+moments following an embarrassing production outage. This exercise has given me
+a deep appreciation for well formatted git commit messages. I need to know:
+what changed, who changed it (not just who merged it), why it was changed, and
+why a particular approach was chosen.
+
+Good commit message information helps me determine what to do with a change: do
+I need to wake up the person who made this commit, or can I simply revert it?
+Is this change merely setting an unused variable, or is it a feature flag that
+will unleash new functionality?
+
+Having all this information at my fingertips, rather than having to dig through
+the 188(!) different repositories that are composed to create a production
+deployment of MediaWiki and extensions for all 933 wikis that exist in
+Wikimedia's production infrastructure is important -- I already have too many
+browser tabs open without having to dig through GitHub for repository
+histories.
+
+## Values
+
+This section speaks more to my feelings about Gerrit vs GitHub as projects more
+than Gerrit vs GitHub repositories. In the case of GitHub's use of pull
+requests, I feel like the two are inextricably linked -- GitHub has opted out
+of the open source implementation of git using proprietary software to
+implement this feature and the resultant repository is less usable as an
+artifact on its own because of this decision.
+
+The essay [Free software needs Free
+tools](https://mako.cc/writing/hill-free_tools.html) is probably a better
+summary of this topic than anything I could write here; however, the short
+version of this is: without the freedom to run, modify, study, and redistribute
+the software on which your project depends, your project is at the mercy of
+corporate caprice.
+
+Corporations are beholden to shareholders, not to users. When a corporation
+pivots away from the customers that made it a success to serve a different
+market that it perceives as more valuable that is not an uncommon or remarkable
+event: that is the design of a corporation.
+
+If you are working on a software project that's important -- if your software
+provides an essential service, or essential infrastructure that is meant to
+last many years (even beyond a single human lifetime) -- you cannot afford to
+lose a part of your infrastructure in the event that a (possibly erroneous)
+business analysis has identified a more efficient profit-center for a business.
+
+There are many counter-arguments to the ones I've made above; however, to
+summarize a few counter-arguments (possibly unfairly) they are:
+
+1. `<Closed Source/Hosted provider>`'s core business is acting in their
+customers' best interest, if its goal is to provide value to shareholders then
+to do so means being a better service for its existing customers. Our interests
+and the business's interests are aligned.
+2. `<Closed Source/Hosted provider>` is based on an open standard, so the
+information is portable, if they become a bad actor, we can port information to
+a different solution.
+
+To argument one: there are myriad examples of business decisions made at the
+expense of customers. This is particularly true once a business entity becomes
+a monopoly power as so many tech companies are at this moment. I think anyone
+would concede the example of large cable companies offering poor service to
+customers despite the fact that customers provide their revenue. Business
+interests and customer interests, even when they are currently aligned, may
+not always be.
+
+To argument two: in the instance of GitHub above (and this is applicable to
+other services as well) they have proprietary features (i.e., "pull requests")
+that make them incompatible with portability. In other instances, the
+compatibility with a portable solution is invalidated by the point of business
+caprice.
+
+## How I commit now
+
+If commit messages are important (as I argue above), then it is a valuable
+exercise to evaluate the way in which you write your commit messages.
+
+Earlier this year I came across Vicky Lai's post "[Git Commit Practices Your
+Future Self Will Thank You
+For](https://vickylai.com/verbose/git-commit-practices-your-future-self-will-thank-you-for/)"
+Which (for me anyway) highlighted the use of the git `commit.template`. Vicky
+provided an example in the post that I've been refining for myself.
+
+I've followed git commit best practices[^tpope][^mw][^juffalow] for years, so
+initially the template wasn't proving too useful. I started to think about what
+was missing from my commit messages, where I could improve formatting, and
+where I could save myself some time searching.
+
+The first issue I identified is that I can't remember the names of commit
+message fields like `Signed-off-by` or `Requested-by`. Also, my capitalization
+and ordering of those fields was all over the place. What are the
+best-practices for using these fields? I could never remember. I put all these
+fields in my template. Along with a link to the kernel patch submission
+guidelines for easy reference.
+
+The next issue I had was that there are myriad schools of thought about commit
+message bodies. Bullet points vs Problem/Solution vs "answers the following
+questions". The basic questions of "What is wrong with the code that this patch
+fixes?" sometimes hindered my ability to write a commit message that made
+sense. I wanted options. I wanted examples. I wanted links in case I felt like
+reading more. I added all this to my template.
+
+Finally, I noticed that vim does some syntax highlighting in the commit screen.
+Specifically, lines that end with `:`. So I made sure that the only lines that
+ended with `:` were important sections.
+
+I think I have a template I can live with for a while. It's verbose. Probably
+too verbose, really. But my mind works in ways I don't understand sometimes.
+To keep it on track, I need all the information it craves at my fingertips in a
+context-dependant way. I think this template is ideal for that.
+
+## Git Commit ZOMG!!1!
+
+The `commit.template` below is in my dotfiles as `.git-commit-zomg`. I
+install the template using the command `git config --global
+commit.template ~/.git-commit-zomg`.
+
+I named this template `.git-commit-zomg` because I have mixed feelings about
+commit messages. I think a lot about commit messages. I think they're
+important. I evidently feel that they're "rant worthy" in some context. I
+still, however, know people will decide the value of commit messages on their
+own. You can tell people the value you think commit messages will have, and they'll
+maybe ackowledge your concerns are valid. Maybe they'll even make changes in
+their process. But no one groks to fullness.
+
+Someday production will be down. Rollback will have failed with an opaque
+error. Your mind will be screaming too loud for you to think clearly. You'll
+frantically `grep` `git log` output for the error message -- something,
+anything -- and you'll come face-to-face with a commit (probably authored by
+you) that reads, simply, `¯\_(ツ)_/¯`. To paraphrase Jack Handy: when this
+moment comes, if you're drinking milk, I bet it will make milk come out your
+nose.
+
+```
+
+# ^^ Subject: summary of your change:
+# * 50 Characters is a soft limit (aim for < 80)
+# * "If applied, this commit will..."
+# * Use the imperative mood; e.g.,
+#   (Change/Add/Fix/Remove/Update/Refactor/Document)
+# * Do not end the subject with a period (full stop)
+# * Optionally, prefix the subject with the relevant component
+#   (the general area of code being modified)
+#
+# Example[0]
+#
+#     jquery.badge: Add ability to display the number zero
+#
+# [0]. <https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines#Subject>
+#
+# Leave this blank line below your subject:
+
+# Body: Additional information about a commit:
+
+# Think about these questions
+#
+# * Why should this change should be made?
+#   What is wrong with the current code?
+# * Why should it be changed in this way?
+#   Are there other ways?
+# * How can a reviewer confirm that your change works as intended?[0]
+#
+# * An alternative format maybe a problem/solution commit as used in
+#   ZeroMQ[1]; e.g.
+#
+#       * Problem: Windows build script requires edit of VS version
+#       * Solution: Use CMD.EXE environment variable to extract
+#         DevStudio version number and build using it.
+#
+# [0]. <https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines#Body>
+# [1]. <http://zeromq.org/docs:contributing#toc3>
+
+# ---
+#
+# Bug number:
+#
+# Bug: TXXXXXX
+#
+# ---
+#
+# Gerrit specific:
+#
+# Change-Id: IXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# Depends-On: IXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#
+# ---
+#
+# Sign your work:
+#
+# > The sign-off is a simple line at the end of the explanation for the
+# > patch, which certifies that you wrote it or otherwise have the right to
+# > pass it on as a open-source patch [0]
+#
+# Signed-off-by: Example User <user@example.com>
+#
+# [0]. <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/SubmittingPatches?id=4e8a2372f9255a1464ef488ed925455f53fbdaa1>
+#
+# ---
+#
+# Other Nice Things:
+#
+# If you worked on a patch with others it's nice to credit them for
+# their contributions; however, these tags should not be added without
+# your collaborator's permission!
+
+# Acked-by: Example User <user@example.com>
+# Cc: Example User <user@example.com>
+# Co-Authored-by: Example User <user@example.com>
+# Requested-by: Example User <user@example.com>
+# Reported-by: Example User <user@example.com>
+# Reviewed-by: Example User <user@example.com>
+# Suggested-by: Example User <user@example.com>
+# Tested-by: Example User <user@example.com>
+# Thanks: Example User <user@example.com>
+#
+# ---
+#        _ _                                   _ _
+#   __ _(_) |_    ___ ___  _ __ ___  _ __ ___ (_) |_   _______  _ __ ___   __ _
+#  / _` | | __|  / __/ _ \| '_ ` _ \| '_ ` _ \| | __| |_  / _ \| '_ ` _ \ / _` |
+# | (_| | | |_  | (_| (_) | | | | | | | | | | | | |_   / / (_) | | | | | | (_| |
+#  \__, |_|\__|  \___\___/|_| |_| |_|_| |_| |_|_|\__| /___\___/|_| |_| |_|\__, |
+#  |___/                                                                  |___/
+#
+# Save to `~/.git-commit-zomg` Then run:
+#
+#     git config --global commit.template ~/.git-commit-zomg
+#
+# The idea for this template came from Vicky Lai[0]
+#
+# [0]. <https://vickylai.com/verbose/git-commit-practices-your-future-self-will-thank-you-for/>
+```
+
+[^linus]: <https://github.com/torvalds/linux/pull/17#issuecomment-5654674>
+[^tpope]: <https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>
+[^mw]: <https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines>
+[^juffalow]: <https://juffalow.com/other/write-good-git-commit-message>
