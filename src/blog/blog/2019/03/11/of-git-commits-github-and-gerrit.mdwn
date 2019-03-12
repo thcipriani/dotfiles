@@ -6,10 +6,6 @@ Copyright &copy; 2018 Tyler Cipriani
 [[!meta title="Of Git Commits, GitHub, and Gerrit"]]
 [[!tag git gerrit computing]]
 
-I am a connoisseur of fine git commit messages. I also find myself in the
-unenviable position of Gerrit defender. These two facts are not entirely
-unrelated.
-
 Impassioned ranting about the format of commit messages[^linus] often feels
 like cringe-inducing gatekeeping. Many times such rants seem to be written
 using language both bombastic and bellicose -- the message is: fuck off if you
