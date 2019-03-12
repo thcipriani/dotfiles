@@ -1,7 +1,7 @@
 [[!meta date="2019-03-11T10:50:36-06:00"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta copyright="""
-Copyright &copy; 2018 Tyler Cipriani
+Copyright &copy; 2019 Tyler Cipriani
 """]]
 [[!meta title="Of Git Commits, GitHub, and Gerrit"]]
 [[!tag git gerrit computing]]
