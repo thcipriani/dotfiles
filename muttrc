@@ -16,6 +16,7 @@ mailboxes \
   "+ML.mediawiki-l" \
   "+ML.wmfall" \
   "+ML.ops" \
+  "+ML.github" \
   "+ML.debian-security" \
   "+ML.debian-user" \
   "+ML.debian-devel" \
@@ -23,6 +24,7 @@ mailboxes \
   "+ML.coreboot" \
   "+ML.unicode" \
   "+CI" \
+  "+pipelinebot" \
   "+auto" \
   "+sent" \
   "+drafts" \

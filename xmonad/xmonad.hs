@@ -78,9 +78,16 @@ myManageHook = composeAll
     , className =? "Svkbd"         --> doFloat
     , className =? "Google-chrome" --> doShift "web"
     , className =? "Firefox"       --> doShift "web"
+    , className =? "Chromium" <&&> appName =? "calendar.google.com__b_1_r" --> doFullFloat
     , isFullscreen                 --> doFullFloat
     , namedScratchpadManageHook scratchpads
     ]
+
+-- scratchChromeApp name url = NS name cli q defaultFloating
+--   where cli = "google-chrome-stable --app=https://" <> url
+--         q = windowQuery "Chromium" url
+--
+-- windowQuery class_ resource_ = className =? class_ <&&> resource =? resource_
 
 scratchpads = [NS "scratch" "urxvt -name scratch"
       (appName =? "scratch")
@@ -88,6 +95,10 @@ scratchpads = [NS "scratch" "urxvt -name scratch"
     , NS "capture" "emacsclient -n -e '(make-capture-frame)'"
       (appName =? "capture")
       (customFloating $ W.RationalRect 0.55 0.55 0.45 0.45)
+    -- , scratchChromeApp "cal" "calendar.google.com/b/1/r"
+    , NS "cal" "chrome --app='https://calendar.google.com/b/1/r'"
+      (className =? "Chromium" <&&> appName =? "calendar.google.com__b_1_r")
+      (customFloating $ W.RationalRect 0.9 0.9 0.9 0.9)
     ]
 
 myWorkspaces = ["web","term"] ++ map show [3..9]
@@ -162,6 +173,7 @@ main = do
      , ("M-S-p", namedScratchpadAction scratchpads "scratch")
      -- http://www.solasistim.net/posts/org_mode_with_capture_and_xmonad/
      , ("M-S-o", namedScratchpadAction scratchpads "capture" )
+     , ("M-S-s", namedScratchpadAction scratchpads "cal" )
      , ("M-v", spawn "urxvt -e alsamixer -c 1")
      , ("M-S-v", spawn "xdotool click 2")
      , ("M-l", spawn "lock")

@@ -44,9 +44,11 @@ mailbox_maybe(account, 'ML/debian-devel')
 mailbox_maybe(account, 'ML/debian-security')
 mailbox_maybe(account, 'ML/debian-bugs')
 mailbox_maybe(account, 'ML/coreboot')
+mailbox_maybe(account, 'ML/github')
 mailbox_maybe(account, 'ML/unicode')
 mailbox_maybe(account, 'CR')
 mailbox_maybe(account, 'auto')
+mailbox_maybe(account, 'pipelinebot')
 mailbox_maybe(account, 'task')
 
 -- results = inbox:contain_to('wmfall@lists.wikimedia.org')
@@ -88,11 +90,16 @@ results = inbox:contain_from('gerrit@wikimedia.org')
 -- results:mark_flagged()
 -- results:move_messages(account['CR'])
 
+-- Github
+results = inbox:contain_cc('subscribed@noreply.github.com')
+results = inbox:contain_cc('push@noreply.github.com')
+results:move_messages(account['ML/github'])
+
 -- Phabricator-mail-tags that contain differential
 -- X-Phabricator-Mail-Tags: <differential-review-request>, <differential-other>, <differential-reviewers>
 -- results = inbox:contain_field('X-Phabricator-Mail-Tags', '<differential-review-request>')
 -- results = inbox:match_header('.*X-Phabricator-Mail-Tags: <differential-review-request>.*')
-results = inbox:contain_subject('[Differential]')
+-- results = inbox:contain_subject('[Differential]')
 -- results:mark_flagged()
 -- results:move_messages(account['CR'])
 
@@ -105,6 +112,9 @@ results:move_messages(account['auto'])
 results = inbox:contain_subject('customchannels@ccubuntu')
 results:move_messages(account['auto'])
 
-results = inbox:contain_subject('[Maniphest]')
+-- results = inbox:contain_subject('[Maniphest]')
 -- results:mark_flagged()
 -- results:move_messages(account['task'])
+
+results = inbox:contain_to('tcipriani+pipelinebot@wikimedia.org')
+results:move_messages(account['pipelinebot'])
