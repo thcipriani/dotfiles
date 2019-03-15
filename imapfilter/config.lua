@@ -14,14 +14,20 @@ function getnetrc (key)
     return value
 end
 
+-- Check if mailbox exists
+-- <https://github.com/lefcha/imapfilter/issues/37>
+function mailbox_exists(account, mailbox)
+    local result = account:list_all('', mailbox)
+    if #result > 0 then return true else return false end
+end
+
 -- Create mailbox if it doesn't exist
 function mailbox_maybe(account, mailbox)
-    exist, _, _, _ = account[mailbox]:check_status()
-    if exist < 0 then
+    if mailbox_exists(account, mailbox) then
+        print(string.format('Mailbox %q already created...', mailbox))
+    else
         print(string.format('Creating mailbox %q', mailbox))
         account:create_mailbox(mailbox)
-    else
-        print(string.format('Mailbox %q already created...', mailbox))
     end
 end
 
