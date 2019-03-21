@@ -38,13 +38,13 @@ history in a repository developed on GitHub the merges of pull requests are the
 thing; i.e., `Merge pull request #763` is meaningful. Pull request #763
 probably has an explanation for what changed (even if your git log doesn't).
 
-The information contianed in a pull request is useful, but is -- by design --
+The information contained in a pull request is useful, but is -- by design --
 only accessible online with a web browser through github.com.
 
 My current job uses [Gerrit](https://gerrit.wikimedia.org/) instead of
 GitHub. Gerrit doesn't have pull requests, it has patches. The code review
-interface is arguably not as good as GitHub -- I can't set a unified diff view by
-default in my preferences, for instance.
+interface is arguably not as good as GitHub <strike>-- I can't set a unified diff view by
+default in my preferences, for instance.</strike> (edit 2019-03-21. unified diff is available in top-level preferences)
 [Gitiles](https://gerrit.googlesource.com/gitiles) is no substitute for using
 GitHub as a repo browser -- you can't link to blocks of code, for instance.
 Gerrit/Gitiles URLs are hard to remember, unlike GitHub's. There is little in
