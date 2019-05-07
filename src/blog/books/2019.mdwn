@@ -8,3 +8,4 @@ Copyright &copy; 2019 Tyler Cipriani
 
 1. [How to Read a Book](https://openlibrary.org/books/OL8673330M/How_to_Read_a_Book) by Mortimer J. Adler
 2. [The Big Year: A Tale of Man and Fowl Obsession](https://openlibrary.org/books/OL7928211M/The_Big_Year) by Mark Obmascik
+3. [Parable of the Sower](https://openlibrary.org/works/OL35623W/Parable_of_the_sower) by Octavia E. Butler
