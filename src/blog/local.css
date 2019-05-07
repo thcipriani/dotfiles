@@ -1138,6 +1138,13 @@ code > span.ot { color: #007020; }
 code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
+
+.sourceLine:hover {
+    color: inherit;
+    text-decoration: none;
+    background-image: none;
+}
+
 /*
  * As responsive as I get
  * ======================= */
