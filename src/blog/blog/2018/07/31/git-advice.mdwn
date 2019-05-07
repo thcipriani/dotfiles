@@ -27,6 +27,7 @@ problem with a git repository simply by `cd`-ing into its worktree.
     [comments](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh#L10-L31)
     at the beginning of the file. One simple way to use it (on Debian machines
     anyway) is to add the following to your shell initialization file:
+
     ```{.bash}
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWDIRTYSTATE=1
@@ -40,6 +41,7 @@ problem with a git repository simply by `cd`-ing into its worktree.
     it easy to miss a `git submodule update` step. After adding
     `status.submoduleSummary` to your `~/.gitconfig`, git will show you a short
     summary of submodule changes in the output of `git status`. Set it by executing:
+
     ```{.shell-session}
     you@computer:~$ git config --global status.submoduleSummary true
     ```
