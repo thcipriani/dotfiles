@@ -34,20 +34,21 @@ Copyright &copy; 2017 Tyler Cipriani
 :   * Wikimedia foundation's deployment software. I led the most-recent update
       for this software.
 
+[Blubber](https://github.com/wikimedia/blubber)
+:   * Stateless software writen in Go that generates `Dockerfile`s from a
+      higher-level description expressed as YAML for Wikimedia's production
+      infrastructure.
+:   * Involved in development and wrote the [beautiful documentation](https://wikitech.wikimedia.org/wiki/Blubber).
+
 [Keyholder](https://github.com/wikimedia/keyholder)
 :   * Python3 `ssh-agent` proxy. I wrote about
       [Keyholder](https://blog.wikimedia.org/2017/03/22/keyholder/) for the
       Wikimedia Foundation blog.
 
-[JenkHub](https://github.com/sparkfun/jenkhub) `INACTIVE`
-:   * Ruby daemon to connect SparkFun's internal Jenkins server with our GitHub
-      hosted repository
-
 [.dotfiles](https://github.com/thcipriani/dotfiles)
 :   * My dotfiles became a personal archive several years ago. This repository
       keeps my configuration and scripts, serves my blog, and holds all my photos.
       One repository to maintain over many years.
-
 
 ## Experience
 
@@ -102,11 +103,11 @@ Copyright &copy; 2017 Tyler Cipriani
 I write things, sometimes about work, sometimes about other stuff. Here are a
 few choice bits for getting to know me better.
 
-* [[My Remote Desk|blog/2016/11/07/my-remote-desk]]
-* [[Why I Will Continue to use Linode|blog/2016/09/18/why-i-will-continue-to-use-linode]]
+* [[The 14KB In The TCP Initial Window|blog/2016/09/25/the-14kb-in-the-tcp-initial-window]]
+* [[The Rsync Algorithm in Python|blog/2017/07/09/the-rsync-algorithm-in-python]]
 * [[Visualizing Git's Merkle Dag|blog/2016/03/21/Visualizing-Git-Merkle-DAG-with-D3.js]]
-* [[(ab)Using Git Notes|blog/2016/08/26/abusing-git-notes]]
 * [[Coreboot on X220 with Raspberry Pi|blog/2016/11/13/coreboot-on-the-thinkpad-x220-with-a-raspberry-pi]]
+* [[Halloween Nerd Projects 👻|blog/2018/10/30/halloween-nerd-projects]]
 
 [[Even more →|posts]]
 
