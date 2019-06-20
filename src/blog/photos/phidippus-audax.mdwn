@@ -1,0 +1,31 @@
+[[!meta date="2019-06-19 12:32:13"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Phidippus audax"]]
+[[!tag
+photos
+photos/50mm-f-1.8
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/3c/47427a53ce9cdc541b566d5972e8db/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/3c/47427a53ce9cdc541b566d5972e8db/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/3c/47427a53ce9cdc541b566d5972e8db/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/3c/47427a53ce9cdc541b566d5972e8db/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/3c/47427a53ce9cdc541b566d5972e8db/original.jpg)](https://photos.tylercipriani.com/thumbs/3c/47427a53ce9cdc541b566d5972e8db/large.jpg)
+
+
+
+EXIF |
+--- | ---
+ExposureTime | 1/250
+FNumber | 16.0
+FocalLength | 50.0 mm
+CreateDate | 2019-06-19 12:32:13
+Lens | 50mm f/1.8
+ISO | 640
+Model | NIKON D610
+Make | NIKON CORPORATION
+
