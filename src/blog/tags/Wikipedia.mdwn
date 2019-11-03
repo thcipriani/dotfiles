@@ -1,0 +1,4 @@
+[[!meta title="pages tagged Wikipedia"]]
+
+[[!inline pages="tagged(Wikipedia)" actions="no" archive="yes"
+feedshow=10]]
