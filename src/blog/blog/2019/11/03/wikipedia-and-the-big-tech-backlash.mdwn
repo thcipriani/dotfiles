@@ -1,0 +1,74 @@
+[[!meta date="2019-11-03T22:34:18.472483"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Wikipedia and the Big-Tech Backlash"]]
+[[!tag computing culture wikimedia Wikipedia]]
+
+While the big-tech giants of Silicon Valley are drawing some much deserved
+scrutiny from the public and from lawmakers in the United States, Wikipedia --
+a tech giant in its own right -- has remained above the fray.
+
+This is not because Wikipedia is inherently a force for good -- although it is
+most certainly that -- rather there are two things that protect Wikipedia (and
+its users): Wikipedia does not sacrifice the privacy of its users and Wikipedia
+is *not* a social media site. The failure to recognize these distinctions
+represents an existential threat to Wikipedia and its mission of Free
+Knowledge. It's easy to become complacent if you feel like your ends will
+always justify your means.
+
+Wikipedia is unique among large websites simply by *not* being a social media
+site. Wikipedia is an encyclopedia -- it's a tertiary source. It does not
+contain [original research][WP_OR] or opinion (at least where [most folks
+look][jacobs]). The proliferation of misinformation is often stymied by having
+to cite reliable sources (particularly when you also create guidelines for
+[reliable sources][WP_RS]). Further, the Wikipedia community works tirelessly
+to ensure the integrity of information on the platform. There are
+[many][zillman] [problems][sayej] with the information on Wikipedia -- these
+problems are a reflection of the problems with the culture that created
+Wikipedia and not (for the most part) problems inherent to Wikipedia itself.
+Tertiary sources are cultural artifacts that reflect culture back on itself.
+Wikipedia is part of the culture, but it is not creating a cultural shift in
+the same way that social media does (for better or worse).
+
+Wikipedia is also unique among large websites in that it doesn't exploit
+user-privacy to turn a profit. The foundations of Wikipedia and Free
+Knowledge are the Free Software and Free Culture movements, which are
+themselves antithetical to the late-stage capitalism that has pushed many
+Silicon Valley unicorns into the exploitation of their user-base for short-term
+gains. That is not to say that this kind of exploitation is antithetical to
+Wikipedia itself -- only that it hasn't happened because the community involved
+hasn't allowed it to happen: missing this distinction is an existential threat
+to Wikipedia as a bulwark of Free Culture.
+
+The ends of Free Knowledge, however noble, can easily become corrupted if the
+means by which that knowledge is gained and disseminated are incompatible with
+the foundations of the Free Culture movement.
+
+Much akin to the [Euthyphro dilemma][Euthyphro_dilemma], Free Knowledge isn't
+good because it's what Wikipedia -- a force for good -- does; rather, the
+[mission][wp_mission] and [values][wp_values] of the Free Knowledge movement
+are good for the world so (for now at least) Wikipedia is doing them.
+
+Treating Wikipedia as a [panacea for the myriad sins of Silicon
+Valley][herrman] is not simply a disservice to Wikipedia, it endangers
+Wikipedia's future by lulling those with an outsized influence on the movement
+and its direction into a false sense of certainty that -- whatever the path --
+if Wikipedia's doing it: it'll be for the best.
+
+<blockquote style="background: rgba(255, 0, 0, 0.1); border: 1px solid tomato; text-align: center;">
+<h3>BIG GIANT DISCLAIMER OF DOOM</h3>
+
+My views are my own. My views do not represent the views of any employer I've had/have: past, present, or future. I'm probably not even qualified to have these views. I am an egg.
+</blockquote>
+
+[WP_OR]: <https://en.wikipedia.org/wiki/WP:OR>
+[WP_RS]: <https://en.wikipedia.org/wiki/WP:RS>
+[jacobs]: <https://www.nytimes.com/2019/04/08/us/wikipedia-harassment-wikimedia-foundation.html>
+[Euthyphro_dilemma]: <https://en.wikipedia.org/wiki/Euthyphro_dilemma>
+[wp_mission]: <https://meta.wikimedia.org/wiki/Mission>
+[wp_values]: <https://meta.wikimedia.org/wiki/Values/2008>
+[herrman]: <https://www.nytimes.com/2018/03/19/business/media/youtube-wikipedia.html>
+[sayej]: <https://www.theguardian.com/artanddesign/2018/mar/15/wikipedia-edit-a-thon-women-arts>
+[zillman]: <https://fortune.com/2018/10/17/donna-strickland-nobel-prize-physics-wikipedia/>
