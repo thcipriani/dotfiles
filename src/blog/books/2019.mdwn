@@ -9,3 +9,10 @@ Copyright &copy; 2019 Tyler Cipriani
 1. [How to Read a Book](https://openlibrary.org/books/OL8673330M/How_to_Read_a_Book) by Mortimer J. Adler
 2. [The Big Year: A Tale of Man and Fowl Obsession](https://openlibrary.org/books/OL7928211M/The_Big_Year) by Mark Obmascik
 3. [Parable of the Sower](https://openlibrary.org/works/OL35623W/Parable_of_the_sower) by Octavia E. Butler
+4. [FOAM: Practical Guides for Beer Quality](https://openlibrary.org/books/OL27632834M/FOAM_Practical_Guides_for_Beer_Quality) by Charles W. Bamforth
+5. [The Focued Puppy](https://openlibrary.org/books/OL27632854M/The_Focused_Puppy) by Deborah Jones
+6. [Social, Civil, and Savvy](https://openlibrary.org/works/OL20199485W/Social_Civil_and_Savvy) by Laura VanArendonk Baugh
+7. [Fired Up, Frantic, and Freaked Out](https://openlibrary.org/books/OL27632844M/Fired_Up_Frantic_and_Freaked_Out) by Laura VanArendonk Baugh
+8. [A Gentleman in Moscow](https://openlibrary.org/works/OL17797130W/A_Gentleman_in_Moscow) by Amor Towles
+9. [Before and After Getting Your Puppy](https://openlibrary.org/works/OL8926364W/Before_and_After_Getting_Your_Puppy) by Dr. Ian Dunbar
+10. [On Talking Terms With Dogs: Calming Signals](https://openlibrary.org/works/OL8822098W/On_Talking_Terms_With_Dogs) by Turid Rugaas
