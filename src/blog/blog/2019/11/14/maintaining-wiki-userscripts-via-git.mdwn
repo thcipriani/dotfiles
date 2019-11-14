@@ -3,7 +3,7 @@
 [[!meta copyright="""
 Copyright &copy; 2019 Tyler Cipriani
 """]]
-[[!meta title="Maintaining Wiki Userscripts via Git"]]
+[[!meta title="Maintaining MediaWiki User Scripts via Git"]]
 [[!tag computing wikimedia Wikipedia]]
 
 This week I'm at the [Wikimedia Technical Conference][wptc] in Atlanta,
