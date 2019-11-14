@@ -1,0 +1,119 @@
+[[!meta date="2019-11-14T01:25:48.322545"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Maintaining Wiki Userscripts via Git"]]
+[[!tag computing wikimedia Wikipedia]]
+
+This week I'm at the [Wikimedia Technical Conference][wptc] in Atlanta,
+Georgia. I've attended a bunch of great sessions and I'm getting a lot out of
+my attendance. Today I attended a session about "user scripts" that piqued my
+interest.
+
+[MediaWiki user scripts][WP:US] are powerful user-customizations, written in
+JavaScript, that themselves exists as pages *on* the wiki and are used to
+modify a user's view of MediaWiki page. There are many [available user
+scripts][WP:USL], and you can also write your own directly in your [common.js
+user page][common.js] (or in any lowercase user page).
+
+I'm enamoured by all of this. Going into this session, I wasn't too terribly
+familiar with gadgets and user scripts -- but I learned a ton! The folks in the
+community know best the kinds of customizations that will improve their lives,
+and here's the mechanism by which they're empowered to make that happen. There
+are, however, some issues with this approach.
+
+I love wikipages, but I was, long-ago, crippled by Vim and I can't edit any
+long-form text outside of Vim and a wikipage is not Vim. Further, code review
+for user scripts seems, from what I'm told anyway, a bit ad hoc.
+
+One of the projects I spend a lot of time digging in is [git][git];
+particularly in the `contrib` folder of the project. There are all sorts of
+strange and wonderful scripts there. One contrib script that I've been aware of
+for years is [`mw-to-git`][mw-to-git] which is a perl module that provides a
+custom MediaWiki remote for git repos. This, to me, seems like a potential
+solution to this problem.
+
+## Setup and usage
+
+After you've installed `git-mediawiki` and have that in your path and the perl
+module installed, the process is not too involved.
+
+First, you initialize a git repo setting the "pages" variable on the remote to
+limit it only to the pages you're interested in. In this instance, I'm
+interested in my user's `common.js` file:
+
+```{.shell}
+$ git init
+Initialized empty Git repository in /home/thcipriani/Projects/User:Thcipriani/.git/
+$ git remote add origin mediawiki::https://en.wikipedia.org/w
+$ git config remote.origin.pages 'User:Thcipriani/common.js'
+$ git pull
+Searching revisions...
+No previous mediawiki revision found, fetching from beginning.
+Fetching & writing export data by pages...
+Listing pages on remote wiki...
+1 pages found.
+page 1/1: User:Thcipriani/common.js
+  Found 2 revision(s).
+Namespace User not found in cache, querying the wiki ...
+1/2: Revision #926066306 of User:Thcipriani%2Fcommon.js
+2/2: Revision #926066361 of User:Thcipriani%2Fcommon.js
+Searching revisions...
+No previous mediawiki revision found, fetching from beginning.
+Fetching & writing export data by pages...
+Listing pages on remote wiki...
+1 pages found.
+page 1/1: User:Thcipriani/common.js
+  Found 2 revision(s).
+1/2: Revision #926066306 of User:Thcipriani%2Fcommon.js
+2/2: Revision #926066361 of User:Thcipriani%2Fcommon.js
+$ git checkout master
+```
+
+Now I have a file in that directory, `User:Thcipriani%2Fcommon.js.mw`, that
+contains the contents of my `common.js` page. From here I can make slight
+modifications to the page and push it backup via the same git remote.
+
+```
+$ chmod 600 .git/config  # Since we'll end up with a password in there
+$ git config remote.origin.mwUser 'Thcipriani'
+$ git config remote.origin.mwPassword 'NotMyPassword1234'
+$ git push
+Last local mediawiki revision found is 926066361.
+Logged in mediawiki user "thcipriani".
+Listing pages on remote wiki...
+1 pages found.
+Getting last revision id on tracked pages...
+Last remote revision found is 926066361.
+Computing path from local to remote ...
+Namespace User:Thcipriani/common.js.mw not found in cache, querying the wiki ...
+No such namespace User:Thcipriani/common.js.mw on MediaWiki, known namespaces: Book Book_talk Category Category_talk Draft Draft_talk Education_Progra$
+ Education_Program_talk File File_talk Gadget Gadget_definition Gadget_definition_talk Gadget_talk Help Help_talk Media MediaWiki MediaWiki_talk Modul$
+ Module_talk Portal Portal_talk Project Project_talk Special Talk Template Template_talk TimedText TimedText_talk User User_talk Wikipedia Wikipedia_t$
+lk
+Pushed file: 3f1cfc54f8c831f47aff3f05d33e5e12fd9d3df8 - User:Thcipriani/common.js
+To mediawiki::https://en.wikipedia.org/w
+ * [new branch]      master -> master
+```
+
+I also added a [github  remote][github] for this repo. I could see, for example
+(if I had a popular user script) allowing pull-requests via github, code
+reviewing on github, merging, and pushing back up to Wikipedia post-merge.
+
+There are undoubtedly issues here, but I had this idea kicking around my head
+and wanted to get it committed to pixels before it slipped out of my mind.
+
+<blockquote style="background: rgba(255, 0, 0, 0.1); border: 1px solid tomato; text-align: center;">
+<h3>BIG GIANT DISCLAIMER OF DOOM</h3>
+
+My views are my own. My views do not represent the views of any employer I've had/have: past, present, or future. I'm probably not even qualified to have these views. I am an egg.
+</blockquote>
+
+[wptc]: <https://www.mediawiki.org/wiki/Wikimedia_Technical_Conference/2019>
+[WP:US]: <https://en.wikipedia.org/wiki/WP:US>
+[WP:USL]: <https://en.wikipedia.org/wiki/WP:USL>
+[common.js]: <https://en.wikipedia.org/wiki/Special:MyPage/common.js>
+[git]: <https://github.com/git/git>
+[mw-to-git]: <https://github.com/git/git/blob/master/contrib/mw-to-git/git-remote-mediawiki.txt>
+[github]: <https://github.com/thcipriani/common.js>
