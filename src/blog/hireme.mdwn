@@ -4,99 +4,95 @@
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
 """]]
 [[!meta copyright="""
-Copyright &copy; 2017 Tyler Cipriani
+Copyright &copy; 2019 Tyler Cipriani
 """]]
 [[!meta title="Résumé"]]
 [[!meta stylesheet=static/css/resume rel="stylesheet" title="resume-stylesheet"]]
 
 ## Contact
 
-[tyler@tylercipriani.com][email]
+![][Tyler Cipriani]
 
-`6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
+* [tyler@tylercipriani.com][email]
+* `6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
+* (720)515-2479
 
-(720)515-2479
+[email]: mailto:tyler@tylercipriani.com "Tyler Cipriani -- Email"
 
-## About
-
-> ![Tyler Cipriani][]
->
-> ### Hi! I'm Tyler. `/me *waves*`
-> I believe in libre software that works for users to help empower a vibrant and thoughtful community.
->
-> [tyler@tylercipriani.com][email]
->
-> `6237 D8D3 ECC1 AE91 8729  296F F6DA D285 018F AC02`
-
-## Open Source
+## Software
 
 [Scap](https://github.com/wikimedia/scap)
-:   * Wikimedia foundation's deployment software. I led the most-recent update
-      for this software.
+:   * Wikimedia foundation's deployment software
+    * Primary maintainer/led the most-recent update for this software
 
 [Blubber](https://github.com/wikimedia/blubber)
 :   * Stateless software writen in Go that generates `Dockerfile`s from a
       higher-level description expressed as YAML for Wikimedia's production
       infrastructure.
-:   * Involved in development and wrote the [beautiful documentation](https://wikitech.wikimedia.org/wiki/Blubber).
+    * Involved in development and wrote the [beautiful documentation](https://wikitech.wikimedia.org/wiki/Blubber).
 
-[Keyholder](https://github.com/wikimedia/keyholder)
-:   * Python3 `ssh-agent` proxy. I wrote about
-      [Keyholder](https://blog.wikimedia.org/2017/03/22/keyholder/) for the
-      Wikimedia Foundation blog.
-
-[.dotfiles](https://github.com/thcipriani/dotfiles)
-:   * My dotfiles became a personal archive several years ago. This repository
-      keeps my configuration and scripts, serves my blog, and holds all my photos.
-      One repository to maintain over many years.
+[sshecret](https://github.com/thcipriani/sshecret)
+:   * Python3 `ssh-agent` socket manager -- use only one socket per domain
+    * Personal project -- author and maintainer
 
 ## Experience
 
-![Wikimedia Foundation][] **Wikimedia Foundation** --  _Software Engineer_ -- 2015-02-09 - _Present_
-:   * Led creation of python-based deployment tooling that deploys changes for all
-      software in production--including MediaWiki--to around 1,000 production
-      servers
-
-    * Work as part of a cross-department team to migrate production microservices
-      to a continuous deployment pipeline using Go, Docker, Minikube, and
-      Kubernetes
-
+![][wmf-logo] Wikimedia Foundation
+:   +:----------------------------+--------------------:+
+    | Release Engineering Manager | Sep 2019 - Present  |
+    | Senior Software Engineer    | Jul 2018 - Sep 2019 |
+    | Software Engineer           | Feb 2015 - Jul 2018 |
+    +-----------------------------+---------------------+
+:   * Primary maintainer of python-based deployment tooling for Wikipedia and micro-services
+    * Migration of production microservices to a continuous delivery pipeline
+      using Go, Docker, and Kubernetes
+    * Primary administrator of Gerrit git hosting for Wikimedia for 2,000+ repos
+      with 6,000+ users
     * Tech:\
       `Linux` `Debian` `Python` `Git` `Puppet` `Jenkins` `Go` `Docker` `Kubernetes`
-      `MediaWiki` `PHP`
 
-![SparkFun][] **SparkFun** --  _Web Developer/Systems Administrator_ -- 2013-11-18 - 2015-02-07
+![][sf-logo] SparkFun Electronics
+:   +:------------------------------------+--------------------:+
+    | Web Developer/Systems Administrator | Nov 2013 - Feb 2015 |
+    +-------------------------------------+---------------------+
+:   * Designed and built ruby-based system to monitor our GitHub-backed VCS and
+      run builds on our in-house Jenkins
+    * Ported PHP unit tests to industry-standard PHPUnit
+    * Built and managed new tablet-based picking and shipping system
+    * Tech:\
+      `Linux` `Debian` `PHP` `PostgreSQL` `Chef` `Git` `MongoDB`
+      `Nagios` `Jenkins` `CasperJS` `PHPUnit` `saltstack`
 
-:   * Created android-tablet, ReactJS-based shipping software
+![][upsync-logo] UpSync
+:   +:------------------------------------+--------------------:+
+    | Web Developer/Systems Administrator | Oct 2012 - Nov 2013 |
+    +-------------------------------------+---------------------+
+:   * Built, monitored, and maintained load-balanced VPC CentOS-6-based LAMP
+      stack on AWS
+    * Created local development environment using Vagrant and Chef
+    * Migrated repo from SVN to Git servers managed in-house
+    * Tech:\
+      `Linux` `AWS` `CentOS` `PHP` `MariaDB` `Chef` `SVN` `Jira` `Bash`
 
-    * Migrated important table logging from MongoDB to PostgreSQL-trigger audit
-      trail
-
-    * **Environment**:\
-        `PHP` `PostgreSQL` `Debian` `chef` `Git` `nginx` `MongoDB` `Memcached`
-        `Beanstalk` `Gearman` `Nagios` `Jenkins` `CasperJS` `PHPUnit`
-        `jQuery` `QUnit` `Bootstrap` `saltstack`
-
-![UpSync][] **UpSync** -- _Web Developer/Systems Administrator_ -- 2012-10-22 - 2013-11-15
-:   * Developed features for mobile, offline project with PHP 5.4, JavaScript, and Objective-C
-
-    * Built, monitored, and maintained load-balanced VPC CentOS-6-based LAMP stack on AWS
-
-    * **Environment**:\
-        `AWS` `CentOS` `PHP` `MySQL` `XCode/Objective-C` `SVN` `Nagios` `Cacti`
-        `WebSQL` `AMD.js` `Backbone` `D3` `jQuery`
-
-![Custom Channels][] **Custom Channels** -- _Director of Technology_ -- 2009-07-22 - 2012-10-19
+![][cc-logo] Custom Channels
+:   +:----------+--------------------:+
+    | Developer | Jul 2009 - Oct 2012 |
+    +-----------+---------------------+
 :   * Built and maintained small pool of Xen-based virtual servers
-
     * Built and maintained Linux (CentOS and Ubuntu) VPS machines for file
       storage, streaming media, and web applications
-
     * Built command line tools to manage 100s of thousands of OGG, FLAC, and
       MP3 files
-
     * Developed, designed, and architected internal and customer-facing MVC web
       services to stream music and manage a playlist of songs
+    * Tech:\
+      `Linux` `Xen` `Ubuntu` `PHP` `Git` `Bash`
+
+[Tyler Cipriani]: https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/2017-01-06_tyler-cipriani-240.jpg "Tyler Cipriani -- Avatar"
+[wmf-logo]: https://photos.tylercipriani.com/thumbs/0d/a64f7d1d1a423ef5120c951cfe4c63/original.png "Wikimedia Foundation"
+[upsync-logo]: https://photos.tylercipriani.com/thumbs/6f/56b8d60a441ecb01c8b41c2a8e6066/original.png "UpSync"
+[cc-logo]: https://photos.tylercipriani.com/thumbs/0a/438de3b9332d0809984aa058e60334/original.png "Custom Channels"
+[sf-logo]: https://photos.tylercipriani.com/thumbs/b0/34b2be93607df291d8d16817f90dbe/original.png "SparkFun"
 
 ## Writing
 
@@ -110,11 +106,3 @@ few choice bits for getting to know me better.
 * [[Halloween Nerd Projects 👻|blog/2018/10/30/halloween-nerd-projects]]
 
 [[Even more →|posts]]
-
-[email]: mailto:tyler@tylercipriani.com "Tyler Cipriani -- Email"
-[Tyler Cipriani]: https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/2017-01-06_tyler-cipriani-240.jpg "Tyler Cipriani -- Avatar"
-[homepage]: https://tylercipriani.com "Tyler Cipriani -- Home"
-[Wikimedia Foundation]: https://photos.tylercipriani.com/thumbs/0d/a64f7d1d1a423ef5120c951cfe4c63/original.png "Wikimedia Foundation"
-[UpSync]: https://photos.tylercipriani.com/thumbs/6f/56b8d60a441ecb01c8b41c2a8e6066/original.png "UpSync"
-[Custom Channels]: https://photos.tylercipriani.com/thumbs/0a/438de3b9332d0809984aa058e60334/original.png "Custom Channels"
-[SparkFun]: https://photos.tylercipriani.com/thumbs/b0/34b2be93607df291d8d16817f90dbe/original.png "SparkFun"
