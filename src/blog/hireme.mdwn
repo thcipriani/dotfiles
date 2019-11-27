@@ -38,11 +38,11 @@ Copyright &copy; 2019 Tyler Cipriani
 ## Experience
 
 ![][wmf-logo] Wikimedia Foundation
-:   +:----------------------------+--------------------:+
-    | Release Engineering Manager | Sep 2019 - Present  |
-    | Senior Software Engineer    | Jul 2018 - Sep 2019 |
-    | Software Engineer           | Feb 2015 - Jul 2018 |
-    +-----------------------------+---------------------+
+:   ---------------------------- --------------------
+    Release Engineering Manager   Sep 2019 - Present
+    Senior Software Engineer      Jul 2018 - Sep 2019
+    Software Engineer             Feb 2015 - Jul 2018
+    ---------------------------- --------------------
 :   * Primary maintainer of python-based deployment tooling for Wikipedia and micro-services
     * Migration of production microservices to a continuous delivery pipeline
       using Go, Docker, and Kubernetes
@@ -52,9 +52,9 @@ Copyright &copy; 2019 Tyler Cipriani
       `Linux` `Debian` `Python` `Git` `Puppet` `Jenkins` `Go` `Docker` `Kubernetes`
 
 ![][sf-logo] SparkFun Electronics
-:   +:------------------------------------+--------------------:+
-    | Web Developer/Systems Administrator | Nov 2013 - Feb 2015 |
-    +-------------------------------------+---------------------+
+:   ------------------------------------ -------------------
+    Web Developer/Systems Administrator  Nov 2013 - Feb 2015
+    ------------------------------------ -------------------
 :   * Designed and built ruby-based system to monitor our GitHub-backed VCS and
       run builds on our in-house Jenkins
     * Ported PHP unit tests to industry-standard PHPUnit
@@ -64,9 +64,9 @@ Copyright &copy; 2019 Tyler Cipriani
       `Nagios` `Jenkins` `CasperJS` `PHPUnit` `saltstack`
 
 ![][upsync-logo] UpSync
-:   +:------------------------------------+--------------------:+
-    | Web Developer/Systems Administrator | Oct 2012 - Nov 2013 |
-    +-------------------------------------+---------------------+
+:   ------------------------------------  --------------------
+    Web Developer/Systems Administrator   Oct 2012 - Nov 2013
+    ------------------------------------  --------------------
 :   * Built, monitored, and maintained load-balanced VPC CentOS-6-based LAMP
       stack on AWS
     * Created local development environment using Vagrant and Chef
@@ -75,9 +75,9 @@ Copyright &copy; 2019 Tyler Cipriani
       `Linux` `AWS` `CentOS` `PHP` `MariaDB` `Chef` `SVN` `Jira` `Bash`
 
 ![][cc-logo] Custom Channels
-:   +:----------+--------------------:+
-    | Developer | Jul 2009 - Oct 2012 |
-    +-----------+---------------------+
+:   ------------ --------------------
+    Developer    Jul 2009 - Oct 2012
+    ------------ --------------------
 :   * Built and maintained small pool of Xen-based virtual servers
     * Built and maintained Linux (CentOS and Ubuntu) VPS machines for file
       storage, streaming media, and web applications
