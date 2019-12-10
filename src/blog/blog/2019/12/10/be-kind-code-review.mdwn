@@ -1,0 +1,87 @@
+[[!meta date="2019-12-10T17:29:31.608908"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="Be Kind in Code Review"]]
+[[!tag computing rambling software]]
+
+We have a "book" club at work. I say "book" because it's more of a media club
+-- we discuss books, articles, videos -- anything that's topic is
+related to engineering productivity. We recently read Google's Engineering
+Practices doc [*How to do a code review*][0].
+
+The guiding principles of this document were excellent:
+
+* Default to merging code
+* Don't merge anything that doesn't improve code health
+* Focus on speed and time to first comment
+
+One part of this document I've been ruminating on is the first summary item for
+[how to give comments][1] -- **Be Kind**.
+
+There weren't many instructions for *how* to be kind, and there was no
+discussion about *why* it's important to be kind.
+
+## How to Be Kind
+
+Being kind is not seen as very expedient. In code review, we're told, speed
+is important. A kind code review can be an expedient code review by following
+simple heuristics, the first of which is listed in Google's code review guidelines
+as a means of courteous review, "Make comments about code and not about the developer".
+I think a few additional heuristics may give a fuller list:
+
+* [Assume good faith][2]
+* Make comments about code and not about the developer
+* Never use the words "obviously" or "clearly" -- if it were obvious or clear
+  it wouldn't need to be said
+* Be explicit and assume a low-context culture
+
+This final point requires some unpacking. Much time is lost by contributors
+meditating on comments of reviewers -- be kind to contributors -- tell them
+what you mean as clearly as you can.
+
+In the Google code review guidelines they say, "If you ask a developer to
+explain a piece of code that you don’t understand, that should usually result
+in them rewriting the code more clearly." This is an example of a code review
+expectation in a [high-context][3] culture like Google -- it's implicitly
+understood that asking for clarification means a rewrite or a comment -- your
+code is unclear!
+
+At my work, I may receive changelists from folks with whom I share
+very little context. Rather than use a less-direct message that may have more
+meaning to me I can be more explicit and say, "This function doesn't make sense
+to me, could you rework it a bit to clarify its function?"
+
+## Why Be Kind?
+
+Being kind in code review directly affects the health of your project.
+
+There's a imbalanced power dynamic in code review between reviewer and
+developer. This imbalance of power is by design -- one of the functions of code
+review is to serve as a pedagogical tool -- bringing developers up-to-speed on
+a project's standards quickly. Power imbalances in code review, if unchecked
+and persistent:
+
+* Demotivate existing contributors
+* Repel new contributions
+* Have a chilling effect on contributions in review
+
+These outcomes all result in:
+
+* Fewer new contributors
+* Fewer contributions from existing contributors
+* A lower diversity of contributors
+* An overall slower pace of change
+
+One point in Google's documentation that bears repeating, "there is no such
+thing as perfect code, only better code". Improving code is an iterative
+process; the fewer contributors and the few the iterations, the fewer and
+slower the improvements. In short, persistently uncivil code review is an
+existential threat to a project.
+
+
+[0]: <https://google.github.io/eng-practices/review/reviewer/>
+[1]: <https://google.github.io/eng-practices/review/reviewer/comments.html>
+[2]: <https://en.wikipedia.org/wiki/Wikipedia:Assume_good_faith>
+[3]: <https://en.wikipedia.org/wiki/High-context_and_low-context_cultures>

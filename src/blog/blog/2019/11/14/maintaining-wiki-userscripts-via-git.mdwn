@@ -43,7 +43,7 @@ First, you initialize a git repo setting the "pages" variable on the remote to
 limit it only to the pages you're interested in. In this instance, I'm
 interested in my user's `common.js` file:
 
-```{.shell}
+```{.bash}
 $ git init
 Initialized empty Git repository in /home/thcipriani/Projects/User:Thcipriani/.git/
 $ git remote add origin mediawiki::https://en.wikipedia.org/w
