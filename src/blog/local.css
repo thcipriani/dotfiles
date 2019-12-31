@@ -800,7 +800,7 @@ a.feedbutton {
 }
 
 #content > p:first-child {
-    color: rgba(0, 0, 50, 0.5);
+    color: #9999dd;
     font-size: 1.25em;
     text-align: center;
     line-height: 1.75em;

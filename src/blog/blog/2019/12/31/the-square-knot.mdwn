@@ -1,0 +1,49 @@
+[[!meta date="2019-12-31T17:37:58.977184"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2019 Tyler Cipriani
+"""]]
+[[!meta title="The Square Knot"]]
+[[!tag TIL knots]]
+
+TIL how to tie my shoes 😐.
+
+I figured this out today -- the last day of 2019 -- while I was tying together
+two ends of [cotton sash cord][0] to make a loop. I suddenly noticed my square
+knot didn't look like the cover of the [Boy Scouts knot book][1].
+
+I looked up the square knot on [animatedknots.com][2] -- which is an amazing
+site with step-by-step instructions for all kinds of knots. Sure enough, I had
+been doing wrong -- left-over-right, left-over-right -- a *granny* knot vs a
+*square* knot.
+
+<figure>
+    <img src="https://photos.tylercipriani.com/thumbs/98/35fdab9623b1a33494ae7288baa1e9/large.jpg" title="Loose Granny Knot" alt="Granny Knot">
+    <figcaption>Loose Granny Knot</figcaption>
+</figure>
+
+<figure>
+    <img src="https://photos.tylercipriani.com/thumbs/20/1930bb79419f3618b660d77414b9c3/large.jpg" title="Loose Square/Reef Knot" alt="Square Knot">
+    <figcaption>Loose Square/Reef Knot</figcaption>
+</figure>
+
+This was satisfying, if a little embarassing -- I somehow made it through Cub
+Scouts without learning to tie a square knot. As I kept reading
+animatedknots.com I learned something else:
+
+>  The Square (Reef) Knot [...] is usually learned when we tie
+>  the laces on our first pair of shoes. Admittedly it is usually a bow that we
+>  tie – but the underlying knot is a Square (Reef) Knot.
+
+I quickly untied and retied my shoes -- left-over-right, left-over-right --
+damnit -- a granny knot. It's especially frustrating given that I'd seen [Ian's
+Shoelace Site's page on Granny Knots][3] forever ago and dismissed it because my
+shoelace bows weren't askew.
+
+So here I am -- a living cautionary tale. It's the last day of 2019. I'm 33.
+And I *just* learned to tie my shoes 🌠.
+
+[0]: <https://www.knotandrope.com/products/1-4-solid-braid-cotton>
+[1]: <https://www.scoutshop.org/knots-and-how-to-tie-them-33170.html>
+[2]: <https://www.animatedknots.com/square-knot>
+[3]: <https://www.fieggen.com/shoelace/grannyknot.htm>
