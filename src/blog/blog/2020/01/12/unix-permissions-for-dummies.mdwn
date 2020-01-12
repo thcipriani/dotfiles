@@ -39,10 +39,28 @@ These permissions are self-explanatory.
 OK -- maybe "execute" is actually not at all self-explanatory -- it's a
 severely overloaded term in the UNIX permissions model. In the basic sense
 "execute" means that a file (such as a binary executable) can be run as a
-program. It can also mean that the operating system can
-invoke an interpreter to run the script . If a directory has the execute
-permission it can be searched and have its contents listed (i.e., `ls
-directory`).
+program. It can also mean that the operating system can invoke an interpreter
+to run the script . If a directory has the execute permission <strike>it can be
+searched and have its contents listed (i.e., `ls directory`)</strike> a user
+can traverse into the directory and access its contents.
+
+<blockquote>
+    <p>
+        <strong>Edit Sun, 12 Jan 2020 16:28:38 -0700</strong>
+    </p>
+    <p>
+        <a href="https://www.reddit.com/user/mistralol">/u/mistral</a> on
+        reddit points out that the e<code>x</code>ecute permission on a directory does NOT
+        allow a user to list a directory's contents. It does allow a user to
+        enter a directory and access its contents; however, without the <code>r</code>ead
+        permission a user cannot list the entries in a directory.
+    </p>
+    <p>
+        Oddly, the <a
+        href="http://man7.org/linux/man-pages/man2/chmod.2.html"><code>chmod</code>
+        man page</a> calls this ability "<code>search</code>".
+    </p>
+</blockquote>
 
 Those 3 permissions can be granted to 3 different sets of users:
 
