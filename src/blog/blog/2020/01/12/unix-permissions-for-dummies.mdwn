@@ -1,0 +1,684 @@
+[[!meta date="2020-01-12T04:32:19.966746"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="UNIX Permissions for Dummies"]]
+[[!tag computing]]
+
+("Dummies", AKA, *future me*)
+
+I know all this information for some value of the word "know".
+Epistemologically speaking, "knowing" in the age of ubiquitous broadband is
+tantamount to knowing what search term will find the answer you need.
+
+In a hypothetical post-apocalyptic dystopia where search engines are a distant
+memory and esoteric UNIX knowledge is worth more than gold -- I'd like to still
+"know" this information.
+
+As such, I've dutifully stared at lots of [man pages](https://man7.org), I've
+done a bunch of DuckDuckGo searches, and I've amalgamated basically everything
+that I think I kinda/sorta *know* about permissions and dumped it all into this
+post.
+
+Some of this is information is undoubtedly wrong and dumb. I find that writing
+down all the wrong and dumb information that I currently believe to be right
+and correct is a useful step in rough-hewing that information towards
+correctness.
+
+## Basics
+
+There are 3 permissions:
+
+  * Read
+  * Write
+  * Execute
+
+These permissions are self-explanatory.
+
+OK -- maybe "execute" is actually not at all self-explanatory -- it's a
+severely overloaded term in the UNIX permissions model. In the basic sense
+"execute" means that a file (such as a binary executable) can be run as a
+program. It can also mean that the operating system can
+invoke an interpreter to run the script . If a directory has the execute
+permission it can be searched and have its contents listed (i.e., `ls
+directory`).
+
+Those 3 permissions can be granted to 3 different sets of users:
+
+  * The user that owns the file
+  * The file's group
+  * Others
+
+## Reading permissions
+
+File permissions are represented by 9 letters -- 3 sets of 3 letters each. Each
+set of letters is for a different set of users: the user who owns a file,
+the file's group, and others; Each user can be granted any combination of the 3
+permissions: `r`ead, `w`rite, and e`x`ecute. When a set of users doesn't have a
+permission it's represented with a `-`.
+
+    rwx/rw-/r--  foo
+    |   |   +-------> Others can read the file "foo"
+    |   +-----------> Group can read and write the file "foo"
+    +---------------> User that owns can read, write, and execute the file "foo"
+
+## Octal permissions
+
+Permissions can also be represented as succinct -- if somewhat confusing, but
+totally awesome -- octal representations.
+
+Each permission has an octal representation:
+
+  * e`x`ecute: 1
+  * `w`rite: 2
+  * `r`ead: 4
+
+It should be noted that these numbers are all powers of 2 (2<sup>0</sup> = 1; 2<sup>1</sup> = 2;
+2<sup>2</sup> = 4), meaning that each permission represents a 0 or 1 in a place in
+binary. The binary format and the human readable format have a nice symmetry:
+
+  octal binary human-readable
+  ----- ------ --------------
+  1     001    `--x`
+  2     010    `-w-`
+  4     100    `r--`
+
+Three binary digits can be used to represent 8 numbers (2<sup>3</sup> == 8) which represents
+all possible states of read, write, and execute.
+
+  octal binary human-readable
+  ----- ------ --------------
+  0     000    `---`
+  1     001    `--x`
+  2     010    `-w-`
+  3     011    `-wx`
+  4     100    `r--`
+  5     101    `r-x`
+  6     110    `rw-`
+  7     111    `rwx`
+
+Each digit of the octal, just as for the 3 blocks in a human-readable
+permission, represent a set of users. From left-to-right the 3 digits represent
+owner, group, and others.
+
+    7/6/4  foo
+    | | +-----> Others can read the file (Binary: 100, Human-readable: r--)
+    | +-------> Group can read and write the file (Binary: 110, Human-readable: rw-)
+    +---------> User that owns can read, write, and execute the file (Binary: 111, Human-readable: rwx)
+
+## Viewing permissions
+
+You can see permissions for files and directories using the `stat(1)` command.
+Passing `%A` to the `--format` argument shows "human-readable" output:
+
+    $ stat --format 'Permissions: %A Filename: %n' foo  # %n is filename
+    Permissions: -rwxrw-r-- Filename: foo
+
+"human-readable" output is represented by 10 letters. The left-most letter is
+for node-type which is one of:
+
+  * `-`: normal file
+  * `d`: directory
+  * `l`: symbolic link
+  * `c` character device
+  * `p` pseudo-terminal
+  * `b` for a block device
+
+The remaining 9 letters are `r`ead, `w`rite, and e`x`ecute for user that owns
+the file, file's group, and other users; same as above.
+
+We can see an octal representation using the command `stat --format %a`
+
+    $ stat -c 'Octal: %a Filename: %n' foo  # Octal (%n is filename)
+    Octal: 764 Filename: foo
+
+## Reading the setuid, setgid, and sticky bit
+
+Both the human-readable and the octal representation above are simplified.
+Aside from normal UNIX permissions, there are three extra bits of information:
+setuid, setgid, and the sticky bit. If one of these bits of information is set
+you can see it using the `stat(1)` command.
+
+    $ stat -c 'Octal: %a Filename: %n' foo  # Octal (%n is filename)
+    Octal: 4764 Filename: foo
+
+The left-most digit that has been prepended onto the normal permissions is the
+setuid/setgid/sticky bit.
+
+Again, each of the states -- setuid, setgid, sticky -- can be represented
+in combination and alone as octal digits that map to 3 bits of information:
+
+  name                 octal binary
+  ----                 ----- ------
+                       0     000
+  sticky               1     001
+  setgid               2     010
+  sticky+setgid        3     011
+  setuid               4     100
+  setuid+sticky        5     101
+  setuid+setgid        6     110
+  sticky+setuid+setgid 7     111
+
+The octal permission for `foo` translates as:
+
+    4/7/6/4  foo
+    | | | +-------> Others can read the file (Binary: 100)
+    | | +---------> Group can read and write the file (Binary: 110)
+    | +-----------> User that owns can read, write, and execute the file (Binary: 111)
+    +-------------> setuid-bit is set (Binary: 100)
+
+The human-readable representation of the sticky/setuid/setgid bit is not given
+its own column of 3 letters but is -- for some awful reason -- overlaid on the
+10 letter human-readable output:
+
+  name                 octal binary   human-readable
+  ----                 ----- ------ --------------
+                       0     000    `---------`
+  sticky               1     001    `--------T`
+  setgid               2     010    `-----S---`
+  sticky+setgid        3     011    `-----S--T`
+  setuid               4     100    `--S------`
+  setuid+sticky        5     101    `--S-----T`
+  setuid+setgid        6     110    `--S--S---`
+  sticky+setuid+setgid 7     111    `--S--S--T`
+
+Because this additional bit is not given its own column in the human-readable
+permission representation it hides the normal executable bit. That is, in each
+of the 3 blocks representing each of the 3 sets of users, the right-most column
+of each block represents BOTH whether or not a particular user set has the
+execute permission AND the sticky/setuid/setgid bits.
+
+When the executable bit is set for a group of users, the human-readable output
+uses a lowercase `s` for setuid/setgid and a lowercase `t` for the sticky bit.
+
+  name                      human-readable
+  ----                      --------------
+  setuid                    `--S------`
+  setuid+user can execute   `--s------`
+  setgid                    `-----S---`
+  setgid+group can execute  `-----s---`
+  sticky                    `--------T`
+  sticky+others can execute `--------t`
+
+We can see the human-readable permissions for `foo` using the `stat(1)` command with
+the `%A` format option:
+
+    $ stat -c 'Permissions: %A Filename: %n' foo  # (%n is filename)
+    Permissions: -rwsrw-r-- Filename: foo
+
+The lowercase `s` instead of the normal `x` in the fourth column from the left
+indicates two things:
+
+  1. the user that owns the file has the e`x`ecute permission
+  2. the setuid bit is set
+
+The setuid/setgid/sticky bit have different effects based on operating system;
+whether they're set on a file or a directory; whether a file has the executable
+bit set; and whether a file with an executable bit is binary or a script.
+
+## setuid
+
+### setuid on an executable binary
+
+If an executable binary with the setuid bit is run, the effective user id of
+the running process will be the owner of the file.
+
+For example, a Go file that contains:
+
+```{.go}
+// user.go
+package main
+
+import (
+	"os"
+	"os/user"
+	"strconv"
+	"fmt"
+)
+
+func main() {
+	u, _ := user.LookupId(strconv.Itoa(os.Getuid()))
+	e, _ := user.LookupId(strconv.Itoa(os.Geteuid()))
+	fmt.Printf("User: %s\nEffective User: %s\n", u.Username, e.Username)
+}
+```
+
+Once built, with the setuid bit set, outputs:
+
+	$ stat --format '%a %U:%G %n' user
+	4775 thcipriani:wikidev user
+	$ ./user
+	User: thcipriani
+	Effective User: thcipriani
+	$ sudo -u 💩 ./user
+	User: 💩
+	Effective User: thcipriani
+
+### setuid on an executable script
+
+The setuid bit has no effect on executable scripts; e.g., python scripts, shell scripts, ruby scripts. That is, it will
+not change the effective user id of the person running the script to the owner
+of the file:
+
+```{.python}
+#!/usr/bin/env python3
+"""
+user.py
+"""
+
+import os, pwd
+
+print('User: {}\nEffective User: {}'.format(
+    pwd.getpwuid(os.getuid()).pw_name,
+    pwd.getpwuid(os.geteuid()).pw_name))
+```
+
+	$ stat --format '%a %U:%G %n' user.py
+	4775 thcipriani:wikidev user.py
+	$ ./user.py
+	User: thcipriani
+	Effective User: thcipriani
+	$ sudo -u 💩 ./user.py
+	User: 💩
+	Effective User: 💩
+
+### setuid on a non-executable file
+
+AFAIK, the setuid bit has no effect on files no one can execute.
+
+There is a pedantic exception of a file with setuid and no executable bits set
+for any of the 3 sets of users (i.e., owner, group, or other users), BUT the
+file is on a file system that supports ACL mounting and has special ACL
+permissions setup. If the file has ACL permissions that allow a user or group
+to execute the file, the file will execute following setuid rules for files
+with executable bits set.
+
+This exception, it should be noted, is not actually an exception since it is in
+practice the same scenario as an executable file with setuid set -- we've just
+dragged ACLs into it for fun and pedantry.
+
+### setuid on a directory
+
+AFAIK, the setuid bit has no effect directories. I've heard tell of a few
+systems where the setuid bit on a directory will cause files created inside that
+directory to have the same owner as the parent directory.
+
+This seems insane to me from a security perspective.
+
+## setgid
+
+### setgid on an executable binary
+
+If the setgid bit is set on an executable binary, the effective group
+id of the process during execution is set to the group of of the file
+itself. For example:
+
+```{.go}
+// group.go
+package main
+
+import (
+	"fmt"
+	"os"
+	"os/user"
+	"strconv"
+)
+
+func main() {
+	g, _ := user.LookupGroupId(strconv.Itoa(os.Getgid()))
+	e, _ := user.LookupGroupId(strconv.Itoa(os.Getegid()))
+	fmt.Printf("Group: %s\nEffective Group: %s\n", g.Name, e.Name)
+}
+```
+
+Once built, with the setgid bit set, outputs:
+
+	$ stat --format '%a %U:%G %n' group
+	2775 thcipriani:wikidev group
+	$ ./group
+	Group: thcipriani
+	Effective Group: wikidev
+	$ sudo -u 💩 ./group
+	Group: 💩
+	Effective Group: wikidev
+
+### setgid on a script
+
+The setgid bit has no effect on executable scripts; e.g., python
+scripts, shell scripts, ruby scripts. That is, it will not change the
+effective group id of the person running the script to the file's group:
+
+```{.python}
+#!/usr/bin/env python3
+"""
+group.py
+"""
+
+import os, grp
+
+print('Group: {}\nEffective Group: {}'.format(
+    grp.getgrgid(os.getgid()).gr_name,
+    grp.getgrgid(os.getegid()).gr_name))
+```
+
+	$ stat --format '%a %U:%G %n' group.py
+	2775 thcipriani:wikidev group.py
+	$ ./group.py
+	Group: thcipriani
+	Effective Group: thcipriani
+	$ sudo -u 💩 ./group.py
+	Group: 💩
+	Effective Group: 💩
+
+### setgid on a file
+
+If the setgid bit is set WITHOUT the group executable bit being set; e.g.,
+`rwxrwS---` some file systems use that as an indicator that the file uses
+[mandatory file locking][0].  Caveat emptor -- the 0th item in the Linux kernel
+documentation on mandatory file locking is, "Why you should avoid mandatory
+locking" -- this, to me, makes it seems like a bit of a fraught endeavour.
+
+[0]: <https://www.kernel.org/doc/Documentation/filesystems/mandatory-locking.txt>
+
+### setgid on a directory
+
+The setgid bit on a directory will cause files and subdirectories created
+inside the directory to have the same group as the parent directory -- even
+if the user creating the file is *not* in the parent directory's group.
+
+	$ stat --format '%a %U:%G %n' setgid
+	2775 thcipriani:wikidev setgid
+	$ touch setgid/thcipriani
+	$ sudo -u mwdeploy touch setgid/mwdeploy
+	 stat --format '%a %U:%G %n' setgid/thcipriani
+	664 thcipriani:wikidev setgid/thcipriani
+	$ stat --format '%a %U:%G %n' setgid/mwdeploy
+	644 mwdeploy:wikidev setgid/mwdeploy
+
+Users not within the directory's group will not be able to create files
+unless the directory is writable by others:
+
+	$ stat --format '%a %U:%G %n' setgid
+	2775 thcipriani:wikidev setgid
+	$ sudo -u 💩 touch setgid/💩  # Not a user in wikidev
+	touch: cannot touch 'setgid/💩': Permission denied
+	$ chmod o+w setgid
+	$ sudo -u 💩 touch setgid/💩  # Not a user in wikidev
+	$ stat --format '%A %U:%G %n' setgid/💩
+	644 💩:wikidev setgid/💩
+
+## Sticky bit
+
+### Sticky bit on an executable binary
+
+AFAIK, the sticky bit has no effect on file execution. In older systems,
+setting the sticky bit on a file caused the file to remain in swap after
+execution. Since swap images were contiguous sectors of disk on older systems,
+this was faster than re-reading an executable from disk -- or so
+stackoverflow[^so] tells me.
+
+[^so]: <https://unix.stackexchange.com/questions/79395/how-does-the-sticky-bit-work#comment395032_79401>
+
+### Sticky bit on a directory (AKA, restricted-deletion flag)
+
+If the sticky bit is set on a directory, no one can delete files in that
+directory except `root`, the owner of the directory, or the owner of the
+file in the directory. Even a member of the directory's group cannot
+delete a file put there by someone not in that group who also has write
+permission on the directory.
+
+	$ stat --format '%a %U:%G %n' stickybit
+	1777 thcipriani:wikidev stickybit
+    $ sudo -u 💩 touch stickybit/💩
+    $ sudo -u mwdeploy rm stickybit/💩
+	rm: remove write-protected regular empty file 'stickybit/💩'? y
+	rm: cannot remove 'stickybit/💩': Operation not permitted
+
+Under normal conditions anyone with `w`rite permission to a directory could
+delete files in that directory.
+
+	$ stat --format '%a %U:%G %n' stickybit
+	777 thcipriani:wikidev stickybit
+	$ sudo -u 💩 touch nostickybit/💩
+	$ sudo -u mwdeploy rm nostickybit/💩
+	rm: remove write-protected regular empty file 'nostickybit/💩'? y
+	# File is removed
+
+ The standard `/tmp` directory on a Linux system has the sticky bit set for
+this exact reason. No one besides `root` and the owner of the file in
+`/tmp/` should be able to remove a file from `/tmp`.
+
+## Bitwise operations
+
+Every permission can be represented as binary bits: `1` or `0`. These bits can
+be combined using bitwise operations. Bitwise operations are a bit of
+Jedi-level black magic. I have to lookup bitwise operations more often than
+not. Each time I look this stuff up, I'm positive that it'll stick, but my
+brain is Teflon™ for bit-twiddling it seems.
+
+Bitwise operations are often used in low-level computer programs
+because they execute quickly. A simple bitwise operation might be a logical
+`OR`, represented by the symbol `|` which has some simple rules for how to
+combine 1s and 0s:
+
+   Logical OR `|`
+  ----------------
+   `0 | 0 == 0`
+   `0 | 1 == 1`
+   `1 | 0 == 1`
+   `1 | 1 == 1`
+
+If either bit passed to a logical `OR` is `1`, the output is `1`; otherwise the
+output is `0`.
+
+There is a complementary bitwise function called logical `AND` (`&`) that
+works in the exact opposite-ish way:
+
+   Logical AND `&`
+  -----------------
+   `0 & 0 == 0`
+   `0 & 1 == 0`
+   `1 & 0 == 0`
+   `1 & 1 == 1`
+
+That is, if either of the bits passed as arguments to a logical `AND` is `0`,
+the output is `0`. Only when both bits are `1` is the output `1`.
+
+There are other ways to change the bits in a bit field that don't involve
+combining two binary numbers. A unary operation operates on a single
+argument. For example, you can find the complement of a binary number by
+flipping all the bits. This is called a logical `NOT` (or logical complement)
+and is represented by the symbol `~`.
+
+   Logical Complement `~`
+  ------------------------
+   `~0 == 1`
+   `~1 == 0`
+
+If you combine these two functions -- you can take the logical `AND`
+of a bit and another bit's `NOT`. This is called the *abjunction*:
+
+   Logical AND `&` with Logical Complement `~` (abjunction)
+  ----------------------------------------------------------
+   `0 & ~0 == 0`
+   `0 & ~1 == 0`
+   `1 & ~0 == 1`
+   `1 & ~1 == 0`
+
+Internally, bitwise functions are used to set the modes for a file. For
+example, if I wanted the file's user to be able to read (`4`) and write (`2`)
+a file I could `OR` those individual permissions together in code:
+
+    >>> 4 | 2  # S_IRUSR | S_IWUSR
+    6
+
+It's a bit easier to see what's happening by looking at the permissions' binary
+representations:
+
+   bitwise octal  binary human-readable
+  -------- ------ ------ --------------
+           2      010    `-w-`
+    OR `|` 4      100    `r--`
+         = 6      110    `rw-`
+
+If I now decide: I'd like to have the file's user *also* execute the file, I can
+`OR` the existing permission, with the execute permission (`1`):
+
+   bitwise octal  binary human-readable
+  -------- ------ ------ --------------
+           6      110    `rw-`
+    OR `|` 1      001    `--x`
+         = 7      111    `rwx`
+
+
+## Setting Permissions
+
+You can set any permissions (AKA, the file *mode*) via the `chmod` (i.e.,
+`ch`ange `mod`e) command. You can use either an octal mode in `chmod` or
+you can use human-readable permissions along with `u`, `g`, `o`, and `a`
+to refer to `u`ser that owns the file, users in the file's `g`roup,
+`o`thers, and `a`ll to refer to all 3. With `chmod` you can add (`+`)
+permissions, remove permissions (`-`), or set permissions directly (`=`)
+for any set of users. The format of that command is:
+
+	chmod [options] [[ugoa][+-=][human-readable],...] <file>
+
+
+For example, to remove all permissions from a file, you could mark all
+sets of users as having no permissions:
+
+    $ chmod u=,g=,o= tmp/foo
+    $ stat --format '%A' tmp/foo
+    ----------
+
+Then you could add back read for the file's `u`ser:
+
+    $ chmod u+r foo
+    $ stat --format '%A' foo
+    -r--------
+
+When adding permissions, `chmod` uses the logical `OR` to combine file
+permissions with additional permissions you *add*. In the example above,
+we added the read permission:
+
+   bitwise octal  binary human-readable
+  -------- ------ ------ --------------
+           0      000    `---`
+    OR `|` 4      100    `r--`
+         = 4      100    `r--`
+
+We could have achieved the same result by specifying the octal mode for
+`r`ead for the user that owns the file, i.e. `400`:
+
+    $ chmod 400 foo
+    $ stat --format '%A' foo
+    -r--------
+
+You can also remove permissions from sets of users with `chmod`. For instance, to remove the ability
+of `a`ll users to e`x`ecute a file we could use `a-x`; i.e.:
+
+    $ stat --format '%A' foo
+    -rwxr-xr-x
+    $ chmod a-x foo
+    $ stat --format '%A' foo
+    -rw-r--r--
+
+Removing permissions is done via a logical abjunction:
+
+   bitwise octal  binary      human-readable
+  -------- ------ ----------- ----------------
+   NOT `~` 111    001 001 001 `u=--x,g=--x,o=--x`
+         = 666    110 110 110 `u=rw-,g=rw-,o=rw-`
+
+   bitwise octal  binary      human-readable
+  -------- ------ ----------- -------------------
+           755    111 101 101 `u=rwx,g=r-x,o=r-x`
+   AND `&` 666    110 110 110 `u=rw-,g=rw-,o=rw-`
+         = 644    110 100 100 `u=rw-,g=r--,o=r--`
+
+## Umask
+
+Another aspect of permissions to consider is the umask of a process. Umask is a
+per-process value that tells `mkdir`, `open`, and other file-creation calls
+what permissions to *take-away*.
+
+Umask is defined in POSIX as both a built-in for the shell[^posix-builtin] and a
+function[^posix-function]. Both are used to read and set a umask.
+
+The `umask` for a system is typically set in `/etc/profile` and may optionally
+be overridden in various initialization files or in process using a call to the
+`umask` utility or function.
+
+There are 3 octal digits in a umask and the default umask for many systems is `022`.
+
+To determine the permissions that a file or directory will be created with we
+take the logical abjunction of the default creation mode for files or
+directories and the umask.
+
+For directories, the default creation mode is `777`. When `mkdir` is called,
+the logical abjunction of `777` and `022` determines the new directory's
+permissions:
+
+   bitwise octal  binary      human-readable
+  -------- ------ ----------- ----------------
+   NOT `~` 022    000 010 010 `u=,g=w,o=w`
+         = 755    111 101 101 `u=rwx,g=rx,o=rx`
+
+   bitwise octal  binary      human-readable
+  -------- ------ ----------- -------------------
+           755    111 101 101 `u=rwx,g=rx,o=rx`
+   AND `&` 777    111 111 111 `u=rwx,g=rwx,o=rwx`
+         = 755    111 101 101 `u=rwx,g=rx,o=rx`
+
+For files, the default creation mode is `666`. When a user creates a file using
+`touch`, the logical abjunction of `666` and `022` determines the new file's
+permissions:
+
+   bitwise octal  binary      human-readable
+  -------- ------ ----------- -------------------
+           755    111 101 101 `u=rwx,g=rx,o=rx`
+   AND `&` 666    110 110 110 `u=rw,g=rw,o=rw`
+         = 644    110 100 100 `u=rw,g=r,o=r`
+
+[^posix-builtin]: <https://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html>
+[^posix-function]: <https://pubs.opengroup.org/onlinepubs/9699919799/functions/umask.html>
+
+## History
+
+Basic permissions for file owners and other users of a system were in-place in
+UNIX from the beginning -- [PDP-7 era][pdp-7-unix] -- circa 1970. Owner and
+other-user permissions actually pre-date UNIX and were a part of Multics.
+According to [McIlroy][] the concepts of a file owner and other users acting on
+files were common 10 years prior to the first UNIX.
+
+In late 1973, version 4 of UNIX was released. This release is when group file
+permissions first show up in the [chmod man page][chmod-man-page].
+
+Oddly (to me anyway) the setuid concept pre-dates the concept of group
+permissions by 3 years or so -- it's described by [Ritchie][] in early UNIX
+manuals -- and goes all the way back to PDP-7 UNIX. Dennis Ritchie was granted
+a [patent][ritchie-patent] for setuid in 1973.
+
+[pdp-7-unix]: <https://minnie.tuhs.org/cgi-bin/utree.pl?file=PDP7-Unix>
+[Ritchie]: <https://web.archive.org/web/20160304043429/http://www.tuhs.org/Archive/PDP-11/Distributions/research/McIlroy_v0/UnixEditionZero.txt>
+[ritchie-patent]: <https://patents.google.com/patent/US4135240A/en>
+[chmod-man-page]: <https://minnie.tuhs.org/cgi-bin/utree.pl?file=V4/man/man2/chmod.2>
+[McIlroy]: <https://minnie.tuhs.org/pipermail/tuhs/2019-August/018193.html>
+
+## Summary
+
+There are 3 permissions and 3 sets of users. The setuid and setgid bits set
+effective users and groups (respectively) for binaries only -- not for scripts.
+The setgid bit on a directory means that files and sub-directories created
+inside that directory will have the same group as the parent. The sticky bit
+limits who can delete files inside a directory.
+
+Everything else inside this post is stuff I forget constantly and am almost
+certainly wrong about in some material way. In practice, this is the mental
+model of UNIX permissions that has served me for my 10 or so years of desktop
+Linux usage and a few jobs twiddling these particular bits.
+
+I published this post as a challenge for myself and my understand and as a
+useful reference manual for dummies -- that is to say *me* after I, once-again,
+forget all that esoteric shit about *abjunctions* for the *N*th time.
