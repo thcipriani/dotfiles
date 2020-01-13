@@ -142,6 +142,7 @@ for node-type which is one of:
   * `c` character device
   * `p` pseudo-terminal
   * `b` for a block device
+  * `s` for a socket
 
 The remaining 9 letters are `r`ead, `w`rite, and e`x`ecute for user that owns
 the file, file's group, and other users; same as above.
