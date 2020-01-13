@@ -1,0 +1,9 @@
+[[!meta date="2020-01-13T15:52:49-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Books Read in 2020"]]
+[[!tag books]]
+
+1. [New Dark Age: Technology and the End of the Future](https://openlibrary.org/works/OL17919031W/New_Dark_Age) by James Bridle
