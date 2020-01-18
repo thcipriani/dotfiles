@@ -1,5 +1,5 @@
 [[!meta copyright="""
-Copyright &copy; 2017 Tyler Cipriani
+Copyright &copy; 2020 Tyler Cipriani
 """]]
 [[!meta license="""
 [[Creative Commons Attribution-ShareAlike License|https://creativecommons.org/licenses/by-sa/4.0/]]
@@ -8,11 +8,9 @@ Copyright &copy; 2017 Tyler Cipriani
 [[!meta openid="https://openid.tylercipriani.com/" server="https://openid.tylercipriani.com/" xrds-location="https://openid.tylercipriani.com/xrds/thcipriani"]]
 
 <figure>
-<img title="I see you there. Reading my blog. You think I don't see you -- look at my face. I see you." src="https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/2017-01-06_tyler-cipriani-1280.jpg" alt="Tyler Cipriani">
+<img title="Hello World." src="https://photos.tylercipriani.com/thumbs/8e/2ad9c55baee36d1528aaa8eee36f8e/large.jpg" alt="Tyler Cipriani">
 <figcaption>
-<a title="Tyler Cipriani - Gentleman. Scholar. Lyrical genius." href="https://photos.tylercipriani.com/thumbs/e9/4d72011486fd06946932e5a02411dab0cf7d52/">
-    Gentleman. Scholar. Lyrical genius.
-</a>
+    <p>Hello World.</p>
 </figcaption>
 </figure>
 
