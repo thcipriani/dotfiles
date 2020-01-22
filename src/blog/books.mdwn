@@ -17,6 +17,7 @@ probably not especially staggering.
 
 Anyway, here's my book things:
 
+* [[Books read in 2020|books/2020]]
 * [[Books read in 2019|books/2019]]
 * [[Books read in 2018|books/2018]]
 * [[Books read in 2017|books/2017]]

@@ -7,3 +7,4 @@ Copyright &copy; 2020 Tyler Cipriani
 [[!tag books]]
 
 1. [New Dark Age: Technology and the End of the Future](https://openlibrary.org/works/OL17919031W/New_Dark_Age) by James Bridle
+2. [Gorilla and the Bird](https://openlibrary.org/works/OL19718805W/Gorilla_and_the_bird) by Zack McDermott
