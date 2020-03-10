@@ -8,4 +8,6 @@ Copyright &copy; 2020 Tyler Cipriani
 
 1. [New Dark Age: Technology and the End of the Future](https://openlibrary.org/works/OL17919031W/New_Dark_Age) by James Bridle
 2. [Gorilla and the Bird](https://openlibrary.org/works/OL19718805W/Gorilla_and_the_bird) by Zack McDermott
-2. [The Utopia of Rules: On Technology, Stupidity, and the Secret Joys of Bureaucracy](https://openlibrary.org/works/OL20290452W/The_Utopia_of_Rules) by David Graeber
+3. [The Utopia of Rules: On Technology, Stupidity, and the Secret Joys of Bureaucracy](https://openlibrary.org/works/OL20290452W/The_Utopia_of_Rules) by David Graeber
+4. [White Fang](https://openlibrary.org/works/OL74504W/White_Fang) by Jack London
+5. [Calypso](https://openlibrary.org/works/OL19751285W/Calypso) by David Sedaris
