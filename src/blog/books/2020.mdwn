@@ -11,3 +11,5 @@ Copyright &copy; 2020 Tyler Cipriani
 3. [The Utopia of Rules: On Technology, Stupidity, and the Secret Joys of Bureaucracy](https://openlibrary.org/works/OL20290452W/The_Utopia_of_Rules) by David Graeber
 4. [White Fang](https://openlibrary.org/works/OL74504W/White_Fang) by Jack London
 5. [Calypso](https://openlibrary.org/works/OL19751285W/Calypso) by David Sedaris
+6. [An Everlasting Meal](https://openlibrary.org/books/OL27620927M/An_Everlasting_Meal) by Tamar Adler
+7. [A Moveable Feast](https://openlibrary.org/works/OL63064W/A_moveable_feast) by Ernest Hemingway
