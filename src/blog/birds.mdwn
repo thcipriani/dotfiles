@@ -1,4 +1,10 @@
-[[!meta redir="birds"]]
+[[!meta title="Birds"]]
+
+Ever since moving to Colorado, I've noticed birds a great deal more than
+when I lived in Kansas. Here it is common to see bald eagle on your daily
+drive to work, or osprey while walking to the farmer's market.
+
+[[!inline pages="tagged(photos/bird)" actions="no" archive="no" limit=20 feeds="no" trail="yes"]]
 
 ## Life list
 
@@ -59,6 +65,9 @@ An incomplete list of birds I have seen.
 **House finch**
 :   * Very common -- always at [[my feeder|photos/male-house-finch]]
 
+**House wren**
+:   * 2020-05-19 -- common, but I hadn't identified it until today
+
 **Killdeer**
 :   * Commmon at Roger's grove, Longmont, CO
 
@@ -101,8 +110,3 @@ An incomplete list of birds I have seen.
 **Western Meadowlark**
 :   * Common
     * [[McIntosh lake|photos/male-western-meadowlark]] 2017-04-23
-
-## All bird photos
-
-[[!inline pages="tagged(photos/bird)" actions="no" archive="yes"
-feedshow=10]]

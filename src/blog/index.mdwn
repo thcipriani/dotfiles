@@ -7,6 +7,15 @@ Copyright &copy; 2020 Tyler Cipriani
 [[!meta title="Hello."]]
 [[!meta openid="https://openid.tylercipriani.com/" server="https://openid.tylercipriani.com/" xrds-location="https://openid.tylercipriani.com/xrds/thcipriani"]]
 
+# Howdy. I'm Tyler.
+
+* I [[blog]], often about tech stuff.
+* I enjoy a good [[book|books]].
+* I have taken a [[photo|tags/photos]] or two in my day.
+* Several times, I've seen [[birds]] in my yard.
+* I [[make beer|brewing]].
+* I like [coffee](https://tylercipriani.com/coffee-extract).
+
 <figure>
 <img title="Hello World." src="https://photos.tylercipriani.com/thumbs/8e/2ad9c55baee36d1528aaa8eee36f8e/large.jpg" alt="Tyler Cipriani">
 <figcaption>

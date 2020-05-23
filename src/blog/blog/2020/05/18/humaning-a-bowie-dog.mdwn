@@ -1,0 +1,188 @@
+[[!meta date="2020-05-18T22:33:24.823816"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Humaning a Bowie Dog"]]
+
+Bowie, my dog, will turn 1 on the 13th of June this year.
+
+![Bowie 2020-05-22][bowie-2020-05-22]
+
+His name was Bowie before we got him. All his littermates were named after
+musicians that a rebellious tween might list as bands they like: Mötley (as in
+_Crüe_), KISS, Zepplin (as in _Led_). Bowie (as in _David_) was both a
+conspicuous name and dog.
+
+The first David Bowie song I ever heard was _Ziggy Stardust_ and it was sung in
+Portuguese by [not David Bowie](https://bandcamp.com/tag/seu-jorge).
+After listening to the [Life Aquatic Studio Sessions](https://www.youtube.com/watch?v=GzkXuHu-xYc&list=PLu8MK5TJVpCq2srPHNoMLg0gMzojDao3v)
+on repeat for many weeks, I learned who David Bowie was and started to collect his
+catalog. _Hunky Dory_ is one of my favorite albums. I bought _Blackstar_ (his
+25th album) a few weeks after his death of liver cancer in 2016. I've seen his
+most acclaimed and infamous movies: [*The Hunger*](https://en.wikipedia.org/wiki/The_Hunger_(1983_film)) with Cathrine
+Deneuve; [*The Man Who Fell to Earth*](https://en.wikipedia.org/wiki/The_Man_Who_Fell_to_Earth) where he plays
+a space alien; [*Labyrinth*](https://en.wikipedia.org/wiki/Labyrinth_(1986_film)).
+
+None of this was a deciding factor for getting a dog named Bowie, or for
+keeping his name "Bowie" after we got him. I kept his name Bowie because he has
+2 different colored eyes: one blue, one brown. "Two different colored eyes!
+Just like David Bowie!" I thought, ignorantly. I subsequently learned that,
+although David Bowie's pupils were different sizes, his eyes were the same
+color.
+
+All this is to say: bringing home a dog has been a learning experience.
+
+## Rationale
+
+Blazey has wanted a dog forever. At least part of her motivation for getting a
+dog was to get me out of the house. I've worked from home for 5½ years now and
+I have a tendency to sit at my computer an alarming amount (for those who care
+about my health and well-being anyway) -- her theory was that I would have to
+get out, if only to walk the dog in my afternoon. Honestly, I also found this
+idea appealing and, having never had a dog, totally plausible.
+
+![4 week old Bowie][bowie-4-weeks]
+
+## How to get a dog
+
+After deciding to get a dog, the next step to dog companionship is *actually
+getting* a dog. I, naively, assumed this would be the easy part. Shelters are
+filled with dogs and cats that people have surrendered because they can no
+longer care for them, I reasoned. Surely, a grateful world will be glad to
+have a responsible adult such as myself relieve them of the burden of care for
+one of these animals.
+
+It was time for us to rescue a dog! ...Or so I thought.
+
+Adopting a dog from a rescue is -- for good reason -- difficult.  Many rescues
+refuse to consider people who rent, people who don't have a fully enclosed
+backyard, or people who have never cared for a dog (we tick all of those
+boxes). The rescues that are flexible want to have an interview and a home
+inspection. They want references. One rescue insisted on an egregious web form
+that asked for all of my personal information on a non-https page.
+
+As much as I'd have liked to rescue a dog, it was much simpler to find a
+reputable breeder. We found a breeder that was a short drive from our house. We
+were able to visit all the puppies several times. We met the parents. The
+breeder kept excellent records going back several generations and was very
+knowledgable. We signed a contract to the effect that if we were ever to
+surrender the dog it would be into the breeder's care: and that was that.
+
+We were selective when we met the puppies: carefully observing their demeanor.
+Being new dog caregivers, we felt that a low-key, even-tempered dog would be
+best for us and our new canine companion. Bowie seemed like the calmest puppy
+of the whole litter -- he adorably fell asleep in our laps -- twice. The day we
+were going to pick Bowie up and take him home, we were greeted by a Bowie I'd
+not seen in our visits to that point -- running around the house at
+full speed! Shaking his toys with no small amount of faux puppy violence!
+Prancing! It never occurred to me until that moment that a puppy's demeanor
+could vary so drastically from one hour of the day to the next.
+
+<figure>
+    <video src="https://photos.tylercipriani.com/videos/2019-09-16_bowie.mp4" webkit-playsinline="true" playsinline="true" autoplay="true" muted="true" loop="true"></video>
+    <figcaption>What. A. Monster.</figcaption>
+</figure>
+
+## Training
+
+Puppies are assholes.
+
+A puppy's cuteness is directly proportional to its propensity for
+assholishness; survival would be impossible were it otherwise. Bowie was the
+cutest puppy I've ever seen, his temperament was proportionally assholish -- he
+once pulled my pajama bottoms down in the front yard during an early morning
+potty break while two elderly neighbor women strolled passed us.
+
+Socializing a puppy is critical to their success. There is a
+"critical socialization period" between 8-weeks and 16-weeks (give or take)
+during which you need to start to introduce them to the world they are expected
+to navigate: other humans, other dogs, cars, bikes, skateboards, rain,
+side-walks, gravel, car-rides, cats, etc. Strangely, this is also the
+time in a puppy's life where they're not fully vaccinated: there is a risk of
+them contracting parvo just from going to places that other perfectly healthy
+adult dogs have been. Fortunately, there are many places that offer "puppy
+kindergarten" to help socialize dogs whose immune systems are not fully
+formed.
+
+Bowie is what is known as a "reactive" dog. That is: he reacts. From a
+behaviorist point of view it is incorrect to say he's "excited" or "fearful"
+all you can say with certainty is that he is reacting. Bowie is reactive to
+other dogs. I can incorrectly say that he's excited about other dogs. He's been
+that way since early on in puppy kindergarten. He would strain and bark and
+jump to get to other dogs.
+
+He's also what the woman who ran our kindergarten called a "big player" which
+means, really, he's a scary player. He plays too rough for a lot of puppies.
+
+Outside of puppy kindergarten, Bowie was similarly hard to handle. Before they
+lose their baby teeth, puppy's teeth are incredibly sharp. A favorite Bowie
+maneuver was running to you and jumping up to nip your hands, or grabbing onto
+your ankle -- not letting you walk through the house. On a walk once he bit a
+guy on the nose. Made him bleed.
+
+I think that Bowie, in particular, may have special needs. A woman at the dog
+training place once told us that Bowie is lucky to have us. Lucky that we have
+the patience to work with him. Lucky that we have the money and resources to
+pay for training and treats. She told us this on his last day of puppy
+kindergarten when he was too out-of-control to go inside -- he was getting too
+big and he was too excited.
+
+This was a hard time for me: it's hard to have a poorly behaved dog. It feels
+like a personal failing -- it's frustrating -- it's embarrassing. My work
+suffered. My relationships suffered. I understand why shelters don't let the
+uninitiated take home dogs -- it's nothing like my idealized version of living
+with a dog. All those _Air Bud_ movies are a fucking lie.
+
+![5 Month old Bowie][bowie-5-months]
+
+I read a [[bunch of books|books/2019]] about dog training. I watched youtube
+videos. I learned about animal behavior; dog body signals. I found more classes
+beyond puppy kindergarten. I took him to obedience class. Agility class. We
+paid for 1-on-1 training to address his leash reactivity on walks. I bought
+special pouches to carry treats. I bought training aids, "pet professional
+workshops", a feeder with a bluetooth remote.
+
+If it were not in Bowie's nature to bite my ankles I probably wouldn't have
+bothered with all of his training. Also, the training didn't even make him stop
+biting my ankles -- at some point he just stopped.
+
+I worked with him. I trained with him. I learned with him. He's still got a
+long way to go. He still mouths at my hands and arms -- not hard -- just
+because, well, how else do you get my attention away from the computer?  I've
+taken to calling these bites "mouth hugs".
+
+Training, as I subsequently learned, is not about having a well-behaved dog.
+Maybe that's the end game -- time will tell -- but the real purpose of training
+is to help you and your dog communicate.
+
+## Now
+
+Now he's a year old.
+
+All this training has paid dividends. He's not perfect -- he probably won't be
+-- but we can communicate now. I know how he's feeling before he reacts.  I've
+probably become a better dog companion more than he's become a better dog.
+
+Every morning, at 6:30am, he bounds onto the bed where I'm sleeping. Hurling
+himself at top speeds -- 50 lbs of fur and enthusiasm -- excited to see me
+after 8 hours of only seeing the backs of his eyelids. We take a nice long walk
+around the park every morning after my coffee and before my breakfast. He still
+barks at dogs sometimes -- he's very into squirrels. When we get back, he
+sleeps by my desk or in the living room until around noon. We'll go play
+frisbee in the backyard for a bit. We'll come back inside and he'll eat a
+stuffed kong and hang out. He'll wonder around, chew on his chew toys, and play
+by himself until 3pm or 4pm -- then it's time for more time in the backyard.
+More time to play.
+
+I think that I would have been completely awed by his behavior if I'd have
+somehow been able to glimpse my life today during the struggles of the past
+year. He's a real dog. I'm a real dog owner. It's just taken a good while to
+establish these basic facts.
+
+![Bowie the real dog][bowie-asleep]
+
+[bowie-2020-05-22]: <https://photos.tylercipriani.com/thumbs/31/44fb29592bd8ef27d492494bf1d96f/xlarge.jpg>
+[bowie-5-months]: <https://photos.tylercipriani.com/thumbs/9d/8370d023b846b579e5449c67ada8fe/xlarge.jpg>
+[bowie-4-weeks]: <https://photos.tylercipriani.com/thumbs/e1/fb8d55a7be35641fb988e0c27d77ca/xlarge.jpg>
+[bowie-asleep]: <https://photos.tylercipriani.com/thumbs/3f/2ca22b6fd8223dcb2e217d75fb2fd4/xlarge.jpg>
