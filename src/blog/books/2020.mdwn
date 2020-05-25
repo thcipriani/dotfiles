@@ -14,3 +14,4 @@ Copyright &copy; 2020 Tyler Cipriani
 6. [An Everlasting Meal](https://openlibrary.org/books/OL27620927M/An_Everlasting_Meal) by Tamar Adler
 7. [A Moveable Feast](https://openlibrary.org/works/OL63064W/A_moveable_feast) by Ernest Hemingway
 8. [Defending Jacob](https://openlibrary.org/works/OL17308089W/Defending_Jacob) by William Landay
+9. [The Library Book](https://openlibrary.org/works/OL17930369W/The_Library_Book) by Susan Orlean
