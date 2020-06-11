@@ -568,7 +568,7 @@ a:hover {
 a:hover {
     color: #06c;
     text-decoration: underline\9;
-    text-shadow: 2px 0 0 #fefefe, -2px 0 0 #fefefe;
+    /*text-shadow: 2px 0 0 #fefefe, -2px 0 0 #fefefe; Makes weirdness with find-in-page highlighting */
     background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
     background-image: -webkit-linear-gradient(left, currentColor 0%, currentColor 100%);
     background-image:      -o-linear-gradient(left, currentColor 0%, currentColor 100%);
@@ -620,11 +620,13 @@ code {
             border-radius: .2em;
 }
 
+/* 2020-06-11: no idea where this came from
 code:before,
 code:after {
     letter-spacing: -0.2em;
     content: "\00a0";
 }
+*/
 
 table {
     border-collapse: collapse;
@@ -1073,17 +1075,15 @@ pre {
     background: #f6f8ff;
     padding: 0.5em;
     width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
     margin: 1em 0;
     line-height: 1.5em;
 }
 
 .sourceCode pre {
     background: none;
-    padding: none;
-    overflow: auto;
+    padding: 0;
     margin: 0;
+    overflow: visible;
 }
 
 pre code {
@@ -1160,36 +1160,41 @@ code > span.er { color: #ff0000; font-weight: bold; }
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+    code.sourceCode { white-space: pre-wrap; }
+    a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    background-color: #ffffff;
+
+pre.numberSource a.sourceLine {
+    position: relative;
+    left: -4em;
+}
+
+pre.numberSource a.sourceLine::before {
+    content: attr(title);
+    position: relative;
+    left: -1em;
+    text-align: right;
+    vertical-align: baseline;
+    border: none;
+    pointer-events: all;
+    display: inline-block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0 4px;
+    width: 4em;
     color: #a0a0a0;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-div.sourceCode
-  { color: #1f1c1b; background-color: #f6f8ff; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; width: 95%; }
+div.sourceCode { color: #1f1c1b; background-color: #f6f8ff; overflow: auto; }
+
 code span. { color: #1f1c1b; } /* Normal */
 code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
 code span.an { color: #ca60ca; } /* Annotation */
