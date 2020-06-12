@@ -42,7 +42,7 @@ attached to a [reed switch](https://www.adafruit.com/product/375) on my front
 door. The Particle board sent a web request to my
 [hue](https://www2.meethue.com/en-us) light bulb on the porch (scream sound warning):
 
-<figure>
+<figure class="narrow-figure">
     <video controls=true>
         <source src="https://photos.tylercipriani.com/videos/halloween-2015-particle-lights.mp4" type="video/mp4">
         <source src="https://photos.tylercipriani.com/videos/halloween-2015-particle-lights.ogv" type="video/ogg">
@@ -131,7 +131,7 @@ True
 >>> popup.down()
 ```
 
-<figure>
+<figure class="narrow-figure">
     <video controls=true>
         <source src="https://photos.tylercipriani.com/videos/2018-10-30_halloween-fun_popup.mp4" type="video/mp4">
         <source src="https://photos.tylercipriani.com/videos/2018-10-30_halloween-fun_popup.ogv" type="video/ogg">

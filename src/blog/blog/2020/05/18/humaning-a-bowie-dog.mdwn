@@ -79,7 +79,7 @@ full speed! Shaking his toys with no small amount of faux puppy violence!
 Prancing! It never occurred to me until that moment that a puppy's demeanor
 could vary so drastically from one hour of the day to the next.
 
-<figure>
+<figure class="narrow-figure">
     <video src="https://photos.tylercipriani.com/videos/2019-09-16_bowie.mp4" webkit-playsinline="true" playsinline="true" autoplay="true" muted="true" loop="true"></video>
     <figcaption>What. A. Monster.</figcaption>
 </figure>

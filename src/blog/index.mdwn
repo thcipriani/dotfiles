@@ -18,9 +18,7 @@ Copyright &copy; 2020 Tyler Cipriani
 
 <figure>
 <img title="Hello World." src="https://photos.tylercipriani.com/thumbs/8e/2ad9c55baee36d1528aaa8eee36f8e/large.jpg" alt="Tyler Cipriani">
-<figcaption>
-    <p>Hello World.</p>
-</figcaption>
+<figcaption>Hello World.</figcaption>
 </figure>
 
 [[!inline pages=sidebar raw=yes]]
