@@ -1,0 +1,4 @@
+[[!meta title="pages tagged photos/pixel-2"]]
+
+[[!inline pages="tagged(photos/pixel-2)" actions="no" archive="yes"
+feedshow=10]]
