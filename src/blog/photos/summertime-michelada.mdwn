@@ -1,0 +1,28 @@
+[[!meta date="2020-05-29 18:08:07"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Summertime Michelada"]]
+[[!tag
+photos
+photos/pixel-2
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/f2/9256a5dd49d7a8230f1ca9b5651a1e/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/f2/9256a5dd49d7a8230f1ca9b5651a1e/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/f2/9256a5dd49d7a8230f1ca9b5651a1e/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/f2/9256a5dd49d7a8230f1ca9b5651a1e/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/f2/9256a5dd49d7a8230f1ca9b5651a1e/original.jpg)](https://photos.tylercipriani.com/thumbs/f2/9256a5dd49d7a8230f1ca9b5651a1e/large.jpg)
+
+Summertime is michelada time.
+
+EXIF |
+--- | ---
+ExposureTime | 1/40
+FNumber | 1.8
+FocalLength | 4.4 mm
+CreateDate | 2020-05-29 18:08:07
+ISO | 547
+Model | Pixel 2
+Make | Google

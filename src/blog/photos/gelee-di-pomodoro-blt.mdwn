@@ -1,0 +1,34 @@
+[[!meta date="2020-06-14 15:29:29"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Gelée di Pomodoro BLT"]]
+[[!tag
+photos
+photos/pixel-2
+photos/food
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/3e/5522535a7e298cc3f08eb607adc76b/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/3e/5522535a7e298cc3f08eb607adc76b/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/3e/5522535a7e298cc3f08eb607adc76b/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/3e/5522535a7e298cc3f08eb607adc76b/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/3e/5522535a7e298cc3f08eb607adc76b/original.jpg)](https://photos.tylercipriani.com/thumbs/3e/5522535a7e298cc3f08eb607adc76b/large.jpg)
+
+[Tamar Adler](http://www.tamareadler.com/)'s book *[Something Old, Something New](https://openlibrary.org/works/OL19745541W/Something_old_something_new)* is filled with anachronistic dishes reimagined and revised.
+Gelée di pomodoro is found in a short section on aspic. It's a gelatin made
+from tomatoes, basil, jalapeño, olive oil, and salt.
+
+Balancing this piquant aspic atop sourdough, butter lettuce, and center cut
+bacon was my contribution. It tasted like summer in sandwich form.
+
+EXIF |
+--- | ---
+ExposureTime | 1/60
+FNumber | 1.8
+FocalLength | 4.4 mm
+CreateDate | 2020-06-14 15:29:29
+ISO | 439
+Model | Pixel 2
+Make | Google

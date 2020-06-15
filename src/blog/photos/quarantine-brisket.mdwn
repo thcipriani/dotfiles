@@ -1,0 +1,40 @@
+[[!meta date="2020-03-29 18:56:49"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Quarantine Brisket"]]
+[[!tag
+photos
+photos/pixel-2
+photos/food
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/f2/aea9f3409fa6c083b8af8f8c8cbd17/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/f2/aea9f3409fa6c083b8af8f8c8cbd17/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/f2/aea9f3409fa6c083b8af8f8c8cbd17/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/f2/aea9f3409fa6c083b8af8f8c8cbd17/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/f2/aea9f3409fa6c083b8af8f8c8cbd17/original.jpg)](https://photos.tylercipriani.com/thumbs/f2/aea9f3409fa6c083b8af8f8c8cbd17/large.jpg)
+
+- 8 lb brisket
+- Morton's Kosher Salt + Black pepper about 50/50
+- Hickory wood
+- Start spraying brisket with beer after 3 hours
+- 9am–3pm on smoker, tried to maintain 250°F–275°F
+- Kept fire vent open all the time, aiming for complete combustion, opened firebox door when it got too hot
+- When I couldn't raise the temp, I had to empty the ashbox and start new coals
+- Stalled at 170°F for last 2 hours (between 170 and 173)
+- Pulled during stall, wrapped then moved to the oven
+- Moved to oven at 265°F
+- Bark didn't look very dark when I pulled it, but got plenty dark in the oven
+- Too salty, other than that: perfect
+
+EXIF |
+--- | ---
+ExposureTime | 1/17
+FNumber | 1.8
+FocalLength | 4.4 mm
+CreateDate | 2020-03-29 18:56:49
+ISO | 210
+Model | Pixel 2
+Make | Google

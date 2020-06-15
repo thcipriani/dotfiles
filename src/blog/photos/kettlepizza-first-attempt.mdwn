@@ -1,0 +1,38 @@
+[[!meta date="2020-05-03 18:56:17"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Kettlepizza First Attempt"]]
+[[!tag
+photos
+photos/pixel-2
+photos/food
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/2f/91867f51053f50cb42332b30507f8b/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/2f/91867f51053f50cb42332b30507f8b/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/2f/91867f51053f50cb42332b30507f8b/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/2f/91867f51053f50cb42332b30507f8b/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/2f/91867f51053f50cb42332b30507f8b/original.jpg)](https://photos.tylercipriani.com/thumbs/2f/91867f51053f50cb42332b30507f8b/large.jpg)
+
+First attempt at using my webber kettlepizza to make a pizza on the grill. I
+think it worked out pretty ok. Shishitos, red onion, and pepperoni.
+
+My pizza dough recipe is straight from Peter Reinhart's [Artisan Breads Every Day](https://openlibrary.org/works/OL15209619W/Peter_Reinhart's_artisan_breads_every_day).
+
+<figure class="narrow-figure">
+    <img src="https://photos.tylercipriani.com/thumbs/d0/7cca8449475c50e6bb7f269ff592e4/medium.jpg" alt="Kettlepizza">
+    <figcaption>Kettlepizza and session lager</figcaption>
+</figure>
+
+
+EXIF |
+--- | ---
+ExposureTime | 1/192
+FNumber | 1.8
+FocalLength | 4.4 mm
+CreateDate | 2020-05-03 18:56:17
+ISO | 46
+Model | Pixel 2
+Make | Google
