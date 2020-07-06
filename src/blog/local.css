@@ -469,8 +469,8 @@ template {
 }
 
 body {
-    font-size: 1.2em;
-    line-height: 1.75em;
+    font-size: 1.3em;
+    line-height: 1.5em;
     color: rgba(0, 0, 0, 0.8);
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
@@ -522,19 +522,6 @@ ul ul {
 
 img {
     max-width: 100%;
-}
-
-h1,
-h2 {}
-
-h1 {
-    font-size: 1.25em;
-    line-height: 1.5em;
-}
-
-h2 {
-    font-size: 1em;
-    line-height: 1.5em;
 }
 
 h1,
@@ -599,11 +586,18 @@ blockquote {
     color: rgba(0, 0, 0, 0.6);
     font-style: italic;
     background: aliceblue;
-    font-size: smaller;
 }
 
 blockquote p {
     margin: 1em;
+}
+
+blockquote h1,
+blockquote h2,
+blockquote h3,
+blockquote h4,
+blockquote h5 {
+    max-width: 100%;
 }
 
 /*
@@ -808,10 +802,11 @@ a.feedbutton {
 }
 
 #content > p:first-child {
+    font-family: inherit;
     color: #9999dd;
     font-size: 1.25em;
     text-align: center;
-    line-height: 1.75em;
+    line-height: 1.5em;
     max-width: 40em;
 }
 
@@ -939,6 +934,7 @@ a.feedbutton {
 }
 
 figure {
+    display: table;
     margin: 1em auto 2em;
     font-size: small;
     color: #666;
@@ -955,6 +951,16 @@ video {
 }
 
 /* readability */
+section p,
+section ol,
+section ul,
+section dl,
+section .archivepage,
+section table {
+    font-family: "Bitstream Charter", Georgia, Cambria, "Times New Roman", Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+
 p,
 ol,
 ul,
@@ -967,7 +973,7 @@ h5,
 .archivepage,
 table {
     max-width: 40rem;
-    margin: 0 auto 2em;
+    margin: 0 auto 1.5em;
 }
 
 h1,
