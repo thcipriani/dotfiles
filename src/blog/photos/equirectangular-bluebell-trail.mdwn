@@ -12,6 +12,8 @@ photos/14mm-f-2.8-1.4
 photos/nikon-d610
 ]]
 
+<style> figure { display: block; !important } </style>
+
 <figure>
 <div id="panorama">
 <img class="panorama-hidden" src="https://photos.tylercipriani.com/thumbs/9e/d3b765e6aefef7c2f798a716552d7a/large.jpg">
