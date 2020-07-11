@@ -20,3 +20,4 @@ Copyright &copy; 2020 Tyler Cipriani
 12. The Understory by Pamela Erens
 13. [How to Take Smart Notes](https://openlibrary.org/works/OL18635700W/How_to_Take_Smart_Notes) by Sönke Ahrens
 14. [Down and Out in Paris and London](https://openlibrary.org/works/OL1168030W/Down_and_Out_in_Paris_and_London) by George Orwell
+15. [Something Old, Something New](https://openlibrary.org/works/OL19745541W/Something_old_something_new) by Tamar Adler
