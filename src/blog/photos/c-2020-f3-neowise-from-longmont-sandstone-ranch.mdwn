@@ -1,0 +1,47 @@
+[[!meta date="2020-07-20 21:40:13"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="C/2020 F3 (NEOWISE) from Longmont Sandstone Ranch"]]
+[[!tag
+photos
+photos/70-200mm-f-2.8
+photos/nikon-d610
+photos/astrophotography
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/4b/2020dd67915b9053dab38faa91b2a2/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/4b/2020dd67915b9053dab38faa91b2a2/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/4b/2020dd67915b9053dab38faa91b2a2/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/4b/2020dd67915b9053dab38faa91b2a2/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/4b/2020dd67915b9053dab38faa91b2a2/original.jpg)](https://photos.tylercipriani.com/thumbs/4b/2020dd67915b9053dab38faa91b2a2/large.jpg)
+
+Single, untracked shot of the comet NEOWISE from Sandstone Ranch in Longmont,
+Colorado.
+
+I hadn't planned on going to see the comet--it's been cloudy the last few days
+and I was slowly starting to lose hope for a clear night.
+
+An hour before this picture was taken, as I was taking the dog out just before
+going to bed, I noticed the stars for the first time in days. I threw my camera
+in the car, grabbed the binoculars, and drove to the highest, closest public
+spot.
+
+Blazey's niece is staying with us for a few weeks of this strange summer. We
+attempted to see NEOWISE on Saturday from the same vantage, but all we found
+were cloudy skies and roving hordes of teenagers. Tonight was very
+different--small groups of nerds gathered around telescopes, all there to see
+the same thing.
+
+EXIF |
+--- | ---
+ExposureTime | 2
+FNumber | 2.8
+FocalLength | 200.0 mm
+CreateDate | 2020-07-20 21:40:13
+Lens | 70-200mm f/2.8
+ISO | 3200
+Model | NIKON D610
+Make | NIKON CORPORATION
+
