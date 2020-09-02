@@ -25,3 +25,50 @@ Copyright &copy; 2020 Tyler Cipriani
 17. [The Fault in Our Stars](https://openlibrary.org/books/OL25438989M/The_Fault_in_Our_Stars) by John Greene
 18. [Where the Crawdads Sing](https://openlibrary.org/works/OL18766691W/Where_the_Crawdads_Sing) by Delia Owens
 19. [The Diary of a Young Girl](https://openlibrary.org/works/OL2948954W/The_diary_of_a_young_girl) by Anne Frank
+20. [The Professor and the Madman](https://openlibrary.org/works/OL1840032W/The_professor_and_the_madman) by Simon Winchester
+
+    **Marginalia**:
+
+    * pg 29: There is a "veritable academic industry" of people decrying
+      the OED as racist and sexist.
+    * pg 45: The "madman"/W.C. Minor's forebearers founded the state of Connecticut
+    * pg 55: Irish immigrants fought in the civil war, but  were often
+      used as canon fodder.
+    * pg 73: The phrase "Look something up" didn't appear in English until
+      1692
+    * pg 79: Part of the philological society's motivation for supporting
+      the creation of the OED was imperialism
+    * pg 84: In 1746, 5 London booksellers contracted with Samuel Johnson
+      to write his dictionary which he published in 1755 in an almost
+      entirely singular effort
+    * pg 93: Richard Chenevix Trench conceived of the OED in a speech in
+      1857 stating the it would be "the combined action of many"
+      volunteers.
+    * pg 119: The system of collecting quotations for the OED was to put
+      the "catchword" in the upper left of a half-sheet of writing paper.
+      Underneath you write the date, author, title, and page number
+      followed by the full quotation using the catchword.
+
+21. [From Bauhaus to Our House](https://openlibrary.org/works/OL1925471W/From_Bauhaus_to_our_house) by Tom Wolfe
+
+    **Marginalia**:
+
+    * pg 14: Art became a form of clarisy in the 20th century, you had to
+      understand theory to understand art, "There were no manifestos in the
+      world of art prior to the twentieth century"
+    * pg 17: International style favored labor; however, it favored
+      machine-made objects vs handmade artisan objects as in the Arts and
+      Crafts movement in England "proved" that only the rich could afford such
+      items.
+    * pg 24: Le Corbusier called his houses "machines for living"
+    * pg 26: Stalin: "Engineers of his soul"
+    * pg 32: The Museum of Modern Art was founded by John D Rockefeller, Jr.
+    * pg 44: "The fundamental pedagogical mistake of the academy arose from its
+      preoccupation with the idea of the individual genius" - Walter Gropius
+    * pg 72: Frank Lloyd Wright, "catered to the hog-stomping Baroque
+      exuberance of American civilization" (this is a magical phrase)
+    * pg 108: Venturi's definition of architecture, "shelter with decoration on
+      it"
+    * pg 109: You can't take on a new fashion by calling it ugly; you have
+      to acknowledge it and create a still more avant-garde style.
+
