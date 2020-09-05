@@ -1,0 +1,155 @@
+[[!meta date="2020-09-04T19:48:03.205705"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Buying a house 🏠 in 2020 "]]
+
+My significant other and I bought our very first home in July. We just finished
+moving. I learned a lot during this process. I'm writing it down while it's
+still fresh in my mind.
+
+## Why not rent?
+
+I've always rented and thought I would continue to rent forever. When I was
+still in high school I read [_Rich Dad, Poor Dad_][richdad] which repeatedly
+makes the point that your house is a liability. I have been, and still am,
+convinced by the arguments in that book.
+
+While I was renting I liked that I wasn't responsible the furnace or the fence
+or the stove -- those were all someone else's problem.
+
+Except our fence was falling down; our stove was crappy and there was nothing
+we could do about it; and our furnace hadn't even had a filter change in...a
+while.
+
+We had the freedom to move, but not freedom to create our own space as we
+wanted. In the end the desire for our own space won out.
+
+## Buying a house in 2020
+
+Sometime in 2018 we decided we wanted to buy instead of rent. At the time
+people were predicting an [upcoming recession][bondmarket] and I felt like the [fed lowering
+the interest rate][fed] could only artificially inflate the economy for so long.
+
+Summer 2020 seemed like a good target. Housing prices were [pretty
+flat][boulder-housing] in 2019.  By summer 2020, I predicted, there would be
+some slack in the local housing market and low interest rates for mortgages. In
+some ways, I guess, I was right, but I really could not have predicted much of
+anything about 2020 (I mean, murder hornets? What even?).
+
+## Our process
+
+Back in January, Blazey and I sat down with a big stack of post-it notes and
+sharpies to try to determine what we wanted in a house. We each wrote down
+everything we could think of wanting in a house; one item per post-it. Once
+we wrote down everything, we took a step back and grouped all our post-its
+into ["MUST", "SHOULD"][rfc2119], and "nice to have".
+
+We ended up with a list of 25 things with 5 "MUST"s.
+
+**Must**
+
+1. Not in flood zone (this came from witnessing the [2013 flood][flood])
+2. Can cook macaroni on _day one_
+3. 3+ Bedroom / 2+ Bath (one office each, one bathroom each)
+4. Private outdoor space
+5. Walkability
+
+The "macaroni" bit was one I came up with. The idea behind _day-one macaroni_
+is that, while I'm looking forward to being able to work on our shared space, I
+shouldn't _need to_ work on our shared space to move in.
+
+We had increasingly esoteric needs father down the list. Things like, "Pre-World War II
+era/Craftsman/Bungalow" with "Access to [NextLight™ municipal gigabit fiber][nextlight]
+internet service".
+
+As unlikely as it seems to find a 1910 craftsman house with municipal gigabit
+internet, we got it. In the end, we got 20 our of our 25 things. We sacrificed
+indoor space for location. Given that the pandemic has made location largely
+irrelevant, I'm hoping that was the right choice 😅
+
+## Moving
+
+We closed on the 3rd of July and informed our landlords that August would
+be our last month -- 2 months to move.
+
+During that time we:
+
+* Sanded and painted the cabinetry in the kitchen and installed new pulls
+* Replaced the base of a few cabinets
+* Painted the dining room and living room
+* Removed the wallpaper in the library (yeah, there's a library)
+* Skim coated a couple of walls that we have every intention of wallpapering Soon™
+
+This left us with about 6 days to move from our ~3,000 square foot rental house
+to our new 1,300 square foot home. By dint of several truly heroic days of
+hauling and cleaning we managed to haphazardly move all of our crap from one
+place to the other and dispose of a good amount of the _true_ crap in the process
+(How does one _get rid of_ old computers? 🤔 I still have my laptop from
+college it seems...).
+
+Things I learned during this move:
+
+1. If you buy a new thing, get rid of the thing you are replacing. This is
+   particularly easy to forget when you're caught up in an ever expanding
+   hobby. Selling the old thing should be part of your consideration about
+   getting the new shiny thing.
+2. Just because the box is fancy, doesn't mean you have to keep the box. I
+   had a whole cabinet full of boxes for fancy electronics: cameras, lenses,
+   drones, laptops, networking equipment, weather station. What is wrong with
+   me‽
+3. Deadlines are good. Renting a u-haul is a good artificial
+   deadline you can give yourself. I woke up the morning I rented the u-haul
+   ready to haul things and spent 8 hours doing that. It was the most
+   productive day of the whole move for me.
+4. Just buy moving boxes. We tried to save our amazon boxen, but it wasn't
+   enough. I ended up buying a ton of boxes at Lowes. I should have bought
+   those from the get go.
+5. Even though the move is short, treat it like a long move. As a friend of
+   Blazey's said recently: you don't forget your toothbrush if you're moving
+   cross-country. We were moving 5 blocks from our old place. The short
+   relocation distance resulted in countless exchanges along the lines of,
+   "Where's the tape measure?" "Oh, I left it at the old place, I'll be right
+   back" -- it turns out, those add up quickly.
+6. Prioritize pre-move tasks. We had a long list of things we wanted to do
+   before moving and I'm glad we did them before we moved in (we probably never
+   would have painted the kitchen cabinets otherwise), but we grossly
+   underestimated the amount of work needed. The end result was that we wasted
+   a lot of time that we couldn't make up later.
+
+## Final thoughts
+
+Summer 2020 is either a genius time to buy a house or a really fucking stupid
+time to buy a house.
+
+We took a lot of precautions. Managing the process thoughtfully during a
+pandemic was a key interview question for all of our buyer's agents. Still.
+
+The whole process was strange and fraught with problems I'd never thought I'd
+have. This also describes 2020 for me.
+
+On the plus side, we locked in a very low interest rate -- we're paying 3% on a
+30 year fixed mortgage. On the negative side, I have no idea if what I love
+about this neighborhood will survive the pandemic.
+
+The neighborhood I want to live in is a neighborhood with a diversity of use --
+there are offices and restaurants and houses and stores and bars all within
+walking distance. There are parks.  There are eyes on the street at all times
+of day and night. The presence of people makes this neighborhood strong. If
+main street collapses then demand to live near main street will collapse, and
+so will the neighborhoods near main street. Quoting Jane Jacobs, "When a city
+heart stagnates or disintegrates, a city as a social neighborhood of the whole
+begins to suffer." I worry about this.
+
+Also I worry about having signed a document agreeing to pay a [staggering
+amount of money][xkcd] with the date "2050" on it 🙈
+
+[richdad]: <https://www.worldcat.org/title/rich-dad-poor-dad/oclc/48065436>
+[fed]: <https://www.bloomberg.com/news/articles/2019-09-11/trump-calls-on-fed-to-cut-interest-rates-to-zero-or-less>
+[bondmarket]: <https://www.advisorperspectives.com/articles/2018/10/08/a-roadmap-for-the-upcoming-u-s-treasury-bull-market-1>
+[boulder-housing]: <https://www.dailycamera.com/2019/06/12/housing-prices-arent-moving-up-in-boulder-county/>
+[rfc2119]: <https://tools.ietf.org/html/rfc2119>
+[nextlight]: <https://www.longmontcolorado.gov/departments/departments-e-m/longmont-power-communications/broadband-service>
+[xkcd]: <https://xkcd.com/1894/>
+[flood]: <https://www.climate.gov/news-features/event-tracker/historic-rainfall-and-floods-colorado>
