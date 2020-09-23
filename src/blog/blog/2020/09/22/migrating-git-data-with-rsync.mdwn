@@ -1,0 +1,168 @@
+[[!meta date="2020-09-22T21:05:23.339973"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2020 Tyler Cipriani
+"""]]
+[[!meta title="Migrating git data with rsync"]]
+[[!tag computing]]
+
+This is a cautionary tale about keeping git data in sync between two machines
+with rsync. There aren't really a lot of pitfalls here, but we stumbled into
+one of them, and I've been meaning to write this up since.
+
+tl;dr: to keep git repos in sync using rsync use the command:
+
+    rsync --archive --verbose --delete <dir1> <dir2>
+
+## Background
+
+Almost a year ago we [upgraded the hardware][phab-hardware-ticket] for our primary git host at work.
+We run our primary git server on bare metal in one of the Equinix data centers
+in Virginia and it was starting to show its age. Our git host was coming up on
+the end of its warranty, but -- more importantly -- we'd simply outgrown
+the hardware. We run [Gerrit][gerrit] as our code review system and its hunger
+for heap led to more than one late night caused by
+`java.lang.OutOfMemoryError`. After spending more time than I probably should
+have tuning various GC parameters, I put in a request for new hardware.
+
+The plan for the upgrade was pretty simple: Setup a new machine seeded with all
+of our git data and run it as a replica of the current machine until the
+switchover window. Prevent the new machine from writing to Gerrit's database
+entirely. When the switchover window rolls around: take both machines offline,
+one final rsync of data, swap DNS records, allow database writes from the new
+machine, and bring the new machine online.
+
+We finished up the migration at the end of my day and all seemed to go fine, we
+sent out the [all clear][all-clear-email] and claimed victory. Over my night the European cohort
+began to see the first inklings of a problem: there were [revisions and Gerrit
+comments missing][phab-missing-ticket] on the new server! Patches that had been merged were showing
+up as unmerged! Day was night! Dogs and Cats were best friends! Chaos reigned.
+
+Data integrity problems are alarming, but they are especially acute when the
+data that's integrity is in doubt is the canonical source code to a gigantic
+open source project backing one of the most important free knowledge projects
+in existence. No pressure.
+
+## NoteDB and things to know
+
+The first thing to know is that code reviews in Gerrit aren't stored in a real
+database, but are stored instead in [NoteDB][notedb] -- which is just a bunch of namespace
+conventions on top of git. In fact, as of today, the latest version of Gerrit
+stores *nothing* in the database and stores everything in git.
+
+Everything being stored in git has some uhhh...I'll say "interesting"....
+side-effects. For example, users are stored in a git repo called
+`All-Users.git` and in our version of that repository there are >22,000 refs pointing to the
+blob `ce7b81997cf51342dedaeccb071ce4ba3ed0cf52`. Why tag a blob? What could be
+in that blob?
+
+```
+$ git show ce7b81997cf51342dedaeccb071ce4ba3ed0cf52
+star
+```
+
+That's right, there are 22,000 refs pointing to a single blob with the
+contents, `star`. Each ref is of the format
+`refs/starred-changes/XX/YYYYXX/ZZZZ`. This is how Gerrit stores starred
+changes :|
+
+I don't know if that's normal or sane: there are no rules out here
+in git-is-your-database-now land.
+
+All of the above background about NoteDB is to say that any knowledge you might
+have about how reviews might disappear from a database don't hold in Gerrit.
+All the lovely persistence guarantees about RDBMS mean fuck all. This is a
+pop quiz about git knowledge.
+
+## How reviews are stored
+
+OK, so Gerrit doesn't use an RDBMS, so we'll need to know how reviews are
+stored in order to understand how they might disappear.
+
+Gerrit stores patchsets for review in refs. Gerrit uses the "changes" ref
+namespace for all changes. For example, the first revision for the first change
+for the repo "foo" would be stored in `/srv/gerrit/git/foo.git` under the ref
+`refs/changes/01/0001/1`. The next revision for the first change would be
+stored on `refs/changes/01/0001/2`. Any commentary about the first change is
+also stored in a special ref in the changes namespace in git in
+`refs/changes/01/0001/meta`.
+
+## How refs are stored
+
+Git refs are stored in the `refs` directory inside a repository's git
+directory. A Gerrit change stored in loose refs on disk might look like:
+
+    refs/changes
+    └── 01
+        └── 0001
+            ├── 1
+            └── meta
+
+
+Each file there points to a commit (or a tree or a blob, but in practice it's
+usually a commit).
+
+Periodically (i.e., whenever git runs a garbage collection cycle) that
+directory is emptied out and the info is shoved into a `packed-refs` file.
+
+But what happens when there are *both*? When there is a `refs/heads/foo` and a
+`packed-refs` that references a `refs/heads/foo`? When you do `git rev-parse`
+which one "wins"? This is a common scenario and happens whenever you update a
+ref:
+
+    $ git init
+    Initialized empty Git repository in /home/thcipriani/tmp/git-pack/.git/
+    $ echo "foo" > README
+    $ git add . && git commit -m 'Initial commit'
+    [main (root-commit) 8c1ba31] Initial commit
+     1 file changed, 1 insertion(+)
+      create mode 100644 README
+    $ git update-ref refs/changes/1 HEAD
+    $ cat .git/refs/changes/1
+      8c1ba312abe6b25948011d05e0ded8bc581b6bb0
+    $ echo 'bar' > README
+    $ git commit -a -m 'update'
+      [main 93791e4] update
+       1 file changed, 1 insertion(+), 1 deletion(-)
+    $ git gc
+       Enumerating objects: 6, done.
+       Counting objects: 100% (6/6), done.
+       Delta compression using up to 4 threads
+       Compressing objects: 100% (2/2), done.
+       Writing objects: 100% (6/6), done.
+       Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+    $ ls -lh .git/refs/changes/
+    total 0
+    $ git update-ref refs/changes/1 HEAD
+    $ cat .git/refs/changes/1
+    93791e4e3fbf39cd2d90d678eb2530ce03e5eaf4
+    $ cat .git/packed-refs
+    # pack-refs with: peeled fully-peeled sorted
+    8c1ba312abe6b25948011d05e0ded8bc581b6bb0 refs/changes/1
+    93791e4e3fbf39cd2d90d678eb2530ce03e5eaf4 refs/heads/main
+
+## The punchline
+
+OK, so what happened to our changes? Trying to be cautious we used the rsync
+command:
+
+    rsync --archive --verbose <dir1> <dir2>
+
+We purposely omitted `--delete` because objects in git are deterministic: who
+cares if they were packed? Why risk deleting things? We knew we didn't lose any
+objects in the transfer. The problem was **we didn't lose any of the unpacked
+refs either**. This meant that when we seeded the git directories on the new
+server a month before the maintenance window, some of these repositories had
+loose refs that were subsequently packed into `packed-refs`. Since the *newer*
+refs ended up in `packed-refs` while the *older* refs were on disk it made the
+Gerrit interface appear to be in an older state.
+
+The moral of the story here is to **never omit `--delete`**  from rsync if
+you're trying to keep repos in sync.
+
+[phab-hardware-ticket]: <https://phabricator.wikimedia.org/T222391>
+[phab-missing-ticket]: <https://lists.wikimedia.org/pipermail/wikitech-l/2019-October/092696.html>
+[all-clear-email]: <https://lists.wikimedia.org/pipermail/wikitech-l/2019-October/092693.html>
+[gerrit]: <https://www.gerritcodereview.com/>
+[notedb]: <https://gerrit-review.googlesource.com/Documentation/note-db.html>
+
