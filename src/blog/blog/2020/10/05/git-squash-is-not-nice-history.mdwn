@@ -61,7 +61,7 @@ added to `main`'s history that is an amalgam of the commits on the
     <code>
       C - D        feature/magic
      /
-A - B - E - CD'    main
+A - B - - - CD'    main
     </code>
 </pre>
 
@@ -76,7 +76,7 @@ strategy to choose is dependent on the content of the commits you are merging.
 The strategy chosen should maintain the principal that a commit in a mainline
 branch's history should make sense on its own.
 
-The content of our feature branch is obscured in our example above. A new
+In the above example, the content of the feature branch isn't shown. A new
 example might be a `feature/lossless` branch that contains a refactor and
 a new feature that depends on that refactor:
 
