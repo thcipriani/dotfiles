@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-
+#
+# When I run "startx" from the framebuffer, this file is read by xinit.
+# This may also need to be run from /usr/share/xsessions/{thing}.desktop
+#
+# Why the default x11 config doesn't just run "startx"? No idea.
+# How is "startx" different from "xinit"? No idea.
+#
 prepend_to_path() {
   local dir="$1"
 
@@ -32,6 +38,8 @@ XRDB_OPTIONS=''
 # }}}
 
 # Fonts {{{
+test -d "$HOME/.fonts" && xset +fp "$HOME/.fonts"
+
 # terminess
 test -d "$HOME/.fonts/terminess" && xset +fp "$HOME/.fonts/terminess"
 
