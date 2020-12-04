@@ -72,3 +72,6 @@ Copyright &copy; 2020 Tyler Cipriani
     * pg 109: You can't take on a new fashion by calling it ugly; you have
       to acknowledge it and create a still more avant-garde style.
 
+22. [The Death and Life of Great American Cities](https://openlibrary.org/isbn/067974195X) by Jane Jacobs
+23. [The Overstory](https://openlibrary.org/works/OL20163028W/The_Overstory) by Richard Powers
+
