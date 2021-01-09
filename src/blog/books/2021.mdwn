@@ -1,0 +1,111 @@
+[[!meta date="2021-01-09T13:44:00-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Books Read in 2021"]]
+[[!tag books]]
+
+## Unstructured Reading
+
+1. [Eat a Peach](https://openlibrary.org/isbn/152475921X) by David Chang
+
+## Structured Reading
+
+At the beginning of this year, I randomly downloaded the Harvard Classics/Dr.
+Eliot's Five Foot Shelf of books. This is a set of books that contains a
+selection of classic readings meant to provide a full classic liberal education
+in themselves.
+
+My first exposure to this series was at my Granny's house where she owned a
+subset of the shelf. I've never had a mind to read the entirety of the
+shelf.
+
+Volume 50 of the 50-volume series contains several suggestions of the ways
+in which a reader may choose to tackle the task of intelligently navigating
+the embarrassment of material in the collection. I've naively chosen to follow
+the first suggested course of reading: The history of civilization.
+
+Here I'll track my progress and notes:
+
+### [Race and Language](https://www.gutenberg.org/files/21962/21962-h/21962-h.htm#chap07a) by Edward Augustus Freeman
+
+Freeman is famous for his history of the Norman conquest. There are a few good
+quotes in the early part of this reading.
+
+There is an early section where he talks about race as an artificial construct:
+
+> A hundred years ago a man's political likes and dislikes seldom went beyond
+> the range which was suggested by the place of his birth or immediate descent.
+> [...]
+> That feelings such as these, and the practical consequences which have flowed
+> from them, are distinctly due to scientific and historical teaching there
+> can, I think, be no doubt.
+
+Which is a thought that I've never had before: that our ability to hate our
+fellow human beings has in modern times has been enhanced by science and
+history's creation of the concept of race.
+
+Freeman goes on to argue that while race is an artificial construct, it's
+an important construct -- if only because it effects the behavior of a large
+number of people:
+
+> A belief or a feeling which has a practical effect on the conduct of great
+> masses of men, sometimes on the conduct of whole nations, may be very false
+> and very mischievous; but it is in every case a great and serious fact, to be
+> looked gravely in the face.
+
+After this the reading gets pretty cringy pretty fast. I went on to read the
+Wikipedia page for [Edward Augustus
+Freeman](https://en.wikipedia.org/wiki/Edward_Augustus_Freeman) and overall he
+seems like racist piece of shit, so I don't feel too bad for abandoning the
+first reading of the course.
+
+This reading does make me a little anxious about the shelf's ability to
+contextualize the readings in a way that's relevant to me.
+
+### The Book of Job
+
+I am very ignorant of pretty much the entirety of bible, so this is my first
+time reading the book of Job.
+
+Most of the story is a dialog that attempts to address the problem of why bad
+things happen to good people. The answer, it seems, is that God just does shit
+sometimes and it may seem capricious (and maybe it even is) but you can't
+assume that bad things happen to bad people and good things happen to good
+people.
+
+> What knowest thou, that we know not? What understandest thou, which is not in us?
+> -- Job 15:9
+
+In the story the reason for Job's suffering is that Satan mentioned to God that
+Job is probably only pious because he has a cushy life so God destroys his life
+because reasons.
+
+The majority of the reading is Job's friends Eliphaz, Bildada, and Zophar
+insufferably insisting that Job repent for his wicked ways. Job keeps
+insisting that God is causing his suffering for no reason, randomly, and he has
+nothing to repent for -- which (from our omniscient narrative prospective) we
+know is totally correct -- and his friends say things like:
+
+> Behold, God will not cast away a perfect man, neither will he help the evil doers
+> -- Job 8:20
+
+And
+
+> For the company of the godless shall be barren, And fire shall consume the tents of bribery.
+> -- Job 15:34
+
+And
+
+> Know therefore that God exacteth of thee less than thine iniquity deserveth.
+> -- Job 11:6
+
+Which are, it occurs to me -- like Polonius's speech in Hamlet (best embodied
+by Bill Murray in the 2000 movie version of Hamlet) -- likely quoted out of
+context all the fucking time in the misguided belief that that they're not
+meant to be banal, naive, and (in this instance) ultimately incorrect
+platitudes.
+
+God swoops in at the end of the narrative and restores Job at his friend's
+expense and explains basically nothing which is probably the point.
