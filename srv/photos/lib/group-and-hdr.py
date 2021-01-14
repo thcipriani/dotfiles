@@ -27,7 +27,7 @@ for group in groups:
         '/usr/bin/align_image_stack -a aligned_ -v -m -g 10 -c 16 -C *.tif',
         cwd=group, shell=True)
     subprocess.check_call(
-        '/usr/bin/enfuse -o avg.tif *.tif', cwd=group, shell=True)
+        '/usr/bin/enfuse -o avg.tif aligned_*.tif', cwd=group, shell=True)
 
 raw_input('Move averaged file: ' + repr(groups) + '?')
 for group in groups:

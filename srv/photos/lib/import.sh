@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 # 0 == THIS IS NOT A TEST!
 SHOOT=
@@ -28,7 +28,7 @@ has?() {
 }
 
 run() {
-    local count=1
+    local count=0
     local pad_count exif_created new_fn
 
     (( DRY_RUN > 0 )) && say "Doing dry run"
@@ -38,6 +38,11 @@ run() {
     (( DRY_RUN == 0 )) &&  {
         mkdir -p "$DEST_DIR"
     }
+
+    count="$(find "$DEST_DIR" -type f | wc -l)"
+    if (( count == 0 )); then
+        count=1
+    fi
 
     for file in "${START_DIR}"/*."${EXTENSION}"; do
         set -- "$(printf '%s\n' "$file" | awk \
