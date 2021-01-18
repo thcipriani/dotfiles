@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Living Room</title>
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+    <style>
+        html, body { margin: 0; }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+var p = $('#panorama');
+
+// size panorama to full window
+function resize() {
+    p.width($(window).width());
+    p.height($(window).height());
+}
+
+$(window).on('resize', resize);
+resize();
+
+$.getJSON('config.json', function(data) {
+    pannellum.viewer('panorama', data);
+});
+</script>
+
+</body>
+</html>

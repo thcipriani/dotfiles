@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gpx version="1.0" creator="GPSLogger - http://gpslogger.mendhak.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd"><time>2017-05-18T02:59:54Z</time><bounds />
+    <trk>
+        <trkseg><trkpt lat="48.20494437" lon="16.36125534"><ele>261.0</ele><speed>1.42</speed><hdop>4.4</hdop><src>gps</src><sat>21</sat><time>2017-05-18T02:59:54Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20603288" lon="16.364228"><ele>202.0</ele><course>358.1</course><speed>1.0754069</speed><hdop>1.6</hdop><src>gps</src><sat>21</sat><time>2017-05-18T03:05:38Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20794013" lon="16.36654932"><ele>287.0</ele><course>358.1</course><speed>0.59682494</speed><hdop>2.2</hdop><src>gps</src><sat>21</sat><time>2017-05-18T03:13:31Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20865721" lon="16.3696746"><ele>281.0</ele><speed>0.77</speed><hdop>2.2</hdop><src>gps</src><sat>21</sat><time>2017-05-18T03:28:04Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20856415" lon="16.37304163"><ele>230.0</ele><course>319.4</course><speed>1.9414685</speed><hdop>5.6</hdop><src>gps</src><sat>20</sat><time>2017-05-18T03:34:15Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20826146" lon="16.37345073"><ele>262.0</ele><speed>0.04</speed><hdop>4.8</hdop><src>gps</src><sat>21</sat><time>2017-05-18T03:41:17Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20896847" lon="16.37289002"><ele>246.0</ele><speed>0.0</speed><hdop>3.8</hdop><src>gps</src><sat>18</sat><time>2017-05-18T03:48:56Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.2044173" lon="16.36817925"><ele>227.0</ele><speed>2.97</speed><hdop>2.4</hdop><src>gps</src><sat>20</sat><time>2017-05-18T04:11:19Z</time></trkpt></trkseg>
+        <trkseg><trkpt lat="48.20413112" lon="16.36859709"><ele>234.0</ele><course>34.5</course><speed>0.6016643</speed><hdop>2.0</hdop><src>gps</src><sat>20</sat><time>2017-05-18T04:28:13Z</time></trkpt></trkseg>
+    </trk>
+</gpx>

@@ -1,0 +1,1 @@
+This photo was taken from the middle of Bluebell trail, the Flatirons, Chautauqua park, Boulder, Colorado. Photo was taken using a Nodal Ninja NN3 MKII on a Sirui T-025X carbon fiber tripod. The image was created from 144 photos that were lens-corrected in Darktable, averaged using enfuse, and stitched using hugin. Created with 100% open source software
