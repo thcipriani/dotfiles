@@ -1,0 +1,51 @@
+[[!meta date="2021-01-09T15:44:00-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Book of Job"]]
+[[!tag books]]
+
+I am very ignorant of pretty much the entirety of bible, so this is my first
+time reading the book of Job.
+
+Most of the story is a dialog that attempts to address the problem of why bad
+things happen to good people. The answer, it seems, is that God just does shit
+sometimes and it may seem capricious (and maybe it even is) but you can't
+assume that bad things happen to bad people and good things happen to good
+people.
+
+> What knowest thou, that we know not? What understandest thou, which is not in us?
+> -- Job 15:9
+
+In the story the reason for Job's suffering is that Satan mentioned to God that
+Job is probably only pious because he has a cushy life so God destroys his life
+because reasons.
+
+The majority of the reading is Job's friends Eliphaz, Bildada, and Zophar
+insufferably insisting that Job repent for his wicked ways. Job keeps
+insisting that God is causing his suffering for no reason, randomly, and he has
+nothing to repent for -- which (from our omniscient narrative prospective) we
+know is totally correct -- and his friends say things like:
+
+> Behold, God will not cast away a perfect man, neither will he help the evil doers
+> -- Job 8:20
+
+And
+
+> For the company of the godless shall be barren, And fire shall consume the tents of bribery.
+> -- Job 15:34
+
+And
+
+> Know therefore that God exacteth of thee less than thine iniquity deserveth.
+> -- Job 11:6
+
+Which are, it occurs to me -- like Polonius's speech in Hamlet (best embodied
+by Bill Murray in the 2000 movie version of Hamlet) -- likely quoted out of
+context all the fucking time in the misguided belief that that they're not
+meant to be banal, naive, and (in this instance) ultimately incorrect
+platitudes.
+
+God swoops in at the end of the narrative and restores Job at his friend's
+expense and explains basically nothing which is probably the point.
