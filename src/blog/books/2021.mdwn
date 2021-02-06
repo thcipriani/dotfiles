@@ -31,5 +31,6 @@ Here I'll track my progress and notes:
 * [[Race and Language by Edward Augustus Freeman|books/2021/race-and-language-freeman]]
 * [[The Book of Job|books/2021/book-of-job]]
 * [[An Account of Egypt by Herodotus|books/2021/egypt-by-herodotus]]
-* The Odyssey by Homer
+* [[The Odyssey by Homer|books/2021/odyssey-homer]]
+* The Oresteia by Aeschylus
 * ...

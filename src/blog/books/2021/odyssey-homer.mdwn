@@ -1,0 +1,134 @@
+[[!meta date="2021-01-28T17:43:15-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="The Odyssey by Homer"]]
+[[!tag books]]
+
+I read this book as part of my 2021 goal to finish the "[[History of Civilization|books/2021#structured-reading]]"
+course from the Harvard 5-foot-shelf reading guide. I've meant to read
+this book for a few years, and started it once before. I've finally finished it.
+
+One problem in reading ancient Greek text is I can't read Greek -- I have to
+find a translation. The translation in the H5fs is done by
+[S.H. Butcher & A. Lang](https://www.bartleby.com/22/) and it's fine.
+Translation is meant to keep not only the meaning of the text, but the feeling
+of reading the text in the original language. Capturing the feeling of a text
+perfectly for a particular time period may obscure the meaning in a translation
+in another time period. I don't know if
+[Alexander Pope](https://www.gutenberg.org/files/3160/3160-h/3160-h.htm)'s
+translation captures the feeling of reading the original greek, but it's about
+as decipherable as the original greek to me. Blazey recommended the
+[Robert Fitzgerald translation](http://openlibrary.org/isbn/0374224382) and this
+seemed like a more understandable translation than the S.H. Butcher/A.Lang
+translation, so that's what I read.
+
+One particular problem with all translation is that in Greek epic poetry
+(evidently) there are just a million names for everything. The Greeks
+themselves are alternately called the Argives (20 times), Argos (24 times -- 3
+times it refers to a Dog named "Argos"), Danaans (10 times), and Akhaians (97
+times). Also, translations differ on things like spellings of names: Telemachus
+vs Telémakhos. Additionally, Romans had different names for all the different
+names: Minerva vs Athena. Roman translations also use Ulysses rather than
+Odysseus. Shit's confusing.
+
+There are some names like "Pallas" for Athena that I just don't know where they
+came from. I'm only a little ashamed to say that the "Pallid bust of Pallas"
+mentioned in Poe never *clicked* until I was about 1/3rd of the way through
+this book.
+
+There are so many *other* events that happen outside of this story that this
+story only touches on. The entirety of the incident of Helen in Troy, the
+Trojan war, Agammemnon -- all of this is mentioned, but none of it is really
+explored in the Odyssey. There's a whole underworld sequence where Odysseus
+rattles off names like the liner notes to an album called, "NOW That's What I
+call Mythical Greek Mortals: Volume I": Kastor and Pollux, Oidipus, Hercules,
+Orion, Phaedra, etc, etc, etc. I guess that's why it's a good introduction to
+mythical Greece -- there's a little bit of everything. To understand every
+throw-away reference in the play would take forever.
+
+> Reading a great poem is a lifetime job -- Charles Van Doren
+
+A recurring thought I had during my reading of the Odyssey is: man, does the
+Duck Tales version really nail this. There was a 1987 episode of DuckTales
+entitled [Home Sweet Homer](https://disney.fandom.com/wiki/Home_Sweet_Homer )
+that, while it doesn't follow the detail, really does provide some memorable
+visuals. In DuckTales Telémakhos is King Homer and Odysseus is Ulysses.
+Essentially, King Homer nee Telémakhos does all the stuff that Odysseus
+describes to the Scherians (AKA Phaiakians, AKA Phaeacians, sooo many names) in The Odyssey.
+
+Cerce is perhaps a bit more evil in the DuckTales version, but does turn the
+crew into swine just like in the story. Aeolus is reimagined as King Blowhard (which is waaay easier to
+remember) who is allergic to persimmons (called "Umma Gumma" fruit, but just
+look at them, they're persimmons -- I assumed this was a referrence to
+*something* from the Odyssey, but it's evidently just a weird detail of the
+DuckTales version). There are sirens. Scylla is
+[Yuckalinda](https://disney.fandom.com/wiki/Yuckalinda) (which is also a way
+better name). Ithica is Ithaquack.
+
+Anyway, I'm not saying the DuckTales version was *better* exactly, but they did a lot
+right.
+
+Weirdly, the DuckTales version didn't have a cyclops. It's especially weird
+because the cyclops scene had the world's first "Who's on First"-type routine
+in recorded history where Odysseus tells Polyphemos the cyclops that his name is
+"Nohbdy", stabs his eye out, and when Polyphemos asks his other cyclops
+friends for help he says, "Nohbdy's tricked me, Nohbdy's ruined me!" to which
+comes the sage reply: "Ah well, if nobody's played you foul there in your
+lonely bed, we are no use in pain given by great Zeus." Hilarious.
+
+Another detail mercifully absent in the DuckTales version: the ancient Greeks
+seem to kind of hate women. I think we're supposed to hate all women other than
+Penelope, Nausicaa (princess of the Phaeacians), and Athena (who notably did
+not have a mother and sprang forth from Zeus's forehead). Circe (witch),
+Calypso (evil nymph), Cletemnestra (murdered her husband to marry his cousin --
+the plays of Aeschylus make this a little more complicated), Scylla (who is
+literally a 3-headed serpent), the sirens (who lure men to their doom). That
+one random maid -- Melantho -- that Odysseus calls a slut and threatens to,
+"cut [her] arms and legs off". Penelope, also, paitiently waited for Odysseus's
+return for 20 fucking years when everyone said he was dead -- and that's the
+ONLY woman we're supposed to like -- that's what it takes. Overall, the
+treatment of women in the Odyssey is completely fucked and makes for a dubious
+foundation for "the history of civilization".
+
+During the 20 years that Odysseus has been away -- first fighting the war in
+Troy and then held by the nymph Calypso -- Penelope has been warding off a
+bunch of suitors that are gradually consuming her estate. Most of the story
+builds to a violent ending that you as a reader are expecting from the start.
+While you see the eventual deaths of the suitors at the hands of Odysseus
+coming what you may not see coming is the Quentin Tarantino level of violence
+at the end of the story. The climactic scene starts with Odysseus disguised as
+a vagabond in his own house when Penelope announces that she will marry the
+suitor that can shoot an arrow through the hole in 12 axe heads.
+
+Let me pause here to say: I had a hard time visualizing what shooting an arrow
+through the hole in 12 axe heads looked like so I did an [image
+search](https://duckduckgo.com/?q=arrow+through+12+axes&iax=images&ia=images).
+From this image search it's safe to say: no one has any idea what this looks
+like. My best guess is that we're talking about the haft hole of the axe, but,
+honestly, who the fuck knows.
+
+Anyway, after winning the context, Odysseus and Telémakhos kill all the
+suitors, hang some portion of the maids, and violently remove pieces of the
+goatherd. There was enough murder that they end up lighting a fire for it's
+"cleansing fumes"  to get rid of all the murder stink, I guess. Of course then they're
+briefly on the run for murder and seem likely to murder a whole lot more people, but
+then Athena makes them stop and they do for some reason and I guess no one
+cared about all the murder too much, the end.
+
+The Odyssey is a story in three parts: the Telemachy: Telémakhos does some
+things, the Apologoi: Odysseus's adventures post-Troy (Cyclops, king Blowhard,
+crew killed for murdering the sun's cows, etc.), and the Mnesterophonia: all
+the murder. Of these parts the Telemachy may as well have not happened. Telémakhos could
+just as well not exist for most of the story overall he's pretty useless.
+
+The last thing I'll say about this story is that there is a really sad part
+about a dog that Odysseus trained as a tiny puppy who recognizes him after 20
+years away and then immediately dies. This is a strange throw-away detail, but
+it also, somehow, feels like the most modern part of the story. The
+relationships between men and women is different, we've got different
+religions, we blame circumstances rather than gods when things don't go our
+way. There are fewer man eating giants now (aside: there 2 -- TWO! -- islands
+with man-eating giants). But [[dogs|blog/2020/05/18/humaning-a-bowie-dog]]
+still love their people and I like that.
