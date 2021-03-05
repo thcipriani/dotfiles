@@ -1,0 +1,110 @@
+[[!meta date="2021-02-07T18:30:57-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="The Oresteia by Aeschylus"]]
+[[!tag books]]
+
+The Oresteia (sometimes called _The House of Atreus_) is kinda/sorta the story
+of Orestes who kills Clytemnestra, his mother, in retribution for her murder of
+his father, Agamemnon. This story unfolds in three short plays by Aeschylus and
+it offers a new twist on a story that we've heard previously in the Odyssey --
+Agamemnon's murder at the hands of Clytemnestra upon his return from the Trojan
+war.
+
+The only previous motivation I knew about for Agamemnon's murder was that
+Clytemnestra was having an affair with Aegisthus -- Agamemnon's cousin. This
+story reveals a much more nuanced rationale for Clytemnestra's actions.
+
+For one thing, Agamemnon sacrificed their daughter, Iphigenia, to Artemis
+during the Trojan war. Maybe this is told in more detail in the Iliad (but I
+haven't read that).
+
+Additionally, it seems like Aegisthus' family was pretty abused by Atreus.
+Atreus, in point of fact, tricked Thyestes (Aegisthus' father) into eating his
+own children -- motivations here are not explained, really -- and then
+Agamemnon exiled Aegisthus and Thyestes.
+
+When people talk about Agamemnon's murder in the Odyssey everyone seems to hate
+Clytemnestra for it -- in fact, it's interesting, the names Cassandra, Electra,
+and Penelope are still somewhat common in modern times but I've never met
+anyone named Clytemnestra. History judged Clytemnestra harshly but I'll say it:
+damn, did Agamemnon ever have it coming!
+
+For some reason the "[Harvard
+Classics](https://www.bartleby.com/people/Aeschylu.html)" collection calls the
+last play in the trio that make up the Oresteia _The Furies_ rather than _The
+Eumenidies_ (i.e., _The Kindly Ones_ -- which is also my favorite book in
+_[The Sandman](https://en.wikipedia.org/wiki/The_Sandman:_The_Kindly_Ones)_).
+Just as with [[The Odyssey|books/2021/odyssey-homer]] I read a more modern
+translation; several in fact.
+
+I started reading the [translation in the Harvard classics collection by E.D.A.
+Morshead](https://archive.org/details/harvardclassics08eliouoft/page/n11/mode/2up)
+and the prose is lyrical if slightly soporific. I realized I needed a new
+translation when I nearly skipped over the part where Agamemnon kills his
+daughter:
+
+> And so he steeled his heart--ah, well-a-day-- Aiding a war for one false
+> woman's sake, His child to slay, And with her spilt blood make An offering,
+> to speed the ships upon their way!
+
+And I thought: hold up -- did Agamemnon just murder his daughter so he could
+get sailing?
+
+I found the book _An Oresteia_ which is a collection of plays translated by
+Anne Carson. This collection tells the same story as Aeschylus' Oresteia but
+using the plays _Agamemnon_ by Aeschylus, _Electra_ by Sophocles, and _Orestes_
+by Euripides. I really enjoyed Anne Carson's translation. It was elegant and
+modern and lyric and I wish I could have read all of the plays translated by
+Carson.  A couple of random quotes I enjoyed:
+
+> CHORUS: Brave Girl
+>
+> KASSANDRA: People never say that to a lucky person do they?
+
+And
+
+> KLYTAIMESTRA: This man who, without a second thought, as if it were a goat dying,
+> sacrificed his own child, my most beloved, my birthpang, my own
+
+And
+
+> KLYTAIMESTRA: You call this deed mine? And I his wife? You're wrong! Some
+> ancient bitter spirit of revenge disguised as Agamemnon's wife arose from
+> Atreus' brutal feast to sacrifice this man for those little children.
+
+ I also think that my interpretation of the plays may have been heavily
+influenced by the translation of Agamemnon. Mainly insofar as I end up with
+quite a bit of pathos with Clytemnestra and Cassandra (the oracle from Troy
+that Agamemnon captured and brought back to Greece).
+
+I was determined to read the 3 Aeschylus plays, so I ended up skipping over to
+the translation of _The Libation Bearers_ and _The Eumenidies_ by Robert Fagles.
+
+Nothing really happens in _The Libation Bearers_. It's a few years later.
+Electra (Agamemnon's non-sacrificial daughter) visits Agamemnon's grave and
+Orestes returns and they talk about how sad they are that Agamemnon was killed.
+One weird piece of dialog was when Elecrta says, "Mother's pawned us for a
+husband" and I thought -- does anyone remember Iphigenia?
+
+tl;dr: Orestes murders Clytemnestra and the Furies are fucking furious about it.
+
+In contrast to _the Libation Bearers_ which is just soooo boring, _The
+Eumenidies_ is super interesting and it's basically Apollo, Athena, and the
+Furies in a Law & Order type court room drama talking about who it's OK to
+murder.
+
+The Furies think it's OK to murder people you aren't related to; i.e., not,
+say, your mom or your daughter
+***cough***Orestes***cough***Agamemnon***cough***.  Meanwhile, Apollo thinks
+it's OK to murder people the god's ask you to murder. I'm a _don't murder
+anyone ever_-type myself, but I think that if we're saying murdering is OK then
+the Furies at least have an ethos. Apollo's argument seems a little capricious
+for a system of law. A jury of Orestes' peers isn't sure, Athena is on Apollo's
+side so Orestes walks. The Furies are placated by Athena who says that they'll
+dole out justice to Athens in the future. The fact that the Athenian idea of
+justice is confusing as fuck is mentioned by no one.
+
+The end.

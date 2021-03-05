@@ -32,5 +32,6 @@ Here I'll track my progress and notes:
 * [[The Book of Job|books/2021/book-of-job]]
 * [[An Account of Egypt by Herodotus|books/2021/egypt-by-herodotus]]
 * [[The Odyssey by Homer|books/2021/odyssey-homer]]
-* The Oresteia by Aeschylus
+* [[The Oresteia by Aeschylus|books/2021/oresteia-aeschylus]]
+* The Aeneid by Virgil
 * ...
