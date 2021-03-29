@@ -9,6 +9,8 @@ Copyright &copy; 2021 Tyler Cipriani
 ## Unstructured Reading
 
 1. [Eat a Peach](https://openlibrary.org/isbn/152475921X) by David Chang
+2. [VHF, Summits and More: Having Fun With Ham Radio](https://openlibrary.org/isbn/9781795613194) by Robert A. Witte
+3. [Accelerate: The Science of Lean Software and DevOps](https://openlibrary.org/isbn/9781942788331) by by Nicole Forsgren PhD, Jez Humble, Gene Kim
 
 ## Structured Reading
 
@@ -33,5 +35,7 @@ Here I'll track my progress and notes:
 * [[An Account of Egypt by Herodotus|books/2021/egypt-by-herodotus]]
 * [[The Odyssey by Homer|books/2021/odyssey-homer]]
 * [[The Oresteia by Aeschylus|books/2021/oresteia-aeschylus]]
+* Oedipus the King & Antigone by Sophocles
+* Hippolytus by Euripides
 * The Aeneid by Virgil
 * ...
