@@ -10,7 +10,7 @@ Copyright &copy; 2021 Tyler Cipriani
 
 1. [Eat a Peach](https://openlibrary.org/isbn/152475921X) by David Chang
 2. [VHF, Summits and More: Having Fun With Ham Radio](https://openlibrary.org/isbn/9781795613194) by Robert A. Witte
-3. [Accelerate: The Science of Lean Software and DevOps](https://openlibrary.org/isbn/9781942788331) by by Nicole Forsgren PhD, Jez Humble, Gene Kim
+3. [Accelerate: The Science of Lean Software and DevOps](https://openlibrary.org/isbn/9781942788331) by Nicole Forsgren PhD, Jez Humble, Gene Kim
 
 ## Structured Reading
 
