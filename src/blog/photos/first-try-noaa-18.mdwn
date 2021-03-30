@@ -1,0 +1,32 @@
+[[!meta date="2021-03-29T11:09:28-06:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="First try NOAA 18"]]
+[[!tag
+photos
+
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/original.jpg)](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/large.jpg)
+
+I had the day off work today and I noticed there was a good pass of NOAA 18
+today so I went to the Izaak Watson park with my Baofeng and tape measure yagi
+and came back with this image from a satellite. Radio is neat!
+
+<pre>
+Satellite: NOAA.
+Direction: southbound.
+Creation Time: 30 Mar 2021 00:56:23
+GMT.Satellite Type: NOAA.
+Channel A: 1 (visible).
+Channel B: 2 (near infrared).
+Enhancement: class.
+Audio File: NOAA18-11025_2021-03-29T11:09:28.wav.
+Software: WXtoImg version 2.10.11.
+</pre>
