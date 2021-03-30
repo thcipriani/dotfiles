@@ -15,9 +15,9 @@ photos
 [Xlarge](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/xlarge.jpg) |
 [Original](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/original.jpg)](https://photos.tylercipriani.com/thumbs/f9/7bfc28b7b4d2d51a365c254fa17ee8/large.jpg)
 
-I had the day off work today and I noticed there was a good pass of NOAA 18
-today so I went to the Izaak Walton park with my BaoFeng UV-5R and tape-measure
-yagi and came back with this image from a satellite. Radio is neat!
+I had the day off work today and I noticed there was a good pass of [NOAA 18](https://www.n2yo.com/?s=28654)
+today so I went to the Izaak Walton park with my [BaoFeng UV-5R](https://archive.org/details/oreally-packet-radio) and
+[tape-measure yagi](http://theleggios.net/wb2hol/projects/rdf/tape_bm.htm) and came back with this image from a satellite. Radio is neat!
 
 <pre>
 Satellite: NOAA.
