@@ -1,0 +1,121 @@
+[[!meta date="2021-04-15T00:24:15.496265"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Getting better at the New York Times crossword"]]
+
+I started doing crossword puzzles sometime in 2019. After learning the basics of
+American crossword puzzles, the best way to improve is to solve daily.
+
+As a budding
+[cruciverbalist](https://www.merriam-webster.com/dictionary/cruciverbalist) you
+develop a few key skills. The NYTimes website has [an excellent
+guide](https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle)
+on the basics of solving. Beyond the basics (which I'm *just barely* beyond), there are a few other pieces of
+information you'll learn along the way.
+
+The New York Times digital crossword subscription is currently $19.97/yr. If
+you're a print subscriber (I subscribe for Sundays only) they throw in a digital subscription with
+crossword puzzle access for free. Prior to subscribing for the Sunday print edition I used to use my
+local library's [digital
+access](https://www.longmontcolorado.gov/departments/departments-e-m/library/ebooks-emagazines)
+for free from home—which was nice for not only crosswords but also the paywalled NYTimes Cooking section.
+
+In 2015 I bought a Brother HL-L2340DW black and white laser printer for $100
+and I highly recommend it to everyone. I use it to print the crossword and work
+on it over dinner with my partner which I find more relaxing than staring at my
+computer or phone.
+
+Although I do the print version of the crossword, the NYTimes website has a number of nice features if you solve using
+their interface. You can track your solve times daily along with rudimentary
+descriptive statistics about your solve. There is also a
+[leaderboard](https://www.nytimes.com/puzzles/leaderboards) so that you can
+share your solve times with your friends and coworkers.
+
+If you prefer offline digital solving there are `.puz` files available from the NYTimes that you can use along with a
+locally installed crossword application. The NYTimes recommends "Across Lite",
+which I've never used. I've played with
+"[cursewords](https://parkerhiggins.net/2019/03/cursewords-crossword-puzzle-solving-interface-terminal/)"
+which is an ncurses interface for `.puz` files that is pretty usable depending on your terminal environment.
+
+The New York Times crossword puzzle ramps up in difficulty throughout the week.
+Monday is the easiest puzzle to solve. Saturday is the most difficult. Sunday
+is roughly mid-week difficulty but bigger (Sunday is 21x21 with 140 words max
+vs 15x15 with 72–78 word max for other days -- 72 words if the puzzle has no theme).
+
+When you're just getting started it's best to start with the Monday puzzle and
+see where you get stuck. For the new solver I'd wager you'll slow down by
+Thursday. If you keep pushing through week-after-week, you'll get faster and
+your solve percentage will improve.
+
+As a result of my proclivity for print I only have 14 solves in the NYTimes
+interface currently. My average Friday solve time is 55:13 and I don't have any
+Saturday solves. I'm hoping this is not indicative of my current abilities, but
+it's probably not too far off. I have slowly solved many a Saturday puzzle. Not *every* Saturday puzzle though.
+
+The Monday through Thursday puzzles tend to have themes. Most of them punny. Many of the
+clues are [question mark
+clues](https://www.nytimes.com/crosswords/game/mini/tips-and-tricks/question-mark-clues)
+indicating a high-likelihood of being groan inducing. Cracking the puzzle
+requires a keenly developed sense of the type of jokes that appeal to people
+who do crosswords for fun. When you first start solving, the clue, "They often
+come out at night?" does not evince the answer, "FALSETEETH". Bravery in the
+face of bad puns is a distinguishing characteristic of a crossword puzzle solver.
+The Friday and Saturday puzzles (and sometimes Thursday puzzles) tend not to
+have themes and focus on difficulty. I personally find themeless puzzles less fun
+than themers -- the groan-factor of cracking a themer becomes an addiction.
+
+What it means to *solve* a puzzle is pretty flexible. Is it OK to
+lookup the spelling of `SCHWARZENEGGER`? What if two proper names cross each
+other -- did you solve the puzzle if you had to look one up ([names in
+crosswords](https://rexwordpuzzle.blogspot.com/2008/05/saturday-may-17-2008-mike-nothnagel.html)
+are controversial -- they have the same problems as [Wikipedia's Notability
+Criteria](https://en.wikipedia.org/wiki/WP:NOTE) -- including all the issues of
+diversity, equity, and inclusion).
+
+Only you can say whether or not you solved a puzzle.  And (even though [puzzles
+are getting
+easier](https://www.pastemagazine.com/games/crossword-puzzles/new-york-times-crossword-getting-easier/)
+than ever) I still cheat even by my own standards. There are useful websites
+for cheating: onelook.com and xwordinfo.com for example. I also use the Linux dictionary with `grep` to
+cheat on occasion -- for example say I had the clue "kind of sauce" and I had
+`_AR_A_`, I could use `grep -iP '^.ar.a.$' /usr/share/dict/words` to find
+`TARTAR`.
+
+The key skill that makes you look smart to the uninitiated really comes down to a familiarity with common [*crosswordese*][crosswordese].
+*Crosswordese* describes words that appear more frequently in crosswords than
+they do in real life. As a player of the crossword you know that [`MOUNT
+ETNA`](https://www.wordplays.com/crossword-clues/MTETNA) is the Sicilian
+eruption in the Aeneid by Virgil; that
+[`ESAU`](https://www.wordplays.com/crossword-clues/ESAU) is one of the twin
+sons of Isaac; and that Brian
+[`ENO`](https://www.wordplays.com/crossword-clues/ENO) (who I think as a
+[generative ambient musician](https://teropa.info/loop/#/airports)) is the glam
+rocker from Roxy Music. Lots of vowels and unique vowel/letter arrangement make
+a good candidate for crosswordese. I've recently noticed that Gal
+[`GADOT`](https://www.wordplays.com/crossword-clues/GADOT) is a rising star in
+the world of crosswordese, seemingly outpacing many other contemporary
+superheroes.
+
+Once I've "solved" a puzzle (for my self-defined and highly flexible value of
+"solved"), I immediately go to [Rex Parker Does the NYTimes Crossword
+Puzzle](https://rexwordpuzzle.blogspot.com/). I do this for many reasons:
+
+1. To learn more about the puzzle and its constructors
+2. To see if there are any theme elements I hadn't considered -- Rex does a great job of deep-diving on themes
+3. Often I go there to find out if anyone was mad about the clue I was mad about
+4. Just as often I'm there to be flabbergasted that Rex hated a puzzle I loved
+
+All this is to say that while I often completely disagree with Rex Parker and Rex Parker's comment section it remains my
+little crossword community and by lurking there I get an extra dimension of
+enjoyment out of the puzzle thanks to his blog.
+
+Finally, while the NYTimes crossword is the marquee crossword, there are many
+smaller crossword sites on the internet that are worth your time:
+
+* [The American Values Club crossword](https://avxwords.com/) -- focuses on inclusion and feels more geared towards my small sliver of the world's Overton window
+* [The Inkubator](https://inkubatorcrosswords.com/) -- crossword puzzles by women
+* [Glutton for Pun (Erik Agard's site)](https://gluttonforpun.blogspot.com/) -- a really fabulous constructor whose clues are often sooo groan-inducing that it's magic
+
+[crosswordese]: <http://crosswordese.com/>
