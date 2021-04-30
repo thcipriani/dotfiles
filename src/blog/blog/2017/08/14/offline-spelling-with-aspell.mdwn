@@ -1,4 +1,4 @@
-[[!meta date="2017-08-14T10:22:07,537945254-06:00"]]
+[[!meta date="2017-08-14T10:22:07-06:00"]]
 [[!meta author="Tyler Cipriani"]]
 [[!meta copyright="""
 Copyright &copy; 2017 Tyler Cipriani
