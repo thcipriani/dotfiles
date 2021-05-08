@@ -581,22 +581,22 @@ a[href*="//"]:not([href*="tylercipriani.com"]):after {
 
 blockquote {
     padding: 1em;
-    margin: 1em 0;
-    border-left: 2px solid rgba(100, 100, 150, 1);
-    color: rgba(0, 0, 0, 0.6);
+    margin: 1em auto;
+    border-left: 5px solid #18f;
+    color: #555;
     font-style: italic;
-    background: aliceblue;
+    background: rgba(0, 0, 0, 0.03);
+    max-width: 50em;
 }
 
-blockquote p {
-    margin: 1em;
-}
+blockquote p { margin: 1em; }
 
 blockquote h1,
 blockquote h2,
 blockquote h3,
 blockquote h4,
-blockquote h5 {
+blockquote h5,
+blockquote p {
     max-width: 100%;
 }
 
@@ -935,7 +935,7 @@ a.feedbutton {
 
 figure {
     display: table;
-    margin: 1em auto 2em;
+    margin: 2em auto 1em;
     font-size: small;
     color: #666;
     line-height: 1.5em;
@@ -982,7 +982,7 @@ h5,
 .archivepage,
 table {
     max-width: 40rem;
-    margin: 0 auto 1.5em;
+    margin: 0 auto 1em;
 }
 
 h1,
@@ -990,7 +990,7 @@ h2,
 h3,
 h4,
 h5 {
-    margin: 0 auto 1em;
+    margin: 1em auto 0.5em;
 }
 
 .page {
@@ -1033,6 +1033,8 @@ h5 {
 .month-calendar td {
     text-align: center;
 }
+
+.footnote-back { font-size: small; }
 
 /* Beer alchemy crap */
 
@@ -1099,10 +1101,16 @@ h5 {
 
 div.sourceCode,
 pre {
-    background: #f6f8ff;
+    background: #rgba(0, 0, 0, 0.03);
+    -webkit-border-radius: 0.125em;
+    -moz-border-radius:    0.125em;
+    -ms-border-radius:     0.125em;
+    -o-border-radius:      0.125em;
+    border-radius:         0.125em;
+    border: 1px solid #ddd;
     padding: 0.5em;
-    width: 100%;
-    margin: 1em 0;
+    max-width: 50em;
+    margin: 1em auto;
     line-height: 1.5em;
 }
 
@@ -1111,6 +1119,7 @@ pre {
     padding: 0;
     margin: 0;
     overflow: visible;
+    border: none;
 }
 
 pre code {
@@ -1126,7 +1135,7 @@ pre code {
     border-radius: 0;
     padding: 0;
     margin: 0;
-    color: #00428c;
+    color: #555;
     font-size: 0.85em;
 }
 
@@ -1188,8 +1197,8 @@ a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
+div.sourceCode { margin: 1em auto; }
+pre.sourceCode { margin: 0 auto; }
 @media print {
     code.sourceCode { white-space: pre-wrap; }
     a.sourceLine { text-indent: -1em; padding-left: 1em; }
@@ -1219,8 +1228,8 @@ pre.numberSource a.sourceLine::before {
     width: 4em;
     color: #a0a0a0;
   }
-pre.numberSource { margin-left: 2em; border-left: 1px solid #a0a0a0;  padding-left: 4px; width: 95%; width: calc(100% - 2em); }
-div.sourceCode { color: #1f1c1b; background-color: #f6f8ff; overflow: auto; }
+pre.numberSource { margin-left: 2em; border-left: 1px solid #ddd;  padding-left: 4px; width: 95%; width: calc(100% - 2em); }
+div.sourceCode { color: #1f1c1b; overflow: auto; }
 
 code span. { color: #1f1c1b; } /* Normal */
 code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
