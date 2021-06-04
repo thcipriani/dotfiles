@@ -11,6 +11,12 @@ Copyright &copy; 2021 Tyler Cipriani
 1. [Eat a Peach](https://openlibrary.org/isbn/152475921X) by David Chang
 2. [VHF, Summits and More: Having Fun With Ham Radio](https://openlibrary.org/isbn/9781795613194) by Robert A. Witte
 3. [Accelerate: The Science of Lean Software and DevOps](https://openlibrary.org/isbn/9781942788331) by Nicole Forsgren PhD, Jez Humble, Gene Kim
+4. [Zen and the Art of Radiotelegraphy](https://www.qsl.net/ik0ygj/enu/ZART_r20101008m.pdf) by Carlo Consoli
+5. [Longitude:the true story of a lone genius who solved the greatest scientific problem of his time](https://openlibrary.org/works/OL265465W/Longitude) by Dava Sobel
+6. [Prepper Communications](https://www.amazon.com/Prepper-Communications-Craig-Buck-k4ia/dp/1724218093) by Craig Buck
+7. [The Timeless Way of Building](https://openlibrary.org/works/OL17431345W/The_Timeless_Way_of_Building) by Christopher Alexander
+8. [Storytelling with Data](https://openlibrary.org/works/OL17659741W/Storytelling_with_Data) by Cole Nussbaumer Knaflic
+9. [Wild : a journey from lost to found on the Pacific Crest Trail](https://www.worldcat.org/title/wild-a-journey-from-lost-to-found/oclc/885451056) by Cheryl Strayed
 
 ## Structured Reading
 
