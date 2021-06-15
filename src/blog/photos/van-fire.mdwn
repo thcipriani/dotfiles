@@ -1,0 +1,31 @@
+[[!meta date="2021-06-15 13:11:47"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Van Fire"]]
+[[!tag
+photos
+photos/150-600mm-f-5-6.3
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/a8/2f034515e72d18e104656bb534a597/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/a8/2f034515e72d18e104656bb534a597/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/a8/2f034515e72d18e104656bb534a597/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/a8/2f034515e72d18e104656bb534a597/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/a8/2f034515e72d18e104656bb534a597/original.jpg)](https://photos.tylercipriani.com/thumbs/a8/2f034515e72d18e104656bb534a597/large.jpg)
+
+A van on fire on Pratt St, West of 6th ave today.
+
+EXIF |
+--- | ---
+ExposureTime | 1/60
+FNumber | 7.1
+FocalLength | 185.0 mm
+CreateDate | 2021-06-15 13:11:47
+Lens | 150-600mm f/5-6.3
+ISO | 125
+Model | NIKON D610
+Make | NIKON CORPORATION
+
