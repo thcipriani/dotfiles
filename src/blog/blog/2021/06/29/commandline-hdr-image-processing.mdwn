@@ -1,0 +1,114 @@
+[[!meta date="2021-06-29T02:57:24.253839"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Command Line HDR Image Processing"]]
+[[!tag computing]]
+
+Expensive cameras don't take better photos. Folks tend to learn this when
+they do the first side-by-side between their gorgeous iPhoneograhy and the **objectively worse**
+shots taken with their fancy new $2,000 DSLR.
+
+Cell phones have itty-bitty sensors and equally lilliputian optics -- how can
+they take better pictures?  Google research has described the technique that
+their phones use -- called "burst" photography -- in [research
+papers](https://static.googleusercontent.com/media/hdrplusdata.org/en//hdrplus.pdf)
+and
+[blogs](https://ai.googleblog.com/2017/04/experimental-nighttime-photography-with.html?m=1).
+Essentially, they take a whole bunch of pictures and mash them together to make a single good picture.
+
+By mimicking the techniques that our cell phones use
+to take better pictures we get [less noisy](https://www.cambridgeincolour.com/tutorials/image-averaging-noise.htm), more dynamic photos along with the
+improved light gathering capabilities of a DSLR.
+
+## Capture
+
+[High dynamic range](https://www.cambridgeincolour.com/tutorials/high-dynamic-range.htm)
+images have a large range of brightness in the scene—some light areas, some
+dark areas. By blending an underexposed image that captures detail in bright
+areas of the scene with an overexposed image that captures detail in dark areas
+of the scene you can capture a range of brightness that would not be possible
+with a single photograph.
+
+![Moab Pinto Arch Trail -- overexposed (left) and underexposed (right)](https://photos.tylercipriani.com/thumbs/72/aa49d819d5ef6097f87088a60bd670/large.jpg)
+
+In the picture above, taken on the
+[pinto arch trail](https://www.alltrails.com/trail/us/utah/pinto) in Moab,
+Utah, there are two exposures of one scene: the immediate surroundings are in a
+shadow, the sky and butte in the distance are in the bright sunlight. Below
+I've blended the shots into a single scene with a wide range of brightness --
+an HDR image:
+
+![Moab Pinto Arch Trail HDR](https://photos.tylercipriani.com/thumbs/ba/a1503f4460fa19142034b778daa920/large.jpg)
+
+I captured the image above using the following equipment:
+
+- [Nikon D610](https://en.wikipedia.org/wiki/Nikon_D610)
+- [Samyang Optics / Rokinon AF 14 mm f/2.8 FE](https://en.wikipedia.org/wiki/Samyang_Optics_/_Rokinon_AF_14_mm_f/2.8_FE)
+
+And that's it: no tripod and no filters. I shot the image handheld at f/11 ISO
+200.
+
+The shutter speed for underexposed photo was 1/400 sec. For the overexposed
+photo it was 1/60 sec. I varied the shutter speed using the
+[exposure bracketing](https://www.nikonusa.com/en/learn-and-explore/a/tips-and-techniques/exposure-bracketing-the-creative-insurance-policy.html)
+feature of the Nikon D610.
+
+## Processing
+
+After capturing my under- and over-exposed photos I use the following software
+programs:
+
+- `align_image_stack` which is part of the `hugin` package
+- `enfuse` which is part of the `enblend` family of FOSS photo tools
+- [Darktable](https://www.darktable.org/) to make final edits and lens correction
+- `exiftool` to manage metadata
+
+First, I import my images using a [bash script](https://github.com/thcipriani/dotfiles/blob/master/srv/photos/lib/import.sh)
+I wrote that maintains a strict file structure. Next, I use Darktable to do
+lens correction (based on the astounding achievement that is the
+[lensfun database](https://lensfun.github.io/)) then I export as 16-bit tif files.
+
+At this point, since I shot the images without a tripod, they have minor
+misalignments. `align_image_stack` corrects the misalignments and
+creates a perfect stack of images:
+
+```{.bash}
+#!/usr/bin/env bash
+
+# align.sh
+# ---
+# By default align image stack tries to find 8 control points in a 5x5 grid
+# This finds 16 control points in a 10x10 grid.
+align_image_stack \
+    -a aligned_ -v -m \
+    -g 10 -c 16 -C \
+    "$@"
+```
+I use the command `align.sh *.tif` with the above script to create aligned
+images.
+
+This command creates precisely aligned, stackable tif files with the prefix
+`aligned_` in the current directory.
+
+![Grand canyon -- underexposed (left) and overexposed (right)](https://photos.tylercipriani.com/thumbs/75/975ad85b3452908616028b7dc1394e/xlarge.jpg)
+
+Notice in the image above -- taken just East of [Moran Point](https://www.nps.gov/places/000/moran-point.htm) at the Grand Canyon in
+Arizona -- that the underexposed image shows more detail in the clouds and the
+sun, whereas in the overexposed image shows much more detail in the canyon and
+on the rocks in the foreground.
+
+Now I use the enfuse command to produce a not-offensively-garish HDR image of
+the aligned images: `enfuse -o out.tif aligned_000*` .
+
+![Grand canyon hdr](https://photos.tylercipriani.com/thumbs/ce/2f34ff201e443d4875eff46200d7c3/large.jpg)
+
+In the final image, we retain both the detail of the sun and clouds in the sky
+as well as a clear view of the canyon (and its grandeur) and the rocks in the
+foreground.
+
+This is a technique I use **constantly** to capture shots that would be
+impossible any other way, AND(!) it uses tools and techniques that are useful
+for all FOSS photography nerds. Best of all? No high-falutin cellular phone
+required.
