@@ -1,0 +1,65 @@
+[[!meta date="2021-07-25T18:58:07.178076"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Code Review is Work"]]
+[[!tag computing]]
+
+Software companies have tried to measure productivity with time tracking,
+counting closed bugs, and, infamously, by [counting lines of code][sloc]. But what are organizations doing about the time
+developers lose waiting for code review?
+
+As an industry, we obsess over the [10x developer][10x] and ignore small changes to
+improve the productivity of every developer. One small change: **treat code
+reviews like work**.
+
+![Make time for code review](https://photos.tylercipriani.com/make-time-for-code-review.png)
+
+Studies from the trenches
+---
+
+An IEEE study titled ["Code Reviewing in the Trenches"][critt] by researchers at Microsoft found
+code authors aren't getting timely reviews, and code reviewers aren't
+given enough time to do the reviews they're assigned. This is a problem.
+
+In 2013, Peter Rigby and Christian Bird—both empirical software engineering
+researchers—found [similar median review times][ccsprp] among projects as
+varied as Google's Chromium and Microsoft's Office suite.
+Compared with the outdated industrial process of [*software
+inspection*](https://en.wikipedia.org/wiki/Fagan_inspection), their study's modern code review practices were faster, easier, and less formal.
+Software inspection took 10 days to
+review a change; **projects in their study took one day to review a change**.
+
+In 2018, [Google compared Rigby and Bird's findings with review data from inside
+their company][mcr]. Among their findings, they discovered reviews inside Google were
+considerably faster than the reviews from Rigby and Bird's study—**the median
+time to review code inside Google was about an hour**.
+
+Organizations enable timely code review.
+---
+
+Why is code review at Google fast? Google's code reviews follow
+the recommendations in Microsoft's "From the Trenches" study, which says: "how
+an organization sets the stage for reviewing activities and how it supports and
+values code reviewing is critical to the success of code reviews."
+
+![Train people to give better reviews](https://photos.tylercipriani.com/code-review-is-hard.png)
+
+* **Training**: At Google, they offer readability certifications to developers. Developers with python certifications review python and developers with javascript certifications review javascript.
+* **Ownership**: Clear code ownership makes it easier to find the right reviewer. [At Google, the OWNERS file serves this role][owners].
+* **Metrics**: Count and celebrate the time spent reviewing. The metrics from both the Google study and Rigby and Bird are a great place to start.
+* **Time**: We need to set aside time for reviews.
+* **Culture**: As noted in the book [*Accelerate*][accelerate], John Shook, in recounting his experience introducing LEAN manufacturing at Toyota, says the best way to change culture is to focus on *behavior*. Enforcing good code review behavior makes code review culture better.
+
+The research cited above studies massive, distributed software projects. Startups and
+independent developers may find these organizational practices don't
+apply—and they're probably right.
+
+[sloc]: <https://www.folklore.org/StoryView.py?story=Negative_2000_Lines_Of_Code.txt>
+[10x]: <https://softwareengineering.stackexchange.com/questions/179616/a-good-programmer-can-be-as-10x-times-more-productive-than-a-mediocre-one>
+[critt]: <https://ieeexplore.ieee.org/abstract/document/7950877>
+[ccsprp]: <https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/rigby2013convergent.pdf>
+[mcr]: <https://research.google/pubs/pub47025/>
+[owners]: <https://google.github.io/eng-practices/review/#best_reviewers>
+[accelerate]: <https://www.worldcat.org/title/accelerate-the-science-behind-devops-building-and-scaling-high-performing-technology-organizations/oclc/1104206968>
