@@ -19,6 +19,7 @@ Copyright &copy; 2021 Tyler Cipriani
 9. [Wild : a journey from lost to found on the Pacific Crest Trail](https://www.worldcat.org/title/wild-a-journey-from-lost-to-found/oclc/885451056) by Cheryl Strayed
 10. [Atomic Habits](https://openlibrary.org/works/OL17930368W/Atomic_Habits) by James Clear
 11. [The Mosquito Coast](https://openlibrary.org/works/OL37636W/The_Mosquito_Coast) by Paul Theroux
+12. [Tuesdays with Morrie](https://openlibrary.org/works/OL15754034W/Tuesdays_with_Morrie) by Mitch Albom (I did not like this book.)
 12. [Digital Minimalism](https://openlibrary.org/books/OL26832542M/Digital_Minimalism) by Cal Newport
 
 ## Structured Reading
