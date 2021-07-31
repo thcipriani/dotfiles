@@ -1,0 +1,58 @@
+[[!meta date="2021-07-30 15:44:12"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="ISS Solar Transit"]]
+[[!tag
+photos
+photos/150-600mm-f-5-6.3
+photos/nikon-d610
+]]
+
+![[Small](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/small.jpg) |
+[Large](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/large.jpg) |
+[Medium](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/medium.jpg) |
+[Xlarge](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/xlarge.jpg) |
+[Original](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/original.jpg)](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/large.jpg)
+
+*International Space Station* (for some reason) makes it sound enormous, but
+even tremendous things are hard to spot from 542 km (337 mi) away. At that
+distance, the station appears 1/60th the size of the width of your pinky finger
+held at arm's length—51 arcseconds wide.
+
+The picture above is a composite of six photographs, each taken within a single
+second.
+
+Equipment:
+
+* [Nikon D610](https://en.wikipedia.org/wiki/Nikon_D610)
+* [iOptron skyguider pro](https://www.ioptron.com/product-p/3550.htm)
+* [iOptron tripod](https://www.ioptron.com/product-p/3221.htm)
+* [Sigma 150-600mm 5-6.3 Contemporary](https://www.amazon.com/dp/B00THP1A1C?psc=1&ref=ppx_yo2_dt_b_product_details)
+* Cheap intervalometer
+* [Thousand Oaks solar film](https://www.amazon.com/dp/B00DS7SSEW?psc=1&ref=ppx_yo2_dt_b_product_details) ([gaffer's taped](https://www.amazon.com/gp/product/B00GZE3UJ8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) over my lens hood)
+
+Software
+
+* [transit-finder.com](https://transit-finder.com/)
+* [SkEye](https://play.google.com/store/apps/details?id=com.lavadip.skeye) (for polar alignment during the daytime—point at σ-Octantis!)
+* [AtomicClock](https://play.google.com/store/apps/details?id=partl.atomicclock) for accurate time
+* [Ventusky](https://play.google.com/store/apps/details?id=cz.ackee.ventusky) + [skippysky](https://www.skippysky.com.au/) + [clear dark sky](https://www.cleardarksky.com/csk/) for cloud reports
+
+<figure>
+<a style="cursor: zoom-in;" href="https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/original.gif"><img title="ISS solar transit gif" src="https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/medium.gif" alt="ISS solar transit gif"></a>
+<figcaption>(super sweet) gif of ISS solar transit</figcaption>
+</figure>
+
+EXIF |
+--- | ---
+ExposureTime | 1/3200
+FNumber | 6.3
+FocalLength | 600.0 mm
+CreateDate | 2021-07-30 15:44:12
+Lens | 150-600mm f/5-6.3
+ISO | 3200
+Model | NIKON D610
+Make | NIKON CORPORATION
+
