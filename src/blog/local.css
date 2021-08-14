@@ -11,7 +11,7 @@
 
 html {
   font-family: sans-serif; /* 1 */
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   line-height: 1.15; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
@@ -471,7 +471,7 @@ template {
 body {
     font-size: 1.3em;
     line-height: 1.5em;
-    color: rgba(0, 0, 0, 0.8);
+    color: #222;
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
     word-wrap: break-word;
@@ -959,7 +959,7 @@ video {
     max-width: 100%;
 }
 
-/* readability */
+/* readability
 section p,
 section ol,
 section ul,
@@ -967,7 +967,7 @@ section dl,
 section .archivepage,
 section table {
     font-family: "Bitstream Charter", Georgia, Cambria, "Times New Roman", Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-}
+} */
 
 
 p,
