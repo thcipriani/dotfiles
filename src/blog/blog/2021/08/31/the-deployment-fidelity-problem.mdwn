@@ -1,0 +1,122 @@
+[[!meta date="2021-08-31T00:11:51.389423"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="The Deployment Fidelity Problem"]]
+[[!tag computing]]
+
+> The most important problem that we face as software professionals is this: If
+> somebody thinks of a good idea, how do we deliver it to users as quickly as
+> possible?
+>
+> -- Continuous Delivery
+
+Production is a low-fidelity version of your codebase. Many deployment metrics
+are just a highfalutin way to measure the *fidelity of your production*.
+
+## Audio fidelity
+
+Digital music fidelity gauges [the faithfulness of a digital recording to
+its analog source](https://en.wikipedia.org/wiki/Zero-order_hold). The analog
+source—a piano, say—is a *continuous signal*. The digital copy—an audio CD, an
+mp3, or an Ogg—samples that signal at 44.1KHz—a *discrete signal*.
+
+<figure>
+<img title="Zero-order hold signal processing" src="https://photos.tylercipriani.com/thumbs/ca/f9f77484018c90d967eb5da3ce3421/original.svg" alt="Zero-order hold DAC processing">
+<figcaption>
+    <p>
+        Discrete digital sampling of a continuous analog signal
+    </p>
+</figcaption>
+</figure>
+
+## Deployment fidelity
+
+Your main branch is like a soundwave—it carries changes and changes
+rapidly—it’s a continuous signal. Your production environment is like an mp3—it
+carries forward a single sample until your next deployment—it’s a
+discrete signal—it’s a single [[SHA1 in the merkle
+DAG|blog/2016/03/21/Visualizing-Git-Merkle-DAG-with-D3.js]] of your main branch.
+
+<figure>
+<img title="Deployment fidelity" src="https://photos.tylercipriani.com/thumbs/f2/e5e1f91095c4c7989ef003c3c8af11/original.svg" alt="Zero-order hold deployment">
+<figcaption>
+    <p>
+        Discrete production sampling of a continuous stream of commits to the main branch
+    </p>
+</figcaption>
+</figure>
+
+Everyone at Wikimedia (myself included) devoured
+[*Accelerate*](https://www.worldcat.org/title/accelerate-the-science-behind-devops-building-and-scaling-high-performing-technology-organizations/oclc/1104206968)---it will frame discussions at the Wikimedia Foundation for years. The theme of the book is continuous deployment
+driving organizational change.
+
+In the book, however, the authors advocate for tracking both *change lead time*
+and *deployment frequency*. But I don’t get the point of measuring both: they’re
+two ways of looking at the same thing. If you have a shorter lead time, your
+deployment frequency is higher. If your deployment frequency is higher, you
+have a shorter change lead time—potato/potato.
+
+
+There are many ways to measure deployment fidelity: the time it takes for a
+change in mainline to reach production, the number of deployments per month, or
+the number of changes bundled into a deployment. These are all measures of the
+speed at which you deliver value to users. Pick one---not all---to be your
+North star.
+
+<figure>
+<img title="Deployment metrics" src="https://photos.tylercipriani.com/thumbs/71/ebac971f62343e9dd7c2e35fba4e40/original.svg" alt="Deployment metrics">
+<figcaption>
+    <p>
+        Various metrics gauging deployment fidelity
+    </p>
+</figcaption>
+</figure>
+
+## Continuous deployment
+
+Continuous deployment is the highest fidelity deployment.
+
+High-fidelity audio is lossless, and high-fidelity deployment is continuous.
+The best deployments sling out individual production changes by themselves within
+minutes of merging to the main branch. This is continuous deployment, and this
+is the right way to deploy code.
+
+<figure>
+<img title="Continuous deployment" src="https://photos.tylercipriani.com/thumbs/ab/409de44c45942de85ceb26cc661ed4/original.svg" alt="Continuous deployment">
+<figcaption>
+    <p>
+        Continuous deployment is the highest fidelity deployment
+    </p>
+</figcaption>
+</figure>
+
+Deploying every change individually right when they merge means your lead time
+is only limited by your deployment tooling---the fastest it can be. Your batch
+size is always 1---the lowest it can be. Your deployment frequency is
+`1*commits`---the highest it needs to be.
+
+Sometimes things aren't ideal. If your deployment tool cranks out one change
+every 10 minutes, you're capped at 144 changes in a day---if you're
+[TheFacebook](https://en.wikipedia.org/wiki/History_of_Facebook) then maybe
+that's not good enough, and you're forced to batch changes, [as Facebook has in the recent
+past](https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf).
+
+## Why deployment fidelity matters
+
+This is important because ["software doesn't age like wine; it ages like
+milk."](https://speakerdeck.com/charity/cd?slide=20)  Developers can only
+juggle so many problems at the same time. If you have a high-fidelity
+production, then the picture in the developer’s mind matches production. If
+not, then developer assumptions don't hold. When software languishes
+undeployed, developers lose their context and, with it, the ability to solve
+production issues caused by their code.
+
+> The longer the release cycle, the longer the development team has to make
+> incorrect assumptions before the deployment occurs, and the longer it will
+> take to fix them
+>
+> -- Continuous Delivery
+
+Think of the developers. Deploy continuously.
