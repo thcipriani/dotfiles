@@ -17,12 +17,14 @@ Copyright &copy; 2021 Tyler Cipriani
 7. [The Timeless Way of Building](https://openlibrary.org/works/OL17431345W/The_Timeless_Way_of_Building) by Christopher Alexander
 8. [Storytelling with Data](https://openlibrary.org/works/OL17659741W/Storytelling_with_Data) by Cole Nussbaumer Knaflic
 9. [Wild : a journey from lost to found on the Pacific Crest Trail](https://www.worldcat.org/title/wild-a-journey-from-lost-to-found/oclc/885451056) by Cheryl Strayed
+10. [Dare to Lead](https://openlibrary.org/works/OL19754782W/Dare_to_lead) by Brené Brown
 10. [Atomic Habits](https://openlibrary.org/works/OL17930368W/Atomic_Habits) by James Clear
 11. [The Mosquito Coast](https://openlibrary.org/works/OL37636W/The_Mosquito_Coast) by Paul Theroux
 12. [Tuesdays with Morrie](https://openlibrary.org/works/OL15754034W/Tuesdays_with_Morrie) by Mitch Albom (I did not like this book.)
 13. [Digital Minimalism](https://openlibrary.org/books/OL26832542M/Digital_Minimalism) by Cal Newport
 14. [On Writing Well](https://openlibrary.org/books/OL3430145M/On_Writing_Well) by William Zinsser
 15. [The Elements of Style](https://openlibrary.org/works/OL38285W/The_Elements_of_Style) by William Strunk, Jr. and E.B. White
+16. [The Happiness Project](https://openlibrary.org/works/OL15833228W/The_Happiness_Project) by Gretchen Rubin
 16. [The Year of Magical Thinking](https://openlibrary.org/books/OL16287630M/The_Year_of_Magical_Thinking) by Joan Didion
 17. [The Writing Life](https://openlibrary.org/books/OL13634360M/The_writing_life) by Annie Dillard
 
