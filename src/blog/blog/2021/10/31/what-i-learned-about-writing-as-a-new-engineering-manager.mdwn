@@ -44,8 +44,8 @@ Everything you write is too long.
 People reading your emails aren't fans of your writing—they're trying to get
 through their email.
 
-When you've finished writing your email use Stephen King's equation from _[On
-Writing][]_: "**2nd Draft = 1st Draft – 10%**". Your writing will be more
+When you've finished writing your email, use Stephen King's equation from _[On
+Writing][]_: "**2nd Draft = 1st Draft – 10%**." Your writing will be more
 effective.
 
 ## 3️⃣ Make it easy
@@ -61,10 +61,10 @@ Researchers at the University of Michigan gave student test subjects two
 identical sets of instructions: one in a hard-to-read font and one in an
 easy-to-read font.
 
-Despite the steps being identical, the student's predictions of the difficulty of the tasks
-differed. They thought the more intimidating text was a more demanding
-task even though it was the same task. The author's conclusion is the title of their study: "[If it's Hard to
-Read, It's Hard to Do][]."
+Despite the steps being identical, the student's predictions of the difficulty
+of the tasks differed. Students believed the less intelligible instructions
+described a more daunting task. The author's conclusion is the title of their
+study: "[If it's Hard to Read, It's Hard to Do][]."
 
 Break up long text with headings. Keep your paragraphs short. Use bullet points
 and short sentences to make your text look less intimidating and easier to
