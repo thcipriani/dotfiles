@@ -3,23 +3,14 @@
 [[!meta copyright="""
 Copyright &copy; 2021 Tyler Cipriani
 """]]
-[[!meta title="What I've Learned About Writing as a New Engineering Manager"]]
+[[!meta title="Writing Tips for New Engineering Managers"]]
 [[!tag computing]]
 
 > Managers at every level are prisoners of the notion that a simple style
 > reflects a simple mind. Actually a simple style is the result of hard work
-> and hard thinking; a muddled style reflects a muddled thinker or a person too
-> arrogant, or too dumb, or too lazy to organize his thoughts. 
+> and hard thinking
 >
 > -- William Zinsser, _On Writing Well_
-
-While squinting hard at an email, I asked my boss:
-
-<p style="padding-left: 2.5em;">
-  "What does it mean that we're going to <strong>operationalize the plan</strong>?"
-<br>
-  "It means we're going to do it," he said. 😐
-</p>
 
 Software engineering managers' most precious resource is time. But you
 wouldn't know it from reading our emails--bloated screeds of business buzzwords
@@ -35,12 +26,8 @@ Corporate-speak will write your email for you unless you remain vigilant[^1].
 Jargon lulls the writer into the false belief that they've said something
 precise while your reader is left wondering whether you've said anything at all.
 
-It's easier to say you want to **touch base** than to think about exactly _why_
-you want to have a meeting. But, really, _why_? If you can't articulate a
-tangible goal, you haven't thought about it enough to ask for a meeting.
-
 Be direct and start your draft with the purpose of the email;  **ask what you
-want to ask or say what you want to say** before writing anything else. This
+want to ask or say what you want to say before writing anything else**. This
 way: you can't overwrite and forget to include your point. You can always wrap
 your plain language in the requisite business shibboleths later.
 
@@ -56,8 +43,9 @@ Everything you write is too long.
 People reading your emails aren't fans of your writing—they're trying to get
 through their email.
 
-When you've finished writing your email: make it 10% shorter. Your writing will
-be more effective.
+When you've finished writing your email use Stephen King's equation from _On
+Writing_: "**2nd Draft = 1st Draft – 10%**". Your writing will be more
+effective.
 
 ## 3️⃣ Make it easy
 
@@ -65,18 +53,16 @@ be more effective.
 >
 > -- Matthew Butterick, [Butterick's Practical Typography][]
 
-It's not enough for the action in your email to _be_ easy; it's got to _look_ easy.
-
 Appropriate typography and thoughtful information architecture make your email
-easier to read.
+easier to read. **It's not enough email to <u>be</u> easy to read; it's got to <u>look</u> easy to read**.
 
 Researchers at the University of Michigan gave student test subjects two
 identical sets of instructions: one in a hard-to-read font and one in an
 easy-to-read font.
 
-Despite the steps being identical, the student's predictions of task difficulty
-were different. They thought the more intimidating text was a more demanding
-task. The author's conclusion is the title of their study: "[If it's Hard to
+Despite the steps being identical, the student's predictions of the difficulty of the tasks
+differed. They thought the more intimidating text was a more demanding
+task even though it was the same task. The author's conclusion is the title of their study: "[If it's Hard to
 Read, It's Hard to Do][]."
 
 Break up long text with headings. Keep your paragraphs short. Use bullet points
@@ -105,7 +91,7 @@ In her book _Because Internet_, author and linguist Gretchen McCulloh posits tha
 people embraced emojis because of their utility. Emojis are emblems of natural
 gesticulation --- they add body language to our text.
 
-Emojis can help people process the shape of your text at a glance. I use emojis
+**Emojis can help people process the shape of your text at a glance**. I use emojis
 to lead the eye through a text. Emojis are precognitive signposts you can use
 to reinforce the meaning of your writing.
 
