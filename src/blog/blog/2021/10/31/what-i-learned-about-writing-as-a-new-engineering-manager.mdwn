@@ -12,19 +12,19 @@ Copyright &copy; 2021 Tyler Cipriani
 >
 > -- William Zinsser, _On Writing Well_
 
-Software engineering managers' most precious resource is time. But you
+Every software engineering manager's most precious resource is time. But you
 wouldn't know it from reading our emails--bloated screeds of business buzzwords
-that we expect engineers to decipher.
+we expect our engineers to decipher.
 
-Here are some tips on how to write an email so people will read it.
+Here are tips for how to write an email so people will read it.
 
 ## 1️⃣ Have a point
 
 Make sure you have something to say before you write.
 
 Corporate-speak will write your email for you unless you remain vigilant[^1].
-Jargon lulls the writer into the false belief that they've said something
-precise while your reader is left wondering whether you've said anything at all.
+Jargon lulls the writer into the false belief they've said something
+precise while your reader may wonder whether you've said anything at all.
 
 Be direct and start your draft with the purpose of the email. _[Writing That
 Works][]_ by Roman and Raphaelson offers this advice: **try writing what you want
@@ -55,7 +55,7 @@ effective.
 > -- Matthew Butterick, [Butterick's Practical Typography][]
 
 Appropriate typography and thoughtful information architecture make your email
-easier to read. **It's not enough email to <u>be</u> easy to read; it's got to <u>look</u> easy to read**.
+easier to read. **It's not enough for your email to <u>be</u> easy to read; it's got to <u>look</u> easy to read**.
 
 Researchers at the University of Michigan gave student test subjects two
 identical sets of instructions: one in a hard-to-read font and one in an
@@ -75,7 +75,7 @@ read.
     <figcaption>
         <p>
             <strong>Squint test</strong>: Compare the shape of the first three paragraphs of a
-            <a href=https://www.nytimes.com/2008/11/05/us/politics/05campaign.html">popular article</a> about Barack Obama with the first three paragraphs of Barack Obama's
+            <a href="https://www.nytimes.com/2008/11/05/us/politics/05campaign.html">popular article</a> about Barack Obama with the first three paragraphs of Barack Obama's
             <a href="https://en.wikipedia.org/wiki/Barack_Obama">Wikipedia entry</a>.
         </p>
         <p>
@@ -89,11 +89,11 @@ read.
 I know. Emojis 🙄.
 
 In her book _[Because Internet][]_, author and linguist Gretchen McCulloh
-posits that people embraced emojis because of they add body language to our
+posits that people embraced emojis because they add body language to our
 writing. The first two sentences of this section are an example of how emojis
-can succinctly convey an emotion.
+succinctly convey emotion.
 
-**Emojis can help people process the shape of your text at a glance**. I use emojis
+**Emojis help people process the shape of your text at a glance**. I use emojis
 to lead the eye through a text. Emojis are precognitive signposts you can use
 to reinforce the meaning of your writing.
 
@@ -111,7 +111,7 @@ I ❤️ the judicious use of emojis.
 ## Software
 
 * [Hemingway Editor](https://hemingwayapp.com/) -- In-browser editor that points out problems like overuse of adverbs and passive voice.
-* [Grammarly](https://www.grammarly.com) -- I currently pay $60 quarterly for this. I don't use the browser extension since that seems likely to send every plain text field I fill in my browser to their servers. I don't trust this service with my data, but I do like this service.
+* [Grammarly](https://www.grammarly.com) -- I pay $60 quarterly for this. I don't use the browser extension since that seems likely to send every plain text field I fill in my browser to their servers. I don't trust this service with my data, but I do like this service.
 
 
 [^1]: Orwell said in "Politics and the English Language": jargon will "construct your sentences for you---even think your thoughts for you, to a certain extent."
