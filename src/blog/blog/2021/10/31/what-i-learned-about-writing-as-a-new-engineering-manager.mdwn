@@ -26,10 +26,11 @@ Corporate-speak will write your email for you unless you remain vigilant[^1].
 Jargon lulls the writer into the false belief that they've said something
 precise while your reader is left wondering whether you've said anything at all.
 
-Be direct and start your draft with the purpose of the email;  **ask what you
-want to ask or say what you want to say before writing anything else**. This
-way: you can't overwrite and forget to include your point. You can always wrap
-your plain language in the requisite business shibboleths later.
+Be direct and start your draft with the purpose of the email. _[Writing That
+Works][]_ by Roman and Raphaelson offers this advice: **try writing what you want
+to say as if you're talking face-to-face**. Don't worry if your first draft
+sounds too casual. You can always wrap your plain language in the requisite
+business shibboleths later.
 
 ## 2️⃣ Keep it short
 
@@ -43,8 +44,8 @@ Everything you write is too long.
 People reading your emails aren't fans of your writing—they're trying to get
 through their email.
 
-When you've finished writing your email use Stephen King's equation from _On
-Writing_: "**2nd Draft = 1st Draft – 10%**". Your writing will be more
+When you've finished writing your email use Stephen King's equation from _[On
+Writing][]_: "**2nd Draft = 1st Draft – 10%**". Your writing will be more
 effective.
 
 ## 3️⃣ Make it easy
@@ -87,16 +88,16 @@ read.
 
 I know. Emojis 🙄.
 
-In her book _Because Internet_, author and linguist Gretchen McCulloh posits that
-people embraced emojis because of their utility. Emojis are emblems of natural
-gesticulation --- they add body language to our text.
+In her book _[Because Internet][]_, author and linguist Gretchen McCulloh
+posits that people embraced emojis because of they add body language to our
+writing. The first two sentences of this section are an example of how emojis
+can succinctly convey an emotion.
 
 **Emojis can help people process the shape of your text at a glance**. I use emojis
 to lead the eye through a text. Emojis are precognitive signposts you can use
 to reinforce the meaning of your writing.
 
-Emojis can't substitute for substance, but they can lower barriers for your
-readers.
+Emojis can't substitute for substance, but they can help make your text easier for your readers.
 
 I ❤️ the judicious use of emojis.
 
@@ -117,3 +118,6 @@ I ❤️ the judicious use of emojis.
 
 [Butterick's Practical Typography]: <https://practicaltypography.com/>
 [If it's Hard to Read, It's Hard to Do]: <https://doi.org/10.1111/j.1467-9280.2008.02189.x>
+[On Writing]: <https://www.worldcat.org/title/on-writing-a-memoir-of-the-craft/oclc/1268486503>
+[Writing That Works]: <https://www.worldcat.org/title/writing-that-works/oclc/671811690>
+[Because Internet]: <https://www.worldcat.org/title/because-internet-understanding-how-language-is-changing/oclc/1155805797>
