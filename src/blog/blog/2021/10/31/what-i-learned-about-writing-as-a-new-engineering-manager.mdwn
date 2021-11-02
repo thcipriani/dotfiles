@@ -3,7 +3,7 @@
 [[!meta copyright="""
 Copyright &copy; 2021 Tyler Cipriani
 """]]
-[[!meta title="Writing Tips for New Engineering Managers"]]
+[[!meta title="Writing Skills for Engineering Managers"]]
 [[!tag computing]]
 
 > Managers at every level are prisoners of the notion that a simple style
@@ -16,7 +16,9 @@ Every software engineering manager's most precious resource is time. But you
 wouldn't know it from reading our emails--bloated screeds of business buzzwords
 we expect our engineers to decipher.
 
-Here are tips for how to write an email so people will read it.
+If you lead a team and you value their time, then demonstrate it through lean
+and confident writing. Below you will find guidelines to help hone your writing
+skill.
 
 ## 1️⃣ Have a point
 
