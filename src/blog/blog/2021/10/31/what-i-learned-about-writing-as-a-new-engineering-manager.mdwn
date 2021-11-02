@@ -57,7 +57,7 @@ effective.
 > -- Matthew Butterick, [Butterick's Practical Typography][]
 
 Appropriate typography and thoughtful information architecture make your email
-easier to read. **It's not enough for your email to <u>be</u> easy to read; it's got to <u>look</u> easy to read**.
+easier to parse. **It's not enough for your email to <u>be</u> easy to read; it's got to <u>look</u> easy to read**.
 
 Researchers at the University of Michigan gave student test subjects two
 identical sets of instructions: one in a hard-to-read font and one in an
