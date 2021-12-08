@@ -27,6 +27,12 @@ Copyright &copy; 2021 Tyler Cipriani
 16. [The Happiness Project](https://openlibrary.org/works/OL15833228W/The_Happiness_Project) by Gretchen Rubin
 16. [The Year of Magical Thinking](https://openlibrary.org/books/OL16287630M/The_Year_of_Magical_Thinking) by Joan Didion
 17. [The Writing Life](https://openlibrary.org/books/OL13634360M/The_writing_life) by Annie Dillard
+18. [Measure What Matters](https://www.worldcat.org/title/measure-what-matters-how-google-bono-and-the-gates-foundation-rock-the-world-with-okrs/oclc/1032381475) by John Doerr
+19. [On Writing](https://www.worldcat.org/title/on-writing-a-memoir-of-the-craft/oclc/43903453) by Stephen King
+20. [The Strange Last Voyage of Donald Crowhurst](https://www.worldcat.org/title/strange-last-voyage-of-donald-crowhurst/oclc/1005088741) by Nicholas Tomalin, Ron Hall
+21. [A Wizard's Guide to Defensive Baking](https://www.worldcat.org/title/wizards-guide-to-defensive-baking/oclc/1186589193) by T Kingfisher
+22. [The Midnight Library](https://www.worldcat.org/title/midnight-library/oclc/1255441549) by Matt Haig
+23. [Circe](https://www.worldcat.org/title/circe-a-novel/oclc/1193018746) by Madeline Miller
 
 ## Structured Reading
 
