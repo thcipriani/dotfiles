@@ -1,0 +1,137 @@
+[[!meta date="2021-12-31T22:40:12.861908"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2021 Tyler Cipriani
+"""]]
+[[!meta title="Useful photography for beginners"]]
+
+![❄️ Snowflake macro photo (Tyler Cipriani --- CC-BY-SA-4.0 --- [Original](https://tylercipriani.com/photos/snowflake-macro/))](https://photos.tylercipriani.com/thumbs/cf/be61bb9611742b0927b9683697795a/large.jpg)
+
+> The implicit agreement [of social media] is that in return for receiving (for
+> the most part, undeserved) attention from your friends and followers, you'll
+> return the favor by lavishing (similarly undeserved) attention on them. **You
+> "like" my status update and I'll "like" yours.**
+>
+> -- Cal Newport, _Deep Work_
+
+Nobody cares about most of your photos on social media. Sure, likes and social
+updoots are gratifying, and documenting your life may be useful in some sense,
+but that's not what I mean when I call a photo _useful_.
+
+Useful photos abstract ideas and subjects. Researchers, journalists, and
+encyclopedia authors push the boundaries of our understanding with useful
+pictures. If this all sounds grandiose --- it is, but it's within reach of the dedicated amateur.
+
+This is a short guide to getting started taking useful pictures.
+
+## What is a useful picture?
+
+> A great architect's creative power [...] lies in his capacity to observe correctly and deeply.
+>
+> – Christopher Alexander, _A Timeless Way of Building_
+
+A useful photograph is technically sound; focuses on a **single**, important
+subject; and makes its subject obvious. Most people will never create a useful
+picture because they don't have the know-how.
+
+![International Space Station solar transit (Tyler Cipriani --- CC-BY-SA-4.0 --- [Original](https://tylercipriani.com/photos/iss-solar-transit/))](https://photos.tylercipriani.com/thumbs/ce/27122f6fe08e3882e930b0bf6092e1/large.jpg)
+
+It's easy to make a useful picture when you focus on your subject. _Focus_ means
+picking a single subject and highlighting it. Social media pictures aren't
+useful because the subject is always **both**: _you and your subject_. _You_ ate dal
+makhani vs. _this is_ dal makhani. This subtle shift changes a thousand little
+technical choices.
+
+A useful picture is the result of good technical choices (this is a summary of
+the [Wikimedia Commons image guidelines](https://commons.wikimedia.org/wiki/Commons:Image_guidelines)):
+
+* The subject is in focus
+* The subject is the most prominent thing in the image
+* Depth of field (i.e., a blurred background) should have a purpose (e.g., to isolate the subject)
+* You've appropriately lit your subject (avoid harsh light, ensure it's light enough to see)
+* The colors are natural, balanced, and attractive
+* The exposure is correct; you don't lose details in dark or light areas
+* Distorted and blurred image areas should have a purpose (e.g., to show motion) — if it looks wrong, it is wrong
+* Digital image editing should make an image look more real, not more surreal (use [[HDR|blog/2021/06/29/commandline-hdr-image-processing]] sparingly)
+
+## How to buy a useful camera
+
+First off, **a useful camera is a camera**, not a phone. Buy a camera. When a
+picture matters and people have a choice, they rarely choose to use a phone
+instead of a camera: presidential portraits, for example, are never shot using
+an iPhone.
+
+Featured Pictures are the best photos on Wikimedia Commons. At the time of this
+writing, only 0.019% of the almost eight million pictures on the site were
+"Featured Pictures"—the best of the best. I looked at more than 12,000 of these
+pictures (you can find my [database of EXIF data on GitLab](https://gitlab.com/thcipriani/wikimedia-commons-featured-exif)) you know how many were iPhoneography?
+Three. These three:
+
+![[Gulls on Morro Strand State Beach](https://commons.wikimedia.org/wiki/File:Gulls_on_Morro_Strand_State_Beach.jpg) --- CC-BY-2.0 by Mike Baird](https://photos.tylercipriani.com/thumbs/3f/c660c5d38e2d3748b297a779ee0db4/medium.jpg)
+![[Izvori na Crn Drim, Chun](https://commons.wikimedia.org/wiki/File:Izvori_na_Crn_Drim,_Chun.jpg) --- CC-BY-SA-3.0 by Taskosmileski](https://photos.tylercipriani.com/thumbs/cc/2deed1de609558f7a8fd1ca87f2566/medium.jpg)
+![[Celing of Wien Hauptbahnhof (Vienna Main Station), Austria 01](https://commons.wikimedia.org/wiki/File:Celing_of_Wien_Hauptbahnhof_(Vienna_Main_Station),_Austria_01.jpg) --- CC-BY-SA-4.0 by Jules Verne Times Two](https://photos.tylercipriani.com/thumbs/ed/3c4bb35c265d0d94bef4c8e506bea2/medium.jpg)
+
+What do those three pictures have in common? Their subject is human-scaled; it fills the frame, is well illuminated, and is close to them. If you're dealing with subjects that don't match those criteria, your phone picture probably won't be useful.
+
+For example, try to take a picture of any of the following on your smartphone (without any extra equipment):
+
+* A fly, super up-close
+* The moon or the stars
+* A bird in a tree
+* A mountain in the distance
+
+![Wikimedia Commons Featured Pictures by camera make --- smartphones are poorly represented ([Original data](https://gitlab.com/thcipriani/wikimedia-commons-featured-exif))](https://photos.tylercipriani.com/wikimedia-commons-camera-make-barchart.png)
+
+The characteristics of a good camera:
+
+* Interchangeable lenses
+* Manual mode
+* Intervalometer (either built-in or sold separately)
+
+You don't need a top-of-the-line camera to take a useful picture. The [data I
+collected about Featured
+Pictures](https://gitlab.com/thcipriani/wikimedia-commons-featured-exif)
+confirms this. You can find a camera matching these criteria for about $100,
+used. The most popular Nikon in the data (the d5200) is available on eBay for
+about $150, and its predecessor, the d5100, is even more affordable. A Canon
+500d (also popular in the data) is less than $100, lens included. These cameras
+are a good starting point for beginners.
+
+## Edit your photos
+
+In the book _Atomic Habits_, author James Clear tells the story of photography
+teacher Jerry Uelsmann's experiment with his class at the University of
+Florida:
+
+> Everyone on the left side of the classroom, he explained, would be in the
+> “quantity” group. They would be graded solely on the amount of work they
+> produced. [...] Meanwhile, everyone on the right side of the room would be in
+> the “quality” group. They would be graded only on the excellence of their work.
+> [...] At the end of the term, he was surprised to find that all the best photos
+> were produced by the quantity group.
+>
+> -- James Clear, _Atomic Habits_
+
+The point of the story is deliberate practice produces results. You might
+think this means if you take **more** photos, you'll take **better** photos. But the
+students in the class weren't only taking pictures; they submitted these
+pictures and got feedback on them.
+
+When I first started photography, I spent a lot of time focusing on quantity
+(and I still do, according to `exiftool -ShutterCount`, I took 3,100 pictures
+between Nov 2020 and Nov 2021). But you should practice creating final, edited
+images to the best of your ability, too. Still, you'll need honest feedback to
+improve.
+
+I've received honest feedback whenever I nominate my pictures for either
+[Quality Image](https://commons.wikimedia.org/wiki/File:Neue_Burg,_Hofberg_Palace,_Vienna_Austria.jpg) or [Featured Picture](https://commons.wikimedia.org/wiki/Commons:Featured_picture_candidates/File:Flatirons_Sunrise.jpg/2) on Wikimedia Commons. The process is very
+impartial (and often demoralizing), but when persnickety strangers on one
+of the largest photo websites in the world agree your image is useful: it
+probably is.
+
+## More resources
+
+* [Marc Levoy's lectures on Digital Photography](https://sites.google.com/site/marclevoylectures/home) -- The best resource I've found for learning about photography
+* [clarkvision.com](https://clarkvision.com/index.html) -- Galleries, articles, and reviews on photography and science
+* [Ted Kinsman's YouTube](https://www.youtube.com/channel/UCole_tveH6goOzP8jJ_NAXg) -- Too short, but great content, "scientific photography"
+* **🎉 BONUS** [Snowflake macro photography](https://chaoticmind75.blogspot.com/2013/08/my-technique-for-snowflakes-shooting.html)
