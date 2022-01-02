@@ -18,21 +18,26 @@ Copyright &copy; 2021 Tyler Cipriani
 8. [Storytelling with Data](https://openlibrary.org/works/OL17659741W/Storytelling_with_Data) by Cole Nussbaumer Knaflic
 9. [Wild : a journey from lost to found on the Pacific Crest Trail](https://www.worldcat.org/title/wild-a-journey-from-lost-to-found/oclc/885451056) by Cheryl Strayed
 10. [Dare to Lead](https://openlibrary.org/works/OL19754782W/Dare_to_lead) by Brené Brown
-10. [Atomic Habits](https://openlibrary.org/works/OL17930368W/Atomic_Habits) by James Clear
-11. [The Mosquito Coast](https://openlibrary.org/works/OL37636W/The_Mosquito_Coast) by Paul Theroux
-12. [Tuesdays with Morrie](https://openlibrary.org/works/OL15754034W/Tuesdays_with_Morrie) by Mitch Albom (I did not like this book.)
-13. [Digital Minimalism](https://openlibrary.org/books/OL26832542M/Digital_Minimalism) by Cal Newport
-14. [On Writing Well](https://openlibrary.org/books/OL3430145M/On_Writing_Well) by William Zinsser
-15. [The Elements of Style](https://openlibrary.org/works/OL38285W/The_Elements_of_Style) by William Strunk, Jr. and E.B. White
-16. [The Happiness Project](https://openlibrary.org/works/OL15833228W/The_Happiness_Project) by Gretchen Rubin
-16. [The Year of Magical Thinking](https://openlibrary.org/books/OL16287630M/The_Year_of_Magical_Thinking) by Joan Didion
-17. [The Writing Life](https://openlibrary.org/books/OL13634360M/The_writing_life) by Annie Dillard
-18. [Measure What Matters](https://www.worldcat.org/title/measure-what-matters-how-google-bono-and-the-gates-foundation-rock-the-world-with-okrs/oclc/1032381475) by John Doerr
-19. [On Writing](https://www.worldcat.org/title/on-writing-a-memoir-of-the-craft/oclc/43903453) by Stephen King
-20. [The Strange Last Voyage of Donald Crowhurst](https://www.worldcat.org/title/strange-last-voyage-of-donald-crowhurst/oclc/1005088741) by Nicholas Tomalin, Ron Hall
-21. [A Wizard's Guide to Defensive Baking](https://www.worldcat.org/title/wizards-guide-to-defensive-baking/oclc/1186589193) by T Kingfisher
-22. [The Midnight Library](https://www.worldcat.org/title/midnight-library/oclc/1255441549) by Matt Haig
-23. [Circe](https://www.worldcat.org/title/circe-a-novel/oclc/1193018746) by Madeline Miller
+11. [Atomic Habits](https://openlibrary.org/works/OL17930368W/Atomic_Habits) by James Clear
+12. [The Mosquito Coast](https://openlibrary.org/works/OL37636W/The_Mosquito_Coast) by Paul Theroux
+13. [Tuesdays with Morrie](https://openlibrary.org/works/OL15754034W/Tuesdays_with_Morrie) by Mitch Albom (I did not like this book.)
+14. [Digital Minimalism](https://openlibrary.org/books/OL26832542M/Digital_Minimalism) by Cal Newport
+15. [On Writing Well](https://openlibrary.org/books/OL3430145M/On_Writing_Well) by William Zinsser
+16. [The Elements of Style](https://openlibrary.org/works/OL38285W/The_Elements_of_Style) by William Strunk, Jr. and E.B. White
+17. [The Happiness Project](https://openlibrary.org/works/OL15833228W/The_Happiness_Project) by Gretchen Rubin
+18. [The Year of Magical Thinking](https://openlibrary.org/books/OL16287630M/The_Year_of_Magical_Thinking) by Joan Didion
+19. [The Writing Life](https://openlibrary.org/books/OL13634360M/The_writing_life) by Annie Dillard
+20. [Measure What Matters](https://www.worldcat.org/title/measure-what-matters-how-google-bono-and-the-gates-foundation-rock-the-world-with-okrs/oclc/1032381475) by John Doerr
+21. [On Writing](https://www.worldcat.org/title/on-writing-a-memoir-of-the-craft/oclc/43903453) by Stephen King
+22. [The Strange Last Voyage of Donald Crowhurst](https://www.worldcat.org/title/strange-last-voyage-of-donald-crowhurst/oclc/1005088741) by Nicholas Tomalin, Ron Hall
+23. [A Wizard's Guide to Defensive Baking](https://www.worldcat.org/title/wizards-guide-to-defensive-baking/oclc/1186589193) by T Kingfisher
+24. [The Midnight Library](https://www.worldcat.org/title/midnight-library/oclc/1255441549) by Matt Haig
+25. [Circe](https://www.worldcat.org/title/circe-a-novel/oclc/1193018746) by Madeline Miller
+26. [Project Hail Mary](https://www.worldcat.org/title/project-hail-mary/oclc/1280097656) by Andy Weir
+27. [The Scout Mindset](https://www.worldcat.org/title/scout-mindset-why-some-people-see-things-clearly-and-others-dont/oclc/1237149519) by Julia Galef
+28. [Fat Loss Forever](https://www.worldcat.org/title/fat-loss-forever-how-to-lose-fat-and-keep-it-off/oclc/1101639135) by Peter Baker and Dr Lane Norton
+29. [Deep Work](https://www.worldcat.org/title/deep-work-rules-for-focused-success-in-a-distracted-world/oclc/986975350) by Cal Newport
+30. [The Absolutely True Diary of a Part-Time Indian](https://www.worldcat.org/title/absolute-true-diary-of-a-part-time-indian/oclc/1149102106) by Sherman Alexie
 
 ## Structured Reading
 
@@ -52,7 +57,7 @@ the first suggested course of reading: [The history of civilization](https://arc
 
 Here I'll track my progress and notes:
 
-* [[Race and Language by Edward Augustus Freeman|books/2021/race-and-language-freeman]]
+*  (❌ Not finished) [[Race and Language by Edward Augustus Freeman|books/2021/race-and-language-freeman]]
 * [[The Book of Job|books/2021/book-of-job]]
 * [[An Account of Egypt by Herodotus|books/2021/egypt-by-herodotus]]
 * [[The Odyssey by Homer|books/2021/odyssey-homer]]
@@ -61,3 +66,38 @@ Here I'll track my progress and notes:
 * Hippolytus by Euripides
 * The Aeneid by Virgil
 * The Autobiography of Benjamin Franklin by Benjamin Franklin
+
+* * *
+
+## Final thoughts on 2021
+
+Depending on how you count (if you count the Book of Job as a "book") I read
+either 37 or 38 books this year. I read more books this year than I've ever
+read in any previous year. My Kindle tells me that I read every single day this
+year (or at least I unlocked my Kindle).
+
+I read every night before bed and sometimes i read a few pages as soon as I woke
+up. I "read" eight of these books on audible, but I ended up buying additional
+copies of _Deep Work_, _Atomic Habits_, and _Measure What Matters_ because they
+all had so much good content, and it was easier to take notes using digital or
+print editions.
+
+I read almost all of these books on my Kindle. I love the reading experience of
+the Kindle and I recently learned about
+[readwise](https://readwise.io/bookcision) which helps me export all my notes
+from my kindle to my computer. I bought a [book
+stand](https://www.amazon.com/gp/product/B005IV6U0U/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+at the end of 2021. My goal is to use it to read an actual **physical** book
+and take notes on my computer. Prior to this year (and my discovery of
+readwise), I most likely would have said physical books were my preferred
+format. At the end of 2021, I tend to prefer reading on the kindle Kindle more
+than physical books; however, there are a few books that don't lend themselves
+very well to the paperwhite (any of the Tufte books for example).
+
+Unlike in years past, I didn't read any graphic novels this year --- this is
+another Kindle limitation. I think I'll revisit that in 2022 --- I'd like to
+try some mangas (not that I have any idea where to start).
+
+As of today (2022-01-01), there are six books that I'm more than 30% of the way
+through. I have plans to finish at least two of them, so that should give me a
+headstart on my 50 book(!) goal for 2022 😅.
