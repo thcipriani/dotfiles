@@ -1,0 +1,58 @@
+[[!meta date="2022-01-07T14:20:45-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="The Great Railway Bazaar"]]
+[[!tag books]]
+
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemType="https://schema.org/Rating">
+⭑⭑⭑½ <small>(<span itemprop="rating">3.5</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+## Three sentence summary
+<div itemprop="reviewBody">
+Paul Theroux's memoir of his travels across Europe and Asia by rail wherein he recounts detailed conversations with people he encounters.
+
+The journey by rail takes him on the (sadly now defunct, [I
+checked](https://www.seat61.com/history-of-the-orient-express.htm)) Orient
+Express to Vienna, then to Istanbul, Tehran, through Afganistan, to Peshawar,
+then a zig-zagging path through India[^1], a plane ride to Yangon (née Rangoon)
+in Myanmar (née Burma), Mandalay, then on to Thailand, Singapore, another plane
+ride to Vietnam, then another plane to Japan, and finally the trip home on the
+famous Trans-Siberian.
+
+There are enjoyable moments of glib humor, a lot of sex workers and other
+unfortunate travelers where the glib humor is less enjoyable, and a frank look
+at America's influence of Vietnam as of 1975.
+</div>
+
+## Details
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">The Great Railway Bazaar: By Train Through Asia</span>
+* Author: <span itemprop="author">Paul Theroux</span>
+* Pages: <span itemprop="numberOfPages">354</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Mariner Books</span>
+* ISBN: <span itemprop="isbn">06-1865-894-7</span>
+* Genre: <span itemprop="genre">Travel</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/0618658947">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/0618658947">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9780618658947">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9780618658947">Goodreads</a>
+
+[^1]: Lahore → Delhi, Delhi → Shimla, Shimla → Mumbai (née Bombay) by way of
+Jaipur (this is confusing—there's a chapter about Jaipur after mentioning
+Mumbai, but it seems silly to go Delhi→Mumbai→Jaipur→Chennai—this is a
+guess/it's unclear), Mumbai → Chennai (née Madras), Chennai → Colombo, Sri Lanka (née
+Ceylon) → Galle, Sri Lanka, Galle → Chennai, Chennai→Kolkata (née Calcutta)
+
+</div><!-- end review -->
