@@ -1,0 +1,40 @@
+[[!meta date="2022-01-08T13:13:17-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="Book reviews"]]
+[[!tag books]]
+
+My memory is finite. And I spend a lot of my finite memory cramming in gobs of
+books. One of the myriad purposes of tending a digital garden like this site is to
+use it to augment the limit memory capacity of my tiny brain. So that's
+what I'm doing with these reviews.
+
+## Rating Rubric
+
+These reviews are for me. All books are rated on a 5-star scale that represents
+my enjoyment rather than any objective value of the writing or the ideas in
+the book. The value of the writing and ideas may factor into my enjoyment,
+but my rating isn't meant to represent that.
+
+----------- -------------------------------------------------------------
+⭑–⭑⭑½       This book was a waste of my time in inverse proportion to the
+            star rating
+
+⭑⭑⭑         I don't know/I feel mixed
+
+⭑⭑⭑½        I enjoyed it, but there were problems
+
+⭑⭑⭑⭑        I enjoyed it, but maybe not for everyone
+
+⭑⭑⭑⭑½–⭑⭑⭑⭑⭑ I enjoyed it so much that I would recommend it to others in
+            proportion to the star rating
+
+----------- -------------------------------------------------------------
+
+The idea to rate books and how to do it well was stolen from many sources, but
+some credit is due to [Russ Allbery's phenomenal book
+reviews](https://www.eyrie.org/~eagle/reviews/) and [Tom
+MacWright](https://macwright.com/2017/12/11/indieweb-reading.html)'s blog post
+about owning his reading log.
