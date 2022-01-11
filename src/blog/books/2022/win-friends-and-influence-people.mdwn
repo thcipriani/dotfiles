@@ -1,0 +1,84 @@
+[[!meta date="2022-01-11T16:16:53-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="How to Win Friends and Influence People"]]
+[[!tag books]]
+
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemType="https://schema.org/Rating">
+⭑⭑⭑⭑ <small>(<span itemprop="rating">4</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+## Three sentence summary
+<div itemprop="reviewBody">
+A book of pragmatic advice about how to make people like you. Much of the
+advice can be summarized: cultivate a genuine interest and affection for other
+people, and remember people are more interested in themselves than in you.
+
+To win other people to your way of thinking remember the old saw, "a drop of honey
+catches more flies than a gallon of gall"; it's not enough to be right, you
+have to be kind, too.
+
+## Random thoughts
+
+There are some inadvertent arguments against the existence of free will in some degree:
+
+> Take Al Capone, for example. Suppose you had inherited the same body and
+> temperament and mind that Al Capone had. Suppose you had had his environment
+> and experiences. You would then be precisely what he was—and where he was.
+>
+> -- Dale Carnegie, How to Win Friends & Influence People
+
+And
+
+> When Mrs. Lincoln and other spoke harshly of the southern people, Lincoln
+> replied: “Don’t criticize them; they are just what we would be under similar
+> circumstances.”
+>
+> -- Dale Carnegie, How to Win Friends & Influence People
+
+* * *
+
+There's some overlap here with the ideas in the book _The Scout Mindset_,
+particularly the section where he talks about winning others to your way of
+thinking:
+
+> Nine times out of ten, an argument ends with each of the contestants more
+> firmly convinced than ever that he is absolutely right.
+>
+> -- Dale Carnegie, How to Win Friends & Influence People
+
+And
+
+> A man convinced against his will Is of the same opinion still.
+>
+> -- Dale Carnegie, How to Win Friends & Influence People
+
+Both books cite _The Autobiography of Benjamin Franklin_ referencing the part in
+the 2nd section where he mentions that he no longer tells people they're wrong
+directly.
+
+## Details
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">How to win friends & influence people : the only book you need to lead you to success</span>
+* Author: <span itemprop="author">Dale Carnegie</span>
+* Pages: <span itemprop="numberOfPages">248</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Pharos Books</span>
+* ISBN: <span itemprop="isbn">0671027034</span>
+* Genre: <span itemprop="genre">Personal Development</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/0671027034">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/0671027034">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9780671027032">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9780671027032">Goodreads</a>
+
+</div><!-- end review -->
