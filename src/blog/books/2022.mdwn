@@ -6,5 +6,13 @@ Copyright &copy; 2022 Tyler Cipriani
 [[!meta title="Books Read in 2022"]]
 [[!tag books]]
 
-1. [[The Great Railway Bazaar|books/2022/great-railway-bazaar]] by Paul Theroux
-2. [[How to Win Friends and Influence People|books/2022/win-friends-and-influence-people]] by Dale Carnegie
+
+--- ---------------------------------------------------------------------------------------- --------------- -------------------
+ #   Title                                                                                   Author          Rating
+--- ---------------------------------------------------------------------------------------- --------------- -------------------
+ 1  [[The Great Railway Bazaar|books/2022/great-railway-bazaar]]                             Paul Theroux    ⭑⭑⭑<small>½</small>
+
+ 2  [[How to Win Friends and Influence People|books/2022/win-friends-and-influence-people]]  Dale Carnegie   ⭑⭑⭑⭑
+
+ 3  [[Klara and the Sun|books/2022/klara-and-the-sun]]                                       Kazuo Ishiguro  ⭑⭑⭑⭑<small>½</small>
+---- --------------------------------------------------------------------------------------- --------------- -------------------
