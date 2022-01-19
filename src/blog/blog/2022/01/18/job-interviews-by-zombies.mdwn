@@ -1,0 +1,66 @@
+[[!meta date="2022-01-18T22:43:01.233215"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="Job Interviews By Zombies"]]
+[[!tag computing]]
+
+The golden rule of interviewing is: **make yourself easy to hire**.
+
+Like many organizations at the moment, [we're hiring](https://wikimediafoundation.org/about/jobs/). As I'm interviewing
+people, I'm struck by how hard some folks make it for me to give them a "yes."
+
+Candidates tend to murmur things like, "we decided to move to Kubernetes" or
+"the team built a release pipeline." Bromides like these make me wonder – what
+exactly did **you** (the candidate) do?
+
+> [Often in an interview, a candidate's] answers are about "we", "us", and "the team."
+> The interviewer walks away having little idea what the candidate's actual impact
+> was and might conclude that the candidate did little
+>
+> -- Gale Laakmann McDowell, <u>Cracking the Coding Interview</u>
+
+## When you're humble, you're hard to hire
+
+Being humble is an admirable trait. When candidates succumb to words like
+"team" and "we" and "us," it's possible they're just being humble. But it's
+also reasonable to conclude that the word "I" is absent from their pat answers
+because they didn't actually do anything.
+
+I'm compelled to press candidates, "what was your role in that project?" I have
+many questions I'd love to ask, and I don't relish using our short time
+together asking questions to clarify vagaries. **You're easier to hire when I
+know what you did**.
+
+## Take the blame? Take the credit
+
+If you're not the kind of person who shifts blame when things go wrong, then
+**why shift the blame when things have gone right**? Writers and speakers use the
+_passive voice_ to hide who's responsible for an action. "Mistakes were made"
+rather than "I made a mistake."
+
+An easy trick to detect the passive voice in writing is to inject the phrase
+"by zombies" after the verb:
+
+Like: "Mistakes were made _by zombies_."
+
+Or: "The ball was thrown <strike>by the boy</strike> _by zombies_."
+
+There must be a corollary rule for job interviews.
+
+## Just say I: the unaccountable zombie rule of interviewing
+
+You're making it hard to hire you if you're talking about the unaccountable
+zombies you worked with: "<strike>We</strike> _The unaccountable zombies I
+worked with_ decided it was more sensible to use boring technologies, so <strike>we</strike> _the unaccountable zombies I worked with_
+went with MySQL."
+
+Just as I'd have to stop the interview to inquire, "I'm sorry, did you say _the
+team of unaccountable zombies you worked with_?" I'd have to stop the interview to
+clarify, "who exactly is _we_?"
+
+The not-so-secret secret of hiring is: **I want to hire you.** I'm interviewing
+you after all—you must be one singular human being!
+
+If you agree, just say "I."
