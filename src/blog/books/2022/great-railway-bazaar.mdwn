@@ -8,12 +8,12 @@ Copyright &copy; 2022 Tyler Cipriani
 
 <div itemscope itemtype="https://schema.org/Review">
 
-<div itemprop="reviewBody" itemscope itemType="https://schema.org/Rating">
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
 ⭑⭑⭑½ <small>(<span itemprop="rating">3.5</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
 </div>
 
 ## Three sentence summary
-<div itemprop="reviewBody">
+
 Paul Theroux's memoir of his travels across Europe and Asia by rail wherein he recounts detailed conversations with people he encounters.
 
 The journey by rail takes him on the (sadly now defunct, [I

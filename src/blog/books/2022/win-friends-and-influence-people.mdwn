@@ -8,12 +8,12 @@ Copyright &copy; 2022 Tyler Cipriani
 
 <div itemscope itemtype="https://schema.org/Review">
 
-<div itemprop="reviewBody" itemscope itemType="https://schema.org/Rating">
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
 ⭑⭑⭑⭑ <small>(<span itemprop="rating">4</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
 </div>
 
 ## Three sentence summary
-<div itemprop="reviewBody">
+
 A book of pragmatic advice about how to make people like you. Much of the
 advice can be summarized: cultivate a genuine interest and affection for other
 people, and remember people are more interested in themselves than in you.

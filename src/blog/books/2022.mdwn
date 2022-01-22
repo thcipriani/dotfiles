@@ -15,4 +15,6 @@ Copyright &copy; 2022 Tyler Cipriani
  2  [[How to Win Friends and Influence People|books/2022/win-friends-and-influence-people]]  Dale Carnegie   ⭑⭑⭑⭑
 
  3  [[Klara and the Sun|books/2022/klara-and-the-sun]]                                       Kazuo Ishiguro  ⭑⭑⭑⭑<small>½</small>
+
+ 4  [[How to Live on 24 Hours a Day|books/2022/how-to-live-on-24-hours]]                     Arnold Bennett  ⭑⭑⭑<small>½</small>
 ---- --------------------------------------------------------------------------------------- --------------- -------------------

@@ -7,12 +7,11 @@ Copyright &copy; 2022 Tyler Cipriani
 [[!tag books]]
 <div itemscope itemtype="https://schema.org/Review">
 
-<div itemprop="reviewBody" itemscope itemType="https://schema.org/Rating">
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
 ⭑⭑⭑⭑<small>½</small> <small>(<span itemprop="rating">4.5</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
 </div>
 
 ## Three sentence summary
-<div itemprop="reviewBody">
 
 Klara is an artificial friend (AF), which is a solar-powered, blade-runner-level tween android
 and general-AI sold (at what I picture as the Apple Store) to
