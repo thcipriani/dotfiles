@@ -1,0 +1,108 @@
+[[!meta date="2022-01-25T11:26:30-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="The Road"]]
+[[!tag books]]
+
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
+⭑⭑⭑⭑⭑ <small>(<span itemprop="rating">5</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+## Three sentence summary
+
+Cormac McCarthy's The Road is a story of a father and son walking on a road
+amid a post-apocalyptic landscape of blackened skies raining ash on the
+charred husks of the former vegetation.
+
+Their walk is a pilgrimage to the coast, but you're not sure what they're
+hoping to find — any insight you have into the character's motivations is found
+in quote-mark-less conversations between the father and son, simple concrete
+conversations like the kind you'd have with an eight-year-old.
+
+The central questions are about morality and epistemology: how do you know if
+people are good and is eschewing cannibalism enough to call yourself moral in a
+time when hazmat-suit-clad hordes complete with retinue of concubines and
+catamites are a common sight.
+
+## Random thoughts
+
+A lot of the book begs the question of how to carry on (and indeed _why_ carry
+on) when the future is bleak and uncertain. A few answers are offered. A man's
+love of his son may be the most straight-forward interpretation; however, I'll
+admit that that answer hadn't occurred to me during my reading, only while
+reading reviews after.
+
+I viewed the narrative as a story about our obligations to each other. We're
+obligated to "carry the fire" (the main character's phrase that I took to mean
+"carrying on humanity").
+
+One passage I liked has to do with the creation of ritual as a means of
+creating meaning:
+
+> All of this like some ancient anointing. So be it. Evoke the forms. Where
+> you’ve nothing else construct ceremonies out of the air and breathe upon
+> them.
+>
+> -- Cormac McCarthy, <u>The Road</u>
+
+The language in <u>The Road</u> is stunning. Plain yet powerful. McCarthy
+wields the word "and" with such imagination and expertise it forced me to learn
+the term "[Polysyndeton](https://en.wikipedia.org/wiki/Polysyndeton)". I spent
+a few minutes reveling in the joy of reading this sentence:
+
+> The snow fell nor did it cease to fall.
+>
+> -- Cormac McCarthy, <u>The Road</u>
+
+While the vocabulary is plain, the sentences McCarthy assembles from its
+pieces are singular, I just loved the language in this book:
+
+> He walked out in the gray light and stood and he saw for a brief moment the
+> absolute truth of the world. The cold relentless circling of the intestate
+> earth. Darkness implacable. The blind dogs of the sun in their running. The
+> crushing black vacuum of the universe. And somewhere two hunted animals
+> trembling like ground-foxes in their cover. Borrowed time and borrowed world
+> and borrowed eyes with which to sorrow it.
+>
+> -- Cormac McCarthy, <u>The Road</u>
+
+Although, the lack of any punctuation at all can make reading some passages
+feel like reading text messages: a needless lack of punctuation.
+
+Also, there may have been some pretty heavy Christ metaphor stuff right at the
+end (and probably throughout):
+
+> She would talk to him sometimes about God. He tried to talk to God but the
+> best thing was to talk to his father and he did talk to him and he didnt
+> forget. The woman said that was all right. She said that the breath of God was
+> his breath yet though it pass from man to man through all of time
+>
+> -- Cormac McCarthy, <u>The Road</u>
+
+</div><!-- end reviewBody -->
+
+## Details
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">The Road</span>
+* Author: <span itemprop="author">Cormac McCarthy</span>
+* Pages: <span itemprop="numberOfPages">287</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Doubleday</span>
+* ISBN: <span itemprop="isbn">0307387895</span>
+* Genre: <span itemprop="genre">Literature</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/0307387895">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/0307387895">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9780307387899">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9780307387899">Goodreads</a>
+
+</div><!-- end review -->
