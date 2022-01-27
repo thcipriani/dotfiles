@@ -1,0 +1,113 @@
+[[!meta date="2022-01-27T19:04:31.296461"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="On the term 'Blameless Postmortem'"]]
+[[!tag computing]]
+
+> A _term_ is not a _word_ [...] a term is a word **used unambiguously**
+>
+> Mortimer J Adler, <u>How to Read a Book</u>
+
+I identify with a seeming minority who believe words have meaning. And I have
+problems with the software industry term **blameless postmortem**.
+
+Software engineers love to scrutinize terms. Variable names are (rightfully, I
+believe) an endless topic of debate. There's even an aphorism explaining this
+aspect of software: the two hardest problems in computer science are cache
+invalidation and naming things (and off-by-one errors 😂).
+
+The problem is that **terms help us model reality**. As the saying goes: all
+models are wrong, some are useful. And if a term leads you to an incorrect
+model, it ceases to be useful. The term **blameless postmortem** carries some
+baggage that puts it at odds with its goals as a term.
+
+## What is a blameless postmortem?
+
+> A postmortem is a written record of an incident, its impact, the actions
+> taken to mitigate or resolve it, the root cause(s), and the follow-up actions
+> to prevent the incident from recurring.
+>
+> -- Postmortem Culture: Learning from Failure, <u>Site Reliability Engineering</u>
+
+**If you're doing things, you'll eventually break something**.
+
+A blameless postmortem is a document recounting what you broke, how you fixed
+it, and what made tripped you up and made you break it. The goal is to fix
+whatever made you break it in the first place.
+
+In a complex system, the cause of a problem is far from obvious. Toyota
+famously developed the [Five Whys](https://en.wikipedia.org/wiki/Five_whys)
+method of problem investigation to traverse the layers of causality to find
+the underlying cause of a problem.
+
+The practice of the blameless postmortem is excellent. The term blameless
+postmortem could use some improvement.
+
+## The negation of 𝑥 implies 𝑥
+
+**"Blameless" implies "blame."**
+
+_Apophasis_ is a term in rhetoric that I just learned, wherein a speaker denies a
+topic should be brought up so they can bring it up. It's like when you say, "I
+don't care what anyone says, I like you."
+
+By calling the process of finding the root cause of an incident "blameless," it's
+tantamount to: "I don't care that everyone blames you; I want to know the real
+cause."
+
+It feels a little hostile right from the start.
+
+## Postmortem is macabre
+
+The earliest definition of "postmortem" is still in use: **"an examination of a
+body after death to determine the cause of death"[^1].**
+
+This definition is a pretty heavy thing to lay on someone who's already
+sheepish about breaking the website. Especially combined with the term "blameless."
+
+It's like saying: "We can all agree you basically killed somebody, and
+even though others believe you're to blame, I know you're probably maybe innocent."
+
+## Feature, not a bug
+
+I get that **sometimes we need to be reminded that the goal is not to place
+blame** and that sometimes it's worth being explicit. But I think that becomes a
+problem when it's at odds with its own goals, as I believe the term "blameless"
+is.
+
+**Postmortem has also come to mean "following the event."** Language evolves. But
+language is also laden with historical use, and that history, too, can muddy our
+meaning.
+
+I'll admit the term "blameless postmortem" is useful as it represents a shared
+idea. But I still think **we could develop a term that is a better fit for
+our goals**.
+
+After digging in a thesaurus for a few minutes, I've landed at "Disquisition."
+
+```
+(/^ヮ^)/*:・ﾟ✧ dict disquisition
+1 definition found
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Disquisition \Dis`qui*si"tion\, n. [L. disquisitio, fr.
+     disquirere to inquire diligently, investigate; dis- +
+     quaerere to seek. See {Quest}.]
+     A formal or systematic inquiry into, or discussion of, any
+     subject; a full examination or investigation of a matter,
+     with the arguments and facts bearing upon it; elaborate
+     essay; dissertation.
+     [1913 Webster]
+  
+           For accurate research or grave disquisition he was not
+           well qualified.                          --Macaulay.
+     [1913 Webster]
+```
+
+And the only connotation I can attribute to that term is: **"Nobody expects a
+software disquisition!"** which is clearly free of any negative historical baggage.
+
+[^1]: <https://www.merriam-webster.com/dictionary/postmortem>
