@@ -34,7 +34,7 @@ baggage that puts it at odds with its goals as a term.
 **If you're doing things, you'll eventually break something**.
 
 A blameless postmortem is a document recounting what you broke, how you fixed
-it, and what made tripped you up and made you break it. The goal is to fix
+it, and what tripped you up and made you break it. The goal is to fix
 whatever made you break it in the first place.
 
 In a complex system, the cause of a problem is far from obvious. Toyota
