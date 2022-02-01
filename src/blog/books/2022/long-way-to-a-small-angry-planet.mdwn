@@ -1,0 +1,77 @@
+[[!meta date="2022-01-31T20:32:48-07:00"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="The Long Way to a Small, Angry Planet"]]
+[[!tag books]]
+
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
+⭑⭑⭑⭑½ <small>(<span itemprop="rating">4.5</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+## <s>Three sentence</s> Short(ish) summary
+
+I’ve opted out of my standard three-sentence book summary as I’ve read many
+novels with a fraction of the plot of a single chapter of this book.
+
+The book opens on Rosemary Harper, escaping her past to work as a clerk aboard
+the Wayfarer, a spacer tunneling vessel. Faster than light travel is illegal
+(seemingly because it’s hard to think about), so to move through the vastness
+of space, you need wormholes. A tunneling vessel is a ship that punches
+wormholes through space’s sublayer.
+
+Spacers/Exodans are the portion of humanity that set course for the great
+unknown after we’d destroyed the planet (and after the rich people bailed to
+colonize Mars).
+
+Rosemary arrives on a ship peopled with myriad species:
+
+Humans: Ashby Santoso, captain, all-around cool guy; Artis Corbin, irascible
+algaest – the ship runs on algae; Kizzy and Jenks, best friends and lovable
+mech techs (the Pippin and Mary to Ashby’s Frodo). Jenks is in love with the
+ship’s AI, Lovelace, who everyone calls Lovey.
+
+The ship’s pilot’s Sissex – an andrisk woman (a feathered dinosaur species that
+seems to think humanity is a bunch of squares, an opinion possibly shared by
+every other species).
+
+The ship’s doctor/chef, who has a name no one is physically able to pronounce since his species, the
+grum, have five sets of vocal cords. Everyone calls him Dr. Chef (this is
+endearing).
+
+Finally, the ship’s navigator is a sianat pair – a species with a (possibly) symbiotic
+relationship with a virus that gives the host the ability to
+navigate in space’s “sublayer” enabling tunneling in the first place. No other
+species is able to navigate in space’s sublayer – only the sianat can do the math. The
+virus won’t pair with any other species, so the sianat see it as their sacred
+mission to show other species how to traverse the sublayer.
+
+And that’s, like, chapter one.
+
+Also noteworthy: I want to live inside this book forever.
+</div><!-- end reviewBody -->
+
+## Details
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">The Long Way to a Small, Angry Planet</span>
+* Author: <span itemprop="author">Becky Chambers</span>
+* Pages: <span itemprop="numberOfPages">404</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Hodder</span>
+* ISBN: <span itemprop="isbn">1473619815</span>
+* Genre: <span itemprop="genre">Science Fiction</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/1473619815">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/1473619815">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9780062444134">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9781473619814">Goodreads</a>
+
+</div><!-- end review -->
