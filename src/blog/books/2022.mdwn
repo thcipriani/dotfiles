@@ -19,4 +19,6 @@ Copyright &copy; 2022 Tyler Cipriani
  4  [[How to Live on 24 Hours a Day|books/2022/how-to-live-on-24-hours]]                     Arnold Bennett   ⭑⭑⭑<small>½</small>
 
  5  [[The Road|books/2022/the-road]]                                                         Cormac McCarthy  ⭑⭑⭑⭑⭑
+
+ 6  [[The Long Way to a Small, Angry Planet|books/2022/long-way-to-a-small-angry-planet]]    Becky Chambers   ⭑⭑⭑⭑<small>½</small>
 ---- --------------------------------------------------------------------------------------- ---------------- -------------------
