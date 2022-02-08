@@ -17,7 +17,7 @@ Copyright &copy; 2020 Tyler Cipriani
 * I like [coffee](https://tylercipriani.com/coffee-extract).
 
 <figure>
-<img title="Hello World." src="https://photos.tylercipriani.com/thumbs/8e/2ad9c55baee36d1528aaa8eee36f8e/large.jpg" alt="Tyler Cipriani">
+<img title="Hello World." src="https://photos.tylercipriani.com/thumbs/6b/d5b2a030fee4ac2e92b296e09ee0c5/large.jpg" alt="Tyler Cipriani">
 <figcaption>Hello World.</figcaption>
 </figure>
 
