@@ -3,7 +3,7 @@
 [[!meta copyright="""
 Copyright &copy; 2022 Tyler Cipriani
 """]]
-[[!meta title="On the term 'Blameless Postmortem'"]]
+[[!meta title="On the term “Blameless Postmortem”"]]
 [[!tag computing]]
 
 > A _term_ is not a _word_ [...] a term is a word **used unambiguously**

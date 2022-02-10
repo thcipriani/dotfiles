@@ -476,13 +476,14 @@ body {
     text-rendering: optimizeLegibility;
     word-wrap: break-word;
 
-    font-variant-ligatures: common-ligatures additionalligatures;
+    font-variant-ligatures: common-ligatures contextual;
+    font-kerning: normal;
 
-    -webkit-font-feature-settings: "liga";
-       -moz-font-feature-settings: "liga=1, dlig=0";
-        -ms-font-feature-settings: "liga";
-         -o-font-feature-settings: "liga";
-            font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga" 1, "kern" 1,"liga" 1,"calt" 1;
+       -moz-font-feature-settings: "liga" 1, "kern" 1,"liga" 1,"calt" 1;
+        -ms-font-feature-settings: "liga" 1, "kern" 1,"liga" 1,"calt" 1;
+         -o-font-feature-settings: "liga" 1, "kern" 1,"liga" 1,"calt" 1;
+            font-feature-settings: "liga" 1, "kern" 1,"liga" 1,"calt" 1;
 
     -webkit-font-smoothing: antialiased;
 }
