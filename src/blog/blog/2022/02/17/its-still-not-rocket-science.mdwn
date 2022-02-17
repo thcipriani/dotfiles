@@ -1,0 +1,112 @@
+[[!meta date="2022-02-17T02:20:43.754656"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="It’s (Still) Not Rocket Science"]]
+[[!tag computing]]
+
+In 2014 the creator of the Rust programming language wrote a blog post
+entitled, "[The Not Rocket Science Rule Of Software Engineering](https://graydon2.dreamwidth.org/1597.html)." In the post,
+Graydon Hoare describes an arcane CI system he cobbled together circa 2001.
+
+> the team cooked up a system of cron jobs, rsync, multiple CVS repositories
+> and a small postgres database tracking test results.
+>
+> -- Graydon Hoare, "not rocket science" (the story of monotone and bors)
+
+The system sounds hopelessly antiquated by today's standards -- nobody is using CVS!
+
+At the end of last year, GitHub introduced the [Merge
+Queue](https://github.blog/changelog/2021-10-27-pull-request-merge-queue-limited-beta/),
+a mirror of GitLab's (premium-tier only) [Merge
+Trains](https://about.gitlab.com/blog/2020/12/14/merge-trains-explained/)
+feature. This means as of 2022, **most of the major software forges have <u>almost</u> caught up with a
+duck tape CI system from 2001**.
+
+## It's not rocket science
+
+The concepts developed building this piecemeal system turned out to be vital
+in the early days of Rust. So vital, the author felt compelled to write a blog
+post coining a rule to help identify this concept.
+
+The rule itself is straightforward:
+
+> **The Not Rocket Science Rule Of Software Engineering:**
+>
+> automatically maintain a repository of code that always passes all the tests
+
+Lurking under that placid description is a simple concept, but it's challenging to
+execute.
+
+## Why is this so hard
+
+**Most CI systems only guarantee that the tests pass in your branch**. But that's
+different than saying your tests will pass when your branch merges.
+
+One reason for this mismatch may be [integration friction](https://martinfowler.com/articles/branching-patterns.html#integration-friction): your branch diverged
+from the main branch over time.
+
+It's unsafe to merge changes in parallel in a conventional CI system. Semantic
+conflicts between patches can break the build post-merge. Imagine renaming a
+method in one branch while merging a patch that depends on that method in another.
+
+## The queue
+
+Adopting a rebase-and-merge policy is a possible solution — where you rebase
+and merge all patches one at a time.
+
+But processing a queue in serial is slow and won't scale up as you add
+more developers.
+
+## Speculative future state
+
+By enqueuing patches to rebase-and-merge in order, you're creating a
+deterministic code state. We know what the codebase will look like
+after each patch is rebased and merged, so we can do that work up-front.
+
+**We can test the second patch in parallel with the first *as if* the first
+patch has already merged.**
+
+```
+Main@𝑥² = HEAD + 𝑥¹
+Main@𝑥³ = HEAD + 𝑥¹ + 𝑥²
+```
+
+We can run the tests for all patches in the queue in parallel. Waiting to merge
+each patch until all the patches in front of it pass their tests.
+
+If a patch fails, we remove it and re-run the tests for all the
+patches behind it in the queue—it's not rocket science!
+
+This is how the Merge Queue and the Merge Train work today.
+
+## Multiply by 𝑛
+
+One of my former colleagues was fond of saying:
+
+> The only numbers that matter in computer science are 0, 1, and 𝑛.
+
+The "not rocket science" problem gets more complicated when a production build
+is composed of 𝑛 repos.
+
+At my work, we've yet to embrace the monorepo trend 😬. We (nominally) have our
+reasons outside this post's scope.  The result is a release to production
+composed of roughly 200 different repositories -- some of which depend on one
+another in an ever-spidering graph of maddening dependencies.
+
+## What we do
+
+Sometime in 2012, the Openstack Infrastructure team started work on Zuul. Zuul
+maintains what it calls "pipelines." Dependent pipelines can ensure that
+patches across multiple repos get tested and merged together as if they were
+part of a single Merge Train or Merge Queue.
+
+Zuul treats each pipeline like a queue and maintains a shadow version control
+system that allows testing speculative future states across repositories
+in parallel.
+
+Today it's a decade after development began on Zuul — more than two decades
+after Graydon Hoare's duck tape CI system. And the most prominent and
+best-funded software forges in the history of humanity are pretty gosh darn
+close to catching up.
