@@ -97,7 +97,7 @@ another in an ever-spidering graph of maddening dependencies.
 
 ## What we do
 
-Sometime in 2012, the Openstack Infrastructure team started work on Zuul. Zuul
+Sometime in 2012, the Openstack Infrastructure team started work on [Zuul](https://opendev.org/zuul/zuul/commit/ee743613ce5b3aee11d12e91e932d7876bc0b40c). Zuul
 maintains what it calls "pipelines." Dependent pipelines can ensure that
 patches across multiple repos get tested and merged together as if they were
 part of a single Merge Train or Merge Queue.
