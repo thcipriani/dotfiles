@@ -3,34 +3,23 @@
 [[!meta copyright="""
 Copyright &copy; 2022 Tyler Cipriani
 """]]
-[[!meta title="It’s (Still) Not Rocket Science"]]
+[[!meta title="Repos that always pass their tests"]]
 [[!tag computing]]
 
-In 2014 the creator of the Rust programming language wrote a blog post
-entitled, "[The Not Rocket Science Rule Of Software Engineering](https://graydon2.dreamwidth.org/1597.html)." In the post,
-Graydon Hoare describes an arcane CI system he cobbled together circa 2001.
+Losing faith in your build hobbles a software project. Continual test failures
+create alarm fatigue—people habituate to ignoring test results.
 
-> the team cooked up a system of cron jobs, rsync, multiple CVS repositories
-> and a small postgres database tracking test results.
->
-> -- Graydon Hoare, "not rocket science" (the story of monotone and bors)
-
-The system sounds hopelessly antiquated by today's standards -- nobody is using CVS!
-
-At the end of last year, GitHub introduced the [Merge
-Queue](https://github.blog/changelog/2021-10-27-pull-request-merge-queue-limited-beta/),
-a mirror of GitLab's (premium-tier only) [Merge
-Trains](https://about.gitlab.com/blog/2020/12/14/merge-trains-explained/)
-feature. This means as of 2022, **most of the major software forges have <u>almost</u> caught up with a
-duck tape CI system from 2001**.
+Ignoring your tests creates an apathy spiral: more breakage, more failure, more
+apathy, resulting in decreased velocity. Fortunately, more brilliant people
+than me have already thought really hard about this problem.
 
 ## It's not rocket science
 
-The concepts developed building this piecemeal system turned out to be vital
-in the early days of Rust. So vital, the author felt compelled to write a blog
-post coining a rule to help identify this concept.
-
-The rule itself is straightforward:
+In 2014, Graydon Hoare, the creator of the Rust programming language, wrote a blog post entitled,
+"[The Not Rocket Science Rule Of Software
+Engineering](https://graydon2.dreamwidth.org/1597.html)." In the post,
+he desribes a CI system his team cobbled together circa 2001.
+ The purpose of the system was to enforce one simple rule:
 
 > **The Not Rocket Science Rule Of Software Engineering:**
 >
@@ -61,17 +50,21 @@ more developers.
 
 ## Speculative future state
 
-By enqueuing patches to rebase-and-merge in order, you're creating a
-deterministic code state. We know what the codebase will look like
-after each patch is rebased and merged, so we can do that work up-front.
+By enqueuing patches to rebase-and-merge, you know what the
+codebase will look like after each patch is merged. That work
+can be done before you test and before you merge.
 
-**We can test the second patch in parallel with the first *as if* the first
-patch has already merged.**
+At the end of last year, GitHub introduced the [Merge
+Queue](https://github.blog/changelog/2021-10-27-pull-request-merge-queue-limited-beta/),
+a mirror of GitLab's (premium-tier only) [Merge
+Trains](https://about.gitlab.com/blog/2020/12/14/merge-trains-explained/)
+feature to do exactly this.
 
-```
-Main@𝑥² = HEAD + 𝑥¹
-Main@𝑥³ = HEAD + 𝑥¹ + 𝑥²
-```
+You can put your merge requests into a queue to be merged. Each merge request
+in the queue is combined with the merge requests in front of it. **It then runs
+its tests as if it had already merged**.
+
+![The Merge Queue](https://photos.tylercipriani.com/2022-02-18_merging-models.png)
 
 We can run the tests for all patches in the queue in parallel. Waiting to merge
 each patch until all the patches in front of it pass their tests.
@@ -90,23 +83,23 @@ One of my former colleagues was fond of saying:
 The "not rocket science" problem gets more complicated when a production build
 is composed of 𝑛 repos.
 
-At my work, we've yet to embrace the monorepo trend 😬. We (nominally) have our
-reasons outside this post's scope.  The result is a release to production
-composed of roughly 200 different repositories -- some of which depend on one
-another in an ever-spidering graph of maddening dependencies.
+At my work, we've yet to embrace the monorepo trend 😬. The result is a release
+to production composed of roughly 200 different repositories -- some of which
+depend on one another in an ever-spidering graph of maddening dependencies.
 
-## What we do
+## A merge queue of merge queues
 
-Sometime in 2012, the Openstack Infrastructure team started work on [Zuul](https://opendev.org/zuul/zuul/commit/ee743613ce5b3aee11d12e91e932d7876bc0b40c). Zuul
-maintains what it calls "pipelines." Dependent pipelines can ensure that
-patches across multiple repos get tested and merged together as if they were
-part of a single Merge Train or Merge Queue.
+In 2012, the [Openstack Infrastructure team](https://opendev.org/) started work on
+[Zuul](https://opendev.org/zuul/zuul/commit/ee743613ce5b3aee11d12e91e932d7876bc0b40c).
+What's unique about Zuul is that it can assure that a build works, even when
+it's composed of several repositories.
 
-Zuul treats each pipeline like a queue and maintains a shadow version control
-system that allows testing speculative future states across repositories
-in parallel.
+Zuul maintains what it calls "dependent
+pipelines." Dependent pipelines can ensure merge requests across multiple repos
+get tested and merged together as if they were part of a single Merge Queue --
+**a merge queue of merge queues**.
 
 Today it's a decade after development began on Zuul — more than two decades
-after Graydon Hoare's duck tape CI system. And the most prominent and
+after Graydon Hoare built his CI system. And the most prominent and
 best-funded software forges in the history of humanity are pretty gosh darn
 close to catching up.
