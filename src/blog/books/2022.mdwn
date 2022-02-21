@@ -8,7 +8,7 @@ Copyright &copy; 2022 Tyler Cipriani
 
 
 --- ---------------------------------------------------------------------------------------- ---------------- -------------------
- #   Title                                                                                   Author           Rating
+ #   Title                                                                                   Author          Chambers    Rating
 --- ---------------------------------------------------------------------------------------- ---------------- -------------------
  1  [[The Great Railway Bazaar|books/2022/great-railway-bazaar]]                             Paul Theroux     ⭑⭑⭑<small>½</small>
 
@@ -21,4 +21,6 @@ Copyright &copy; 2022 Tyler Cipriani
  5  [[The Road|books/2022/the-road]]                                                         Cormac McCarthy  ⭑⭑⭑⭑⭑
 
  6  [[The Long Way to a Small, Angry Planet|books/2022/long-way-to-a-small-angry-planet]]    Becky Chambers   ⭑⭑⭑⭑<small>½</small>
+
+ 6  [[So Good They Can't Ignore You|books/2022/so-good-they-cant-ignore-you]]                Cal Newport      ⭑⭑⭑<small>½</small>
 ---- --------------------------------------------------------------------------------------- ---------------- -------------------

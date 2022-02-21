@@ -1,0 +1,98 @@
+[[!meta date="2022-02-21T21:15:57.451186"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="Why I blog"]]
+[[!tag computing]]
+
+In 2022 I resolved to publish two posts a month on this blog.
+
+This post attempts to explain the value I get out of blogging.
+
+![The virtuous cycle of blogging](https://photos.tylercipriani.com/2022-02-21_why-blog.png "Blogging is a virtuous cycle")
+
+For me, **blogging is a virtuous cycle**.
+
+I blog to refine my thinking and improve
+my writing. As my writing improves, I get more feedback on my ideas. More
+feedback helps me refine my ideas which leads to more writing.
+
+## Writing is thinking
+
+**If you want strength, you lift weights; if you want clear thinking, you write.**
+
+I don't like writing. It was an epiphany to me that [almost no one does](http://wrd.as.uky.edu/sites/default/files/1-Shitty%20First%20Drafts.pdf).
+Wrestling the jumble of emotions, facts, and opinions floating in my mind into
+a blog post can be an exhausting and demoralizing process.
+
+Writing is a harsh medium for your ideas. As William Zinsser remarked, "The ear
+makes allowances for grammar, syntax and transitions that the eye wouldn't
+tolerate in print." **Writing is hard-mode for thinking.**
+
+But matching words with ideas is addictive and electrifying. You have to hunt
+for the perfect combination of words to describe and clarify your thinking. As
+you hold up new words against your existing ideas, you see your ideas in new
+ways.
+
+This process repeats itself for as long as you have the patience to write and
+rewrite a sentence. And when I have that patience, I'm shocked at how neat and
+tidy my thoughts look on the page and in my mind.
+
+## Learning is teaching
+
+Writing is a test of your understanding.
+
+The Nobel Prize winning physicist Richard Feynman developed [a technique for
+learning any topic](https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching). **If you want to deeply learn something, try teaching it to someone
+else.** It seems to me the next level of this technique is to try to teach
+it to an endless number of people via your writing.
+
+Another goal of mine is to read more, and the best test of whether I understand
+what I've read is to write about it.
+
+Mortimer J. Adler in <u>How to Read a Book</u> uses the term "verbalizing" to 
+describe the act of mindlessly quoting books without attempting to put what
+you've read into your own words. It's liberating to recall and use an old idea
+in a new way -- indeed, this is the origin of the term "liberal arts."
+
+## Blogs are conversations
+
+When you blog, **you get to talk to brilliant people and (if you're lucky) they
+volunteer to refine your ideas**.
+
+Benjamin Franklin’s autobiography (which reads like a series of blog posts)
+attributes much of his early success to his writing. The example that struck
+me was how he brought street sweeping to Philadelphia.
+
+Franklin wished the street in front of his printing shop was cleaner, so he
+wrote a paper detailing the myriad advantages of clean streets. He sent a copy
+of his paper to all the shop owners in his neighborhood which convinced them to
+pool their money to pay for a street sweeper.
+
+Using the feedback from this experience, Franklin wrote a bill for
+the Assembly to pave and clean the streets for the whole of Philadelphia.
+
+As I read this anecdote, I realized how analogous it is to the tech
+industry. Beyond building and open-sourcing Kubernetes, Google evangelized it.
+They experimented with the ideas behind Kubernetes,  [wrote about the
+experience in the Borg paper](https://research.google/pubs/pub43438/),
+encouraged others to do the same and over time changed everything about data
+centers.
+
+**Ideas that change everything are refinements.** Experiment, write, get
+feedback, repeat. The most tried and proven mechanism of refining your ideas is to write
+about them.
+
+## Why I blog
+
+Blogging is a virtuous cycle. First, you mediate the argument between your mind
+and the page to fully form your ideas and write them down for others. Then you
+release your ideas into the world where strangers will combine them with their
+own ideas and morph and refine them into new thoughts you never imagined.
+
+The gift for your efforts might be new ideas to blog about. Or it might be the warm-fuzzies of
+perfectly capturing the zeitgeist. Or you may get nothing but the harsh and telling feedback of silence.
+
+I find the endless struggle of zooming and enhancing the details of my ideas in
+exchange for these gifts to be worth the trade-off. And that's why I blog.
