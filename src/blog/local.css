@@ -740,6 +740,7 @@ img.img { margin: 0; }
     display: block;
     text-transform: capitalize;
     padding: 0.5em 0.25em 0 0.25em;
+    word-break: keep-all;
 }
 
 #footer {

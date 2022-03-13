@@ -3,22 +3,41 @@
 [[!meta copyright="""
 Copyright &copy; 2022 Tyler Cipriani
 """]]
-[[!meta title="Code Review: Procrastination and Clarity"]]
+[[!meta title="Code Review Decision Fatigue"]]
 [[!tag computing]]
 
 > People think they lack motivation, what they really lack is clarity
 >
 > -- James Clear, <u>Atomic Habits</u>
 
-There is no standard way to do a code review -- which makes putting it off
-easy. Over time this can lead to a hefty backlog of overdue code changes
-awaiting review.
+Code review innocently asks a staggering question: “does this code look good to
+you?” It’s not even clear how to start to answer this question – which makes
+putting off code reviews easy.
 
-Code review innocently asks a staggering question: "does this code look good to
-you?" And If you find your code stuck waiting for review, it might be that your
-reviewer doesn't even know where to begin.
+With so many decisions left for the reviewer, the easiest decision is to
+opt out – to defer code review for a time when I have more mental energy.
 
-## Where to even begin a code review
+This post explores the problem of decision fatigue in code review. Then it
+looks at individual and institutional strategies for fighting fatigue.
+
+## Code review is a request for my willpower
+
+![The **chaotic evil** response to an unreasonable review request](https://photos.tylercipriani.com/2022-03-07_10loc-500loc.png)
+
+Code review is a big task for even a tiny change. But if your patch is enormous
+and tricky, then you’re asking for a titanic share of my willpower.
+
+When a review demands too much of my daily willpower reserve, I have a few options:
+
+* **Lawful Good**: Carve out time when I know I'll be able to power through the review.
+* **Neutral**: Defer reviewing your code — and devoutly wish that it somehow disappears.
+* **Chaotic Evil**: YOLO it into production and let you deal with the fallout.
+
+None of these options is fair to both the developer and the reviewer.
+
+## Where to even begin code review
+
+Often even the basic questions of code review are up to a reviewer to decide.
 
 A thread on hacker news recently asked a fundamental question about code
 review: [do you run the code as part of your
@@ -30,7 +49,8 @@ were illuminating to me, and I can summarize them as follows:
 3. [Rarely, because tests](https://news.ycombinator.com/item?id=30579389)
 4. [It depends, and you need a standard](https://news.ycombinator.com/item?id=30578049)
 
-Even Google's code review guidelines are blasé on the subject:
+
+Google's code review guidelines are blasé on the subject:
 
 > You can validate the CL [code under review] if you want
 >
@@ -41,54 +61,37 @@ definitely want to ensure you've run the code: UI changes and parallelism —
 places where it's easy (even likely) for an individual to make a noticeable (in
 retrospect) mistake. But what about all the other code reviews?
 
-This is something you have to decide while doing the review. **This ambiguity makes code review even slower.**
-
-## Your code review request might be unreasonable
-
-Your code reviewer might feel you're asking for something unreasonable -- to
-vouch for your unbidden gob of code forever.
-
-It's a big task to compare your code's design, complexity, safety, and
-maintainability against every imaginable alternative. If that’s what you’re
-asking, then you're asking for a lot of my time. And if your change is also
-enormous and tricky, then you might be asking for too much of my time.
-
-When a review demands too much of my time, I have a few options:
-
-* **Lawful Good**: Spend a massive chunk of my day reviewing code
-* **Neutral**: Not review your code — and devoutly wish that it somehow disappears.
-* **Chaotic Evil**: YOLO it into production and let you deal with the fallout.
-
-![The **chaotic evil** response to an unreasonable review request](https://photos.tylercipriani.com/2022-03-07_10loc-500loc.png)
-
-None of these options is fair to both the developer and the reviewer.
-
 ## Requesting changes to the code review process
 
-Large projects tend to have large backlogs of reviews. There are tricks
-developers can use to cut through the noise:
+We should optimize the code review process to reduce the decision fatigue
+of reviewers.
+
+Here are a few tricks developers can use to lessen the mental load:
 
 * Split your merge request into smaller, independent merge requests
 * Add some tests and linting to exercise the code
 * Write clearer commit messages
 * Add comments to the code
+* Ask them for a narrower review — e.g., a design review or an architecture review
 * Write better code
 
-Large software projects tend to have developer productivity teams who create
-tools to cajole developers into doing reviews -- Automattic has [The
+Some tools exist that ease the burden of remembering your review backlog --
+Automattic has [The
 Stick](https://www.software-engineering-unlocked.com/episode-4-leif-singer/),
 and Microsoft has [Nudge](https://arxiv.org/pdf/2011.12468v1.pdf). And studies
-have shown code review reminder tools like these may [speed up reviews by as much as 60%](https://www.michaelagreiler.com/code-review-reminder/).
+have shown code review reminder tools like these may [speed up reviews by as
+much as 60%](https://www.michaelagreiler.com/code-review-reminder/).
 
 But there are no magic bullets. Code review's harshest feedback is silence.
-There are times when you gape as your code is passive-aggressived to death by
-silence for no reason you can discern.
+There are times when you gape as your code rots, awaiting final judgement. And
+that sucks for everyone.
 
-To speed up the process, **we've got to make it easier for reviewers** -- for
-instance, we should answer the fundamental question of whether they're even
-supposed to run the code. The answer here is probably different for different
-types of software, but **we all do reviews, maybe we should commit to having
-review standards**.
+To speed up the process, **we’ve got to make it easier for reviewers** – we
+should start with a shared agreement about the scope of review. Perhaps
+beginning with the fundamental question of whether they’re even supposed to run
+the code. The answer here is probably different for different teams and various
+types of software, but we all do reviews; maybe we should all have review
+standards, too.
 
 * * *
 
