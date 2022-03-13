@@ -25,7 +25,7 @@ review: [do you run the code as part of your
 review](https://news.ycombinator.com/item?id=30577735)? The immediate responses
 were illuminating to me, and I can summarize them as follows:
 
-1. [No, but I here's how to trick developers into running their code](https://news.ycombinator.com/item?id=30578033)
+1. [No, but here's how I trick developers into running their own code](https://news.ycombinator.com/item?id=30578033)
 2. [Yes, because neglecting to run code has left me traumatized](https://news.ycombinator.com/item?id=30577790)
 3. [Rarely, because tests](https://news.ycombinator.com/item?id=30579389)
 4. [It depends, and you need a standard](https://news.ycombinator.com/item?id=30578049)
@@ -89,3 +89,7 @@ instance, we should answer the fundamental question of whether they're even
 supposed to run the code. The answer here is probably different for different
 types of software, but **we all do reviews, maybe we should commit to having
 review standards**.
+
+* * *
+
+<small>Thanks to [Brennen Bearnes](https://p1k3.com/) for reading an early draft of this post and making it less wronger.</small>
