@@ -22,5 +22,7 @@ Copyright &copy; 2022 Tyler Cipriani
 
  6  [[The Long Way to a Small, Angry Planet|books/2022/long-way-to-a-small-angry-planet]]    Becky Chambers   ⭑⭑⭑⭑<small>½</small>
 
- 6  [[So Good They Can't Ignore You|books/2022/so-good-they-cant-ignore-you]]                Cal Newport      ⭑⭑⭑<small>½</small>
+ 7  [[So Good They Can't Ignore You|books/2022/so-good-they-cant-ignore-you]]                Cal Newport      ⭑⭑⭑<small>½</small>
+
+ 8  [[The Rise Theodore Roosevelt|books/2022/rise-of-theodore-roosevelt]]                    Edmund Morris    ⭑⭑⭑⭑<small>½</small>
 ---- --------------------------------------------------------------------------------------- ---------------- -------------------

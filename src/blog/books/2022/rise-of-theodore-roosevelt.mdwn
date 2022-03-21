@@ -1,0 +1,70 @@
+[[!meta date="Wednesday, Mar 9, 2022, 7:59 AM"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="The Rise of Theodore Roosevelt by Edmund Morris"]]
+[[!tag books]]
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
+⭑⭑⭑⭑<small>½</small> <small>(<span itemprop="rating">4.5</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+## Three sentence summary
+
+The Rise of Theodore Roosevelt is a biography that spans the formative years of
+Teddy Roosevelt's life beginning with his sickly childhood; his years at
+Harvard; the tragedy of his first marriage; his election to the New York state
+house; his time as a cattle rancher in the Badlands of South Dakota (including
+his neigh mythical capture of cattle thieves); his appointment to the Civil
+Service Commission under Harrison and Cleveland; his time as New York City
+police commissioner; his service as assistant secretary of the Navy during
+which time he deployed the Maine to Havana where Spain (maybe) sunk it, at
+which point he assembled the fabled Rough Riders, and led them on to capture
+San Juan hill — a performance which vouchsafed a brief term as New York's
+governor; and goes on to recount his reformer politics as governor that made it
+expedient for machine politicians to push him out of New York state and into
+the vice-presidency.
+
+The hefty 900-page tome ends, ominously, with Roosevelt taking a much-needed
+vacation after being assured McKinley would definitely, totally recover from
+his gunshot wound — nothing to worry about 😬. It's a historical biography that
+reads like a novel, and I was equally mesmerized and troubled by the main
+character's confounding attributes — a journeyman of unequaled intellectual
+capacity, yet flawed and limited by his tendency towards jingoism and careless
+violence and whose privileged upbringing limited his views on class and race.
+
+## Other thoughts
+
+I'm left with several lasting impression of Roosevelt.
+
+1. He had a strange moral code that almost no one could live up to. He didn't swear and he didn't drink. He once remarked his cousin had shamed the family by marrying an actress.  His reformer politics, viewed in this light, seem like an extension of his personal beliefs.
+2. Descriptions of his physicality are mind boggling. On more than one occasion Morris describes how he snaps words with an audible click of his teeth: I have not as yet been able to form a serviceable mental picture of this.
+3. Roosevelt simultaneously had the easy manners of a privileged 5th avenue Knickerbocker, and befriended cowpunchers and rough riders. A person, it seems, strangely at home with any class of people.
+
+Coupled with his insatiable reading habit (claiming to read a book a day for
+most of his life) this all paints a vivid portrait of a singular human. A
+bizarre human. But a singular human.
+
+## Details
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">The Rise of Theodore Roosevelt</span>
+* Author: <span itemprop="author">Edmund Morris</span>
+* Pages: <span itemprop="numberOfPages">962</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Modern Library</span>
+* ISBN: <span itemprop="isbn">1400069651</span>
+* Genre: <span itemprop="genre">Biography</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/9781400069651">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/9781400069651">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9780375756788">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9781400069651">Goodreads</a>
+
+</div><!-- end review -->
