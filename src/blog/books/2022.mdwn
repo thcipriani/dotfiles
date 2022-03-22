@@ -7,22 +7,26 @@ Copyright &copy; 2022 Tyler Cipriani
 [[!tag books]]
 
 
---- ---------------------------------------------------------------------------------------- ---------------- -------------------
- #   Title                                                                                   Author          Chambers    Rating
---- ---------------------------------------------------------------------------------------- ---------------- -------------------
- 1  [[The Great Railway Bazaar|books/2022/great-railway-bazaar]]                             Paul Theroux     ⭑⭑⭑<small>½</small>
+---- ---------------------------------------------------------------------------------------- ------------------- -------------------
+ #   Title                                                                                    Author               Rating
+---- ---------------------------------------------------------------------------------------- ------------------- -------------------
+ 1   [[The Great Railway Bazaar|books/2022/great-railway-bazaar]]                             Paul Theroux        ⭑⭑⭑<small>½</small>
 
- 2  [[How to Win Friends and Influence People|books/2022/win-friends-and-influence-people]]  Dale Carnegie    ⭑⭑⭑⭑
+ 2   [[How to Win Friends and Influence People|books/2022/win-friends-and-influence-people]]  Dale Carnegie       ⭑⭑⭑⭑
 
- 3  [[Klara and the Sun|books/2022/klara-and-the-sun]]                                       Kazuo Ishiguro   ⭑⭑⭑⭑<small>½</small>
+ 3   [[Klara and the Sun|books/2022/klara-and-the-sun]]                                       Kazuo Ishiguro      ⭑⭑⭑⭑<small>½</small>
 
- 4  [[How to Live on 24 Hours a Day|books/2022/how-to-live-on-24-hours]]                     Arnold Bennett   ⭑⭑⭑<small>½</small>
+ 4   [[How to Live on 24 Hours a Day|books/2022/how-to-live-on-24-hours]]                     Arnold Bennett      ⭑⭑⭑<small>½</small>
 
- 5  [[The Road|books/2022/the-road]]                                                         Cormac McCarthy  ⭑⭑⭑⭑⭑
+ 5   [[The Road|books/2022/the-road]]                                                         Cormac McCarthy     ⭑⭑⭑⭑⭑
 
- 6  [[The Long Way to a Small, Angry Planet|books/2022/long-way-to-a-small-angry-planet]]    Becky Chambers   ⭑⭑⭑⭑<small>½</small>
+ 6   [[The Long Way to a Small, Angry Planet|books/2022/long-way-to-a-small-angry-planet]]    Becky Chambers      ⭑⭑⭑⭑<small>½</small>
 
- 7  [[So Good They Can't Ignore You|books/2022/so-good-they-cant-ignore-you]]                Cal Newport      ⭑⭑⭑<small>½</small>
+ 7   [[So Good They Can't Ignore You|books/2022/so-good-they-cant-ignore-you]]                Cal Newport         ⭑⭑⭑<small>½</small>
 
- 8  [[The Rise Theodore Roosevelt|books/2022/rise-of-theodore-roosevelt]]                    Edmund Morris    ⭑⭑⭑⭑<small>½</small>
----- --------------------------------------------------------------------------------------- ---------------- -------------------
+ 8   [[The Rise Theodore Roosevelt|books/2022/rise-of-theodore-roosevelt]]                    Edmund Morris       ⭑⭑⭑⭑<small>½</small>
+
+ 9   [[Hatchet|books/2022/hatchet]]                                                           Gary Paulsen        ⭑⭑⭑<small>½</small>
+
+ 10  [[Make Your Bed|books/2022/make-your-bed]]                                               William H. McRaven  ⭑⭑⭑⭑
+---- ---------------------------------------------------------------------------------------- ------------------- -------------------

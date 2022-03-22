@@ -1,0 +1,118 @@
+[[!meta date="Wednesday, Mar 9, 2022, 8:08 AM"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="Make Your Bed by William H. McRaven"]]
+[[!tag books]]
+
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
+⭑⭑⭑⭑ <small>(<span itemprop="rating">4</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+> If you can’t do the little things right, you will never do the big things
+> right. And, if by chance you have a miserable day, you will come home to a
+> bed that is made—that you made—and a made bed gives you encouragement that
+> tomorrow will be better.
+>
+> -- William H. McRaven, <u>Make Your Bed</u>
+
+## Summary
+
+Make Your Bed is a short book based on a commencement speech given by the
+author at the University of Texas at Austin that convey the life lessons of
+Navy SEAL training. The title takes its name from the first chapter, "Start
+your day with a task completed" — on the lessons of making your bed (which is
+also the reason I read the book in the first place — I'm a big believer in
+making the bed every morning :))
+
+Making the bed is a foundational task for a productive day, and no matter how
+bad your day goes: at least your bed is made—you've accomplished something of
+value, even if nothing else goes right.
+
+## Other thoughts
+
+All the other lessons are de rigueur motivational posters
+in a high school guidance counselor's office:
+
+* "You can't go it alone": Work with others to achieve your goals
+* "The only size that matters is the size of your heart": You can make up for lack of physical strength with gumption
+* "Life's not fair—Drive On!"
+* "Failure can make you stronger": AKA Don't be scared of the circus. AKA hard work makes you stronger
+* The Brene Brown esque: "You must dare greatly"
+* "Stand up to bullies"
+* "Rise to the occasion"
+* Give people hope
+* Never quit
+
+On the other hand: Clichés become cliché because they're universal truths --
+this book did not run short on cliches, but that probably indicates there's a
+large amount of universal truth here.
+
+## Life is unfair
+
+One memorable piece of this book was the chapter on life being unfair and the
+story of the sugar cookie. The author was told to run down to the ocean, jump
+in, then roll in the sand until he was completely covered — every inch and
+every crevice  — with sand — a sugar cookie! The person who ordered him to do
+this asked him if he knew why he'd done it, he didn't. Sometimes life is
+unfair. What a vivid scene.
+
+## Failure makes you stronger
+
+The story behind "failure can make you stronger" is similarly entertaining.
+"The Circus" is like detention for Navy SEALs (I guess) — more running, more
+swimming, more physically exhausting activity. Once you  end up in the circus
+it's hard to get out since it's a punishment for poor performance and the extra
+exhaustion makes you perform worse. Until, one day, it doesn't.
+
+> In life you will face a lot of Circuses. You will pay for your failures. But,
+> if you persevere, if you let those failures teach you and strengthen you, then
+> you will be prepared to handle life’s toughest moments.
+>
+> -- William H. McRaven, <u>Make Your Bed</u>
+
+The stories in this book are metaphors for life, but also very literal lessons.
+It was a short read, not the most amazing book I'll read this year, but
+I thought it was worthwhile.
+
+> I realized that the past failures had strengthened me, taught me that no one
+> is immune from mistakes. True leaders must learn from their failures, use the
+> lessons to motivate themselves, and not be afraid to try again or make the next
+> tough decision. -- Failure can make you stronger
+>
+> -- William H. McRaven, <u>Make Your Bed</u>
+
+## Summary in a quote
+
+> Remember… start each day with a task completed. Find someone to help you
+> through life. Respect everyone. Know that life is not fair and that you will
+> fail often. But if you take some risks, step up when times are toughest, face
+> down the bullies, lift up the downtrodden, and never, ever give up—if you do
+> these things, then you can change your life for the better… and maybe the
+> world!
+>
+> -- William H. McRaven, <u>Make Your Bed</u>
+
+## Details
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">Make Your Bed</span>
+* Author: <span itemprop="author">William H. McRaven</span>
+* Pages: <span itemprop="numberOfPages">144</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Grand Central Publishing</span>
+* ISBN: <span itemprop="isbn">1455570249</span>
+* Genre: <span itemprop="genre">Personal Development</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/1455570249">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/1455570249">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9781455570249">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9781455570249">Goodreads</a>
+
