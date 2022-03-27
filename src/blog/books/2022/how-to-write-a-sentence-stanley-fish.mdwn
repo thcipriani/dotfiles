@@ -1,0 +1,67 @@
+[[!meta date="Mar 10, 2022"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="How to Write a Sentence by Stanley Fish"]]
+[[!tag books]]
+<div itemscope itemtype="https://schema.org/Review">
+
+<div itemprop="reviewBody" itemscope itemtype="https://schema.org/Rating">
+⭑⭑ <small>(<span itemprop="rating">2</span>/<span itemprop="bestRating">5</span> see [[book reviews|books/reviews]])</small>
+</div>
+
+Annie Dillard in <u>The Writing Life</u> tells the story of a university
+who asked if they could become a writer — a well-known writer responded, "do you like sentences?"
+
+## Three sentence summary
+
+<u>How to Write a Sentence</u> is a book about sentence appreciation. The first part of the book contains great
+sentences, pulls their components apart, and examines what makes them
+exceptional -- it seems like a book filled with deliberate practice exercises
+for the budding writer.
+
+From there, the book wears on a scattershot -- hit and miss -- by the end we're
+talking about famous "Last Sentences" in books and movies (including,
+bizarrely, the film "Some Like It Hot") -- it turns out last sentences have
+nothing in common and are not very interesting as a topic -- this book felt
+like a very short interesting book made into a longer (but still short)
+uninteresting book.
+
+## Details
+
+Despite the title, the book is about sentence appreciation and not sentence writing.
+
+I powered through the book, propelled by the early chapter's linguistic fun:
+
+* Looking at anaphora in Rev. Dr. Martin Luther King, Jr.'s "[Letter from Birmingham Jail](https://letterfromjail.com/)"
+* Exploring form independent from content in Lewis Carroll's "[Jabberwocky](https://www.poetryfoundation.org/poems/42916/jabberwocky)"
+* Noam Chomsky's, "colorless green ideas sleep furiously" vs "furiously sleep ideas green colorless" as an example of grammatical vs semantic correctness
+
+I also found some enjoyment in the chapter on first sentences -- a [LitHub article](https://lithub.com/what-makes-a-great-opening-line/) I recently read about the same topic covers all the same content.
+
+Location 362 of the Kindle edition contains the errata:
+
+> “you have write about something” is the usual commonplace
+>
+> -- Stanley Fish, <u>How to Write a Sentence</u>
+
+<div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Book">
+* Title: <span itemprop="name">How to Write a Sentence</span>
+* Author: <span itemprop="author">Stanley Fish</span>
+* Pages: <span itemprop="numberOfPages">176</span>
+* Format: <span itemprop="bookFormat">EBook</span>
+* Publisher: <span itemprop="publisher">Harper</span>
+* ISBN: <span itemprop="isbn">006184053X</span>
+* Genre: <span itemprop="genre">Writing</span>
+</div>
+
+
+## Links
+
+* <a href="https://worldcat.org/isbn/006184053X">Worldcat</a>
+* <a href="https://openlibrary.org/isbn/006184053X">Open Library</a>
+* <a href="https://bookshop.org/books/isbn/9780061840531">Bookshop</a>
+* <a href="https://www.goodreads.com/book/isbn/9780061840531">Goodreads</a>
+
+</div><!-- end review -->

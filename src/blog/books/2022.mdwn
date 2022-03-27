@@ -29,4 +29,6 @@ Copyright &copy; 2022 Tyler Cipriani
  9   [[Hatchet|books/2022/hatchet]]                                                           Gary Paulsen        ⭑⭑⭑<small>½</small>
 
  10  [[Make Your Bed|books/2022/make-your-bed]]                                               William H. McRaven  ⭑⭑⭑⭑
+
+ 11  [[How to Write a Sentence|books/2022/how-to-write-a-sentence-stanley-fish]]              Stanley Fish        ⭑⭑
 ---- ---------------------------------------------------------------------------------------- ------------------- -------------------
