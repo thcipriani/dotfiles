@@ -1,0 +1,100 @@
+[[!meta date="2022-03-27T19:19:04.440141"]]
+[[!meta author="Tyler Cipriani"]]
+[[!meta copyright="""
+Copyright &copy; 2022 Tyler Cipriani
+"""]]
+[[!meta title="My Home Assistant Music Cube"]]
+[[!tag computing]]
+
+Last year, I spent $17 on an [Aqara cube](https://www.aqara.com/us/cube.html),
+and it's been one of my best purchases for enjoyment per dollar spent.
+
+<figure>
+    <video autoplay loop muted>
+        <source src="https://photos.tylercipriani.com/2022-03-27_squeezebox-cube.mp4" type="video/mp4">
+    </video>
+    <figcaption>I control my multi-room audio using a gyroscopic gesture-recognition cube -- yes, this basically makes me Iron Man.</figcaption>
+</figure>
+
+
+The Aqara cube is a three-inch square plastic cube that sends gestures over Zigbee to a
+[cheap off-the-shelf dongle](https://www.amazon.com/dresden-elektronik-ConBee-Universal-Gateway/dp/B07PZ7ZHG5/ref=sr_1_4?keywords=zigbee+dongle&qid=1648415026&sr=8-4).
+
+By pairing this cube with [Home Assistant](https://www.home-assistant.io/), I
+have a three-dimensional button with 45 unique interactions to control whatever
+I want.
+
+And over the last six months, I've used it to control a small fleet of
+antiquated streaming devices to help me discover new music.
+
+## 🎭 The Tragedy of the Logitech Squeezebox
+
+The Logitech Squeezebox is a bygone streaming device that was too beautiful for
+this world. Logitech snuffed the Squeezebox in 2012.
+
+But because others share my enthusiasm for Squeezeboxes, there's still
+hope. The second-hand market persists. And there are wonderful nerds
+[cobbling together Squeezeboxes from Raspberry Pis](https://www.picoreplayer.org/).
+
+![Logitech Squeezebox fans](https://photos.tylercipriani.com/2022-03-27_dozens-of-us-arrested-development.gif)
+
+I built a DIY Squeezebox from a Pi Zero [Pimoroni
+PirateRadio](https://shop.pimoroni.com/products/pirate-radio-pi-zero-w-project-kit?variant=38476372426)
+kit and [Squeezelite](https://github.com/ralph-irving/squeezelite) software.
+
+I blanket my humble abode in music by combining a DIY PirateRadio, a Squeezebox Boom, and a Squeezebox Touch.
+
+My Dockerized Logitech Media Server perfectly synchronizes these three devices.
+Music from Spotify or [WQXR](https://www.wqxr.org/) is seamless when you walk
+from bedroom to kitchen to dining room.
+
+![🏴‍☠️ Pimoroni PirateRadio](https://photos.tylercipriani.com/thumbs/4a/d8cc93b5fd5ac94334d78034bb0ffe/large.jpg)
+
+## Home Assistant is ✨magic✨
+
+Home Assistant is open-source home automation software, and it's the only IoT
+software I don't find myself screaming at regularly.
+
+And, of course, there's a [Logitech Squeezebox integration for Home
+Assistant](https://www.home-assistant.io/integrations/squeezebox). The
+integration lets you use Logitech Media Server's (somewhat
+[esoteric](https://gist.github.com/samtherussell/335bf9ba75363bd167d2470b8689d9f2))
+API to control your devices from Home Assistant.
+
+![Home Assistant Squeezebox Lovelace Card](https://photos.tylercipriani.com/2022-03-27_squeezebox-homeassistant-honky-tonkin.png)
+
+I also use a community-made [Home Assistant Blueprint](https://community.home-assistant.io/t/mi-magic-cube-deconz-45-actions/256656) that automates each of the cube's 45 unique gestures.
+
+![Mi Magic Cube in Home Assistant](https://photos.tylercipriani.com/2022-03-27_homeassistant-magic-cube.png)
+
+
+Currently, since my mental stack is tiny, I only use four gestures:
+
+1. **Shake**: Turn on all players, and start playing a random album from Spotify (that's right, **album** -- I'm old enough to yearn for the halcyon days of [Rdio](https://github.com/thcipriani/rdio-shit#rdio-shit)).
+2. **Double-tap**: Turn off all players.
+3. **Flip**: Next track.
+4. **Twist**: Twist right for volume up; twist left for volume down -- like a volume knob.
+
+## 🧐 Why would anyone do this?
+
+In a 2011 article, “[A Brief Rant on the Future of Interaction Design](http://worrydream.com/ABriefRantOnTheFutureOfInteractionDesign/),” Brett
+Victor describes **touchscreens** as “pictures under glass.” **I loathe pictures
+under glass**.
+
+It's impossible to use a device with a touchscreen without looking at it. And touchscreen
+interaction is slow -- traversing a menu system is all point-and-click, there
+are no shortcuts.
+
+Another alternative is control via **smart speakers** -- devices
+literally straight out of a dystopian novel.
+
+While the smart speaker is the closest thing to a ubiquitous command-line interface in everyday use, **I'm too weirded-out
+to have a smart speaker in my house**.
+
+I've opted for a better way: shake a cube and music appears.
+
+**The cube is a pleasant tactile experience** -- shake it, tap it, spin it -- its
+a weighty and fun fidget toy. **Its design affords instant access to all its
+features** -- there is no menu system to dig through.
+
+The cube is frictionless [calm technology](https://calmtech.com/) and it's behaved beautifully in the background of my day-to-day for months.
